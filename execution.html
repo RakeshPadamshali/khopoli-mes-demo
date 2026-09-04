@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shop-floor Execution · Khopoli NextGen MES</title>
+<link rel="stylesheet" href="assets/vendor/roboto/roboto.css"><link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css"><link rel="stylesheet" href="assets/khp-shell.css">
+<style>
+  .linetabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; } .linetabs button { border:1px solid var(--color-border); background:#fff; border-radius:6px; padding:6px 12px; font:600 12px 'Roboto'; cursor:pointer; color:var(--color-text-secondary); display:flex; align-items:center; gap:7px; }
+  .linetabs button.active { background:var(--color-primary); color:#fff; border-color:var(--color-primary); } .linetabs .dot { width:8px; height:8px; border-radius:50%; display:inline-block; } .d-run{background:#2e9b45} .d-stop{background:#d84a4a} .d-idle{background:#b0b8c1}
+  .queue { background:#ffebee; border:1px solid #f5b5b5; border-radius:8px; padding:9px 12px; font-size:12px; display:flex; gap:10px; align-items:center; margin-bottom:12px; } .queue i { color:#c62828; }
+  .cmp td.dev { background:#ffebee; } .cmp td.warn { background:#fff8e1; }
+  .form { display:grid; grid-template-columns:repeat(4,1fr); gap:8px 12px; align-items:end; } .form label { font-size:10px; text-transform:uppercase; letter-spacing:.3px; color:var(--color-text-muted); font-weight:600; display:block; margin-bottom:3px; }
+  .form input, .form select { width:100%; font:12px 'Roboto'; padding:5px 8px; border:1px solid var(--color-border); border-radius:5px; }
+  .mb { display:flex; gap:14px; align-items:center; font-size:12px; flex-wrap:wrap; } .mb .box { border:1px solid var(--color-border); border-radius:6px; padding:6px 10px; min-width:90px; } .mb .box .l { font-size:10px; color:var(--color-text-muted); text-transform:uppercase; } .mb .box .v { font-weight:700; font-size:14px; }
+  .mb .eq { font-size:16px; color:var(--color-text-hint); }
+  .tbl-wrap { max-height:260px; }
+</style>
+<script src="assets/khp-embed.js"></script>
+</head>
+<body>
+<div class="bm-layout">
+  <main class="bm-content">
+    <div class="page-bar">
+      <div><h1>Shop-floor Execution — charging, PDI / PDO via middleware, confirmation &amp; mass balance</h1><div class="crumb">Execution › Shop-floor › <span id="ctx"></span></div></div>
+      <div class="actions"><a class="btn btn-outline" href="planning.html"><i class="fa-solid fa-route"></i> Schedules</a><a class="btn btn-outline" href="quality.html"><i class="fa-solid fa-microscope"></i> Quality</a><a class="btn btn-outline" href="integration.html"><i class="fa-solid fa-tower-broadcast"></i> Integration Monitor</a></div>
+    </div>
+    <div class="linetabs" id="tabs"></div>
+    <div class="kpis" id="kpis"></div>
+    <div id="queue"></div>
+    <div class="grid-2-1">
+      <div>
+        <div class="card">
+          <div class="card-head"><i class="fa-solid fa-play"></i> Charge &amp; run — scheduled batches on <span id="lname"></span> <span class="right">charge → PDI (MES→L2) → ACK → PDO (L2→MES) → confirm</span></div>
+          <div class="card-body"><div class="tbl-wrap"><table class="tbl" id="run"></table></div><div id="runpanel"></div></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><i class="fa-solid fa-code-compare"></i> PDO actuals vs PDI targets — auto-comparison <select id="stgsel" style="font:12px 'Roboto';padding:3px 6px;border:1px solid var(--color-border);border-radius:5px"></select> <span class="right" id="cmpmeta"></span></div>
+          <div class="card-body" id="cmp"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><i class="fa-solid fa-scale-balanced"></i> Production confirmations &amp; mass balance <span class="right" id="pcmeta"></span></div>
+          <div class="card-body"><div class="tbl-wrap"><table class="tbl" id="pcs"></table></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <div class="card-head"><i class="fa-solid fa-gauge"></i> Line performance today <span class="right">OEE = A × P × Q</span></div>
+          <div class="card-body" id="perf"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><i class="fa-solid fa-triangle-exclamation"></i> Delays &amp; stoppages <span class="right" id="dlmeta"></span></div>
+          <div class="card-body"><div id="dlform" class="form" style="margin-bottom:10px"></div><div class="tbl-wrap" style="max-height:300px"><table class="tbl" id="dl"></table></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script>window.KHP_PAGE='execution'; window.KHP_TITLE='Shop-floor Execution'; window.KHP_ICON='fa-industry';</script>
+<script src="assets/khp-chrome.js"></script><script src="data/khp-data.js"></script><script src="assets/khp-core.js"></script>
+<script>
+  var X=window.KHPX, D=X.D, esc=X.esc, badge=X.badge, LIVE=D.live;
+  document.getElementById('ctx').textContent = D.plant.name + ' · shift A · as of ' + X.fmt(D.meta.asOf);
+  var LINES=D.lines.filter(function(l){return l.status==='ACTIVE';}), L2={PKL:1,CRM:1,CGL:1,CCL:1};
+  var h=X.hashParam(), line='CGL'; if(h&&X.line(h)) line=h; else if(h&&X.unit(h)){ var u=X.unit(h); var st=D.stages.filter(function(s){return s.inUnit===h||s.outUnits.indexOf(h)>=0;})[0]; if(st) line=st.line; }
+  var run=X.state.get('run',{}), delaysLive=X.state.get('delays',[]);
+  function liveLine(){ return LIVE.lines.filter(function(l){return l.line===line;})[0]; }
+  function tabs(){ document.getElementById('tabs').innerHTML=LINES.map(function(l){ var ll=LIVE.lines.filter(function(x){return x.line===l.id;})[0]; return '<button class="'+(l.id===line?'active':'')+'" data-line="'+l.id+'"><span class="dot '+(ll.state==='RUNNING'?'d-run':ll.state==='STOPPED'?'d-stop':'d-idle')+'"></span>'+esc(l.name)+(L2[l.id]?' <span class="chip" style="background:rgba(255,255,255,.25);color:inherit">L2</span>':'')+'</button>'; }).join(''); }
+  document.getElementById('tabs').addEventListener('click',function(e){ var b=e.target.closest('[data-line]'); if(!b) return; line=b.getAttribute('data-line'); renderAll(); });
+  function renderAll(){ tabs(); kpis(); queue(); runTable(); cmpSel(); pcs(); perf(); delays(); }
+  function kpis(){
+    var ll=liveLine(), k=D.kpis.filter(function(x){return x.line===line&&x.partial;})[0]||{}, holds=D.holds.filter(function(hh){return hh.status==='ACTIVE'&&X.unit(hh.unitId)&&X.unit(hh.unitId).producedOn===line;}).length;
+    var stuck=D.pdi.filter(function(p){return p.line===line&&p.stuck;}).length;
+    document.getElementById('kpis').innerHTML=[['Line state',ll.state,ll.activeDelay?esc(ll.activeDelay.equipmentDefect||ll.activeDelay.delayName):ll.currentBatch?'running '+ll.currentBatch:'no batch charged',ll.state==='RUNNING'?'green':ll.state==='STOPPED'?'red':'grey'],
+      ['Rate now',ll.rateTph+' tph','target '+ll.targetTph+' tph','blue'],['Today',X.n(ll.todayMT)+' MT','target '+X.n(ll.todayTargetMT)+' MT (shift A so far)','blue'],['OEE today',k.oee!=null?Math.round(k.oee*100)+'%':'—','A '+Math.round((k.availability||0)*100)+' · P '+Math.round((k.performance||0)*100)+' · Q '+Math.round((k.quality||0)*100),'accent'],
+      ['PDI queue',stuck?stuck+' stuck':'clear',stuck?'L2 gateway subscriber down':'all PDIs acknowledged',stuck?'red':'green'],['Quality holds',holds,'batches produced on this line','amber']]
+      .map(function(k){return '<div class="kpi '+k[3]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="s">'+k[2]+'</div></div>';}).join('');
+  }
+  function queue(){
+    var st=D.pdi.filter(function(p){return p.line===line&&p.stuck;}); var replayed=X.state.get('replayed',false);
+    document.getElementById('queue').innerHTML=(st.length&&!replayed)?'<div class="queue"><i class="fa-solid fa-circle-exclamation"></i><div><b>PDI queue stuck:</b> '+st.length+' PDI messages waiting in <span class="mono">L2.CGL.PDI.OUT</span> (oldest '+X.ago(st[0].sentAt)+') — the L2 gateway subscriber lost its heartbeat at 09:41, so CGL cannot charge the next coil. Alert ALR-0001 raised, incident INC-26-0412 handled by the AI support agent. <a href="integration.html#queue">Open the queue in the Integration Monitor</a> · <a href="support.html#INC-26-0412">incident</a></div></div>':'';
+  }
+  // ---- charge & run ----
+  function stagesOf(ln){ return D.stages.filter(function(s){return s.line===ln;}); }
+  function runTable(){
+    document.getElementById('lname').textContent=X.line(line).name;
+    var list=D.schedules.filter(function(s){return s.line===line&&s.status!=='DONE';}).sort(function(a,b){return a.plannedStart<b.plannedStart?-1:1;}).slice(0,6);
+    document.getElementById('run').innerHTML='<thead><tr><th>#</th><th>Coil in</th><th>PO</th><th>Sales order</th><th>Product · size</th><th>Planned</th><th>Status</th><th>Action</th></tr></thead><tbody>'+list.map(function(s,i){
+      var r=run[s.id]||{}, st=r.step||(s.status==='IN_PROGRESS'?'RUNNING':'READY'), stuck=D.pdi.filter(function(p){return p.po===s.po&&p.stuck;})[0]&&!X.state.get('replayed');
+      var prevOk=list.slice(0,i).every(function(x){ return (run[x.id]||{}).step==='CONFIRMED'; });
+      var act=st==='RUNNING'?'<button class="btn btn-primary btn-sm" data-act="pdo" data-id="'+s.id+'"><i class="fa-solid fa-download"></i> Receive PDO</button>':st==='READY'?'<button class="btn btn-primary btn-sm" data-act="charge" data-id="'+s.id+'"'+(prevOk?'':' disabled title="charge in sequence — previous batch not confirmed"')+'><i class="fa-solid fa-play"></i> Charge</button>':st==='CHARGED'?(stuck?'<span class="badge b-amber">PDI in queue</span>':'<button class="btn btn-outline btn-sm" data-act="pdo" data-id="'+s.id+'"><i class="fa-solid fa-download"></i> Receive PDO</button>'):st==='PDO'?'<button class="btn btn-success btn-sm" data-act="confirm" data-id="'+s.id+'"><i class="fa-solid fa-check"></i> Confirm production</button>':badge('CONFIRMED');
+      return '<tr'+(s.hero?' class="hero"':'')+'><td class="mono hint">'+(i+1)+'</td><td class="mono strong">'+esc(s.unitId)+(s.rush?' <span class="badge b-red">RUSH</span>':'')+'</td><td class="mono">'+esc(s.po)+'</td><td class="mono">'+esc(s.soId)+'<div class="hint">'+esc(s.customerName)+'</div></td><td><span class="chip">'+esc(s.product)+'</span> '+s.thk+'×'+s.width+(s.ral?' RAL '+s.ral:'')+'</td><td class="mono">'+X.fmtDT(s.plannedStart)+'</td><td>'+badge(st==='CHARGED'&&stuck?'IN_QUEUE':st,st==='CHARGED'?(stuck?'PDI IN QUEUE':'PDI ACKED · running'):st)+'</td><td>'+act+'</td></tr>'; }).join('')+'</tbody>';
+  }
+  document.getElementById('run').addEventListener('click',function(e){
+    var b=e.target.closest('[data-act]'); if(!b) return; var s=X.by.schedules[b.dataset.id], it=X.item(s.itemId), pdi=D.pdi.filter(function(p){return p.po===s.po;})[0], stuck=pdi&&pdi.stuck&&!X.state.get('replayed');
+    if(b.dataset.act==='charge'){
+      run[s.id]={step:'CHARGED',at:new Date().toISOString()}; X.state.set('run',run);
+      var msg={messageType:'PDI',interface:'IF-L2-PDI',contract:'CT-PDI v1.2',line:line,po:s.po,unitId:s.unitId,salesOrder:s.soId+'/'+it.item,targets:pdi?pdi.targets:{note:'targets from TDC '+it.tdcId},sentAt:X.fmt(new Date()),via:'middleware → L2 gateway',queue:'L2.'+line+'.PDI.OUT'};
+      document.getElementById('runpanel').innerHTML='<div class="sub-title" style="margin-top:10px"><i class="fa-solid fa-paper-plane"></i> PDI generated for '+esc(s.unitId)+' — '+(stuck?'<span class="deviation">queued, no L2 consumer (see queue banner)</span>':'<span class="ok-val">ACK from L2 in 2.4 s</span>')+'</div>'+X.json(msg);
+      X.toast(stuck?'PDI generated but waiting in L2.CGL.PDI.OUT — replay it from the Integration Monitor once the subscriber is back':'Coil charged — PDI sent to L2 through the middleware and acknowledged (line-wise PDI)','fa-paper-plane'); runTable(); return;
+    }
+    if(b.dataset.act==='pdo'){
+      run[s.id]={step:'PDO',at:new Date().toISOString()}; X.state.set('run',run);
+      var ref=D.pdo.filter(function(p){return p.line===line;})[0]||{actuals:{}}; var act=JSON.parse(JSON.stringify(ref.actuals));
+      document.getElementById('runpanel').innerHTML='<div class="sub-title" style="margin-top:10px"><i class="fa-solid fa-download"></i> PDO received from L2 for '+esc(s.unitId)+' — actuals compared with the PDI targets automatically</div>'+X.json({messageType:'PDO',interface:'IF-L2-PDO',contract:'CT-PDO v1.3',line:line,po:s.po,unitIn:s.unitId,actuals:act,outWeightMT:Math.round(s.qtyMT*0.975*10)/10,receivedAt:X.fmt(new Date()),autoComparison:'no spec deviation · throughput within band'});
+      X.toast('PDO accepted — actuals stored against the PDI, output batch created, ready for confirmation','fa-download'); runTable(); return;
+    }
+    if(b.dataset.act==='confirm'){
+      var inW=s.qtyMT, outW=Math.round(inW*0.975*10)/10, scrap=Math.round((inW-outW)*10)/10;
+      document.getElementById('runpanel').innerHTML='<div class="sub-title" style="margin-top:10px"><i class="fa-solid fa-scale-balanced"></i> Production confirmation — mass balance for '+esc(s.unitId)+'</div><div class="form"><div><label>Input weight (t)</label><input id="f-in" value="'+inW+'"></div><div><label>Output weight (t)</label><input id="f-out" value="'+outW+'"></div><div><label>Scrap — crop + trim (t)</label><input id="f-scrap" value="'+scrap+'"></div><div><label>&nbsp;</label><label style="text-transform:none;font-weight:400"><input type="checkbox" id="f-imb" style="width:auto"> introduce an unexplained 0.6 t loss</label></div></div>'+
+        '<div style="margin-top:10px;display:flex;gap:8px;align-items:center"><button class="btn btn-success btn-sm" id="f-post"><i class="fa-solid fa-check"></i> Post confirmation to SAP (IF-SAP-10)</button><span id="f-res" class="small"></span></div>';
+      document.getElementById('f-post').addEventListener('click',function(){
+        var i=+document.getElementById('f-in').value, o=+document.getElementById('f-out').value, sc=+document.getElementById('f-scrap').value; if(document.getElementById('f-imb').checked) o=Math.round((o-0.6)*10)/10;
+        var un=Math.round((i-o-sc)*100)/100, bad=Math.abs(un)>0.1;
+        document.getElementById('f-res').innerHTML=bad?'<span class="deviation"><i class="fa-solid fa-triangle-exclamation"></i> Mass balance IMBALANCE: '+un+' t unaccounted (> 0.1 t tolerance) — confirmation held for shift in-charge reconciliation (RB-008); not posted</span>':'<span class="ok-val"><i class="fa-solid fa-circle-check"></i> Balanced (in '+i+' = out '+o+' + scrap '+sc+', unaccounted '+un+' t) — posted, SAP COR-'+(4800000+Math.floor(Math.random()*90000))+', batch attributes sent (IF-SAP-06/07)</span>';
+        if(!bad){ run[s.id]={step:'CONFIRMED',at:new Date().toISOString()}; X.state.set('run',run); runTable(); X.toast('Production confirmed — output batch produced, WIP advanced to the next operation, genealogy link written'); }
+      });
+    }
+  });
+  // ---- PDO vs PDI comparison ----
+  function cmpSel(){
+    var done=stagesOf(line).filter(function(s){return s.pdoId;}).sort(function(a,b){return (b.hero?1:0)-(a.hero?1:0)||(a.end<b.end?1:-1);});
+    var sel=document.getElementById('stgsel'); sel.innerHTML=done.map(function(s){return '<option value="'+s.id+'">'+esc(s.inUnit)+' → '+esc(s.outUnits[0])+' · '+X.fmtDT(s.end)+(s.hero?' ★':'')+'</option>';}).join('');
+    sel.onchange=cmp; cmp();
+  }
+  var UNITS={acidConcPct:'%',stripSpeedMpm:'m/min',bathTempC:'°C',oilingGsm:'g/m²',exitThkMm:'mm',reductionPct:'%',rollForceKN:'kN',coatingTargetGsm:'g/m²',coatingTotalGsm:'g/m²',coatingTopGsm:'g/m²',coatingBottomGsm:'g/m²',lineSpeedMpm:'m/min',furnaceSoakC:'°C',zincBathAlPct:'%',skinPassElongPct:'%',dftTopUm:'µm',dftBackUm:'µm',pmtC:'°C',gloss60:'GU',dE:'ΔE',primerUm:'µm'};
+  function cmp(){
+    var s=X.by.stages[document.getElementById('stgsel').value]; if(!s){ document.getElementById('cmp').innerHTML='<div class="hint">No completed PDO on this line yet.</div>'; return; }
+    var pdi=X.by.pdi[s.pdiId], pdo=X.by.pdo[s.pdoId], T=pdi.targets, A=pdo.actuals, devs={}; pdo.deviations.forEach(function(d){devs[d.field]=d;});
+    var pairs={coatingTotalGsm:'coatingTargetGsm',dftTopUm:'dftTopUm',dftBackUm:'dftBackUm',exitThkMm:'exitThkMm',acidConcPct:'acidConcPct',stripSpeedMpm:'stripSpeedMpm',lineSpeedMpm:'lineSpeedMpm',furnaceSoakC:'furnaceSoakC',zincBathAlPct:'zincBathAlPct',bathTempC:'bathTempC',pmtC:'pmtC',gloss60:'glossRange',skinPassElongPct:'skinPassElongPct',reductionPct:'reductionPct',oilingGsm:'oilingGsm'};
+    var rows=Object.keys(A).map(function(k){ var tk=pairs[k], tv=tk?T[tk]:null, band=k==='coatingTotalGsm'?T.coatingBandGsm:k==='dftTopUm'?[T.dftTopUm-T.dftTopTolUm,T.dftTopUm+T.dftTopTolUm]:k==='dftBackUm'?[T.dftBackUm-T.dftBackTolUm,T.dftBackUm+T.dftBackTolUm]:Array.isArray(tv)?tv:null;
+      var d=devs[k]; return '<tr><td>'+esc(k)+' <span class="hint">'+(UNITS[k]||'')+'</span></td><td class="mono">'+(tv==null?'—':Array.isArray(tv)?tv.join(' – '):tv)+(band&&!Array.isArray(tv)?' <span class="hint">band '+band[0]+'–'+band[1]+'</span>':'')+'</td><td class="mono strong'+(d?(d.severity==='DEVIATION'?' deviation':''):'')+'">'+(A[k]==null?'—':A[k])+'</td><td class="'+(d?(d.severity==='DEVIATION'?'dev':'warn'):'')+'">'+(d?'<i class="fa-solid fa-triangle-exclamation"></i> '+esc(d.note):'<span class="ok-val">within target</span>')+'</td></tr>'; }).join('');
+    document.getElementById('cmpmeta').innerHTML='PDI '+esc(pdi.id)+' sent '+X.fmtDT(pdi.sentAt)+' → PDO '+esc(pdo.id)+' received '+X.fmtDT(pdo.receivedAt)+' · '+badge(pdo.status);
+    document.getElementById('cmp').innerHTML='<table class="tbl cmp"><thead><tr><th>Parameter</th><th>PDI target</th><th>PDO actual</th><th>Auto-comparison</th></tr></thead><tbody>'+rows+'</tbody></table>'+
+      (pdo.deviations.some(function(d){return d.severity==='DEVIATION';})?'<div class="note"><i class="fa-solid fa-flag" style="color:#c62828"></i><span>Deviation flagged → output batch '+esc(s.outUnits[0])+' put on <b>parameter-based hold</b>, defect auto-recorded, quality decision required on the <a href="quality.html#'+esc(s.outUnits[0])+'">Quality page</a>.</span></div>':'');
+  }
+  // ---- confirmations ----
+  function pcs(){
+    var list=D.confirmations.filter(function(c){return c.line===line;}).sort(function(a,b){return a.end<b.end?1:-1;}).slice(0,12);
+    document.getElementById('pcmeta').textContent=list.length+' recent · posted to SAP via IF-SAP-10';
+    document.getElementById('pcs').innerHTML='<thead><tr><th>PC</th><th>Coil in → out</th><th>Shift · operator</th><th>In t</th><th>Out t</th><th>Scrap t</th><th>Unacc.</th><th>Yield</th><th>Mass balance</th><th>SAP</th></tr></thead><tbody>'+list.map(function(c){return '<tr'+(c.hero?' class="hero"':'')+(c.massBalance==='IMBALANCE'?' style="background:#ffebee"':'')+'><td class="mono">'+esc(c.id)+'</td><td class="mono">'+esc(c.unitIn)+' → '+esc(c.unitsOut.join(', '))+'</td><td>'+c.shift+' · '+esc(c.operator)+'</td><td class="mono right-al">'+X.n(c.inWeightMT,2)+'</td><td class="mono right-al">'+X.n(c.outWeightMT,2)+'</td><td class="mono right-al">'+X.n(c.scrapMT,2)+'</td><td class="mono right-al'+(c.unaccountedMT>0.1?' deviation':'')+'">'+X.n(c.unaccountedMT,2)+'</td><td class="mono right-al">'+c.yieldPct+'%</td><td>'+badge(c.massBalance)+'</td><td class="mono">'+esc(c.sapDoc)+'</td></tr>';}).join('')+'</tbody>';
+  }
+  // ---- performance ----
+  function perf(){
+    var k=D.kpis.filter(function(x){return x.line===line&&!x.partial;}); var today=D.kpis.filter(function(x){return x.line===line&&x.partial;})[0];
+    var bars=k.slice(-7).map(function(x){return '<div class="load-row"><span class="ln" style="width:56px">'+esc(x.date.slice(5))+'</span><span class="lt"><span class="lf" style="width:'+Math.round(x.oee*100)+'%;background:'+(x.oee>=0.8?'#2e9b45':x.oee>=0.65?'#f0a020':'#d84a4a')+'"></span></span><span class="lv" style="width:150px">'+Math.round(x.oee*100)+'% · '+X.n(x.productionMT)+' / '+X.n(x.targetMT)+' t</span></div>';}).join('');
+    document.getElementById('perf').innerHTML=(today?'<div class="mb" style="margin-bottom:10px"><div class="box"><div class="l">Availability</div><div class="v">'+Math.round(today.availability*100)+'%</div></div><span class="eq">×</span><div class="box"><div class="l">Performance</div><div class="v">'+Math.round(today.performance*100)+'%</div></div><span class="eq">×</span><div class="box"><div class="l">Quality</div><div class="v">'+Math.round(today.quality*100)+'%</div></div><span class="eq">=</span><div class="box" style="border-color:var(--color-primary)"><div class="l">OEE today</div><div class="v">'+Math.round(today.oee*100)+'%</div></div></div>':'')+'<div class="sub-title">OEE — last 7 days (bar = OEE, text = production vs target)</div>'+bars+'<div class="note"><i class="fa-solid fa-circle-info"></i><span>Availability = planned time − stoppages (from delay capture); the equipment availability rate feeds the OEE component on the Plant Dashboard.</span></div>';
+  }
+  // ---- delays ----
+  function delays(){
+    var list=D.delays.filter(function(d){return d.line===line;}).concat(delaysLive.filter(function(d){return d.line===line;})).sort(function(a,b){return a.start<b.start?1:-1;});
+    document.getElementById('dlmeta').textContent=list.length+' in 15 days · '+list.filter(function(d){return d.status==='ACTIVE';}).length+' active';
+    var eq=D.equipment.filter(function(e){return e.lineId===line;});
+    document.getElementById('dlform').innerHTML='<div><label>Delay reason</label><select id="d-code">'+D.delayCodes.map(function(c){return '<option value="'+c.code+'">'+esc(c.code)+' · '+esc(c.name)+'</option>';}).join('')+'</select></div><div><label>Equipment / defect code</label><select id="d-eq"><option value="">—</option>'+eq.map(function(e){return '<option value="'+e.id+'">'+esc(e.id)+' · '+esc(e.name)+'</option>';}).join('')+'</select></div><div><label>Remarks</label><input id="d-rem" placeholder="e.g. air knife nozzle choke"></div><div><button class="btn btn-warn btn-sm" id="d-add"><i class="fa-solid fa-stop"></i> Record manual stoppage</button></div>';
+    document.getElementById('d-add').addEventListener('click',function(){ var c=X.by ? D.delayCodes.filter(function(x){return x.code===document.getElementById('d-code').value;})[0]:null; var e=document.getElementById('d-eq').value;
+      delaysLive.push({id:'DLY-LIVE-'+(delaysLive.length+1),line:line,start:new Date().toISOString(),end:null,durationMin:null,delayCode:c.code,delayName:c.name,category:c.category,equipmentId:e||null,equipmentDefect:e?X.equip(e).name:null,capture:'MANUAL',shift:'A',remarks:document.getElementById('d-rem').value||c.name,status:'ACTIVE'}); X.state.set('delays',delaysLive); delays(); X.toast('Stoppage recorded with delay reason '+c.code+(e?' and equipment defect on '+e:'')+' — machine availability time updated, SAP PM notification if breakdown'); });
+    document.getElementById('dl').innerHTML='<thead><tr><th>Start</th><th>Dur</th><th>Reason</th><th>Category</th><th>Equipment / defect</th><th>Capture</th><th>Status</th></tr></thead><tbody>'+list.slice(0,25).map(function(d){return '<tr'+(d.status==='ACTIVE'?' style="background:#ffebee"':'')+'><td class="mono">'+X.fmtDT(d.start)+'</td><td class="mono">'+(d.durationMin!=null?X.dur(d.durationMin):'<b>ongoing</b>')+'</td><td>'+esc(d.delayCode)+' <span class="hint">'+esc(d.delayName)+'</span></td><td>'+badge(d.category==='Unplanned'?'FAILED':d.category==='Planned'?'PLANNED':'OPEN',d.category)+'</td><td class="small">'+(d.equipmentId?'<span class="mono">'+esc(d.equipmentId)+'</span> '+esc(d.equipmentDefect||''):'—')+'</td><td class="small">'+esc(d.capture)+'</td><td>'+badge(d.status)+'</td></tr>';}).join('')+'</tbody>';
+  }
+  renderAll();
+</script>
+</body>
+</html>

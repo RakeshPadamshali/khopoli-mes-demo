@@ -1,0 +1,86 @@
+[
+ {
+  "id": "A-01",
+  "action": "Read application / middleware / L2 logs",
+  "level": "AUTONOMOUS",
+  "scope": "Read-only"
+ },
+ {
+  "id": "A-02",
+  "action": "Correlate messages by batch / PO / SO id",
+  "level": "AUTONOMOUS",
+  "scope": "Read-only"
+ },
+ {
+  "id": "A-03",
+  "action": "Run read-only diagnostic queries",
+  "level": "AUTONOMOUS",
+  "scope": "Read-only DB role"
+ },
+ {
+  "id": "A-04",
+  "action": "Retry a failed SAP posting (≤ 3 attempts)",
+  "level": "AUTONOMOUS",
+  "scope": "Parameterised"
+ },
+ {
+  "id": "A-05",
+  "action": "Restart L2 gateway subscriber / print spooler",
+  "level": "AUTONOMOUS",
+  "scope": "Parameterised, non-production-data"
+ },
+ {
+  "id": "A-06",
+  "action": "Notify user / update ticket / close with confirmation",
+  "level": "AUTONOMOUS",
+  "scope": "ITSM"
+ },
+ {
+  "id": "A-07",
+  "action": "Replay queued or failed interface messages (> 5)",
+  "level": "APPROVAL",
+  "scope": "Shift IT lead"
+ },
+ {
+  "id": "A-08",
+  "action": "Activate a new interface contract version",
+  "level": "APPROVAL",
+  "scope": "Integration CoE / CAB"
+ },
+ {
+  "id": "A-09",
+  "action": "Data correction on batch attributes / weights",
+  "level": "APPROVAL",
+  "scope": "MES functional + PPC"
+ },
+ {
+  "id": "A-10",
+  "action": "Configuration change (masters, rules)",
+  "level": "APPROVAL",
+  "scope": "Change control"
+ },
+ {
+  "id": "A-11",
+  "action": "Restart MES core service",
+  "level": "APPROVAL",
+  "scope": "Plant IT lead"
+ },
+ {
+  "id": "A-12",
+  "action": "Direct write to production database",
+  "level": "PROHIBITED",
+  "scope": "—"
+ },
+ {
+  "id": "A-13",
+  "action": "Delete or back-date production / quality records",
+  "level": "PROHIBITED",
+  "scope": "—"
+ },
+ {
+  "id": "A-14",
+  "action": "Change SAP master data or disable an interface",
+  "level": "PROHIBITED",
+  "scope": "—"
+ }
+]

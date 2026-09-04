@@ -1,0 +1,52 @@
+# Khopoli NextGen MES — product demo (static)
+
+Clickable, self-contained demo for the **JSW Steel Coated Products — Khopoli** RFP (One MES Coated Products template), built to walk the Annexure A scenarios on one common dataset:
+
+| Scenario | Where in the demo |
+|---|---|
+| **S1 Golden Thread: order → dispatch (mandatory)** | Sales Orders & TDC → Routes & Schedules → Material Allocator → Shop-floor Execution (PDI/PDO) → Quality (zinc band, DFT) → Slitting · Packing · Dispatch → Genealogy |
+| S2 light — rush flag, batch swap | Routes & Schedules (APS rush re-sequencing) · Material Allocator (swap, BTA/BTP) |
+| S3 partial — delays, mass balance | Shop-floor Execution (stoppage with delay + equipment defect codes, OEE, imbalance flag) |
+| **S4 Quality, defect propagation, ontology** | Quality & Defects · Genealogy · Digital Thread (propagation, Defect → Equipment → Line → Plant, triples) |
+| **S5 Integration resilience** | Integration Monitor (stuck PDI queue, malformed IDoc, detect → alert → replay, contract versions) |
+| S6 Dashboards | Plant Dashboard (live board, OEE / yield / OTIF / delay categories) |
+| **S7 AI-agent support (mandatory)** | Data feed only — AI Support Data page + `data/json/`; the chatbot is a separate deliverable |
+
+Everything is fictional (customers, orders, coils, people, incidents). Line names, products, rules and the ontology come from the RFP.
+
+## Run
+
+```
+python serve.py            # http://localhost:8080/
+```
+or any static server (`python -m http.server 8080`). Open `index.html` for the tab host; each module also works standalone (`orders.html`, `execution.html`, …). Works offline — fonts and icons are vendored under `assets/vendor/`.
+
+Live-demo actions (charge, receive PDO, confirm, record DFT, allocate, replay, dispatch …) are kept in the browser's localStorage so they stay consistent across pages; **Reset demo** in the header clears them.
+
+## Data
+
+- `data/khp-data.js` — one object `window.KHP` used by the pages.
+- `data/json/<entity>.json` + `data/README.md` — the same data per entity with a data dictionary, for the AI-support chatbot team.
+- `tools/generate_data.py` — deterministic generator (seed 2609). Edit the generator, never the outputs. `python tools/generate_data.py` rewrites both.
+
+Golden-thread anchors: SO **4213090017/10** (PPGI, RAL 9002), HR coil **HRC-VJ-2608-0471** (Vijayanagar heat H26-VJ-7731), defects DEF-2609-0001/0002/0003, incidents INC-26-0412 (resolved by the agent) and INC-26-0413 (awaiting approval).
+
+## Verify
+
+```
+python tools/verify.py     # headless Chrome (Playwright): zero JS errors, no missing assets, screenshot per page
+```
+
+## Layout
+
+```
+index.html                tab host (sidebar, tabs, reset)
+home / orders / planning / allocation / execution / packing / quality / genealogy / integration / support .html
+assets/khp-shell.css      shared shell styles
+assets/khp-core.js        lookups, genealogy traversal, gantt, badges, demo state
+assets/khp-chrome.js      standalone header + sidebar (hidden when embedded)
+assets/khp-embed.js       iframe shim: routes links to host tabs
+assets/vendor/            Roboto, Font Awesome, ECharts (offline)
+data/                     generated dataset (JS + JSON + dictionary)
+tools/                    generator package + verifier
+```

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Khopoli NextGen MES — JSW Steel Coated Products</title>
+<link rel="stylesheet" href="assets/vendor/roboto/roboto.css">
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="assets/khp-shell.css">
+<style>
+  .host-col { flex:1; display:flex; flex-direction:column; min-width:0; }
+  .ws-tabhost { height:35px; background:#e7ebee; border-bottom:1px solid var(--color-border); display:flex; align-items:stretch; flex-shrink:0; }
+  .ws-tabstrip { flex:1; display:flex; align-items:stretch; overflow-x:auto; } .ws-tabstrip::-webkit-scrollbar { height:0; }
+  .ws-tab { display:flex; align-items:center; gap:7px; padding:0 10px 0 12px; font-size:12px; color:var(--color-text-secondary); background:#dfe4e7; border-right:1px solid var(--color-border); cursor:pointer; white-space:nowrap; max-width:240px; user-select:none; }
+  .ws-tab:hover { background:#eaeef0; } .ws-tab.active { background:#fff; color:var(--color-primary-dark); font-weight:600; box-shadow:inset 0 -2px 0 var(--color-primary); }
+  .ws-tab .ws-ic { font-size:11px; opacity:.85; } .ws-tab .ws-close { width:16px; height:16px; border-radius:3px; display:flex; align-items:center; justify-content:center; font-size:10px; color:var(--color-text-hint); }
+  .ws-tab .ws-close:hover { background:rgba(0,0,0,.12); color:var(--color-danger); }
+  .ws-menu-btn { border:none; background:none; cursor:pointer; padding:0 12px; color:var(--color-text-muted); font-size:13px; } .ws-menu-btn:hover { color:var(--color-primary); }
+  .framestack { flex:1; position:relative; background:var(--color-bg); } .bm-frame { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .ws-empty { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--color-text-hint); gap:8px; } .ws-empty i { font-size:34px; opacity:.4; }
+  .ctxmenu { position:fixed; background:#fff; border:1px solid var(--color-border); border-radius:6px; box-shadow:0 6px 20px rgba(0,0,0,.16); padding:4px; z-index:9999; min-width:180px; }
+  .ctxmenu div { padding:7px 12px; font-size:12px; border-radius:4px; cursor:pointer; display:flex; align-items:center; gap:8px; color:var(--color-text-secondary); } .ctxmenu div:hover { background:var(--color-primary-light); color:var(--color-primary-dark); } .ctxmenu div.disabled { opacity:.4; pointer-events:none; }
+  .scenario-bar { display:flex; gap:6px; align-items:center; padding:0 10px; font-size:11px; color:var(--color-text-muted); border-left:1px solid var(--color-border); white-space:nowrap; }
+  .scenario-bar b { color:var(--color-text-secondary); }
+</style>
+</head>
+<body>
+<header class="bm-header">
+  <div class="logo"><i class="fa-solid fa-layer-group"></i> JSW Steel Coated Products <span class="sub">Khopoli NextGen MES</span></div>
+  <div class="module-name"><i class="fa-solid fa-diagram-project" style="margin-right:4px;color:var(--accent);"></i>One MES — Coated Products template · product demo</div>
+  <div class="spacer"></div>
+  <div class="plant-switch"><button class="active"><i class="fa-solid fa-location-dot" style="margin-right:4px"></i>Khopoli</button><button>Vasind</button><button>Tarapur</button><button>Kalmeshwar</button></div>
+  <div class="right"><span class="asof"><i class="fa-regular fa-clock"></i> as of Tue 15 Sep 2026 10:30 · Shift A</span><button class="btn-reset" id="reset" title="Clear every live-demo action and reload"><i class="fa-solid fa-rotate-left"></i> Reset demo</button><div class="avatar">RP</div></div>
+</header>
+<div class="bm-layout">
+  <aside class="bm-sidebar" id="sidebar">
+    <div class="nav-label">Planning</div>
+    <a data-page="home"><i class="fa-solid fa-gauge-high"></i>Plant Dashboard</a>
+    <a data-page="orders"><i class="fa-solid fa-file-invoice"></i>Sales Orders &amp; TDC</a>
+    <a data-page="planning"><i class="fa-solid fa-route"></i>Routes &amp; Schedules</a>
+    <a data-page="allocation"><i class="fa-solid fa-boxes-packing"></i>Material Allocator</a>
+    <div class="nav-label">Execution</div>
+    <a data-page="execution"><i class="fa-solid fa-industry"></i>Shop-floor Execution</a>
+    <a data-page="packing"><i class="fa-solid fa-truck-ramp-box"></i>Slitting · Packing · Dispatch</a>
+    <div class="nav-label">Quality &amp; Trace</div>
+    <a data-page="quality"><i class="fa-solid fa-microscope"></i>Quality &amp; Defects</a>
+    <a data-page="genealogy"><i class="fa-solid fa-diagram-project"></i>Genealogy · Digital Thread</a>
+    <div class="nav-label">Integration</div>
+    <a data-page="integration"><i class="fa-solid fa-tower-broadcast"></i>Integration Monitor</a>
+    <div class="nav-label">Support</div>
+    <a data-page="support"><i class="fa-solid fa-robot"></i>AI Support Data (S7)</a>
+    <div class="nav-label">Masters</div>
+    <a class="decor"><i class="fa-solid fa-gears"></i>Lines &amp; Equipment</a>
+    <a class="decor"><i class="fa-solid fa-book"></i>Specs &amp; TDC</a>
+    <a class="decor"><i class="fa-solid fa-user-shield"></i>Users &amp; Roles</a>
+  </aside>
+  <div class="host-col">
+    <div class="ws-tabhost">
+      <div class="ws-tabstrip" id="tabstrip"></div>
+      <div class="scenario-bar"><i class="fa-solid fa-flag-checkered" style="color:var(--accent)"></i> Golden thread: <b>SO 4213090017/10</b> · HR coil <b>HRC-VJ-2608-0471</b></div>
+      <button class="ws-menu-btn" id="ws-menu" title="Tab actions"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+    </div>
+    <div class="framestack" id="stack"><div class="ws-empty" id="empty"><i class="fa-solid fa-window-restore"></i><div>Pick a module from the sidebar to open a tab</div></div></div>
+  </div>
+</div>
+<script>
+  var PAGES = {
+    home:        { label: 'Plant Dashboard',            icon: 'fa-gauge-high',      href: 'home.html' },
+    orders:      { label: 'Sales Orders & TDC',         icon: 'fa-file-invoice',    href: 'orders.html' },
+    planning:    { label: 'Routes & Schedules',         icon: 'fa-route',           href: 'planning.html' },
+    allocation:  { label: 'Material Allocator',         icon: 'fa-boxes-packing',   href: 'allocation.html' },
+    execution:   { label: 'Shop-floor Execution',       icon: 'fa-industry',        href: 'execution.html' },
+    packing:     { label: 'Slitting · Packing · Dispatch', icon: 'fa-truck-ramp-box', href: 'packing.html' },
+    quality:     { label: 'Quality & Defects',          icon: 'fa-microscope',      href: 'quality.html' },
+    genealogy:   { label: 'Genealogy · Digital Thread', icon: 'fa-diagram-project', href: 'genealogy.html' },
+    integration: { label: 'Integration Monitor',        icon: 'fa-tower-broadcast', href: 'integration.html' },
+    support:     { label: 'AI Support Data (S7)',       icon: 'fa-robot',           href: 'support.html' }
+  };
+  var stack = document.getElementById('stack'), strip = document.getElementById('tabstrip'), empty = document.getElementById('empty');
+  var frames = {}, order = [], active = null;
+  function ensureFrame(id, hash) {
+    if (frames[id]) return frames[id];
+    var f = document.createElement('iframe'); f.className = 'bm-frame'; f.src = PAGES[id].href + (hash ? '#' + hash : ''); f.title = PAGES[id].label; f.style.display = 'none';
+    stack.appendChild(f); frames[id] = f; return f;
+  }
+  function open(id, hash) {
+    if (!PAGES[id]) return; if (order.indexOf(id) < 0) order.push(id);
+    var existed = !!frames[id]; ensureFrame(id, hash);
+    if (existed && hash) { try { frames[id].contentWindow.location.hash = hash; frames[id].contentWindow.dispatchEvent(new CustomEvent('khp:navigate', { detail: hash })); } catch (e) {} }
+    activate(id);
+  }
+  function activate(id) {
+    active = id; ensureFrame(id);
+    Object.keys(frames).forEach(function (k) { frames[k].style.display = (k === active ? 'block' : 'none'); });
+    try { frames[active].contentWindow.dispatchEvent(new Event('khp:activated')); } catch (e) {}
+    empty.style.display = order.length ? 'none' : 'flex'; document.title = PAGES[id].label + ' · Khopoli NextGen MES'; render();
+  }
+  function closeTab(id) {
+    var i = order.indexOf(id); if (i < 0) return; if (frames[id]) { frames[id].remove(); delete frames[id]; } order.splice(i, 1);
+    if (active === id) { active = order.length ? order[Math.max(0, i - 1)] : null; if (active) activate(active); else { empty.style.display = 'flex'; render(); } } else render();
+  }
+  function closeOthers(id) { order.slice().forEach(function (x) { if (x !== id) closeTab(x); }); }
+  function closeAll() { order.slice().forEach(closeTab); }
+  function render() {
+    strip.innerHTML = order.map(function (id) { var p = PAGES[id]; return '<div class="ws-tab' + (id === active ? ' active' : '') + '" data-id="' + id + '"><i class="fa-solid ' + p.icon + ' ws-ic"></i>' + p.label + '<span class="ws-close" data-close="' + id + '" title="Close"><i class="fa-solid fa-xmark"></i></span></div>'; }).join('');
+    document.querySelectorAll('#sidebar a[data-page]').forEach(function (a) { a.classList.toggle('active', a.getAttribute('data-page') === active); });
+  }
+  document.getElementById('sidebar').addEventListener('click', function (e) { var a = e.target.closest('a[data-page]'); if (a) { e.preventDefault(); open(a.getAttribute('data-page')); } });
+  strip.addEventListener('click', function (e) { var cl = e.target.closest('[data-close]'); if (cl) { closeTab(cl.getAttribute('data-close')); return; } var t = e.target.closest('.ws-tab'); if (t) activate(t.getAttribute('data-id')); });
+  strip.addEventListener('contextmenu', function (e) { var t = e.target.closest('.ws-tab'); if (!t) return; e.preventDefault(); menu(e.clientX, e.clientY, t.getAttribute('data-id')); });
+  document.getElementById('ws-menu').addEventListener('click', function () { var r = this.getBoundingClientRect(); menu(r.right - 190, r.bottom + 2, active); });
+  function closeMenu() { var m = document.querySelector('.ctxmenu'); if (m) m.remove(); }
+  function menu(x, y, id) {
+    closeMenu(); var others = order.filter(function (z) { return z !== id; }).length; var m = document.createElement('div'); m.className = 'ctxmenu';
+    var rows = [['Close tab', 'fa-xmark', id ? function () { closeTab(id); } : null], ['Close others', 'fa-diagram-next', (id && others) ? function () { closeOthers(id); } : null], ['Close all', 'fa-trash-can', order.length ? closeAll : null]];
+    m.innerHTML = rows.map(function (r, i) { return '<div class="' + (r[2] ? '' : 'disabled') + '" data-mi="' + i + '"><i class="fa-solid ' + r[1] + '"></i>' + r[0] + '</div>'; }).join('');
+    m.style.left = Math.max(6, Math.min(x, window.innerWidth - 196)) + 'px'; m.style.top = y + 'px'; document.body.appendChild(m);
+    m.addEventListener('click', function (e) { var d = e.target.closest('[data-mi]'); if (!d) return; var fn = rows[+d.getAttribute('data-mi')][2]; closeMenu(); if (fn) fn(); });
+    setTimeout(function () { document.addEventListener('mousedown', function od(e) { if (!m.contains(e.target)) { closeMenu(); document.removeEventListener('mousedown', od, true); } }, true); }, 0);
+  }
+  document.getElementById('reset').addEventListener('click', function () { try { localStorage.removeItem('khp-demo-state'); } catch (e) {} Object.keys(frames).forEach(function (k) { try { frames[k].contentWindow.location.reload(); } catch (e) {} }); });
+  window.KHPHost = { open: open };
+  open('home');
+</script>
+</body>
+</html>

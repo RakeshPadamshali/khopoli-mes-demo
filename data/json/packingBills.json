@@ -1,0 +1,110 @@
+[
+ {
+  "vendorId": "V03",
+  "vendorName": "Metro Wrap Services",
+  "week": "2026-W35",
+  "packs": 1,
+  "weightMT": 19.33,
+  "amountINR": 8505,
+  "export": 0,
+  "domestic": 1,
+  "id": "PBILL-V03-2026-W35",
+  "status": "POSTED"
+ },
+ {
+  "vendorId": "V01",
+  "vendorName": "Shree Packers",
+  "week": "2026-W36",
+  "packs": 1,
+  "weightMT": 18.88,
+  "amountINR": 8496,
+  "export": 0,
+  "domestic": 1,
+  "id": "PBILL-V01-2026-W36",
+  "status": "POSTED"
+ },
+ {
+  "vendorId": "V02",
+  "vendorName": "Coastal Packaging Co.",
+  "week": "2026-W36",
+  "packs": 3,
+  "weightMT": 57.37,
+  "amountINR": 36430,
+  "export": 1,
+  "domestic": 2,
+  "id": "PBILL-V02-2026-W36",
+  "status": "POSTED"
+ },
+ {
+  "vendorId": "V03",
+  "vendorName": "Metro Wrap Services",
+  "week": "2026-W36",
+  "packs": 4,
+  "weightMT": 72.38,
+  "amountINR": 59097,
+  "export": 3,
+  "domestic": 1,
+  "id": "PBILL-V03-2026-W36",
+  "status": "POSTED"
+ },
+ {
+  "vendorId": "V01",
+  "vendorName": "Shree Packers",
+  "week": "2026-W37",
+  "packs": 3,
+  "weightMT": 56.99,
+  "amountINR": 25646,
+  "export": 0,
+  "domestic": 3,
+  "id": "PBILL-V01-2026-W37",
+  "status": "POSTED"
+ },
+ {
+  "vendorId": "V02",
+  "vendorName": "Coastal Packaging Co.",
+  "week": "2026-W37",
+  "packs": 5,
+  "weightMT": 93.59,
+  "amountINR": 72171,
+  "export": 3,
+  "domestic": 2,
+  "id": "PBILL-V02-2026-W37",
+  "status": "POSTED"
+ },
+ {
+  "vendorId": "V03",
+  "vendorName": "Metro Wrap Services",
+  "week": "2026-W37",
+  "packs": 3,
+  "weightMT": 52.24,
+  "amountINR": 31908,
+  "export": 1,
+  "domestic": 2,
+  "id": "PBILL-V03-2026-W37",
+  "status": "POSTED"
+ },
+ {
+  "vendorId": "V01",
+  "vendorName": "Shree Packers",
+  "week": "2026-W38",
+  "packs": 2,
+  "weightMT": 39.19,
+  "amountINR": 17636,
+  "export": 0,
+  "domestic": 2,
+  "id": "PBILL-V01-2026-W38",
+  "status": "OPEN"
+ },
+ {
+  "vendorId": "V02",
+  "vendorName": "Coastal Packaging Co.",
+  "week": "2026-W38",
+  "packs": 1,
+  "weightMT": 18.73,
+  "amountINR": 8803,
+  "export": 0,
+  "domestic": 1,
+  "id": "PBILL-V02-2026-W38",
+  "status": "OPEN"
+ }
+]

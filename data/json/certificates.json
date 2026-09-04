@@ -1,0 +1,2201 @@
+[
+ {
+  "id": "TC-GIC-KHP-2609-0001",
+  "unitId": "GIC-KHP-2609-0001",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7805",
+  "hrCoilId": "HRC-VJ-2609-0001",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 136.8,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 123.1,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 177,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 450,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 29,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-08-29T12:58:06",
+  "hero": false
+ },
+ {
+  "id": "TC-PPG-KHP-2609-0001",
+  "unitId": "PPG-KHP-2609-0001",
+  "product": "PPGI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7805",
+  "hrCoilId": "HRC-VJ-2609-0001",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 125.4,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 112.9,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 239,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 480,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 27,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT top (µm)",
+    "value": 18.9,
+    "spec": "20 ±3",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT back (µm)",
+    "value": 7.3,
+    "spec": "7 ±2",
+    "result": "PASS"
+   },
+   {
+    "test": "T-bend adhesion",
+    "value": "2T",
+    "spec": "≤ 3T",
+    "result": "PASS"
+   },
+   {
+    "test": "Gloss 60°",
+    "value": 35,
+    "spec": "30–40",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": true,
+  "issuedAt": "2026-08-30T12:46:19",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0002",
+  "unitId": "GIC-KHP-2609-0002",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7623",
+  "hrCoilId": "HRC-VJ-2609-0002",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 135.7,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 122.1,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 260,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 316,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 27,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-08-29T12:49:20",
+  "hero": false
+ },
+ {
+  "id": "TC-PPG-KHP-2609-0002",
+  "unitId": "PPG-KHP-2609-0002",
+  "product": "PPGI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7623",
+  "hrCoilId": "HRC-VJ-2609-0002",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 127.4,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 114.7,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 147,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 396,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 25,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT top (µm)",
+    "value": 18.8,
+    "spec": "20 ±3",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT back (µm)",
+    "value": 6.3,
+    "spec": "7 ±2",
+    "result": "PASS"
+   },
+   {
+    "test": "T-bend adhesion",
+    "value": "1T",
+    "spec": "≤ 3T",
+    "result": "PASS"
+   },
+   {
+    "test": "Gloss 60°",
+    "value": 37,
+    "spec": "30–40",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": true,
+  "issuedAt": "2026-08-29T22:32:22",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0003",
+  "unitId": "GIC-KHP-2609-0003",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7509",
+  "hrCoilId": "HRC-VJ-2609-0003",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 130.2,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 117.2,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 211,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 448,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 26,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-08-31T15:31:52",
+  "hero": false
+ },
+ {
+  "id": "TC-GLC-KHP-2609-0001",
+  "unitId": "GLC-KHP-2609-0001",
+  "product": "GL",
+  "gradeId": "SGLCC",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-DL-7778",
+  "hrCoilId": "HRC-DL-2609-0004",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 157.1,
+    "spec": "150–172",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 141.4,
+    "spec": "≥ 128",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 191,
+    "spec": "—–—",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 351,
+    "spec": "270–—",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 21,
+    "spec": "≥ 20",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-08-31T00:20:44",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0004",
+  "unitId": "GIC-KHP-2609-0004",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7291",
+  "hrCoilId": "HRC-VJ-2609-0005",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 129.9,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 116.9,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 171,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 279,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 29,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-08-31T11:30:58",
+  "hero": false
+ },
+ {
+  "id": "TC-PPG-KHP-2609-0003",
+  "unitId": "PPG-KHP-2609-0003",
+  "product": "PPGI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7291",
+  "hrCoilId": "HRC-VJ-2609-0005",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 127.2,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 114.5,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 229,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 392,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 26,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT top (µm)",
+    "value": 21.2,
+    "spec": "20 ±3",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT back (µm)",
+    "value": 7.7,
+    "spec": "7 ±2",
+    "result": "PASS"
+   },
+   {
+    "test": "T-bend adhesion",
+    "value": "1T",
+    "spec": "≤ 3T",
+    "result": "PASS"
+   },
+   {
+    "test": "Gloss 60°",
+    "value": 39,
+    "spec": "30–40",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": true,
+  "issuedAt": "2026-09-01T02:57:51",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0005",
+  "unitId": "GIC-KHP-2609-0005",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7386",
+  "hrCoilId": "HRC-VJ-2609-0006",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 129.3,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 116.4,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 216,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 387,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 28,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-02T16:52:40",
+  "hero": false
+ },
+ {
+  "id": "TC-PPG-KHP-2609-0004",
+  "unitId": "PPG-KHP-2609-0004",
+  "product": "PPGI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7386",
+  "hrCoilId": "HRC-VJ-2609-0006",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 125.5,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 113.0,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 160,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 276,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 30,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT top (µm)",
+    "value": 25.9,
+    "spec": "25 ±3",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT back (µm)",
+    "value": 7.1,
+    "spec": "7 ±2",
+    "result": "PASS"
+   },
+   {
+    "test": "T-bend adhesion",
+    "value": "1T",
+    "spec": "≤ 3T",
+    "result": "PASS"
+   },
+   {
+    "test": "Gloss 60°",
+    "value": 28,
+    "spec": "25–35",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": true,
+  "issuedAt": "2026-09-03T19:38:45",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0006",
+  "unitId": "GIC-KHP-2609-0006",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7224",
+  "hrCoilId": "HRC-VJ-2609-0007",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 130.5,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 117.5,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 193,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 375,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 30,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-03T16:57:26",
+  "hero": false
+ },
+ {
+  "id": "TC-PPG-KHP-2609-0005",
+  "unitId": "PPG-KHP-2609-0005",
+  "product": "PPGI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7224",
+  "hrCoilId": "HRC-VJ-2609-0007",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 132.4,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 119.2,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 210,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 391,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 26,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT top (µm)",
+    "value": 13.9,
+    "spec": "15 ±3",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT back (µm)",
+    "value": 6.7,
+    "spec": "7 ±2",
+    "result": "PASS"
+   },
+   {
+    "test": "T-bend adhesion",
+    "value": "1T",
+    "spec": "≤ 3T",
+    "result": "PASS"
+   },
+   {
+    "test": "Gloss 60°",
+    "value": 31,
+    "spec": "30–40",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": true,
+  "issuedAt": "2026-09-04T07:53:10",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0007",
+  "unitId": "GIC-KHP-2609-0007",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7127",
+  "hrCoilId": "HRC-VJ-2609-0008",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 125.7,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 113.1,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 239,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 442,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 23,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-04T01:38:03",
+  "hero": false
+ },
+ {
+  "id": "TC-PPG-KHP-2609-0006",
+  "unitId": "PPG-KHP-2609-0006",
+  "product": "PPGI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7127",
+  "hrCoilId": "HRC-VJ-2609-0008",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 122.7,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 110.4,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 232,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 309,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 27,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT top (µm)",
+    "value": 21.1,
+    "spec": "20 ±3",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT back (µm)",
+    "value": 7.2,
+    "spec": "7 ±2",
+    "result": "PASS"
+   },
+   {
+    "test": "T-bend adhesion",
+    "value": "1T",
+    "spec": "≤ 3T",
+    "result": "PASS"
+   },
+   {
+    "test": "Gloss 60°",
+    "value": 30,
+    "spec": "30–40",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": true,
+  "issuedAt": "2026-09-04T12:59:14",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0008",
+  "unitId": "GIC-KHP-2609-0008",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-DL-7563",
+  "hrCoilId": "HRC-DL-2609-0009",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 127.2,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 114.5,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 142,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 434,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 28,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-05T12:55:14",
+  "hero": false
+ },
+ {
+  "id": "TC-PPG-KHP-2609-0007",
+  "unitId": "PPG-KHP-2609-0007",
+  "product": "PPGI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-DL-7563",
+  "hrCoilId": "HRC-DL-2609-0009",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 126.9,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 114.2,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 226,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 386,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 23,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT top (µm)",
+    "value": 26.2,
+    "spec": "25 ±3",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT back (µm)",
+    "value": 6.3,
+    "spec": "7 ±2",
+    "result": "PASS"
+   },
+   {
+    "test": "T-bend adhesion",
+    "value": "2T",
+    "spec": "≤ 3T",
+    "result": "PASS"
+   },
+   {
+    "test": "Gloss 60°",
+    "value": 33,
+    "spec": "25–35",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": true,
+  "issuedAt": "2026-09-06T13:19:28",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0009",
+  "unitId": "GIC-KHP-2609-0009",
+  "product": "GI",
+  "gradeId": "DX53D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7767",
+  "hrCoilId": "HRC-VJ-2609-0010",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 133.6,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 120.2,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 240,
+    "spec": "140–260",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 336,
+    "spec": "270–380",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 36,
+    "spec": "≥ 30",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-05T21:49:18",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0010",
+  "unitId": "GIC-KHP-2609-0010",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-DL-7652",
+  "hrCoilId": "HRC-DL-2609-0011",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 120.8,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 108.7,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 220,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 453,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 25,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-06T19:55:11",
+  "hero": false
+ },
+ {
+  "id": "TC-PPG-KHP-2609-0008",
+  "unitId": "PPG-KHP-2609-0008",
+  "product": "PPGI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-DL-7652",
+  "hrCoilId": "HRC-DL-2609-0011",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 131.6,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 118.4,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 179,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 293,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 23,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT top (µm)",
+    "value": 24.5,
+    "spec": "25 ±3",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT back (µm)",
+    "value": 9.7,
+    "spec": "10 ±2",
+    "result": "PASS"
+   },
+   {
+    "test": "T-bend adhesion",
+    "value": "1T",
+    "spec": "≤ 3T",
+    "result": "PASS"
+   },
+   {
+    "test": "Gloss 60°",
+    "value": 30,
+    "spec": "25–35",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": true,
+  "issuedAt": "2026-09-07T20:33:06",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0011",
+  "unitId": "GIC-KHP-2609-0011",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7394",
+  "hrCoilId": "HRC-VJ-2609-0012",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 122.9,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 110.6,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 284,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 271,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 23,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-06T23:05:34",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0012",
+  "unitId": "GIC-KHP-2609-0012",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7840",
+  "hrCoilId": "HRC-VJ-2609-0013",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 127.7,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 114.9,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 263,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 471,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 23,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-08T04:55:13",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0013",
+  "unitId": "GIC-KHP-2609-0013",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7104",
+  "hrCoilId": "HRC-VJ-2609-0014",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 134.3,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 120.9,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 217,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 314,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 30,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-07T16:08:38",
+  "hero": false
+ },
+ {
+  "id": "TC-PPG-KHP-2609-0009",
+  "unitId": "PPG-KHP-2609-0009",
+  "product": "PPGI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7104",
+  "hrCoilId": "HRC-VJ-2609-0014",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 123.0,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 110.7,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 266,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 485,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 29,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT top (µm)",
+    "value": 19.6,
+    "spec": "20 ±3",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT back (µm)",
+    "value": 7.3,
+    "spec": "7 ±2",
+    "result": "PASS"
+   },
+   {
+    "test": "T-bend adhesion",
+    "value": "2T",
+    "spec": "≤ 3T",
+    "result": "PASS"
+   },
+   {
+    "test": "Gloss 60°",
+    "value": 37,
+    "spec": "30–40",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": true,
+  "issuedAt": "2026-09-08T05:01:41",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0014",
+  "unitId": "GIC-KHP-2609-0014",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7156",
+  "hrCoilId": "HRC-VJ-2609-0015",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 121.3,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 109.2,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 267,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 316,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 24,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-08T19:50:41",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0015",
+  "unitId": "GIC-KHP-2609-0015",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7810",
+  "hrCoilId": "HRC-VJ-2609-0016",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 126.6,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 113.9,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 216,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 357,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 25,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-08T15:03:05",
+  "hero": false
+ },
+ {
+  "id": "TC-PPG-KHP-2609-0010",
+  "unitId": "PPG-KHP-2609-0010",
+  "product": "PPGI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7810",
+  "hrCoilId": "HRC-VJ-2609-0016",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 121.6,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 109.4,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 234,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 309,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 28,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT top (µm)",
+    "value": 26.3,
+    "spec": "25 ±3",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT back (µm)",
+    "value": 10.2,
+    "spec": "10 ±2",
+    "result": "PASS"
+   },
+   {
+    "test": "T-bend adhesion",
+    "value": "1T",
+    "spec": "≤ 3T",
+    "result": "PASS"
+   },
+   {
+    "test": "Gloss 60°",
+    "value": 34,
+    "spec": "25–35",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": true,
+  "issuedAt": "2026-09-09T06:25:08",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0016",
+  "unitId": "GIC-KHP-2609-0016",
+  "product": "GI",
+  "gradeId": "S350GD+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7443",
+  "hrCoilId": "HRC-VJ-2609-0017",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 276.3,
+    "spec": "275–310",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 248.7,
+    "spec": "≥ 234",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 425,
+    "spec": "350–—",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 432,
+    "spec": "420–—",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 23,
+    "spec": "≥ 16",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-09T10:26:17",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0017",
+  "unitId": "GIC-KHP-2609-0017",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7731",
+  "hrCoilId": "HRC-VJ-2608-0471",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 137.6,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 123.8,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 201,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 307,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 28,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-12T15:53:32",
+  "hero": false
+ },
+ {
+  "id": "TC-PPG-KHP-2609-0011",
+  "unitId": "PPG-KHP-2609-0011",
+  "product": "PPGI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7731",
+  "hrCoilId": "HRC-VJ-2608-0471",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 129.9,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 116.9,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 156,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 466,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 26,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT top (µm)",
+    "value": null,
+    "spec": "20 ±3",
+    "result": "PENDING"
+   },
+   {
+    "test": "DFT back (µm)",
+    "value": null,
+    "spec": "7 ±2",
+    "result": "PENDING"
+   },
+   {
+    "test": "T-bend adhesion",
+    "value": "2T",
+    "spec": "≤ 3T",
+    "result": "PASS"
+   },
+   {
+    "test": "Gloss 60°",
+    "value": 34,
+    "spec": "30–40",
+    "result": "PASS"
+   }
+  ],
+  "status": "PENDING",
+  "dftGate": false,
+  "issuedAt": null,
+  "hero": true
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0018",
+  "unitId": "GIC-KHP-2609-0018",
+  "product": "GI",
+  "gradeId": "CQ-IS277",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7319",
+  "hrCoilId": "HRC-VJ-2609-0019",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 88.5,
+    "spec": "80–94",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 79.7,
+    "spec": "≥ 68",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 205,
+    "spec": "—–—",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 269,
+    "spec": "—–—",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 24,
+    "spec": "≥ 20",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-11T01:50:36",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0019",
+  "unitId": "GIC-KHP-2609-0019",
+  "product": "GI",
+  "gradeId": "DX53D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-DL-7575",
+  "hrCoilId": "HRC-DL-2609-0020",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 132.4,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 119.2,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 165,
+    "spec": "140–260",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 273,
+    "spec": "270–380",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 36,
+    "spec": "≥ 30",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-12T03:50:43",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0020",
+  "unitId": "GIC-KHP-2609-0020",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7165",
+  "hrCoilId": "HRC-VJ-2609-0021",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 124.1,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 111.7,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 201,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 412,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 26,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-11T19:10:23",
+  "hero": false
+ },
+ {
+  "id": "TC-PPG-KHP-2609-0012",
+  "unitId": "PPG-KHP-2609-0012",
+  "product": "PPGI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7165",
+  "hrCoilId": "HRC-VJ-2609-0021",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 127.1,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 114.4,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 226,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 442,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 25,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT top (µm)",
+    "value": 19.0,
+    "spec": "20 ±3",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT back (µm)",
+    "value": 6.2,
+    "spec": "7 ±2",
+    "result": "PASS"
+   },
+   {
+    "test": "T-bend adhesion",
+    "value": "2T",
+    "spec": "≤ 3T",
+    "result": "PASS"
+   },
+   {
+    "test": "Gloss 60°",
+    "value": 34,
+    "spec": "30–40",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": true,
+  "issuedAt": "2026-09-12T02:08:02",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0021",
+  "unitId": "GIC-KHP-2609-0021",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7712",
+  "hrCoilId": "HRC-VJ-2609-0022",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 122.4,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 110.2,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 199,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 484,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 23,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-13T09:26:24",
+  "hero": false
+ },
+ {
+  "id": "TC-PPG-KHP-2609-0013",
+  "unitId": "PPG-KHP-2609-0013",
+  "product": "PPGI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7712",
+  "hrCoilId": "HRC-VJ-2609-0022",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 136.9,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 123.2,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 140,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 354,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 25,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT top (µm)",
+    "value": 21.0,
+    "spec": "20 ±3",
+    "result": "PASS"
+   },
+   {
+    "test": "DFT back (µm)",
+    "value": 7.2,
+    "spec": "7 ±2",
+    "result": "PASS"
+   },
+   {
+    "test": "T-bend adhesion",
+    "value": "2T",
+    "spec": "≤ 3T",
+    "result": "PASS"
+   },
+   {
+    "test": "Gloss 60°",
+    "value": 33,
+    "spec": "30–40",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": true,
+  "issuedAt": "2026-09-13T21:11:49",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0022",
+  "unitId": "GIC-KHP-2609-0022",
+  "product": "GI",
+  "gradeId": "DX51D+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-VJ-7337",
+  "hrCoilId": "HRC-VJ-2609-0023",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 128.6,
+    "spec": "120–138",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 115.7,
+    "spec": "≥ 102",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 228,
+    "spec": "140–300",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 284,
+    "spec": "270–500",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 24,
+    "spec": "≥ 22",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-13T18:23:09",
+  "hero": false
+ },
+ {
+  "id": "TC-GIC-KHP-2609-0024",
+  "unitId": "GIC-KHP-2609-0024",
+  "product": "GI",
+  "gradeId": "S350GD+Z",
+  "standard": "EN 10204 3.1",
+  "heatId": "H26-DL-7264",
+  "hrCoilId": "HRC-DL-2609-0027",
+  "tests": [
+   {
+    "test": "Coating weight — triple spot (g/m²)",
+    "value": 300.6,
+    "spec": "275–310",
+    "result": "PASS"
+   },
+   {
+    "test": "Coating weight — single spot (g/m²)",
+    "value": 270.5,
+    "spec": "≥ 234",
+    "result": "PASS"
+   },
+   {
+    "test": "Yield strength (MPa)",
+    "value": 416,
+    "spec": "350–—",
+    "result": "PASS"
+   },
+   {
+    "test": "Tensile strength (MPa)",
+    "value": 450,
+    "spec": "420–—",
+    "result": "PASS"
+   },
+   {
+    "test": "Elongation A80 (%)",
+    "value": 20,
+    "spec": "≥ 16",
+    "result": "PASS"
+   },
+   {
+    "test": "Bend test (180°)",
+    "value": "No crack",
+    "spec": "No crack",
+    "result": "PASS"
+   }
+  ],
+  "status": "PASS",
+  "dftGate": null,
+  "issuedAt": "2026-09-15T10:51:53",
+  "hero": false
+ }
+]

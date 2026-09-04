@@ -1,0 +1,309 @@
+{
+ "asOf": "2026-09-15T10:30:00",
+ "shift": "A",
+ "lines": [
+  {
+   "line": "HRS",
+   "name": "HR Slitter",
+   "state": "IDLE",
+   "currentBatch": null,
+   "currentPo": null,
+   "currentSo": null,
+   "rateTph": 42.8,
+   "targetTph": 45,
+   "next": [],
+   "activeDelay": null,
+   "todayMT": 322.2,
+   "todayTargetMT": 350.0,
+   "oeeToday": 0.92
+  },
+  {
+   "line": "PKL",
+   "name": "Pickling Line",
+   "state": "RUNNING",
+   "currentBatch": "HRC-VJ-2609-0030",
+   "currentPo": "PO-KHP-2609-0135",
+   "currentSo": "4213090008",
+   "rateTph": 42.0,
+   "targetTph": 45,
+   "next": [
+    {
+     "unitId": "HRC-DL-2609-0031",
+     "po": "PO-KHP-2609-0141",
+     "plannedStart": "2026-09-16T23:50:43",
+     "soId": "4213090006",
+     "rush": false
+    },
+    {
+     "unitId": "HRC-VJ-2609-0032",
+     "po": "PO-KHP-2609-0147",
+     "plannedStart": "2026-09-17T10:07:35",
+     "soId": "4213090037",
+     "rush": false
+    },
+    {
+     "unitId": "HRC-VJ-2609-0033",
+     "po": "PO-KHP-2609-0151",
+     "plannedStart": "2026-09-18T16:35:06",
+     "soId": "4213090025",
+     "rush": false
+    }
+   ],
+   "activeDelay": null,
+   "todayMT": 349.2,
+   "todayTargetMT": 393.8,
+   "oeeToday": 0.86
+  },
+  {
+   "line": "CRM",
+   "name": "Cold Roll Mill",
+   "state": "RUNNING",
+   "currentBatch": "HPO-KHP-2609-0028",
+   "currentPo": "PO-KHP-2609-0136",
+   "currentSo": "4213090008",
+   "rateTph": 28.3,
+   "targetTph": 32,
+   "next": [
+    {
+     "unitId": "HPO-KHP-2609-0029",
+     "po": "PO-KHP-2609-0142",
+     "plannedStart": "2026-09-17T10:49:08",
+     "soId": "4213090006",
+     "rush": false
+    },
+    {
+     "unitId": "HPO-KHP-2609-0030",
+     "po": "PO-KHP-2609-0148",
+     "plannedStart": "2026-09-18T06:21:21",
+     "soId": "4213090037",
+     "rush": false
+    },
+    {
+     "unitId": "HPO-KHP-2609-0031",
+     "po": "PO-KHP-2609-0152",
+     "plannedStart": "2026-09-19T14:17:56",
+     "soId": "4213090025",
+     "rush": false
+    }
+   ],
+   "activeDelay": null,
+   "todayMT": 259.6,
+   "todayTargetMT": 284.4,
+   "oeeToday": 0.85
+  },
+  {
+   "line": "CGL",
+   "name": "Continuous Galvanizing Line",
+   "state": "STOPPED",
+   "currentBatch": "CRF-KHP-2609-0026",
+   "currentPo": "PO-KHP-2609-0137",
+   "currentSo": "4213090008",
+   "rateTph": 0,
+   "targetTph": 22,
+   "next": [
+    {
+     "unitId": "CRF-KHP-2609-0024",
+     "po": "PO-KHP-2609-0126",
+     "plannedStart": "2026-09-16T04:07:17",
+     "soId": "4213090031",
+     "rush": true
+    },
+    {
+     "unitId": "CRF-KHP-2609-0027",
+     "po": "PO-KHP-2609-0143",
+     "plannedStart": "2026-09-18T08:43:29",
+     "soId": "4213090006",
+     "rush": false
+    },
+    {
+     "unitId": "CRF-KHP-2609-0028",
+     "po": "PO-KHP-2609-0149",
+     "plannedStart": "2026-09-18T10:37:17",
+     "soId": "4213090037",
+     "rush": false
+    }
+   ],
+   "activeDelay": {
+    "id": "DLY-0089",
+    "line": "CGL",
+    "start": "2026-09-15T09:52:00",
+    "end": null,
+    "durationMin": null,
+    "delayCode": "BD-MECH",
+    "delayName": "Mechanical breakdown",
+    "category": "Unplanned",
+    "equipmentId": "CGL-AKN",
+    "equipmentDefect": "Air knife nozzle choke — top side",
+    "capture": "AUTO (L2 downtime message)",
+    "shift": "A",
+    "remarks": "Nozzle cleaning in progress; zinc pot on hold temp",
+    "status": "ACTIVE",
+    "sapPmNotification": null
+   },
+   "todayMT": 171.9,
+   "todayTargetMT": 196.9,
+   "oeeToday": 0.76
+  },
+  {
+   "line": "CCL",
+   "name": "Colour Coating Line",
+   "state": "RUNNING",
+   "currentBatch": "GLC-KHP-2609-0002",
+   "currentPo": "PO-KHP-2609-0138",
+   "currentSo": "4213090008",
+   "rateTph": 10.9,
+   "targetTph": 12,
+   "next": [
+    {
+     "unitId": "GIC-KHP-2609-0025",
+     "po": "PO-KHP-2609-0144",
+     "plannedStart": "2026-09-19T05:23:55",
+     "soId": "4213090006",
+     "rush": false
+    },
+    {
+     "unitId": "GIC-KHP-2609-0030",
+     "po": "PO-KHP-2609-0168",
+     "plannedStart": "2026-09-22T16:12:47",
+     "soId": "4213090023",
+     "rush": false
+    }
+   ],
+   "activeDelay": null,
+   "todayMT": 99.0,
+   "todayTargetMT": 105.0,
+   "oeeToday": 0.88
+  },
+  {
+   "line": "SLT",
+   "name": "Slitter",
+   "state": "STOPPED",
+   "currentBatch": null,
+   "currentPo": null,
+   "currentSo": null,
+   "rateTph": 0,
+   "targetTph": 35,
+   "next": [
+    {
+     "unitId": "PPG-KHP-2609-0011",
+     "po": "PO-KHP-2609-0094",
+     "plannedStart": "2026-09-16T08:00:00",
+     "soId": "4213090017",
+     "rush": false
+    },
+    {
+     "unitId": "PPL-KHP-2609-0001",
+     "po": "PO-KHP-2609-0139",
+     "plannedStart": "2026-09-18T17:05:37",
+     "soId": "4213090008",
+     "rush": false
+    },
+    {
+     "unitId": "PPG-KHP-2609-0014",
+     "po": "PO-KHP-2609-0145",
+     "plannedStart": "2026-09-19T16:51:30",
+     "soId": "4213090006",
+     "rush": false
+    }
+   ],
+   "activeDelay": {
+    "id": "DLY-0090",
+    "line": "SLT",
+    "start": "2026-09-15T10:05:00",
+    "end": null,
+    "durationMin": null,
+    "delayCode": "OP-CHG",
+    "delayName": "Size / product changeover",
+    "category": "Operational",
+    "equipmentId": "SLT-SLH",
+    "equipmentDefect": null,
+    "capture": "MANUAL",
+    "shift": "A",
+    "remarks": "Knife set change 3-cut → 2-cut for 610 mm",
+    "status": "ACTIVE",
+    "sapPmNotification": null
+   },
+   "todayMT": 217.9,
+   "todayTargetMT": 262.5,
+   "oeeToday": 0.92
+  },
+  {
+   "line": "RWL",
+   "name": "Rewinding + Trimming Line",
+   "state": "IDLE",
+   "currentBatch": null,
+   "currentPo": null,
+   "currentSo": null,
+   "rateTph": 27.0,
+   "targetTph": 30,
+   "next": [],
+   "activeDelay": null,
+   "todayMT": 147.1,
+   "todayTargetMT": 175.0,
+   "oeeToday": 0.9
+  },
+  {
+   "line": "PKG",
+   "name": "Packing Line",
+   "state": "RUNNING",
+   "currentBatch": "GIC-KHP-2609-0024",
+   "currentPo": "PO-KHP-2609-0131",
+   "currentSo": "4213090023",
+   "rateTph": 26.3,
+   "targetTph": 30,
+   "next": [
+    {
+     "unitId": "HPO-KHP-2609-0027",
+     "po": "PO-KHP-2609-0134",
+     "plannedStart": "2026-09-16T02:10:47",
+     "soId": "4213090026",
+     "rush": false
+    },
+    {
+     "unitId": "SLC-KHP-2609-0032",
+     "po": "PO-KHP-2609-0095",
+     "plannedStart": "2026-09-16T13:00:00",
+     "soId": "4213090017",
+     "rush": false
+    },
+    {
+     "unitId": "GIC-KHP-2609-0023",
+     "po": "PO-KHP-2609-0127",
+     "plannedStart": "2026-09-17T05:42:04",
+     "soId": "4213090031",
+     "rush": true
+    }
+   ],
+   "activeDelay": null,
+   "todayMT": 205.8,
+   "todayTargetMT": 262.5,
+   "oeeToday": 0.91
+  }
+ ],
+ "batchesOnTrack": 46,
+ "batchesBehind": 1,
+ "activeDelays": 2,
+ "qualityHolds": 4,
+ "otifWeekly": [
+  {
+   "week": "2026-W33",
+   "pct": 91.5
+  },
+  {
+   "week": "2026-W34",
+   "pct": 93.8
+  },
+  {
+   "week": "2026-W35",
+   "pct": 90.2
+  },
+  {
+   "week": "2026-W36",
+   "pct": 94.6
+  },
+  {
+   "week": "2026-W37",
+   "pct": 92.1
+  }
+ ]
+}

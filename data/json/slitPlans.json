@@ -1,0 +1,467 @@
+[
+ {
+  "id": "SLP-0001",
+  "po": "PO-KHP-2609-0005",
+  "parentUnit": "PPG-KHP-2609-0001",
+  "itemId": "4213090027/10",
+  "soId": "4213090027",
+  "parentWidth": 1220,
+  "widths": [
+   400,
+   400,
+   400
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0001",
+   "SLC-KHP-2609-0002",
+   "SLC-KHP-2609-0003"
+  ],
+  "status": "EXECUTED",
+  "plannedStart": "2026-08-30T22:07:23",
+  "knifeSetup": "3 cuts · 400 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0002",
+  "po": "PO-KHP-2609-0011",
+  "parentUnit": "PPG-KHP-2609-0002",
+  "itemId": "4213090010/10",
+  "soId": "4213090010",
+  "parentWidth": 1250,
+  "widths": [
+   410,
+   410,
+   410
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0004",
+   "SLC-KHP-2609-0005",
+   "SLC-KHP-2609-0006"
+  ],
+  "status": "EXECUTED",
+  "plannedStart": "2026-08-30T10:05:27",
+  "knifeSetup": "3 cuts · 410 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0003",
+  "po": "PO-KHP-2609-0016",
+  "parentUnit": "GIC-KHP-2609-0003",
+  "itemId": "4213090035/30",
+  "soId": "4213090035",
+  "parentWidth": 1500,
+  "widths": [
+   493,
+   493,
+   493
+  ],
+  "trimMm": 21,
+  "childUnits": [
+   "SLC-KHP-2609-0007",
+   "SLC-KHP-2609-0008",
+   "SLC-KHP-2609-0009"
+  ],
+  "status": "EXECUTED",
+  "plannedStart": "2026-08-31T18:46:53",
+  "knifeSetup": "3 cuts · 493 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0004",
+  "po": "PO-KHP-2609-0021",
+  "parentUnit": "GLC-KHP-2609-0001",
+  "itemId": "4213090035/10",
+  "soId": "4213090035",
+  "parentWidth": 1220,
+  "widths": [
+   400,
+   400,
+   400
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0010",
+   "SLC-KHP-2609-0011",
+   "SLC-KHP-2609-0012"
+  ],
+  "status": "EXECUTED",
+  "plannedStart": "2026-08-31T20:55:55",
+  "knifeSetup": "3 cuts · 400 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0005",
+  "po": "PO-KHP-2609-0037",
+  "parentUnit": "PPG-KHP-2609-0005",
+  "itemId": "4213090024/10",
+  "soId": "4213090024",
+  "parentWidth": 1220,
+  "widths": [
+   610,
+   610
+  ],
+  "trimMm": 0,
+  "childUnits": [
+   "SLC-KHP-2609-0013",
+   "SLC-KHP-2609-0014"
+  ],
+  "status": "EXECUTED",
+  "plannedStart": "2026-09-04T11:20:03",
+  "knifeSetup": "2 cuts · 610 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0006",
+  "po": "PO-KHP-2609-0048",
+  "parentUnit": "PPG-KHP-2609-0007",
+  "itemId": "4213090002/20",
+  "soId": "4213090002",
+  "parentWidth": 1000,
+  "widths": [
+   326,
+   326,
+   326
+  ],
+  "trimMm": 22,
+  "childUnits": [
+   "SLC-KHP-2609-0015",
+   "SLC-KHP-2609-0016",
+   "SLC-KHP-2609-0017"
+  ],
+  "status": "EXECUTED",
+  "plannedStart": "2026-09-06T18:52:54",
+  "knifeSetup": "3 cuts · 326 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0007",
+  "po": "PO-KHP-2609-0058",
+  "parentUnit": "PPG-KHP-2609-0008",
+  "itemId": "4213090038/10",
+  "soId": "4213090038",
+  "parentWidth": 1000,
+  "widths": [
+   490,
+   490
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0018",
+   "SLC-KHP-2609-0019"
+  ],
+  "status": "EXECUTED",
+  "plannedStart": "2026-09-07T23:07:47",
+  "knifeSetup": "2 cuts · 490 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0008",
+  "po": "PO-KHP-2609-0063",
+  "parentUnit": "GIC-KHP-2609-0011",
+  "itemId": "4213090009/10",
+  "soId": "4213090009",
+  "parentWidth": 1250,
+  "widths": [
+   410,
+   410,
+   410
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0020",
+   "SLC-KHP-2609-0021",
+   "SLC-KHP-2609-0022"
+  ],
+  "status": "EXECUTED",
+  "plannedStart": "2026-09-07T01:57:22",
+  "knifeSetup": "3 cuts · 410 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0009",
+  "po": "PO-KHP-2609-0073",
+  "parentUnit": "PPG-KHP-2609-0009",
+  "itemId": "4213090006/20",
+  "soId": "4213090006",
+  "parentWidth": 1250,
+  "widths": [
+   410,
+   410,
+   410
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0023",
+   "SLC-KHP-2609-0024",
+   "SLC-KHP-2609-0025"
+  ],
+  "status": "EXECUTED",
+  "plannedStart": "2026-09-08T07:11:29",
+  "knifeSetup": "3 cuts · 410 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0010",
+  "po": "PO-KHP-2609-0083",
+  "parentUnit": "PPG-KHP-2609-0010",
+  "itemId": "4213090027/20",
+  "soId": "4213090027",
+  "parentWidth": 1000,
+  "widths": [
+   326,
+   326,
+   326
+  ],
+  "trimMm": 22,
+  "childUnits": [
+   "SLC-KHP-2609-0026",
+   "SLC-KHP-2609-0027",
+   "SLC-KHP-2609-0028"
+  ],
+  "status": "EXECUTED",
+  "plannedStart": "2026-09-09T23:05:41",
+  "knifeSetup": "3 cuts · 326 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0011",
+  "po": "PO-KHP-2609-0088",
+  "parentUnit": "GIC-KHP-2609-0016",
+  "itemId": "4213090028/10",
+  "soId": "4213090028",
+  "parentWidth": 1250,
+  "widths": [
+   410,
+   410,
+   410
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0029",
+   "SLC-KHP-2609-0030",
+   "SLC-KHP-2609-0031"
+  ],
+  "status": "EXECUTED",
+  "plannedStart": "2026-09-10T03:53:51",
+  "knifeSetup": "3 cuts · 410 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0012",
+  "po": "PO-KHP-2609-0094",
+  "parentUnit": "PPG-KHP-2609-0011",
+  "itemId": "4213090017/10",
+  "soId": "4213090017",
+  "parentWidth": 1220,
+  "widths": [
+   610,
+   610
+  ],
+  "trimMm": 0,
+  "childUnits": [
+   "SLC-KHP-2609-0032",
+   "SLC-KHP-2609-0033"
+  ],
+  "status": "PLANNED",
+  "plannedStart": "2026-09-16T08:00:00",
+  "knifeSetup": "2 cuts · 610 mm",
+  "hero": true
+ },
+ {
+  "id": "SLP-0013",
+  "po": "PO-KHP-2609-0099",
+  "parentUnit": "GIC-KHP-2609-0018",
+  "itemId": "4213090001/10",
+  "soId": "4213090001",
+  "parentWidth": 1000,
+  "widths": [
+   490,
+   490
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0034",
+   "SLC-KHP-2609-0035"
+  ],
+  "status": "EXECUTED",
+  "plannedStart": "2026-09-11T17:36:38",
+  "knifeSetup": "2 cuts · 490 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0014",
+  "po": "PO-KHP-2609-0104",
+  "parentUnit": "GIC-KHP-2609-0019",
+  "itemId": "4213090019/10",
+  "soId": "4213090019",
+  "parentWidth": 1250,
+  "widths": [
+   615,
+   615
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0036",
+   "SLC-KHP-2609-0037"
+  ],
+  "status": "EXECUTED",
+  "plannedStart": "2026-09-12T15:14:20",
+  "knifeSetup": "2 cuts · 615 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0015",
+  "po": "PO-KHP-2609-0115",
+  "parentUnit": "PPG-KHP-2609-0013",
+  "itemId": "4213090040/20",
+  "soId": "4213090040",
+  "parentWidth": 1000,
+  "widths": [
+   326,
+   326,
+   326
+  ],
+  "trimMm": 22,
+  "childUnits": [
+   "SLC-KHP-2609-0038",
+   "SLC-KHP-2609-0039",
+   "SLC-KHP-2609-0040"
+  ],
+  "status": "EXECUTED",
+  "plannedStart": "2026-09-13T19:10:33",
+  "knifeSetup": "3 cuts · 326 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0016",
+  "po": "PO-KHP-2609-0139",
+  "parentUnit": "PPL-KHP-2609-0001",
+  "itemId": "4213090008/30",
+  "soId": "4213090008",
+  "parentWidth": 1220,
+  "widths": [
+   400,
+   400,
+   400
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0041",
+   "SLC-KHP-2609-0042",
+   "SLC-KHP-2609-0043"
+  ],
+  "status": "PLANNED",
+  "plannedStart": "2026-09-18T17:05:37",
+  "knifeSetup": "3 cuts · 400 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0017",
+  "po": "PO-KHP-2609-0145",
+  "parentUnit": "PPG-KHP-2609-0014",
+  "itemId": "4213090006/30",
+  "soId": "4213090006",
+  "parentWidth": 1220,
+  "widths": [
+   400,
+   400,
+   400
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0044",
+   "SLC-KHP-2609-0045",
+   "SLC-KHP-2609-0046"
+  ],
+  "status": "PLANNED",
+  "plannedStart": "2026-09-19T16:51:30",
+  "knifeSetup": "3 cuts · 400 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0018",
+  "po": "PO-KHP-2609-0154",
+  "parentUnit": "GIC-KHP-2609-0027",
+  "itemId": "4213090025/10",
+  "soId": "4213090025",
+  "parentWidth": 1500,
+  "widths": [
+   740,
+   740
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0047",
+   "SLC-KHP-2609-0048"
+  ],
+  "status": "PLANNED",
+  "plannedStart": "2026-09-21T00:27:13",
+  "knifeSetup": "2 cuts · 740 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0019",
+  "po": "PO-KHP-2609-0159",
+  "parentUnit": "GIC-KHP-2609-0028",
+  "itemId": "4213090003/20",
+  "soId": "4213090003",
+  "parentWidth": 1220,
+  "widths": [
+   600,
+   600
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0049",
+   "SLC-KHP-2609-0050"
+  ],
+  "status": "PLANNED",
+  "plannedStart": "2026-09-21T06:18:58",
+  "knifeSetup": "2 cuts · 600 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0020",
+  "po": "PO-KHP-2609-0169",
+  "parentUnit": "PPG-KHP-2609-0015",
+  "itemId": "4213090023/10",
+  "soId": "4213090023",
+  "parentWidth": 1000,
+  "widths": [
+   490,
+   490
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0051",
+   "SLC-KHP-2609-0052"
+  ],
+  "status": "PLANNED",
+  "plannedStart": "2026-09-23T04:04:55",
+  "knifeSetup": "2 cuts · 490 mm",
+  "hero": false
+ },
+ {
+  "id": "SLP-0021",
+  "po": "PO-KHP-2609-0174",
+  "parentUnit": "GIC-KHP-2609-0031",
+  "itemId": "4213090015/10",
+  "soId": "4213090015",
+  "parentWidth": 1250,
+  "widths": [
+   615,
+   615
+  ],
+  "trimMm": 20,
+  "childUnits": [
+   "SLC-KHP-2609-0053",
+   "SLC-KHP-2609-0054"
+  ],
+  "status": "PLANNED",
+  "plannedStart": "2026-09-24T07:06:03",
+  "knifeSetup": "2 cuts · 615 mm",
+  "hero": false
+ }
+]

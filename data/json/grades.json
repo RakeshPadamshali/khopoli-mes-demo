@@ -1,0 +1,90 @@
+[
+ {
+  "id": "DX51D+Z",
+  "std": "EN 10346",
+  "family": "GI",
+  "ysMin": 140,
+  "ysMax": 300,
+  "utsMin": 270,
+  "utsMax": 500,
+  "elMin": 22,
+  "use": "Forming / appliance"
+ },
+ {
+  "id": "DX53D+Z",
+  "std": "EN 10346",
+  "family": "GI",
+  "ysMin": 140,
+  "ysMax": 260,
+  "utsMin": 270,
+  "utsMax": 380,
+  "elMin": 30,
+  "use": "Deep drawing"
+ },
+ {
+  "id": "S350GD+Z",
+  "std": "EN 10346",
+  "family": "GI",
+  "ysMin": 350,
+  "ysMax": null,
+  "utsMin": 420,
+  "utsMax": null,
+  "elMin": 16,
+  "use": "Structural / PEB"
+ },
+ {
+  "id": "CQ-IS277",
+  "std": "IS 277",
+  "family": "GI",
+  "ysMin": null,
+  "ysMax": null,
+  "utsMin": null,
+  "utsMax": null,
+  "elMin": 20,
+  "use": "Commercial roofing"
+ },
+ {
+  "id": "SGCC",
+  "std": "JIS G3302",
+  "family": "GI",
+  "ysMin": null,
+  "ysMax": null,
+  "utsMin": 270,
+  "utsMax": null,
+  "elMin": 20,
+  "use": "Commercial"
+ },
+ {
+  "id": "SGLCC",
+  "std": "JIS G3321",
+  "family": "GL",
+  "ysMin": null,
+  "ysMax": null,
+  "utsMin": 270,
+  "utsMax": null,
+  "elMin": 20,
+  "use": "Galvalume roofing"
+ },
+ {
+  "id": "CR4-CRFH",
+  "std": "IS 513",
+  "family": "CRFH",
+  "ysMin": null,
+  "ysMax": null,
+  "utsMin": null,
+  "utsMax": null,
+  "elMin": null,
+  "use": "Full-hard for re-rolling"
+ },
+ {
+  "id": "HRPO-E250",
+  "std": "IS 2062",
+  "family": "HRPO",
+  "ysMin": 250,
+  "ysMax": null,
+  "utsMin": 410,
+  "utsMax": null,
+  "elMin": 23,
+  "use": "Pickled & oiled"
+ }
+]

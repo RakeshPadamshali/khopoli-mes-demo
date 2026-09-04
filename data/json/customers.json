@@ -1,0 +1,72 @@
+[
+ {
+  "id": "C001",
+  "name": "Apex Appliances Ltd",
+  "segment": "Appliance",
+  "city": "Pune",
+  "state": "MH"
+ },
+ {
+  "id": "C002",
+  "name": "Meridian Roofing Solutions",
+  "segment": "Construction",
+  "city": "Nagpur",
+  "state": "MH"
+ },
+ {
+  "id": "C003",
+  "name": "Kestrel Auto Components",
+  "segment": "Automotive",
+  "city": "Chakan",
+  "state": "MH"
+ },
+ {
+  "id": "C004",
+  "name": "Sunbeam Panels Pvt Ltd",
+  "segment": "Prefab / Sandwich panels",
+  "city": "Vadodara",
+  "state": "GJ"
+ },
+ {
+  "id": "C005",
+  "name": "Horizon Ducting Works",
+  "segment": "HVAC",
+  "city": "Mumbai",
+  "state": "MH"
+ },
+ {
+  "id": "C006",
+  "name": "NorthStar Pre-Engineered Buildings",
+  "segment": "PEB",
+  "city": "Hyderabad",
+  "state": "TS"
+ },
+ {
+  "id": "C007",
+  "name": "Vega Consumer Durables",
+  "segment": "Appliance",
+  "city": "Noida",
+  "state": "UP"
+ },
+ {
+  "id": "C008",
+  "name": "Blue Ridge Infra",
+  "segment": "Construction",
+  "city": "Bengaluru",
+  "state": "KA"
+ },
+ {
+  "id": "C009",
+  "name": "Orbit Metal Forming",
+  "segment": "General Engineering",
+  "city": "Kolhapur",
+  "state": "MH"
+ },
+ {
+  "id": "C010",
+  "name": "Pinnacle Sheet Metal",
+  "segment": "Automotive",
+  "city": "Aurangabad",
+  "state": "MH"
+ }
+]

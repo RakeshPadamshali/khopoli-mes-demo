@@ -1,0 +1,38 @@
+[
+ {
+  "id": "RMP",
+  "name": "Regular Modified Polyester",
+  "primerUm": 5,
+  "topUm": 20,
+  "topTol": 3,
+  "backUm": 7,
+  "backTol": 2,
+  "glossMin": 30,
+  "glossMax": 40,
+  "pmtC": 232
+ },
+ {
+  "id": "SMP",
+  "name": "Silicone Modified Polyester",
+  "primerUm": 5,
+  "topUm": 25,
+  "topTol": 3,
+  "backUm": 7,
+  "backTol": 2,
+  "glossMin": 25,
+  "glossMax": 35,
+  "pmtC": 241
+ },
+ {
+  "id": "PVDF",
+  "name": "Polyvinylidene Fluoride",
+  "primerUm": 5,
+  "topUm": 25,
+  "topTol": 3,
+  "backUm": 10,
+  "backTol": 2,
+  "glossMin": 25,
+  "glossMax": 35,
+  "pmtC": 249
+ }
+]

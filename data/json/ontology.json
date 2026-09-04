@@ -1,0 +1,20 @@
+{
+ "domains": [
+  "ASSETS",
+  "MATERIAL",
+  "SPECIFICATION",
+  "QUALITY",
+  "PROCESS",
+  "COMMERCIAL & PLANNING"
+ ],
+ "relationships": {
+  "consumesInput": "material → material it was made from (genealogy spine)",
+  "producedOn": "material → line / equipment",
+  "conformsTo": "material → TDC / specification",
+  "hasCoatingSpec": "material → coating spec",
+  "detectedOn": "defect → material",
+  "attributedTo": "defect → causing equipment",
+  "allocatedTo": "material → sales-order item",
+  "fulfils": "dispatch → sales-order schedule line"
+ }
+}

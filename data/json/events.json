@@ -1,0 +1,225 @@
+{
+ "rush": {
+  "at": "2026-09-14T09:00:00",
+  "source": "IF-APS-RUSH",
+  "itemId": "4213090031/10",
+  "soId": "4213090031",
+  "line": "CGL",
+  "reason": "APS rush flag — customer line stoppage at Chakan",
+  "before": [
+   {
+    "seq": 1,
+    "id": "SCH-CGL-027",
+    "unitId": "CRF-KHP-2609-0027",
+    "soId": "4213090006",
+    "customerName": "Orbit Metal Forming",
+    "plannedStart": "2026-09-16T04:07:17",
+    "plannedEnd": "2026-09-16T05:28:49",
+    "rush": false
+   },
+   {
+    "seq": 2,
+    "id": "SCH-CGL-028",
+    "unitId": "CRF-KHP-2609-0028",
+    "soId": "4213090037",
+    "customerName": "NorthStar Pre-Engineered Buildings",
+    "plannedStart": "2026-09-18T08:43:29",
+    "plannedEnd": "2026-09-18T09:50:50",
+    "rush": false
+   },
+   {
+    "seq": 3,
+    "id": "SCH-CGL-024",
+    "unitId": "CRF-KHP-2609-0024",
+    "soId": "4213090031",
+    "customerName": "Kestrel Auto Components",
+    "plannedStart": "2026-09-18T10:37:17",
+    "plannedEnd": "2026-09-18T11:53:53",
+    "rush": true
+   },
+   {
+    "seq": 4,
+    "id": "SCH-CGL-029",
+    "unitId": "CRF-KHP-2609-0029",
+    "soId": "4213090025",
+    "customerName": "Meridian Roofing Solutions",
+    "plannedStart": "2026-09-20T09:37:22",
+    "plannedEnd": "2026-09-20T10:59:28",
+    "rush": false
+   },
+   {
+    "seq": 5,
+    "id": "SCH-CGL-030",
+    "unitId": "CRF-KHP-2609-0030",
+    "soId": "4213090003",
+    "customerName": "NorthStar Pre-Engineered Buildings",
+    "plannedStart": "2026-09-20T12:17:15",
+    "plannedEnd": "2026-09-20T13:38:16",
+    "rush": false
+   },
+   {
+    "seq": 6,
+    "id": "SCH-CGL-031",
+    "unitId": "CRF-KHP-2609-0031",
+    "soId": "4213090032",
+    "customerName": "Blue Ridge Infra",
+    "plannedStart": "2026-09-20T17:10:02",
+    "plannedEnd": "2026-09-20T18:18:57",
+    "rush": false
+   },
+   {
+    "seq": 7,
+    "id": "SCH-CGL-032",
+    "unitId": "CRF-KHP-2609-0032",
+    "soId": "4213090023",
+    "customerName": "Horizon Ducting Works",
+    "plannedStart": "2026-09-22T06:55:04",
+    "plannedEnd": "2026-09-22T08:06:01",
+    "rush": false
+   },
+   {
+    "seq": 8,
+    "id": "SCH-CGL-033",
+    "unitId": "CRF-KHP-2609-0033",
+    "soId": "4213090015",
+    "customerName": "Horizon Ducting Works",
+    "plannedStart": "2026-09-23T04:51:53",
+    "plannedEnd": "2026-09-23T06:10:10",
+    "rush": false
+   }
+  ],
+  "after": [
+   {
+    "seq": 1,
+    "id": "SCH-CGL-024",
+    "unitId": "CRF-KHP-2609-0024",
+    "soId": "4213090031",
+    "customerName": "Kestrel Auto Components",
+    "plannedStart": "2026-09-16T04:07:17",
+    "plannedEnd": "2026-09-16T05:28:49",
+    "rush": true
+   },
+   {
+    "seq": 2,
+    "id": "SCH-CGL-027",
+    "unitId": "CRF-KHP-2609-0027",
+    "soId": "4213090006",
+    "customerName": "Orbit Metal Forming",
+    "plannedStart": "2026-09-18T08:43:29",
+    "plannedEnd": "2026-09-18T09:50:50",
+    "rush": false
+   },
+   {
+    "seq": 3,
+    "id": "SCH-CGL-028",
+    "unitId": "CRF-KHP-2609-0028",
+    "soId": "4213090037",
+    "customerName": "NorthStar Pre-Engineered Buildings",
+    "plannedStart": "2026-09-18T10:37:17",
+    "plannedEnd": "2026-09-18T11:53:53",
+    "rush": false
+   },
+   {
+    "seq": 4,
+    "id": "SCH-CGL-029",
+    "unitId": "CRF-KHP-2609-0029",
+    "soId": "4213090025",
+    "customerName": "Meridian Roofing Solutions",
+    "plannedStart": "2026-09-20T09:37:22",
+    "plannedEnd": "2026-09-20T10:59:28",
+    "rush": false
+   },
+   {
+    "seq": 5,
+    "id": "SCH-CGL-030",
+    "unitId": "CRF-KHP-2609-0030",
+    "soId": "4213090003",
+    "customerName": "NorthStar Pre-Engineered Buildings",
+    "plannedStart": "2026-09-20T12:17:15",
+    "plannedEnd": "2026-09-20T13:38:16",
+    "rush": false
+   },
+   {
+    "seq": 6,
+    "id": "SCH-CGL-031",
+    "unitId": "CRF-KHP-2609-0031",
+    "soId": "4213090032",
+    "customerName": "Blue Ridge Infra",
+    "plannedStart": "2026-09-20T17:10:02",
+    "plannedEnd": "2026-09-20T18:18:57",
+    "rush": false
+   },
+   {
+    "seq": 7,
+    "id": "SCH-CGL-032",
+    "unitId": "CRF-KHP-2609-0032",
+    "soId": "4213090023",
+    "customerName": "Horizon Ducting Works",
+    "plannedStart": "2026-09-22T06:55:04",
+    "plannedEnd": "2026-09-22T08:06:01",
+    "rush": false
+   },
+   {
+    "seq": 8,
+    "id": "SCH-CGL-033",
+    "unitId": "CRF-KHP-2609-0033",
+    "soId": "4213090015",
+    "customerName": "Horizon Ducting Works",
+    "plannedStart": "2026-09-23T04:51:53",
+    "plannedEnd": "2026-09-23T06:10:10",
+    "rush": false
+   }
+  ],
+  "movedUpBy": 2
+ },
+ "swap": {
+  "at": "2026-09-13T15:20:00",
+  "unitA": "GIC-KHP-2609-0012",
+  "unitB": "GIC-KHP-2609-0014",
+  "itemA": "4213090008/10",
+  "itemB": "4213090012/10",
+  "by": "PPC — A. Bhosale",
+  "reason": "SO 4213090012/10 has the earlier RDD (16 Sep); both coils meet the identical TDC",
+  "btaBefore": [
+   {
+    "itemId": "4213090008/10",
+    "qtyMT": 100,
+    "allocatedMT": 17.12,
+    "btaMT": 82.88
+   },
+   {
+    "itemId": "4213090012/10",
+    "qtyMT": 80,
+    "allocatedMT": 16.91,
+    "btaMT": 63.09
+   }
+  ],
+  "btaAfter": [
+   {
+    "itemId": "4213090008/10",
+    "qtyMT": 100,
+    "allocatedMT": 16.91,
+    "btaMT": 83.09
+   },
+   {
+    "itemId": "4213090012/10",
+    "qtyMT": 80,
+    "allocatedMT": 17.12,
+    "btaMT": 62.88
+   }
+  ],
+  "sapMessage": "IF-SAP-15 batch reallocation sent 15:21 (OK)"
+ },
+ "amendment": {
+  "itemId": "4213090022/10",
+  "at": "2026-09-15T08:10:00",
+  "field": "qtyMT",
+  "old": 180,
+  "new": 210,
+  "source": "SAP IDoc ORDERS05",
+  "status": "FAILED_IDOC",
+  "idoc": "0000001187734",
+  "alertId": "ALR-0002",
+  "incidentId": "INC-26-0413"
+ }
+}

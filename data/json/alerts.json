@@ -1,0 +1,47 @@
+[
+ {
+  "id": "ALR-0001",
+  "severity": "S1",
+  "interfaceId": "IF-L2-PDI",
+  "raisedAt": "2026-09-15T09:43:00",
+  "status": "OPEN",
+  "title": "PDI queue L2.CGL.PDI.OUT stuck",
+  "detail": "Queue depth 3 > 0 for 120 s; oldest message age exceeds 30 s SLA; no consumer heartbeat since 09:41",
+  "messageIds": [
+   "MSG-00013",
+   "MSG-00032",
+   "MSG-00033"
+  ],
+  "incidentId": "INC-26-0412",
+  "channel": "Monitoring → ITSM → Teams"
+ },
+ {
+  "id": "ALR-0002",
+  "severity": "S2",
+  "interfaceId": "IF-SAP-02",
+  "raisedAt": "2026-09-15T08:31:00",
+  "status": "OPEN",
+  "title": "Sales-order amendment IDoc failed after 2 retries",
+  "detail": "IDoc 0000001187734 for SO 4213090022/10 in status 51 — order quantity change 180 → 210 t not applied in MES",
+  "messageIds": [
+   "MSG-00156"
+  ],
+  "incidentId": "INC-26-0413",
+  "channel": "Monitoring → ITSM → Teams"
+ },
+ {
+  "id": "ALR-0003",
+  "severity": "S2",
+  "interfaceId": "IF-L2-PDO",
+  "raisedAt": "2026-09-14T23:06:00",
+  "status": "RESOLVED",
+  "resolvedAt": "2026-09-14T23:32:00",
+  "title": "PDO rejected — contract version mismatch",
+  "detail": "CCL L2 upgraded to PDO payload v1.3 (adds dftBackMeasured) while MES contract CT-PDO was v1.2; v1.3 activated and message replayed",
+  "messageIds": [
+   "MSG-00157"
+  ],
+  "incidentId": "INC-26-0409",
+  "channel": "Monitoring → ITSM"
+ }
+]

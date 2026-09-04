@@ -1,0 +1,41 @@
+{
+ "messageType": "MES_DISPATCH_CONFIRMATION",
+ "interface": "IF-SAP-11",
+ "version": "1.2",
+ "header": {
+  "plant": "KHP",
+  "dispatchId": "DSP-0024",
+  "salesOrder": "4213090017",
+  "soItem": 10,
+  "scheduleLine": "4213090017/10/0001",
+  "customer": "C001",
+  "vehicle": "MH-12-KT-4471",
+  "dispatchDate": "2026-09-17",
+  "shippingPoint": "KHP1",
+  "incoterm": "FOR"
+ },
+ "items": [
+  {
+   "batch": "PK-KHP-2609-0018",
+   "material": "PPGI-DX51D+Z-0.50x1220",
+   "qtyMT": 18.37,
+   "coils": [
+    "SLC-KHP-2609-0032",
+    "SLC-KHP-2609-0033"
+   ],
+   "packType": "Domestic VCI + stretch",
+   "testCertificate": "EN 10204 3.1",
+   "qualityStatus": "CLEARED"
+  }
+ ],
+ "totals": {
+  "packs": 1,
+  "grossMT": 18.49,
+  "netMT": 18.37
+ },
+ "middleware": {
+  "channel": "MES->ESB->SAP",
+  "idoc": "DELVRY07 / SHPCON",
+  "correlationId": "CORR-DSP-0024"
+ }
+}

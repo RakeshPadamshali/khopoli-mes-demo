@@ -1,0 +1,90 @@
+[
+ {
+  "id": "AUD-0412-01",
+  "incidentId": "INC-26-0412",
+  "at": "2026-09-15T09:43:05",
+  "actor": "AI agent",
+  "action": "Ticket created from alert ALR-0001; severity S1 classified (confidence 0.96)",
+  "catalogueRef": "A-06",
+  "approvalRef": null,
+  "result": "OK",
+  "immutable": true
+ },
+ {
+  "id": "AUD-0412-02",
+  "incidentId": "INC-26-0412",
+  "at": "2026-09-15T09:43:20",
+  "actor": "AI agent",
+  "action": "Read middleware + L2 gateway logs; correlated 3 IN_QUEUE PDIs by PO / coil id",
+  "catalogueRef": "A-01, A-02",
+  "approvalRef": null,
+  "result": "OK",
+  "immutable": true
+ },
+ {
+  "id": "AUD-0412-03",
+  "incidentId": "INC-26-0412",
+  "at": "2026-09-15T09:44:10",
+  "actor": "AI agent",
+  "action": "Diagnosis: subscriber heartbeat lost 09:41 — matches RB-001 / KE-0031",
+  "catalogueRef": "A-03",
+  "approvalRef": null,
+  "result": "OK",
+  "immutable": true
+ },
+ {
+  "id": "AUD-0412-04",
+  "incidentId": "INC-26-0412",
+  "at": "2026-09-15T09:44:30",
+  "actor": "AI agent",
+  "action": "Restarted L2 gateway subscriber service (autonomous)",
+  "catalogueRef": "A-05",
+  "approvalRef": null,
+  "result": "OK — heartbeat restored 09:45:02",
+  "immutable": true
+ },
+ {
+  "id": "AUD-0412-05",
+  "incidentId": "INC-26-0412",
+  "at": "2026-09-15T09:45:30",
+  "actor": "AI agent",
+  "action": "Proposed replay of 3 queued PDIs; approval requested from shift IT lead (A-07 > threshold? no — policy requires approval for production-line messages)",
+  "catalogueRef": "A-07",
+  "approvalRef": "Requested",
+  "result": "PENDING",
+  "immutable": true
+ },
+ {
+  "id": "AUD-0412-06",
+  "incidentId": "INC-26-0412",
+  "at": "2026-09-15T09:51:12",
+  "actor": "Human — P. Nair (Shift IT lead)",
+  "action": "Approved replay via Teams card",
+  "catalogueRef": "A-07",
+  "approvalRef": "APPROVED",
+  "result": "OK",
+  "immutable": true
+ },
+ {
+  "id": "AUD-0412-07",
+  "incidentId": "INC-26-0412",
+  "at": "2026-09-15T09:52:00",
+  "actor": "AI agent",
+  "action": "Replayed PDI messages oldest-first",
+  "catalogueRef": "A-07",
+  "approvalRef": "APR-2609-118",
+  "result": "3/3 ACK within 28 s",
+  "immutable": true
+ },
+ {
+  "id": "AUD-0412-08",
+  "incidentId": "INC-26-0412",
+  "at": "2026-09-15T09:55:00",
+  "actor": "AI agent",
+  "action": "Post-remediation validation: queue depth 0, CGL charge screen live; ticket resolved, user confirmation requested",
+  "catalogueRef": "A-06",
+  "approvalRef": null,
+  "result": "RESOLVED",
+  "immutable": true
+ }
+]

@@ -1,0 +1,236 @@
+[
+ {
+  "id": "MAS-0001",
+  "itemId": "4213090031/20",
+  "soId": "4213090031",
+  "customerName": "Kestrel Auto Components",
+  "unitId": "HRC-VJ-2609-0058",
+  "rank": 1,
+  "score": 119.1,
+  "ppcApproval": "APPROVED",
+  "qcApproval": "PENDING",
+  "status": "SUGGESTED",
+  "reasons": [
+   "grade family match",
+   "width fits with trim",
+   "reduction feasible",
+   "FIFO age"
+  ]
+ },
+ {
+  "id": "MAS-0002",
+  "itemId": "4213090031/20",
+  "soId": "4213090031",
+  "customerName": "Kestrel Auto Components",
+  "unitId": "HRC-VJ-2609-0042",
+  "rank": 2,
+  "score": 110.5,
+  "ppcApproval": "PENDING",
+  "qcApproval": "PENDING",
+  "status": "SUGGESTED",
+  "reasons": [
+   "grade family match",
+   "width fits with trim",
+   "reduction feasible",
+   "FIFO age"
+  ]
+ },
+ {
+  "id": "MAS-0003",
+  "itemId": "4213090020/20",
+  "soId": "4213090020",
+  "customerName": "Sunbeam Panels Pvt Ltd",
+  "unitId": "HRC-VJ-2609-0058",
+  "rank": 1,
+  "score": 119.1,
+  "ppcApproval": "PENDING",
+  "qcApproval": "PENDING",
+  "status": "SUGGESTED",
+  "reasons": [
+   "grade family match",
+   "width fits with trim",
+   "reduction feasible",
+   "FIFO age"
+  ]
+ },
+ {
+  "id": "MAS-0004",
+  "itemId": "4213090020/20",
+  "soId": "4213090020",
+  "customerName": "Sunbeam Panels Pvt Ltd",
+  "unitId": "HRC-VJ-2609-0042",
+  "rank": 2,
+  "score": 110.5,
+  "ppcApproval": "PENDING",
+  "qcApproval": "PENDING",
+  "status": "SUGGESTED",
+  "reasons": [
+   "grade family match",
+   "width fits with trim",
+   "reduction feasible",
+   "FIFO age"
+  ]
+ },
+ {
+  "id": "MAS-0005",
+  "itemId": "4213090013/10",
+  "soId": "4213090013",
+  "customerName": "Pinnacle Sheet Metal",
+  "unitId": "HRC-VJ-2609-0052",
+  "rank": 1,
+  "score": 118.9,
+  "ppcApproval": "APPROVED",
+  "qcApproval": "PENDING",
+  "status": "SUGGESTED",
+  "reasons": [
+   "grade family match",
+   "width fits with trim",
+   "reduction feasible",
+   "FIFO age"
+  ]
+ },
+ {
+  "id": "MAS-0006",
+  "itemId": "4213090022/10",
+  "soId": "4213090022",
+  "customerName": "NorthStar Pre-Engineered Buildings",
+  "unitId": "HRC-VJ-2609-0038",
+  "rank": 1,
+  "score": 111.9,
+  "ppcApproval": "APPROVED",
+  "qcApproval": "PENDING",
+  "status": "SUGGESTED",
+  "reasons": [
+   "grade family match",
+   "width fits with trim",
+   "reduction feasible",
+   "FIFO age"
+  ]
+ },
+ {
+  "id": "MAS-0007",
+  "itemId": "4213090022/10",
+  "soId": "4213090022",
+  "customerName": "NorthStar Pre-Engineered Buildings",
+  "unitId": "HRC-VJ-2609-0046",
+  "rank": 2,
+  "score": 110.8,
+  "ppcApproval": "PENDING",
+  "qcApproval": "PENDING",
+  "status": "SUGGESTED",
+  "reasons": [
+   "grade family match",
+   "width fits with trim",
+   "reduction feasible",
+   "FIFO age"
+  ]
+ },
+ {
+  "id": "MAS-0008",
+  "itemId": "4213090027/10",
+  "soId": "4213090027",
+  "customerName": "Apex Appliances Ltd",
+  "unitId": "HRC-VJ-2609-0054",
+  "rank": 1,
+  "score": 117.1,
+  "ppcApproval": "PENDING",
+  "qcApproval": "PENDING",
+  "status": "SUGGESTED",
+  "reasons": [
+   "grade family match",
+   "width fits with trim",
+   "reduction feasible",
+   "FIFO age"
+  ]
+ },
+ {
+  "id": "MAS-0009",
+  "itemId": "4213090027/10",
+  "soId": "4213090027",
+  "customerName": "Apex Appliances Ltd",
+  "unitId": "HRC-DL-2609-0045",
+  "rank": 2,
+  "score": 116.0,
+  "ppcApproval": "PENDING",
+  "qcApproval": "PENDING",
+  "status": "SUGGESTED",
+  "reasons": [
+   "grade family match",
+   "width fits with trim",
+   "reduction feasible",
+   "FIFO age"
+  ]
+ },
+ {
+  "id": "MAS-0010",
+  "itemId": "4213090027/10",
+  "soId": "4213090027",
+  "customerName": "Apex Appliances Ltd",
+  "unitId": "HRC-VJ-2609-0062",
+  "rank": 3,
+  "score": 115.6,
+  "ppcApproval": "PENDING",
+  "qcApproval": "PENDING",
+  "status": "SUGGESTED",
+  "reasons": [
+   "grade family match",
+   "width fits with trim",
+   "reduction feasible",
+   "FIFO age"
+  ]
+ },
+ {
+  "id": "MAS-0011",
+  "itemId": "4213090040/30",
+  "soId": "4213090040",
+  "customerName": "Vega Consumer Durables",
+  "unitId": "HRC-VJ-2609-0054",
+  "rank": 1,
+  "score": 117.1,
+  "ppcApproval": "PENDING",
+  "qcApproval": "PENDING",
+  "status": "SUGGESTED",
+  "reasons": [
+   "grade family match",
+   "width fits with trim",
+   "reduction feasible",
+   "FIFO age"
+  ]
+ },
+ {
+  "id": "MAS-0012",
+  "itemId": "4213090040/30",
+  "soId": "4213090040",
+  "customerName": "Vega Consumer Durables",
+  "unitId": "HRC-DL-2609-0045",
+  "rank": 2,
+  "score": 116.0,
+  "ppcApproval": "PENDING",
+  "qcApproval": "PENDING",
+  "status": "SUGGESTED",
+  "reasons": [
+   "grade family match",
+   "width fits with trim",
+   "reduction feasible",
+   "FIFO age"
+  ]
+ },
+ {
+  "id": "MAS-0013",
+  "itemId": "4213090040/30",
+  "soId": "4213090040",
+  "customerName": "Vega Consumer Durables",
+  "unitId": "HRC-VJ-2609-0062",
+  "rank": 3,
+  "score": 115.6,
+  "ppcApproval": "PENDING",
+  "qcApproval": "PENDING",
+  "status": "SUGGESTED",
+  "reasons": [
+   "grade family match",
+   "width fits with trim",
+   "reduction feasible",
+   "FIFO age"
+  ]
+ }
+]

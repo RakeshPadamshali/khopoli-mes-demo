@@ -1,0 +1,2322 @@
+[
+ {
+  "itemId": "4213090001/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090001-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090001/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FPKG",
+   "fpMfgOrder": "FPM-4213090001-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090001/30",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090001-30",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090002/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FPKG",
+   "fpMfgOrder": "FPM-4213090002-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090002/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090002-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090003/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090003-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090003/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090003-20",
+   "altWorkCentre": "RWL"
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090003/30",
+  "sapRoute": {
+   "processPath": "PKL>CRM>RWL>PKG",
+   "yieldString": "0.985>0.960>0.970>1.000",
+   "routeString": "RPKL-RCRM-RRWL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>RWL>PKG",
+   "yieldString": "0.985>0.960>0.970>1.000",
+   "routeString": "FPKL-FCRM-FRWL-FPKG",
+   "fpMfgOrder": "FPM-4213090003-30",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "TRIMMED",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "RWL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090004/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090004-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090005/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FPKG",
+   "fpMfgOrder": "FPM-4213090005-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090006/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FPKG",
+   "fpMfgOrder": "FPM-4213090006-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090006/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090006-20",
+   "altWorkCentre": "RWL"
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090006/30",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090006-30",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090007/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090007-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090008/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090008-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090008/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090008-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090008/30",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090008-30",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGL",
+   "PPGL",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090009/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090009-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090009/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090009-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090009/30",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090009-30",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090010/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090010-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090011/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090011-10",
+   "altWorkCentre": "RWL"
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090012/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090012-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090012/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090012-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090012/30",
+  "sapRoute": {
+   "processPath": "HRS>PKL>PKG",
+   "yieldString": "0.985>0.985>1.000",
+   "routeString": "RHRS-RPKL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "HRS>PKL>PKG",
+   "yieldString": "0.985>0.985>1.000",
+   "routeString": "FHRS-FPKL-FPKG",
+   "fpMfgOrder": "FPM-4213090012-30",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRC",
+   "HRPO",
+   "PACK"
+  ],
+  "path": [
+   "HRS",
+   "PKL",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090013/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090013-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090014/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090014-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090014/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090014-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090015/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090015-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090015/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FPKG",
+   "fpMfgOrder": "FPM-4213090015-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090016/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090016-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090016/20",
+  "sapRoute": {
+   "processPath": "HRS>PKL>PKG",
+   "yieldString": "0.985>0.985>1.000",
+   "routeString": "RHRS-RPKL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "HRS>PKL>PKG",
+   "yieldString": "0.985>0.985>1.000",
+   "routeString": "FHRS-FPKL-FPKG",
+   "fpMfgOrder": "FPM-4213090016-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRC",
+   "HRPO",
+   "PACK"
+  ],
+  "path": [
+   "HRS",
+   "PKL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090017/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090017-10",
+   "altWorkCentre": "RWL"
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090018/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>RWL>PKG",
+   "yieldString": "0.985>0.960>0.970>1.000",
+   "routeString": "RPKL-RCRM-RRWL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>RWL>PKG",
+   "yieldString": "0.985>0.960>0.970>1.000",
+   "routeString": "FPKL-FCRM-FRWL-FPKG",
+   "fpMfgOrder": "FPM-4213090018-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "TRIMMED",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "RWL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090018/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FPKG",
+   "fpMfgOrder": "FPM-4213090018-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090019/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090019-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090020/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FPKG",
+   "fpMfgOrder": "FPM-4213090020-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090020/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090020-20",
+   "altWorkCentre": "RWL"
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090020/30",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090020-30",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090021/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090021-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090022/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090022-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090022/20",
+  "sapRoute": {
+   "processPath": "HRS>PKL>PKG",
+   "yieldString": "0.985>0.985>1.000",
+   "routeString": "RHRS-RPKL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "HRS>PKL>PKG",
+   "yieldString": "0.985>0.985>1.000",
+   "routeString": "FHRS-FPKL-FPKG",
+   "fpMfgOrder": "FPM-4213090022-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRC",
+   "HRPO",
+   "PACK"
+  ],
+  "path": [
+   "HRS",
+   "PKL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090023/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090023-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090023/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090023-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090023/30",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FPKG",
+   "fpMfgOrder": "FPM-4213090023-30",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090024/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090024-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090024/20",
+  "sapRoute": {
+   "processPath": "HRS>PKL>PKG",
+   "yieldString": "0.985>0.985>1.000",
+   "routeString": "RHRS-RPKL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "HRS>PKL>PKG",
+   "yieldString": "0.985>0.985>1.000",
+   "routeString": "FHRS-FPKL-FPKG",
+   "fpMfgOrder": "FPM-4213090024-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRC",
+   "HRPO",
+   "PACK"
+  ],
+  "path": [
+   "HRS",
+   "PKL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090025/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090025-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090026/10",
+  "sapRoute": {
+   "processPath": "HRS>PKL>PKG",
+   "yieldString": "0.985>0.985>1.000",
+   "routeString": "RHRS-RPKL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "HRS>PKL>PKG",
+   "yieldString": "0.985>0.985>1.000",
+   "routeString": "FHRS-FPKL-FPKG",
+   "fpMfgOrder": "FPM-4213090026-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRC",
+   "HRPO",
+   "PACK"
+  ],
+  "path": [
+   "HRS",
+   "PKL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090027/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090027-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090027/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090027-20",
+   "altWorkCentre": "RWL"
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090027/30",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090027-30",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090028/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090028-10",
+   "altWorkCentre": "RWL"
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090029/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090029-10",
+   "altWorkCentre": "RWL"
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090030/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090030-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090030/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090030-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090031/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090031-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090031/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090031-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090032/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>RWL>PKG",
+   "yieldString": "0.985>0.960>0.970>1.000",
+   "routeString": "RPKL-RCRM-RRWL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>RWL>PKG",
+   "yieldString": "0.985>0.960>0.970>1.000",
+   "routeString": "FPKL-FCRM-FRWL-FPKG",
+   "fpMfgOrder": "FPM-4213090032-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "TRIMMED",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "RWL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090032/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090032-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090033/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FPKG",
+   "fpMfgOrder": "FPM-4213090033-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090034/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090034-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GL",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090034/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090034-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090035/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090035-10",
+   "altWorkCentre": "RWL"
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GL",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090035/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090035-20",
+   "altWorkCentre": "RWL"
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090035/30",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090035-30",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090036/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FPKG",
+   "fpMfgOrder": "FPM-4213090036-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090036/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>RWL>PKG",
+   "yieldString": "0.985>0.960>0.970>1.000",
+   "routeString": "RPKL-RCRM-RRWL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>RWL>PKG",
+   "yieldString": "0.985>0.960>0.970>1.000",
+   "routeString": "FPKL-FCRM-FRWL-FPKG",
+   "fpMfgOrder": "FPM-4213090036-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "TRIMMED",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "RWL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090036/30",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090036-30",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090037/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090037-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090037/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>PKG",
+   "yieldString": "0.985>0.960>0.975>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FPKG",
+   "fpMfgOrder": "FPM-4213090037-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "PKG"
+  ],
+  "chosen": "SAP"
+ },
+ {
+  "itemId": "4213090038/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090038-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090039/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090039-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "GI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090040/10",
+  "sapRoute": {
+   "processPath": "PKL>CRM>RWL>PKG",
+   "yieldString": "0.985>0.960>0.970>1.000",
+   "routeString": "RPKL-RCRM-RRWL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>RWL>PKG",
+   "yieldString": "0.985>0.960>0.970>1.000",
+   "routeString": "FPKL-FCRM-FRWL-FPKG",
+   "fpMfgOrder": "FPM-4213090040-10",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "TRIMMED",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "RWL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090040/20",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RSLT-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>SLT>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>0.950>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FSLT-FPKG",
+   "fpMfgOrder": "FPM-4213090040-20",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "SLIT",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "SLT",
+   "PKG"
+  ],
+  "chosen": "FP"
+ },
+ {
+  "itemId": "4213090040/30",
+  "sapRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "RPKL-RCRM-RCGL-RCCL-RPKG"
+  },
+  "fpRoute": {
+   "processPath": "PKL>CRM>CGL>CCL>PKG",
+   "yieldString": "0.985>0.960>0.975>0.980>1.000",
+   "routeString": "FPKL-FCRM-FCGL-FCCL-FPKG",
+   "fpMfgOrder": "FPM-4213090040-30",
+   "altWorkCentre": null
+  },
+  "materialTree": [
+   "HRC",
+   "HRPO",
+   "CRFH",
+   "PPGI",
+   "PPGI",
+   "PACK"
+  ],
+  "path": [
+   "PKL",
+   "CRM",
+   "CGL",
+   "CCL",
+   "PKG"
+  ],
+  "chosen": "FP"
+ }
+]

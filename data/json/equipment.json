@@ -1,0 +1,506 @@
+[
+ {
+  "id": "HRS-UNC",
+  "lineId": "HRS",
+  "plantId": "KHP",
+  "name": "Uncoiler",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "HRS-SLH",
+  "lineId": "HRS",
+  "plantId": "KHP",
+  "name": "HR slitter head",
+  "type": "MECH",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "HRS-REC",
+  "lineId": "HRS",
+  "plantId": "KHP",
+  "name": "Recoiler",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKL-UNC",
+  "lineId": "PKL",
+  "plantId": "KHP",
+  "name": "Uncoiler",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKL-WLD",
+  "lineId": "PKL",
+  "plantId": "KHP",
+  "name": "Coil welder",
+  "type": "MECH",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKL-SBK",
+  "lineId": "PKL",
+  "plantId": "KHP",
+  "name": "Scale breaker",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKL-AT1",
+  "lineId": "PKL",
+  "plantId": "KHP",
+  "name": "Acid tank 1",
+  "type": "PROCESS",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKL-AT2",
+  "lineId": "PKL",
+  "plantId": "KHP",
+  "name": "Acid tank 2",
+  "type": "PROCESS",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKL-AT3",
+  "lineId": "PKL",
+  "plantId": "KHP",
+  "name": "Acid tank 3",
+  "type": "PROCESS",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKL-RNS",
+  "lineId": "PKL",
+  "plantId": "KHP",
+  "name": "Rinse section",
+  "type": "PROCESS",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKL-DRY",
+  "lineId": "PKL",
+  "plantId": "KHP",
+  "name": "Dryer",
+  "type": "PROCESS",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKL-STR",
+  "lineId": "PKL",
+  "plantId": "KHP",
+  "name": "Side trimmer",
+  "type": "MECH",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKL-OIL",
+  "lineId": "PKL",
+  "plantId": "KHP",
+  "name": "Oiler",
+  "type": "PROCESS",
+  "criticality": "L",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKL-REC",
+  "lineId": "PKL",
+  "plantId": "KHP",
+  "name": "Recoiler",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CRM-PAY",
+  "lineId": "CRM",
+  "plantId": "KHP",
+  "name": "Pay-off reel",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CRM-STD",
+  "lineId": "CRM",
+  "plantId": "KHP",
+  "name": "6-Hi reversing mill stand",
+  "type": "MECH",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CRM-AGC",
+  "lineId": "CRM",
+  "plantId": "KHP",
+  "name": "Automatic gauge control",
+  "type": "CONTROL",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CRM-TRL",
+  "lineId": "CRM",
+  "plantId": "KHP",
+  "name": "Tension reel left",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CRM-TRR",
+  "lineId": "CRM",
+  "plantId": "KHP",
+  "name": "Tension reel right",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CRM-CLT",
+  "lineId": "CRM",
+  "plantId": "KHP",
+  "name": "Coolant system",
+  "type": "UTILITY",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CRM-XRG",
+  "lineId": "CRM",
+  "plantId": "KHP",
+  "name": "X-ray thickness gauge",
+  "type": "INSTRUMENT",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CGL-EAC",
+  "lineId": "CGL",
+  "plantId": "KHP",
+  "name": "Entry accumulator",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CGL-CLN",
+  "lineId": "CGL",
+  "plantId": "KHP",
+  "name": "Cleaning section",
+  "type": "PROCESS",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CGL-FUR",
+  "lineId": "CGL",
+  "plantId": "KHP",
+  "name": "Annealing furnace",
+  "type": "PROCESS",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CGL-ZPT",
+  "lineId": "CGL",
+  "plantId": "KHP",
+  "name": "Zinc pot",
+  "type": "PROCESS",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CGL-AKN",
+  "lineId": "CGL",
+  "plantId": "KHP",
+  "name": "Air knife",
+  "type": "PROCESS",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CGL-CTW",
+  "lineId": "CGL",
+  "plantId": "KHP",
+  "name": "Cooling tower",
+  "type": "PROCESS",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CGL-SPM",
+  "lineId": "CGL",
+  "plantId": "KHP",
+  "name": "Skin pass mill",
+  "type": "MECH",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CGL-TLV",
+  "lineId": "CGL",
+  "plantId": "KHP",
+  "name": "Tension leveller",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CGL-PAS",
+  "lineId": "CGL",
+  "plantId": "KHP",
+  "name": "Chromate / passivation",
+  "type": "PROCESS",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CGL-XAC",
+  "lineId": "CGL",
+  "plantId": "KHP",
+  "name": "Exit accumulator",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CGL-CWG",
+  "lineId": "CGL",
+  "plantId": "KHP",
+  "name": "Coating weight gauge",
+  "type": "INSTRUMENT",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CCL-EAC",
+  "lineId": "CCL",
+  "plantId": "KHP",
+  "name": "Entry accumulator",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CCL-PRT",
+  "lineId": "CCL",
+  "plantId": "KHP",
+  "name": "Pre-treatment section",
+  "type": "PROCESS",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CCL-PCT",
+  "lineId": "CCL",
+  "plantId": "KHP",
+  "name": "Primer coater",
+  "type": "PROCESS",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CCL-POV",
+  "lineId": "CCL",
+  "plantId": "KHP",
+  "name": "Primer oven",
+  "type": "PROCESS",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CCL-TCT",
+  "lineId": "CCL",
+  "plantId": "KHP",
+  "name": "Top coater",
+  "type": "PROCESS",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CCL-FOV",
+  "lineId": "CCL",
+  "plantId": "KHP",
+  "name": "Finish oven",
+  "type": "PROCESS",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CCL-QCH",
+  "lineId": "CCL",
+  "plantId": "KHP",
+  "name": "Quench",
+  "type": "PROCESS",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CCL-DFG",
+  "lineId": "CCL",
+  "plantId": "KHP",
+  "name": "DFT gauge",
+  "type": "INSTRUMENT",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "CCL-XAC",
+  "lineId": "CCL",
+  "plantId": "KHP",
+  "name": "Exit accumulator",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "SLT-UNC",
+  "lineId": "SLT",
+  "plantId": "KHP",
+  "name": "Uncoiler",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "SLT-SLH",
+  "lineId": "SLT",
+  "plantId": "KHP",
+  "name": "Slitter head",
+  "type": "MECH",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "SLT-SCW",
+  "lineId": "SLT",
+  "plantId": "KHP",
+  "name": "Scrap winder",
+  "type": "MECH",
+  "criticality": "L",
+  "status": "RUNNING"
+ },
+ {
+  "id": "SLT-TPD",
+  "lineId": "SLT",
+  "plantId": "KHP",
+  "name": "Tension pad",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "SLT-REC",
+  "lineId": "SLT",
+  "plantId": "KHP",
+  "name": "Recoiler",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "RWL-UNC",
+  "lineId": "RWL",
+  "plantId": "KHP",
+  "name": "Uncoiler",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "RWL-TRM",
+  "lineId": "RWL",
+  "plantId": "KHP",
+  "name": "Edge trimmer",
+  "type": "MECH",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "RWL-REC",
+  "lineId": "RWL",
+  "plantId": "KHP",
+  "name": "Rewind reel",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKG-STP",
+  "lineId": "PKG",
+  "plantId": "KHP",
+  "name": "Strapping machine",
+  "type": "MECH",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKG-WRP",
+  "lineId": "PKG",
+  "plantId": "KHP",
+  "name": "Wrapping station",
+  "type": "MECH",
+  "criticality": "L",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKG-SCL",
+  "lineId": "PKG",
+  "plantId": "KHP",
+  "name": "Weigh scale",
+  "type": "INSTRUMENT",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "PKG-PRN",
+  "lineId": "PKG",
+  "plantId": "KHP",
+  "name": "Label printer",
+  "type": "IT",
+  "criticality": "M",
+  "status": "RUNNING"
+ },
+ {
+  "id": "VJNR-HSM-DSB",
+  "lineId": "VJNR-HSM",
+  "plantId": "VJNR",
+  "name": "Descaling box",
+  "type": "MECH",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "VJNR-HSM-F6",
+  "lineId": "VJNR-HSM",
+  "plantId": "VJNR",
+  "name": "Finishing stand F6",
+  "type": "MECH",
+  "criticality": "H",
+  "status": "RUNNING"
+ },
+ {
+  "id": "DLV-HSM-F5",
+  "lineId": "DLV-HSM",
+  "plantId": "DLV",
+  "name": "Finishing stand F5",
+  "type": "MECH",
+  "criticality": "H",
+  "status": "RUNNING"
+ }
+]

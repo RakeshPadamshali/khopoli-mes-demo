@@ -1,0 +1,205 @@
+[
+ {
+  "id": "HRS",
+  "name": "HR Slitter",
+  "type": "SLITTING",
+  "l2": false,
+  "tph": 45,
+  "targetTpd": 800,
+  "status": "ACTIVE",
+  "inputs": [
+   "HRC"
+  ],
+  "outputs": [
+   "HRC"
+  ],
+  "seq": 1
+ },
+ {
+  "id": "PKL",
+  "name": "Pickling Line",
+  "type": "PICKLING",
+  "l2": true,
+  "tph": 45,
+  "targetTpd": 900,
+  "status": "ACTIVE",
+  "inputs": [
+   "HRC"
+  ],
+  "outputs": [
+   "HRPO"
+  ],
+  "seq": 2
+ },
+ {
+  "id": "CRM",
+  "name": "Cold Roll Mill",
+  "type": "COLD_ROLLING",
+  "l2": true,
+  "tph": 32,
+  "targetTpd": 650,
+  "status": "ACTIVE",
+  "inputs": [
+   "HRPO"
+  ],
+  "outputs": [
+   "CRFH"
+  ],
+  "seq": 3
+ },
+ {
+  "id": "CGL",
+  "name": "Continuous Galvanizing Line",
+  "type": "GALVANIZING",
+  "l2": true,
+  "tph": 22,
+  "targetTpd": 450,
+  "status": "ACTIVE",
+  "inputs": [
+   "CRFH"
+  ],
+  "outputs": [
+   "GI",
+   "GL"
+  ],
+  "seq": 4
+ },
+ {
+  "id": "CCL",
+  "name": "Colour Coating Line",
+  "type": "COLOUR_COATING",
+  "l2": true,
+  "tph": 12,
+  "targetTpd": 240,
+  "status": "ACTIVE",
+  "inputs": [
+   "GI",
+   "GL"
+  ],
+  "outputs": [
+   "PPGI",
+   "PPGL"
+  ],
+  "seq": 5
+ },
+ {
+  "id": "SLT",
+  "name": "Slitter",
+  "type": "SLITTING",
+  "l2": false,
+  "tph": 35,
+  "targetTpd": 600,
+  "status": "ACTIVE",
+  "inputs": [
+   "HRPO",
+   "CRFH",
+   "GI",
+   "GL",
+   "PPGI",
+   "PPGL"
+  ],
+  "outputs": [
+   "SLIT"
+  ],
+  "seq": 6
+ },
+ {
+  "id": "RWL",
+  "name": "Rewinding + Trimming Line",
+  "type": "REWINDING",
+  "l2": false,
+  "tph": 30,
+  "targetTpd": 400,
+  "status": "ACTIVE",
+  "inputs": [
+   "CRFH",
+   "GI"
+  ],
+  "outputs": [
+   "TRIMMED"
+  ],
+  "seq": 7
+ },
+ {
+  "id": "PKG",
+  "name": "Packing Line",
+  "type": "PACKING",
+  "l2": false,
+  "tph": 30,
+  "targetTpd": 600,
+  "status": "ACTIVE",
+  "inputs": [
+   "*"
+  ],
+  "outputs": [
+   "PACK"
+  ],
+  "seq": 8
+ },
+ {
+  "id": "PKL2",
+  "name": "Pickling Line 2 (upcoming)",
+  "type": "PICKLING",
+  "l2": true,
+  "tph": 50,
+  "targetTpd": 1000,
+  "status": "PLANNED",
+  "inputs": [
+   "HRC"
+  ],
+  "outputs": [
+   "HRPO"
+  ],
+  "seq": 9
+ },
+ {
+  "id": "CRM2",
+  "name": "Cold Roll Mill 2 (upcoming)",
+  "type": "COLD_ROLLING",
+  "l2": true,
+  "tph": 35,
+  "targetTpd": 700,
+  "status": "PLANNED",
+  "inputs": [
+   "HRPO"
+  ],
+  "outputs": [
+   "CRFH"
+  ],
+  "seq": 10
+ },
+ {
+  "id": "CGL2",
+  "name": "CGL 2 (upcoming)",
+  "type": "GALVANIZING",
+  "l2": true,
+  "tph": 25,
+  "targetTpd": 500,
+  "status": "PLANNED",
+  "inputs": [
+   "CRFH"
+  ],
+  "outputs": [
+   "GI",
+   "GL"
+  ],
+  "seq": 11
+ },
+ {
+  "id": "CGL3",
+  "name": "CGL 3 (upcoming)",
+  "type": "GALVANIZING",
+  "l2": true,
+  "tph": 25,
+  "targetTpd": 500,
+  "status": "PLANNED",
+  "inputs": [
+   "CRFH"
+  ],
+  "outputs": [
+   "GI",
+   "GL"
+  ],
+  "seq": 12
+ }
+]

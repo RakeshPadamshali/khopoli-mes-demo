@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sales Orders & TDC · Khopoli NextGen MES</title>
+<link rel="stylesheet" href="assets/vendor/roboto/roboto.css"><link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css"><link rel="stylesheet" href="assets/khp-shell.css">
+<style>
+  .tbl-wrap { max-height:calc(100vh - 330px); }
+  .prog { display:flex; align-items:center; gap:6px; } .prog .track { width:80px; height:9px; background:#e6eaed; border-radius:5px; overflow:hidden; display:flex; } .prog .a { background:#1e88e5; height:100%; } .prog .p { background:#2e9b45; height:100%; } .prog .d { background:#0d6b2b; height:100%; }
+  .tdc { display:grid; grid-template-columns:repeat(3,1fr); gap:4px 18px; font-size:11.5px; } .tdc .k { color:var(--color-text-muted); } .tdc .v { font-weight:600; }
+  .routebox { display:flex; gap:12px; flex-wrap:wrap; } .routebox .rb { flex:1; min-width:260px; border:1px solid var(--color-border-light); border-radius:6px; padding:8px 10px; background:#fff; } .rb .t { font:600 10px 'Roboto'; text-transform:uppercase; color:var(--color-text-muted); margin-bottom:5px; }
+  .evt { background:#fff8e1; border:1px solid #f5d98a; border-radius:8px; padding:9px 12px; font-size:12px; display:flex; gap:10px; align-items:center; margin-bottom:12px; } .evt i { color:#b25f00; }
+</style>
+<script src="assets/khp-embed.js"></script>
+</head>
+<body>
+<div class="bm-layout">
+  <main class="bm-content">
+    <div class="page-bar">
+      <div><h1>Sales Orders &amp; TDC — schedule-line level, from SAP</h1><div class="crumb">Planning › Sales Orders › <span id="ctx"></span></div></div>
+      <div class="actions"><button class="btn btn-primary" id="feed"><i class="fa-solid fa-satellite-dish"></i> Simulate SAP order feed (IDoc ORDERS05)</button><a class="btn btn-outline" href="planning.html"><i class="fa-solid fa-route"></i> Routes &amp; Schedules</a><a class="btn btn-outline" href="allocation.html"><i class="fa-solid fa-boxes-packing"></i> Material Allocator</a></div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="evt" id="amend"></div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-file-invoice"></i> Sales-order items — technical delivery condition, allocation &amp; fulfilment (BTA / BTP) <span class="right" id="meta"></span></div>
+      <div class="card-body">
+        <div class="filters" id="filters"></div>
+        <div class="tbl-wrap"><table class="tbl" id="tbl"></table></div>
+        <div class="note"><i class="fa-solid fa-circle-info"></i><span>Expand an item for its <b>TDC</b> (variant-configuration characteristics from SAP), <b>schedule lines</b> and the <b>SAP vs Factory-Planner route</b>. Fulfilment bar: blue = allocated (HR coil), green = produced, dark green = dispatched. BTA = balance to allocate, BTP = balance to produce. The golden-thread order is marked <i class="fa-solid fa-flag-checkered hero-mark"></i>.</span></div>
+      </div>
+    </div>
+  </main>
+</div>
+<script>window.KHP_PAGE='orders'; window.KHP_TITLE='Sales Orders & TDC'; window.KHP_ICON='fa-file-invoice';</script>
+<script src="assets/khp-chrome.js"></script><script src="data/khp-data.js"></script><script src="assets/khp-core.js"></script>
+<script>
+  var X=window.KHPX, D=X.D, items=D.items.slice(), esc=X.esc, badge=X.badge;
+  document.getElementById('ctx').textContent = D.plant.name + ' · as of ' + X.fmt(D.meta.asOf);
+  // live-demo overlay: an order received through the simulated SAP feed
+  var fed = X.state.get('sapOrderFed', null);
+  if (fed) items.unshift(fed.item);
+  var tons=items.reduce(function(a,i){return a+i.qtyMT;},0);
+  [['Sales orders',new Set(items.map(function(i){return i.soId;})).size,'SAP ZOR · schedule-line level','blue'],['Order items',items.length,X.n(tons)+' MT ordered','blue'],
+   ['In progress',items.filter(function(i){return i.status==='IN_PROGRESS'||i.status==='PARTIALLY_DISPATCHED';}).length,'allocated / producing','accent'],
+   ['Dispatched',items.filter(function(i){return i.status==='DISPATCHED';}).length,'items fully served','green'],
+   ['Rush flags',D.orders.filter(function(o){return o.rush;}).length,'from APS (IF-APS-RUSH)','amber'],['Amendments pending',D.orders.filter(function(o){return o.amendment&&o.amendment.status==='FAILED_IDOC';}).length,'failed IDoc — see Integration','red']
+  ].forEach(function(k){ document.getElementById('kpis').insertAdjacentHTML('beforeend','<div class="kpi '+k[3]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="s">'+k[2]+'</div></div>'); });
+  var am=D.events.amendment;
+  document.getElementById('amend').innerHTML='<i class="fa-solid fa-triangle-exclamation"></i><div><b>SAP amendment pending:</b> SO '+esc(am.itemId)+' quantity '+am.old+' → '+am.new+' MT ('+X.fmt(am.at)+') arrived as IDoc '+am.idoc+' and <b>failed validation</b> in the middleware (schedule-line date "2026-13-02"). MES still shows '+am.old+' MT. '+
+    '<a href="integration.html#'+am.idoc+'">Open in Integration Monitor</a> · alert '+am.alertId+' · incident <a href="support.html#'+am.incidentId+'">'+am.incidentId+'</a></div>';
+  function uniq(f){ var s={}; items.forEach(function(o){ if(o[f]) s[o[f]]=1; }); return Object.keys(s).sort(); }
+  var F={cust:'',prod:'',status:'',q:''};
+  function sel(id,label,vals){ return '<span class="fl">'+label+'</span><select id="'+id+'"><option value="">All</option>'+vals.map(function(v){return '<option>'+esc(v)+'</option>';}).join('')+'</select>'; }
+  document.getElementById('filters').innerHTML=sel('f-cust','Customer',uniq('customerName'))+sel('f-prod','Product',uniq('product'))+sel('f-status','Status',['OPEN','IN_PROGRESS','PARTIALLY_DISPATCHED','DISPATCHED'])+
+    '<span class="fl">Search</span><input id="f-q" placeholder="SO / item / customer" size="14"><span class="hint" id="fc" style="margin-left:auto"></span>';
+  var COLS=['','SO / item','Customer','Product · grade','Thk × width','Coating · paint','Qty MT','Fulfilment','BTA / BTP','Req · FP commit','Route','Status'];
+  function row(o){
+    var pa=Math.min(100,o.allocatedMT/o.qtyMT*100), pp=Math.min(100,o.producedMT/o.qtyMT*100), pd=Math.min(100,o.dispatchedMT/o.qtyMT*100); var ord=X.order(o.soId)||{};
+    return '<tr class="o-row'+(o.hero?' hero':'')+'" id="r-'+o.id.replace('/','-')+'"><td><button class="exp-btn" data-exp="'+esc(o.id)+'"><i class="fa-solid fa-chevron-right"></i></button></td>'+
+      '<td class="mono strong">'+esc(o.id)+(o.hero?' <i class="fa-solid fa-flag-checkered hero-mark" title="golden-thread order"></i>':'')+(ord.rush?' <span class="badge b-red">RUSH</span>':'')+(ord.amendment?' <span class="badge b-amber">AMEND</span>':'')+(o.simulated?' <span class="badge b-blue">NEW · IDoc</span>':'')+'</td>'+
+      '<td>'+esc(o.customerName)+'<div class="hint">'+esc(o.segment)+'</div></td><td><span class="chip">'+esc(o.product)+'</span> '+esc(o.gradeId)+'</td><td class="mono">'+o.thk.toFixed(2)+' × '+o.width+(o.slitWidths?'<div class="hint">slit '+o.slitWidths.join(' + ')+'</div>':'')+'</td>'+
+      '<td>'+(o.coatingId?esc(o.coatingId):'—')+(o.paintId?' · '+esc(o.paintId)+' RAL '+esc(o.ral)+'<div class="hint">DFT '+o.dftTop+' ±'+o.dftTol+' / '+o.dftBack+' µm</div>':'')+'</td>'+
+      '<td class="mono right-al strong">'+X.n(o.qtyMT)+'</td><td><div class="prog"><span class="track"><span class="d" style="width:'+pd+'%"></span><span class="p" style="width:'+Math.max(0,pp-pd)+'%"></span><span class="a" style="width:'+Math.max(0,pa-pp)+'%"></span></span><span class="mono small">'+X.n(o.dispatchedMT,1)+' / '+X.n(o.producedMT,1)+' / '+X.n(o.allocatedMT,1)+'</span></div></td>'+
+      '<td class="mono">'+X.n(o.btaMT,1)+' / '+X.n(o.btpMT,1)+'</td><td class="mono">'+esc(o.reqDate.slice(5))+' · <span class="hint">'+esc(o.fpCommit.slice(5))+'</span></td><td>'+badge(ord.routeSource||'FP',(ord.routeSource||'FP')+' route')+'</td><td>'+badge(o.status)+'</td></tr>';
+  }
+  var tbl=document.getElementById('tbl');
+  function apply(){
+    var q=F.q.toLowerCase(); var list=items.filter(function(o){ if(F.cust&&o.customerName!==F.cust) return false; if(F.prod&&o.product!==F.prod) return false; if(F.status&&o.status!==F.status) return false;
+      if(q&&o.id.toLowerCase().indexOf(q)<0&&o.customerName.toLowerCase().indexOf(q)<0) return false; return true; });
+    list.sort(function(a,b){ return (b.hero?1:0)-(a.hero?1:0) || (b.simulated?1:0)-(a.simulated?1:0) || (a.reqDate<b.reqDate?-1:1); });
+    tbl.innerHTML='<thead><tr>'+COLS.map(function(c){return '<th>'+c+'</th>';}).join('')+'</tr></thead><tbody>'+list.map(row).join('')+'</tbody>';
+    document.getElementById('fc').textContent=list.length+' of '+items.length+' items'; document.getElementById('meta').textContent=D.orders.length+' sales orders · '+D.items.length+' items · source SAP (IF-SAP-01/02/03)';
+  }
+  ['f-cust','f-prod','f-status'].forEach(function(id){ document.getElementById(id).addEventListener('change',function(){ F[id.slice(2)]=this.value; apply(); }); });
+  document.getElementById('f-q').addEventListener('input',function(){ F.q=this.value; apply(); });
+  tbl.addEventListener('click',function(e){ var b=e.target.closest('.exp-btn'); if(!b) return; toggle(b.getAttribute('data-exp'), b); });
+  function toggle(id,b){
+    var tr=b.closest('tr'), next=tr.nextElementSibling;
+    if(next&&next.classList.contains('sub-detail')){ next.remove(); b.classList.remove('open'); return; }
+    var o=items.filter(function(x){return x.id===id;})[0], t=X.tdc(o.tdcId)||{characteristics:[]}, r=X.route(o.id);
+    var det=document.createElement('tr'); det.className='sub-detail';
+    det.innerHTML='<td colspan="'+COLS.length+'"><div class="sub-wrap"><div class="sub-title"><i class="fa-solid fa-file-contract"></i> Technical delivery condition — '+esc(o.tdcId)+' <span class="hint" style="text-transform:none;font-weight:400">· '+esc(t.source||'SAP variant configuration')+'</span></div>'+
+      '<div class="tdc">'+t.characteristics.map(function(c){return '<span class="k">'+esc(c.name)+'</span><span class="v">'+esc(c.value)+'</span>';}).join('')+'</div>'+
+      '<div class="sub-title" style="margin-top:10px"><i class="fa-solid fa-list-ol"></i> Schedule lines</div><table class="sub-tbl"><thead><tr><th>Schedule line</th><th>Qty MT</th><th>Date</th><th>Status</th></tr></thead><tbody>'+
+      o.scheduleLines.map(function(s){return '<tr><td class="mono">'+esc(s.id)+'</td><td class="mono">'+s.qtyMT+'</td><td class="mono">'+esc(s.date)+'</td><td>'+badge(s.status)+'</td></tr>';}).join('')+'</tbody></table>'+
+      (r?'<div class="sub-title" style="margin-top:10px"><i class="fa-solid fa-route"></i> Routes — SAP route order vs Factory Planner (chosen: '+esc(r.chosen)+')</div><div class="routebox">'+
+        '<div class="rb"><div class="t">SAP route order (manual)</div><div class="mono">'+esc(r.sapRoute.processPath)+'</div><div class="hint">yield '+esc(r.sapRoute.yieldString)+' · '+esc(r.sapRoute.routeString)+'</div></div>'+
+        '<div class="rb"><div class="t">Factory Planner route · '+esc(r.fpRoute.fpMfgOrder)+'</div><div class="mono">'+esc(r.fpRoute.processPath)+'</div><div class="hint">yield '+esc(r.fpRoute.yieldString)+(r.fpRoute.altWorkCentre?' · alt work centre '+esc(r.fpRoute.altWorkCentre):'')+'</div></div>'+
+        '<div class="rb"><div class="t">Material tree</div><div class="mono">'+r.materialTree.map(esc).join(' → ')+'</div></div></div>':'')+
+      '<div style="margin-top:10px;display:flex;gap:6px"><a class="btn btn-outline btn-sm" href="planning.html#'+esc(o.id)+'"><i class="fa-solid fa-route"></i> Plan on FP / SAP route</a><a class="btn btn-outline btn-sm" href="allocation.html#'+esc(o.id)+'"><i class="fa-solid fa-boxes-packing"></i> Allocate HR coil</a><a class="btn btn-outline btn-sm" href="genealogy.html#'+esc(o.id)+'"><i class="fa-solid fa-diagram-project"></i> Genealogy</a></div></div></td>';
+    tr.after(det); b.classList.add('open');
+  }
+  // simulate an SAP order feed (live-demo action, persisted per browser)
+  document.getElementById('feed').addEventListener('click',function(){
+    if(X.state.get('sapOrderFed')){ X.toast('Order 4213090041/10 already received — reset the demo to replay','fa-circle-info'); return; }
+    var it={id:'4213090041/10',soId:'4213090041',item:10,product:'GI',gradeId:'DX51D+Z',thk:0.5,width:1220,coatingId:'Z120',paintId:null,ral:null,qtyMT:60,packing:'DOM',slitWidths:null,status:'OPEN',customerId:'C001',customerName:'Apex Appliances Ltd',segment:'Appliance',
+      reqDate:'2026-10-08',fpCommit:'2026-10-06',scheduleLines:[{id:'4213090041/10/0001',qtyMT:60,date:'2026-10-08',status:'OPEN'}],tdcId:'TDC-4213090017-10',allocatedMT:0,producedMT:0,dispatchedMT:0,btaMT:60,btpMT:60,simulated:true,hero:false};
+    X.state.set('sapOrderFed',{item:it,at:new Date().toISOString(),idoc:'0000001187801'}); items.unshift(it); apply();
+    X.toast('IDoc ORDERS05 0000001187801 received via middleware → SO 4213090041/10 created at schedule-line level (TDC copied from VC)');
+  });
+  apply();
+  var h=X.hashParam(); if(h){ var b=document.querySelector('.exp-btn[data-exp="'+h+'"]'); if(b){ toggle(h,b); b.closest('tr').scrollIntoView({block:'center'}); } }
+</script>
+</body>
+</html>

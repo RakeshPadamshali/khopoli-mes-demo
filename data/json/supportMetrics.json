@@ -1,0 +1,51 @@
+{
+ "periodDays": 30,
+ "tickets": 31,
+ "resolved": 30,
+ "open": 1,
+ "agentResolvedPct": 63,
+ "humanResolvedPct": 37,
+ "mttrMinBySeverity": {
+  "S1": 12,
+  "S2": 64,
+  "S3": 176,
+  "S4": 602
+ },
+ "deflectionPct": 38,
+ "falseActionRatePct": 5.3,
+ "automationCoveragePct": 83,
+ "slaCompliancePct": 96.4,
+ "csatAvg": 4.2,
+ "weekly": [
+  {
+   "week": "W33",
+   "tickets": 5,
+   "agentResolvedPct": 80
+  },
+  {
+   "week": "W34",
+   "tickets": 8,
+   "agentResolvedPct": 62
+  },
+  {
+   "week": "W35",
+   "tickets": 5,
+   "agentResolvedPct": 60
+  },
+  {
+   "week": "W36",
+   "tickets": 9,
+   "agentResolvedPct": 56
+  },
+  {
+   "week": "W37",
+   "tickets": 3,
+   "agentResolvedPct": 67
+  }
+ ],
+ "targets": {
+  "agentResolvedL1Pct": 60,
+  "month12Pct": 80,
+  "l2DiagnosticPct": 40
+ }
+}

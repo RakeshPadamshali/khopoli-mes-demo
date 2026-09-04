@@ -1,0 +1,47 @@
+[
+ {
+  "id": "Z80",
+  "family": "GI",
+  "gsm": 80,
+  "target": 84,
+  "bandMin": 80,
+  "bandMax": 94,
+  "spangle": "Minimized"
+ },
+ {
+  "id": "Z120",
+  "family": "GI",
+  "gsm": 120,
+  "target": 126,
+  "bandMin": 120,
+  "bandMax": 138,
+  "spangle": "Regular"
+ },
+ {
+  "id": "Z180",
+  "family": "GI",
+  "gsm": 180,
+  "target": 189,
+  "bandMin": 180,
+  "bandMax": 205,
+  "spangle": "Regular"
+ },
+ {
+  "id": "Z275",
+  "family": "GI",
+  "gsm": 275,
+  "target": 288,
+  "bandMin": 275,
+  "bandMax": 310,
+  "spangle": "Regular"
+ },
+ {
+  "id": "AZ150",
+  "family": "GL",
+  "gsm": 150,
+  "target": 157,
+  "bandMin": 150,
+  "bandMax": 172,
+  "spangle": "Aluzinc"
+ }
+]

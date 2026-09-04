@@ -1,0 +1,4854 @@
+[
+ {
+  "id": "TDC-4213090001-10",
+  "itemId": "4213090001/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "CQ-IS277 (IS 277)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.35 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1000 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z80 — 80 g/m² total, band 80–94"
+   },
+   {
+    "name": "Spangle",
+    "value": "Minimized"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "490 + 490 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090001-20",
+  "itemId": "4213090001/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.45 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "PVDF — Polyvinylidene Fluoride"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 9002 Grey White"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "25 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "10 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "25–35"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090001-30",
+  "itemId": "4213090001/30",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.45 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "SMP — Silicone Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 6005 Moss Green"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "25 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "25–35"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "410 + 410 + 410 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090002-10",
+  "itemId": "4213090002/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.45 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "PVDF — Polyvinylidene Fluoride"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 9010 Pure White"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "25 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "10 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "25–35"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090002-20",
+  "itemId": "4213090002/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1000 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "SMP — Silicone Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 3009 Oxide Red"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "25 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "25–35"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "326 + 326 + 326 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090003-10",
+  "itemId": "4213090003/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.00 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1500 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "493 + 493 + 493 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090003-20",
+  "itemId": "4213090003/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "600 + 600 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090003-30",
+  "itemId": "4213090003/30",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "CRFH"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "CR4-CRFH (IS 513)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090004-10",
+  "itemId": "4213090004/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.20 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1500 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090005-10",
+  "itemId": "4213090005/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.45 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 9002 Grey White"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090006-10",
+  "itemId": "4213090006/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 9002 Grey White"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090006-20",
+  "itemId": "4213090006/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 7016 Anthracite Grey"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "410 + 410 + 410 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090006-30",
+  "itemId": "4213090006/30",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.60 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 1015 Light Ivory"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "400 + 400 + 400 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090007-10",
+  "itemId": "4213090007/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.45 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "SMP — Silicone Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 9010 Pure White"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "25 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "25–35"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "400 + 400 + 400 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090008-10",
+  "itemId": "4213090008/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090008-20",
+  "itemId": "4213090008/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.00 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090008-30",
+  "itemId": "4213090008/30",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGL"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "SGLCC (JIS G3321)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "AZ150 — 150 g/m² total, band 150–172"
+   },
+   {
+    "name": "Spangle",
+    "value": "Aluzinc"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 3009 Oxide Red"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "400 + 400 + 400 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090009-10",
+  "itemId": "4213090009/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "410 + 410 + 410 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090009-20",
+  "itemId": "4213090009/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.20 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "600 + 600 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090009-30",
+  "itemId": "4213090009/30",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.00 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1500 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090010-10",
+  "itemId": "4213090010/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 5012 Light Blue"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "410 + 410 + 410 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090011-10",
+  "itemId": "4213090011/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "S350GD+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.00 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z275 — 275 g/m² total, band 275–310"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "615 + 615 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090012-10",
+  "itemId": "4213090012/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090012-20",
+  "itemId": "4213090012/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.20 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090012-30",
+  "itemId": "4213090012/30",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "HRPO"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "HRPO-E250 (IS 2062)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "2.00 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1500 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090013-10",
+  "itemId": "4213090013/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "CQ-IS277 (IS 277)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.35 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1000 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z80 — 80 g/m² total, band 80–94"
+   },
+   {
+    "name": "Spangle",
+    "value": "Minimized"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090014-10",
+  "itemId": "4213090014/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "S350GD+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.20 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z275 — 275 g/m² total, band 275–310"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090014-20",
+  "itemId": "4213090014/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX53D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1500 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "740 + 740 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090015-10",
+  "itemId": "4213090015/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.20 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "615 + 615 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090015-20",
+  "itemId": "4213090015/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "SMP — Silicone Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 1015 Light Ivory"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "25 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "25–35"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090016-10",
+  "itemId": "4213090016/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "CQ-IS277 (IS 277)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.40 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z80 — 80 g/m² total, band 80–94"
+   },
+   {
+    "name": "Spangle",
+    "value": "Minimized"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "600 + 600 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090016-20",
+  "itemId": "4213090016/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "HRPO"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "HRPO-E250 (IS 2062)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "4.00 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090017-10",
+  "itemId": "4213090017/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 9002 Grey White"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "610 + 610 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090018-10",
+  "itemId": "4213090018/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "CRFH"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "CR4-CRFH (IS 513)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.60 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090018-20",
+  "itemId": "4213090018/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.45 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1000 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "SMP — Silicone Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 5012 Light Blue"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "25 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "25–35"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090019-10",
+  "itemId": "4213090019/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX53D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.00 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "615 + 615 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090020-10",
+  "itemId": "4213090020/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 9002 Grey White"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090020-20",
+  "itemId": "4213090020/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1500 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "740 + 740 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090020-30",
+  "itemId": "4213090020/30",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.20 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1500 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "740 + 740 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090021-10",
+  "itemId": "4213090021/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "CQ-IS277 (IS 277)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.40 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z80 — 80 g/m² total, band 80–94"
+   },
+   {
+    "name": "Spangle",
+    "value": "Minimized"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "600 + 600 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090022-10",
+  "itemId": "4213090022/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "S350GD+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.00 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z275 — 275 g/m² total, band 275–310"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090022-20",
+  "itemId": "4213090022/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "HRPO"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "HRPO-E250 (IS 2062)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "4.00 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1500 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090023-10",
+  "itemId": "4213090023/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.60 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1000 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 6005 Moss Green"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "490 + 490 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090023-20",
+  "itemId": "4213090023/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "S350GD+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z275 — 275 g/m² total, band 275–310"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090023-30",
+  "itemId": "4213090023/30",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.45 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 1015 Light Ivory"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090024-10",
+  "itemId": "4213090024/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 9002 Grey White"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "15 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "610 + 610 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090024-20",
+  "itemId": "4213090024/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "HRPO"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "HRPO-E250 (IS 2062)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "2.50 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090025-10",
+  "itemId": "4213090025/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1500 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "740 + 740 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090026-10",
+  "itemId": "4213090026/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "HRPO"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "HRPO-E250 (IS 2062)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "2.50 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090027-10",
+  "itemId": "4213090027/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.45 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 9002 Grey White"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "400 + 400 + 400 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090027-20",
+  "itemId": "4213090027/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1000 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "PVDF — Polyvinylidene Fluoride"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 5012 Light Blue"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "25 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "10 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "25–35"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "326 + 326 + 326 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090027-30",
+  "itemId": "4213090027/30",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1000 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 6005 Moss Green"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "326 + 326 + 326 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090028-10",
+  "itemId": "4213090028/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "S350GD+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z275 — 275 g/m² total, band 275–310"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "410 + 410 + 410 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090029-10",
+  "itemId": "4213090029/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "CQ-IS277 (IS 277)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.35 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z80 — 80 g/m² total, band 80–94"
+   },
+   {
+    "name": "Spangle",
+    "value": "Minimized"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "600 + 600 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090030-10",
+  "itemId": "4213090030/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX53D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.00 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090030-20",
+  "itemId": "4213090030/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "SMP — Silicone Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 7016 Anthracite Grey"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "25 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "25–35"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "400 + 400 + 400 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090031-10",
+  "itemId": "4213090031/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX53D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090031-20",
+  "itemId": "4213090031/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1500 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090032-10",
+  "itemId": "4213090032/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "CRFH"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "CR4-CRFH (IS 513)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090032-20",
+  "itemId": "4213090032/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090033-10",
+  "itemId": "4213090033/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 9010 Pure White"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090034-10",
+  "itemId": "4213090034/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GL"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "SGLCC (JIS G3321)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "AZ150 — 150 g/m² total, band 150–172"
+   },
+   {
+    "name": "Spangle",
+    "value": "Aluzinc"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090034-20",
+  "itemId": "4213090034/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX53D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.00 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090035-10",
+  "itemId": "4213090035/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GL"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "SGLCC (JIS G3321)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.45 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "AZ150 — 150 g/m² total, band 150–172"
+   },
+   {
+    "name": "Spangle",
+    "value": "Aluzinc"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "400 + 400 + 400 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090035-20",
+  "itemId": "4213090035/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.00 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "400 + 400 + 400 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090035-30",
+  "itemId": "4213090035/30",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.20 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1500 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "493 + 493 + 493 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090036-10",
+  "itemId": "4213090036/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.60 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1000 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 9002 Grey White"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090036-20",
+  "itemId": "4213090036/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "CRFH"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "CR4-CRFH (IS 513)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.60 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090036-30",
+  "itemId": "4213090036/30",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.00 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1500 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090037-10",
+  "itemId": "4213090037/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "S350GD+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "1.20 ±0.05"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z275 — 275 g/m² total, band 275–310"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090037-20",
+  "itemId": "4213090037/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090038-10",
+  "itemId": "4213090038/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1000 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "PVDF — Polyvinylidene Fluoride"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 5012 Light Blue"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "25 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "10 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "25–35"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "490 + 490 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090039-10",
+  "itemId": "4213090039/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "GI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.80 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1500 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Slitting",
+    "value": "740 + 740 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090040-10",
+  "itemId": "4213090040/10",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "CRFH"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "CR4-CRFH (IS 513)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1250 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Packing",
+    "value": "Export seaworthy"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090040-20",
+  "itemId": "4213090040/20",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.50 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1000 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "RMP — Regular Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 7016 Anthracite Grey"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "20 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "30–40"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Slitting",
+    "value": "326 + 326 + 326 mm"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ },
+ {
+  "id": "TDC-4213090040-30",
+  "itemId": "4213090040/30",
+  "source": "SAP Variant Configuration",
+  "characteristics": [
+   {
+    "name": "Product",
+    "value": "PPGI"
+   },
+   {
+    "name": "Grade / standard",
+    "value": "DX51D+Z (EN 10346)"
+   },
+   {
+    "name": "Thickness (mm)",
+    "value": "0.45 ±0.03"
+   },
+   {
+    "name": "Width (mm)",
+    "value": "1220 +5/-0"
+   },
+   {
+    "name": "Coil ID (mm)",
+    "value": "508"
+   },
+   {
+    "name": "Max coil weight (t)",
+    "value": "22"
+   },
+   {
+    "name": "Coating",
+    "value": "Z120 — 120 g/m² total, band 120–138"
+   },
+   {
+    "name": "Spangle",
+    "value": "Regular"
+   },
+   {
+    "name": "Passivation",
+    "value": "Chromate, oiled"
+   },
+   {
+    "name": "Paint system",
+    "value": "SMP — Silicone Modified Polyester"
+   },
+   {
+    "name": "Colour (top)",
+    "value": "RAL 3009 Oxide Red"
+   },
+   {
+    "name": "DFT top (µm)",
+    "value": "25 ±3"
+   },
+   {
+    "name": "DFT back (µm)",
+    "value": "7 ±2"
+   },
+   {
+    "name": "Gloss (60°)",
+    "value": "25–35"
+   },
+   {
+    "name": "Guard film",
+    "value": "Yes, top side"
+   },
+   {
+    "name": "Packing",
+    "value": "Domestic, VCI + stretch wrap"
+   },
+   {
+    "name": "Test certificate",
+    "value": "EN 10204 3.1"
+   },
+   {
+    "name": "Marking",
+    "value": "Customer logo + batch QR"
+   }
+  ]
+ }
+]

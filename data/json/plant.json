@@ -1,0 +1,18 @@
+{
+ "id": "KHP",
+ "name": "JSW Steel Coated Products — Khopoli",
+ "shortName": "Khopoli",
+ "state": "Maharashtra",
+ "company": "JSW Steel Coated Products Ltd.",
+ "ontologyDomain": "ASSETS",
+ "upstreamPlants": [
+  {
+   "id": "VJNR",
+   "name": "JSW Vijayanagar — Hot Strip Mill"
+  },
+  {
+   "id": "DLV",
+   "name": "JSW Dolvi — Hot Strip Mill"
+  }
+ ]
+}

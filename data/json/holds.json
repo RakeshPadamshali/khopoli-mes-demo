@@ -1,0 +1,62 @@
+[
+ {
+  "id": "HLD-0001",
+  "unitId": "PPG-KHP-2609-0011",
+  "level": "BATCH",
+  "reason": "QA — DFT deviation flagged by PDO auto-comparison; lab test pending",
+  "heldAt": "2026-09-15T02:05:00",
+  "heldBy": "System (parameter-based hold)",
+  "releasedAt": null,
+  "releasedBy": null,
+  "status": "ACTIVE",
+  "hero": true
+ },
+ {
+  "id": "HLD-0002",
+  "unitId": "PPG-KHP-2609-0001",
+  "level": "BATCH",
+  "reason": "Coating weight re-test",
+  "heldAt": "2026-08-30T13:17:19",
+  "heldBy": "QC — A. Kulkarni",
+  "releasedAt": null,
+  "releasedBy": null,
+  "status": "ACTIVE",
+  "hero": false
+ },
+ {
+  "id": "HLD-0003",
+  "unitId": "HPO-KHP-2609-0008",
+  "level": "BATCH",
+  "reason": "Width tolerance query",
+  "heldAt": "2026-09-02T17:58:57",
+  "heldBy": "QC — N. Rao",
+  "releasedAt": "2026-09-03T09:27:22",
+  "releasedBy": "QC Head — M. Iyer",
+  "status": "RELEASED",
+  "hero": false
+ },
+ {
+  "id": "HLD-0004",
+  "unitId": "CRF-KHP-2609-0011",
+  "level": "BATCH",
+  "reason": "Customer sample approval awaited",
+  "heldAt": "2026-09-06T02:54:32",
+  "heldBy": "QC — S. Deshmukh",
+  "releasedAt": null,
+  "releasedBy": null,
+  "status": "ACTIVE",
+  "hero": false
+ },
+ {
+  "id": "HLD-0005",
+  "unitId": "HPO-KHP-2609-0018",
+  "level": "BATCH",
+  "reason": "Surface inspection review",
+  "heldAt": "2026-09-09T10:33:00",
+  "heldBy": "QC — N. Rao",
+  "releasedAt": null,
+  "releasedBy": null,
+  "status": "ACTIVE",
+  "hero": false
+ }
+]

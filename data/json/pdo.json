@@ -1,0 +1,2593 @@
+[
+ {
+  "id": "PDO-PKL-0001",
+  "pdiId": "PDI-PKL-0001",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0001",
+  "unitIn": "HRC-VJ-2609-0001",
+  "unitsOut": [
+   "HPO-KHP-2609-0001"
+  ],
+  "itemId": "4213090027/10",
+  "soId": "4213090027",
+  "threadId": "TH-001",
+  "receivedAt": "2026-08-28T05:14:30",
+  "actuals": {
+   "acidConcPct": 11.2,
+   "stripSpeedMpm": 113,
+   "bathTempC": 82,
+   "oilingGsm": 1.17
+  },
+  "deviations": [
+   {
+    "field": "acidConcPct",
+    "note": "below 12 % band",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
+  "inWeightMT": 21.95,
+  "outWeightMT": 21.62,
+  "lengthM": 5016,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0001",
+  "pdiId": "PDI-CRM-0001",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0002",
+  "unitIn": "HPO-KHP-2609-0001",
+  "unitsOut": [
+   "CRF-KHP-2609-0001"
+  ],
+  "itemId": "4213090027/10",
+  "soId": "4213090027",
+  "threadId": "TH-001",
+  "receivedAt": "2026-08-28T16:34:06",
+  "actuals": {
+   "exitThkMm": 0.45,
+   "passes": 5,
+   "reductionPct": 77.5,
+   "rollForceKN": 9914
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.62,
+  "outWeightMT": 20.76,
+  "lengthM": 4817,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0001",
+  "pdiId": "PDI-CGL-0001",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0003",
+  "unitIn": "CRF-KHP-2609-0001",
+  "unitsOut": [
+   "GIC-KHP-2609-0001"
+  ],
+  "itemId": "4213090027/10",
+  "soId": "4213090027",
+  "threadId": "TH-001",
+  "receivedAt": "2026-08-29T09:03:20",
+  "actuals": {
+   "coatingTopGsm": 67.3,
+   "coatingBottomGsm": 66.5,
+   "lineSpeedMpm": 107,
+   "furnaceSoakC": 715,
+   "zincBathAlPct": 0.22,
+   "bathTempC": 458,
+   "skinPassElongPct": 0.96,
+   "coatingTotalGsm": 133.8
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.76,
+  "outWeightMT": 20.24,
+  "lengthM": 4696,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CCL-0001",
+  "pdiId": "PDI-CCL-0001",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0004",
+  "unitIn": "GIC-KHP-2609-0001",
+  "unitsOut": [
+   "PPG-KHP-2609-0001"
+  ],
+  "itemId": "4213090027/10",
+  "soId": "4213090027",
+  "threadId": "TH-001",
+  "receivedAt": "2026-08-30T10:33:19",
+  "actuals": {
+   "dftTopUm": 20.5,
+   "dftBackUm": 7.4,
+   "pmtC": 230,
+   "lineSpeedMpm": 59,
+   "gloss60": 38,
+   "dE": 0.55
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.24,
+  "outWeightMT": 19.84,
+  "lengthM": 4603,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0002",
+  "pdiId": "PDI-PKL-0002",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0007",
+  "unitIn": "HRC-VJ-2609-0002",
+  "unitsOut": [
+   "HPO-KHP-2609-0002"
+  ],
+  "itemId": "4213090010/10",
+  "soId": "4213090010",
+  "threadId": "TH-002",
+  "receivedAt": "2026-08-28T04:25:18",
+  "actuals": {
+   "acidConcPct": 13.9,
+   "stripSpeedMpm": 117,
+   "bathTempC": 81,
+   "oilingGsm": 1.33
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 22.53,
+  "outWeightMT": 22.19,
+  "lengthM": 4522,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0002",
+  "pdiId": "PDI-CRM-0002",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0008",
+  "unitIn": "HPO-KHP-2609-0002",
+  "unitsOut": [
+   "CRF-KHP-2609-0002"
+  ],
+  "itemId": "4213090010/10",
+  "soId": "4213090010",
+  "threadId": "TH-002",
+  "receivedAt": "2026-08-28T10:04:25",
+  "actuals": {
+   "exitThkMm": 0.5,
+   "passes": 5,
+   "reductionPct": 77.3,
+   "rollForceKN": 10936
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 22.19,
+  "outWeightMT": 21.3,
+  "lengthM": 4341,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0002",
+  "pdiId": "PDI-CGL-0002",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0009",
+  "unitIn": "CRF-KHP-2609-0002",
+  "unitsOut": [
+   "GIC-KHP-2609-0002"
+  ],
+  "itemId": "4213090010/10",
+  "soId": "4213090010",
+  "threadId": "TH-002",
+  "receivedAt": "2026-08-29T05:23:41",
+  "actuals": {
+   "coatingTopGsm": 66.3,
+   "coatingBottomGsm": 67.3,
+   "lineSpeedMpm": 104,
+   "furnaceSoakC": 725,
+   "zincBathAlPct": 0.22,
+   "bathTempC": 459,
+   "skinPassElongPct": 0.88,
+   "coatingTotalGsm": 133.6
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.3,
+  "outWeightMT": 20.77,
+  "lengthM": 4233,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CCL-0002",
+  "pdiId": "PDI-CCL-0002",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0010",
+  "unitIn": "GIC-KHP-2609-0002",
+  "unitsOut": [
+   "PPG-KHP-2609-0002"
+  ],
+  "itemId": "4213090010/10",
+  "soId": "4213090010",
+  "threadId": "TH-002",
+  "receivedAt": "2026-08-29T19:22:25",
+  "actuals": {
+   "dftTopUm": 18.6,
+   "dftBackUm": 7.3,
+   "pmtC": 229,
+   "lineSpeedMpm": 57,
+   "gloss60": 40,
+   "dE": 0.22
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.77,
+  "outWeightMT": 20.35,
+  "lengthM": 4147,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0003",
+  "pdiId": "PDI-PKL-0003",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0013",
+  "unitIn": "HRC-VJ-2609-0003",
+  "unitsOut": [
+   "HPO-KHP-2609-0003"
+  ],
+  "itemId": "4213090035/30",
+  "soId": "4213090035",
+  "threadId": "TH-003",
+  "receivedAt": "2026-08-29T17:15:58",
+  "actuals": {
+   "acidConcPct": 12.9,
+   "stripSpeedMpm": 84,
+   "bathTempC": 81,
+   "oilingGsm": 1.29
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.55,
+  "outWeightMT": 21.23,
+  "lengthM": 1502,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0003",
+  "pdiId": "PDI-CRM-0003",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0014",
+  "unitIn": "HPO-KHP-2609-0003",
+  "unitsOut": [
+   "CRF-KHP-2609-0003"
+  ],
+  "itemId": "4213090035/30",
+  "soId": "4213090035",
+  "threadId": "TH-003",
+  "receivedAt": "2026-08-30T09:24:14",
+  "actuals": {
+   "exitThkMm": 1.27,
+   "passes": 4,
+   "reductionPct": 70.0,
+   "rollForceKN": 10232
+  },
+  "deviations": [
+   {
+    "field": "exitThkMm",
+    "note": "outside ±0.05 mm",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
+  "inWeightMT": 21.23,
+  "outWeightMT": 20.38,
+  "lengthM": 1442,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0003",
+  "pdiId": "PDI-CGL-0003",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0015",
+  "unitIn": "CRF-KHP-2609-0003",
+  "unitsOut": [
+   "GIC-KHP-2609-0003"
+  ],
+  "itemId": "4213090035/30",
+  "soId": "4213090035",
+  "threadId": "TH-003",
+  "receivedAt": "2026-08-31T11:53:10",
+  "actuals": {
+   "coatingTopGsm": 66.3,
+   "coatingBottomGsm": 63.4,
+   "lineSpeedMpm": 81,
+   "furnaceSoakC": 714,
+   "zincBathAlPct": 0.2,
+   "bathTempC": 463,
+   "skinPassElongPct": 0.86,
+   "coatingTotalGsm": 129.7
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.38,
+  "outWeightMT": 19.87,
+  "lengthM": 1406,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0004",
+  "pdiId": "PDI-PKL-0004",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0018",
+  "unitIn": "HRC-DL-2609-0004",
+  "unitsOut": [
+   "HPO-KHP-2609-0004"
+  ],
+  "itemId": "4213090035/10",
+  "soId": "4213090035",
+  "threadId": "TH-004",
+  "receivedAt": "2026-08-30T03:50:32",
+  "actuals": {
+   "acidConcPct": 13.3,
+   "stripSpeedMpm": 112,
+   "bathTempC": 78,
+   "oilingGsm": 1.03
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 22.79,
+  "outWeightMT": 22.45,
+  "lengthM": 5209,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0004",
+  "pdiId": "PDI-CRM-0004",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0019",
+  "unitIn": "HPO-KHP-2609-0004",
+  "unitsOut": [
+   "CRF-KHP-2609-0004"
+  ],
+  "itemId": "4213090035/10",
+  "soId": "4213090035",
+  "threadId": "TH-004",
+  "receivedAt": "2026-08-30T15:31:47",
+  "actuals": {
+   "exitThkMm": 0.46,
+   "passes": 5,
+   "reductionPct": 83.3,
+   "rollForceKN": 10593
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 22.45,
+  "outWeightMT": 21.55,
+  "lengthM": 5000,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0004",
+  "pdiId": "PDI-CGL-0004",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0020",
+  "unitIn": "CRF-KHP-2609-0004",
+  "unitsOut": [
+   "GLC-KHP-2609-0001"
+  ],
+  "itemId": "4213090035/10",
+  "soId": "4213090035",
+  "threadId": "TH-004",
+  "receivedAt": "2026-08-30T20:42:35",
+  "actuals": {
+   "coatingTopGsm": 76.9,
+   "coatingBottomGsm": 79.3,
+   "lineSpeedMpm": 107,
+   "furnaceSoakC": 723,
+   "zincBathAlPct": 0.23,
+   "bathTempC": 461,
+   "skinPassElongPct": 0.9,
+   "coatingTotalGsm": 156.2
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.55,
+  "outWeightMT": 21.01,
+  "lengthM": 4875,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0005",
+  "pdiId": "PDI-PKL-0005",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0023",
+  "unitIn": "HRC-VJ-2609-0005",
+  "unitsOut": [
+   "HPO-KHP-2609-0005"
+  ],
+  "itemId": "4213090033/10",
+  "soId": "4213090033",
+  "threadId": "TH-005",
+  "receivedAt": "2026-08-30T20:09:00",
+  "actuals": {
+   "acidConcPct": 14.7,
+   "stripSpeedMpm": 120,
+   "bathTempC": 80,
+   "oilingGsm": 1.25
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.37,
+  "outWeightMT": 19.08,
+  "lengthM": 3888,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0005",
+  "pdiId": "PDI-CRM-0005",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0024",
+  "unitIn": "HPO-KHP-2609-0005",
+  "unitsOut": [
+   "CRF-KHP-2609-0005"
+  ],
+  "itemId": "4213090033/10",
+  "soId": "4213090033",
+  "threadId": "TH-005",
+  "receivedAt": "2026-08-31T01:39:10",
+  "actuals": {
+   "exitThkMm": 0.49,
+   "passes": 5,
+   "reductionPct": 80.8,
+   "rollForceKN": 11108
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.08,
+  "outWeightMT": 18.32,
+  "lengthM": 3734,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0005",
+  "pdiId": "PDI-CGL-0005",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0025",
+  "unitIn": "CRF-KHP-2609-0005",
+  "unitsOut": [
+   "GIC-KHP-2609-0004"
+  ],
+  "itemId": "4213090033/10",
+  "soId": "4213090033",
+  "threadId": "TH-005",
+  "receivedAt": "2026-08-31T09:21:59",
+  "actuals": {
+   "coatingTopGsm": 61.8,
+   "coatingBottomGsm": 61.3,
+   "lineSpeedMpm": 98,
+   "furnaceSoakC": 725,
+   "zincBathAlPct": 0.19,
+   "bathTempC": 458,
+   "skinPassElongPct": 0.99,
+   "coatingTotalGsm": 123.1
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 18.32,
+  "outWeightMT": 17.86,
+  "lengthM": 3640,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CCL-0003",
+  "pdiId": "PDI-CCL-0003",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0026",
+  "unitIn": "GIC-KHP-2609-0004",
+  "unitsOut": [
+   "PPG-KHP-2609-0003"
+  ],
+  "itemId": "4213090033/10",
+  "soId": "4213090033",
+  "threadId": "TH-005",
+  "receivedAt": "2026-08-31T21:23:01",
+  "actuals": {
+   "dftTopUm": 18.6,
+   "dftBackUm": 7.0,
+   "pmtC": 231,
+   "lineSpeedMpm": 55,
+   "gloss60": 40,
+   "dE": 0.69
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 17.86,
+  "outWeightMT": 17.5,
+  "lengthM": 3566,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0006",
+  "pdiId": "PDI-PKL-0006",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0028",
+  "unitIn": "HRC-VJ-2609-0006",
+  "unitsOut": [
+   "HPO-KHP-2609-0006"
+  ],
+  "itemId": "4213090018/20",
+  "soId": "4213090018",
+  "threadId": "TH-006",
+  "receivedAt": "2026-08-31T18:33:20",
+  "actuals": {
+   "acidConcPct": 14.2,
+   "stripSpeedMpm": 114,
+   "bathTempC": 83,
+   "oilingGsm": 1.09
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.3,
+  "outWeightMT": 20.98,
+  "lengthM": 5939,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0006",
+  "pdiId": "PDI-CRM-0006",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0029",
+  "unitIn": "HPO-KHP-2609-0006",
+  "unitsOut": [
+   "CRF-KHP-2609-0006"
+  ],
+  "itemId": "4213090018/20",
+  "soId": "4213090018",
+  "threadId": "TH-006",
+  "receivedAt": "2026-09-01T19:39:27",
+  "actuals": {
+   "exitThkMm": 0.46,
+   "passes": 5,
+   "reductionPct": 75.0,
+   "rollForceKN": 10648
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.98,
+  "outWeightMT": 20.14,
+  "lengthM": 5701,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0006",
+  "pdiId": "PDI-CGL-0006",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0030",
+  "unitIn": "CRF-KHP-2609-0006",
+  "unitsOut": [
+   "GIC-KHP-2609-0005"
+  ],
+  "itemId": "4213090018/20",
+  "soId": "4213090018",
+  "threadId": "TH-006",
+  "receivedAt": "2026-09-02T12:58:44",
+  "actuals": {
+   "coatingTopGsm": 62.0,
+   "coatingBottomGsm": 60.4,
+   "lineSpeedMpm": 103,
+   "furnaceSoakC": 714,
+   "zincBathAlPct": 0.23,
+   "bathTempC": 458,
+   "skinPassElongPct": 1.08,
+   "coatingTotalGsm": 122.4
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.14,
+  "outWeightMT": 19.64,
+  "lengthM": 5559,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CCL-0004",
+  "pdiId": "PDI-CCL-0004",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0031",
+  "unitIn": "GIC-KHP-2609-0005",
+  "unitsOut": [
+   "PPG-KHP-2609-0004"
+  ],
+  "itemId": "4213090018/20",
+  "soId": "4213090018",
+  "threadId": "TH-006",
+  "receivedAt": "2026-09-03T12:59:44",
+  "actuals": {
+   "dftTopUm": 26.4,
+   "dftBackUm": 6.0,
+   "pmtC": 238,
+   "lineSpeedMpm": 55,
+   "gloss60": 26,
+   "dE": 0.3
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.64,
+  "outWeightMT": 19.25,
+  "lengthM": 5449,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0007",
+  "pdiId": "PDI-PKL-0007",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0033",
+  "unitIn": "HRC-VJ-2609-0007",
+  "unitsOut": [
+   "HPO-KHP-2609-0007"
+  ],
+  "itemId": "4213090024/10",
+  "soId": "4213090024",
+  "threadId": "TH-007",
+  "receivedAt": "2026-09-01T13:14:47",
+  "actuals": {
+   "acidConcPct": 11.2,
+   "stripSpeedMpm": 112,
+   "bathTempC": 83,
+   "oilingGsm": 1.18
+  },
+  "deviations": [
+   {
+    "field": "acidConcPct",
+    "note": "below 12 % band",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
+  "inWeightMT": 19.53,
+  "outWeightMT": 19.24,
+  "lengthM": 4017,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0007",
+  "pdiId": "PDI-CRM-0007",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0034",
+  "unitIn": "HPO-KHP-2609-0007",
+  "unitsOut": [
+   "CRF-KHP-2609-0007"
+  ],
+  "itemId": "4213090024/10",
+  "soId": "4213090024",
+  "threadId": "TH-007",
+  "receivedAt": "2026-09-02T09:40:26",
+  "actuals": {
+   "exitThkMm": 0.5,
+   "passes": 5,
+   "reductionPct": 75.0,
+   "rollForceKN": 10687
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.24,
+  "outWeightMT": 18.47,
+  "lengthM": 3857,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0007",
+  "pdiId": "PDI-CGL-0007",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0035",
+  "unitIn": "CRF-KHP-2609-0007",
+  "unitsOut": [
+   "GIC-KHP-2609-0006"
+  ],
+  "itemId": "4213090024/10",
+  "soId": "4213090024",
+  "threadId": "TH-007",
+  "receivedAt": "2026-09-03T12:39:06",
+  "actuals": {
+   "coatingTopGsm": 59.9,
+   "coatingBottomGsm": 57.4,
+   "lineSpeedMpm": 98,
+   "furnaceSoakC": 718,
+   "zincBathAlPct": 0.2,
+   "bathTempC": 460,
+   "skinPassElongPct": 0.93,
+   "coatingTotalGsm": 117.3
+  },
+  "deviations": [
+   {
+    "field": "coatingTotalGsm",
+    "note": "outside band 120–138 g/m²",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
+  "inWeightMT": 18.47,
+  "outWeightMT": 18.01,
+  "lengthM": 3761,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CCL-0005",
+  "pdiId": "PDI-CCL-0005",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0036",
+  "unitIn": "GIC-KHP-2609-0006",
+  "unitsOut": [
+   "PPG-KHP-2609-0005"
+  ],
+  "itemId": "4213090024/10",
+  "soId": "4213090024",
+  "threadId": "TH-007",
+  "receivedAt": "2026-09-04T02:03:47",
+  "actuals": {
+   "dftTopUm": 16.3,
+   "dftBackUm": 7.6,
+   "pmtC": 233,
+   "lineSpeedMpm": 58,
+   "gloss60": 30,
+   "dE": 0.6
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 18.01,
+  "outWeightMT": 17.65,
+  "lengthM": 3685,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0008",
+  "pdiId": "PDI-PKL-0008",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0039",
+  "unitIn": "HRC-VJ-2609-0008",
+  "unitsOut": [
+   "HPO-KHP-2609-0008"
+  ],
+  "itemId": "4213090006/10",
+  "soId": "4213090006",
+  "threadId": "TH-008",
+  "receivedAt": "2026-09-02T16:15:57",
+  "actuals": {
+   "acidConcPct": 13.0,
+   "stripSpeedMpm": 90,
+   "bathTempC": 80,
+   "oilingGsm": 1.28
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.86,
+  "outWeightMT": 20.55,
+  "lengthM": 2682,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0008",
+  "pdiId": "PDI-CRM-0008",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0040",
+  "unitIn": "HPO-KHP-2609-0008",
+  "unitsOut": [
+   "CRF-KHP-2609-0008"
+  ],
+  "itemId": "4213090006/10",
+  "soId": "4213090006",
+  "threadId": "TH-008",
+  "receivedAt": "2026-09-03T10:43:57",
+  "actuals": {
+   "exitThkMm": 0.81,
+   "passes": 4,
+   "reductionPct": 77.1,
+   "rollForceKN": 9941
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.55,
+  "outWeightMT": 19.73,
+  "lengthM": 2575,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0008",
+  "pdiId": "PDI-CGL-0008",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0041",
+  "unitIn": "CRF-KHP-2609-0008",
+  "unitsOut": [
+   "GIC-KHP-2609-0007"
+  ],
+  "itemId": "4213090006/10",
+  "soId": "4213090006",
+  "threadId": "TH-008",
+  "receivedAt": "2026-09-03T20:48:56",
+  "actuals": {
+   "coatingTopGsm": 63.2,
+   "coatingBottomGsm": 61.4,
+   "lineSpeedMpm": 79,
+   "furnaceSoakC": 725,
+   "zincBathAlPct": 0.2,
+   "bathTempC": 463,
+   "skinPassElongPct": 1.09,
+   "coatingTotalGsm": 124.6
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.73,
+  "outWeightMT": 19.24,
+  "lengthM": 2511,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CCL-0006",
+  "pdiId": "PDI-CCL-0006",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0042",
+  "unitIn": "GIC-KHP-2609-0007",
+  "unitsOut": [
+   "PPG-KHP-2609-0006"
+  ],
+  "itemId": "4213090006/10",
+  "soId": "4213090006",
+  "threadId": "TH-008",
+  "receivedAt": "2026-09-04T08:19:14",
+  "actuals": {
+   "dftTopUm": 20.4,
+   "dftBackUm": 7.5,
+   "pmtC": 235,
+   "lineSpeedMpm": 58,
+   "gloss60": 30,
+   "dE": 0.76
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.24,
+  "outWeightMT": 18.86,
+  "lengthM": 2461,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0009",
+  "pdiId": "PDI-PKL-0009",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0044",
+  "unitIn": "HRC-DL-2609-0009",
+  "unitsOut": [
+   "HPO-KHP-2609-0009"
+  ],
+  "itemId": "4213090002/20",
+  "soId": "4213090002",
+  "threadId": "TH-009",
+  "receivedAt": "2026-09-03T17:47:52",
+  "actuals": {
+   "acidConcPct": 12.8,
+   "stripSpeedMpm": 84,
+   "bathTempC": 81,
+   "oilingGsm": 1.07
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.0,
+  "outWeightMT": 20.69,
+  "lengthM": 3294,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0009",
+  "pdiId": "PDI-CRM-0009",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0045",
+  "unitIn": "HPO-KHP-2609-0009",
+  "unitsOut": [
+   "CRF-KHP-2609-0009"
+  ],
+  "itemId": "4213090002/20",
+  "soId": "4213090002",
+  "threadId": "TH-009",
+  "receivedAt": "2026-09-04T10:30:45",
+  "actuals": {
+   "exitThkMm": 0.81,
+   "passes": 4,
+   "reductionPct": 79.5,
+   "rollForceKN": 10271
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.69,
+  "outWeightMT": 19.86,
+  "lengthM": 3162,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0009",
+  "pdiId": "PDI-CGL-0009",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0046",
+  "unitIn": "CRF-KHP-2609-0009",
+  "unitsOut": [
+   "GIC-KHP-2609-0008"
+  ],
+  "itemId": "4213090002/20",
+  "soId": "4213090002",
+  "threadId": "TH-009",
+  "receivedAt": "2026-09-05T05:38:20",
+  "actuals": {
+   "coatingTopGsm": 65.1,
+   "coatingBottomGsm": 63.0,
+   "lineSpeedMpm": 87,
+   "furnaceSoakC": 714,
+   "zincBathAlPct": 0.21,
+   "bathTempC": 460,
+   "skinPassElongPct": 0.9,
+   "coatingTotalGsm": 128.1
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.86,
+  "outWeightMT": 19.36,
+  "lengthM": 3082,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CCL-0007",
+  "pdiId": "PDI-CCL-0007",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0047",
+  "unitIn": "GIC-KHP-2609-0008",
+  "unitsOut": [
+   "PPG-KHP-2609-0007"
+  ],
+  "itemId": "4213090002/20",
+  "soId": "4213090002",
+  "threadId": "TH-009",
+  "receivedAt": "2026-09-06T05:37:42",
+  "actuals": {
+   "dftTopUm": 26.4,
+   "dftBackUm": 6.0,
+   "pmtC": 244,
+   "lineSpeedMpm": 58,
+   "gloss60": 25,
+   "dE": 0.28
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.36,
+  "outWeightMT": 18.97,
+  "lengthM": 3020,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0010",
+  "pdiId": "PDI-PKL-0010",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0050",
+  "unitIn": "HRC-VJ-2609-0010",
+  "unitsOut": [
+   "HPO-KHP-2609-0010"
+  ],
+  "itemId": "4213090034/20",
+  "soId": "4213090034",
+  "threadId": "TH-010",
+  "receivedAt": "2026-09-03T23:19:04",
+  "actuals": {
+   "acidConcPct": 14.8,
+   "stripSpeedMpm": 85,
+   "bathTempC": 82,
+   "oilingGsm": 1.06
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.13,
+  "outWeightMT": 19.83,
+  "lengthM": 2020,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0010",
+  "pdiId": "PDI-CRM-0010",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0051",
+  "unitIn": "HPO-KHP-2609-0010",
+  "unitsOut": [
+   "CRF-KHP-2609-0010"
+  ],
+  "itemId": "4213090034/20",
+  "soId": "4213090034",
+  "threadId": "TH-010",
+  "receivedAt": "2026-09-04T14:49:53",
+  "actuals": {
+   "exitThkMm": 1.0,
+   "passes": 4,
+   "reductionPct": 75.0,
+   "rollForceKN": 10999
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.83,
+  "outWeightMT": 19.04,
+  "lengthM": 1940,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0010",
+  "pdiId": "PDI-CGL-0010",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0052",
+  "unitIn": "CRF-KHP-2609-0010",
+  "unitsOut": [
+   "GIC-KHP-2609-0009"
+  ],
+  "itemId": "4213090034/20",
+  "soId": "4213090034",
+  "threadId": "TH-010",
+  "receivedAt": "2026-09-05T15:48:12",
+  "actuals": {
+   "coatingTopGsm": 66.5,
+   "coatingBottomGsm": 63.8,
+   "lineSpeedMpm": 81,
+   "furnaceSoakC": 716,
+   "zincBathAlPct": 0.2,
+   "bathTempC": 461,
+   "skinPassElongPct": 1.09,
+   "coatingTotalGsm": 130.3
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.04,
+  "outWeightMT": 18.56,
+  "lengthM": 1891,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0011",
+  "pdiId": "PDI-PKL-0011",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0054",
+  "unitIn": "HRC-DL-2609-0011",
+  "unitsOut": [
+   "HPO-KHP-2609-0011"
+  ],
+  "itemId": "4213090038/10",
+  "soId": "4213090038",
+  "threadId": "TH-011",
+  "receivedAt": "2026-09-05T00:33:52",
+  "actuals": {
+   "acidConcPct": 14.1,
+   "stripSpeedMpm": 89,
+   "bathTempC": 81,
+   "oilingGsm": 1.12
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 23.3,
+  "outWeightMT": 22.95,
+  "lengthM": 3654,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0011",
+  "pdiId": "PDI-CRM-0011",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0055",
+  "unitIn": "HPO-KHP-2609-0011",
+  "unitsOut": [
+   "CRF-KHP-2609-0011"
+  ],
+  "itemId": "4213090038/10",
+  "soId": "4213090038",
+  "threadId": "TH-011",
+  "receivedAt": "2026-09-06T00:52:32",
+  "actuals": {
+   "exitThkMm": 0.8,
+   "passes": 4,
+   "reductionPct": 80.0,
+   "rollForceKN": 11385
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 22.95,
+  "outWeightMT": 22.03,
+  "lengthM": 3507,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0011",
+  "pdiId": "PDI-CGL-0011",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0056",
+  "unitIn": "CRF-KHP-2609-0011",
+  "unitsOut": [
+   "GIC-KHP-2609-0010"
+  ],
+  "itemId": "4213090038/10",
+  "soId": "4213090038",
+  "threadId": "TH-011",
+  "receivedAt": "2026-09-06T15:26:03",
+  "actuals": {
+   "coatingTopGsm": 62.6,
+   "coatingBottomGsm": 59.7,
+   "lineSpeedMpm": 88,
+   "furnaceSoakC": 718,
+   "zincBathAlPct": 0.2,
+   "bathTempC": 460,
+   "skinPassElongPct": 0.99,
+   "coatingTotalGsm": 122.3
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 22.03,
+  "outWeightMT": 21.48,
+  "lengthM": 3420,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CCL-0008",
+  "pdiId": "PDI-CCL-0008",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0057",
+  "unitIn": "GIC-KHP-2609-0010",
+  "unitsOut": [
+   "PPG-KHP-2609-0008"
+  ],
+  "itemId": "4213090038/10",
+  "soId": "4213090038",
+  "threadId": "TH-011",
+  "receivedAt": "2026-09-07T15:02:48",
+  "actuals": {
+   "dftTopUm": 24.5,
+   "dftBackUm": 9.9,
+   "pmtC": 250,
+   "lineSpeedMpm": 55,
+   "gloss60": 30,
+   "dE": 0.35
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.48,
+  "outWeightMT": 21.05,
+  "lengthM": 3351,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0012",
+  "pdiId": "PDI-PKL-0012",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0060",
+  "unitIn": "HRC-VJ-2609-0012",
+  "unitsOut": [
+   "HPO-KHP-2609-0012"
+  ],
+  "itemId": "4213090009/10",
+  "soId": "4213090009",
+  "threadId": "TH-012",
+  "receivedAt": "2026-09-05T12:00:36",
+  "actuals": {
+   "acidConcPct": 15.5,
+   "stripSpeedMpm": 116,
+   "bathTempC": 81,
+   "oilingGsm": 1.34
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 23.11,
+  "outWeightMT": 22.76,
+  "lengthM": 4638,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0012",
+  "pdiId": "PDI-CRM-0012",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0061",
+  "unitIn": "HPO-KHP-2609-0012",
+  "unitsOut": [
+   "CRF-KHP-2609-0012"
+  ],
+  "itemId": "4213090009/10",
+  "soId": "4213090009",
+  "threadId": "TH-012",
+  "receivedAt": "2026-09-06T04:24:57",
+  "actuals": {
+   "exitThkMm": 0.5,
+   "passes": 5,
+   "reductionPct": 75.0,
+   "rollForceKN": 10360
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 22.76,
+  "outWeightMT": 21.85,
+  "lengthM": 4453,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0012",
+  "pdiId": "PDI-CGL-0012",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0062",
+  "unitIn": "CRF-KHP-2609-0012",
+  "unitsOut": [
+   "GIC-KHP-2609-0011"
+  ],
+  "itemId": "4213090009/10",
+  "soId": "4213090009",
+  "threadId": "TH-012",
+  "receivedAt": "2026-09-06T21:06:19",
+  "actuals": {
+   "coatingTopGsm": 66.6,
+   "coatingBottomGsm": 66.8,
+   "lineSpeedMpm": 100,
+   "furnaceSoakC": 721,
+   "zincBathAlPct": 0.2,
+   "bathTempC": 459,
+   "skinPassElongPct": 1.12,
+   "coatingTotalGsm": 133.4
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.85,
+  "outWeightMT": 21.3,
+  "lengthM": 4341,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0013",
+  "pdiId": "PDI-PKL-0013",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0065",
+  "unitIn": "HRC-VJ-2609-0013",
+  "unitsOut": [
+   "HPO-KHP-2609-0013"
+  ],
+  "itemId": "4213090008/10",
+  "soId": "4213090008",
+  "threadId": "TH-013",
+  "receivedAt": "2026-09-05T23:50:15",
+  "actuals": {
+   "acidConcPct": 14.9,
+   "stripSpeedMpm": 87,
+   "bathTempC": 82,
+   "oilingGsm": 1.18
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 18.57,
+  "outWeightMT": 18.29,
+  "lengthM": 2329,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0013",
+  "pdiId": "PDI-CRM-0013",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0066",
+  "unitIn": "HPO-KHP-2609-0013",
+  "unitsOut": [
+   "CRF-KHP-2609-0013"
+  ],
+  "itemId": "4213090008/10",
+  "soId": "4213090008",
+  "threadId": "TH-013",
+  "receivedAt": "2026-09-06T18:35:52",
+  "actuals": {
+   "exitThkMm": 0.8,
+   "passes": 4,
+   "reductionPct": 80.0,
+   "rollForceKN": 10854
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 18.29,
+  "outWeightMT": 17.56,
+  "lengthM": 2236,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0013",
+  "pdiId": "PDI-CGL-0013",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0067",
+  "unitIn": "CRF-KHP-2609-0013",
+  "unitsOut": [
+   "GIC-KHP-2609-0012"
+  ],
+  "itemId": "4213090008/10",
+  "soId": "4213090008",
+  "threadId": "TH-013",
+  "receivedAt": "2026-09-07T21:43:10",
+  "actuals": {
+   "coatingTopGsm": 67.5,
+   "coatingBottomGsm": 69.6,
+   "lineSpeedMpm": 85,
+   "furnaceSoakC": 714,
+   "zincBathAlPct": 0.19,
+   "bathTempC": 461,
+   "skinPassElongPct": 0.98,
+   "coatingTotalGsm": 137.1
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 17.56,
+  "outWeightMT": 17.12,
+  "lengthM": 2180,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0014",
+  "pdiId": "PDI-PKL-0014",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0069",
+  "unitIn": "HRC-VJ-2609-0014",
+  "unitsOut": [
+   "HPO-KHP-2609-0014"
+  ],
+  "itemId": "4213090006/20",
+  "soId": "4213090006",
+  "threadId": "TH-014",
+  "receivedAt": "2026-09-06T08:46:58",
+  "actuals": {
+   "acidConcPct": 12.6,
+   "stripSpeedMpm": 119,
+   "bathTempC": 81,
+   "oilingGsm": 1.17
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 22.8,
+  "outWeightMT": 22.46,
+  "lengthM": 4577,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0014",
+  "pdiId": "PDI-CRM-0014",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0070",
+  "unitIn": "HPO-KHP-2609-0014",
+  "unitsOut": [
+   "CRF-KHP-2609-0014"
+  ],
+  "itemId": "4213090006/20",
+  "soId": "4213090006",
+  "threadId": "TH-014",
+  "receivedAt": "2026-09-06T20:45:22",
+  "actuals": {
+   "exitThkMm": 0.51,
+   "passes": 5,
+   "reductionPct": 76.2,
+   "rollForceKN": 9677
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 22.46,
+  "outWeightMT": 21.56,
+  "lengthM": 4394,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0014",
+  "pdiId": "PDI-CGL-0014",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0071",
+  "unitIn": "CRF-KHP-2609-0014",
+  "unitsOut": [
+   "GIC-KHP-2609-0013"
+  ],
+  "itemId": "4213090006/20",
+  "soId": "4213090006",
+  "threadId": "TH-014",
+  "receivedAt": "2026-09-07T13:43:19",
+  "actuals": {
+   "coatingTopGsm": 67.5,
+   "coatingBottomGsm": 69.8,
+   "lineSpeedMpm": 110,
+   "furnaceSoakC": 717,
+   "zincBathAlPct": 0.2,
+   "bathTempC": 459,
+   "skinPassElongPct": 0.85,
+   "coatingTotalGsm": 137.3
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.56,
+  "outWeightMT": 21.02,
+  "lengthM": 4284,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CCL-0009",
+  "pdiId": "PDI-CCL-0009",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0072",
+  "unitIn": "GIC-KHP-2609-0013",
+  "unitsOut": [
+   "PPG-KHP-2609-0009"
+  ],
+  "itemId": "4213090006/20",
+  "soId": "4213090006",
+  "threadId": "TH-014",
+  "receivedAt": "2026-09-08T00:23:06",
+  "actuals": {
+   "dftTopUm": 20.9,
+   "dftBackUm": 6.5,
+   "pmtC": 230,
+   "lineSpeedMpm": 54,
+   "gloss60": 38,
+   "dE": 0.66
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.02,
+  "outWeightMT": 20.6,
+  "lengthM": 4198,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0015",
+  "pdiId": "PDI-PKL-0015",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0075",
+  "unitIn": "HRC-VJ-2609-0015",
+  "unitsOut": [
+   "HPO-KHP-2609-0015"
+  ],
+  "itemId": "4213090012/10",
+  "soId": "4213090012",
+  "threadId": "TH-015",
+  "receivedAt": "2026-09-07T09:45:40",
+  "actuals": {
+   "acidConcPct": 14.3,
+   "stripSpeedMpm": 85,
+   "bathTempC": 81,
+   "oilingGsm": 1.28
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 18.34,
+  "outWeightMT": 18.06,
+  "lengthM": 2300,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0015",
+  "pdiId": "PDI-CRM-0015",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0076",
+  "unitIn": "HPO-KHP-2609-0015",
+  "unitsOut": [
+   "CRF-KHP-2609-0015"
+  ],
+  "itemId": "4213090012/10",
+  "soId": "4213090012",
+  "threadId": "TH-015",
+  "receivedAt": "2026-09-07T18:18:03",
+  "actuals": {
+   "exitThkMm": 0.8,
+   "passes": 4,
+   "reductionPct": 80.0,
+   "rollForceKN": 9832
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 18.06,
+  "outWeightMT": 17.34,
+  "lengthM": 2208,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0015",
+  "pdiId": "PDI-CGL-0015",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0077",
+  "unitIn": "CRF-KHP-2609-0015",
+  "unitsOut": [
+   "GIC-KHP-2609-0014"
+  ],
+  "itemId": "4213090012/10",
+  "soId": "4213090012",
+  "threadId": "TH-015",
+  "receivedAt": "2026-09-08T17:18:26",
+  "actuals": {
+   "coatingTopGsm": 64.4,
+   "coatingBottomGsm": 62.9,
+   "lineSpeedMpm": 80,
+   "furnaceSoakC": 721,
+   "zincBathAlPct": 0.22,
+   "bathTempC": 459,
+   "skinPassElongPct": 0.92,
+   "coatingTotalGsm": 127.3
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 17.34,
+  "outWeightMT": 16.91,
+  "lengthM": 2154,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0016",
+  "pdiId": "PDI-PKL-0016",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0079",
+  "unitIn": "HRC-VJ-2609-0016",
+  "unitsOut": [
+   "HPO-KHP-2609-0016"
+  ],
+  "itemId": "4213090027/20",
+  "soId": "4213090027",
+  "threadId": "TH-016",
+  "receivedAt": "2026-09-07T00:18:04",
+  "actuals": {
+   "acidConcPct": 13.0,
+   "stripSpeedMpm": 90,
+   "bathTempC": 80,
+   "oilingGsm": 1.25
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.22,
+  "outWeightMT": 20.9,
+  "lengthM": 3328,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0016",
+  "pdiId": "PDI-CRM-0016",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0080",
+  "unitIn": "HPO-KHP-2609-0016",
+  "unitsOut": [
+   "CRF-KHP-2609-0016"
+  ],
+  "itemId": "4213090027/20",
+  "soId": "4213090027",
+  "threadId": "TH-016",
+  "receivedAt": "2026-09-07T22:55:09",
+  "actuals": {
+   "exitThkMm": 0.8,
+   "passes": 4,
+   "reductionPct": 76.5,
+   "rollForceKN": 10622
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.9,
+  "outWeightMT": 20.06,
+  "lengthM": 3194,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0016",
+  "pdiId": "PDI-CGL-0016",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0081",
+  "unitIn": "CRF-KHP-2609-0016",
+  "unitsOut": [
+   "GIC-KHP-2609-0015"
+  ],
+  "itemId": "4213090027/20",
+  "soId": "4213090027",
+  "threadId": "TH-016",
+  "receivedAt": "2026-09-08T07:11:59",
+  "actuals": {
+   "coatingTopGsm": 66.8,
+   "coatingBottomGsm": 68.4,
+   "lineSpeedMpm": 85,
+   "furnaceSoakC": 716,
+   "zincBathAlPct": 0.21,
+   "bathTempC": 461,
+   "skinPassElongPct": 0.89,
+   "coatingTotalGsm": 112.6
+  },
+  "deviations": [
+   {
+    "field": "coatingTotalGsm",
+    "note": "below band min 120 g/m²",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
+  "inWeightMT": 20.06,
+  "outWeightMT": 19.56,
+  "lengthM": 3114,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CCL-0010",
+  "pdiId": "PDI-CCL-0010",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0082",
+  "unitIn": "GIC-KHP-2609-0015",
+  "unitsOut": [
+   "PPG-KHP-2609-0010"
+  ],
+  "itemId": "4213090027/20",
+  "soId": "4213090027",
+  "threadId": "TH-016",
+  "receivedAt": "2026-09-09T02:54:32",
+  "actuals": {
+   "dftTopUm": 23.7,
+   "dftBackUm": 10.7,
+   "pmtC": 249,
+   "lineSpeedMpm": 59,
+   "gloss60": 28,
+   "dE": 0.38
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.56,
+  "outWeightMT": 19.17,
+  "lengthM": 3052,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0017",
+  "pdiId": "PDI-PKL-0017",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0085",
+  "unitIn": "HRC-VJ-2609-0017",
+  "unitsOut": [
+   "HPO-KHP-2609-0017"
+  ],
+  "itemId": "4213090028/10",
+  "soId": "4213090028",
+  "threadId": "TH-017",
+  "receivedAt": "2026-09-08T13:20:25",
+  "actuals": {
+   "acidConcPct": 13.3,
+   "stripSpeedMpm": 85,
+   "bathTempC": 82,
+   "oilingGsm": 1.16
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.6,
+  "outWeightMT": 21.28,
+  "lengthM": 2710,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0017",
+  "pdiId": "PDI-CRM-0017",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0086",
+  "unitIn": "HPO-KHP-2609-0017",
+  "unitsOut": [
+   "CRF-KHP-2609-0017"
+  ],
+  "itemId": "4213090028/10",
+  "soId": "4213090028",
+  "threadId": "TH-017",
+  "receivedAt": "2026-09-08T17:36:01",
+  "actuals": {
+   "exitThkMm": 0.85,
+   "passes": 4,
+   "reductionPct": 80.0,
+   "rollForceKN": 10981
+  },
+  "deviations": [
+   {
+    "field": "exitThkMm",
+    "note": "outside ±0.03 mm",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
+  "inWeightMT": 21.28,
+  "outWeightMT": 20.43,
+  "lengthM": 2602,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0017",
+  "pdiId": "PDI-CGL-0017",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0087",
+  "unitIn": "CRF-KHP-2609-0017",
+  "unitsOut": [
+   "GIC-KHP-2609-0016"
+  ],
+  "itemId": "4213090028/10",
+  "soId": "4213090028",
+  "threadId": "TH-017",
+  "receivedAt": "2026-09-09T04:28:11",
+  "actuals": {
+   "coatingTopGsm": 138.2,
+   "coatingBottomGsm": 140.3,
+   "lineSpeedMpm": 87,
+   "furnaceSoakC": 720,
+   "zincBathAlPct": 0.23,
+   "bathTempC": 462,
+   "skinPassElongPct": 0.85,
+   "coatingTotalGsm": 278.5
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.43,
+  "outWeightMT": 19.92,
+  "lengthM": 2537,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0018",
+  "pdiId": "PDI-PKL-0018",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0090",
+  "unitIn": "HRC-VJ-2608-0471",
+  "unitsOut": [
+   "HPO-KHP-2609-0018"
+  ],
+  "itemId": "4213090017/10",
+  "soId": "4213090017",
+  "threadId": "TH-018",
+  "receivedAt": "2026-09-09T07:27:00",
+  "actuals": {
+   "acidConcPct": 13.0,
+   "stripSpeedMpm": 115,
+   "bathTempC": 80,
+   "oilingGsm": 1.28
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.4,
+  "outWeightMT": 21.08,
+  "lengthM": 4402,
+  "hero": true,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0018",
+  "pdiId": "PDI-CRM-0018",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0091",
+  "unitIn": "HPO-KHP-2609-0018",
+  "unitsOut": [
+   "CRF-KHP-2609-0018"
+  ],
+  "itemId": "4213090017/10",
+  "soId": "4213090017",
+  "threadId": "TH-018",
+  "receivedAt": "2026-09-10T15:06:00",
+  "actuals": {
+   "exitThkMm": 0.49,
+   "passes": 5,
+   "reductionPct": 80.0,
+   "rollForceKN": 9646
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.08,
+  "outWeightMT": 20.24,
+  "lengthM": 4226,
+  "hero": true,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0018",
+  "pdiId": "PDI-CGL-0018",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0092",
+  "unitIn": "CRF-KHP-2609-0018",
+  "unitsOut": [
+   "GIC-KHP-2609-0017"
+  ],
+  "itemId": "4213090017/10",
+  "soId": "4213090017",
+  "threadId": "TH-018",
+  "receivedAt": "2026-09-12T10:41:00",
+  "actuals": {
+   "coatingTopGsm": 63.6,
+   "coatingBottomGsm": 63.2,
+   "lineSpeedMpm": 96,
+   "furnaceSoakC": 719,
+   "zincBathAlPct": 0.21,
+   "bathTempC": 461,
+   "skinPassElongPct": 1.04,
+   "coatingTotalGsm": 126.8
+  },
+  "deviations": [
+   {
+    "field": "lineSpeedMpm",
+    "note": "12% below target speed (throughput only, not a spec deviation)",
+    "severity": "WARN"
+   }
+  ],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.24,
+  "outWeightMT": 19.73,
+  "lengthM": 4120,
+  "hero": true,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CCL-0011",
+  "pdiId": "PDI-CCL-0011",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0093",
+  "unitIn": "GIC-KHP-2609-0017",
+  "unitsOut": [
+   "PPG-KHP-2609-0011"
+  ],
+  "itemId": "4213090017/10",
+  "soId": "4213090017",
+  "threadId": "TH-018",
+  "receivedAt": "2026-09-15T01:42:00",
+  "actuals": {
+   "dftTopUm": 16.8,
+   "dftBackUm": 7.1,
+   "pmtC": 231,
+   "lineSpeedMpm": 58,
+   "gloss60": 34,
+   "dE": 0.6
+  },
+  "deviations": [
+   {
+    "field": "dftTopUm",
+    "note": "outside 20 ±3 µm",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
+  "inWeightMT": 19.73,
+  "outWeightMT": 19.34,
+  "lengthM": 4038,
+  "hero": true,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0019",
+  "pdiId": "PDI-PKL-0019",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0096",
+  "unitIn": "HRC-VJ-2609-0019",
+  "unitsOut": [
+   "HPO-KHP-2609-0019"
+  ],
+  "itemId": "4213090001/10",
+  "soId": "4213090001",
+  "threadId": "TH-019",
+  "receivedAt": "2026-09-09T09:30:30",
+  "actuals": {
+   "acidConcPct": 14.7,
+   "stripSpeedMpm": 115,
+   "bathTempC": 80,
+   "oilingGsm": 1.09
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 23.19,
+  "outWeightMT": 22.84,
+  "lengthM": 8313,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0019",
+  "pdiId": "PDI-CRM-0019",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0097",
+  "unitIn": "HPO-KHP-2609-0019",
+  "unitsOut": [
+   "CRF-KHP-2609-0019"
+  ],
+  "itemId": "4213090001/10",
+  "soId": "4213090001",
+  "threadId": "TH-019",
+  "receivedAt": "2026-09-10T07:40:17",
+  "actuals": {
+   "exitThkMm": 0.35,
+   "passes": 5,
+   "reductionPct": 81.6,
+   "rollForceKN": 10599
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 22.84,
+  "outWeightMT": 21.93,
+  "lengthM": 7981,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0019",
+  "pdiId": "PDI-CGL-0019",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0098",
+  "unitIn": "CRF-KHP-2609-0019",
+  "unitsOut": [
+   "GIC-KHP-2609-0018"
+  ],
+  "itemId": "4213090001/10",
+  "soId": "4213090001",
+  "threadId": "TH-019",
+  "receivedAt": "2026-09-10T23:43:05",
+  "actuals": {
+   "coatingTopGsm": 40.6,
+   "coatingBottomGsm": 43.3,
+   "lineSpeedMpm": 108,
+   "furnaceSoakC": 721,
+   "zincBathAlPct": 0.21,
+   "bathTempC": 458,
+   "skinPassElongPct": 1.1,
+   "coatingTotalGsm": 83.9
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.93,
+  "outWeightMT": 21.38,
+  "lengthM": 7781,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0020",
+  "pdiId": "PDI-PKL-0020",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0101",
+  "unitIn": "HRC-DL-2609-0020",
+  "unitsOut": [
+   "HPO-KHP-2609-0020"
+  ],
+  "itemId": "4213090019/10",
+  "soId": "4213090019",
+  "threadId": "TH-020",
+  "receivedAt": "2026-09-09T22:13:23",
+  "actuals": {
+   "acidConcPct": 15.3,
+   "stripSpeedMpm": 87,
+   "bathTempC": 81,
+   "oilingGsm": 1.29
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.12,
+  "outWeightMT": 18.83,
+  "lengthM": 1918,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0020",
+  "pdiId": "PDI-CRM-0020",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0102",
+  "unitIn": "HPO-KHP-2609-0020",
+  "unitsOut": [
+   "CRF-KHP-2609-0020"
+  ],
+  "itemId": "4213090019/10",
+  "soId": "4213090019",
+  "threadId": "TH-020",
+  "receivedAt": "2026-09-10T23:21:27",
+  "actuals": {
+   "exitThkMm": 1.0,
+   "passes": 4,
+   "reductionPct": 75.0,
+   "rollForceKN": 10613
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 18.83,
+  "outWeightMT": 18.08,
+  "lengthM": 1842,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0020",
+  "pdiId": "PDI-CGL-0020",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0103",
+  "unitIn": "CRF-KHP-2609-0020",
+  "unitsOut": [
+   "GIC-KHP-2609-0019"
+  ],
+  "itemId": "4213090019/10",
+  "soId": "4213090019",
+  "threadId": "TH-020",
+  "receivedAt": "2026-09-11T21:20:05",
+  "actuals": {
+   "coatingTopGsm": 64.8,
+   "coatingBottomGsm": 64.6,
+   "lineSpeedMpm": 78,
+   "furnaceSoakC": 721,
+   "zincBathAlPct": 0.21,
+   "bathTempC": 459,
+   "skinPassElongPct": 0.86,
+   "coatingTotalGsm": 129.4
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 18.08,
+  "outWeightMT": 17.63,
+  "lengthM": 1796,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0021",
+  "pdiId": "PDI-PKL-0021",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0106",
+  "unitIn": "HRC-VJ-2609-0021",
+  "unitsOut": [
+   "HPO-KHP-2609-0021"
+  ],
+  "itemId": "4213090020/10",
+  "soId": "4213090020",
+  "threadId": "TH-021",
+  "receivedAt": "2026-09-10T12:24:20",
+  "actuals": {
+   "acidConcPct": 14.9,
+   "stripSpeedMpm": 113,
+   "bathTempC": 78,
+   "oilingGsm": 1.27
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 18.56,
+  "outWeightMT": 18.28,
+  "lengthM": 3725,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0021",
+  "pdiId": "PDI-CRM-0021",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0107",
+  "unitIn": "HPO-KHP-2609-0021",
+  "unitsOut": [
+   "CRF-KHP-2609-0021"
+  ],
+  "itemId": "4213090020/10",
+  "soId": "4213090020",
+  "threadId": "TH-021",
+  "receivedAt": "2026-09-11T00:35:05",
+  "actuals": {
+   "exitThkMm": 0.5,
+   "passes": 5,
+   "reductionPct": 80.8,
+   "rollForceKN": 11103
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 18.28,
+  "outWeightMT": 17.55,
+  "lengthM": 3577,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0021",
+  "pdiId": "PDI-CGL-0021",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0108",
+  "unitIn": "CRF-KHP-2609-0021",
+  "unitsOut": [
+   "GIC-KHP-2609-0020"
+  ],
+  "itemId": "4213090020/10",
+  "soId": "4213090020",
+  "threadId": "TH-021",
+  "receivedAt": "2026-09-11T12:15:56",
+  "actuals": {
+   "coatingTopGsm": 68.6,
+   "coatingBottomGsm": 66.5,
+   "lineSpeedMpm": 101,
+   "furnaceSoakC": 717,
+   "zincBathAlPct": 0.22,
+   "bathTempC": 462,
+   "skinPassElongPct": 0.95,
+   "coatingTotalGsm": 135.1
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 17.55,
+  "outWeightMT": 17.11,
+  "lengthM": 3487,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CCL-0012",
+  "pdiId": "PDI-CCL-0012",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0109",
+  "unitIn": "GIC-KHP-2609-0020",
+  "unitsOut": [
+   "PPG-KHP-2609-0012"
+  ],
+  "itemId": "4213090020/10",
+  "soId": "4213090020",
+  "threadId": "TH-021",
+  "receivedAt": "2026-09-11T22:34:47",
+  "actuals": {
+   "dftTopUm": 21.2,
+   "dftBackUm": 7.5,
+   "pmtC": 232,
+   "lineSpeedMpm": 55,
+   "gloss60": 39,
+   "dE": 0.8
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 17.11,
+  "outWeightMT": 16.77,
+  "lengthM": 3418,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0022",
+  "pdiId": "PDI-PKL-0022",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0111",
+  "unitIn": "HRC-VJ-2609-0022",
+  "unitsOut": [
+   "HPO-KHP-2609-0022"
+  ],
+  "itemId": "4213090040/20",
+  "soId": "4213090040",
+  "threadId": "TH-022",
+  "receivedAt": "2026-09-11T09:11:33",
+  "actuals": {
+   "acidConcPct": 14.3,
+   "stripSpeedMpm": 113,
+   "bathTempC": 78,
+   "oilingGsm": 1.23
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.83,
+  "outWeightMT": 21.5,
+  "lengthM": 5477,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0022",
+  "pdiId": "PDI-CRM-0022",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0112",
+  "unitIn": "HPO-KHP-2609-0022",
+  "unitsOut": [
+   "CRF-KHP-2609-0022"
+  ],
+  "itemId": "4213090040/20",
+  "soId": "4213090040",
+  "threadId": "TH-022",
+  "receivedAt": "2026-09-12T10:19:00",
+  "actuals": {
+   "exitThkMm": 0.5,
+   "passes": 5,
+   "reductionPct": 77.3,
+   "rollForceKN": 10817
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.5,
+  "outWeightMT": 20.64,
+  "lengthM": 5258,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0022",
+  "pdiId": "PDI-CGL-0022",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0113",
+  "unitIn": "CRF-KHP-2609-0022",
+  "unitsOut": [
+   "GIC-KHP-2609-0021"
+  ],
+  "itemId": "4213090040/20",
+  "soId": "4213090040",
+  "threadId": "TH-022",
+  "receivedAt": "2026-09-13T04:53:08",
+  "actuals": {
+   "coatingTopGsm": 60.1,
+   "coatingBottomGsm": 58.5,
+   "lineSpeedMpm": 110,
+   "furnaceSoakC": 725,
+   "zincBathAlPct": 0.2,
+   "bathTempC": 460,
+   "skinPassElongPct": 0.95,
+   "coatingTotalGsm": 118.6
+  },
+  "deviations": [
+   {
+    "field": "coatingTotalGsm",
+    "note": "outside band 120–138 g/m²",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
+  "inWeightMT": 20.64,
+  "outWeightMT": 20.12,
+  "lengthM": 5126,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CCL-0013",
+  "pdiId": "PDI-CCL-0013",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0114",
+  "unitIn": "GIC-KHP-2609-0021",
+  "unitsOut": [
+   "PPG-KHP-2609-0013"
+  ],
+  "itemId": "4213090040/20",
+  "soId": "4213090040",
+  "threadId": "TH-022",
+  "receivedAt": "2026-09-13T16:06:18",
+  "actuals": {
+   "dftTopUm": 21.5,
+   "dftBackUm": 6.9,
+   "pmtC": 234,
+   "lineSpeedMpm": 59,
+   "gloss60": 30,
+   "dE": 0.55
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.12,
+  "outWeightMT": 19.72,
+  "lengthM": 5024,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0023",
+  "pdiId": "PDI-PKL-0023",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0117",
+  "unitIn": "HRC-VJ-2609-0023",
+  "unitsOut": [
+   "HPO-KHP-2609-0023"
+  ],
+  "itemId": "4213090004/10",
+  "soId": "4213090004",
+  "threadId": "TH-023",
+  "receivedAt": "2026-09-12T22:37:05",
+  "actuals": {
+   "acidConcPct": 11.2,
+   "stripSpeedMpm": 83,
+   "bathTempC": 83,
+   "oilingGsm": 1.08
+  },
+  "deviations": [
+   {
+    "field": "acidConcPct",
+    "note": "below 12 % band",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
+  "inWeightMT": 21.5,
+  "outWeightMT": 21.18,
+  "lengthM": 1498,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0023",
+  "pdiId": "PDI-CRM-0023",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0118",
+  "unitIn": "HPO-KHP-2609-0023",
+  "unitsOut": [
+   "CRF-KHP-2609-0023"
+  ],
+  "itemId": "4213090004/10",
+  "soId": "4213090004",
+  "threadId": "TH-023",
+  "receivedAt": "2026-09-13T05:08:01",
+  "actuals": {
+   "exitThkMm": 1.19,
+   "passes": 4,
+   "reductionPct": 70.0,
+   "rollForceKN": 10020
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.18,
+  "outWeightMT": 20.33,
+  "lengthM": 1438,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0023",
+  "pdiId": "PDI-CGL-0023",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0119",
+  "unitIn": "CRF-KHP-2609-0023",
+  "unitsOut": [
+   "GIC-KHP-2609-0022"
+  ],
+  "itemId": "4213090004/10",
+  "soId": "4213090004",
+  "threadId": "TH-023",
+  "receivedAt": "2026-09-13T14:05:45",
+  "actuals": {
+   "coatingTopGsm": 68.6,
+   "coatingBottomGsm": 68.7,
+   "lineSpeedMpm": 78,
+   "furnaceSoakC": 723,
+   "zincBathAlPct": 0.2,
+   "bathTempC": 458,
+   "skinPassElongPct": 0.85,
+   "coatingTotalGsm": 137.3
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 20.33,
+  "outWeightMT": 19.82,
+  "lengthM": 1402,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0024",
+  "pdiId": "PDI-PKL-0024",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0122",
+  "unitIn": "HRC-KHP-2609-0025",
+  "unitsOut": [
+   "HPO-KHP-2609-0024"
+  ],
+  "itemId": "4213090024/20",
+  "soId": "4213090024",
+  "threadId": "TH-024",
+  "receivedAt": "2026-09-14T02:34:33",
+  "actuals": {
+   "acidConcPct": 14.7,
+   "stripSpeedMpm": 116,
+   "bathTempC": 79,
+   "oilingGsm": 1.07
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.66,
+  "outWeightMT": 19.37,
+  "lengthM": 789,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0025",
+  "pdiId": "PDI-PKL-0025",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0124",
+  "unitIn": "HRC-DL-2609-0026",
+  "unitsOut": [
+   "HPO-KHP-2609-0025"
+  ],
+  "itemId": "4213090031/10",
+  "soId": "4213090031",
+  "threadId": "TH-025",
+  "receivedAt": "2026-09-14T08:02:17",
+  "actuals": {
+   "acidConcPct": 14.3,
+   "stripSpeedMpm": 84,
+   "bathTempC": 79,
+   "oilingGsm": 1.23
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 22.29,
+  "outWeightMT": 21.96,
+  "lengthM": 2797,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0024",
+  "pdiId": "PDI-CRM-0024",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0125",
+  "unitIn": "HPO-KHP-2609-0025",
+  "unitsOut": [
+   "CRF-KHP-2609-0024"
+  ],
+  "itemId": "4213090031/10",
+  "soId": "4213090031",
+  "threadId": "TH-025",
+  "receivedAt": "2026-09-15T09:55:28",
+  "actuals": {
+   "exitThkMm": 0.79,
+   "passes": 4,
+   "reductionPct": 78.9,
+   "rollForceKN": 11041
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 21.96,
+  "outWeightMT": 21.08,
+  "lengthM": 2685,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0026",
+  "pdiId": "PDI-PKL-0026",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0128",
+  "unitIn": "HRC-DL-2609-0027",
+  "unitsOut": [
+   "HPO-KHP-2609-0026"
+  ],
+  "itemId": "4213090023/20",
+  "soId": "4213090023",
+  "threadId": "TH-026",
+  "receivedAt": "2026-09-14T00:19:24",
+  "actuals": {
+   "acidConcPct": 14.9,
+   "stripSpeedMpm": 82,
+   "bathTempC": 78,
+   "oilingGsm": 1.05
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 18.88,
+  "outWeightMT": 18.6,
+  "lengthM": 2369,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0025",
+  "pdiId": "PDI-CRM-0025",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0129",
+  "unitIn": "HPO-KHP-2609-0026",
+  "unitsOut": [
+   "CRF-KHP-2609-0025"
+  ],
+  "itemId": "4213090023/20",
+  "soId": "4213090023",
+  "threadId": "TH-026",
+  "receivedAt": "2026-09-14T18:04:54",
+  "actuals": {
+   "exitThkMm": 0.8,
+   "passes": 4,
+   "reductionPct": 80.0,
+   "rollForceKN": 10130
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 18.6,
+  "outWeightMT": 17.86,
+  "lengthM": 2275,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0024",
+  "pdiId": "PDI-CGL-0025",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0130",
+  "unitIn": "CRF-KHP-2609-0025",
+  "unitsOut": [
+   "GIC-KHP-2609-0024"
+  ],
+  "itemId": "4213090023/20",
+  "soId": "4213090023",
+  "threadId": "TH-026",
+  "receivedAt": "2026-09-15T03:04:26",
+  "actuals": {
+   "coatingTopGsm": 137.3,
+   "coatingBottomGsm": 136.0,
+   "lineSpeedMpm": 79,
+   "furnaceSoakC": 718,
+   "zincBathAlPct": 0.2,
+   "bathTempC": 460,
+   "skinPassElongPct": 0.92,
+   "coatingTotalGsm": 273.3
+  },
+  "deviations": [
+   {
+    "field": "coatingTotalGsm",
+    "note": "outside band 275–310 g/m²",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
+  "inWeightMT": 17.86,
+  "outWeightMT": 17.41,
+  "lengthM": 2217,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0027",
+  "pdiId": "PDI-PKL-0027",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0133",
+  "unitIn": "HRC-KHP-2609-0029",
+  "unitsOut": [
+   "HPO-KHP-2609-0027"
+  ],
+  "itemId": "4213090026/10",
+  "soId": "4213090026",
+  "threadId": "TH-027",
+  "receivedAt": "2026-09-15T09:27:59",
+  "actuals": {
+   "acidConcPct": 13.1,
+   "stripSpeedMpm": 112,
+   "bathTempC": 81,
+   "oilingGsm": 1.32
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.94,
+  "outWeightMT": 19.64,
+  "lengthM": 800,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ }
+]

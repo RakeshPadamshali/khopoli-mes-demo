@@ -1,0 +1,20 @@
+[
+ {
+  "id": "V01",
+  "name": "Shree Packers",
+  "rateDom": 450,
+  "rateExp": 950
+ },
+ {
+  "id": "V02",
+  "name": "Coastal Packaging Co.",
+  "rateDom": 470,
+  "rateExp": 980
+ },
+ {
+  "id": "V03",
+  "name": "Metro Wrap Services",
+  "rateDom": 440,
+  "rateExp": 930
+ }
+]

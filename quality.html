@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quality & Defects · Khopoli NextGen MES</title>
+<link rel="stylesheet" href="assets/vendor/roboto/roboto.css"><link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css"><link rel="stylesheet" href="assets/khp-shell.css">
+<style>
+  .tbl-wrap { max-height:320px; }
+  .form { display:grid; grid-template-columns:repeat(4,1fr); gap:8px 12px; align-items:end; } .form label { font-size:10px; text-transform:uppercase; letter-spacing:.3px; color:var(--color-text-muted); font-weight:600; display:block; margin-bottom:3px; }
+  .form input, .form select { width:100%; font:12px 'Roboto'; padding:5px 8px; border:1px solid var(--color-border); border-radius:5px; }
+  .val td.no { background:#ffebee; } .val td.yes { color:#2e7d32; }
+  .cand { border:1px solid var(--color-border); border-radius:8px; padding:10px 12px; margin-bottom:8px; background:#fff; } .cand.ok { border-color:#2e9b45; box-shadow:0 0 0 2px #e8f5e9; } .cand .t { display:flex; align-items:center; gap:8px; font-weight:600; margin-bottom:6px; } .cand .t .badge { margin-left:auto; }
+  .gate { display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:8px; font-size:12px; } .gate.ok { background:#e8f5e9; color:#2e7d32; } .gate.no { background:#ffebee; color:#c62828; } .gate.pend { background:#fff8e1; color:#b25f00; }
+  .chain { display:flex; align-items:center; gap:6px; flex-wrap:wrap; font-size:12px; } .chain .n { border:1px solid var(--color-border); border-radius:6px; padding:4px 9px; background:#fff; font-weight:600; } .chain .n.bad { border-color:#d84a4a; background:#ffebee; color:#c62828; } .chain i { color:#c2c8cf; }
+</style>
+<script src="assets/khp-embed.js"></script>
+</head>
+<body>
+<div class="bm-layout">
+  <main class="bm-content">
+    <div class="page-bar">
+      <div><h1>Quality &amp; Defects — test results, defect taxonomy, usage decisions, downgrade workflow</h1><div class="crumb">Quality &amp; Trace › Quality › <span id="ctx"></span></div></div>
+      <div class="actions"><a class="btn btn-outline" href="genealogy.html"><i class="fa-solid fa-diagram-project"></i> Genealogy · propagation</a><a class="btn btn-outline" href="packing.html"><i class="fa-solid fa-truck-ramp-box"></i> Packing · Dispatch</a><a class="btn btn-outline" href="execution.html"><i class="fa-solid fa-industry"></i> Shop-floor</a></div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-vial"></i> Test certificate &amp; lab result — <select id="unitsel" style="font:12px 'Roboto';padding:3px 6px;border:1px solid var(--color-border);border-radius:5px"></select> <span class="right" id="tcmeta"></span></div>
+      <div class="card-body"><div class="grid-2-1"><div id="tc"></div><div id="tcform"></div></div></div>
+    </div>
+    <div class="card" id="dgcard" style="display:none">
+      <div class="card-head"><i class="fa-solid fa-arrow-down-wide-short"></i> Downgrade suggestion — generated automatically, validated against sales-order parameters <span class="right" id="dgmeta"></span></div>
+      <div class="card-body" id="dg"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-bug"></i> Defect register — detectedOn material · attributedTo equipment <span class="right" id="dmeta"></span></div>
+      <div class="card-body"><div class="form" id="dform" style="margin-bottom:10px"></div><div class="filters" id="filters"></div><div class="tbl-wrap"><table class="tbl" id="defs"></table></div>
+      <div class="note"><i class="fa-solid fa-circle-info"></i><span>Every defect is linked to the material unit it was found on (<b>detectedOn</b>) and to the causing equipment (<b>attributedTo</b>), so root cause traverses Defect → Equipment → Line → Plant, including upstream plants. "Downstream" counts the coated coils that consumed the defective input — open the Genealogy page for the propagation view.</span></div></div>
+    </div>
+    <div class="grid2">
+      <div class="card"><div class="card-head"><i class="fa-solid fa-gavel"></i> Usage decisions (UD) <span class="right" id="udmeta"></span></div><div class="card-body"><div class="tbl-wrap" style="max-height:280px"><table class="tbl" id="ud"></table></div></div></div>
+      <div class="card"><div class="card-head"><i class="fa-solid fa-hand"></i> Batch holds &amp; releases <span class="right" id="hmeta"></span></div><div class="card-body"><div class="tbl-wrap" style="max-height:280px"><table class="tbl" id="holds"></table></div></div></div>
+    </div>
+  </main>
+</div>
+<script>window.KHP_PAGE='quality'; window.KHP_TITLE='Quality & Defects'; window.KHP_ICON='fa-microscope';</script>
+<script src="assets/khp-chrome.js"></script><script src="data/khp-data.js"></script><script src="assets/khp-core.js"></script>
+<script>
+  var X=window.KHPX, D=X.D, esc=X.esc, badge=X.badge, HERO=D.meta.hero, heroPP=HERO.units.filter(function(u){return u.indexOf('PPG')===0;})[0];
+  document.getElementById('ctx').textContent = D.plant.name + ' · as of ' + X.fmt(D.meta.asOf);
+  var dft=X.state.get('dft',null), liveDefs=X.state.get('defectsLive',[]), rel=X.state.get('released',{});
+  var defects=D.defects.concat(liveDefs);
+  var autoRate=Math.round(100*D.decisions.filter(function(d){return d.mode==='AUTO'&&d.udCode==='PRIME';}).length/D.decisions.length);
+  document.getElementById('kpis').innerHTML=[['Open defects',defects.filter(function(d){return d.status!=='CLOSED';}).length,defects.length+' recorded · '+D.defectCodes.length+' codes','red'],['Active holds',D.holds.filter(function(h){return h.status==='ACTIVE'&&!rel[h.id];}).length,'parameter-based + manual','amber'],
+    ['Pending lab tests',D.certificates.filter(function(c){return c.status==='PENDING';}).length+(dft?-1:0),'DFT gate before dispatch','amber'],['Auto-clearance',autoRate+'%','surface + lab pass → PRIME without touch','green'],['Downgrade suggestions',D.downgradeSuggestions.length,D.downgradeSuggestions.filter(function(s){return s.status==='SUGGESTED';}).length+' awaiting decision','blue'],
+    ['Certificates',D.certificates.length,D.certificates.filter(function(c){return c.status==='PASS';}).length+' passed · EN 10204 3.1','blue']].map(function(k){return '<div class="kpi '+k[3]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="s">'+k[2]+'</div></div>';}).join('');
+  // ---- certificate + lab entry ----
+  var certUnits=D.certificates.slice().sort(function(a,b){return (b.hero?1:0)-(a.hero?1:0)||(a.status==='PENDING'?-1:1);});
+  var usel=document.getElementById('unitsel'); usel.innerHTML=certUnits.map(function(c){return '<option value="'+c.unitId+'">'+esc(c.unitId)+' · '+esc(c.product)+' '+esc(c.gradeId)+(c.hero?' ★':'')+' · '+c.status+'</option>';}).join('');
+  var hp=X.hashParam(); if(hp&&X.by.certs['TC-'+hp]) usel.value=hp;
+  function renderTC(){
+    var uid=usel.value, c=X.by.certs['TC-'+uid], u=X.unit(uid), it=X.item(u.allocatedTo), isHero=uid===heroPP;
+    var tests=c.tests.map(function(t){ var tt=Object.assign({},t); if(isHero&&dft&&t.test.indexOf('DFT top')===0){ tt.value=dft.top; tt.result=dft.result; } if(isHero&&dft&&t.test.indexOf('DFT back')===0){ tt.value=dft.back; tt.result='PASS'; } return tt; });
+    var pending=tests.some(function(t){return t.result==='PENDING';}), fail=tests.some(function(t){return t.result==='FAIL';}), status=pending?'PENDING':fail?'FAIL':'PASS';
+    document.getElementById('tcmeta').innerHTML=esc(c.id)+' · '+esc(c.standard)+' · heat '+esc(c.heatId)+' · HR coil <a href="genealogy.html#'+esc(uid)+'">'+esc(c.hrCoilId)+'</a> · SO '+esc(u.allocatedTo)+' ('+esc(u.customerName)+')';
+    document.getElementById('tc').innerHTML='<table class="tbl"><thead><tr><th>Test</th><th>Result</th><th>Specification (TDC)</th><th>Status</th></tr></thead><tbody>'+tests.map(function(t){return '<tr><td>'+esc(t.test)+'</td><td class="mono strong'+(t.result==='FAIL'?' deviation':'')+'">'+(t.value==null?'—':t.value)+'</td><td class="mono">'+esc(t.spec)+'</td><td>'+badge(t.result)+'</td></tr>';}).join('')+'</tbody></table>'+
+      (u.product==='PPGI'||u.product==='PPGL'?'<div class="gate '+(status==='PASS'?'ok':status==='FAIL'?'no':'pend')+'" style="margin-top:10px"><i class="fa-solid '+(status==='PASS'?'fa-circle-check':status==='FAIL'?'fa-ban':'fa-hourglass-half')+'"></i><div><b>Dispatch gate (colour-coated):</b> '+(status==='PASS'?'valid DFT result on the certificate — dispatch linkage allowed':status==='FAIL'?'DFT outside specification — dispatch blocked until a quality decision (downgrade / re-allocate / rework)':'DFT result pending — dispatch linkage not yet allowed')+'</div></div>':'');
+    var f='';
+    if(isHero){
+      if(!dft) f='<div class="sub-title"><i class="fa-solid fa-flask-vial"></i> Record lab result — DFT (hand-held gauge, 5 readings averaged)</div><div class="form" style="grid-template-columns:1fr 1fr"><div><label>DFT top (µm) · spec '+it.dftTop+' ±'+it.dftTol+'</label><input id="l-top" value="16.8"></div><div><label>DFT back (µm) · spec '+it.dftBack+' ±2</label><input id="l-back" value="7.1"></div></div><div style="margin-top:10px"><button class="btn btn-primary btn-sm" id="l-post"><i class="fa-solid fa-check"></i> Record result &amp; evaluate</button></div><div class="note"><i class="fa-solid fa-circle-info"></i><span>The PDO already flagged 16.8 µm against the PDI target (min 17.0). The lab reading confirms or clears it; a FAIL turns the auto-flagged defect into a confirmed DFT deviation and triggers the downgrade suggestion.</span></div>';
+      else f='<div class="sub-title"><i class="fa-solid fa-flask-vial"></i> Lab result recorded</div><div class="kv"><span class="k">DFT top</span><span class="v mono">'+dft.top+' µm → '+dft.result+'</span><span class="k">DFT back</span><span class="v mono">'+dft.back+' µm → PASS</span><span class="k">Recorded</span><span class="v">'+esc(dft.at)+' · QC — S. Deshmukh</span><span class="k">Decision</span><span class="v">'+(dft.decision?esc(dft.decision):'<span class="deviation">pending — see downgrade suggestion below</span>')+'</span></div>';
+    } else f='<div class="hint">Lab entry: manual or automatic from LIMS; sample count per customer TDC. Select the golden-thread coil to record the pending DFT result.</div>';
+    document.getElementById('tcform').innerHTML=f;
+    var b=document.getElementById('l-post'); if(b) b.addEventListener('click',function(){ var top=+document.getElementById('l-top').value, back=+document.getElementById('l-back').value, ok=Math.abs(top-it.dftTop)<=it.dftTol;
+      dft={top:top,back:back,result:ok?'PASS':'FAIL',at:X.fmt(new Date()),decision:null}; X.state.set('dft',dft); renderTC(); renderDG(); renderDefects();
+      X.toast(ok?'DFT within specification — certificate PASS, hold released, dispatch gate open':'DFT '+top+' µm outside '+it.dftTop+' ±'+it.dftTol+' — defect DFT confirmed on '+heroPP+', batch stays on hold, downgrade suggestion generated',ok?'fa-circle-check':'fa-triangle-exclamation'); });
+    renderDG();
+  }
+  usel.addEventListener('change',renderTC);
+  // ---- downgrade suggestion ----
+  function renderDG(){
+    var uid=usel.value, s=D.downgradeSuggestions.filter(function(x){return x.unitId===uid;})[0], card=document.getElementById('dgcard');
+    if(!s||(uid===heroPP&&(!dft||dft.result==='PASS'))){ card.style.display='none'; return; }
+    card.style.display=''; var decided=uid===heroPP?dft.decision:(s.status!=='SUGGESTED'?s.status:null);
+    document.getElementById('dgmeta').innerHTML=esc(s.id)+' · '+esc(s.suggestedAt.replace('T',' '))+' · '+badge(decided?'ACCEPTED':'SUGGESTED',decided||'SUGGESTED');
+    var html='<div class="note" style="margin:0 0 10px"><i class="fa-solid fa-lightbulb" style="color:#b25f00"></i><span><b>Trigger:</b> '+esc(s.trigger)+' — '+esc(s.reason)+'. <b>Suggestion:</b> '+esc(s.suggestion)+'</span></div>';
+    if(s.candidates.length){ html+='<div class="sub-title">Candidate sales orders — parameter-by-parameter validation</div><div class="grid2">'+s.candidates.map(function(c){ var it=X.item(c.itemId); return '<div class="cand'+(c.ok?' ok':'')+'"><div class="t"><span class="mono">'+esc(c.itemId)+'</span> '+esc(c.customerName)+' <span class="hint">req '+esc(c.reqDate)+'</span>'+badge(c.ok?'PASS':'FAIL',c.ok?'ACCEPTS COIL':'REJECTS')+'</div><table class="tbl val"><thead><tr><th>Parameter</th><th>SO requires</th><th>Coil</th><th></th></tr></thead><tbody>'+c.validation.map(function(v){return '<tr><td>'+esc(v.param)+'</td><td class="mono">'+esc(v.required)+'</td><td class="mono">'+esc(v.actual)+'</td><td class="'+(v.ok?'yes':'no')+'">'+(v.ok?'<i class="fa-solid fa-check"></i>':'<i class="fa-solid fa-xmark"></i> mismatch')+'</td></tr>';}).join('')+'</tbody></table>'+(c.ok&&!decided?'<div style="margin-top:8px"><button class="btn btn-success btn-sm" data-dec="realloc" data-item="'+esc(c.itemId)+'"><i class="fa-solid fa-right-left"></i> Re-allocate coil to this order</button></div>':'')+'</div>'; }).join('')+'</div>'; }
+    html+='<div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center"><span class="hint">Manual override / validation workflow:</span>'+(decided?badge('ACCEPTED',decided):'<button class="btn btn-warn btn-sm" data-dec="secondary"><i class="fa-solid fa-arrow-down"></i> Downgrade to '+esc(s.fallback.segment)+' ('+s.fallback.priceImpactPct+'% price)</button><button class="btn btn-outline btn-sm" data-dec="override"><i class="fa-solid fa-user-check"></i> Override — accept as prime (QC Head, deviation note)</button><button class="btn btn-outline btn-sm" data-dec="rework"><i class="fa-solid fa-rotate"></i> Rework — re-coat at CCL (new production order)</button>')+'</div>';
+    document.getElementById('dg').innerHTML=html;
+  }
+  document.getElementById('dg').addEventListener('click',function(e){ var b=e.target.closest('[data-dec]'); if(!b||!dft) return; var d=b.dataset.dec, txt=d==='realloc'?'Re-allocated to '+b.dataset.item+' (Sunbeam Panels) — coil accepted against its TDC (DFT 15 ±3); BTA/BTP updated on both orders, reallocation to SAP (IF-SAP-15), hold released, dispatch gate open':d==='secondary'?'Downgraded to secondary (RAL 9002 stock) — UD code DOWNGRADE, batch attributes to SAP (IF-SAP-07), removed from SO 4213090017/10; BTP unchanged':d==='override'?'Override recorded by QC Head with deviation note — accepted as prime against SO 4213090017/10 (customer concession CC-2609-018 attached)':'Rework production order generated for CCL re-coat — coil re-enters the CCL schedule, original PO closed short';
+    dft.decision=txt; X.state.set('dft',dft); renderTC(); X.toast(txt); });
+  // ---- defects ----
+  var F={line:'',code:'',status:'',q:''};
+  document.getElementById('filters').innerHTML='<span class="fl">Line</span><select id="f-line"><option value="">All</option>'+D.lines.filter(function(l){return l.status==='ACTIVE';}).map(function(l){return '<option value="'+l.id+'">'+l.id+'</option>';}).join('')+'</select><span class="fl">Code</span><select id="f-code"><option value="">All</option>'+D.defectCodes.map(function(c){return '<option value="'+c.code+'">'+c.code+' · '+esc(c.name)+'</option>';}).join('')+'</select><span class="fl">Status</span><select id="f-status"><option value="">All</option><option>OPEN</option><option>AUTO_FLAGGED</option><option>CLOSED</option></select><span class="fl">Search</span><input id="f-q" placeholder="coil / equipment" size="14"><span class="hint" id="dc" style="margin-left:auto"></span>';
+  ['f-line','f-code','f-status'].forEach(function(id){ document.getElementById(id).addEventListener('change',function(){ F[id.slice(2)]=this.value; renderDefects(); }); }); document.getElementById('f-q').addEventListener('input',function(){ F.q=this.value; renderDefects(); });
+  var units=D.materials.filter(function(u){return u.producedAt||u.product==='HRC';});
+  document.getElementById('dform').innerHTML='<div><label>Defect code</label><select id="r-code">'+D.defectCodes.map(function(c){return '<option value="'+c.code+'"'+(c.code==='DRS'?' selected':'')+'>'+c.code+' · '+esc(c.name)+'</option>';}).join('')+'</select></div><div><label>Detected on (input coil)</label><select id="r-unit">'+units.map(function(u){return '<option value="'+u.id+'"'+(u.id===HERO.units[3]?' selected':'')+'>'+esc(u.id)+' · '+esc(u.product)+(X.isHero(u.id)?' ★':'')+'</option>';}).join('')+'</select></div><div><label>Position (m) · source</label><input id="r-pos" value="212 · SIS camera 3"></div><div><button class="btn btn-danger btn-sm" id="r-add"><i class="fa-solid fa-bug"></i> Record defect</button></div>';
+  document.getElementById('r-add').addEventListener('click',function(){ var code=document.getElementById('r-code').value, dc=X.by.defectCodes[code], uid=document.getElementById('r-unit').value, u=X.unit(uid);
+    var eq=dc.attrib.indexOf('-')>0?dc.attrib:(dc.line+'-'+dc.attrib); var down=X.children(uid).map(function(k){return k.id;});
+    var d={id:'DEF-2609-L'+(liveDefs.length+1).toString().padStart(3,'0'),code:code,name:dc.name,severity:dc.severity,detectedOn:uid,detectedProduct:u.product,detectedAtLine:u.producedOn||'PKL',detectedAt:new Date().toISOString(),source:'Manual (line inspector)',attributedTo:eq,attributedLine:eq.split('-')[0]==='VJNR'||eq.split('-')[0]==='DLV'?eq.split('-').slice(0,2).join('-'):eq.split('-')[0],attributedPlant:eq.indexOf('VJNR')===0?'VJNR':eq.indexOf('DLV')===0?'DLV':'KHP',positionM:parseInt(document.getElementById('r-pos').value)||0,side:'Top',lengthM:6,status:'OPEN',hero:X.isHero(uid),downstreamAffected:down,live:true};
+    liveDefs.push(d); X.state.set('defectsLive',liveDefs); defects=D.defects.concat(liveDefs); renderDefects();
+    X.toast('Defect '+code+' recorded on '+uid+' → '+down.length+' downstream coil(s) flagged automatically, holds proposed; root cause '+eq+' → '+d.attributedLine+' → '+d.attributedPlant); });
+  function renderDefects(){
+    var q=F.q.toLowerCase(), list=defects.filter(function(d){ if(F.line&&d.detectedAtLine!==F.line) return false; if(F.code&&d.code!==F.code) return false; if(F.status&&d.status!==F.status) return false; if(q&&(d.detectedOn+' '+d.attributedTo+' '+d.id).toLowerCase().indexOf(q)<0) return false; return true; })
+      .sort(function(a,b){return (b.live?1:0)-(a.live?1:0)||(b.hero?1:0)-(a.hero?1:0)||(a.detectedAt<b.detectedAt?1:-1);});
+    document.getElementById('dc').textContent=list.length+' of '+defects.length; document.getElementById('dmeta').textContent=defects.filter(function(d){return d.hero;}).length+' on the golden thread · SIS + manual + PDO auto-comparison';
+    document.getElementById('defs').innerHTML='<thead><tr><th>Defect</th><th>Code</th><th>Sev</th><th>Detected on</th><th>At line · when</th><th>Source</th><th>Root cause: equipment → line → plant</th><th>Downstream</th><th>Status</th><th>Disposition</th></tr></thead><tbody>'+list.slice(0,60).map(function(d){ var st=d.status; if(d.hero&&d.code==='DFT'&&dft) st=dft.result==='FAIL'?'OPEN':'CLOSED';
+      return '<tr'+(d.hero?' class="hero"':'')+'><td class="mono strong">'+esc(d.id)+(d.live?' <span class="badge b-blue">NEW</span>':'')+'</td><td><span class="chip">'+esc(d.code)+'</span> '+esc(d.name)+'</td><td>'+badge(d.severity)+'</td><td class="mono"><a href="genealogy.html#'+esc(d.detectedOn)+'">'+esc(d.detectedOn)+'</a><div class="hint">'+esc(d.detectedProduct)+'</div></td><td>'+esc(d.detectedAtLine)+'<div class="hint">'+X.fmtDT(d.detectedAt)+'</div></td><td class="small">'+esc(d.source)+'</td>'+
+        '<td><div class="chain"><span class="n bad">'+esc(d.attributedTo)+'</span><i class="fa-solid fa-angle-right"></i><span class="n">'+esc(d.attributedLine)+'</span><i class="fa-solid fa-angle-right"></i><span class="n">'+esc(d.attributedPlant)+'</span></div></td><td class="mono">'+(d.downstreamAffected.length?'<a href="genealogy.html#'+esc(d.detectedOn)+'|'+esc(d.id)+'">'+d.downstreamAffected.length+' coil'+(d.downstreamAffected.length>1?'s':'')+'</a>':'—')+'</td><td>'+badge(st)+(d.labTest?'<div class="hint">lab '+(dft&&d.hero?dft.result:d.labTest)+'</div>':'')+'</td><td class="small">'+esc(d.disposition||'—')+'</td></tr>'; }).join('')+'</tbody>';
+  }
+  // ---- UD + holds ----
+  document.getElementById('udmeta').textContent=D.decisions.length+' decisions · '+autoRate+'% auto';
+  document.getElementById('ud').innerHTML='<thead><tr><th>UD</th><th>Unit</th><th>Product</th><th>Code</th><th>Decided</th><th>By</th></tr></thead><tbody>'+D.decisions.slice().sort(function(a,b){return (b.hero?1:0)-(a.hero?1:0)||(a.decidedAt<b.decidedAt?1:-1);}).slice(0,40).map(function(d){return '<tr'+(d.hero?' class="hero"':'')+'><td class="mono">'+esc(d.id)+'</td><td class="mono"><a href="genealogy.html#'+esc(d.unitId)+'">'+esc(d.unitId)+'</a></td><td>'+esc(d.product)+'</td><td>'+badge(d.udCode)+'</td><td class="mono">'+X.fmtDT(d.decidedAt)+'</td><td class="small">'+esc(d.decidedBy)+(d.reason?'<div class="hint">'+esc(d.reason)+'</div>':'')+'</td></tr>';}).join('')+'</tbody>';
+  function renderHolds(){
+    var hs=D.holds.slice().sort(function(a,b){return (b.hero?1:0)-(a.hero?1:0)||(a.heldAt<b.heldAt?1:-1);});
+    document.getElementById('hmeta').textContent=hs.filter(function(h){return h.status==='ACTIVE'&&!rel[h.id];}).length+' active';
+    document.getElementById('holds').innerHTML='<thead><tr><th>Hold</th><th>Unit</th><th>Reason</th><th>Held</th><th>Released</th><th>Status</th><th></th></tr></thead><tbody>'+hs.map(function(h){ var r=rel[h.id]; var st=r?'RELEASED':h.status; return '<tr'+(h.hero?' class="hero"':'')+'><td class="mono">'+esc(h.id)+'</td><td class="mono">'+esc(h.unitId)+'</td><td class="small">'+esc(h.reason)+'</td><td class="mono">'+X.fmtDT(h.heldAt)+'<div class="hint">'+esc(h.heldBy)+'</div></td><td class="mono">'+(r?esc(r):h.releasedAt?X.fmtDT(h.releasedAt)+'<div class="hint">'+esc(h.releasedBy)+'</div>':'—')+'</td><td>'+badge(st)+'</td><td>'+(st==='ACTIVE'?'<button class="btn btn-outline btn-sm" data-rel="'+esc(h.id)+'"'+(h.hero&&(!dft||!dft.decision)?' disabled title="quality decision required first"':'')+'>Release</button>':'')+'</td></tr>'; }).join('')+'</tbody>';
+  }
+  document.getElementById('holds').addEventListener('click',function(e){ var b=e.target.closest('[data-rel]'); if(!b) return; rel[b.dataset.rel]=X.fmtDT(new Date())+' · QC Head — M. Iyer'; X.state.set('released',rel); renderHolds(); X.toast('Hold released with audit trail (old → new status, user, timestamp); batch attributes update sent to SAP'); });
+  renderTC(); renderDefects(); renderHolds();
+</script>
+</body>
+</html>

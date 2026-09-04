@@ -1,0 +1,52 @@
+[
+ {
+  "code": "PM",
+  "name": "Planned maintenance",
+  "category": "Planned"
+ },
+ {
+  "code": "BD-MECH",
+  "name": "Mechanical breakdown",
+  "category": "Unplanned"
+ },
+ {
+  "code": "BD-ELEC",
+  "name": "Electrical breakdown",
+  "category": "Unplanned"
+ },
+ {
+  "code": "BD-INST",
+  "name": "Instrumentation / L2 fault",
+  "category": "Unplanned"
+ },
+ {
+  "code": "OP-CHG",
+  "name": "Size / product changeover",
+  "category": "Operational"
+ },
+ {
+  "code": "OP-WLD",
+  "name": "Strip weld / threading",
+  "category": "Operational"
+ },
+ {
+  "code": "QL-HOLD",
+  "name": "Quality hold / inspection",
+  "category": "Quality"
+ },
+ {
+  "code": "MT-NOCOIL",
+  "name": "No input coil available",
+  "category": "Material"
+ },
+ {
+  "code": "UT-POWER",
+  "name": "Power / utility interruption",
+  "category": "Utility"
+ },
+ {
+  "code": "UT-GAS",
+  "name": "Furnace gas / H2-N2 supply",
+  "category": "Utility"
+ }
+]

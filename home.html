@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plant Dashboard · Khopoli NextGen MES</title>
+<link rel="stylesheet" href="assets/vendor/roboto/roboto.css"><link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css"><link rel="stylesheet" href="assets/khp-shell.css">
+<style>
+  .banner { background:linear-gradient(90deg,#eef6fc,#f7fbff); border:1px solid #d6e8f5; border-radius:8px; padding:10px 14px; font-size:12px; color:#0f5fa3; display:flex; align-items:center; gap:9px; margin-bottom:12px; }
+  .live { display:inline-flex; align-items:center; gap:6px; font-size:11px; color:#2e7d32; font-weight:600; } .live .pulse { width:8px; height:8px; border-radius:50%; background:#2e9b45; box-shadow:0 0 0 0 rgba(46,155,69,.6); animation:pulse 1.6s infinite; } @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(46,155,69,.6)} 70%{box-shadow:0 0 0 8px rgba(46,155,69,0)} 100%{box-shadow:0 0 0 0 rgba(46,155,69,0)} }
+  .board td { padding:7px 10px; } .board .dot { width:9px; height:9px; border-radius:50%; display:inline-block; margin-right:6px; vertical-align:-1px; } .d-run{background:#2e9b45} .d-stop{background:#d84a4a} .d-idle{background:#b0b8c1}
+  .rate { display:flex; align-items:center; gap:6px; } .rate .track { width:90px; height:9px; background:#e6eaed; border-radius:5px; overflow:hidden; } .rate .fill { display:block; height:100%; border-radius:5px; background:#1e88e5; }
+  .chart { width:100%; height:150px; } .chart text { font:10px 'Roboto'; fill:#6b7280; } .chart .grid { stroke:#eef0f2; } .chart .ln { fill:none; stroke:#1478c8; stroke-width:2; } .chart .pt { fill:#1478c8; } .chart .lbl { font:600 10px 'Roboto'; fill:#1f2733; }
+  .hbar { display:flex; align-items:center; gap:8px; margin-bottom:7px; font-size:12px; } .hbar .l { width:150px; } .hbar .t { flex:1; height:11px; background:#eef1f4; border-radius:6px; overflow:hidden; } .hbar .f { display:block; height:100%; border-radius:6px; background:#1478c8; } .hbar .v { width:80px; text-align:right; font-variant-numeric:tabular-nums; color:var(--color-text-secondary); }
+  .sc { display:grid; grid-template-columns:1fr 1fr; gap:0 24px; } .sc .ci { display:flex; gap:9px; align-items:flex-start; font-size:12px; padding:6px 0; border-bottom:1px solid var(--color-border-light); } .sc .ci > i { color:var(--color-success); margin-top:2px; } .sc .ci .mod { color:var(--color-primary); font-size:10.5px; font-weight:600; margin-top:1px; }
+</style>
+<script src="assets/khp-embed.js"></script>
+</head>
+<body>
+<div class="bm-layout">
+  <main class="bm-content">
+    <div class="page-bar">
+      <div><h1>Plant Dashboard — real-time shop floor &amp; Plant Head view</h1><div class="crumb">Planning › Dashboard › <span id="ctx"></span></div></div>
+      <div class="actions"><span class="live"><span class="pulse"></span> LIVE · L2 event stream · last update <span id="tick" class="mono">10:30:00</span></span><a class="btn btn-outline" href="execution.html"><i class="fa-solid fa-industry"></i> Shop-floor</a><a class="btn btn-primary" href="genealogy.html"><i class="fa-solid fa-diagram-project"></i> Golden thread</a></div>
+    </div>
+    <div class="banner"><i class="fa-solid fa-layer-group"></i> <b>One MES — Coated Products template</b>, first deployment Khopoli: one governed core, site behaviour as configuration (lines, sequencing rules, formats), every integration through the middleware with published contracts, data exposed on the Coated Business ontology for DISHA analytics and the AI-agent support model.</div>
+    <div class="kpis" id="kpis"></div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-tv"></i> Real-time shop-floor board <span class="right">production rate vs target · batch on-track / behind · active delays · quality holds — pushed from L2 events, not refresh-on-demand</span></div>
+      <div class="card-body"><table class="tbl board" id="board"></table></div>
+    </div>
+    <div class="grid3">
+      <div class="card"><div class="card-head"><i class="fa-solid fa-chart-line"></i> OEE trend — plant, 14 days</div><div class="card-body"><svg class="chart" id="oee" viewBox="0 0 420 150" preserveAspectRatio="none"></svg><div class="hint">Plant OEE = tonnage-weighted average of line OEE (availability × performance × quality).</div></div></div>
+      <div class="card"><div class="card-head"><i class="fa-solid fa-percent"></i> Prime yield &amp; OTIF</div><div class="card-body" id="yield"></div></div>
+      <div class="card"><div class="card-head"><i class="fa-solid fa-triangle-exclamation"></i> Top delay categories — 15 days</div><div class="card-body" id="delays"></div></div>
+    </div>
+    <div class="card"><div class="card-head"><i class="fa-solid fa-clipboard-check"></i> Demo scenario coverage — RFP Annexure A <span class="right">same order · coil · defect across every scenario</span></div><div class="card-body"><div class="sc" id="sc"></div></div></div>
+  </main>
+</div>
+<script>window.KHP_PAGE='home'; window.KHP_TITLE='Plant Dashboard'; window.KHP_ICON='fa-gauge-high';</script>
+<script src="assets/khp-chrome.js"></script><script src="data/khp-data.js"></script><script src="assets/khp-core.js"></script>
+<script>
+  var X=window.KHPX, D=X.D, esc=X.esc, badge=X.badge, L=D.live, K=D.kpis;
+  document.getElementById('ctx').textContent = D.plant.name + ' · shift A · as of ' + X.fmt(D.meta.asOf);
+  var today=K.filter(function(k){return k.partial;}), prod=today.reduce(function(a,k){return a+k.productionMT;},0), tgt=today.reduce(function(a,k){return a+k.targetMT;},0);
+  function wavg(rows,f){ var w=0,s=0; rows.forEach(function(r){ w+=r.productionMT; s+=f(r)*r.productionMT; }); return w?s/w:0; }
+  var oeeToday=wavg(today,function(k){return k.oee;}), yieldToday=wavg(today,function(k){return k.primeYieldPct;}), otif=L.otifWeekly[L.otifWeekly.length-1];
+  var holds=D.holds.filter(function(h){return h.status==='ACTIVE';}).length;
+  document.getElementById('kpis').innerHTML=[['Production today',X.n(prod)+' MT','target '+X.n(tgt)+' MT · '+Math.round(prod/tgt*100)+'%','blue'],['Plant OEE today',Math.round(oeeToday*100)+'%','14-day avg '+Math.round(wavg(K.filter(function(k){return !k.partial;}),function(k){return k.oee;})*100)+'%','accent'],['Prime yield',yieldToday.toFixed(1)+'%','first-time quality','green'],
+    ['OTIF',otif.pct+'%',otif.week+' · on-time in-full','green'],['Active delays',L.activeDelays,L.batchesBehind+' batch'+(L.batchesBehind===1?'':'es')+' behind',L.activeDelays?'red':'green'],['Quality holds',holds,'batches awaiting decision','amber']].map(function(k){return '<div class="kpi '+k[3]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="s">'+k[2]+'</div></div>';}).join('');
+  // live board with a simulated event stream (rates jitter, clock ticks)
+  var rates={}; L.lines.forEach(function(l){ rates[l.line]=l.rateTph; });
+  function board(){ document.getElementById('board').innerHTML='<thead><tr><th>Line</th><th>State</th><th>Current batch · order</th><th>Rate vs target</th><th>Today vs target</th><th>OEE</th><th>Next</th><th>Track</th><th>Active delay</th></tr></thead><tbody>'+L.lines.map(function(l){ var r=rates[l.line], pc=Math.min(100,Math.round(r/l.targetTph*100)), tp=Math.min(100,Math.round(l.todayMT/Math.max(l.todayTargetMT,1)*100)); var nx=l.next[0]; var behind=D.schedules.filter(function(s){return s.line===l.line&&s.track==='BEHIND';}).length, ontrack=D.schedules.filter(function(s){return s.line===l.line&&s.track==='ON_TRACK';}).length;
+      return '<tr><td class="strong"><a href="execution.html#'+l.line+'">'+esc(l.name)+'</a></td><td><span class="dot '+(l.state==='RUNNING'?'d-run':l.state==='STOPPED'?'d-stop':'d-idle')+'"></span>'+badge(l.state)+'</td><td class="mono small">'+(l.currentBatch?esc(l.currentBatch)+'<div class="hint">SO '+esc(l.currentSo)+' · '+esc(l.currentPo)+'</div>':'<span class="hint">—</span>')+'</td><td><div class="rate"><span class="track"><span class="fill" style="width:'+pc+'%;background:'+(l.state==='STOPPED'?'#d84a4a':pc>=85?'#2e9b45':'#1e88e5')+'"></span></span><span class="mono small">'+r.toFixed(1)+' / '+l.targetTph+' tph</span></div></td><td><div class="rate"><span class="track"><span class="fill" style="width:'+tp+'%"></span></span><span class="mono small">'+X.n(l.todayMT)+' / '+X.n(l.todayTargetMT)+' t</span></div></td><td class="mono">'+(l.oeeToday!=null?Math.round(l.oeeToday*100)+'%':'—')+'</td><td class="mono small">'+(nx?esc(nx.unitId)+(nx.rush?' <span class="badge b-red">RUSH</span>':'')+'<div class="hint">'+X.fmtDT(nx.plannedStart)+'</div>':'—')+'</td><td class="small"><span class="ok-val">'+ontrack+' on track</span>'+(behind?' · <span class="deviation">'+behind+' behind</span>':'')+'</td><td class="small">'+(l.activeDelay?'<span class="deviation">'+esc(l.activeDelay.delayCode)+'</span> '+esc(l.activeDelay.equipmentDefect||l.activeDelay.delayName)+'<div class="hint">since '+X.fmtT(l.activeDelay.start)+' · '+esc(l.activeDelay.capture)+'</div>':'—')+'</td></tr>'; }).join('')+'</tbody>'; }
+  board(); var t0=new Date('2026-09-15T10:30:00'), tick=0;
+  setInterval(function(){ tick++; var d=new Date(t0.getTime()+tick*1000); document.getElementById('tick').textContent=d.toTimeString().slice(0,8); if(tick%5===0){ L.lines.forEach(function(l){ if(l.state==='RUNNING') rates[l.line]=Math.max(0,Math.min(l.targetTph*1.02,Math.round((rates[l.line]+(Math.random()-0.5)*1.2)*10)/10)); }); board(); } },1000);
+  // OEE trend (plant, tonnage-weighted) — single series line
+  var days=[]; K.filter(function(k){return !k.partial;}).forEach(function(k){ var d=days.filter(function(x){return x.date===k.date;})[0]; if(!d){ d={date:k.date,w:0,s:0,y:0}; days.push(d); } d.w+=k.productionMT; d.s+=k.oee*k.productionMT; d.y+=k.primeYieldPct*k.productionMT; });
+  var pts=days.map(function(d){return {date:d.date,oee:d.s/d.w,y:d.y/d.w};}); var W=420,H=150,pl=34,pr=10,pt=14,pb=24, lo=0.55, hi=0.95;
+  function xs(i){ return pl+i*(W-pl-pr)/(pts.length-1); } function ys(v){ return pt+(hi-v)/(hi-lo)*(H-pt-pb); }
+  var svg='<g>'+[0.6,0.7,0.8,0.9].map(function(v){return '<line class="grid" x1="'+pl+'" x2="'+(W-pr)+'" y1="'+ys(v)+'" y2="'+ys(v)+'"/><text x="'+(pl-4)+'" y="'+(ys(v)+3)+'" text-anchor="end">'+Math.round(v*100)+'%</text>';}).join('')+'</g>';
+  svg+='<polyline class="ln" points="'+pts.map(function(p,i){return xs(i)+','+ys(p.oee);}).join(' ')+'"/>'+pts.map(function(p,i){return '<circle class="pt" cx="'+xs(i)+'" cy="'+ys(p.oee)+'" r="3"><title>'+p.date+' · OEE '+Math.round(p.oee*100)+'%</title></circle>'+(i%3===0||(i===pts.length-1&&i%3===2)?'<text x="'+xs(i)+'" y="'+(H-6)+'" text-anchor="middle">'+p.date.slice(8)+' Sep</text>':'');}).join('');
+  var last=pts[pts.length-1]; svg+='<text class="lbl" x="'+(xs(pts.length-1)-4)+'" y="'+(ys(last.oee)-8)+'" text-anchor="end">'+Math.round(last.oee*100)+'%</text>';
+  document.getElementById('oee').innerHTML=svg;
+  // yield + OTIF
+  var ymax=100, ymin=90; document.getElementById('yield').innerHTML='<div class="sub-title">Prime yield — last 7 days</div>'+pts.slice(-7).map(function(p){return '<div class="hbar"><span class="l" style="width:60px">'+p.date.slice(5)+'</span><span class="t"><span class="f" style="width:'+Math.round((p.y-ymin)/(ymax-ymin)*100)+'%;background:#1baf7a"></span></span><span class="v">'+p.y.toFixed(1)+'%</span></div>';}).join('')+'<div class="sub-title" style="margin-top:8px">OTIF — on-time in-full, weekly</div>'+L.otifWeekly.map(function(w){return '<div class="hbar"><span class="l" style="width:60px">'+esc(w.week.slice(5))+'</span><span class="t"><span class="f" style="width:'+Math.round((w.pct-80)/20*100)+'%;background:#2a78d6"></span></span><span class="v">'+w.pct+'%</span></div>';}).join('')+'<div class="hint">Governed metric definitions (prime yield, FTQ, OTIF, OEE) — one definition consumed by MES, analytics and the AI agents.</div>';
+  // delay categories
+  var cat={}; D.delays.forEach(function(d){ var m=d.durationMin!=null?d.durationMin:38; cat[d.category]=(cat[d.category]||0)+m; }); var ck=Object.keys(cat).sort(function(a,b){return cat[b]-cat[a];}), mx=cat[ck[0]];
+  document.getElementById('delays').innerHTML=ck.map(function(c){return '<div class="hbar"><span class="l">'+esc(c)+'</span><span class="t"><span class="f" style="width:'+Math.round(cat[c]/mx*100)+'%;background:'+(c==='Unplanned'?'#d84a4a':c==='Planned'?'#8a93a0':'#f0a020')+'"></span></span><span class="v">'+X.dur(cat[c])+'</span></div>';}).join('')+'<div class="hint" style="margin-top:6px">Top equipment defect: air knife nozzle choke (CGL-AKN) · unplanned breakdowns feed SAP PM notifications; equipment availability rate feeds the OEE component.</div>';
+  // scenario coverage
+  var SC=[['S1 · Golden Thread: order → dispatch (mandatory)','Sales Orders → Routes → Material Allocator → Shop-floor (PDI/PDO) → Quality (zinc band, DFT) → Packing → Dispatch → Genealogy'],['S2 · Planning & batch allocation (light)','Routes & Schedules (APS rush re-sequencing) · Material Allocator (batch swap, BTA/BTP)'],['S3 · Delay management & mass balance (partial)','Shop-floor: stoppage with delay + equipment defect codes, availability → OEE, mass-balance imbalance flag'],['S4 · Quality, defect propagation & ontology','Quality (defect on input coil, downgrade suggestion & override) · Genealogy (propagation, Defect → Equipment → Line → Plant, triples)'],['S5 · Integration resilience','Integration Monitor: stuck PDI queue, malformed IDoc, detect → alert → replay, contract versions'],['S6 · Reporting & dashboards','This dashboard: live board, Plant Head OEE / yield / OTIF / delay categories'],['S7 · AI-agent L1/L2 support (mandatory)','Data feed: incidents, runbooks, action catalogue, audit, MI metrics — AI Support Data page; chatbot demonstrated separately'],['Same dataset everywhere','SO 4213090017/10 · HR coil HRC-VJ-2608-0471 · defects DEF-2609-0001/2/3 · incident INC-26-0412']];
+  document.getElementById('sc').innerHTML=SC.map(function(s){return '<div class="ci"><i class="fa-solid fa-circle-check"></i><div><div>'+esc(s[0])+'</div><div class="mod">'+esc(s[1])+'</div></div></div>';}).join('');
+</script>
+</body>
+</html>

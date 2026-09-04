@@ -1,0 +1,163 @@
+[
+ {
+  "id": "RB-001",
+  "title": "Stuck PDI queue on L2 gateway",
+  "symptoms": [
+   "Queue depth > 0 for > 120 s",
+   "No consumer heartbeat",
+   "PDI status IN_QUEUE, line cannot charge"
+  ],
+  "category": "Interface / L2",
+  "diagnosis": [
+   "Check consumer heartbeat on L2 gateway",
+   "Confirm MES publisher healthy (last publish time)",
+   "Inspect queue age and depth",
+   "Correlate with L2 downtime message"
+  ],
+  "remediation": [
+   "Restart L2 gateway subscriber service (autonomous)",
+   "Replay queued PDI messages oldest-first (approval if > 5 messages)",
+   "Validate ACK received per PDI"
+  ],
+  "autonomy": "AUTONOMOUS_RESTART + APPROVAL_FOR_REPLAY",
+  "knownErrorId": "KE-0031",
+  "owner": "Plant IT"
+ },
+ {
+  "id": "RB-002",
+  "title": "SAP IDoc ORDERS05 in status 51 (application error)",
+  "symptoms": [
+   "IDoc failed after retries",
+   "Amendment not reflected in MES order",
+   "Alert from middleware mapping"
+  ],
+  "category": "Interface / SAP",
+  "diagnosis": [
+   "Read IDoc status text",
+   "Identify offending segment/field",
+   "Check if mapping or source data error"
+  ],
+  "remediation": [
+   "If source data error: request SAP re-send with corrected values (approval: SAP SD key user)",
+   "If mapping error: raise change to Integration CoE",
+   "Never patch dates manually in MES"
+  ],
+  "autonomy": "APPROVAL",
+  "knownErrorId": "KE-0014",
+  "owner": "SAP SD key user"
+ },
+ {
+  "id": "RB-003",
+  "title": "PDO rejected — contract version mismatch",
+  "symptoms": [
+   "Schema validation failed: unknown field",
+   "L2 vendor upgrade without CAB"
+  ],
+  "category": "Interface / L2",
+  "diagnosis": [
+   "Compare payload version vs active contract",
+   "Check contract registry"
+  ],
+  "remediation": [
+   "Activate compatible contract version (CAB approval)",
+   "Replay rejected messages"
+  ],
+  "autonomy": "APPROVAL",
+  "knownErrorId": "KE-0027",
+  "owner": "Integration CoE"
+ },
+ {
+  "id": "RB-004",
+  "title": "Production confirmation posting failure (SAP COR)",
+  "symptoms": [
+   "BAPI returns order locked / period closed"
+  ],
+  "category": "Interface / SAP",
+  "diagnosis": [
+   "Read BAPI return",
+   "Check lock owner"
+  ],
+  "remediation": [
+   "Auto-retry after 5 min up to 3 times (autonomous)",
+   "Escalate lock owner if persists"
+  ],
+  "autonomy": "AUTONOMOUS_RETRY",
+  "knownErrorId": "KE-0008",
+  "owner": "Plant IT"
+ },
+ {
+  "id": "RB-005",
+  "title": "Data load NULL / constraint error on batch attributes",
+  "symptoms": [
+   "Batch attribute interface fails with NOT NULL"
+  ],
+  "category": "Data",
+  "diagnosis": [
+   "Identify missing attribute",
+   "Check master mapping"
+  ],
+  "remediation": [
+   "Data correction under approval workflow",
+   "Fix master mapping"
+  ],
+  "autonomy": "APPROVAL",
+  "knownErrorId": "KE-0019",
+  "owner": "MES functional"
+ },
+ {
+  "id": "RB-006",
+  "title": "User access / role assignment request",
+  "symptoms": [
+   "User cannot see page/button"
+  ],
+  "category": "Access",
+  "diagnosis": [
+   "Check role + unit/line assignment"
+  ],
+  "remediation": [
+   "Assign role per policy (autonomous within policy)"
+  ],
+  "autonomy": "AUTONOMOUS_WITHIN_POLICY",
+  "knownErrorId": null,
+  "owner": "MES admin"
+ },
+ {
+  "id": "RB-007",
+  "title": "Label printer offline at packing",
+  "symptoms": [
+   "Sticker print fails",
+   "Printer status OFFLINE"
+  ],
+  "category": "Shop-floor IT",
+  "diagnosis": [
+   "Ping printer",
+   "Check spooler"
+  ],
+  "remediation": [
+   "Restart spooler (autonomous)",
+   "Switch to backup printer",
+   "Dispatch field engineer"
+  ],
+  "autonomy": "AUTONOMOUS",
+  "knownErrorId": "KE-0022",
+  "owner": "Plant IT"
+ },
+ {
+  "id": "RB-008",
+  "title": "Mass balance mismatch reconciliation",
+  "symptoms": [
+   "Confirmation flagged IMBALANCE"
+  ],
+  "category": "Data / process",
+  "diagnosis": [
+   "Compare scale readings",
+   "Check crop/scrap entries"
+  ],
+  "remediation": [
+   "Reconcile with shift in-charge; data correction under approval"
+  ],
+  "autonomy": "APPROVAL",
+  "knownErrorId": null,
+  "owner": "PPC"
+ }
+]

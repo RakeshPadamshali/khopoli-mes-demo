@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Routes & Schedules · Khopoli NextGen MES</title>
+<link rel="stylesheet" href="assets/vendor/roboto/roboto.css"><link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css"><link rel="stylesheet" href="assets/khp-shell.css">
+<style>
+  .routes { display:grid; grid-template-columns:1fr 1fr; gap:12px; } @media (max-width:1000px){ .routes{grid-template-columns:1fr;} }
+  .rt { border:1px solid var(--color-border); border-radius:8px; padding:10px 12px; background:#fff; } .rt.chosen { border-color:var(--color-primary); box-shadow:0 0 0 2px var(--color-primary-light); }
+  .rt .t { display:flex; align-items:center; gap:8px; font-weight:600; margin-bottom:8px; } .rt .t .badge { margin-left:auto; }
+  .seq { display:flex; gap:8px; flex-wrap:wrap; } .seq .sq { display:flex; flex-direction:column; align-items:center; min-width:54px; } .seq .sq .b { width:100%; text-align:center; font-weight:700; font-size:11px; padding:5px 6px; border-radius:6px; color:#fff; } .seq .sq .y { font-size:10px; color:var(--color-text-hint); margin-top:2px; }
+  .seq .arr { color:#c2c8cf; align-self:center; }
+  .cmp { display:grid; grid-template-columns:1fr 1fr; gap:12px; } @media (max-width:1000px){ .cmp{grid-template-columns:1fr;} }
+  .cmp table.tbl td { padding:5px 8px; } .mv { color:#b25f00; font-weight:700; }
+  .tbl-wrap { max-height:380px; }
+</style>
+<script src="assets/khp-embed.js"></script>
+</head>
+<body>
+<div class="bm-layout">
+  <main class="bm-content">
+    <div class="page-bar">
+      <div><h1>Routes &amp; Schedules — Factory Planner output incorporated at schedule-line level</h1><div class="crumb">Planning › Routes &amp; Schedules › <span id="ctx"></span></div></div>
+      <div class="actions"><a class="btn btn-outline" href="orders.html"><i class="fa-solid fa-file-invoice"></i> Sales Orders</a><a class="btn btn-outline" href="allocation.html"><i class="fa-solid fa-boxes-packing"></i> Material Allocator</a><a class="btn btn-outline" href="execution.html"><i class="fa-solid fa-industry"></i> Shop-floor</a></div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-route"></i> Route for order item <select id="itemsel" style="font:12px 'Roboto';padding:3px 6px;border:1px solid var(--color-border);border-radius:5px"></select> <span class="right" id="rmeta"></span></div>
+      <div class="card-body"><div class="routes" id="routes"></div>
+      <div class="note"><i class="fa-solid fa-circle-info"></i><span>FP generates the <b>process path</b>, <b>yield string</b>, <b>route string</b> and <b>material tree</b> per MFG order; the manually entered SAP route order sits beside it. The planner picks either — the chosen route drives production-order generation (PO numbers on the Shop-floor page).</span></div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-chart-gantt"></i> Line schedules — planned campaigns per line <span class="right"><span class="legend"><span><i style="background:#1baf7a"></i>done</span><span><i style="background:#2a78d6"></i>running</span><span><i style="background:#8a93a0;opacity:.6"></i>planned</span><span><i style="background:#fff;border:2px solid var(--accent)"></i>rush</span><span><i style="background:#fff;border:2px solid #c62828"></i>golden thread</span></span></span></div>
+      <div class="card-body"><div class="gantt" id="gantt"></div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-bolt"></i> Rush order from APS — CGL sequence re-prioritised <span class="right" id="rushmeta"></span></div>
+      <div class="card-body"><div class="cmp" id="rush"></div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-list-check"></i> Schedule lines <select id="linesel" style="font:12px 'Roboto';padding:3px 6px;border:1px solid var(--color-border);border-radius:5px"></select> <span class="right" id="smeta"></span></div>
+      <div class="card-body"><div class="tbl-wrap"><table class="tbl" id="sched"></table></div>
+      <div class="note"><i class="fa-solid fa-circle-info"></i><span>Planning-released schedule lines are <b>confirmed by Operations</b> before charging (Confirm button). Sequencing rules per line: CGL by width / thickness family, CCL light → dark colour, CRM by gauge.</span></div></div>
+    </div>
+  </main>
+</div>
+<script>window.KHP_PAGE='planning'; window.KHP_TITLE='Routes & Schedules'; window.KHP_ICON='fa-route';</script>
+<script src="assets/khp-chrome.js"></script><script src="data/khp-data.js"></script><script src="assets/khp-core.js"></script>
+<script>
+  var X=window.KHPX, D=X.D, esc=X.esc, badge=X.badge, S=D.schedules;
+  document.getElementById('ctx').textContent = D.plant.name + ' · as of ' + X.fmt(D.meta.asOf);
+  var planned=S.filter(function(s){return s.status==='PLANNED';}), running=S.filter(function(s){return s.status==='IN_PROGRESS';});
+  var fp=D.routes.filter(function(r){return r.chosen==='FP';}).length;
+  [['Scheduled batches',planned.length,'planned on 8 lines','blue'],['Running now',running.length,'in progress at 10:30','blue'],['FP routes chosen',fp+' / '+D.routes.length,'rest on SAP route order','accent'],
+   ['Rush orders',D.orders.filter(function(o){return o.rush;}).length,'APS flag applied','amber'],['Behind schedule',S.filter(function(s){return s.track==='BEHIND';}).length,'stopped line / overdue','red'],['Horizon',X.fmtD(planned.reduce(function(a,s){return s.plannedEnd>a?s.plannedEnd:a;},'')),'last planned batch','grey']
+  ].forEach(function(k){ document.getElementById('kpis').insertAdjacentHTML('beforeend','<div class="kpi '+k[3]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="s">'+k[2]+'</div></div>'); });
+  // ---- route card ----
+  var sel=document.getElementById('itemsel'), withRoutes=D.items.slice().sort(function(a,b){return (b.hero?1:0)-(a.hero?1:0)||(a.id<b.id?-1:1);});
+  sel.innerHTML=withRoutes.map(function(i){return '<option value="'+esc(i.id)+'">'+esc(i.id)+' · '+esc(i.customerName)+' · '+esc(i.product)+(i.hero?' ★':'')+'</option>';}).join('');
+  var LC=X.LINE_COLOR;
+  function seqHtml(path,yields){ var ys=(yields||'').split('>'); return '<div class="seq">'+path.split('>').map(function(p,i){return (i?'<span class="arr"><i class="fa-solid fa-angle-right"></i></span>':'')+'<div class="sq"><div class="b" style="background:'+(LC[p]||'#888')+'">'+esc(p)+'</div><div class="y">'+(ys[i]?'y '+ys[i]:'')+'</div></div>';}).join('')+'</div>'; }
+  function renderRoute(){
+    var id=sel.value, r=X.route(id), it=X.item(id); if(!r) return;
+    var chosen=X.state.get('route-'+id, r.chosen);
+    document.getElementById('rmeta').innerHTML=esc(it.customerName)+' · '+esc(it.product)+' '+esc(it.gradeId)+' '+it.thk.toFixed(2)+'×'+it.width+' · '+X.n(it.qtyMT)+' MT · req '+esc(it.reqDate)+' · FP commit '+esc(it.fpCommit);
+    document.getElementById('routes').innerHTML=
+      '<div class="rt'+(chosen==='SAP'?' chosen':'')+'"><div class="t"><i class="fa-solid fa-pen-to-square"></i> SAP route order (manual) '+(chosen==='SAP'?badge('ACTIVE','CHOSEN'):'<button class="btn btn-outline btn-sm" data-choose="SAP">Use SAP route</button>')+'</div>'+seqHtml(r.sapRoute.processPath,r.sapRoute.yieldString)+
+        '<div class="kv" style="margin-top:8px"><span class="k">Route string</span><span class="v mono">'+esc(r.sapRoute.routeString)+'</span><span class="k">Yield string</span><span class="v mono">'+esc(r.sapRoute.yieldString)+'</span><span class="k">Source</span><span class="v">SAP PP route order · manual entry</span></div></div>'+
+      '<div class="rt'+(chosen==='FP'?' chosen':'')+'"><div class="t"><i class="fa-solid fa-brain"></i> Factory Planner route · '+esc(r.fpRoute.fpMfgOrder)+' '+(chosen==='FP'?badge('ACTIVE','CHOSEN'):'<button class="btn btn-outline btn-sm" data-choose="FP">Use FP route</button>')+'</div>'+seqHtml(r.fpRoute.processPath,r.fpRoute.yieldString)+
+        '<div class="kv" style="margin-top:8px"><span class="k">Route string</span><span class="v mono">'+esc(r.fpRoute.routeString)+'</span><span class="k">Material tree</span><span class="v mono">'+r.materialTree.map(esc).join(' → ')+'</span><span class="k">Schedule lines</span><span class="v">'+it.scheduleLines.map(function(s){return esc(s.id)+' · '+s.qtyMT+' MT · '+esc(s.date);}).join('<br>')+'</span>'+(r.fpRoute.altWorkCentre?'<span class="k">Alt work centre</span><span class="v">'+esc(r.fpRoute.altWorkCentre)+' (bypass / alternate)</span>':'')+'</div></div>';
+  }
+  sel.addEventListener('change',renderRoute);
+  document.getElementById('routes').addEventListener('click',function(e){ var b=e.target.closest('[data-choose]'); if(!b) return; X.state.set('route-'+sel.value,b.getAttribute('data-choose')); renderRoute(); X.toast('Route source for '+sel.value+' set to '+b.getAttribute('data-choose')+' — production orders regenerated from the '+b.getAttribute('data-choose')+' path'); });
+  // ---- gantt ----
+  var lanes=D.lines.filter(function(l){return l.status==='ACTIVE';}).map(function(l){return {id:l.id,label:l.name,sub:l.tph+' tph'};});
+  var from=new Date('2026-09-13T00:00:00'), to=new Date('2026-09-18T12:00:00');
+  var bars=S.filter(function(s){return new Date(s.plannedEnd)>from&&new Date(s.plannedStart)<to;}).map(function(s){
+    var col=s.status==='DONE'?'#1baf7a':s.status==='IN_PROGRESS'?'#2a78d6':'#8a93a0';
+    return {lane:s.line,start:s.plannedStart,end:s.plannedEnd,label:s.unitId.replace(/-KHP-2609|-VJ-260[89]|-DL-260[89]/,''),color:col,cls:(s.status==='PLANNED'?'planned ':'')+(s.rush?'rush ':'')+(s.hero?'herobar':''),
+      tip:s.unitId+' · SO '+s.soId+' · '+s.customerName+' · '+s.product+' '+s.thk+'×'+s.width+' · '+X.fmt(s.plannedStart)+' → '+X.fmt(s.plannedEnd)+' · '+s.status+(s.rush?' · RUSH':'')};
+  });
+  var st=document.createElement('style'); st.textContent='.g-bar.herobar{outline:2px solid #c62828;opacity:1}'; document.head.appendChild(st);
+  function drawGantt(){ X.gantt(document.getElementById('gantt'),lanes,bars,{from:from,to:to,laneW:150,minPx:11}); }
+  drawGantt(); window.addEventListener('resize',drawGantt); window.addEventListener('khp:activated',drawGantt);
+  // ---- rush ----
+  var R=D.events.rush;
+  if(R){
+    var applied=X.state.get('rushApplied',true);
+    function rushTable(list,title,active){ return '<div><div class="sub-title">'+title+'</div><table class="tbl"><thead><tr><th>#</th><th>Coil</th><th>Sales order</th><th>Customer</th><th>Planned start</th></tr></thead><tbody>'+
+      list.map(function(x){return '<tr'+(x.rush?' style="background:#fff8e1"':'')+'><td class="mono">'+x.seq+'</td><td class="mono">'+esc(x.unitId)+(x.rush?' <span class="badge b-red">RUSH</span>':'')+'</td><td class="mono">'+esc(x.soId)+'</td><td>'+esc(x.customerName)+'</td><td class="mono'+(x.rush&&active?' mv':'')+'">'+X.fmt(x.plannedStart)+'</td></tr>';}).join('')+'</tbody></table></div>'; }
+    function renderRush(){
+      document.getElementById('rushmeta').innerHTML='SO '+esc(R.soId)+' · '+esc(R.reason)+' · flag received '+X.fmt(R.at)+' via '+esc(R.source)+' &nbsp; <button class="btn btn-sm '+(applied?'btn-outline':'btn-primary')+'" id="rushbtn">'+(applied?'<i class="fa-solid fa-rotate-left"></i> Show sequence before flag':'<i class="fa-solid fa-bolt"></i> Apply rush flag')+'</button>';
+      document.getElementById('rush').innerHTML=rushTable(R.before,'Before — planning-released CGL sequence',!applied)+rushTable(applied?R.after:R.before,applied?'After — rush order moved up by '+R.movedUpBy+' slots, others shift later':'After (pending) — click Apply rush flag',applied);
+      document.getElementById('rushbtn').addEventListener('click',function(){ applied=!applied; X.state.set('rushApplied',applied); renderRush(); X.toast(applied?'APS rush flag applied — CGL schedule re-sequenced, schedule confirmations re-sent to L2 (IF-L2-SCH)':'Showing the sequence as released by planning, before the APS flag'); });
+    }
+    renderRush();
+  } else document.getElementById('rush').innerHTML='<div class="hint">No rush event in the dataset.</div>';
+  // ---- schedule table ----
+  var lsel=document.getElementById('linesel'); lsel.innerHTML=lanes.map(function(l){return '<option value="'+l.id+'"'+(l.id==='CGL'?' selected':'')+'>'+esc(l.label)+'</option>';}).join('');
+  function renderSched(){
+    var ln=lsel.value, list=S.filter(function(s){return s.line===ln&&s.status!=='DONE';}).sort(function(a,b){return a.plannedStart<b.plannedStart?-1:1;});
+    var conf=X.state.get('confirmed',{});
+    document.getElementById('smeta').textContent=list.length+' open schedule lines on '+ln;
+    document.getElementById('sched').innerHTML='<thead><tr><th>#</th><th>Coil in</th><th>PO</th><th>Sales order</th><th>Product</th><th>Size</th><th>MT</th><th>Planned start → end</th><th>Track</th><th>Status</th><th>Ops confirmation</th></tr></thead><tbody>'+
+      list.map(function(s,i){ var c=conf[s.id]; return '<tr'+(s.hero?' class="hero"':'')+'><td class="mono hint">'+(i+1)+'</td><td class="mono strong">'+esc(s.unitId)+(s.rush?' <span class="badge b-red">RUSH</span>':'')+'</td><td class="mono">'+esc(s.po)+'</td><td class="mono">'+esc(s.soId)+'<div class="hint">'+esc(s.customerName)+'</div></td><td><span class="chip">'+esc(s.product)+'</span> '+esc(s.gradeId)+(s.ral?' RAL '+esc(s.ral):'')+'</td><td class="mono">'+s.thk+'×'+s.width+'</td><td class="mono right-al">'+X.n(s.qtyMT,1)+'</td><td class="mono">'+X.fmt(s.plannedStart)+' → '+X.fmtT(s.plannedEnd)+'</td><td>'+(s.track?badge(s.track):'—')+'</td><td>'+badge(s.status)+'</td>'+
+        '<td>'+(s.status==='IN_PROGRESS'?badge('CONFIRMED','confirmed · charged'):c?badge('CONFIRMED','confirmed '+esc(c)):'<button class="btn btn-outline btn-sm" data-conf="'+esc(s.id)+'">Confirm</button>')+'</td></tr>'; }).join('')+'</tbody>';
+  }
+  lsel.addEventListener('change',renderSched);
+  document.getElementById('sched').addEventListener('click',function(e){ var b=e.target.closest('[data-conf]'); if(!b) return; var conf=X.state.get('confirmed',{}); conf[b.getAttribute('data-conf')]=X.fmtT(new Date()); X.state.set('confirmed',conf); renderSched(); X.toast('Schedule line confirmed by Operations — schedule message sent to L2 via middleware (IF-L2-SCH)'); });
+  renderSched();
+  var h=X.hashParam(); if(h&&X.item(h)){ sel.value=h; } renderRoute();
+</script>
+</body>
+</html>

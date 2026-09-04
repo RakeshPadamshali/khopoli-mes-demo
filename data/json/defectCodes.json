@@ -1,0 +1,114 @@
+[
+ {
+  "code": "DRS",
+  "name": "Dross (zinc-pot inclusion)",
+  "line": "CGL",
+  "attrib": "ZPT",
+  "severity": "Major"
+ },
+ {
+  "code": "PNH",
+  "name": "Pinhole",
+  "line": "CGL",
+  "attrib": "AKN",
+  "severity": "Major"
+ },
+ {
+  "code": "CWD",
+  "name": "Coating weight deviation",
+  "line": "CGL",
+  "attrib": "AKN",
+  "severity": "Major"
+ },
+ {
+  "code": "UCS",
+  "name": "Uncoated spot",
+  "line": "CGL",
+  "attrib": "CLN",
+  "severity": "Critical"
+ },
+ {
+  "code": "WRS",
+  "name": "White rust",
+  "line": "CGL",
+  "attrib": "PAS",
+  "severity": "Minor"
+ },
+ {
+  "code": "DFT",
+  "name": "DFT deviation",
+  "line": "CCL",
+  "attrib": "TCT",
+  "severity": "Major"
+ },
+ {
+  "code": "BLS",
+  "name": "Paint blister",
+  "line": "CCL",
+  "attrib": "FOV",
+  "severity": "Major"
+ },
+ {
+  "code": "ORP",
+  "name": "Orange peel",
+  "line": "CCL",
+  "attrib": "TCT",
+  "severity": "Minor"
+ },
+ {
+  "code": "CLR",
+  "name": "Colour variation (dE)",
+  "line": "CCL",
+  "attrib": "TCT",
+  "severity": "Major"
+ },
+ {
+  "code": "GAU",
+  "name": "Gauge deviation",
+  "line": "CRM",
+  "attrib": "AGC",
+  "severity": "Major"
+ },
+ {
+  "code": "CHM",
+  "name": "Chatter marks",
+  "line": "CRM",
+  "attrib": "STD",
+  "severity": "Minor"
+ },
+ {
+  "code": "EDG",
+  "name": "Edge wave",
+  "line": "CRM",
+  "attrib": "STD",
+  "severity": "Minor"
+ },
+ {
+  "code": "SCR",
+  "name": "Scratch",
+  "line": "SLT",
+  "attrib": "TPD",
+  "severity": "Minor"
+ },
+ {
+  "code": "RST",
+  "name": "Rust / scale patches",
+  "line": "PKL",
+  "attrib": "AT2",
+  "severity": "Major"
+ },
+ {
+  "code": "SCL",
+  "name": "Scale pits (rolled-in scale)",
+  "line": "PKL",
+  "attrib": "VJNR-HSM-DSB",
+  "severity": "Major"
+ },
+ {
+  "code": "TEL",
+  "name": "Telescoping",
+  "line": "PKG",
+  "attrib": "STP",
+  "severity": "Minor"
+ }
+]

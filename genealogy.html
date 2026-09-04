@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Genealogy · Digital Thread · Khopoli NextGen MES</title>
+<link rel="stylesheet" href="assets/vendor/roboto/roboto.css"><link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css"><link rel="stylesheet" href="assets/khp-shell.css">
+<style>
+  .graph { position:relative; overflow-x:auto; padding:8px 4px; } .cols { display:flex; gap:26px; align-items:flex-start; min-width:max-content; position:relative; z-index:1; }
+  .col { display:flex; flex-direction:column; gap:10px; min-width:158px; } .col .ch { font:700 10px 'Roboto'; letter-spacing:.5px; text-transform:uppercase; color:var(--color-text-hint); text-align:center; padding-bottom:4px; border-bottom:1px solid var(--color-border-light); }
+  .node { border:1px solid var(--color-border); border-radius:8px; background:#fff; padding:7px 9px; font-size:11px; cursor:pointer; position:relative; box-shadow:0 1px 2px rgba(0,0,0,.05); }
+  .node .id { font-weight:700; font-family:'Roboto',monospace; font-size:11px; } .node .sub { color:var(--color-text-muted); font-size:10px; margin-top:2px; } .node .rel { position:absolute; top:-8px; left:8px; font:700 8px 'Roboto'; background:#eef2f5; color:#42556b; padding:1px 5px; border-radius:3px; }
+  .node.sel { border-color:var(--color-primary); box-shadow:0 0 0 2px var(--color-primary-light); } .node.bad { border-color:#d84a4a; background:#ffebee; } .node.src { border-color:#c62828; background:#c62828; color:#fff; } .node.src .sub { color:#ffd9d9; } .node.dim { opacity:.45; }
+  .node.hold::after { content:'HOLD'; position:absolute; right:6px; top:6px; font:700 8px 'Roboto'; color:#b25f00; background:#fff3e0; padding:1px 4px; border-radius:3px; } .node .df { display:inline-block; width:8px; height:8px; border-radius:50%; background:#d84a4a; margin-left:4px; vertical-align:middle; }
+  .node.dom-asset { background:#f3f0ff; } .node.dom-comm { background:#fff8e1; }
+  svg.links { position:absolute; left:0; top:0; pointer-events:none; z-index:0; }
+  .dom { display:inline-flex; align-items:center; gap:5px; font-size:10.5px; margin-right:12px; } .dom i { width:10px; height:10px; border-radius:2px; display:inline-block; }
+  .rc { display:flex; align-items:center; gap:8px; flex-wrap:wrap; } .rc .n { border:1px solid var(--color-border); border-radius:8px; padding:8px 12px; background:#fff; min-width:140px; } .rc .n .l { font-size:9.5px; text-transform:uppercase; letter-spacing:.3px; color:var(--color-text-hint); } .rc .n .v { font-weight:700; } .rc .n.bad { border-color:#d84a4a; background:#ffebee; } .rc i.ar { color:#c2c8cf; font-size:16px; }
+  .tbl-wrap { max-height:260px; }
+</style>
+<script src="assets/khp-embed.js"></script>
+</head>
+<body>
+<div class="bm-layout">
+  <main class="bm-content">
+    <div class="page-bar">
+      <div><h1>Genealogy · Digital Thread — heat → slab → HR coil → CRFH → GI → colour-coated → slit → pack → dispatch</h1><div class="crumb">Quality &amp; Trace › Genealogy › <span id="ctx"></span></div></div>
+      <div class="actions"><span class="fl" style="font-size:10px;text-transform:uppercase;color:var(--color-text-muted);font-weight:600">Coil / batch</span><input id="q" placeholder="type an id, e.g. PPG-KHP-2609-0011" size="26" style="font:12px 'Roboto';padding:5px 8px;border:1px solid var(--color-border);border-radius:5px"><button class="btn btn-primary" id="go"><i class="fa-solid fa-magnifying-glass"></i> Trace</button><a class="btn btn-outline" href="quality.html"><i class="fa-solid fa-microscope"></i> Quality</a></div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-diagram-project"></i> Digital thread of <span class="mono" id="tid"></span> <span class="right" id="tmeta"></span></div>
+      <div class="card-body"><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px"><span class="dom"><i style="background:#f3f0ff;border:1px solid #c9bff5"></i>ASSETS (source plant / equipment)</span><span class="dom"><i style="background:#fff;border:1px solid #c2c8cf"></i>MATERIAL (consumesInput spine)</span><span class="dom"><i style="background:#fff8e1;border:1px solid #f5d98a"></i>COMMERCIAL (order · dispatch)</span><span class="dom"><i style="background:#ffebee;border:1px solid #d84a4a"></i>affected by selected defect</span><span class="dom"><i style="background:#c62828"></i>defect detected on</span><span class="right hint" id="propmeta" style="margin-left:auto"></span></div>
+        <div class="graph" id="graph"></div></div>
+    </div>
+    <div class="grid2">
+      <div class="card"><div class="card-head"><i class="fa-solid fa-circle-info"></i> Selected unit <span class="right" id="umeta"></span></div><div class="card-body" id="unit"></div></div>
+      <div class="card"><div class="card-head"><i class="fa-solid fa-bug"></i> Defects on this thread — propagation &amp; root cause <span class="right">Defect → Equipment → Line → Plant</span></div><div class="card-body" id="defs"></div></div>
+    </div>
+    <div class="card"><div class="card-head"><i class="fa-solid fa-share-nodes"></i> Ontology triples for the selected unit <span class="right">RFP §5.7 named relationships · source for the enterprise knowledge graph (Project DISHA)</span></div><div class="card-body"><div class="tbl-wrap"><table class="tbl" id="triples"></table></div></div></div>
+  </main>
+</div>
+<script>window.KHP_PAGE='genealogy'; window.KHP_TITLE='Genealogy · Digital Thread'; window.KHP_ICON='fa-diagram-project';</script>
+<script src="assets/khp-chrome.js"></script><script src="data/khp-data.js"></script><script src="assets/khp-core.js"></script>
+<script>
+  var X=window.KHPX, D=X.D, esc=X.esc, badge=X.badge, HERO=D.meta.hero, liveDefs=X.state.get('defectsLive',[]), defects=D.defects.concat(liveDefs);
+  document.getElementById('ctx').textContent = D.plant.name + ' · ' + D.edges.length + ' relationships · as of ' + X.fmt(D.meta.asOf);
+  var hp=X.hashParam(), sel=null, selDef=null;
+  if(hp){ var parts=hp.split('|'); if(X.unit(parts[0])) sel=parts[0]; else if(X.item(parts[0])){ var th=D.threads.filter(function(t){return t.itemId===parts[0];})[0]; if(th) sel=th.units[th.units.length-1]; } if(parts[1]) selDef=parts[1]; }
+  if(!sel) sel=HERO.units.filter(function(u){return u.indexOf('PPG')===0;})[0];
+  var COLS=[['HEAT','Heat'],['SLAB','Slab'],['HRC','HR coil'],['HRPO','Pickled'],['CRFH','Full hard'],['GI','GI / GL'],['PPGI','Colour coated'],['SLIT','Slit coils'],['PACK','Pack'],['DISPATCH','Dispatch']];
+  var COLOF={HRC:'HRC',HRPO:'HRPO',CRFH:'CRFH',GI:'GI',GL:'GI',PPGI:'PPGI',PPGL:'PPGI',SLIT:'SLIT',TRIMMED:'SLIT',PACK:'PACK'};
+  document.getElementById('kpis').innerHTML=[['Material units',D.materials.length,'HR coil → pack, all threads','blue'],['consumesInput edges',D.edges.filter(function(e){return e.rel==='consumesInput';}).length,'genealogy spine','blue'],['Threads',D.threads.length,'HR coils traced to heat / slab','accent'],
+    ['Defects linked',defects.length,'detectedOn + attributedTo','red'],['Upstream plants',D.plant.upstreamPlants.length,'Vijayanagar · Dolvi HSM','grey'],['Ontology domains',D.ontology.domains.length,D.ontology.domains.join(' · '),'green']].map(function(k){return '<div class="kpi '+k[3]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="s">'+k[2]+'</div></div>';}).join('');
+  function threadUnits(uid){ var th=X.threadOf(uid); if(th) return th.units.map(X.unit).filter(Boolean); var ps=X.parents(uid).reverse(), ks=X.children(uid); return ps.concat(ks); }
+  function render(){
+    var u=X.unit(sel); if(!u){ document.getElementById('graph').innerHTML='<div class="hint">Unknown id.</div>'; return; }
+    var units=threadUnits(sel), hr=units.filter(function(x){return x.product==='HRC';})[0]||X.parents(sel).slice(-1)[0];
+    var affected={}, src=null, def=selDef?defects.filter(function(d){return d.id===selDef;})[0]:null;
+    if(def){ src=def.detectedOn; def.downstreamAffected.forEach(function(k){affected[k]=1;}); }
+    var byCol={}; units.forEach(function(x){ var c=COLOF[x.product]; if(c) (byCol[c]=byCol[c]||[]).push(x); });
+    var packIds=units.filter(function(x){return x.product==='PACK';}).map(function(x){return x.id;}); var disps=D.dispatches.filter(function(d){return packIds.indexOf(d.packId)>=0;});
+    var hs=X.state.get('heroPack',{});
+    document.getElementById('tid').textContent=sel; document.getElementById('tmeta').innerHTML=(hr?'HR coil <b>'+esc(hr.id)+'</b> from '+esc(hr.sourcePlant)+' · heat '+esc(hr.heatId)+' · slab '+esc(hr.slabId)+' · ':'')+units.length+' units on the thread'+(u.allocatedTo?' · SO '+esc(u.allocatedTo)+' ('+esc(u.customerName||'')+')':'');
+    document.getElementById('propmeta').innerHTML=def?'<span class="deviation"><i class="fa-solid fa-bug"></i> '+esc(def.id)+' '+esc(def.name)+' on '+esc(def.detectedOn)+' → '+def.downstreamAffected.length+' downstream unit(s) flagged</span> <button class="btn btn-outline btn-sm" id="clearprop">clear</button>':'select a defect below to see propagation';
+    function node(x,col){ var cls='node'+(x.id===sel?' sel':'')+(src===x.id?' src':affected[x.id]?' bad':'')+(x.status==='ON_HOLD'||x.qualityStatus==='ON_HOLD'?' hold':''); var dcount=defects.filter(function(d){return d.detectedOn===x.id;}).length;
+      return '<div class="'+cls+'" data-u="'+esc(x.id)+'"><span class="rel">'+(col==='HRC'?'received':'consumesInput')+'</span><div class="id">'+esc(x.id)+(dcount?'<span class="df" title="'+dcount+' defect(s)"></span>':'')+'</div><div class="sub">'+esc(x.product)+' · '+x.thk+'×'+x.width+' · '+X.n(x.weightMT,1)+' t</div><div class="sub">'+(x.producedOn?'producedOn '+esc(x.producedOn)+' · '+X.fmtDT(x.producedAt||x.plannedAt):esc(x.sourcePlant||'')+' · '+X.fmtDT(x.receivedAt))+'</div><div class="sub">'+badge(x.status)+(x.udCode?' '+badge(x.udCode):'')+'</div></div>'; }
+    var html='<div class="cols">';
+    COLS.forEach(function(c){ var key=c[0]; var inner='';
+      if(key==='HEAT'&&hr) inner='<div class="node dom-asset" data-u="'+esc(hr.heatId)+'"><div class="id">'+esc(hr.heatId)+'</div><div class="sub">'+esc(hr.sourcePlant)+' steel melt shop</div><div class="sub">upstream plant · ASSETS</div></div>';
+      else if(key==='SLAB'&&hr) inner='<div class="node dom-asset"><span class="rel">consumesInput</span><div class="id">'+esc(hr.slabId)+'</div><div class="sub">slab · '+esc(hr.hsmLine)+'</div><div class="sub">hot strip mill</div></div>';
+      else if(key==='DISPATCH'){ inner=disps.map(function(d){ var st=d.hero&&hs.disp?'DISPATCHED':d.status; return '<div class="node dom-comm"><span class="rel">fulfils</span><div class="id">'+esc(d.id)+'</div><div class="sub">'+esc(d.vehicle)+' · '+X.fmtDT(d.dispatchedAt||d.plannedAt)+'</div><div class="sub">'+badge(st)+'</div></div>'; }).join('')+(u.allocatedTo?'<div class="node dom-comm"><span class="rel">allocatedTo</span><div class="id">'+esc(u.allocatedTo)+'</div><div class="sub">'+esc(u.customerName||'')+'</div><div class="sub">'+esc((X.item(u.allocatedTo)||{}).tdcId||'')+' · conformsTo</div></div>':''); }
+      else inner=(byCol[key]||[]).map(function(x){return node(x,key);}).join('');
+      html+='<div class="col" data-col="'+key+'"><div class="ch">'+esc(c[1])+'</div>'+(inner||'<div class="hint" style="text-align:center;font-size:10px">—</div>')+'</div>'; });
+    html+='</div><svg class="links"></svg>';
+    var g=document.getElementById('graph'); g.innerHTML=html; drawLinks(units,hr);
+    renderUnit(u); renderDefs(units); renderTriples(u);
+    var cb=document.getElementById('clearprop'); if(cb) cb.addEventListener('click',function(){ selDef=null; render(); });
+  }
+  function drawLinks(units,hr){
+    var g=document.getElementById('graph'), svg=g.querySelector('svg.links'), cols=g.querySelector('.cols'); var W=cols.scrollWidth, H=cols.scrollHeight; svg.setAttribute('width',W); svg.setAttribute('height',H); svg.style.width=W+'px'; svg.style.height=H+'px';
+    var gr=cols.getBoundingClientRect(); function box(id){ var el=g.querySelector('[data-u="'+id+'"]'); if(!el) return null; var r=el.getBoundingClientRect(); return {x1:r.left-gr.left,x2:r.right-gr.left,y:r.top-gr.top+r.height/2}; }
+    var paths=[];
+    function link(a,b,red){ var A=box(a),B=box(b); if(!A||!B) return; var x1=A.x2,x2=B.x1,y1=A.y,y2=B.y,cx=(x1+x2)/2; paths.push('<path d="M'+x1+' '+y1+' C'+cx+' '+y1+' '+cx+' '+y2+' '+x2+' '+y2+'" fill="none" stroke="'+(red?'#d84a4a':'#b8c0c9')+'" stroke-width="'+(red?2:1.5)+'"/>'); }
+    units.forEach(function(x){ if(x.parentId&&x.product!=='HRC') link(x.parentId,x.id,false); if(x.product==='PACK'&&x.packsUnits) x.packsUnits.forEach(function(p){ if(p!==x.parentId) link(p,x.id,false); }); });
+    if(hr) link(hr.heatId,hr.id,false);
+    svg.innerHTML=paths.join('');
+  }
+  function renderUnit(u){
+    var it=u.allocatedTo?X.item(u.allocatedTo):null, cert=X.by.certs['TC-'+u.id], ps=X.parents(u.id), ks=X.children(u.id);
+    document.getElementById('umeta').innerHTML=badge(u.status)+(u.qualityStatus?' '+badge(u.qualityStatus):'');
+    document.getElementById('unit').innerHTML='<div class="kv"><span class="k">Unit</span><span class="v mono">'+esc(u.id)+'</span><span class="k">Product</span><span class="v">'+esc(u.product)+' · '+esc(u.gradeId)+'</span><span class="k">Dimensions</span><span class="v mono">'+u.thk+' × '+u.width+' mm · '+X.n(u.weightMT,2)+' t</span>'+(u.coatingId?'<span class="k">hasCoatingSpec</span><span class="v">'+esc(u.coatingId)+(u.paintId?' · '+esc(u.paintId)+' RAL '+esc(u.ral):'')+'</span>':'')+
+      '<span class="k">producedOn</span><span class="v">'+esc(u.producedOn||u.hsmLine||'—')+' · PO '+esc(u.po||'—')+' · '+X.fmtDT(u.producedAt||u.plannedAt||u.receivedAt)+'</span><span class="k">consumesInput</span><span class="v mono">'+(ps[1]?esc(ps[1].id):esc(u.slabId||'—'))+'</span><span class="k">Lineage</span><span class="v mono">'+esc(u.hrCoilId||u.id)+' ← '+esc(u.slabId)+' ← '+esc(u.heatId)+'</span>'+
+      '<span class="k">allocatedTo</span><span class="v">'+(it?esc(it.id)+' · '+esc(it.customerName)+' · conformsTo '+esc(it.tdcId):'—')+'</span><span class="k">Downstream</span><span class="v">'+(ks.length?ks.map(function(k){return '<a href="#'+esc(k.id)+'" data-go="'+esc(k.id)+'">'+esc(k.id)+'</a>';}).join(', '):'none yet')+'</span>'+
+      (cert?'<span class="k">Certificate</span><span class="v">'+esc(cert.id)+' '+badge(cert.status)+(cert.dftGate!=null?' · DFT gate '+(cert.dftGate?'<span class="ok-val">open</span>':'<span class="deviation">closed</span>'):'')+'</span>':'')+'</div>'+
+      '<div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap"><a class="btn btn-outline btn-sm" href="quality.html#'+esc(u.id)+'"><i class="fa-solid fa-microscope"></i> Quality</a>'+(it?'<a class="btn btn-outline btn-sm" href="orders.html#'+esc(it.id)+'"><i class="fa-solid fa-file-invoice"></i> Order</a>':'')+'<a class="btn btn-outline btn-sm" href="execution.html#'+esc(u.id)+'"><i class="fa-solid fa-industry"></i> Shop-floor</a></div>';
+  }
+  function renderDefs(units){
+    var ids={}; units.forEach(function(x){ids[x.id]=1;}); var list=defects.filter(function(d){return ids[d.detectedOn];});
+    if(!list.length){ document.getElementById('defs').innerHTML='<div class="hint">No defects recorded on this thread.</div>'; return; }
+    document.getElementById('defs').innerHTML=list.map(function(d){ var eq=X.equip(d.attributedTo)||{name:d.attributedTo}; var ln=X.line(d.attributedLine)||{name:d.attributedLine}; var pl=d.attributedPlant==='KHP'?D.plant.shortName:(D.plant.upstreamPlants.filter(function(p){return p.id===d.attributedPlant;})[0]||{name:d.attributedPlant}).name;
+      var others=D.materials.filter(function(m){return m.producedOn===d.attributedLine&&m.producedAt&&Math.abs(new Date(m.producedAt)-new Date(d.detectedAt))<86400000&&m.id!==d.detectedOn;}).length;
+      return '<div style="border:1px solid var(--color-border);border-radius:8px;padding:9px 12px;margin-bottom:8px'+(selDef===d.id?';box-shadow:0 0 0 2px #ffcdd2;border-color:#d84a4a':'')+'"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="mono strong">'+esc(d.id)+'</span><span class="chip">'+esc(d.code)+'</span> '+esc(d.name)+' '+badge(d.severity)+' <span class="hint">detectedOn <b>'+esc(d.detectedOn)+'</b> · '+esc(d.source)+' · '+X.fmtDT(d.detectedAt)+'</span><span style="margin-left:auto"><button class="btn btn-sm '+(selDef===d.id?'btn-danger':'btn-outline')+'" data-prop="'+esc(d.id)+'"><i class="fa-solid fa-arrow-right-long"></i> '+d.downstreamAffected.length+' downstream — show propagation</button></span></div>'+
+        '<div class="rc" style="margin-top:8px"><div class="n bad"><div class="l">Defect</div><div class="v">'+esc(d.code)+' · '+esc(d.name)+'</div></div><i class="fa-solid fa-angle-right ar"></i><div class="n"><div class="l">Equipment (attributedTo)</div><div class="v">'+esc(d.attributedTo)+'</div><div class="hint">'+esc(eq.name)+(eq.criticality?' · criticality '+eq.criticality:'')+'</div></div><i class="fa-solid fa-angle-right ar"></i><div class="n"><div class="l">Line</div><div class="v">'+esc(ln.name||d.attributedLine)+'</div><div class="hint">'+others+' other coil(s) produced ±24 h</div></div><i class="fa-solid fa-angle-right ar"></i><div class="n"><div class="l">Plant</div><div class="v">'+esc(pl)+'</div><div class="hint">'+(d.attributedPlant==='KHP'?'this plant':'cross-plant root cause')+'</div></div></div>'+(d.note?'<div class="hint" style="margin-top:6px">'+esc(d.note)+'</div>':'')+'</div>'; }).join('');
+  }
+  function renderTriples(u){
+    var rows=D.edges.filter(function(e){return e.from===u.id||e.to===u.id;}).concat(defects.filter(function(d){return d.detectedOn===u.id;}).map(function(d){return {rel:'detectedOn',from:d.id,to:u.id};})).concat(defects.filter(function(d){return d.detectedOn===u.id;}).map(function(d){return {rel:'attributedTo',from:d.id,to:d.attributedTo};}));
+    document.getElementById('triples').innerHTML='<thead><tr><th>Subject</th><th>Relationship</th><th>Object</th><th>Domain</th></tr></thead><tbody>'+rows.map(function(e){ var dom={consumesInput:'MATERIAL',producedOn:'MATERIAL → ASSETS',conformsTo:'MATERIAL → SPECIFICATION',hasCoatingSpec:'MATERIAL → SPECIFICATION',allocatedTo:'MATERIAL → COMMERCIAL',detectedOn:'QUALITY → MATERIAL',attributedTo:'QUALITY → ASSETS',fulfils:'COMMERCIAL'}[e.rel]||''; return '<tr><td class="mono">'+esc(e.from)+'</td><td><span class="chip">'+esc(e.rel)+'</span></td><td class="mono">'+esc(e.to)+'</td><td class="hint">'+esc(dom)+'</td></tr>'; }).join('')+'</tbody>';
+  }
+  document.getElementById('graph').addEventListener('click',function(e){ var n=e.target.closest('[data-u]'); if(!n) return; var id=n.getAttribute('data-u'); if(X.unit(id)){ sel=id; render(); } });
+  document.getElementById('unit').addEventListener('click',function(e){ var a=e.target.closest('[data-go]'); if(!a) return; e.preventDefault(); sel=a.getAttribute('data-go'); render(); });
+  document.getElementById('defs').addEventListener('click',function(e){ var b=e.target.closest('[data-prop]'); if(!b) return; selDef=(selDef===b.dataset.prop)?null:b.dataset.prop; render(); });
+  function go(){ var v=document.getElementById('q').value.trim(); if(X.unit(v)){ sel=v; selDef=null; render(); } else X.toast('No material unit with id '+v,'fa-circle-info'); }
+  document.getElementById('go').addEventListener('click',go); document.getElementById('q').addEventListener('keydown',function(e){ if(e.key==='Enter') go(); });
+  window.addEventListener('khp:navigate',function(e){ var parts=String(e.detail||'').split('|'); if(X.unit(parts[0])){ sel=parts[0]; selDef=parts[1]||null; render(); } });
+  window.addEventListener('resize',function(){ render(); }); window.addEventListener('khp:activated',function(){ render(); });
+  render();
+</script>
+</body>
+</html>

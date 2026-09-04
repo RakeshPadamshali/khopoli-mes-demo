@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Material Allocator · Khopoli NextGen MES</title>
+<link rel="stylesheet" href="assets/vendor/roboto/roboto.css"><link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css"><link rel="stylesheet" href="assets/khp-shell.css">
+<style>
+  .tbl-wrap { max-height:300px; }
+  .sug { border:1px solid var(--color-border); border-radius:8px; padding:10px 12px; margin-bottom:8px; background:#fff; display:grid; grid-template-columns:auto 1fr auto; gap:6px 14px; align-items:center; }
+  .sug.best { border-color:var(--color-primary); box-shadow:0 0 0 2px var(--color-primary-light); } .sug .rank { width:34px; height:34px; border-radius:8px; background:var(--color-primary); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:14px; }
+  .sug .rank.dim { background:#b0b8c1; } .sug .why { font-size:11px; color:var(--color-text-muted); } .sug .why .chip { margin-right:4px; }
+  .appr { display:flex; gap:8px; align-items:center; flex-wrap:wrap; } .chk { font-size:11px; color:var(--color-text-secondary); } .chk i { color:#2e9b45; margin-right:3px; }
+  .sw { display:grid; grid-template-columns:1fr auto 1fr; gap:12px; align-items:center; } .sw .box { border:1px solid var(--color-border); border-radius:8px; padding:10px 12px; background:#fff; } .sw .mid { font-size:26px; color:var(--accent); text-align:center; }
+</style>
+<script src="assets/khp-embed.js"></script>
+</head>
+<body>
+<div class="bm-layout">
+  <main class="bm-content">
+    <div class="page-bar">
+      <div><h1>Material Allocator — free-stock HR coils to sales orders, open stock first</h1><div class="crumb">Planning › Material Allocator › <span id="ctx"></span></div></div>
+      <div class="actions"><a class="btn btn-outline" href="orders.html"><i class="fa-solid fa-file-invoice"></i> Sales Orders</a><a class="btn btn-outline" href="execution.html"><i class="fa-solid fa-industry"></i> Charge at Pickling</a><a class="btn btn-outline" href="genealogy.html"><i class="fa-solid fa-diagram-project"></i> Genealogy</a></div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="grid-1-2">
+      <div class="card">
+        <div class="card-head"><i class="fa-solid fa-clipboard-list"></i> Order items needing HR coil (BTA &gt; 0) <span class="right" id="ometa"></span></div>
+        <div class="card-body"><div class="tbl-wrap"><table class="tbl" id="items"></table></div></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><i class="fa-solid fa-wand-magic-sparkles"></i> Material Allocator suggestions for <span id="selitem" class="mono"></span> <span class="right">two-step authorisation: PPC → QC, then allocate</span></div>
+        <div class="card-body" id="sugg"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-warehouse"></i> HR coil yard — free stock, holds, in transit <span class="right" id="ymeta"></span></div>
+      <div class="card-body"><div class="filters" id="filters"></div><div class="tbl-wrap"><table class="tbl" id="yard"></table></div></div>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <div class="card-head"><i class="fa-solid fa-right-left"></i> Batch swap between sales orders — BTA / BTP update <span class="right" id="swmeta"></span></div>
+        <div class="card-body" id="swap"></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><i class="fa-solid fa-clock-rotate-left"></i> Allocation log <span class="right">BatchOrderAllocation — immutable, sent to SAP (IF-SAP-15)</span></div>
+        <div class="card-body"><div class="tbl-wrap" style="max-height:260px"><table class="tbl" id="log"></table></div></div>
+      </div>
+    </div>
+  </main>
+</div>
+<script>window.KHP_PAGE='allocation'; window.KHP_TITLE='Material Allocator'; window.KHP_ICON='fa-boxes-packing';</script>
+<script src="assets/khp-chrome.js"></script><script src="data/khp-data.js"></script><script src="assets/khp-core.js"></script>
+<script>
+  var X=window.KHPX, D=X.D, esc=X.esc, badge=X.badge;
+  document.getElementById('ctx').textContent = D.plant.name + ' · MA run every 4 h (IF-APS-MAOUT) · as of ' + X.fmt(D.meta.asOf);
+  var HRG={'DX51D+Z':'JSW-HR-DD','DX53D+Z':'JSW-HR-DD','SGCC':'JSW-HR-CQ','CQ-IS277':'JSW-HR-CQ','SGLCC':'JSW-HR-CQ','S350GD+Z':'JSW-HR-HS','CR4-CRFH':'JSW-HR-CQ','HRPO-E250':'JSW-HR-E250'};
+  var alloc=X.state.get('alloc',{}), appr=X.state.get('appr',{});   // live-demo overlays
+  var free=D.freeStock.slice(); var fed=X.state.get('sapOrderFed'); var items=D.items.slice(); if(fed) items.push(fed.item);
+  function stockStatus(u){ return alloc[u.id]?'ALLOCATED':u.status; }
+  var avail=free.filter(function(u){return stockStatus(u)==='AVAILABLE';});
+  [['Free HR coils',avail.length,X.n(avail.reduce(function(a,u){return a+u.weightMT;},0),1)+' MT available','green'],['Allocated (yard)',D.materials.filter(function(u){return u.product==='HRC'&&u.status==='ALLOCATED';}).length+Object.keys(alloc).length,'awaiting pickling','blue'],
+   ['On hold',free.filter(function(u){return u.status==='ON_HOLD';}).length,'quality / weight query','amber'],['In transit',free.filter(function(u){return u.status==='IN_TRANSIT';}).length,'transit batch info from SAP','grey'],
+   ['MA suggestions',D.maSuggestions.length,new Set(D.maSuggestions.map(function(s){return s.itemId;})).size+' items','accent'],['Items with BTA',items.filter(function(i){return i.btaMT>0;}).length,'need HR coil allocation','red']
+  ].forEach(function(k){ document.getElementById('kpis').insertAdjacentHTML('beforeend','<div class="kpi '+k[3]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="s">'+k[2]+'</div></div>'); });
+  // ---- items needing allocation ----
+  var open=items.filter(function(i){return i.btaMT>0;}).sort(function(a,b){return (b.hero?1:0)-(a.hero?1:0)||(X.order(a.soId)&&X.order(a.soId).rush?-1:0)||(a.reqDate<b.reqDate?-1:1);});
+  var selId=X.hashParam()&&items.some(function(i){return i.id===X.hashParam();})?X.hashParam():open[0].id;
+  function renderItems(){
+    document.getElementById('ometa').textContent=open.length+' items';
+    document.getElementById('items').innerHTML='<thead><tr><th>Item · customer</th><th>Spec</th><th>BTA t</th></tr></thead><tbody>'+open.map(function(i){ var o=X.order(i.soId)||{}; var extra=Object.keys(alloc).filter(function(k){return alloc[k]===i.id;}).reduce(function(a,k){return a+X.unit(k).weightMT;},0);
+      return '<tr class="'+(i.id===selId?'sel':'')+(i.hero?' hero':'')+'" data-item="'+esc(i.id)+'" style="cursor:pointer"><td><span class="mono strong">'+esc(i.id)+'</span>'+(o.rush?' <span class="badge b-red">RUSH</span>':'')+'<div class="hint">'+esc(i.customerName)+' · req '+esc(i.reqDate.slice(5))+'</div></td><td><span class="chip">'+esc(i.product)+'</span><div class="hint mono">'+esc(i.gradeId)+' '+i.thk.toFixed(2)+'×'+i.width+'</div></td><td class="mono right-al">'+X.n(Math.max(0,i.btaMT-extra),1)+'</td></tr>'; }).join('')+'</tbody>';
+  }
+  document.getElementById('items').addEventListener('click',function(e){ var tr=e.target.closest('[data-item]'); if(!tr) return; selId=tr.getAttribute('data-item'); renderItems(); renderSugg(); });
+  // ---- suggestions (dataset MA output, or computed live with the same rules) ----
+  function candidates(it){
+    var ds=D.maSuggestions.filter(function(s){return s.itemId===it.id;}).map(function(s){ var u=X.unit(s.unitId); return {u:u,score:s.score,reasons:s.reasons,id:s.id,ppc:s.ppcApproval,qc:s.qcApproval}; });
+    if(ds.length) return ds.sort(function(a,b){return b.score-a.score;});
+    var c=[]; free.forEach(function(u){ if(stockStatus(u)!=='AVAILABLE') return; var gm=HRG[it.gradeId]===u.gradeId, wm=u.width-it.width>=0&&u.width-it.width<=120, tm=it.product==='HRPO'||(u.thk/it.thk>=3.5&&u.thk/it.thk<=6.5); if(!(gm&&wm&&tm)) return;
+      c.push({u:u,score:Math.round((100-(u.width-it.width)/6+Math.min(u.ageDays||0,30)*0.8-Math.abs(u.weightMT-21)*1.5)*10)/10,reasons:['grade family match','width fits with trim',it.product==='HRPO'?'gauge match':'reduction feasible','FIFO age'],id:'MA-live',ppc:'PENDING',qc:'PENDING'}); });
+    return c.sort(function(a,b){return b.score-a.score;}).slice(0,3);
+  }
+  function renderSugg(){
+    var it=items.filter(function(i){return i.id===selId;})[0]; document.getElementById('selitem').textContent=it.id+' · '+it.customerName;
+    var cs=candidates(it).filter(function(c){return stockStatus(c.u)==='AVAILABLE'||alloc[c.u.id]===it.id;});
+    var already=D.allocations.filter(function(a){return a.itemId===it.id;}).map(function(a){return a.unitId;}).concat(Object.keys(alloc).filter(function(k){return alloc[k]===it.id;}));
+    var html=already.length?'<div class="note" style="margin:0 0 10px"><i class="fa-solid fa-circle-check" style="color:#2e9b45"></i><span>Already allocated to this item: <b>'+already.map(esc).join(', ')+'</b>'+(it.hero?' — the golden-thread HR coil, allocated 8 Sep from an MA suggestion (PPC + QC approved); now at CCL':'')+'.</span></div>':'';
+    if(!cs.length) html+='<div class="hint">No free HR coil in the yard matches this spec — MA will propose casting / inter-plant transfer (IF-SAP-04 HR requirement).</div>';
+    cs.forEach(function(c,i){ var u=c.u, st=appr[u.id+'|'+it.id]||{ppc:c.ppc==='APPROVED',qc:false}, done=alloc[u.id]===it.id;
+      html+='<div class="sug'+(i===0?' best':'')+'"><div class="rank'+(i?' dim':'')+'">'+(i+1)+'</div><div><div><b class="mono">'+esc(u.id)+'</b> <span class="hint">'+esc(u.sourcePlant)+' · heat '+esc(u.heatId)+' · slab '+esc(u.slabId)+'</span> &nbsp; <span class="chip">'+esc(u.gradeId)+'</span> <span class="mono">'+u.thk+' × '+u.width+' mm · '+X.n(u.weightMT,1)+' t</span> · '+esc(u.location)+' · age '+(u.ageDays||0)+' d</div>'+
+        '<div class="why">MA score <b>'+c.score+'</b> · '+c.reasons.map(function(r){return '<span class="chip">'+esc(r)+'</span>';}).join('')+'</div>'+
+        '<div class="appr" style="margin-top:6px"><span class="chk">'+(st.ppc?'<i class="fa-solid fa-circle-check"></i>':'<i class="fa-regular fa-circle" style="color:#b0b8c1"></i>')+'PPC: batch status AVAILABLE · order OPEN · CRM reduction feasible</span>'+(st.ppc?'':'<button class="btn btn-outline btn-sm" data-ppc="'+esc(u.id)+'">PPC approve</button>')+
+        '<span class="chk">'+(st.qc?'<i class="fa-solid fa-circle-check"></i>':'<i class="fa-regular fa-circle" style="color:#b0b8c1"></i>')+'QC: heat certificate OK · surface class A · grade compatible</span>'+(st.ppc&&!st.qc?'<button class="btn btn-outline btn-sm" data-qc="'+esc(u.id)+'">QC approve</button>':'')+'</div></div>'+
+        '<div>'+(done?badge('ALLOCATED','ALLOCATED ✓'):'<button class="btn btn-primary btn-sm" data-alloc="'+esc(u.id)+'" '+(st.ppc&&st.qc?'':'disabled title="PPC and QC approval required first"')+'><i class="fa-solid fa-link"></i> Allocate</button>')+'</div></div>'; });
+    document.getElementById('sugg').innerHTML=html;
+  }
+  document.getElementById('sugg').addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return; var it=selId;
+    if(b.dataset.ppc){ var k=b.dataset.ppc+'|'+it; appr[k]=Object.assign(appr[k]||{},{ppc:true}); X.state.set('appr',appr); renderSugg(); X.toast('PPC verification recorded — batch status, order status and operational constraints OK'); }
+    if(b.dataset.qc){ var k2=b.dataset.qc+'|'+it; appr[k2]=Object.assign(appr[k2]||{},{qc:true}); X.state.set('appr',appr); renderSugg(); X.toast('QC verification recorded — quality requirements of the TDC met by the heat / surface class'); }
+    if(b.dataset.alloc){ alloc[b.dataset.alloc]=it; X.state.set('alloc',alloc); renderItems(); renderSugg(); renderYard(); renderLog(); X.toast('HR coil '+b.dataset.alloc+' allocated to '+it+' — BatchOrderAllocation written, reallocation message to SAP (IF-SAP-15), coil ready to charge at Pickling'); }
+  });
+  // ---- yard ----
+  var F={st:'',q:''};
+  document.getElementById('filters').innerHTML='<span class="fl">Status</span><select id="f-st"><option value="">All</option><option>AVAILABLE</option><option>ALLOCATED</option><option>ON_HOLD</option><option>IN_TRANSIT</option></select><span class="fl">Search</span><input id="f-q" placeholder="coil / heat / grade" size="14"><span class="hint" id="ymeta2" style="margin-left:auto"></span>';
+  function renderYard(){
+    var q=F.q.toLowerCase(), list=free.filter(function(u){ var s=stockStatus(u); if(F.st&&s!==F.st) return false; if(q&&(u.id+u.heatId+u.gradeId).toLowerCase().indexOf(q)<0) return false; return true; });
+    document.getElementById('ymeta').textContent=free.length+' HR coils in yard records · '+X.n(free.reduce(function(a,u){return a+u.weightMT;},0))+' MT';
+    document.getElementById('yard').innerHTML='<thead><tr><th>HR coil</th><th>Source · heat · slab</th><th>Grade</th><th>Thk × width</th><th>Weight</th><th>Received</th><th>Age</th><th>Location</th><th>Status</th><th>Note</th></tr></thead><tbody>'+
+      list.map(function(u){ var s=stockStatus(u); return '<tr><td class="mono strong">'+esc(u.id)+'</td><td class="mono small">'+esc(u.sourcePlant)+' · '+esc(u.heatId)+' · '+esc(u.slabId)+'</td><td>'+esc(u.gradeId)+'</td><td class="mono">'+u.thk+' × '+u.width+'</td><td class="mono right-al">'+X.n(u.weightMT,1)+'</td><td class="mono">'+X.fmtD(u.receivedAt)+'</td><td class="mono">'+(u.ageDays||0)+' d</td><td>'+esc(u.location)+'</td><td>'+badge(s)+'</td><td class="hint">'+esc(u.holdReason||(u.vendorBatch?'vendor batch '+u.vendorBatch+' · ETA '+u.eta:'')||(alloc[u.id]?'→ '+alloc[u.id]:''))+'</td></tr>'; }).join('')+'</tbody>';
+  }
+  document.getElementById('f-st').addEventListener('change',function(){F.st=this.value;renderYard();}); document.getElementById('f-q').addEventListener('input',function(){F.q=this.value;renderYard();});
+  // ---- swap ----
+  var SW=D.events.swap, swapped=X.state.get('swapped',true);
+  function renderSwap(){
+    if(!SW){ document.getElementById('swap').innerHTML='<div class="hint">No swap event.</div>'; return; }
+    var ua=X.unit(SW.unitA), ub=X.unit(SW.unitB), bt=swapped?SW.btaAfter:SW.btaBefore;
+    document.getElementById('swmeta').innerHTML=X.fmt(SW.at)+' · '+esc(SW.by)+' &nbsp; <button class="btn btn-sm '+(swapped?'btn-outline':'btn-primary')+'" id="swbtn">'+(swapped?'<i class="fa-solid fa-rotate-left"></i> Show before swap':'<i class="fa-solid fa-right-left"></i> Apply swap')+'</button>';
+    function box(u,itId){ var it=X.item(itId), b=bt.filter(function(x){return x.itemId===itId;})[0]; return '<div class="box"><div class="hint">Sales order item</div><div class="mono strong">'+esc(itId)+'</div><div>'+esc(it.customerName)+' · req '+esc(it.reqDate)+'</div><div class="hint" style="margin-top:6px">GI coil</div><div class="mono strong">'+esc(u.id)+'</div><div class="mono small">'+esc(u.gradeId)+' '+u.thk+'×'+u.width+' · '+X.n(u.weightMT,1)+' t</div><div class="kv" style="margin-top:6px"><span class="k">Order qty</span><span class="v mono">'+b.qtyMT+' t</span><span class="k">Allocated</span><span class="v mono">'+b.allocatedMT+' t</span><span class="k">BTA</span><span class="v mono">'+b.btaMT+' t</span></div></div>'; }
+    document.getElementById('swap').innerHTML='<div class="sw">'+box(swapped?ub:ua,SW.itemA)+'<div class="mid"><i class="fa-solid fa-right-left"></i><div style="font-size:10px;color:var(--color-text-muted)">'+(swapped?'swapped':'original')+'</div></div>'+box(swapped?ua:ub,SW.itemB)+'</div><div class="note"><i class="fa-solid fa-circle-info"></i><span>'+esc(SW.reason)+'. '+esc(SW.sapMessage)+'. BTA / BTP per line item recalculated; genealogy of both coils unchanged.</span></div>';
+    document.getElementById('swbtn').addEventListener('click',function(){ swapped=!swapped; X.state.set('swapped',swapped); renderSwap(); X.toast(swapped?'Batch swap applied — BTA/BTP updated on both sales orders, reallocation message sent to SAP':'Showing allocations as they were before the swap'); });
+  }
+  // ---- log ----
+  function renderLog(){
+    var rows=D.allocations.slice().concat(Object.keys(alloc).map(function(k){return {id:'ALC-LIVE',unitId:k,itemId:alloc[k],at:new Date().toISOString(),by:'Material Allocator (demo)',ppcApproval:'APPROVED',qcApproval:'APPROVED',status:'ACTIVE',reason:'MA suggestion accepted (live)'};})).sort(function(a,b){return a.at<b.at?1:-1;});
+    document.getElementById('log').innerHTML='<thead><tr><th>When</th><th>HR coil / batch</th><th>→ SO item</th><th>By</th><th>PPC</th><th>QC</th><th>Reason</th></tr></thead><tbody>'+rows.slice(0,40).map(function(a){return '<tr'+(X.isHero(a.itemId)?' class="hero"':'')+'><td class="mono">'+X.fmtDT(a.at)+'</td><td class="mono strong">'+esc(a.unitId)+'</td><td class="mono">'+esc(a.itemId)+(a.previousItemId?' <span class="hint">(from '+esc(a.previousItemId)+')</span>':'')+'</td><td>'+esc(a.by)+'</td><td>'+badge(a.ppcApproval)+'</td><td>'+badge(a.qcApproval)+'</td><td class="hint">'+esc(a.reason)+'</td></tr>';}).join('')+'</tbody>';
+  }
+  renderItems(); renderSugg(); renderYard(); renderSwap(); renderLog();
+</script>
+</body>
+</html>

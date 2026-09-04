@@ -1,0 +1,251 @@
+[
+ {
+  "id": "DGS-0001",
+  "unitId": "PPG-KHP-2609-0011",
+  "trigger": "DEF: DFT deviation (PDO auto-comparison)",
+  "reason": "DFT top 16.8 µm below 17.0 µm minimum of SO 4213090017/10 (20 ±3)",
+  "suggestedAt": "2026-09-15T01:45:00",
+  "suggestion": "Re-allocate to an open order whose DFT spec accepts 16.8 µm; else downgrade to secondary (RAL 9002 stock)",
+  "candidates": [
+   {
+    "itemId": "4213090024/10",
+    "customerName": "Sunbeam Panels Pvt Ltd",
+    "reqDate": "2026-09-28",
+    "validation": [
+     {
+      "param": "Grade",
+      "required": "DX51D+Z",
+      "actual": "DX51D+Z",
+      "ok": true
+     },
+     {
+      "param": "Thickness (mm)",
+      "required": "0.50",
+      "actual": "0.50",
+      "ok": true
+     },
+     {
+      "param": "Width (mm)",
+      "required": "1220 (+trim ≤ 60)",
+      "actual": "1240",
+      "ok": true
+     },
+     {
+      "param": "Coating",
+      "required": "Z120",
+      "actual": "Z120",
+      "ok": true
+     },
+     {
+      "param": "Paint system",
+      "required": "RMP",
+      "actual": "RMP",
+      "ok": true
+     },
+     {
+      "param": "Colour RAL",
+      "required": "9002",
+      "actual": "9002",
+      "ok": true
+     },
+     {
+      "param": "DFT top (µm)",
+      "required": "15 ±3",
+      "actual": "16.8",
+      "ok": true
+     }
+    ],
+    "ok": true
+   },
+   {
+    "itemId": "4213090033/10",
+    "customerName": "Vega Consumer Durables",
+    "reqDate": "2026-08-28",
+    "validation": [
+     {
+      "param": "Grade",
+      "required": "DX51D+Z",
+      "actual": "DX51D+Z",
+      "ok": true
+     },
+     {
+      "param": "Thickness (mm)",
+      "required": "0.50",
+      "actual": "0.50",
+      "ok": true
+     },
+     {
+      "param": "Width (mm)",
+      "required": "1250 (+trim ≤ 60)",
+      "actual": "1240",
+      "ok": false
+     },
+     {
+      "param": "Coating",
+      "required": "Z120",
+      "actual": "Z120",
+      "ok": true
+     },
+     {
+      "param": "Paint system",
+      "required": "RMP",
+      "actual": "RMP",
+      "ok": true
+     },
+     {
+      "param": "Colour RAL",
+      "required": "9010",
+      "actual": "9002",
+      "ok": false
+     },
+     {
+      "param": "DFT top (µm)",
+      "required": "20 ±3",
+      "actual": "16.8",
+      "ok": false
+     }
+    ],
+    "ok": false
+   },
+   {
+    "itemId": "4213090036/10",
+    "customerName": "Meridian Roofing Solutions",
+    "reqDate": "2026-09-04",
+    "validation": [
+     {
+      "param": "Grade",
+      "required": "DX51D+Z",
+      "actual": "DX51D+Z",
+      "ok": true
+     },
+     {
+      "param": "Thickness (mm)",
+      "required": "0.60",
+      "actual": "0.50",
+      "ok": false
+     },
+     {
+      "param": "Width (mm)",
+      "required": "1000 (+trim ≤ 60)",
+      "actual": "1240",
+      "ok": false
+     },
+     {
+      "param": "Coating",
+      "required": "Z120",
+      "actual": "Z120",
+      "ok": true
+     },
+     {
+      "param": "Paint system",
+      "required": "RMP",
+      "actual": "RMP",
+      "ok": true
+     },
+     {
+      "param": "Colour RAL",
+      "required": "9002",
+      "actual": "9002",
+      "ok": true
+     },
+     {
+      "param": "DFT top (µm)",
+      "required": "20 ±3",
+      "actual": "16.8",
+      "ok": false
+     }
+    ],
+    "ok": false
+   },
+   {
+    "itemId": "4213090001/20",
+    "customerName": "Apex Appliances Ltd",
+    "reqDate": "2026-09-05",
+    "validation": [
+     {
+      "param": "Grade",
+      "required": "DX51D+Z",
+      "actual": "DX51D+Z",
+      "ok": true
+     },
+     {
+      "param": "Thickness (mm)",
+      "required": "0.45",
+      "actual": "0.50",
+      "ok": false
+     },
+     {
+      "param": "Width (mm)",
+      "required": "1220 (+trim ≤ 60)",
+      "actual": "1240",
+      "ok": true
+     },
+     {
+      "param": "Coating",
+      "required": "Z120",
+      "actual": "Z120",
+      "ok": true
+     },
+     {
+      "param": "Paint system",
+      "required": "PVDF",
+      "actual": "RMP",
+      "ok": false
+     },
+     {
+      "param": "Colour RAL",
+      "required": "9002",
+      "actual": "9002",
+      "ok": true
+     },
+     {
+      "param": "DFT top (µm)",
+      "required": "25 ±3",
+      "actual": "16.8",
+      "ok": false
+     }
+    ],
+    "ok": false
+   }
+  ],
+  "fallback": {
+   "segment": "Secondary — RAL 9002 stock",
+   "priceImpactPct": -6
+  },
+  "status": "SUGGESTED",
+  "override": null,
+  "hero": true
+ },
+ {
+  "id": "DGS-0002",
+  "unitId": "GIC-KHP-2609-0011",
+  "trigger": "DEF: Coating weight deviation",
+  "reason": "Coating weight deviation outside sales-order tolerance",
+  "suggestedAt": "2026-09-06T21:07:19",
+  "suggestion": "Downgrade to secondary grade",
+  "candidates": [],
+  "fallback": {
+   "segment": "Secondary",
+   "priceImpactPct": -8
+  },
+  "status": "OVERRIDDEN",
+  "override": null,
+  "hero": false
+ },
+ {
+  "id": "DGS-0003",
+  "unitId": "GLC-KHP-2609-0001",
+  "trigger": "DEF: Coating weight deviation",
+  "reason": "Coating weight deviation outside sales-order tolerance",
+  "suggestedAt": "2026-08-30T21:11:35",
+  "suggestion": "Downgrade to secondary grade",
+  "candidates": [],
+  "fallback": {
+   "segment": "Secondary",
+   "priceImpactPct": -8
+  },
+  "status": "OVERRIDDEN",
+  "override": null,
+  "hero": false
+ }
+]

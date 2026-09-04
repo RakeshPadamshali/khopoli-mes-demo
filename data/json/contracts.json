@@ -1,0 +1,308 @@
+[
+ {
+  "id": "CT-PDI",
+  "name": "Production Data Input (MES → L2)",
+  "interfaceIds": [
+   "IF-L2-PDI"
+  ],
+  "currentVersion": "1.2",
+  "format": "JSON over MQTT (L2 gateway)",
+  "versions": [
+   {
+    "version": "1.0",
+    "date": "2026-03-02",
+    "status": "RETIRED",
+    "changes": "Initial: batch, PO, targets per line",
+    "approvedBy": "Integration CoE"
+   },
+   {
+    "version": "1.1",
+    "date": "2026-05-18",
+    "status": "RETIRED",
+    "changes": "Add zincBathAlPct band (CGL)",
+    "approvedBy": "Integration CoE"
+   },
+   {
+    "version": "1.2",
+    "date": "2026-08-04",
+    "status": "ACTIVE",
+    "changes": "Add coatingBandGsm [min,max] and passivation; dftBackUm for CCL",
+    "approvedBy": "Integration CoE / Plant IT"
+   }
+  ],
+  "fields": [
+   {
+    "name": "pdiId",
+    "type": "string",
+    "required": true,
+    "description": "MES message id"
+   },
+   {
+    "name": "line",
+    "type": "enum PKL|CRM|CGL|CCL",
+    "required": true,
+    "description": "Target line"
+   },
+   {
+    "name": "po",
+    "type": "string",
+    "required": true,
+    "description": "MES production order"
+   },
+   {
+    "name": "unitId",
+    "type": "string",
+    "required": true,
+    "description": "Input coil id"
+   },
+   {
+    "name": "targets",
+    "type": "object",
+    "required": true,
+    "description": "Line-specific set-points (see per-line sub-schema)"
+   },
+   {
+    "name": "sentAt",
+    "type": "datetime",
+    "required": true,
+    "description": "ISO-8601"
+   },
+   {
+    "name": "version",
+    "type": "string",
+    "required": true,
+    "description": "Contract version"
+   }
+  ]
+ },
+ {
+  "id": "CT-PDO",
+  "name": "Production Data Output (L2 → MES)",
+  "interfaceIds": [
+   "IF-L2-PDO"
+  ],
+  "currentVersion": "1.3",
+  "format": "JSON over MQTT (L2 gateway)",
+  "versions": [
+   {
+    "version": "1.1",
+    "date": "2026-05-18",
+    "status": "RETIRED",
+    "changes": "Add coatingTop/BottomGsm",
+    "approvedBy": "Integration CoE"
+   },
+   {
+    "version": "1.2",
+    "date": "2026-08-04",
+    "status": "RETIRED",
+    "changes": "Add dE colour difference (CCL)",
+    "approvedBy": "Integration CoE"
+   },
+   {
+    "version": "1.3",
+    "date": "2026-09-14",
+    "status": "ACTIVE",
+    "changes": "Add dftBackMeasured (CCL back-coat gauge) — activated 23:20 after L2 upgrade rejected messages",
+    "approvedBy": "Integration CoE (emergency CAB)"
+   }
+  ],
+  "fields": [
+   {
+    "name": "pdoId",
+    "type": "string",
+    "required": true,
+    "description": "L2 message id"
+   },
+   {
+    "name": "pdiId",
+    "type": "string",
+    "required": true,
+    "description": "Correlates to PDI"
+   },
+   {
+    "name": "actuals",
+    "type": "object",
+    "required": true,
+    "description": "Measured values per line"
+   },
+   {
+    "name": "outWeightMT",
+    "type": "number",
+    "required": true,
+    "description": "Weighed output"
+   },
+   {
+    "name": "lengthM",
+    "type": "number",
+    "required": false,
+    "description": "Strip length"
+   },
+   {
+    "name": "dftBackMeasured",
+    "type": "number",
+    "required": false,
+    "description": "v1.3: back-coat DFT µm"
+   },
+   {
+    "name": "receivedAt",
+    "type": "datetime",
+    "required": true,
+    "description": "ISO-8601"
+   }
+  ]
+ },
+ {
+  "id": "CT-ORDERS05",
+  "name": "Sales order IDoc mapping (SAP → MES)",
+  "interfaceIds": [
+   "IF-SAP-01",
+   "IF-SAP-02",
+   "IF-SAP-03"
+  ],
+  "currentVersion": "2.1",
+  "format": "IDoc ORDERS05 → canonical SalesOrder (ISA-95 aligned)",
+  "versions": [
+   {
+    "version": "2.0",
+    "date": "2026-02-10",
+    "status": "RETIRED",
+    "changes": "Schedule-line level (E1EDP20) mapping",
+    "approvedBy": "Integration CoE"
+   },
+   {
+    "version": "2.1",
+    "date": "2026-07-22",
+    "status": "ACTIVE",
+    "changes": "TDC / variant-configuration characteristics (E1CUCFG) mapped to MES TDC",
+    "approvedBy": "Integration CoE"
+   }
+  ],
+  "fields": [
+   {
+    "name": "E1EDK01.BELNR",
+    "type": "string",
+    "required": true,
+    "description": "SAP sales order"
+   },
+   {
+    "name": "E1EDP01.POSEX",
+    "type": "string",
+    "required": true,
+    "description": "Item"
+   },
+   {
+    "name": "E1EDP20.EDATU",
+    "type": "date",
+    "required": true,
+    "description": "Schedule line date (YYYY-MM-DD)"
+   },
+   {
+    "name": "E1EDP20.WMENG",
+    "type": "number",
+    "required": true,
+    "description": "Schedule line qty (t)"
+   },
+   {
+    "name": "E1CUCFG.*",
+    "type": "list",
+    "required": false,
+    "description": "VC characteristics → TDC"
+   }
+  ]
+ },
+ {
+  "id": "CT-DISPATCH",
+  "name": "Dispatch confirmation (MES → SAP)",
+  "interfaceIds": [
+   "IF-SAP-11"
+  ],
+  "currentVersion": "1.2",
+  "format": "Canonical DispatchConfirmation → IDoc DELVRY07 / SHPCON",
+  "versions": [
+   {
+    "version": "1.0",
+    "date": "2026-03-02",
+    "status": "RETIRED",
+    "changes": "Initial",
+    "approvedBy": "Integration CoE"
+   },
+   {
+    "version": "1.2",
+    "date": "2026-08-20",
+    "status": "ACTIVE",
+    "changes": "Add packType, testCertificate, qualityStatus (dispatch gate)",
+    "approvedBy": "Integration CoE"
+   }
+  ],
+  "fields": [
+   {
+    "name": "header.dispatchId",
+    "type": "string",
+    "required": true,
+    "description": "MES dispatch id"
+   },
+   {
+    "name": "header.salesOrder/soItem/scheduleLine",
+    "type": "string",
+    "required": true,
+    "description": "Fulfils"
+   },
+   {
+    "name": "items[].batch",
+    "type": "string",
+    "required": true,
+    "description": "Pack / batch id"
+   },
+   {
+    "name": "items[].qtyMT",
+    "type": "number",
+    "required": true,
+    "description": "Net weight"
+   },
+   {
+    "name": "items[].qualityStatus",
+    "type": "enum",
+    "required": true,
+    "description": "Must be CLEARED (DFT gate for colour-coated)"
+   }
+  ]
+ },
+ {
+  "id": "CT-PRODCONF",
+  "name": "Production confirmation (MES → SAP)",
+  "interfaceIds": [
+   "IF-SAP-10"
+  ],
+  "currentVersion": "1.1",
+  "format": "BAPI_PRODORDCONF_CREATE_TT",
+  "versions": [
+   {
+    "version": "1.1",
+    "date": "2026-06-15",
+    "status": "ACTIVE",
+    "changes": "Scrap break-up and unaccounted loss fields",
+    "approvedBy": "Integration CoE"
+   }
+  ],
+  "fields": [
+   {
+    "name": "po",
+    "type": "string",
+    "required": true,
+    "description": "MES/SAP production order"
+   },
+   {
+    "name": "inWeightMT/outWeightMT/scrapMT",
+    "type": "number",
+    "required": true,
+    "description": "Mass balance"
+   },
+   {
+    "name": "unaccountedMT",
+    "type": "number",
+    "required": false,
+    "description": "Flagged when > 0.1 t"
+   }
+  ]
+ }
+]
