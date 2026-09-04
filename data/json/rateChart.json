@@ -1,0 +1,263 @@
+[
+ {
+  "id": "RC-HRS-1",
+  "lineId": "HRS",
+  "thicknessBand": "< 0.50",
+  "ratedTph": 32.4,
+  "lineSpeedMpm": 75,
+  "budgetTpd": 576,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-HRS-2",
+  "lineId": "HRS",
+  "thicknessBand": "0.50 – 0.80",
+  "ratedTph": 45.0,
+  "lineSpeedMpm": 60,
+  "budgetTpd": 800,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-HRS-3",
+  "lineId": "HRS",
+  "thicknessBand": "0.80 – 1.20",
+  "ratedTph": 50.4,
+  "lineSpeedMpm": 48,
+  "budgetTpd": 896,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-HRS-4",
+  "lineId": "HRS",
+  "thicknessBand": "> 1.20",
+  "ratedTph": 53.1,
+  "lineSpeedMpm": 37,
+  "budgetTpd": 944,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-PKL-1",
+  "lineId": "PKL",
+  "thicknessBand": "< 0.50",
+  "ratedTph": 32.4,
+  "lineSpeedMpm": 150,
+  "budgetTpd": 648,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-PKL-2",
+  "lineId": "PKL",
+  "thicknessBand": "0.50 – 0.80",
+  "ratedTph": 45.0,
+  "lineSpeedMpm": 120,
+  "budgetTpd": 900,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-PKL-3",
+  "lineId": "PKL",
+  "thicknessBand": "0.80 – 1.20",
+  "ratedTph": 50.4,
+  "lineSpeedMpm": 96,
+  "budgetTpd": 1008,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-PKL-4",
+  "lineId": "PKL",
+  "thicknessBand": "> 1.20",
+  "ratedTph": 53.1,
+  "lineSpeedMpm": 74,
+  "budgetTpd": 1062,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-CRM-1",
+  "lineId": "CRM",
+  "thicknessBand": "< 0.50",
+  "ratedTph": 23.0,
+  "lineSpeedMpm": 750,
+  "budgetTpd": 468,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-CRM-2",
+  "lineId": "CRM",
+  "thicknessBand": "0.50 – 0.80",
+  "ratedTph": 32.0,
+  "lineSpeedMpm": 600,
+  "budgetTpd": 650,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-CRM-3",
+  "lineId": "CRM",
+  "thicknessBand": "0.80 – 1.20",
+  "ratedTph": 35.8,
+  "lineSpeedMpm": 480,
+  "budgetTpd": 728,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-CRM-4",
+  "lineId": "CRM",
+  "thicknessBand": "> 1.20",
+  "ratedTph": 37.8,
+  "lineSpeedMpm": 372,
+  "budgetTpd": 767,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-CGL-1",
+  "lineId": "CGL",
+  "thicknessBand": "< 0.50",
+  "ratedTph": 15.8,
+  "lineSpeedMpm": 125,
+  "budgetTpd": 324,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-CGL-2",
+  "lineId": "CGL",
+  "thicknessBand": "0.50 – 0.80",
+  "ratedTph": 22.0,
+  "lineSpeedMpm": 100,
+  "budgetTpd": 450,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-CGL-3",
+  "lineId": "CGL",
+  "thicknessBand": "0.80 – 1.20",
+  "ratedTph": 24.6,
+  "lineSpeedMpm": 80,
+  "budgetTpd": 504,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-CGL-4",
+  "lineId": "CGL",
+  "thicknessBand": "> 1.20",
+  "ratedTph": 26.0,
+  "lineSpeedMpm": 62,
+  "budgetTpd": 531,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-CCL-1",
+  "lineId": "CCL",
+  "thicknessBand": "< 0.50",
+  "ratedTph": 8.6,
+  "lineSpeedMpm": 75,
+  "budgetTpd": 173,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-CCL-2",
+  "lineId": "CCL",
+  "thicknessBand": "0.50 – 0.80",
+  "ratedTph": 12.0,
+  "lineSpeedMpm": 60,
+  "budgetTpd": 240,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-CCL-3",
+  "lineId": "CCL",
+  "thicknessBand": "0.80 – 1.20",
+  "ratedTph": 13.4,
+  "lineSpeedMpm": 48,
+  "budgetTpd": 269,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-CCL-4",
+  "lineId": "CCL",
+  "thicknessBand": "> 1.20",
+  "ratedTph": 14.2,
+  "lineSpeedMpm": 37,
+  "budgetTpd": 283,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-SLT-1",
+  "lineId": "SLT",
+  "thicknessBand": "< 0.50",
+  "ratedTph": 25.2,
+  "lineSpeedMpm": 188,
+  "budgetTpd": 432,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-SLT-2",
+  "lineId": "SLT",
+  "thicknessBand": "0.50 – 0.80",
+  "ratedTph": 35.0,
+  "lineSpeedMpm": 150,
+  "budgetTpd": 600,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-SLT-3",
+  "lineId": "SLT",
+  "thicknessBand": "0.80 – 1.20",
+  "ratedTph": 39.2,
+  "lineSpeedMpm": 120,
+  "budgetTpd": 672,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-SLT-4",
+  "lineId": "SLT",
+  "thicknessBand": "> 1.20",
+  "ratedTph": 41.3,
+  "lineSpeedMpm": 93,
+  "budgetTpd": 708,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-RWL-1",
+  "lineId": "RWL",
+  "thicknessBand": "< 0.50",
+  "ratedTph": 21.6,
+  "lineSpeedMpm": 150,
+  "budgetTpd": 288,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-RWL-2",
+  "lineId": "RWL",
+  "thicknessBand": "0.50 – 0.80",
+  "ratedTph": 30.0,
+  "lineSpeedMpm": 120,
+  "budgetTpd": 400,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-RWL-3",
+  "lineId": "RWL",
+  "thicknessBand": "0.80 – 1.20",
+  "ratedTph": 33.6,
+  "lineSpeedMpm": 96,
+  "budgetTpd": 448,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-RWL-4",
+  "lineId": "RWL",
+  "thicknessBand": "> 1.20",
+  "ratedTph": 35.4,
+  "lineSpeedMpm": 74,
+  "budgetTpd": 472,
+  "source": "Production rate chart v4 (Aug 2026)"
+ },
+ {
+  "id": "RC-PKG-1",
+  "lineId": "PKG",
+  "thicknessBand": "< 0.50",
+  "ratedTph": 21.6,
+  "lineSpeedMpm": null,
+  "budgetTpd": 432,
+  "source": "Production rate chart v4 (Aug 2026)"
+ }
+]

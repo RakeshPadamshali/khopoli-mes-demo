@@ -50,9 +50,8 @@
     <div class="nav-label">Support</div>
     <a data-page="support"><i class="fa-solid fa-robot"></i>AI Support Data (S7)</a>
     <div class="nav-label">Masters</div>
-    <a class="decor"><i class="fa-solid fa-gears"></i>Lines &amp; Equipment</a>
-    <a class="decor"><i class="fa-solid fa-book"></i>Specs &amp; TDC</a>
-    <a class="decor"><i class="fa-solid fa-user-shield"></i>Users &amp; Roles</a>
+    <a data-page="masters"><i class="fa-solid fa-database"></i>Master Data</a>
+    <a class="decor"><i class="fa-solid fa-folder-open"></i>Document Control</a>
   </aside>
   <div class="host-col">
     <div class="ws-tabhost">
@@ -74,7 +73,8 @@
     quality:     { label: 'Quality & Defects',          icon: 'fa-microscope',      href: 'quality.html' },
     genealogy:   { label: 'Genealogy · Digital Thread', icon: 'fa-diagram-project', href: 'genealogy.html' },
     integration: { label: 'Integration Monitor',        icon: 'fa-tower-broadcast', href: 'integration.html' },
-    support:     { label: 'AI Support Data (S7)',       icon: 'fa-robot',           href: 'support.html' }
+    support:     { label: 'AI Support Data (S7)',       icon: 'fa-robot',           href: 'support.html' },
+    masters:     { label: 'Master Data',                icon: 'fa-database',        href: 'masters.html' }
   };
   var stack = document.getElementById('stack'), strip = document.getElementById('tabstrip'), empty = document.getElementById('empty');
   var frames = {}, order = [], active = null;

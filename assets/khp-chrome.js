@@ -6,9 +6,10 @@
     ['Execution', [['execution', 'Shop-floor Execution', 'fa-industry'], ['packing', 'Slitting · Packing · Dispatch', 'fa-truck-ramp-box']]],
     ['Quality & Trace', [['quality', 'Quality & Defects', 'fa-microscope'], ['genealogy', 'Genealogy · Digital Thread', 'fa-diagram-project']]],
     ['Integration', [['integration', 'Integration Monitor', 'fa-tower-broadcast']]],
-    ['Support', [['support', 'AI Support Data (S7)', 'fa-robot']]]
+    ['Support', [['support', 'AI Support Data (S7)', 'fa-robot']]],
+    ['Masters', [['masters', 'Master Data', 'fa-database']]]
   ];
-  var DECOR = [['Lines & Equipment', 'fa-gears'], ['Specs & TDC', 'fa-book'], ['Users & Roles', 'fa-user-shield']];
+  var DECOR = [['Document Control', 'fa-folder-open']];
   var cur = window.KHP_PAGE || '';
   var layout = document.querySelector('.bm-layout');
   if (!layout) return;
@@ -26,7 +27,6 @@
     html += '<div class="nav-label">' + sec[0] + '</div>';
     sec[1].forEach(function (it) { html += '<a href="' + it[0] + '.html" class="' + (it[0] === cur ? 'active' : '') + '"><i class="fa-solid ' + it[2] + '"></i>' + it[1] + '</a>'; });
   });
-  html += '<div class="nav-label">Masters</div>';
   DECOR.forEach(function (d) { html += '<a class="decor"><i class="fa-solid ' + d[1] + '"></i>' + d[0] + '</a>'; });
   side.innerHTML = html;
   layout.insertBefore(side, layout.firstChild);

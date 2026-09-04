@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Master Data · Khopoli NextGen MES</title>
+<link rel="stylesheet" href="assets/vendor/roboto/roboto.css"><link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css"><link rel="stylesheet" href="assets/khp-shell.css">
+<style>
+  .mnav { display:flex; flex-direction:column; } .mnav .g { font:700 10px 'Roboto'; letter-spacing:.5px; text-transform:uppercase; color:var(--color-text-hint); padding:8px 10px 3px; }
+  .mnav a { display:flex; align-items:center; gap:8px; padding:6px 10px; border-radius:6px; font-size:12px; color:var(--color-text-secondary); cursor:pointer; text-decoration:none; } .mnav a:hover { background:#f1f5f8; } .mnav a.active { background:var(--color-primary-light); color:var(--color-primary-dark); font-weight:600; }
+  .mnav a .n { margin-left:auto; font-size:10px; color:var(--color-text-hint); font-variant-numeric:tabular-nums; }
+  .tbl-wrap { max-height:calc(100vh - 330px); } td.bool { text-align:center; } .ok { color:#2e9b45; } .no { color:#c2c8cf; }
+  .mx td.y { background:#e8f5e9; color:#2e7d32; text-align:center; font-weight:700; } .mx td.nn { background:#fafafa; color:#c2c8cf; text-align:center; }
+  .prev tr.ERROR td { background:#fff5f5; } .prev tr.NEW td { background:#f1f8f1; } .prev tr.UPDATE td { background:#fff8e1; }
+  .drop { border:2px dashed var(--color-border); border-radius:8px; padding:14px; text-align:center; color:var(--color-text-muted); font-size:12px; margin-top:10px; } .drop.over { border-color:var(--color-primary); background:var(--color-primary-light); }
+  .badge.b-new { background:#e8f5e9; color:#2e7d32; } .badge.b-upd { background:#fff8e1; color:#b25f00; }
+</style>
+<script src="assets/khp-embed.js"></script>
+</head>
+<body>
+<div class="bm-layout">
+  <main class="bm-content">
+    <div class="page-bar">
+      <div><h1>Master Data — plant, product, quality, integration and access masters</h1><div class="crumb">Masters › Master Data › <span id="ctx"></span></div></div>
+      <div class="actions"><span class="hint">RFP §3.5 · Excel upload · CoE governed: core masters versioned, site masters as configuration</span></div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="grid-1-2" style="grid-template-columns:260px 1fr">
+      <div class="card"><div class="card-head"><i class="fa-solid fa-database"></i> Masters <span class="right" id="mcount"></span></div><div class="card-body mnav" id="mnav" style="padding:6px"></div></div>
+      <div>
+        <div class="card">
+          <div class="card-head"><i class="fa-solid fa-table"></i> <span id="mtitle"></span> <span class="right" id="mmeta"></span></div>
+          <div class="card-body">
+            <div class="filters"><span class="fl">Search</span><input id="q" placeholder="filter rows" size="18"><span style="margin-left:auto;display:flex;gap:6px;flex-wrap:wrap"><button class="btn btn-outline btn-sm" id="dl"><i class="fa-solid fa-file-arrow-down"></i> Download template (.xlsx)</button><button class="btn btn-primary btn-sm" id="ul"><i class="fa-solid fa-file-arrow-up"></i> Upload from Excel</button><input type="file" id="file" accept=".xlsx,.xls,.csv" style="display:none"></span></div>
+            <div class="hint" id="mdesc" style="margin-bottom:8px"></div>
+            <div id="view"></div>
+            <div class="drop" id="drop"><i class="fa-solid fa-cloud-arrow-up"></i> Drop an .xlsx / .csv here or use <b>Upload from Excel</b> — rows are validated (required columns, unique key, references) and previewed before they are applied.</div>
+          </div>
+        </div>
+        <div class="card" id="prevcard" style="display:none"><div class="card-head"><i class="fa-solid fa-list-check"></i> Upload preview — <span id="pfile"></span> <span class="right" id="pmeta"></span></div><div class="card-body"><div class="tbl-wrap" style="max-height:320px"><table class="tbl prev" id="prev"></table></div><div style="margin-top:10px;display:flex;gap:8px;align-items:center"><button class="btn btn-success btn-sm" id="apply"><i class="fa-solid fa-check"></i> Apply valid rows</button><button class="btn btn-outline btn-sm" id="cancel">Discard</button><span class="hint" id="pnote"></span></div></div></div>
+        <div class="card"><div class="card-head"><i class="fa-solid fa-clock-rotate-left"></i> Master-data change log <span class="right">audit: user · time · master · rows (old → new kept per row)</span></div><div class="card-body" id="audit"></div></div>
+      </div>
+    </div>
+  </main>
+</div>
+<script>window.KHP_PAGE='masters'; window.KHP_TITLE='Master Data'; window.KHP_ICON='fa-database';</script>
+<script src="assets/khp-chrome.js"></script><script src="data/khp-data.js"></script><script src="assets/khp-core.js"></script><script src="assets/vendor/xlsx.full.min.js"></script>
+<script>
+  var X=window.KHPX, D=X.D, esc=X.esc, badge=X.badge;
+  document.getElementById('ctx').textContent = D.plant.name + ' · as of ' + X.fmt(D.meta.asOf);
+  var CAT=[
+    {grp:'Plant structure',items:[{id:'lines',title:'Lines / process units',key:'lines',req:['id','name','type','tph','targetTpd','status'],desc:'Process units in scope; upcoming lines are PLANNED and onboarded by configuration of the template.'},
+      {id:'workCentres',title:'Work centres',key:'workCentres',req:['id','lineId','sapWorkCentre'],refs:{lineId:'lines'},desc:'MES work centres mapped to SAP PP work centres; bypass (e.g. trimming) and alternate work centres.'},
+      {id:'equipment',title:'Equipment',key:'equipment',req:['id','lineId','name','type'],refs:{lineId:'lines'},desc:'Equipment per line; defects are attributed to these ids; upstream HSM equipment included for cross-plant root cause.'},
+      {id:'shifts',title:'Shifts',key:'shifts',req:['id','start','end'],desc:'Shift calendar A / B / C — auto-stamped on production, quality and delay transactions.'},
+      {id:'shiftIncharge',title:'Shift in-charge',key:'shiftIncharge',req:['id','lineId','shift','incharge'],refs:{lineId:'lines'},desc:'Crew / supervisor assignment per line per shift.'}]},
+    {grp:'Product & specification',items:[{id:'productDefinitions',title:'Product definitions',key:'productDefinitions',req:['id','product','gradeId','routeTemplate'],refs:{gradeId:'grades'},desc:'Product × grade with route template, material tree, batch prefix, SAP material pattern, quantity type and precision.'},
+      {id:'grades',title:'Grades',key:'grades',req:['id','std','family'],desc:'Steel grades with mechanical ranges.'},{id:'standards',title:'Plant technical specification',key:'standards',req:['id','standard','scope'],desc:'International and national standards mapped to plant specifications and versions.'},
+      {id:'coatings',title:'Coating specs (GSM bands)',key:'coatings',req:['id','gsm','target','bandMin','bandMax'],desc:'Zinc / aluzinc coating targets and allowed bands used by the CGL PDI and the PDO auto-comparison.'},
+      {id:'paints',title:'Paint systems',key:'paints',req:['id','name','topUm','topTol','backUm'],desc:'Paint systems with DFT targets and tolerances, gloss ranges, PMT.'},{id:'rals',title:'RAL colours',key:'rals',kf:'code',req:['code','name'],desc:'Colour codes used on colour-coated orders.'},
+      {id:'compatibility',title:'Compatibility — grade × coating',key:'compatibility',req:['id','gradeId','coatingId','allowed'],refs:{gradeId:'grades',coatingId:'coatings'},matrix:['gradeId','coatingId','allowed'],desc:'Which coating a grade may carry, with passivation and oiling options and paintability.'},
+      {id:'qcCharacteristics',title:'QC characteristics (MIC)',key:'qcCharacteristics',req:['id','characteristic','unit','method'],desc:'Physical / mechanical / coating characteristics with method, frequency, source and auto-clearance flag.'},
+      {id:'rateChart',title:'Production rate chart',key:'rateChart',req:['id','lineId','thicknessBand','ratedTph'],refs:{lineId:'lines'},matrix:['lineId','thicknessBand','ratedTph'],desc:'Rated tph, line speed and budget tpd per line and thickness band — drives schedule durations and the rate-vs-target board.'}]},
+    {grp:'Codes & rules',items:[{id:'defectCodes',title:'Defect codes',key:'defectCodes',kf:'code',req:['code','name','line'],desc:'Line-wise defect taxonomy with the typical causing equipment and default severity.'},{id:'delayCodes',title:'Delay codes',key:'delayCodes',kf:'code',req:['code','name','category'],desc:'Delay reasons and categories for manual / automatic stoppage capture.'},
+      {id:'udCodes',title:'Usage-decision codes',key:'udCodes',req:['id','description'],desc:'UD codes configurable by business users, with SAP QM mapping and dispatch blocking.'},{id:'inventoryStatuses',title:'Inventory tracking statuses',key:'inventoryStatuses',req:['id','meaning'],desc:'Batch statuses, SAP batch-status mapping and allowed transitions.'},
+      {id:'batchNumberConfig',title:'Batch number generation',key:'batchNumberConfig',req:['id','lineId','prefix','format'],refs:{lineId:'lines'},desc:'Plant-defined numbering per line: prefix, year/month token, sequence, skip, SAP and L2 alignment.'}]},
+    {grp:'Integration mappings',items:[{id:'sapMapping',title:'SAP – MES mapping',key:'sapMapping',req:['id','area','mesObject','sapObject'],desc:'Plant, storage locations, material types, movement types, work centres, batch classes and UD codes.'},{id:'l2Mapping',title:'MES – L2 mapping',key:'l2Mapping',req:['id','lineId','pdiField','l2SetpointTag'],refs:{lineId:'lines'},desc:'PDI set-point fields ↔ OPC-UA tags ↔ PDO actual fields, per line, under the interface contracts.'}]},
+    {grp:'Materials & partners',items:[{id:'consumables',title:'Consumables & zinc material',key:'consumables',req:['id','material','sapMaterial','uom','consumptionBasis'],desc:'Zinc, alloys, acid, paints, primer, guard film, packing materials, gases — with consumption basis and SAP posting interface.'},{id:'customers',title:'Customers',key:'customers',req:['id','name','segment'],desc:'Customers and segments (fictional).'},{id:'packVendors',title:'Packing vendors',key:'packVendors',req:['id','name'],desc:'Packing vendors with domestic / export rates for the vendor-wise packing bill.'}]},
+    {grp:'Access control',items:[{id:'roles',title:'Roles & page rights',key:'roles',req:['id','role','pages','rights'],desc:'Role plus unit / line based access; page- and button-level View / Select / Delete / Transact; single active session per user.'},{id:'users',title:'Users (control purpose)',key:'users',req:['id','name','role'],refs:{role:'roles'},desc:'Users with role, line scope and authentication (LDAP / local).'}]}];
+  var ALL=[]; CAT.forEach(function(g){ g.items.forEach(function(m){ m.grp=g.grp; m.kf=m.kf||'id'; ALL.push(m); }); });
+  var ov=X.state.get('masters',{}), audit=X.state.get('masterAudit',[]);
+  function rowsOf(m){ var base=(D[m.key]||[]).map(function(r){return Object.assign({},r);}); var o=ov[m.id]; if(!o) return base; var idx={}; base.forEach(function(r,i){idx[r[m.kf]]=i;});
+    o.rows.forEach(function(r){ if(r[m.kf] in idx){ base[idx[r[m.kf]]]=Object.assign({},base[idx[r[m.kf]]],r,{_ov:'UPDATED'}); } else base.push(Object.assign({},r,{_ov:'NEW'})); }); return base; }
+  var cur=ALL[0]; var h=X.hashParam(); if(h&&ALL.some(function(m){return m.id===h;})) cur=ALL.filter(function(m){return m.id===h;})[0];
+  document.getElementById('kpis').innerHTML=[['Masters',ALL.length,CAT.length+' groups','blue'],['Records',ALL.reduce(function(a,m){return a+rowsOf(m).length;},0),'across all masters','blue'],['Uploaded via Excel',audit.reduce(function(a,x){return a+x.rows;},0),audit.length+' upload'+(audit.length===1?'':'s')+' this session','accent'],
+    ['Reference checks',ALL.filter(function(m){return m.refs;}).length,'masters with foreign keys','green'],['SAP / L2 mappings',(D.sapMapping||[]).length+' / '+(D.l2Mapping||[]).length,'rows','grey'],['Roles · users',(D.roles||[]).length+' · '+(D.users||[]).length,'single active session','amber']].map(function(k){return '<div class="kpi '+k[3]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="s">'+k[2]+'</div></div>';}).join('');
+  function nav(){ document.getElementById('mcount').textContent=ALL.length; document.getElementById('mnav').innerHTML=CAT.map(function(g){return '<div class="g">'+esc(g.grp)+'</div>'+g.items.map(function(m){return '<a class="'+(m.id===cur.id?'active':'')+'" data-m="'+m.id+'"><i class="fa-solid fa-table-list" style="font-size:10px;opacity:.6"></i>'+esc(m.title)+'<span class="n">'+rowsOf(m).length+'</span></a>';}).join('');}).join(''); }
+  document.getElementById('mnav').addEventListener('click',function(e){ var a=e.target.closest('[data-m]'); if(!a) return; cur=ALL.filter(function(m){return m.id===a.dataset.m;})[0]; document.getElementById('q').value=''; hidePrev(); render(); });
+  function label(k){ return k.replace(/([A-Z])/g,' $1').replace(/^./,function(c){return c.toUpperCase();}).replace(/ Id$/,' id'); }
+  function cell(v){ if(v===true) return '<i class="fa-solid fa-check ok"></i>'; if(v===false) return '<i class="fa-solid fa-minus no"></i>'; if(v==null||v==='') return '<span class="hint">—</span>'; if(Array.isArray(v)) return esc(v.join(', ')); if(typeof v==='object') return '<span class="mono small">'+esc(JSON.stringify(v))+'</span>'; return esc(v); }
+  function render(){
+    nav(); var rows=rowsOf(cur), q=(document.getElementById('q').value||'').toLowerCase(); if(q) rows=rows.filter(function(r){return JSON.stringify(r).toLowerCase().indexOf(q)>=0;});
+    document.getElementById('mtitle').textContent=cur.title; document.getElementById('mdesc').textContent=cur.desc; document.getElementById('mmeta').innerHTML=rows.length+' rows · key <span class="mono">'+esc(cur.kf)+'</span>'+(cur.refs?' · references '+Object.keys(cur.refs).map(function(k){return k+' → '+cur.refs[k];}).join(', '):'')+(ov[cur.id]?' · <span class="badge b-upd">'+ov[cur.id].rows.length+' rows from Excel</span>':'');
+    var cols=[]; rows.forEach(function(r){ Object.keys(r).forEach(function(k){ if(cols.indexOf(k)<0&&k!=='_ov'&&k!=='ontologyDomain'&&k!=='seq') cols.push(k); }); });
+    var html='';
+    if(cur.matrix&&!q){ var rk=cur.matrix[0],ck=cur.matrix[1],vk=cur.matrix[2]; var rs=[],cs=[]; rows.forEach(function(r){ if(rs.indexOf(r[rk])<0) rs.push(r[rk]); if(cs.indexOf(r[ck])<0) cs.push(r[ck]); });
+      html+='<div class="sub-title">Matrix view</div><div class="tbl-wrap" style="max-height:260px;margin-bottom:12px"><table class="tbl mx"><thead><tr><th>'+esc(label(rk))+'</th>'+cs.map(function(c){return '<th style="text-align:center">'+esc(c)+'</th>';}).join('')+'</tr></thead><tbody>'+rs.map(function(r){return '<tr><td class="strong">'+esc(r)+'</td>'+cs.map(function(c){ var x=rows.filter(function(z){return z[rk]===r&&z[ck]===c;})[0]; if(!x) return '<td class="nn">·</td>'; var v=x[vk]; return v===true?'<td class="y">✓</td>':v===false?'<td class="nn">✗</td>':'<td class="mono" style="text-align:center">'+esc(v)+'</td>'; }).join('')+'</tr>';}).join('')+'</tbody></table></div><div class="sub-title">Rows</div>'; }
+    html+='<div class="tbl-wrap"><table class="tbl"><thead><tr>'+cols.map(function(c){return '<th>'+esc(label(c))+'</th>';}).join('')+'<th></th></tr></thead><tbody>'+rows.map(function(r){return '<tr>'+cols.map(function(c){return '<td class="'+(typeof r[c]==='boolean'?'bool':'')+(c===cur.kf?' mono strong':'')+'">'+cell(r[c])+'</td>';}).join('')+'<td>'+(r._ov?'<span class="badge '+(r._ov==='NEW'?'b-new':'b-upd')+'">'+r._ov+'</span>':'')+'</td></tr>';}).join('')+'</tbody></table></div>';
+    document.getElementById('view').innerHTML=html; renderAudit();
+  }
+  document.getElementById('q').addEventListener('input',render);
+  // ---- Excel template download ----
+  document.getElementById('dl').addEventListener('click',function(){ var rows=rowsOf(cur).map(function(r){ var o={}; Object.keys(r).forEach(function(k){ if(k!=='_ov'&&k!=='ontologyDomain') o[k]=Array.isArray(r[k])?r[k].join(', '):(r[k]&&typeof r[k]==='object')?JSON.stringify(r[k]):r[k]; }); return o; });
+    var wb=XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(rows),cur.id.slice(0,31)); var info=XLSX.utils.aoa_to_sheet([['Master',cur.title],['Key column',cur.kf],['Required columns',cur.req.join(', ')],['References',cur.refs?Object.keys(cur.refs).map(function(k){return k+' -> '+cur.refs[k];}).join(', '):'—'],['Generated',new Date().toISOString()],['Note','Edit rows or add new ones, keep the header row, then Upload from Excel.']]); XLSX.utils.book_append_sheet(wb,info,'README');
+    XLSX.writeFile(wb,'KHP_'+cur.id+'_template.xlsx'); X.toast('Template with '+rows.length+' current rows downloaded — edit in Excel and upload'); });
+  // ---- upload + validation ----
+  var pending=null;
+  document.getElementById('ul').addEventListener('click',function(){ document.getElementById('file').click(); });
+  document.getElementById('file').addEventListener('change',function(){ if(this.files[0]) handle(this.files[0]); this.value=''; });
+  var dz=document.getElementById('drop'); dz.addEventListener('dragover',function(e){ e.preventDefault(); dz.classList.add('over'); }); dz.addEventListener('dragleave',function(){ dz.classList.remove('over'); }); dz.addEventListener('drop',function(e){ e.preventDefault(); dz.classList.remove('over'); if(e.dataTransfer.files[0]) handle(e.dataTransfer.files[0]); });
+  function handle(file){ var fr=new FileReader(); fr.onload=function(){ try { var wb=XLSX.read(fr.result,{type:'array'}); var ws=wb.Sheets[wb.SheetNames.indexOf(cur.id.slice(0,31))>=0?cur.id.slice(0,31):wb.SheetNames[0]]; var rows=XLSX.utils.sheet_to_json(ws,{defval:''}); preview(file.name,rows); } catch(e){ X.toast('Could not read '+file.name+': '+e.message,'fa-triangle-exclamation'); } }; fr.readAsArrayBuffer(file); }
+  function norm(v){ if(typeof v==='string'){ var t=v.trim(); if(/^(true|yes|y)$/i.test(t)) return true; if(/^(false|no|n)$/i.test(t)) return false; if(t!==''&&!isNaN(t)&&/^-?\d+(\.\d+)?$/.test(t)) return +t; return t; } return v; }
+  function preview(name,rows){
+    var base=rowsOf(cur), keys={}; base.forEach(function(r){keys[r[cur.kf]]=r;}); var seen={}, out=[];
+    rows.forEach(function(raw,i){ var r={}; Object.keys(raw).forEach(function(k){ var v=norm(raw[k]); if(v!=='') r[k.trim()]=v; }); var errs=[];
+      cur.req.forEach(function(c){ if(r[c]==null||r[c]==='') errs.push('missing '+c); });
+      var k=r[cur.kf]; if(k!=null&&k!==''){ if(seen[k]) errs.push('duplicate key in file'); seen[k]=1; }
+      if(cur.refs) Object.keys(cur.refs).forEach(function(f){ if(r[f]!=null&&r[f]!==''){ var tgt=cur.refs[f], tm=ALL.filter(function(m){return m.id===tgt;})[0]; var ok=rowsOf(tm).some(function(x){return String(x[tm.kf])===String(r[f])||(tgt==='roles'&&x.role===r[f]);}); if(!ok) errs.push(f+' "'+r[f]+'" not in '+tgt); } });
+      ['tph','targetTpd','capacityTph','ratedTph','standardRate','gsm','target','bandMin','bandMax','topUm','backUm'].forEach(function(f){ if(r[f]!=null&&r[f]!==''&&typeof r[f]!=='number') errs.push(f+' must be numeric'); });
+      var status=errs.length?'ERROR':(k in keys?'UPDATE':'NEW'); var changes=[]; if(status==='UPDATE'){ Object.keys(r).forEach(function(f){ if(String(keys[k][f])!==String(r[f])&&f!==cur.kf) changes.push(f+': '+cell(keys[k][f]).replace(/<[^>]+>/g,'')+' → '+cell(r[f]).replace(/<[^>]+>/g,'')); }); if(!changes.length) status='UNCHANGED'; }
+      out.push({row:i+2,data:r,status:status,errs:errs,changes:changes}); });
+    pending={name:name,rows:out}; var n={NEW:0,UPDATE:0,ERROR:0,UNCHANGED:0}; out.forEach(function(x){n[x.status]++;});
+    document.getElementById('pfile').textContent=name; document.getElementById('pmeta').innerHTML=out.length+' rows · '+badge('OK',n.NEW+' new')+' '+badge('PENDING',n.UPDATE+' updates')+' '+badge('FAILED',n.ERROR+' errors')+' '+badge('CLOSED',n.UNCHANGED+' unchanged');
+    var cols=[]; out.forEach(function(x){ Object.keys(x.data).forEach(function(k){ if(cols.indexOf(k)<0) cols.push(k); }); });
+    document.getElementById('prev').innerHTML='<thead><tr><th>Row</th><th>Status</th>'+cols.map(function(c){return '<th>'+esc(label(c))+'</th>';}).join('')+'<th>Validation</th></tr></thead><tbody>'+out.map(function(x){return '<tr class="'+x.status+'"><td class="mono">'+x.row+'</td><td>'+badge(x.status==='ERROR'?'FAILED':x.status==='NEW'?'OK':x.status==='UPDATE'?'PENDING':'CLOSED',x.status)+'</td>'+cols.map(function(c){return '<td>'+cell(x.data[c])+'</td>';}).join('')+'<td class="small">'+(x.errs.length?'<span class="deviation">'+x.errs.map(esc).join('; ')+'</span>':x.changes.length?esc(x.changes.join('; ')):'')+'</td></tr>';}).join('')+'</tbody>';
+    document.getElementById('pnote').textContent=n.ERROR?n.ERROR+' row(s) with errors will be skipped; fix them in Excel and upload again.':'All rows valid.'; document.getElementById('apply').disabled=!(n.NEW+n.UPDATE); document.getElementById('prevcard').style.display=''; document.getElementById('prevcard').scrollIntoView({behavior:'smooth'});
+  }
+  function hidePrev(){ pending=null; document.getElementById('prevcard').style.display='none'; }
+  document.getElementById('cancel').addEventListener('click',hidePrev);
+  document.getElementById('apply').addEventListener('click',function(){ if(!pending) return; var good=pending.rows.filter(function(x){return x.status==='NEW'||x.status==='UPDATE';}); if(!good.length) return;
+    var o=ov[cur.id]||{rows:[]}; good.forEach(function(x){ var i=o.rows.findIndex(function(r){return String(r[cur.kf])===String(x.data[cur.kf]);}); if(i>=0) o.rows[i]=Object.assign({},o.rows[i],x.data); else o.rows.push(x.data); }); o.appliedAt=new Date().toISOString(); o.by='mesadmin'; ov[cur.id]=o; X.state.set('masters',ov);
+    audit.unshift({at:new Date().toISOString(),by:'mesadmin (MES Admin)',master:cur.title,file:pending.name,rows:good.length,news:good.filter(function(x){return x.status==='NEW';}).length,updates:good.filter(function(x){return x.status==='UPDATE';}).length,skipped:pending.rows.length-good.length}); X.state.set('masterAudit',audit);
+    X.toast(good.length+' row(s) applied to '+cur.title+' — versioned in the site configuration layer, audit row written'); hidePrev(); render(); });
+  function renderAudit(){ document.getElementById('audit').innerHTML=audit.length?'<table class="tbl"><thead><tr><th>When</th><th>User</th><th>Master</th><th>File</th><th>Applied</th><th>New / updated / skipped</th></tr></thead><tbody>'+audit.map(function(a){return '<tr><td class="mono">'+X.fmtDT(a.at)+'</td><td>'+esc(a.by)+'</td><td>'+esc(a.master)+'</td><td class="mono small">'+esc(a.file)+'</td><td class="mono">'+a.rows+'</td><td class="mono">'+a.news+' / '+a.updates+' / '+a.skipped+'</td></tr>';}).join('')+'</tbody></table>':'<div class="hint">No master-data changes in this session. Download a template, edit it in Excel and upload it to see validation, preview and the audit trail.</div>'; }
+  render();
+  window.addEventListener('khp:navigate',function(e){ var id=String(e.detail||''); var m=ALL.filter(function(x){return x.id===id;})[0]; if(m){ cur=m; hidePrev(); render(); } });
+</script>
+</body>
+</html>

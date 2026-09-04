@@ -1,0 +1,167 @@
+[
+ {
+  "id": "L2M-01",
+  "lineId": "CGL",
+  "pdiField": "coatingTargetGsm",
+  "l2SetpointTag": "ns=2;s=CGL.AKN.CW_SP",
+  "pdoField": "coatingTotalGsm",
+  "l2ActualTag": "ns=2;s=CGL.CWG.CW_PV",
+  "unit": "g/m²",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ },
+ {
+  "id": "L2M-02",
+  "lineId": "CGL",
+  "pdiField": "lineSpeedMpm",
+  "l2SetpointTag": "ns=2;s=CGL.DRV.SPEED_SP",
+  "pdoField": "lineSpeedMpm",
+  "l2ActualTag": "ns=2;s=CGL.DRV.SPEED_PV",
+  "unit": "m/min",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ },
+ {
+  "id": "L2M-03",
+  "lineId": "CGL",
+  "pdiField": "furnaceSoakC",
+  "l2SetpointTag": "ns=2;s=CGL.FUR.Z3_TEMP_SP",
+  "pdoField": "furnaceSoakC",
+  "l2ActualTag": "ns=2;s=CGL.FUR.Z3_TEMP_PV",
+  "unit": "°C",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ },
+ {
+  "id": "L2M-04",
+  "lineId": "CGL",
+  "pdiField": "zincBathAlPct",
+  "l2SetpointTag": "ns=2;s=CGL.ZPT.AL_SP",
+  "pdoField": "zincBathAlPct",
+  "l2ActualTag": "ns=2;s=CGL.ZPT.AL_PV",
+  "unit": "%",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ },
+ {
+  "id": "L2M-05",
+  "lineId": "CGL",
+  "pdiField": "skinPassElongPct",
+  "l2SetpointTag": "ns=2;s=CGL.SPM.ELONG_SP",
+  "pdoField": "skinPassElongPct",
+  "l2ActualTag": "ns=2;s=CGL.SPM.ELONG_PV",
+  "unit": "%",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ },
+ {
+  "id": "L2M-06",
+  "lineId": "CCL",
+  "pdiField": "dftTopUm",
+  "l2SetpointTag": "ns=2;s=CCL.TCT.DFT_SP",
+  "pdoField": "dftTopUm",
+  "l2ActualTag": "ns=2;s=CCL.DFG.DFT_TOP_PV",
+  "unit": "µm",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ },
+ {
+  "id": "L2M-07",
+  "lineId": "CCL",
+  "pdiField": "dftBackUm",
+  "l2SetpointTag": "ns=2;s=CCL.TCT.DFTB_SP",
+  "pdoField": "dftBackUm",
+  "l2ActualTag": "ns=2;s=CCL.DFG.DFT_BACK_PV",
+  "unit": "µm",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ },
+ {
+  "id": "L2M-08",
+  "lineId": "CCL",
+  "pdiField": "pmtC",
+  "l2SetpointTag": "ns=2;s=CCL.FOV.PMT_SP",
+  "pdoField": "pmtC",
+  "l2ActualTag": "ns=2;s=CCL.FOV.PMT_PV",
+  "unit": "°C",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ },
+ {
+  "id": "L2M-09",
+  "lineId": "CCL",
+  "pdiField": "lineSpeedMpm",
+  "l2SetpointTag": "ns=2;s=CCL.DRV.SPEED_SP",
+  "pdoField": "lineSpeedMpm",
+  "l2ActualTag": "ns=2;s=CCL.DRV.SPEED_PV",
+  "unit": "m/min",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ },
+ {
+  "id": "L2M-10",
+  "lineId": "CRM",
+  "pdiField": "exitThkMm",
+  "l2SetpointTag": "ns=2;s=CRM.AGC.THK_SP",
+  "pdoField": "exitThkMm",
+  "l2ActualTag": "ns=2;s=CRM.XRG.THK_PV",
+  "unit": "mm",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ },
+ {
+  "id": "L2M-11",
+  "lineId": "CRM",
+  "pdiField": "passes",
+  "l2SetpointTag": "ns=2;s=CRM.SEQ.PASSES",
+  "pdoField": "passes",
+  "l2ActualTag": "ns=2;s=CRM.SEQ.PASSES_DONE",
+  "unit": "count",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ },
+ {
+  "id": "L2M-12",
+  "lineId": "CRM",
+  "pdiField": "rollForceKN",
+  "l2SetpointTag": "ns=2;s=CRM.STD.FORCE_SP",
+  "pdoField": "rollForceKN",
+  "l2ActualTag": "ns=2;s=CRM.STD.FORCE_PV",
+  "unit": "kN",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ },
+ {
+  "id": "L2M-13",
+  "lineId": "PKL",
+  "pdiField": "acidConcPct",
+  "l2SetpointTag": "ns=2;s=PKL.AT2.HCL_SP",
+  "pdoField": "acidConcPct",
+  "l2ActualTag": "ns=2;s=PKL.AT2.HCL_PV",
+  "unit": "%",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ },
+ {
+  "id": "L2M-14",
+  "lineId": "PKL",
+  "pdiField": "stripSpeedMpm",
+  "l2SetpointTag": "ns=2;s=PKL.DRV.SPEED_SP",
+  "pdoField": "stripSpeedMpm",
+  "l2ActualTag": "ns=2;s=PKL.DRV.SPEED_PV",
+  "unit": "m/min",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ },
+ {
+  "id": "L2M-15",
+  "lineId": "PKL",
+  "pdiField": "bathTempC",
+  "l2SetpointTag": "ns=2;s=PKL.AT1.TEMP_SP",
+  "pdoField": "bathTempC",
+  "l2ActualTag": "ns=2;s=PKL.AT1.TEMP_PV",
+  "unit": "°C",
+  "protocol": "OPC-UA via L2 gateway",
+  "contract": "CT-PDI v1.2 / CT-PDO v1.3"
+ }
+]

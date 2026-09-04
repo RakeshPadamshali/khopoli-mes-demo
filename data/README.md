@@ -231,3 +231,63 @@ Fields: `periodDays`, `tickets`, `resolved`, `open`, `agentResolvedPct`, `humanR
 ### `events.json` — 1 record
 Scripted scenario events: APS rush re-prioritisation (before/after CGL sequence), batch swap (BTA before/after), SAP order amendment (failed IDoc).
 Fields: `rush`, `swap`, `amendment`
+
+### `workCentres.json` — 12 records
+Master: work centres per line with SAP work centre, cost centre, bypass / alternate work centre.
+Fields: `id`, `lineId`, `name`, `sapWorkCentre`, `costCentre`, `capacityTph`, `shiftsPerDay`, `bypassAllowed`, `alternateWorkCentre`, `status`
+
+### `productDefinitions.json` — 10 records
+Master: product × grade definitions with route template, material tree, batch prefix, SAP material pattern, quantity type.
+Fields: `id`, `product`, `gradeId`, `routeTemplate`, `materialTree`, `batchPrefix`, `sapMaterialPattern`, `uom`, `quantityType`, `precision`, `coatingRequired`, `paintRequired`, `status`
+
+### `standards.json` — 8 records
+Master: plant technical specification — international / national standards, grades covered, plant spec reference, version.
+Fields: `id`, `standard`, `scope`, `grades`, `plantSpec`, `version`, `status`
+
+### `qcCharacteristics.json` — 16 records
+Master: QC characteristics (MIC) with unit, method, products, frequency, source, auto-clearance flag.
+Fields: `id`, `characteristic`, `unit`, `method`, `products`, `frequency`, `source`, `autoClearance`, `status`
+
+### `compatibility.json` — 30 records
+Master: grade × coating compatibility with passivation / oiling options and paintability.
+Fields: `id`, `gradeId`, `coatingId`, `allowed`, `passivation`, `oiling`, `paintable`, `note`
+
+### `rateChart.json` — 29 records
+Master: production rate chart — rated tph, line speed and budget tpd per line and thickness band.
+Fields: `id`, `lineId`, `thicknessBand`, `ratedTph`, `lineSpeedMpm`, `budgetTpd`, `source`
+
+### `udCodes.json` — 8 records
+Master: usage-decision codes configurable by business users, with SAP UD mapping and dispatch blocking.
+Fields: `id`, `description`, `segment`, `autoAllowed`, `sapUdCode`, `blocksDispatch`, `configuredBy`
+
+### `batchNumberConfig.json` — 8 records
+Master: batch-number generation per line (prefix, year/month token, sequence, skip, SAP / L2 alignment).
+Fields: `id`, `lineId`, `prefix`, `format`, `example`, `sequenceReset`, `perPiece`, `skipAllowed`, `sapAligned`, `l2Aligned`, `manualOverride`
+
+### `inventoryStatuses.json` — 10 records
+Master: inventory tracking statuses with meaning, SAP batch status mapping and allowed transitions.
+Fields: `id`, `meaning`, `sapBatchStatus`, `allowedNext`, `countsAsStock`
+
+### `sapMapping.json` — 20 records
+Master: SAP–MES mapping (plant, storage locations, material types, movement types, work centres, batch classes, UD codes).
+Fields: `id`, `area`, `mesObject`, `mesValue`, `sapObject`, `sapValue`, `note`
+
+### `l2Mapping.json` — 15 records
+Master: MES–L2 mapping — PDI set-point fields ↔ OPC-UA tags ↔ PDO actual fields per line.
+Fields: `id`, `lineId`, `pdiField`, `l2SetpointTag`, `pdoField`, `l2ActualTag`, `unit`, `protocol`, `contract`
+
+### `consumables.json` — 16 records
+Master: consumables & zinc material with SAP material, UoM, consumption basis, standard rate, posting interface.
+Fields: `id`, `material`, `sapMaterial`, `uom`, `consumptionBasis`, `standardRate`, `lineId`, `storageLocation`, `postingInterface`, `status`
+
+### `shiftIncharge.json` — 24 records
+Master: shift in-charge per line and shift with relief.
+Fields: `id`, `lineId`, `shift`, `incharge`, `phone`, `relief`, `status`
+
+### `roles.json` — 8 records
+Master: roles with home page, page access, View/Select/Delete/Transact rights and unit/line scope; single active session.
+Fields: `id`, `role`, `homePage`, `pages`, `rights`, `lineScope`, `singleActiveSession`, `users`
+
+### `users.json` — 12 records
+Master: users (control purpose) with role, line scope, authentication, last login.
+Fields: `id`, `name`, `role`, `lineScope`, `auth`, `status`, `singleSession`, `lastLogin`

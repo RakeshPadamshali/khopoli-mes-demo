@@ -1,0 +1,82 @@
+[
+ {
+  "id": "ROLE-01",
+  "role": "Operator",
+  "homePage": "execution",
+  "pages": "home, execution, quality",
+  "rights": "V/S/T on own line",
+  "lineScope": "CGL",
+  "singleActiveSession": true,
+  "users": 3
+ },
+ {
+  "id": "ROLE-02",
+  "role": "Shift In-charge",
+  "homePage": "execution",
+  "pages": "home, planning, execution, packing, quality, masters",
+  "rights": "V/S/T on own lines · delay entry · hold",
+  "lineScope": "PKL, CRM, CGL, CCL",
+  "singleActiveSession": true,
+  "users": 1
+ },
+ {
+  "id": "ROLE-03",
+  "role": "PPC Planner",
+  "homePage": "planning",
+  "pages": "home, orders, planning, allocation, packing, masters",
+  "rights": "V/S/T · allocation · reroute · batch swap",
+  "lineScope": "*",
+  "singleActiveSession": true,
+  "users": 1
+ },
+ {
+  "id": "ROLE-04",
+  "role": "QC Inspector",
+  "homePage": "quality",
+  "pages": "home, quality, genealogy, execution",
+  "rights": "V/S/T · sample, result, defect",
+  "lineScope": "*",
+  "singleActiveSession": true,
+  "users": 2
+ },
+ {
+  "id": "ROLE-05",
+  "role": "QC Head",
+  "homePage": "quality",
+  "pages": "home, quality, genealogy, masters",
+  "rights": "V/S/D/T · usage decision · override · UD masters",
+  "lineScope": "*",
+  "singleActiveSession": true,
+  "users": 1
+ },
+ {
+  "id": "ROLE-06",
+  "role": "Plant IT",
+  "homePage": "integration",
+  "pages": "home, integration, support, masters",
+  "rights": "V/S/T · replay · contracts · L2 mapping",
+  "lineScope": "*",
+  "singleActiveSession": true,
+  "users": 2
+ },
+ {
+  "id": "ROLE-07",
+  "role": "MES Admin",
+  "homePage": "masters",
+  "pages": "home, orders, planning, allocation, execution, packing, quality, genealogy, integration, support, masters",
+  "rights": "V/S/D/T all · user rights copy · Excel upload",
+  "lineScope": "*",
+  "singleActiveSession": true,
+  "users": 1
+ },
+ {
+  "id": "ROLE-08",
+  "role": "Plant Head",
+  "homePage": "home",
+  "pages": "home, orders, quality, genealogy, integration, support",
+  "rights": "View only",
+  "lineScope": "*",
+  "singleActiveSession": true,
+  "users": 1
+ }
+]

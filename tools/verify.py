@@ -7,7 +7,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(os.environ.get("KHP_SHOTS", os.path.join(ROOT, "..", "khp-shots")))
 os.makedirs(OUT, exist_ok=True)
 PORT = 8110
-PAGES = sys.argv[1:] or ["home.html", "orders.html", "planning.html", "allocation.html", "execution.html", "quality.html", "genealogy.html", "packing.html", "integration.html", "support.html", "index.html"]
+PAGES = sys.argv[1:] or ["home.html", "orders.html", "planning.html", "allocation.html", "execution.html", "quality.html", "genealogy.html", "packing.html", "integration.html", "support.html", "masters.html", "index.html"]
 srv = subprocess.Popen([sys.executable, "-m", "http.server", str(PORT)], cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 try:
     ok_all = True
@@ -27,7 +27,7 @@ try:
                     time.sleep(0.4)
             pg.wait_for_timeout(900)
             if page == "index.html":
-                for pid in ["home", "orders", "planning", "allocation", "execution", "quality", "genealogy", "packing", "integration", "support"]:
+                for pid in ["home", "orders", "planning", "allocation", "execution", "quality", "genealogy", "packing", "integration", "support", "masters"]:
                     if pg.query_selector(f"[data-page={pid}]") and os.path.exists(os.path.join(ROOT, pid + ".html")):
                         pg.click(f"[data-page={pid}]"); pg.wait_for_timeout(700)
                 pg.click("[data-page=home]"); pg.wait_for_timeout(400)

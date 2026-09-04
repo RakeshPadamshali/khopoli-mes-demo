@@ -1,0 +1,302 @@
+[
+ {
+  "id": "CMP-DX51D-Z80",
+  "gradeId": "DX51D+Z",
+  "coatingId": "Z80",
+  "allowed": true,
+  "passivation": "Chromate / Cr-free",
+  "oiling": "Dry / Oiled",
+  "paintable": true,
+  "note": ""
+ },
+ {
+  "id": "CMP-DX51D-Z120",
+  "gradeId": "DX51D+Z",
+  "coatingId": "Z120",
+  "allowed": true,
+  "passivation": "Chromate / Cr-free",
+  "oiling": "Dry / Oiled",
+  "paintable": true,
+  "note": ""
+ },
+ {
+  "id": "CMP-DX51D-Z180",
+  "gradeId": "DX51D+Z",
+  "coatingId": "Z180",
+  "allowed": true,
+  "passivation": "Chromate / Cr-free",
+  "oiling": "Dry / Oiled",
+  "paintable": true,
+  "note": ""
+ },
+ {
+  "id": "CMP-DX51D-Z275",
+  "gradeId": "DX51D+Z",
+  "coatingId": "Z275",
+  "allowed": true,
+  "passivation": "Chromate / Cr-free",
+  "oiling": "Dry / Oiled",
+  "paintable": true,
+  "note": ""
+ },
+ {
+  "id": "CMP-DX51D-AZ150",
+  "gradeId": "DX51D+Z",
+  "coatingId": "AZ150",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-DX53D-Z80",
+  "gradeId": "DX53D+Z",
+  "coatingId": "Z80",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-DX53D-Z120",
+  "gradeId": "DX53D+Z",
+  "coatingId": "Z120",
+  "allowed": true,
+  "passivation": "Chromate / Cr-free",
+  "oiling": "Dry / Oiled",
+  "paintable": false,
+  "note": ""
+ },
+ {
+  "id": "CMP-DX53D-Z180",
+  "gradeId": "DX53D+Z",
+  "coatingId": "Z180",
+  "allowed": true,
+  "passivation": "Chromate / Cr-free",
+  "oiling": "Dry / Oiled",
+  "paintable": false,
+  "note": ""
+ },
+ {
+  "id": "CMP-DX53D-Z275",
+  "gradeId": "DX53D+Z",
+  "coatingId": "Z275",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-DX53D-AZ150",
+  "gradeId": "DX53D+Z",
+  "coatingId": "AZ150",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-S350GD-Z80",
+  "gradeId": "S350GD+Z",
+  "coatingId": "Z80",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-S350GD-Z120",
+  "gradeId": "S350GD+Z",
+  "coatingId": "Z120",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-S350GD-Z180",
+  "gradeId": "S350GD+Z",
+  "coatingId": "Z180",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-S350GD-Z275",
+  "gradeId": "S350GD+Z",
+  "coatingId": "Z275",
+  "allowed": true,
+  "passivation": "Chromate / Cr-free",
+  "oiling": "Dry / Oiled",
+  "paintable": false,
+  "note": ""
+ },
+ {
+  "id": "CMP-S350GD-AZ150",
+  "gradeId": "S350GD+Z",
+  "coatingId": "AZ150",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-CQIS277-Z80",
+  "gradeId": "CQ-IS277",
+  "coatingId": "Z80",
+  "allowed": true,
+  "passivation": "Chromate / Cr-free",
+  "oiling": "Dry / Oiled",
+  "paintable": false,
+  "note": ""
+ },
+ {
+  "id": "CMP-CQIS277-Z120",
+  "gradeId": "CQ-IS277",
+  "coatingId": "Z120",
+  "allowed": true,
+  "passivation": "Chromate / Cr-free",
+  "oiling": "Dry / Oiled",
+  "paintable": false,
+  "note": ""
+ },
+ {
+  "id": "CMP-CQIS277-Z180",
+  "gradeId": "CQ-IS277",
+  "coatingId": "Z180",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-CQIS277-Z275",
+  "gradeId": "CQ-IS277",
+  "coatingId": "Z275",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-CQIS277-AZ150",
+  "gradeId": "CQ-IS277",
+  "coatingId": "AZ150",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-SGCC-Z80",
+  "gradeId": "SGCC",
+  "coatingId": "Z80",
+  "allowed": true,
+  "passivation": "Chromate / Cr-free",
+  "oiling": "Dry / Oiled",
+  "paintable": false,
+  "note": ""
+ },
+ {
+  "id": "CMP-SGCC-Z120",
+  "gradeId": "SGCC",
+  "coatingId": "Z120",
+  "allowed": true,
+  "passivation": "Chromate / Cr-free",
+  "oiling": "Dry / Oiled",
+  "paintable": false,
+  "note": ""
+ },
+ {
+  "id": "CMP-SGCC-Z180",
+  "gradeId": "SGCC",
+  "coatingId": "Z180",
+  "allowed": true,
+  "passivation": "Chromate / Cr-free",
+  "oiling": "Dry / Oiled",
+  "paintable": false,
+  "note": ""
+ },
+ {
+  "id": "CMP-SGCC-Z275",
+  "gradeId": "SGCC",
+  "coatingId": "Z275",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-SGCC-AZ150",
+  "gradeId": "SGCC",
+  "coatingId": "AZ150",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-SGLCC-Z80",
+  "gradeId": "SGLCC",
+  "coatingId": "Z80",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-SGLCC-Z120",
+  "gradeId": "SGLCC",
+  "coatingId": "Z120",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-SGLCC-Z180",
+  "gradeId": "SGLCC",
+  "coatingId": "Z180",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-SGLCC-Z275",
+  "gradeId": "SGLCC",
+  "coatingId": "Z275",
+  "allowed": false,
+  "passivation": "—",
+  "oiling": "—",
+  "paintable": false,
+  "note": "not in plant technical specification"
+ },
+ {
+  "id": "CMP-SGLCC-AZ150",
+  "gradeId": "SGLCC",
+  "coatingId": "AZ150",
+  "allowed": true,
+  "passivation": "Chromate / Cr-free",
+  "oiling": "Dry / Oiled",
+  "paintable": true,
+  "note": ""
+ }
+]

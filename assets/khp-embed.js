@@ -11,7 +11,7 @@
   var MAP = {
     'home.html': 'home', 'orders.html': 'orders', 'planning.html': 'planning', 'allocation.html': 'allocation',
     'execution.html': 'execution', 'packing.html': 'packing', 'quality.html': 'quality', 'genealogy.html': 'genealogy',
-    'integration.html': 'integration', 'support.html': 'support'
+    'integration.html': 'integration', 'support.html': 'support', 'masters.html': 'masters'
   };
   document.addEventListener('click', function (e) {
     var a = e.target.closest ? e.target.closest('a[href]') : null;

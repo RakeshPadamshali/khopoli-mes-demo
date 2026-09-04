@@ -16,6 +16,7 @@ from gen.quality import build_quality
 from gen.ops import build_delays, build_kpis, live_snapshot
 from gen.integration import build_interfaces, build_messages, build_contracts
 from gen.support import build_support
+from gen.masters import build_masters
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_JS, OUT_JSON, OUT_MD = os.path.join(ROOT, "data", "khp-data.js"), os.path.join(ROOT, "data", "json"), os.path.join(ROOT, "data", "README.md")
@@ -111,6 +112,7 @@ KHP = dict(meta=dict(plant="JSW Steel Coated Products — Khopoli", title="Khopo
            pdi=E["pdi"], pdo=E["pdo"], confirmations=E["confirmations"], slitPlans=E["slitPlans"], packs=E["packs"], packingBills=E["packingBills"], dispatches=E["dispatches"], dispatchMessage=dispatch_message,
            defects=Q["defects"], decisions=Q["decisions"], downgradeSuggestions=Q["downgradeSuggestions"], certificates=Q["certificates"], holds=Q["holds"], delays=delays, kpis=kpis, live=live,
            interfaces=interfaces, messages=messages, alerts=alerts, contracts=contracts, incidents=S["incidents"], runbooks=S["runbooks"], actionCatalogue=S["actionCatalogue"], agentAudit=S["agentAudit"], supportMetrics=S["supportMetrics"], events=events)
+KHP.update(build_masters())
 
 DESC = {"plant": "The Khopoli plant and its upstream HSM plants (ASSETS).", "lines": "Manufacturing lines in scope incl. upcoming lines (status PLANNED = configuration-only onboarding).", "equipment": "Equipment per line; defects are attributedTo these ids. Includes upstream HSM equipment for cross-plant root cause.",
         "grades": "Steel grades with mechanical ranges (SPECIFICATION).", "coatings": "Zinc / aluzinc coating specs: nominal GSM, CGL target and allowed band.", "paints": "Paint systems with DFT targets and tolerances (CCL).", "rals": "RAL colour codes used on orders.",
@@ -128,7 +130,14 @@ DESC = {"plant": "The Khopoli plant and its upstream HSM plants (ASSETS).", "lin
         "messages": "48-hour middleware message log with statuses OK / FAILED / IN_QUEUE / REPLAYED, errors and history (scripted: stuck PDI queue, malformed ORDERS05 IDoc, PDO contract mismatch).", "alerts": "Monitoring alerts raised to operators, linked to messages and incidents.",
         "contracts": "Interface contracts / schemas with field definitions and version history.", "incidents": "ITSM incidents (30 days) with AI-agent classification, enrichment, knowledge source, proposed action, approval, resolution, MTTR.", "runbooks": "Runbooks / known-error records the agent cites.",
         "actionCatalogue": "AI-agent action catalogue: AUTONOMOUS / APPROVAL / PROHIBITED.", "agentAudit": "Immutable audit log of the hero incident (INC-26-0412).", "supportMetrics": "MI dashboard numbers: agent vs human resolution, MTTR by severity, false-action rate, coverage, weekly trend.",
-        "events": "Scripted scenario events: APS rush re-prioritisation (before/after CGL sequence), batch swap (BTA before/after), SAP order amendment (failed IDoc)."}
+        "events": "Scripted scenario events: APS rush re-prioritisation (before/after CGL sequence), batch swap (BTA before/after), SAP order amendment (failed IDoc).",
+        "workCentres": "Master: work centres per line with SAP work centre, cost centre, bypass / alternate work centre.", "productDefinitions": "Master: product × grade definitions with route template, material tree, batch prefix, SAP material pattern, quantity type.",
+        "standards": "Master: plant technical specification — international / national standards, grades covered, plant spec reference, version.", "qcCharacteristics": "Master: QC characteristics (MIC) with unit, method, products, frequency, source, auto-clearance flag.",
+        "compatibility": "Master: grade × coating compatibility with passivation / oiling options and paintability.", "rateChart": "Master: production rate chart — rated tph, line speed and budget tpd per line and thickness band.",
+        "udCodes": "Master: usage-decision codes configurable by business users, with SAP UD mapping and dispatch blocking.", "batchNumberConfig": "Master: batch-number generation per line (prefix, year/month token, sequence, skip, SAP / L2 alignment).",
+        "inventoryStatuses": "Master: inventory tracking statuses with meaning, SAP batch status mapping and allowed transitions.", "sapMapping": "Master: SAP–MES mapping (plant, storage locations, material types, movement types, work centres, batch classes, UD codes).",
+        "l2Mapping": "Master: MES–L2 mapping — PDI set-point fields ↔ OPC-UA tags ↔ PDO actual fields per line.", "consumables": "Master: consumables & zinc material with SAP material, UoM, consumption basis, standard rate, posting interface.",
+        "shiftIncharge": "Master: shift in-charge per line and shift with relief.", "roles": "Master: roles with home page, page access, View/Select/Delete/Transact rights and unit/line scope; single active session.", "users": "Master: users (control purpose) with role, line scope, authentication, last login."}
 
 
 def write():

@@ -1,0 +1,72 @@
+[
+ {
+  "id": "PLANNED",
+  "meaning": "output unit planned, not yet produced",
+  "sapBatchStatus": "—",
+  "allowedNext": "IN_PROCESS",
+  "countsAsStock": false
+ },
+ {
+  "id": "AVAILABLE",
+  "meaning": "in stock, free or allocated, usable",
+  "sapBatchStatus": "Unrestricted",
+  "allowedNext": "ALLOCATED, IN_PROCESS, ON_HOLD",
+  "countsAsStock": true
+ },
+ {
+  "id": "ALLOCATED",
+  "meaning": "reserved for a sales-order item (BatchOrderAllocation)",
+  "sapBatchStatus": "Unrestricted",
+  "allowedNext": "IN_PROCESS, AVAILABLE",
+  "countsAsStock": true
+ },
+ {
+  "id": "IN_PROCESS",
+  "meaning": "charged on a line",
+  "sapBatchStatus": "Unrestricted",
+  "allowedNext": "CONSUMED",
+  "countsAsStock": true
+ },
+ {
+  "id": "CONSUMED",
+  "meaning": "fully consumed by the next operation",
+  "sapBatchStatus": "—",
+  "allowedNext": "—",
+  "countsAsStock": false
+ },
+ {
+  "id": "ON_HOLD",
+  "meaning": "quality or weight hold, cannot move",
+  "sapBatchStatus": "Blocked",
+  "allowedNext": "AVAILABLE, REWORK, SCRAPPED",
+  "countsAsStock": true
+ },
+ {
+  "id": "PACKED",
+  "meaning": "packing unit created",
+  "sapBatchStatus": "Unrestricted",
+  "allowedNext": "DISPATCHED",
+  "countsAsStock": true
+ },
+ {
+  "id": "DISPATCHED",
+  "meaning": "left the plant, SAP dispatch posted",
+  "sapBatchStatus": "—",
+  "allowedNext": "—",
+  "countsAsStock": false
+ },
+ {
+  "id": "IN_TRANSIT",
+  "meaning": "transit batch from an upstream plant, GRN pending",
+  "sapBatchStatus": "Restricted",
+  "allowedNext": "AVAILABLE",
+  "countsAsStock": false
+ },
+ {
+  "id": "SCRAPPED",
+  "meaning": "scrapped with usage decision",
+  "sapBatchStatus": "—",
+  "allowedNext": "—",
+  "countsAsStock": false
+ }
+]

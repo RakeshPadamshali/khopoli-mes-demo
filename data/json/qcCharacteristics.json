@@ -1,0 +1,178 @@
+[
+ {
+  "id": "MIC-001",
+  "characteristic": "Coating weight — triple spot",
+  "unit": "g/m²",
+  "method": "ISO 1460",
+  "products": "GI, GL",
+  "frequency": "per coil",
+  "source": "L2 gauge + lab",
+  "autoClearance": true,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-002",
+  "characteristic": "Coating weight — single spot",
+  "unit": "g/m²",
+  "method": "ISO 1460",
+  "products": "GI, GL",
+  "frequency": "per coil",
+  "source": "lab",
+  "autoClearance": true,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-003",
+  "characteristic": "Yield strength",
+  "unit": "MPa",
+  "method": "IS 1608 / ISO 6892-1",
+  "products": "all",
+  "frequency": "per heat",
+  "source": "lab",
+  "autoClearance": true,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-004",
+  "characteristic": "Tensile strength",
+  "unit": "MPa",
+  "method": "IS 1608 / ISO 6892-1",
+  "products": "all",
+  "frequency": "per heat",
+  "source": "lab",
+  "autoClearance": true,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-005",
+  "characteristic": "Elongation A80",
+  "unit": "%",
+  "method": "IS 1608",
+  "products": "all",
+  "frequency": "per heat",
+  "source": "lab",
+  "autoClearance": true,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-006",
+  "characteristic": "Bend test 180°",
+  "unit": "pass/fail",
+  "method": "IS 1599",
+  "products": "all",
+  "frequency": "per coil",
+  "source": "lab",
+  "autoClearance": true,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-007",
+  "characteristic": "DFT top",
+  "unit": "µm",
+  "method": "ISO 2808",
+  "products": "PPGI, PPGL",
+  "frequency": "per coil",
+  "source": "L2 gauge + hand-held",
+  "autoClearance": true,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-008",
+  "characteristic": "DFT back",
+  "unit": "µm",
+  "method": "ISO 2808",
+  "products": "PPGI, PPGL",
+  "frequency": "per coil",
+  "source": "hand-held",
+  "autoClearance": true,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-009",
+  "characteristic": "T-bend adhesion",
+  "unit": "T",
+  "method": "EN 13523-7",
+  "products": "PPGI, PPGL",
+  "frequency": "per coil",
+  "source": "lab",
+  "autoClearance": false,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-010",
+  "characteristic": "Gloss 60°",
+  "unit": "GU",
+  "method": "EN 13523-2",
+  "products": "PPGI, PPGL",
+  "frequency": "per coil",
+  "source": "lab",
+  "autoClearance": true,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-011",
+  "characteristic": "Colour difference dE",
+  "unit": "ΔE",
+  "method": "EN 13523-3",
+  "products": "PPGI, PPGL",
+  "frequency": "per coil",
+  "source": "L2 spectro",
+  "autoClearance": true,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-012",
+  "characteristic": "Spangle appearance",
+  "unit": "class",
+  "method": "visual",
+  "products": "GI",
+  "frequency": "per coil",
+  "source": "SIS / manual",
+  "autoClearance": false,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-013",
+  "characteristic": "Surface roughness Ra",
+  "unit": "µm",
+  "method": "ISO 4287",
+  "products": "CRFH",
+  "frequency": "per coil",
+  "source": "lab",
+  "autoClearance": false,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-014",
+  "characteristic": "Thickness",
+  "unit": "mm",
+  "method": "X-ray gauge",
+  "products": "all",
+  "frequency": "continuous",
+  "source": "L2 gauge",
+  "autoClearance": true,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-015",
+  "characteristic": "Width",
+  "unit": "mm",
+  "method": "laser gauge",
+  "products": "all",
+  "frequency": "continuous",
+  "source": "L2 gauge",
+  "autoClearance": true,
+  "status": "ACTIVE"
+ },
+ {
+  "id": "MIC-016",
+  "characteristic": "Zinc bath Al %",
+  "unit": "%",
+  "method": "OES",
+  "products": "GI",
+  "frequency": "per shift",
+  "source": "lab",
+  "autoClearance": false,
+  "status": "ACTIVE"
+ }
+]

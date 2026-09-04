@@ -1,0 +1,218 @@
+[
+ {
+  "id": "SI-HRS-A",
+  "lineId": "HRS",
+  "shift": "A",
+  "incharge": "R. Patil",
+  "phone": "+91 98xx xx8056",
+  "relief": "K. Sawant",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-HRS-B",
+  "lineId": "HRS",
+  "shift": "B",
+  "incharge": "S. Kadam",
+  "phone": "+91 98xx xx8687",
+  "relief": "N. Bhosale",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-HRS-C",
+  "lineId": "HRS",
+  "shift": "C",
+  "incharge": "A. Shinde",
+  "phone": "+91 98xx xx8388",
+  "relief": "S. Chavan",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-PKL-A",
+  "lineId": "PKL",
+  "shift": "A",
+  "incharge": "M. Jadhav",
+  "phone": "+91 98xx xx1505",
+  "relief": "A. Kulkarni",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-PKL-B",
+  "lineId": "PKL",
+  "shift": "B",
+  "incharge": "P. More",
+  "phone": "+91 98xx xx5337",
+  "relief": "T. Deshpande",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-PKL-C",
+  "lineId": "PKL",
+  "shift": "C",
+  "incharge": "V. Gaikwad",
+  "phone": "+91 98xx xx9283",
+  "relief": "R. Naik",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-CRM-A",
+  "lineId": "CRM",
+  "shift": "A",
+  "incharge": "D. Pawar",
+  "phone": "+91 98xx xx6800",
+  "relief": "H. Mane",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-CRM-B",
+  "lineId": "CRM",
+  "shift": "B",
+  "incharge": "K. Sawant",
+  "phone": "+91 98xx xx8197",
+  "relief": "G. Salvi",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-CRM-C",
+  "lineId": "CRM",
+  "shift": "C",
+  "incharge": "N. Bhosale",
+  "phone": "+91 98xx xx7412",
+  "relief": "U. Joshi",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-CGL-A",
+  "lineId": "CGL",
+  "shift": "A",
+  "incharge": "S. Chavan",
+  "phone": "+91 98xx xx7016",
+  "relief": "R. Patil",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-CGL-B",
+  "lineId": "CGL",
+  "shift": "B",
+  "incharge": "A. Kulkarni",
+  "phone": "+91 98xx xx7107",
+  "relief": "S. Kadam",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-CGL-C",
+  "lineId": "CGL",
+  "shift": "C",
+  "incharge": "T. Deshpande",
+  "phone": "+91 98xx xx4975",
+  "relief": "A. Shinde",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-CCL-A",
+  "lineId": "CCL",
+  "shift": "A",
+  "incharge": "R. Naik",
+  "phone": "+91 98xx xx5837",
+  "relief": "M. Jadhav",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-CCL-B",
+  "lineId": "CCL",
+  "shift": "B",
+  "incharge": "H. Mane",
+  "phone": "+91 98xx xx9825",
+  "relief": "P. More",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-CCL-C",
+  "lineId": "CCL",
+  "shift": "C",
+  "incharge": "G. Salvi",
+  "phone": "+91 98xx xx3987",
+  "relief": "V. Gaikwad",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-SLT-A",
+  "lineId": "SLT",
+  "shift": "A",
+  "incharge": "U. Joshi",
+  "phone": "+91 98xx xx9044",
+  "relief": "D. Pawar",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-SLT-B",
+  "lineId": "SLT",
+  "shift": "B",
+  "incharge": "R. Patil",
+  "phone": "+91 98xx xx3791",
+  "relief": "K. Sawant",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-SLT-C",
+  "lineId": "SLT",
+  "shift": "C",
+  "incharge": "S. Kadam",
+  "phone": "+91 98xx xx6331",
+  "relief": "N. Bhosale",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-RWL-A",
+  "lineId": "RWL",
+  "shift": "A",
+  "incharge": "A. Shinde",
+  "phone": "+91 98xx xx5428",
+  "relief": "S. Chavan",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-RWL-B",
+  "lineId": "RWL",
+  "shift": "B",
+  "incharge": "M. Jadhav",
+  "phone": "+91 98xx xx6772",
+  "relief": "A. Kulkarni",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-RWL-C",
+  "lineId": "RWL",
+  "shift": "C",
+  "incharge": "P. More",
+  "phone": "+91 98xx xx2699",
+  "relief": "T. Deshpande",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-PKG-A",
+  "lineId": "PKG",
+  "shift": "A",
+  "incharge": "V. Gaikwad",
+  "phone": "+91 98xx xx3088",
+  "relief": "R. Naik",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-PKG-B",
+  "lineId": "PKG",
+  "shift": "B",
+  "incharge": "D. Pawar",
+  "phone": "+91 98xx xx3932",
+  "relief": "H. Mane",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "SI-PKG-C",
+  "lineId": "PKG",
+  "shift": "C",
+  "incharge": "K. Sawant",
+  "phone": "+91 98xx xx8979",
+  "relief": "G. Salvi",
+  "status": "ACTIVE"
+ }
+]

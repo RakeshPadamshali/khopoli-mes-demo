@@ -1,0 +1,122 @@
+[
+ {
+  "id": "rpatil",
+  "name": "R. Patil",
+  "role": "Operator",
+  "lineScope": "CGL",
+  "auth": "LDAP",
+  "status": "ACTIVE",
+  "singleSession": true,
+  "lastLogin": "2026-09-12 10:54"
+ },
+ {
+  "id": "skadam",
+  "name": "S. Kadam",
+  "role": "Operator",
+  "lineScope": "CCL",
+  "auth": "LDAP",
+  "status": "ACTIVE",
+  "singleSession": true,
+  "lastLogin": "2026-09-14 13:32"
+ },
+ {
+  "id": "ashinde",
+  "name": "A. Shinde",
+  "role": "Shift In-charge",
+  "lineScope": "PKL, CRM, CGL, CCL",
+  "auth": "LDAP",
+  "status": "ACTIVE",
+  "singleSession": true,
+  "lastLogin": "2026-09-15 21:58"
+ },
+ {
+  "id": "nbhosale",
+  "name": "N. Bhosale",
+  "role": "PPC Planner",
+  "lineScope": "*",
+  "auth": "LDAP",
+  "status": "ACTIVE",
+  "singleSession": true,
+  "lastLogin": "2026-09-12 20:51"
+ },
+ {
+  "id": "sdeshmukh",
+  "name": "S. Deshmukh",
+  "role": "QC Inspector",
+  "lineScope": "*",
+  "auth": "LDAP",
+  "status": "ACTIVE",
+  "singleSession": true,
+  "lastLogin": "2026-09-15 07:10"
+ },
+ {
+  "id": "nrao",
+  "name": "N. Rao",
+  "role": "QC Inspector",
+  "lineScope": "*",
+  "auth": "LDAP",
+  "status": "ACTIVE",
+  "singleSession": true,
+  "lastLogin": "2026-09-12 10:36"
+ },
+ {
+  "id": "miyer",
+  "name": "M. Iyer",
+  "role": "QC Head",
+  "lineScope": "*",
+  "auth": "LDAP",
+  "status": "ACTIVE",
+  "singleSession": true,
+  "lastLogin": "2026-09-13 17:54"
+ },
+ {
+  "id": "pnair",
+  "name": "P. Nair",
+  "role": "Plant IT",
+  "lineScope": "*",
+  "auth": "LDAP",
+  "status": "ACTIVE",
+  "singleSession": true,
+  "lastLogin": "2026-09-13 13:38"
+ },
+ {
+  "id": "rmenon",
+  "name": "R. Menon",
+  "role": "Plant IT",
+  "lineScope": "*",
+  "auth": "LDAP",
+  "status": "ACTIVE",
+  "singleSession": true,
+  "lastLogin": "2026-09-12 14:42"
+ },
+ {
+  "id": "mesadmin",
+  "name": "MES Administrator",
+  "role": "MES Admin",
+  "lineScope": "*",
+  "auth": "LDAP",
+  "status": "ACTIVE",
+  "singleSession": true,
+  "lastLogin": "2026-09-15 11:37"
+ },
+ {
+  "id": "vkulkarni",
+  "name": "V. Kulkarni",
+  "role": "Plant Head",
+  "lineScope": "*",
+  "auth": "LDAP",
+  "status": "ACTIVE",
+  "singleSession": true,
+  "lastLogin": "2026-09-12 21:10"
+ },
+ {
+  "id": "apackers",
+  "name": "Shree Packers (vendor)",
+  "role": "Operator",
+  "lineScope": "PKG",
+  "auth": "Local",
+  "status": "ACTIVE",
+  "singleSession": true,
+  "lastLogin": "2026-09-14 11:14"
+ }
+]

@@ -1,0 +1,182 @@
+[
+ {
+  "id": "SM-01",
+  "area": "Plant",
+  "mesObject": "plant",
+  "mesValue": "KHP",
+  "sapObject": "Werks",
+  "sapValue": "2100",
+  "note": "Khopoli"
+ },
+ {
+  "id": "SM-02",
+  "area": "Storage location",
+  "mesObject": "location",
+  "mesValue": "HR yard",
+  "sapObject": "Lgort",
+  "sapValue": "2101",
+  "note": "raw material"
+ },
+ {
+  "id": "SM-03",
+  "area": "Storage location",
+  "mesObject": "location",
+  "mesValue": "WIP",
+  "sapObject": "Lgort",
+  "sapValue": "2102",
+  "note": "intermediate"
+ },
+ {
+  "id": "SM-04",
+  "area": "Storage location",
+  "mesObject": "location",
+  "mesValue": "FG yard",
+  "sapObject": "Lgort",
+  "sapValue": "2103",
+  "note": "finished goods"
+ },
+ {
+  "id": "SM-05",
+  "area": "Storage location",
+  "mesObject": "location",
+  "mesValue": "Packing",
+  "sapObject": "Lgort",
+  "sapValue": "2104",
+  "note": "packed FG"
+ },
+ {
+  "id": "SM-06",
+  "area": "Storage location",
+  "mesObject": "location",
+  "mesValue": "Scrap yard",
+  "sapObject": "Lgort",
+  "sapValue": "2190",
+  "note": "scrap"
+ },
+ {
+  "id": "SM-07",
+  "area": "Material type",
+  "mesObject": "product",
+  "mesValue": "HRC",
+  "sapObject": "Mtart",
+  "sapValue": "ZHRC",
+  "note": "hot rolled coil"
+ },
+ {
+  "id": "SM-08",
+  "area": "Material type",
+  "mesObject": "product",
+  "mesValue": "CRFH",
+  "sapObject": "Mtart",
+  "sapValue": "ZCRF",
+  "note": "cold rolled full hard"
+ },
+ {
+  "id": "SM-09",
+  "area": "Material type",
+  "mesObject": "product",
+  "mesValue": "GI / GL",
+  "sapObject": "Mtart",
+  "sapValue": "ZGIC",
+  "note": "galvanized / galvalume"
+ },
+ {
+  "id": "SM-10",
+  "area": "Material type",
+  "mesObject": "product",
+  "mesValue": "PPGI / PPGL",
+  "sapObject": "Mtart",
+  "sapValue": "ZPPG",
+  "note": "colour coated"
+ },
+ {
+  "id": "SM-11",
+  "area": "Movement type",
+  "mesObject": "event",
+  "mesValue": "GRN HR coil",
+  "sapObject": "Bwart",
+  "sapValue": "101",
+  "note": "IF-SAP-16"
+ },
+ {
+  "id": "SM-12",
+  "area": "Movement type",
+  "mesObject": "event",
+  "mesValue": "consumption at operation",
+  "sapObject": "Bwart",
+  "sapValue": "261",
+  "note": "IF-SAP-10"
+ },
+ {
+  "id": "SM-13",
+  "area": "Movement type",
+  "mesObject": "event",
+  "mesValue": "production receipt",
+  "sapObject": "Bwart",
+  "sapValue": "101 / 131",
+  "note": "IF-SAP-10"
+ },
+ {
+  "id": "SM-14",
+  "area": "Movement type",
+  "mesObject": "event",
+  "mesValue": "storage location transfer",
+  "sapObject": "Bwart",
+  "sapValue": "311",
+  "note": "IF-SAP-08"
+ },
+ {
+  "id": "SM-15",
+  "area": "Movement type",
+  "mesObject": "event",
+  "mesValue": "dispatch (goods issue)",
+  "sapObject": "Bwart",
+  "sapValue": "601",
+  "note": "IF-SAP-11"
+ },
+ {
+  "id": "SM-16",
+  "area": "Work centre",
+  "mesObject": "lineId",
+  "mesValue": "CGL",
+  "sapObject": "Arbpl",
+  "sapValue": "WC_CGL1",
+  "note": "capacity in SAP PP"
+ },
+ {
+  "id": "SM-17",
+  "area": "Work centre",
+  "mesObject": "lineId",
+  "mesValue": "CCL",
+  "sapObject": "Arbpl",
+  "sapValue": "WC_CCL1",
+  "note": ""
+ },
+ {
+  "id": "SM-18",
+  "area": "Batch class",
+  "mesObject": "attribute",
+  "mesValue": "thk / width / weight",
+  "sapObject": "Class 023",
+  "sapValue": "ZCOIL_ATTR",
+  "note": "characteristics"
+ },
+ {
+  "id": "SM-19",
+  "area": "Batch class",
+  "mesObject": "attribute",
+  "mesValue": "coating / paint / RAL",
+  "sapObject": "Class 023",
+  "sapValue": "ZCOAT_ATTR",
+  "note": "characteristics"
+ },
+ {
+  "id": "SM-20",
+  "area": "Usage decision",
+  "mesObject": "udCode",
+  "mesValue": "PRIME / HOLD / SCRAP",
+  "sapObject": "QM UD code",
+  "sapValue": "A / H / X",
+  "note": "IF-SAP-12"
+ }
+]

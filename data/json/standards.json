@@ -1,0 +1,74 @@
+[
+ {
+  "id": "STD-01",
+  "standard": "EN 10346:2015",
+  "scope": "Continuously hot-dip coated steel flat products (GI/GL)",
+  "grades": "DX51D+Z, DX53D+Z, S350GD+Z",
+  "plantSpec": "KHP-PTS-GI-01",
+  "version": "v3 (2026-02)",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "STD-02",
+  "standard": "IS 277:2018",
+  "scope": "Galvanized steel sheets (plain and corrugated)",
+  "grades": "CQ-IS277",
+  "plantSpec": "KHP-PTS-GI-02",
+  "version": "v2 (2025-11)",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "STD-03",
+  "standard": "JIS G3302:2019",
+  "scope": "Hot-dip zinc-coated steel sheet and strip",
+  "grades": "SGCC",
+  "plantSpec": "KHP-PTS-GI-03",
+  "version": "v1 (2025-08)",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "STD-04",
+  "standard": "JIS G3321:2019",
+  "scope": "Hot-dip 55% Al-Zn alloy-coated (Galvalume)",
+  "grades": "SGLCC",
+  "plantSpec": "KHP-PTS-GL-01",
+  "version": "v1 (2025-08)",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "STD-05",
+  "standard": "EN 10169:2022",
+  "scope": "Organic coated (colour coated) steel flat products",
+  "grades": "PPGI / PPGL on DX51D+Z, SGLCC",
+  "plantSpec": "KHP-PTS-PP-01",
+  "version": "v2 (2026-01)",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "STD-06",
+  "standard": "IS 513:2016",
+  "scope": "Cold reduced carbon steel sheet and strip",
+  "grades": "CR4-CRFH",
+  "plantSpec": "KHP-PTS-CR-01",
+  "version": "v1 (2025-06)",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "STD-07",
+  "standard": "IS 2062:2011",
+  "scope": "Hot rolled structural steel (HRPO input)",
+  "grades": "HRPO-E250",
+  "plantSpec": "KHP-PTS-HR-01",
+  "version": "v1 (2025-06)",
+  "status": "ACTIVE"
+ },
+ {
+  "id": "STD-08",
+  "standard": "ASTM A653/A653M-23",
+  "scope": "Zinc-coated by hot-dip (export)",
+  "grades": "CS Type B, SS Gr 50",
+  "plantSpec": "KHP-PTS-GI-04",
+  "version": "draft",
+  "status": "UNDER REVIEW"
+ }
+]

@@ -11,6 +11,7 @@ Clickable, self-contained demo for the **JSW Steel Coated Products — Khopoli**
 | **S5 Integration resilience** | Integration Monitor (stuck PDI queue, malformed IDoc, detect → alert → replay, contract versions) |
 | S6 Dashboards | Plant Dashboard (live board, OEE / yield / OTIF / delay categories) |
 | **S7 AI-agent support (mandatory)** | Data feed only — AI Support Data page + `data/json/`; the chatbot is a separate deliverable |
+| S8 partial — master data | Master Data: 24 masters (lines, work centres, equipment, product definitions, specs, QC characteristics, compatibility, rate chart, codes, batch numbering, SAP–MES / MES–L2 mappings, consumables, shifts, roles, users) with Excel template download, upload with validation, preview and audit |
 
 Everything is fictional (customers, orders, coils, people, incidents). Line names, products, rules and the ontology come from the RFP.
 

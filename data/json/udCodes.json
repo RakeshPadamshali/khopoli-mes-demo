@@ -1,0 +1,74 @@
+[
+ {
+  "id": "PRIME",
+  "description": "Prime — cleared for the allocated sales order",
+  "segment": "Prime",
+  "autoAllowed": true,
+  "sapUdCode": "A",
+  "blocksDispatch": false,
+  "configuredBy": "QC Head"
+ },
+ {
+  "id": "DOWNGRADE-S1",
+  "description": "Downgrade to secondary grade 1 (re-allocate)",
+  "segment": "Secondary 1",
+  "autoAllowed": false,
+  "sapUdCode": "R1",
+  "blocksDispatch": false,
+  "configuredBy": "QC Head"
+ },
+ {
+  "id": "DOWNGRADE-S2",
+  "description": "Downgrade to commercial / secondary 2",
+  "segment": "Secondary 2",
+  "autoAllowed": false,
+  "sapUdCode": "R2",
+  "blocksDispatch": false,
+  "configuredBy": "QC Head"
+ },
+ {
+  "id": "HOLD",
+  "description": "QA hold — decision pending",
+  "segment": null,
+  "autoAllowed": true,
+  "sapUdCode": "H",
+  "blocksDispatch": true,
+  "configuredBy": "QC Head"
+ },
+ {
+  "id": "REWORK",
+  "description": "Rework / re-process on a new production order",
+  "segment": null,
+  "autoAllowed": false,
+  "sapUdCode": "W",
+  "blocksDispatch": true,
+  "configuredBy": "QC Head"
+ },
+ {
+  "id": "REINSPECT",
+  "description": "Re-inspection required",
+  "segment": null,
+  "autoAllowed": false,
+  "sapUdCode": "I",
+  "blocksDispatch": true,
+  "configuredBy": "QC Head"
+ },
+ {
+  "id": "DIVERT",
+  "description": "Divert to another sales order (validated against its TDC)",
+  "segment": "Prime",
+  "autoAllowed": false,
+  "sapUdCode": "D",
+  "blocksDispatch": false,
+  "configuredBy": "PPC + QC"
+ },
+ {
+  "id": "SCRAP",
+  "description": "Scrap",
+  "segment": null,
+  "autoAllowed": false,
+  "sapUdCode": "X",
+  "blocksDispatch": true,
+  "configuredBy": "QC Head + Plant Head"
+ }
+]
