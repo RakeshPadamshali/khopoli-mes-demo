@@ -54,15 +54,21 @@
   function sel(id,label,vals){ return '<span class="fl">'+label+'</span><select id="'+id+'"><option value="">All</option>'+vals.map(function(v){return '<option>'+esc(v)+'</option>';}).join('')+'</select>'; }
   document.getElementById('filters').innerHTML=sel('f-cust','Customer',uniq('customerName'))+sel('f-prod','Product',uniq('product'))+sel('f-status','Status',['OPEN','IN_PROGRESS','PARTIALLY_DISPATCHED','DISPATCHED'])+
     '<span class="fl">Search</span><input id="f-q" placeholder="SO / item / customer" size="14"><span class="hint" id="fc" style="margin-left:auto"></span>';
+  // live BTA: allocations made on the Material Allocator (state 'alloc') and the batch swap toggle (state 'swapped') move the balance-to-allocate here too
+  var alloc=X.state.get('alloc',{}), swapped=X.state.get('swapped',true), SW=D.events&&D.events.swap;
+  function liveNums(o){ var extra=Object.keys(alloc).filter(function(k){return alloc[k]===o.id;}).reduce(function(a,k){ var u=X.unit(k); return a+(u?u.weightMT:0); },0), a=o.allocatedMT+extra, bta=Math.max(0,o.qtyMT-a), note=extra?'+'+X.n(extra,1)+' t allocated live':'';
+    if(SW&&!swapped){ var b=SW.btaBefore.filter(function(x){return x.itemId===o.id;})[0]; if(b){ a=b.allocatedMT+extra; bta=Math.max(0,b.btaMT-extra); note='before batch swap'; } }
+    else if(SW&&SW.btaAfter.some(function(x){return x.itemId===o.id;})) note=note||'after batch swap';
+    return {allocatedMT:a,btaMT:bta,note:note}; }
   var COLS=['','SO / item','Customer','Product · grade','Thk × width','Coating · paint','Qty MT','Fulfilment','BTA / BTP','Req · FP commit','Route','Status'];
   function row(o){
-    var pa=Math.min(100,o.allocatedMT/o.qtyMT*100), pp=Math.min(100,o.producedMT/o.qtyMT*100), pd=Math.min(100,o.dispatchedMT/o.qtyMT*100); var ord=X.order(o.soId)||{};
+    var L=liveNums(o), pa=Math.min(100,L.allocatedMT/o.qtyMT*100), pp=Math.min(100,o.producedMT/o.qtyMT*100), pd=Math.min(100,o.dispatchedMT/o.qtyMT*100); var ord=X.order(o.soId)||{};
     return '<tr class="o-row'+(o.hero?' hero':'')+'" id="r-'+o.id.replace('/','-')+'"><td><button class="exp-btn" data-exp="'+esc(o.id)+'"><i class="fa-solid fa-chevron-right"></i></button></td>'+
       '<td class="mono strong">'+esc(o.id)+(o.hero?' <i class="fa-solid fa-flag-checkered hero-mark" title="golden-thread order"></i>':'')+(ord.rush?' <span class="badge b-red">RUSH</span>':'')+(ord.amendment?' <span class="badge b-amber">AMEND</span>':'')+(o.simulated?' <span class="badge b-blue">NEW · IDoc</span>':'')+'</td>'+
       '<td>'+esc(o.customerName)+'<div class="hint">'+esc(o.segment)+'</div></td><td><span class="chip">'+esc(o.product)+'</span> '+esc(o.gradeId)+'</td><td class="mono">'+o.thk.toFixed(2)+' × '+o.width+(o.slitWidths?'<div class="hint">slit '+o.slitWidths.join(' + ')+'</div>':'')+'</td>'+
       '<td>'+(o.coatingId?esc(o.coatingId):'—')+(o.paintId?' · '+esc(o.paintId)+' RAL '+esc(o.ral)+'<div class="hint">DFT '+o.dftTop+' ±'+o.dftTol+' / '+o.dftBack+' µm</div>':'')+'</td>'+
-      '<td class="mono right-al strong">'+X.n(o.qtyMT)+'</td><td><div class="prog"><span class="track"><span class="d" style="width:'+pd+'%"></span><span class="p" style="width:'+Math.max(0,pp-pd)+'%"></span><span class="a" style="width:'+Math.max(0,pa-pp)+'%"></span></span><span class="mono small">'+X.n(o.dispatchedMT,1)+' / '+X.n(o.producedMT,1)+' / '+X.n(o.allocatedMT,1)+'</span></div></td>'+
-      '<td class="mono">'+X.n(o.btaMT,1)+' / '+X.n(o.btpMT,1)+'</td><td class="mono">'+esc(o.reqDate.slice(5))+' · <span class="hint">'+esc(o.fpCommit.slice(5))+'</span></td><td>'+badge(ord.routeSource||'FP',(ord.routeSource||'FP')+' route')+'</td><td>'+badge(o.status)+'</td></tr>';
+      '<td class="mono right-al strong">'+X.n(o.qtyMT)+'</td><td><div class="prog"><span class="track"><span class="d" style="width:'+pd+'%"></span><span class="p" style="width:'+Math.max(0,pp-pd)+'%"></span><span class="a" style="width:'+Math.max(0,pa-pp)+'%"></span></span><span class="mono small">'+X.n(o.dispatchedMT,1)+' / '+X.n(o.producedMT,1)+' / '+X.n(L.allocatedMT,1)+'</span></div></td>'+
+      '<td class="mono">'+X.n(L.btaMT,1)+' / '+X.n(o.btpMT,1)+(L.note?'<div class="hint"><i class="fa-solid fa-arrows-rotate"></i> '+esc(L.note)+'</div>':'')+'</td><td class="mono">'+esc(o.reqDate.slice(5))+' · <span class="hint">'+esc(o.fpCommit.slice(5))+'</span></td><td>'+badge(ord.routeSource||'FP',(ord.routeSource||'FP')+' route')+'</td><td>'+badge(o.status)+'</td></tr>';
   }
   var tbl=document.getElementById('tbl');
   function apply(){

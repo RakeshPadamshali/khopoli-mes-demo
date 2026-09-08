@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coil Plan · Khopoli NextGen MES</title>
+<link rel="stylesheet" href="assets/vendor/roboto/roboto.css"><link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css"><link rel="stylesheet" href="assets/khp-shell.css">
+<style>
+  .tbl-wrap { max-height:none; }
+  .filters select, .filters input { font:12px 'Roboto'; padding:4px 8px; border:1px solid var(--color-border); border-radius:5px; }
+  .rchips { display:flex; gap:2px; align-items:center; white-space:nowrap; } .rchip { font:700 8.5px 'Roboto'; color:#fff; padding:1px 4px; border-radius:4px; border:1px solid transparent; }
+  .rchip.pl { opacity:.8; border-style:dashed; border-color:#333; } .rchip.cm { background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.45) 0 3px,transparent 3px 7px); } .rchip.rn { box-shadow:inset 0 0 0 2px #1f3b73; }
+  .rchip.bh { background:#fff !important; color:#8a93a0; border:1px dashed #c2c8cf; } .rchip.wp { background:#c2c8cf !important; color:#42556b; } .rarr { color:#c2c8cf; font-size:9px; }
+  #cplan tr.selrow td:first-child { box-shadow:inset 3px 0 0 #00acc1; } #cplan tr.detail td { background:#f7f9fb; }
+  .ops { width:100%; border-collapse:collapse; font-size:11.5px; } .ops th { font:600 9.5px 'Roboto'; text-transform:uppercase; letter-spacing:.3px; color:#8a93a0; text-align:left; padding:4px 8px; } .ops td { padding:4px 8px; border-top:1px solid #edf0f3; vertical-align:top; }
+  .lgd { display:flex; gap:10px; align-items:center; flex-wrap:wrap; font-size:11px; color:var(--color-text-muted); margin-left:auto; } .lgd .rchip { font-size:9px; }
+  .badge.b-rr { background:#ede7f6; color:#5e35b1; }
+</style>
+<script src="assets/khp-embed.js"></script>
+</head>
+<body>
+<div class="bm-layout">
+  <main class="bm-content">
+    <div class="page-bar">
+      <div><h1>Coil Plan — route with the planned schedule per coil, in sequence</h1><div class="crumb">Planning › Coil Plan › <span id="ctx"></span></div></div>
+      <div class="actions"><a class="btn btn-outline" href="planning.html"><i class="fa-solid fa-route"></i> Routes &amp; Schedules</a><a class="btn btn-outline" href="execution.html"><i class="fa-solid fa-industry"></i> Shop-floor</a><a class="btn btn-outline" href="orders.html"><i class="fa-solid fa-file-invoice"></i> Sales Orders</a></div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-list-ol"></i> Coil plan — one row per coil of the line load, ordered by the start of its next open step <span class="right" id="cpmeta"></span></div>
+      <div class="card-body">
+        <div class="filters" id="filters"></div>
+        <div class="tbl-wrap"><table class="tbl" id="cplan"></table></div>
+        <div class="note"><i class="fa-solid fa-circle-info"></i><span>Same dataset as the full-load gantt on Routes &amp; Schedules: recorded coils (history + plan, one row follows the coil through its identities HR coil → HRPO → CRFH → GI → PPGI → slit → pack) and campaign coils (plan only — a production order and an HR coil are assigned at release). The route comes from the chosen FP / SAP route and its sequence is not user-reorderable. Click a row for the operation schedule: planned start and end per step, duration, wait before the step, reroutes and shifts recorded on Routes &amp; Schedules. Steps of a WIP coil done before the plan and steps beyond the 10-day horizon are shown greyed.</span></div>
+      </div>
+    </div>
+  </main>
+</div>
+<script>window.KHP_PAGE='coilplan'; window.KHP_TITLE='Coil Plan'; window.KHP_ICON='fa-list-ol';</script>
+<script src="assets/khp-chrome.js"></script><script src="data/khp-data.js"></script><script src="assets/khp-core.js"></script>
+<script>
+  var X=window.KHPX, D=X.D, esc=X.esc, badge=X.badge, S=D.schedules, LC=X.LINE_COLOR||{};
+  document.getElementById('ctx').textContent=D.plant.name+' · as of '+X.fmt(D.meta.asOf);
+  // ---- same dataset as the full-load gantt: recorded schedule rows + campaign coils, with reroutes / cascaded shifts from the demo state ----
+  var CMP=(D.campaigns||[]).map(function(c){ var it=X.item(c.itemId)||{}; return Object.assign({},c,{customerName:it.customerName||'',gradeId:it.gradeId||'',thk:it.thk,width:it.width,ral:it.ral,coatingId:it.coatingId,po:'— at release',campaignRow:true}); });
+  var ALL=S.concat(CMP), ALLBY={}; ALL.forEach(function(s){ ALLBY[s.id]=s; });
+  var reroutes=X.state.get('reroutes',[]), EFF={}; reroutes.forEach(function(r){ EFF[r.schId]={line:r.toLine,start:r.start,end:r.end,rr:r}; (r.cascade||[]).forEach(function(c){ var x=ALLBY[c.id]; if(x) EFF[c.id]={line:x.line,start:c.start,end:c.end,shift:r}; }); });
+  function eff(s){ return EFF[s.id]||{line:s.line,start:s.plannedStart,end:s.plannedEnd}; }
+  function coilKey(s){ return s.threadId||s.unitId; } function stepIdx(s){ return s.stage||(((X.route(s.itemId)||{}).path||[]).indexOf(s.line)+1); }
+  var TYPE={SLT:'SPLIT',HRS:'SPLIT',RWL:'TRIM',PKG:'PACK'}, cpOpen={}; if(X.hero&&X.hero.threadId) cpOpen[X.hero.threadId]=true;
+  var PLAN=(function(){ var g={}; ALL.forEach(function(s){ var k=coilKey(s); (g[k]=g[k]||[]).push(s); }); var out=[];
+    Object.keys(g).forEach(function(k){ var rows=g[k].slice().sort(function(a,b){return stepIdx(a)-stepIdx(b);}), open=rows.filter(function(s){return s.status!=='DONE';}); if(!open.length) return;
+      var f=rows[0], it=X.item(f.itemId)||{}, r=X.route(f.itemId), path=(r&&r.path)||rows.map(function(s){return s.line;});
+      out.push({key:k,rows:rows,path:path,it:it,f:f,openStart:Math.min.apply(null,open.map(function(s){return +new Date(eff(s).start);})),start:Math.min.apply(null,rows.map(function(s){return +new Date(eff(s).start);})),end:Math.max.apply(null,rows.map(function(s){return +new Date(eff(s).end);})),
+        campaign:!!f.campaignRow,coil:open[0].unitId,hr:f.unitId,running:rows.some(function(s){return s.status==='IN_PROGRESS';}),done:rows.length-open.length,qty:f.qtyMT||0,rerouted:rows.some(function(s){return !!eff(s).rr;}),shifted:rows.some(function(s){return !!eff(s).shift;})}); });
+    return out.sort(function(a,b){return a.openStart-b.openStart;}); })();
+  // ---- filters ----
+  var items=D.items.slice().sort(function(a,b){return (b.hero?1:0)-(a.hero?1:0)||(a.id<b.id?-1:1);}), lines=D.lines.filter(function(l){return l.status==='ACTIVE';});
+  document.getElementById('filters').innerHTML='<span class="fl">Order</span><select id="f-order"><option value="">All orders</option>'+items.map(function(i){return '<option value="'+esc(i.id)+'">'+esc(i.id)+' · '+esc(i.customerName)+(i.hero?' ★':'')+'</option>';}).join('')+'</select>'+
+    '<span class="fl">Line</span><select id="f-line"><option value="">Any line</option>'+lines.map(function(l){return '<option value="'+l.id+'">'+esc(l.name)+'</option>';}).join('')+'</select>'+
+    '<span class="fl">Kind</span><select id="f-kind"><option value="">All coils</option><option value="running">Running now</option><option value="recorded">Recorded (HR coil allocated)</option><option value="campaign">Campaign (HR coil at release)</option><option value="wip">WIP campaign coils</option><option value="rr">Rerouted / shifted</option></select>'+
+    '<span class="fl">Search</span><input id="cpsearch" placeholder="coil / SO / customer / campaign" size="26">'+
+    '<span class="lgd"><span class="rchip" style="background:#8a93a0">done</span><span class="rchip rn" style="background:#8a93a0">running</span><span class="rchip pl" style="background:#8a93a0">planned</span><span class="rchip pl cm" style="background:#8a93a0">campaign</span><span class="rchip wp">WIP · done before plan</span><span class="rchip bh">beyond horizon</span></span>';
+  var F={order:'',line:'',kind:'',q:''};
+  var hp=X.hashParam(); if(hp){ if(X.item(hp)) F.order=hp; else F.q=hp; }
+  document.getElementById('f-order').value=F.order; document.getElementById('cpsearch').value=F.q;
+  ['f-order','f-line','f-kind'].forEach(function(id){ document.getElementById(id).addEventListener('change',function(){ F[id.slice(2)]=this.value; render(); }); });
+  document.getElementById('cpsearch').addEventListener('input',function(){ F.q=this.value; render(); });
+  function stepOf(c,i){ return c.rows.filter(function(x){return stepIdx(x)===i+1;})[0]; }
+  function chips(c){ return c.path.map(function(p,i){ var s=stepOf(c,i), wp=!s&&c.campaign&&c.f.wip&&i+1<stepIdx(c.f), cls=!s?(wp?'wp':'bh'):s.status==='DONE'?'':s.status==='IN_PROGRESS'?'rn':(s.campaignRow?'pl cm':'pl'), f=s?eff(s):null, l=X.line(p);
+      return '<span class="rchip '+cls+'" style="background:'+(LC[p]||'#888')+'" title="'+esc(l?l.name:p)+(f?' · '+X.fmt(f.start)+' → '+X.fmtT(f.end)+' · '+esc(s.status):wp?' · done before the plan (WIP)':' · beyond the 10-day horizon')+'">'+esc(p)+'</span>'; }).join('<i class="fa-solid fa-angle-right rarr"></i>'); }
+  function visible(){ var q=F.q.trim().toLowerCase(); return PLAN.filter(function(c){ if(F.order&&c.f.itemId!==F.order) return false; if(F.line&&c.path.indexOf(F.line)<0) return false;
+      if(F.kind==='running'&&!c.running) return false; if(F.kind==='recorded'&&c.campaign) return false; if(F.kind==='campaign'&&!c.campaign) return false; if(F.kind==='wip'&&!(c.campaign&&c.f.wip)) return false; if(F.kind==='rr'&&!(c.rerouted||c.shifted)) return false;
+      if(q&&(c.rows.map(function(x){return x.unitId;}).join(' ')+' '+c.f.itemId+' '+c.f.soId+' '+(c.it.customerName||'')+' '+(c.f.campaign||'')+' '+(c.f.threadId||'')).toLowerCase().indexOf(q)<0) return false; return true; }); }
+  function kpis(list){ var t=list.reduce(function(a,c){return a+c.qty;},0), steps=list.reduce(function(a,c){return a+c.rows.filter(function(s){return s.status!=='DONE';}).length;},0), run=list.filter(function(c){return c.running;}).length, cmp=list.filter(function(c){return c.campaign;}).length;
+    var w0=list.length?new Date(Math.min.apply(null,list.map(function(c){return c.openStart;}))):null, w1=list.length?new Date(Math.max.apply(null,list.map(function(c){return c.end;}))):null;
+    document.getElementById('kpis').innerHTML=[['Coils in plan',list.length,PLAN.length+' in the whole load','blue'],['Open steps',steps,'not yet finished','blue'],['Tonnage',X.n(t)+' t','balance in the plan','accent'],['Running now',run,'a step in progress at '+X.fmtT(X.ASOF),'green'],['Campaign coils',cmp,'HR coil assigned at release · '+(list.length-cmp)+' recorded','grey'],
+      ['Plan window',w0?Math.round((w1-w0)/86400000*10)/10+' d':'—',w0?X.fmtD(w0)+' → '+X.fmtD(w1):'no coil','amber']].map(function(k){return '<div class="kpi '+k[3]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="s">'+k[2]+'</div></div>';}).join(''); }
+  function render(){ var list=visible(); kpis(list);
+    document.getElementById('cpmeta').innerHTML=list.length+' of '+PLAN.length+' coils · '+list.reduce(function(a,c){return a+c.rows.filter(function(s){return s.status!=='DONE';}).length;},0)+' open steps · '+X.n(list.reduce(function(a,c){return a+c.qty;},0))+' t';
+    document.getElementById('cplan').innerHTML='<thead><tr><th></th><th>#</th><th>Coil</th><th>Order · customer</th><th>Product</th><th>Size</th><th>t</th><th>Route (steps in sequence)</th><th>Window</th><th>Status</th></tr></thead><tbody>'+(list.length?list.map(function(c,i){ var it=c.it, open=cpOpen[c.key];
+      var head='<tr class="'+(c.f.itemId===F.order?'selrow':'')+(c.f.hero?' hero':'')+'" data-exp="'+esc(c.key)+'" style="cursor:pointer"><td><i class="fa-solid fa-chevron-'+(open?'down':'right')+'" style="color:var(--color-primary)"></i></td><td class="mono hint">'+(i+1)+'</td><td class="mono strong">'+esc(c.coil)+(c.f.rush?' <span class="badge b-red">RUSH</span>':'')+'<div class="hint">'+(c.campaign?'campaign coil '+c.f.coilSeq+'/'+c.f.coilsOf+(c.f.wip?' · WIP':'')+' · HR coil at release':esc(c.f.threadId||'')+' · from '+esc(c.hr))+'</div></td><td class="mono">'+esc(c.f.itemId)+'<div class="hint">'+esc(it.customerName||'')+'</div></td><td><span class="chip">'+esc(it.product||c.f.product)+'</span> '+esc(it.gradeId||'')+(it.ral?' RAL '+esc(it.ral):'')+'</td><td class="mono">'+(it.thk||'')+'×'+(it.width||'')+'</td><td class="mono right-al">'+X.n(c.qty,1)+'</td><td><div class="rchips">'+chips(c)+'</div></td><td class="mono" style="white-space:nowrap" title="'+Math.round((c.end-c.start)/3600000)+' h door to door">'+X.fmt(new Date(c.start))+'<br>→ '+X.fmt(new Date(c.end))+'</td><td>'+(c.running?badge('IN_PROGRESS','RUNNING'):c.done?badge('IN_PROGRESS'):badge('PLANNED'))+(c.campaign?' <span class="badge b-grey">campaign</span>':'')+(c.rerouted?' <span class="badge b-rr">REROUTED</span>':c.shifted?' <span class="badge b-rr">SHIFTED</span>':'')+'</td></tr>';
+      if(!open) return head;
+      var det='<tr class="detail"><td></td><td colspan="9"><div class="sub-title" style="margin:2px 0 4px"><i class="fa-solid fa-diagram-project"></i> Operation schedule — '+esc(c.coil)+' · '+c.path.length+' steps · route from the '+esc((X.route(c.f.itemId)||{}).chosen||'FP')+' route (sequence derived from the route, not user-reorderable)</div><table class="ops"><thead><tr><th>Seq</th><th>Step</th><th>Line</th><th>Type</th><th>Planned start</th><th>Planned end</th><th>Duration</th><th>Wait before</th><th>Status</th><th>Detail</th></tr></thead><tbody>'+
+        c.path.map(function(p,i){ var s=stepOf(c,i), l=X.line(p); if(!s){ var wp=c.campaign&&c.f.wip&&i+1<stepIdx(c.f); return '<tr><td class="mono hint">'+(i+1)+'</td><td>'+esc(l?l.name:p)+'</td><td class="mono">'+esc(p)+'</td><td><span class="badge b-grey">'+(TYPE[p]||'TRANSFORM')+'</span></td><td colspan="4" class="hint">'+(wp?'done before the plan (WIP in the yard)':'beyond the 10-day horizon')+'</td><td>'+badge(wp?'DONE':'PLANNED',wp?'DONE':'UNSCHEDULED')+'</td><td></td></tr>'; }
+          var f=eff(s), prev=stepOf(c,i-1), wait=prev?(+new Date(f.start)-+new Date(eff(prev).end))/3600000:null, rr=f.rr;
+          return '<tr><td class="mono hint">'+(i+1)+'</td><td>'+esc(l?l.name:p)+'</td><td class="mono">'+esc(f.line)+(rr?' <span class="badge b-rr">'+esc(rr.kind)+'</span>':'')+(f.shift?' <span class="badge b-rr">SHIFTED</span>':'')+'</td><td><span class="badge b-grey">'+(TYPE[p]||'TRANSFORM')+'</span></td><td class="mono">'+X.fmt(f.start)+'</td><td class="mono">'+X.fmt(f.end)+'</td><td class="mono">'+Math.round((+new Date(f.end)-+new Date(f.start))/60000)+' min</td><td class="mono">'+(wait==null?'—':(wait<0?'<span class="deviation">':'')+X.n(wait,1)+' h'+(wait<0?'</span>':''))+'</td><td>'+badge(s.status)+'</td><td class="small mono">'+(s.campaignRow?esc(s.campaign)+' · '+esc(s.family)+(s.changeoverMin?' · c/o '+s.changeoverMin+' min':''):esc(s.unitId)+' → '+esc(s.product)+' · '+esc(rr?rr.newPo:(s.po||'')))+'</td></tr>'; }).join('')+'</tbody></table></td></tr>';
+      return head+det; }).join(''):'<tr><td colspan="10" class="hint">No coil matches the filters.</td></tr>')+'</tbody>'; }
+  document.getElementById('cplan').addEventListener('click',function(e){ var tr=e.target.closest('[data-exp]'); if(!tr) return; var k=tr.getAttribute('data-exp'); cpOpen[k]=!cpOpen[k]; render(); });
+  render();
+</script>
+</body>
+</html>
