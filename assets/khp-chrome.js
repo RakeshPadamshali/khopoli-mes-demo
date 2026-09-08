@@ -18,7 +18,7 @@
     '<div class="logo"><i class="fa-solid fa-layer-group"></i> JSW Steel Coated Products <span class="sub">Khopoli NextGen MES</span></div>' +
     '<div class="module-name"><i class="fa-solid ' + (window.KHP_ICON || 'fa-diagram-project') + '" style="margin-right:4px;color:var(--accent);"></i>' + (window.KHP_TITLE || 'One MES — Coated Products template') + '</div>' +
     '<div class="spacer"></div>' +
-    '<div class="plant-switch"><button class="active"><i class="fa-solid fa-location-dot" style="margin-right:4px"></i>Khopoli</button><button>Vasind</button><button>Tarapur</button><button>Kalmeshwar</button></div>' +
+    '<div class="plant-switch"><button class="active"><i class="fa-solid fa-location-dot" style="margin-right:4px"></i>Khopoli</button></div>' +
     '<div class="right"><span class="asof"><i class="fa-regular fa-clock"></i> as of Tue 15 Sep 2026 10:30 · Shift A</span><button class="btn-reset" id="khp-reset" title="Reset the live-demo actions on every page"><i class="fa-solid fa-rotate-left"></i> Reset demo</button><div class="avatar">RP</div></div>';
   document.body.insertBefore(h, layout);
   var side = document.createElement('aside'); side.className = 'bm-sidebar';
