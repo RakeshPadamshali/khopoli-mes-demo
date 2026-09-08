@@ -100,6 +100,17 @@ for rel, a, b in T["edges"]:
 for d in Q["defects"]:
     assert d["detectedOn"] in mats, d["id"]; assert d["attributedTo"] in eq_ids, f"{d['id']} attributedTo {d['attributedTo']}"
 for s in T["schedules"]: assert s["unitId"] in mats, s["id"]
+# EST precedence: no step of a coil starts before its previous step ends — recorded threads and campaign coils alike
+_by = {}
+for s in T["stages"]: _by.setdefault(s["threadId"], []).append(s)
+for _rows in _by.values():
+    _rows.sort(key=lambda s: s["seq"])
+    for _a, _b in zip(_rows, _rows[1:]): assert _b["start"] >= _a["end"], f"precedence {_a['id']} ends {_a['end']} but {_b['id']} starts {_b['start']}"
+_by = {}
+for r in C: _by.setdefault(r["unitId"], []).append(r)
+for _rows in _by.values():
+    _rows.sort(key=lambda r: r["stage"])
+    for _a, _b in zip(_rows, _rows[1:]): assert _b["plannedStart"] >= _a["plannedEnd"], f"precedence {_a['id']} -> {_b['id']}"
 assert all(x["itemId"] in by_item for x in T["allocations"])
 free_ids = {u["id"] for u in free}
 assert all(x["unitId"] in free_ids for x in sugg)

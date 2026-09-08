@@ -120,7 +120,7 @@ Fields: `id`, `unitId`, `itemId`, `at`, `by`, `ppcApproval`, `qcApproval`, `stat
 Line schedules of the recorded coils (one row per coil per line) with status vs as-of, track and rush markers.
 Fields: `id`, `line`, `threadId`, `itemId`, `soId`, `customerName`, `unitId`, `po`, `product`, `gradeId`, `thk`, `width`, `ral`, `coatingId`, `plannedStart`, `plannedEnd`, `status`, `hero` …
 
-### `campaigns.json` — 947 records
+### `campaigns.json` — 828 records
 Forward line-load plan: the balance-to-produce of every open item as ~20 t campaign coils (PLC-…), sequenced per line over a 10-day horizon by campaign family (coating / thickness on CGL, light → dark colour on CCL, gauge on CRM, knife set on the slitter) with changeover minutes. Schedule-only: no material or production order exists until release.
 Fields: `id`, `line`, `unitId`, `coilSeq`, `coilsOf`, `itemId`, `soId`, `product`, `qtyMT`, `stage`, `stages`, `wip`, `plannedStart`, `plannedEnd`, `status`, `campaign`, `family`, `changeoverMin` …
 
@@ -128,19 +128,19 @@ Fields: `id`, `line`, `unitId`, `coilSeq`, `coilsOf`, `itemId`, `soId`, `product
 Free HR coils in the yard (+ on hold, in transit) available to the Material Allocator.
 Fields: `id`, `product`, `gradeId`, `thk`, `width`, `weightMT`, `heatId`, `slabId`, `sourcePlant`, `hsmLine`, `receivedAt`, `location`, `status`, `ontologyDomain`, `stage`, `ageDays`, `stockType`
 
-### `maSuggestions.json` — 13 records
+### `maSuggestions.json` — 21 records
 Material-Allocator suggestions per open item with score, reasons and the two-step PPC / QC approvals.
 Fields: `id`, `itemId`, `soId`, `customerName`, `unitId`, `rank`, `score`, `ppcApproval`, `qcApproval`, `status`, `reasons`
 
-### `pdi.json` — 99 records
+### `pdi.json` — 105 records
 Production Data Input messages MES → L2 (targets); includes the stuck queue messages.
 Fields: `id`, `line`, `po`, `unitId`, `itemId`, `soId`, `threadId`, `sentAt`, `targets`, `status`, `ackAt`, `hero`, `via`
 
-### `pdo.json` — 89 records
+### `pdo.json` — 95 records
 Production Data Output messages L2 → MES (actuals) with auto-comparison deviations.
 Fields: `id`, `pdiId`, `line`, `po`, `unitIn`, `unitsOut`, `itemId`, `soId`, `threadId`, `receivedAt`, `actuals`, `deviations`, `status`, `inWeightMT`, `outWeightMT`, `lengthM`, `hero`, `via`
 
-### `confirmations.json` — 125 records
+### `confirmations.json` — 132 records
 Production confirmations with mass balance (one deliberate IMBALANCE).
 Fields: `id`, `line`, `po`, `unitIn`, `unitsOut`, `itemId`, `soId`, `threadId`, `start`, `end`, `shift`, `operator`, `inWeightMT`, `outWeightMT`, `scrapMT`, `scrapBreakup`, `unaccountedMT`, `massBalance` …
 
@@ -152,11 +152,11 @@ Fields: `id`, `po`, `parentUnit`, `itemId`, `soId`, `parentWidth`, `widths`, `tr
 Packing units with vendor, materials and QR label.
 Fields: `id`, `po`, `itemId`, `soId`, `customerName`, `units`, `weightMT`, `packType`, `vendorId`, `vendorName`, `ratePerT`, `materials`, `packedAt`, `plannedAt`, `status`, `labelQr`, `hero`
 
-### `packingBills.json` — 9 records
+### `packingBills.json` — 7 records
 Vendor-wise packing bills per ISO week.
 Fields: `vendorId`, `vendorName`, `week`, `packs`, `weightMT`, `amountINR`, `export`, `domestic`, `id`, `status`
 
-### `dispatches.json` — 22 records
+### `dispatches.json` — 23 records
 Dispatches (done / planned) with vehicle and invoice.
 Fields: `id`, `packId`, `itemId`, `soId`, `customerName`, `weightMT`, `vehicle`, `plannedAt`, `dispatchedAt`, `status`, `invoice`, `hero`
 
@@ -168,7 +168,7 @@ Fields: `messageType`, `interface`, `version`, `header`, `items`, `totals`, `mid
 Defects: detectedOn material, attributedTo equipment, downstreamAffected (propagation via consumesInput).
 Fields: `id`, `code`, `name`, `severity`, `detectedOn`, `detectedProduct`, `detectedAtLine`, `detectedAt`, `source`, `attributedTo`, `attributedLine`, `attributedPlant`, `positionM`, `side`, `lengthM`, `imageRef`, `note`, `status` …
 
-### `decisions.json` — 87 records
+### `decisions.json` — 93 records
 Usage decisions (UD codes) per finished unit.
 Fields: `id`, `unitId`, `product`, `itemId`, `udCode`, `description`, `decidedAt`, `decidedBy`, `mode`, `segment`, `hero`
 
@@ -176,7 +176,7 @@ Fields: `id`, `unitId`, `product`, `itemId`, `udCode`, `description`, `decidedAt
 Auto downgrade suggestions with param-by-param validation against candidate sales orders and manual override.
 Fields: `id`, `unitId`, `trigger`, `reason`, `suggestedAt`, `suggestion`, `candidates`, `fallback`, `status`, `override`, `hero`
 
-### `certificates.json` — 37 records
+### `certificates.json` — 38 records
 Test certificates (EN 10204 3.1) incl. the DFT dispatch gate.
 Fields: `id`, `unitId`, `product`, `gradeId`, `standard`, `heatId`, `hrCoilId`, `tests`, `status`, `dftGate`, `issuedAt`, `hero`
 
@@ -200,7 +200,7 @@ Fields: `asOf`, `shift`, `lines`, `batchesOnTrack`, `batchesBehind`, `activeDela
 Interface catalogue: 34 SAP + 6 L2 + APS/Anaplan/utilities/SIS with protocol, trigger, contract, version, SLA.
 Fields: `id`, `name`, `system`, `direction`, `protocol`, `trigger`, `contractId`, `version`, `slaSec`, `owner`, `status`, `channel`
 
-### `messages.json` — 166 records
+### `messages.json` — 168 records
 48-hour middleware message log with statuses OK / FAILED / IN_QUEUE / REPLAYED, errors and history (scripted: stuck PDI queue, malformed ORDERS05 IDoc, PDO contract mismatch).
 Fields: `id`, `interfaceId`, `direction`, `at`, `status`, `latencyMs`, `correlation`, `payloadExcerpt`, `error`, `retries`, `history`
 

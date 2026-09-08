@@ -2,7 +2,7 @@
 line schedules, MES production orders, allocations (BTA/BTP), free HR stock and Material-Allocator suggestions."""
 import random
 from datetime import datetime, timedelta
-from .common import R, BASE, ASOF, iso, day, h, pick, between, r1, r2, status_vs_asof, SEQ, at as AT, YM, YM_PREV
+from .common import R, BASE, ASOF, iso, day, h, m, pick, between, r1, r2, status_vs_asof, SEQ, at as AT, YM, YM_PREV
 from .assets_specs import LINES, COATINGS
 from .orders import HERO_ITEM, RUSH_ITEM, SWAP_A, SWAP_B, YIELDS
 
@@ -77,7 +77,7 @@ def build_threads(items, routes):
             if hero:
                 s, e = hero_times[ln]; busy[ln].append((s, e))
             else:
-                s, e = _slot(ln, ready + h(between(0.2, 0.8) if (item_id == RUSH_ITEM and ln == "CGL") else between(3, 26)), dur)   # the rush coil goes straight onto CGL
+                s, e = _slot(ln, ready + h(between(0.2, 0.8) if (item_id == RUSH_ITEM and ln == "CGL") else between(1, 6)), dur)    # continuous flow: next line within hours; the rush coil goes straight onto CGL
             st = status_vs_asof(s, e)
             out_prod = {"PKL": "HRPO", "CRM": "CRFH", "CGL": it["product"] if it["product"] in ("GI", "GL") else ("GL" if it["product"] == "PPGL" else "GI"),
                         "CCL": it["product"], "SLT": "SLIT", "RWL": "TRIMMED", "PKG": "PACK", "HRS": "HRC"}[ln]
@@ -145,13 +145,46 @@ def _make_in_progress(stages, schedules, pos, materials):
     """The as-of instant should catch a coil running on the L2 lines and packing: pull each line's next planned stage
     back so it straddles ASOF (CGL is mid-coil when its air-knife stoppage hits; SLT is between coils)."""
     by_id = {u["id"]: u for u in materials}; sch = {s["po"]: s for s in schedules}; po = {p["id"]: p for p in pos}; used_so = set()
+
+    def prev_stage(s):
+        return next((x for x in stages if x["threadId"] == s["threadId"] and x["seq"] == s["seq"] - 1), None)
+
+    def prev_done(s):
+        """only a stage whose previous step is already finished may be running now (EST precedence)"""
+        p = prev_stage(s)
+        return p is None or (p["status"] == "DONE" and datetime.fromisoformat(p["end"]) <= ASOF - h(1))
+    def complete(stage, s, e):
+        """turn a planned stage into a finished one at [s, e] — used when a later step of the same coil is running now (EST precedence)"""
+        stage.update(start=iso(s), end=iso(e), status="DONE", outWeight=stage["plannedOut"], scrap=r2(stage["inWeight"] - stage["plannedOut"]))
+        sch[stage["po"]].update(plannedStart=iso(s), plannedEnd=iso(e), status="DONE"); po[stage["po"]].update(plannedStart=iso(s), plannedEnd=iso(e), status="CONFIRMED")
+        inp = by_id.get(stage["inUnit"])
+        if inp: inp.update(status="CONSUMED", consumedAt=iso(s), consumedOn=stage["line"])
+        for uid in stage["outUnits"]:
+            by_id[uid].update(producedAt=iso(e), plannedAt=iso(e), status="AVAILABLE")
     for ln in ("PKL", "CRM", "CGL", "CCL", "PKG"):
-        cand = sorted([s for s in stages if s["line"] == ln and s["status"] == "PLANNED" and not s["hero"] and s["itemId"] != RUSH_ITEM], key=lambda s: s["start"])
+        base = [s for s in stages if s["line"] == ln and s["status"] == "PLANNED" and not s["hero"] and s["itemId"] != RUSH_ITEM]
+
+        def colour(s):   # colour-coated coils waiting for packing stay in the yard (their lab result is the multi-order Scenario 1 hook)
+            u = by_id.get(s["inUnit"]) or {}
+            return ln == "PKG" and (u.get("product") in ("PPGI", "PPGL") or u.get("parentProduct") in ("PPGI", "PPGL"))
+        pools = [([s for s in base if prev_done(s) and not colour(s)], False), ([s for s in base if not colour(s)], True),   # backfill = pull the coil's earlier steps into the past as well
+                 ([s for s in base if prev_done(s)], False), (base, True)]
+        cand, backfill = next(((sorted(p, key=lambda s: s["start"]), bf) for p, bf in pools if p), ([], False))
         if not cand: continue
         st = next((s for s in cand if s["soId"] not in used_so), cand[0]); used_so.add(st["soId"])   # a different sales order on every running line
         s0, e0 = datetime.fromisoformat(st["start"]), datetime.fromisoformat(st["end"]); dur = e0 - s0
         last_done = max([datetime.fromisoformat(x["end"]) for x in stages if x["line"] == ln and x["status"] == "DONE"] or [ASOF - h(3)])
-        s = max(ASOF - dur * between(0.35, 0.7), last_done + h(0.1)); e = s + dur
+        p = prev_stage(st); floor = datetime.fromisoformat(p["end"]) + h(0.5) if (p and not backfill) else ASOF - h(3)
+        s = max(ASOF - dur * between(0.35, 0.7), last_done + h(0.1), floor); e = s + dur
+        if backfill:
+            nxt = s
+            for x in sorted([x for x in stages if x["threadId"] == st["threadId"] and x["seq"] < st["seq"] and x["status"] != "DONE"], key=lambda x: -x["seq"]):
+                d = datetime.fromisoformat(x["end"]) - datetime.fromisoformat(x["start"]); xe = nxt - h(between(1, 3)); xs = xe - d
+                for _ in range(20):   # keep the line's single capacity in the past too
+                    clash = [b for a, b in ((datetime.fromisoformat(y["start"]), datetime.fromisoformat(y["end"])) for y in stages if y["line"] == x["line"] and y is not x) if xs < b and xe > a]
+                    if not clash: break
+                    xe = min(a for a, b in ((datetime.fromisoformat(y["start"]), datetime.fromisoformat(y["end"])) for y in stages if y["line"] == x["line"] and y is not x) if xs < b and xe > a) - m(10); xs = xe - d
+                complete(x, xs, xe); nxt = xs
         delta = e - e0
         st.update(start=iso(s), end=iso(e), status="IN_PROGRESS"); sch[st["po"]].update(plannedStart=iso(s), plannedEnd=iso(e), status="IN_PROGRESS"); po[st["po"]]["status"] = "IN_PROGRESS"
         inp = by_id.get(st["inUnit"])

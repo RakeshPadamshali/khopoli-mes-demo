@@ -275,8 +275,8 @@
   "btpMT": 250,
   "hero": false,
   "planCoils": 12,
-  "horizonCoils": 12,
-  "horizonMT": 249.96
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090003/20",
@@ -318,8 +318,8 @@
   "btpMT": 40,
   "hero": false,
   "planCoils": 2,
-  "horizonCoils": 1,
-  "horizonMT": 20.0
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090003/30",
@@ -378,10 +378,10 @@
   "coatingId": "Z120",
   "paintId": null,
   "ral": null,
-  "qtyMT": 40,
+  "qtyMT": 20,
   "packing": "DOM",
   "slitWidths": null,
-  "status": "IN_PROGRESS",
+  "status": "DISPATCHED",
   "ontologyDomain": "COMMERCIAL & PLANNING",
   "reqDate": "2026-10-06",
   "fpCommit": "2026-10-06",
@@ -391,21 +391,21 @@
   "scheduleLines": [
    {
     "id": "4213090004/10/0001",
-    "qtyMT": 40,
+    "qtyMT": 20,
     "date": "2026-10-06",
-    "status": "OPEN"
+    "status": "DELIVERED"
    }
   ],
   "tdcId": "TDC-4213090004-10",
   "allocatedMT": 21.5,
   "producedMT": 19.82,
-  "dispatchedMT": 0,
-  "btaMT": 18.5,
-  "btpMT": 20.18,
+  "dispatchedMT": 19.82,
+  "btaMT": 0,
+  "btpMT": 0.18,
   "hero": false,
-  "planCoils": 1,
-  "horizonCoils": 1,
-  "horizonMT": 20.18
+  "planCoils": 0,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090005/10",
@@ -490,8 +490,8 @@
   "btpMT": 131.14,
   "hero": false,
   "planCoils": 7,
-  "horizonCoils": 4,
-  "horizonMT": 74.92
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090006/20",
@@ -537,8 +537,8 @@
   "btpMT": 59.4,
   "hero": false,
   "planCoils": 3,
-  "horizonCoils": 3,
-  "horizonMT": 59.4
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090006/30",
@@ -677,8 +677,8 @@
   "btpMT": 83.09,
   "hero": false,
   "planCoils": 4,
-  "horizonCoils": 4,
-  "horizonMT": 83.08
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090008/20",
@@ -770,8 +770,8 @@
   "btpMT": 250,
   "hero": false,
   "planCoils": 12,
-  "horizonCoils": 8,
-  "horizonMT": 166.64
+  "horizonCoils": 12,
+  "horizonMT": 249.96
  },
  {
   "id": "4213090009/10",
@@ -820,8 +820,8 @@
   "btpMT": 128.7,
   "hero": false,
   "planCoils": 6,
-  "horizonCoils": 3,
-  "horizonMT": 64.35
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090009/20",
@@ -909,8 +909,8 @@
   "btpMT": 200,
   "hero": false,
   "planCoils": 10,
-  "horizonCoils": 10,
-  "horizonMT": 200.0
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090010/10",
@@ -1005,8 +1005,8 @@
   "btpMT": 300,
   "hero": false,
   "planCoils": 15,
-  "horizonCoils": 15,
-  "horizonMT": 300.0
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090012/10",
@@ -1045,8 +1045,8 @@
   "btpMT": 62.88,
   "hero": false,
   "planCoils": 3,
-  "horizonCoils": 3,
-  "horizonMT": 62.88
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090012/20",
@@ -1165,8 +1165,8 @@
   "btpMT": 60,
   "hero": false,
   "planCoils": 3,
-  "horizonCoils": 3,
-  "horizonMT": 60.0
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090014/10",
@@ -1297,8 +1297,8 @@
   "btpMT": 60,
   "hero": false,
   "planCoils": 3,
-  "horizonCoils": 3,
-  "horizonMT": 60.0
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090015/20",
@@ -1346,8 +1346,8 @@
   "btpMT": 200,
   "hero": false,
   "planCoils": 10,
-  "horizonCoils": 10,
-  "horizonMT": 200.0
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090016/10",
@@ -1389,8 +1389,8 @@
   "btpMT": 250,
   "hero": false,
   "planCoils": 12,
-  "horizonCoils": 12,
-  "horizonMT": 249.96
+  "horizonCoils": 8,
+  "horizonMT": 166.64
  },
  {
   "id": "4213090016/20",
@@ -1584,7 +1584,7 @@
    615,
    615
   ],
-  "status": "IN_PROGRESS",
+  "status": "PARTIALLY_DISPATCHED",
   "ontologyDomain": "COMMERCIAL & PLANNING",
   "reqDate": "2026-08-22",
   "fpCommit": "2026-08-22",
@@ -1602,7 +1602,7 @@
   "tdcId": "TDC-4213090019-10",
   "allocatedMT": 19.12,
   "producedMT": 17.63,
-  "dispatchedMT": 0,
+  "dispatchedMT": 16.75,
   "btaMT": 180.88,
   "btpMT": 182.37,
   "hero": false,
@@ -1650,8 +1650,8 @@
   "btpMT": 23.23,
   "hero": false,
   "planCoils": 1,
-  "horizonCoils": 1,
-  "horizonMT": 23.23
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090020/20",
@@ -1736,8 +1736,8 @@
   "btpMT": 250,
   "hero": false,
   "planCoils": 12,
-  "horizonCoils": 12,
-  "horizonMT": 249.96
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090021/10",
@@ -1905,8 +1905,8 @@
   "btpMT": 40,
   "hero": false,
   "planCoils": 2,
-  "horizonCoils": 2,
-  "horizonMT": 40.0
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090023/20",
@@ -1945,8 +1945,8 @@
   "btpMT": 82.59,
   "hero": false,
   "planCoils": 4,
-  "horizonCoils": 2,
-  "horizonMT": 41.3
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090023/30",
@@ -2040,8 +2040,8 @@
   "btpMT": 72.35,
   "hero": false,
   "planCoils": 4,
-  "horizonCoils": 2,
-  "horizonMT": 36.18
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090024/20",
@@ -2123,8 +2123,8 @@
   "btpMT": 120,
   "hero": false,
   "planCoils": 6,
-  "horizonCoils": 6,
-  "horizonMT": 120.0
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090026/10",
@@ -2210,8 +2210,8 @@
   "btpMT": 180.16,
   "hero": false,
   "planCoils": 9,
-  "horizonCoils": 5,
-  "horizonMT": 100.1
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090027/20",
@@ -2231,7 +2231,7 @@
    326,
    326
   ],
-  "status": "IN_PROGRESS",
+  "status": "PARTIALLY_DISPATCHED",
   "ontologyDomain": "COMMERCIAL & PLANNING",
   "dftTop": 25,
   "dftTol": 3,
@@ -2258,7 +2258,7 @@
   "tdcId": "TDC-4213090027-20",
   "allocatedMT": 21.22,
   "producedMT": 19.17,
-  "dispatchedMT": 0,
+  "dispatchedMT": 18.21,
   "btaMT": 178.78,
   "btpMT": 180.83,
   "hero": false,
@@ -2397,8 +2397,8 @@
   "btpMT": 100,
   "hero": false,
   "planCoils": 5,
-  "horizonCoils": 5,
-  "horizonMT": 100.0
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090030/10",
@@ -2524,8 +2524,8 @@
   "btpMT": 60,
   "hero": false,
   "planCoils": 3,
-  "horizonCoils": 3,
-  "horizonMT": 60.0
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090031/20",
@@ -2779,8 +2779,8 @@
   "btpMT": 61.44,
   "hero": false,
   "planCoils": 3,
-  "horizonCoils": 2,
-  "horizonMT": 40.96
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090035/10",
@@ -2829,8 +2829,8 @@
   "btpMT": 278.99,
   "hero": false,
   "planCoils": 14,
-  "horizonCoils": 3,
-  "horizonMT": 59.79
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090035/20",
@@ -3006,8 +3006,8 @@
   "btpMT": 40,
   "hero": false,
   "planCoils": 2,
-  "horizonCoils": 2,
-  "horizonMT": 40.0
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090036/30",
@@ -3086,8 +3086,8 @@
   "btpMT": 60,
   "hero": false,
   "planCoils": 3,
-  "horizonCoils": 1,
-  "horizonMT": 20.0
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090037/20",
@@ -3215,8 +3215,8 @@
   "btpMT": 150,
   "hero": false,
   "planCoils": 8,
-  "horizonCoils": 8,
-  "horizonMT": 150.0
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090040/10",
@@ -3302,8 +3302,8 @@
   "btpMT": 80.28,
   "hero": false,
   "planCoils": 4,
-  "horizonCoils": 2,
-  "horizonMT": 40.14
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090040/30",

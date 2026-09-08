@@ -23,8 +23,8 @@
     "unitId": "CRF-KHP-2609-0027",
     "soId": "4213090006",
     "customerName": "Orbit Metal Forming",
-    "plannedStart": "2026-09-10T13:05:40",
-    "plannedEnd": "2026-09-10T14:23:08",
+    "plannedStart": "2026-09-08T21:29:08",
+    "plannedEnd": "2026-09-08T22:46:37",
     "rush": false
    },
    {
@@ -33,8 +33,8 @@
     "unitId": "CRF-KHP-2609-0024",
     "soId": "4213090031",
     "customerName": "Kestrel Auto Components",
-    "plannedStart": "2026-09-11T08:43:29",
-    "plannedEnd": "2026-09-11T09:50:50",
+    "plannedStart": "2026-09-09T17:23:21",
+    "plannedEnd": "2026-09-09T18:30:42",
     "rush": true
    },
    {
@@ -43,8 +43,8 @@
     "unitId": "CRF-KHP-2609-0029",
     "soId": "4213090025",
     "customerName": "Meridian Roofing Solutions",
-    "plannedStart": "2026-09-13T09:37:22",
-    "plannedEnd": "2026-09-13T10:59:28",
+    "plannedStart": "2026-09-11T10:19:44",
+    "plannedEnd": "2026-09-11T11:41:50",
     "rush": false
    },
    {
@@ -53,8 +53,8 @@
     "unitId": "CRF-KHP-2609-0030",
     "soId": "4213090003",
     "customerName": "NorthStar Pre-Engineered Buildings",
-    "plannedStart": "2026-09-13T12:17:15",
-    "plannedEnd": "2026-09-13T13:38:16",
+    "plannedStart": "2026-09-12T01:50:21",
+    "plannedEnd": "2026-09-12T03:11:21",
     "rush": false
    },
    {
@@ -63,28 +63,18 @@
     "unitId": "CRF-KHP-2609-0031",
     "soId": "4213090032",
     "customerName": "Blue Ridge Infra",
-    "plannedStart": "2026-09-13T17:10:02",
-    "plannedEnd": "2026-09-13T18:18:57",
+    "plannedStart": "2026-09-12T19:11:51",
+    "plannedEnd": "2026-09-12T20:20:46",
     "rush": false
    },
    {
     "seq": 7,
-    "id": "SCH-CGL-032",
-    "unitId": "CRF-KHP-2609-0032",
-    "soId": "4213090023",
-    "customerName": "Horizon Ducting Works",
-    "plannedStart": "2026-09-15T06:55:04",
-    "plannedEnd": "2026-09-15T08:06:01",
-    "rush": false
-   },
-   {
-    "seq": 8,
     "id": "SCH-CGL-033",
     "unitId": "CRF-KHP-2609-0033",
     "soId": "4213090015",
     "customerName": "Horizon Ducting Works",
-    "plannedStart": "2026-09-16T04:51:53",
-    "plannedEnd": "2026-09-16T06:10:10",
+    "plannedStart": "2026-09-14T17:51:14",
+    "plannedEnd": "2026-09-14T19:09:31",
     "rush": false
    }
   ],
@@ -105,8 +95,8 @@
     "unitId": "CRF-KHP-2609-0026",
     "soId": "4213090008",
     "customerName": "Apex Appliances Ltd",
-    "plannedStart": "2026-09-10T13:05:40",
-    "plannedEnd": "2026-09-10T14:23:08",
+    "plannedStart": "2026-09-08T21:29:08",
+    "plannedEnd": "2026-09-08T22:46:37",
     "rush": false
    },
    {
@@ -115,8 +105,8 @@
     "unitId": "CRF-KHP-2609-0027",
     "soId": "4213090006",
     "customerName": "Orbit Metal Forming",
-    "plannedStart": "2026-09-11T08:43:29",
-    "plannedEnd": "2026-09-11T09:50:50",
+    "plannedStart": "2026-09-09T17:23:21",
+    "plannedEnd": "2026-09-09T18:30:42",
     "rush": false
    },
    {
@@ -125,8 +115,8 @@
     "unitId": "CRF-KHP-2609-0029",
     "soId": "4213090025",
     "customerName": "Meridian Roofing Solutions",
-    "plannedStart": "2026-09-13T09:37:22",
-    "plannedEnd": "2026-09-13T10:59:28",
+    "plannedStart": "2026-09-11T10:19:44",
+    "plannedEnd": "2026-09-11T11:41:50",
     "rush": false
    },
    {
@@ -135,8 +125,8 @@
     "unitId": "CRF-KHP-2609-0030",
     "soId": "4213090003",
     "customerName": "NorthStar Pre-Engineered Buildings",
-    "plannedStart": "2026-09-13T12:17:15",
-    "plannedEnd": "2026-09-13T13:38:16",
+    "plannedStart": "2026-09-12T01:50:21",
+    "plannedEnd": "2026-09-12T03:11:21",
     "rush": false
    },
    {
@@ -145,28 +135,18 @@
     "unitId": "CRF-KHP-2609-0031",
     "soId": "4213090032",
     "customerName": "Blue Ridge Infra",
-    "plannedStart": "2026-09-13T17:10:02",
-    "plannedEnd": "2026-09-13T18:18:57",
+    "plannedStart": "2026-09-12T19:11:51",
+    "plannedEnd": "2026-09-12T20:20:46",
     "rush": false
    },
    {
     "seq": 7,
-    "id": "SCH-CGL-032",
-    "unitId": "CRF-KHP-2609-0032",
-    "soId": "4213090023",
-    "customerName": "Horizon Ducting Works",
-    "plannedStart": "2026-09-15T06:55:04",
-    "plannedEnd": "2026-09-15T08:06:01",
-    "rush": false
-   },
-   {
-    "seq": 8,
     "id": "SCH-CGL-033",
     "unitId": "CRF-KHP-2609-0033",
     "soId": "4213090015",
     "customerName": "Horizon Ducting Works",
-    "plannedStart": "2026-09-16T04:51:53",
-    "plannedEnd": "2026-09-16T06:10:10",
+    "plannedStart": "2026-09-14T17:51:14",
+    "plannedEnd": "2026-09-14T19:09:31",
     "rush": false
    }
   ],

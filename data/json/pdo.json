@@ -11,21 +11,15 @@
   "itemId": "4213090027/10",
   "soId": "4213090027",
   "threadId": "TH-001",
-  "receivedAt": "2026-08-21T05:14:30",
+  "receivedAt": "2026-08-20T10:59:24",
   "actuals": {
-   "acidConcPct": 11.2,
-   "stripSpeedMpm": 113,
-   "bathTempC": 82,
-   "oilingGsm": 1.17
+   "acidConcPct": 14.0,
+   "stripSpeedMpm": 118,
+   "bathTempC": 83,
+   "oilingGsm": 1.32
   },
-  "deviations": [
-   {
-    "field": "acidConcPct",
-    "note": "below 12 % band",
-    "severity": "DEVIATION"
-   }
-  ],
-  "status": "ACCEPTED_WITH_DEVIATION",
+  "deviations": [],
+  "status": "ACCEPTED",
   "inWeightMT": 21.95,
   "outWeightMT": 21.62,
   "lengthM": 5016,
@@ -44,12 +38,12 @@
   "itemId": "4213090027/10",
   "soId": "4213090027",
   "threadId": "TH-001",
-  "receivedAt": "2026-08-21T16:34:06",
+  "receivedAt": "2026-08-20T14:38:28",
   "actuals": {
-   "exitThkMm": 0.45,
+   "exitThkMm": 0.44,
    "passes": 5,
    "reductionPct": 77.5,
-   "rollForceKN": 9914
+   "rollForceKN": 11035
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -71,16 +65,16 @@
   "itemId": "4213090027/10",
   "soId": "4213090027",
   "threadId": "TH-001",
-  "receivedAt": "2026-08-22T09:03:20",
+  "receivedAt": "2026-08-20T19:34:24",
   "actuals": {
-   "coatingTopGsm": 67.3,
-   "coatingBottomGsm": 66.5,
+   "coatingTopGsm": 64.2,
+   "coatingBottomGsm": 65.3,
    "lineSpeedMpm": 107,
-   "furnaceSoakC": 715,
-   "zincBathAlPct": 0.22,
-   "bathTempC": 458,
-   "skinPassElongPct": 0.96,
-   "coatingTotalGsm": 133.8
+   "furnaceSoakC": 723,
+   "zincBathAlPct": 0.19,
+   "bathTempC": 461,
+   "skinPassElongPct": 1.05,
+   "coatingTotalGsm": 129.5
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -102,14 +96,14 @@
   "itemId": "4213090027/10",
   "soId": "4213090027",
   "threadId": "TH-001",
-  "receivedAt": "2026-08-23T10:33:19",
+  "receivedAt": "2026-08-21T03:04:24",
   "actuals": {
-   "dftTopUm": 20.5,
-   "dftBackUm": 7.4,
-   "pmtC": 230,
-   "lineSpeedMpm": 59,
-   "gloss60": 38,
-   "dE": 0.55
+   "dftTopUm": 21.3,
+   "dftBackUm": 6.7,
+   "pmtC": 229,
+   "lineSpeedMpm": 60,
+   "gloss60": 34,
+   "dE": 0.44
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -131,12 +125,12 @@
   "itemId": "4213090010/10",
   "soId": "4213090010",
   "threadId": "TH-002",
-  "receivedAt": "2026-08-21T04:25:18",
+  "receivedAt": "2026-08-21T01:54:51",
   "actuals": {
-   "acidConcPct": 13.9,
+   "acidConcPct": 13.5,
    "stripSpeedMpm": 117,
-   "bathTempC": 81,
-   "oilingGsm": 1.33
+   "bathTempC": 80,
+   "oilingGsm": 1.3
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -158,12 +152,12 @@
   "itemId": "4213090010/10",
   "soId": "4213090010",
   "threadId": "TH-002",
-  "receivedAt": "2026-08-21T10:04:25",
+  "receivedAt": "2026-08-21T04:15:04",
   "actuals": {
-   "exitThkMm": 0.5,
+   "exitThkMm": 0.51,
    "passes": 5,
    "reductionPct": 77.3,
-   "rollForceKN": 10936
+   "rollForceKN": 10013
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -185,16 +179,16 @@
   "itemId": "4213090010/10",
   "soId": "4213090010",
   "threadId": "TH-002",
-  "receivedAt": "2026-08-22T05:23:41",
+  "receivedAt": "2026-08-21T09:53:49",
   "actuals": {
-   "coatingTopGsm": 66.3,
-   "coatingBottomGsm": 67.3,
+   "coatingTopGsm": 63.9,
+   "coatingBottomGsm": 65.3,
    "lineSpeedMpm": 104,
-   "furnaceSoakC": 725,
-   "zincBathAlPct": 0.22,
-   "bathTempC": 459,
-   "skinPassElongPct": 0.88,
-   "coatingTotalGsm": 133.6
+   "furnaceSoakC": 715,
+   "zincBathAlPct": 0.21,
+   "bathTempC": 463,
+   "skinPassElongPct": 0.86,
+   "coatingTotalGsm": 129.2
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -216,14 +210,14 @@
   "itemId": "4213090010/10",
   "soId": "4213090010",
   "threadId": "TH-002",
-  "receivedAt": "2026-08-22T19:22:25",
+  "receivedAt": "2026-08-21T15:01:27",
   "actuals": {
-   "dftTopUm": 18.6,
-   "dftBackUm": 7.3,
-   "pmtC": 229,
+   "dftTopUm": 18.8,
+   "dftBackUm": 6.9,
+   "pmtC": 236,
    "lineSpeedMpm": 57,
-   "gloss60": 40,
-   "dE": 0.22
+   "gloss60": 37,
+   "dE": 0.71
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -245,12 +239,12 @@
   "itemId": "4213090035/30",
   "soId": "4213090035",
   "threadId": "TH-003",
-  "receivedAt": "2026-08-22T17:15:58",
+  "receivedAt": "2026-08-22T01:56:41",
   "actuals": {
-   "acidConcPct": 12.9,
-   "stripSpeedMpm": 84,
-   "bathTempC": 81,
-   "oilingGsm": 1.29
+   "acidConcPct": 13.4,
+   "stripSpeedMpm": 85,
+   "bathTempC": 79,
+   "oilingGsm": 1.31
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -272,21 +266,15 @@
   "itemId": "4213090035/30",
   "soId": "4213090035",
   "threadId": "TH-003",
-  "receivedAt": "2026-08-23T09:24:14",
+  "receivedAt": "2026-08-22T06:38:01",
   "actuals": {
-   "exitThkMm": 1.27,
+   "exitThkMm": 1.19,
    "passes": 4,
    "reductionPct": 70.0,
-   "rollForceKN": 10232
+   "rollForceKN": 9623
   },
-  "deviations": [
-   {
-    "field": "exitThkMm",
-    "note": "outside ±0.05 mm",
-    "severity": "DEVIATION"
-   }
-  ],
-  "status": "ACCEPTED_WITH_DEVIATION",
+  "deviations": [],
+  "status": "ACCEPTED",
   "inWeightMT": 21.23,
   "outWeightMT": 20.38,
   "lengthM": 1442,
@@ -305,16 +293,16 @@
   "itemId": "4213090035/30",
   "soId": "4213090035",
   "threadId": "TH-003",
-  "receivedAt": "2026-08-24T11:53:10",
+  "receivedAt": "2026-08-22T13:42:10",
   "actuals": {
-   "coatingTopGsm": 66.3,
-   "coatingBottomGsm": 63.4,
-   "lineSpeedMpm": 81,
-   "furnaceSoakC": 714,
-   "zincBathAlPct": 0.2,
-   "bathTempC": 463,
-   "skinPassElongPct": 0.86,
-   "coatingTotalGsm": 129.7
+   "coatingTopGsm": 67.4,
+   "coatingBottomGsm": 66.2,
+   "lineSpeedMpm": 84,
+   "furnaceSoakC": 718,
+   "zincBathAlPct": 0.22,
+   "bathTempC": 458,
+   "skinPassElongPct": 0.87,
+   "coatingTotalGsm": 133.6
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -336,12 +324,12 @@
   "itemId": "4213090035/10",
   "soId": "4213090035",
   "threadId": "TH-004",
-  "receivedAt": "2026-08-23T03:50:32",
+  "receivedAt": "2026-08-22T17:06:58",
   "actuals": {
-   "acidConcPct": 13.3,
-   "stripSpeedMpm": 112,
-   "bathTempC": 78,
-   "oilingGsm": 1.03
+   "acidConcPct": 14.6,
+   "stripSpeedMpm": 120,
+   "bathTempC": 82,
+   "oilingGsm": 1.24
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -363,12 +351,12 @@
   "itemId": "4213090035/10",
   "soId": "4213090035",
   "threadId": "TH-004",
-  "receivedAt": "2026-08-23T15:31:47",
+  "receivedAt": "2026-08-22T20:54:15",
   "actuals": {
    "exitThkMm": 0.46,
    "passes": 5,
    "reductionPct": 83.3,
-   "rollForceKN": 10593
+   "rollForceKN": 10842
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -390,16 +378,16 @@
   "itemId": "4213090035/10",
   "soId": "4213090035",
   "threadId": "TH-004",
-  "receivedAt": "2026-08-23T20:42:35",
+  "receivedAt": "2026-08-22T23:20:21",
   "actuals": {
-   "coatingTopGsm": 76.9,
-   "coatingBottomGsm": 79.3,
-   "lineSpeedMpm": 107,
-   "furnaceSoakC": 723,
-   "zincBathAlPct": 0.23,
-   "bathTempC": 461,
-   "skinPassElongPct": 0.9,
-   "coatingTotalGsm": 156.2
+   "coatingTopGsm": 81.6,
+   "coatingBottomGsm": 83.0,
+   "lineSpeedMpm": 105,
+   "furnaceSoakC": 726,
+   "zincBathAlPct": 0.22,
+   "bathTempC": 460,
+   "skinPassElongPct": 0.99,
+   "coatingTotalGsm": 164.6
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -421,12 +409,12 @@
   "itemId": "4213090033/10",
   "soId": "4213090033",
   "threadId": "TH-005",
-  "receivedAt": "2026-08-23T20:09:00",
+  "receivedAt": "2026-08-23T13:39:18",
   "actuals": {
-   "acidConcPct": 14.7,
-   "stripSpeedMpm": 120,
-   "bathTempC": 80,
-   "oilingGsm": 1.25
+   "acidConcPct": 12.7,
+   "stripSpeedMpm": 119,
+   "bathTempC": 83,
+   "oilingGsm": 1.19
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -448,15 +436,21 @@
   "itemId": "4213090033/10",
   "soId": "4213090033",
   "threadId": "TH-005",
-  "receivedAt": "2026-08-24T01:39:10",
+  "receivedAt": "2026-08-23T15:59:11",
   "actuals": {
-   "exitThkMm": 0.49,
+   "exitThkMm": 0.55,
    "passes": 5,
    "reductionPct": 80.8,
-   "rollForceKN": 11108
+   "rollForceKN": 11145
   },
-  "deviations": [],
-  "status": "ACCEPTED",
+  "deviations": [
+   {
+    "field": "exitThkMm",
+    "note": "outside ±0.03 mm",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
   "inWeightMT": 19.08,
   "outWeightMT": 18.32,
   "lengthM": 3734,
@@ -475,16 +469,16 @@
   "itemId": "4213090033/10",
   "soId": "4213090033",
   "threadId": "TH-005",
-  "receivedAt": "2026-08-24T09:21:59",
+  "receivedAt": "2026-08-23T18:54:23",
   "actuals": {
-   "coatingTopGsm": 61.8,
-   "coatingBottomGsm": 61.3,
-   "lineSpeedMpm": 98,
-   "furnaceSoakC": 725,
+   "coatingTopGsm": 63.9,
+   "coatingBottomGsm": 63.9,
+   "lineSpeedMpm": 102,
+   "furnaceSoakC": 724,
    "zincBathAlPct": 0.19,
    "bathTempC": 458,
-   "skinPassElongPct": 0.99,
-   "coatingTotalGsm": 123.1
+   "skinPassElongPct": 0.86,
+   "coatingTotalGsm": 127.8
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -506,14 +500,14 @@
   "itemId": "4213090033/10",
   "soId": "4213090033",
   "threadId": "TH-005",
-  "receivedAt": "2026-08-24T21:23:01",
+  "receivedAt": "2026-08-23T23:15:09",
   "actuals": {
-   "dftTopUm": 18.6,
-   "dftBackUm": 7.0,
-   "pmtC": 231,
-   "lineSpeedMpm": 55,
-   "gloss60": 40,
-   "dE": 0.69
+   "dftTopUm": 19.7,
+   "dftBackUm": 6.8,
+   "pmtC": 236,
+   "lineSpeedMpm": 57,
+   "gloss60": 33,
+   "dE": 0.5
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -535,12 +529,12 @@
   "itemId": "4213090018/20",
   "soId": "4213090018",
   "threadId": "TH-006",
-  "receivedAt": "2026-08-24T18:33:20",
+  "receivedAt": "2026-08-24T10:43:04",
   "actuals": {
-   "acidConcPct": 14.2,
-   "stripSpeedMpm": 114,
-   "bathTempC": 83,
-   "oilingGsm": 1.09
+   "acidConcPct": 14.7,
+   "stripSpeedMpm": 115,
+   "bathTempC": 81,
+   "oilingGsm": 1.05
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -562,12 +556,12 @@
   "itemId": "4213090018/20",
   "soId": "4213090018",
   "threadId": "TH-006",
-  "receivedAt": "2026-08-25T19:39:27",
+  "receivedAt": "2026-08-24T17:13:36",
   "actuals": {
    "exitThkMm": 0.46,
    "passes": 5,
    "reductionPct": 75.0,
-   "rollForceKN": 10648
+   "rollForceKN": 9708
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -589,16 +583,16 @@
   "itemId": "4213090018/20",
   "soId": "4213090018",
   "threadId": "TH-006",
-  "receivedAt": "2026-08-26T12:58:44",
+  "receivedAt": "2026-08-24T22:24:57",
   "actuals": {
-   "coatingTopGsm": 62.0,
-   "coatingBottomGsm": 60.4,
-   "lineSpeedMpm": 103,
-   "furnaceSoakC": 714,
-   "zincBathAlPct": 0.23,
+   "coatingTopGsm": 65.1,
+   "coatingBottomGsm": 62.7,
+   "lineSpeedMpm": 100,
+   "furnaceSoakC": 718,
+   "zincBathAlPct": 0.21,
    "bathTempC": 458,
-   "skinPassElongPct": 1.08,
-   "coatingTotalGsm": 122.4
+   "skinPassElongPct": 0.93,
+   "coatingTotalGsm": 127.8
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -620,14 +614,14 @@
   "itemId": "4213090018/20",
   "soId": "4213090018",
   "threadId": "TH-006",
-  "receivedAt": "2026-08-27T12:59:44",
+  "receivedAt": "2026-08-25T05:36:31",
   "actuals": {
-   "dftTopUm": 26.4,
-   "dftBackUm": 6.0,
-   "pmtC": 238,
-   "lineSpeedMpm": 55,
+   "dftTopUm": 25.8,
+   "dftBackUm": 7.6,
+   "pmtC": 243,
+   "lineSpeedMpm": 60,
    "gloss60": 26,
-   "dE": 0.3
+   "dE": 0.67
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -649,21 +643,15 @@
   "itemId": "4213090024/10",
   "soId": "4213090024",
   "threadId": "TH-007",
-  "receivedAt": "2026-08-25T13:14:47",
+  "receivedAt": "2026-08-25T04:53:35",
   "actuals": {
-   "acidConcPct": 11.2,
+   "acidConcPct": 14.4,
    "stripSpeedMpm": 112,
-   "bathTempC": 83,
-   "oilingGsm": 1.18
+   "bathTempC": 81,
+   "oilingGsm": 1.31
   },
-  "deviations": [
-   {
-    "field": "acidConcPct",
-    "note": "below 12 % band",
-    "severity": "DEVIATION"
-   }
-  ],
-  "status": "ACCEPTED_WITH_DEVIATION",
+  "deviations": [],
+  "status": "ACCEPTED",
   "inWeightMT": 19.53,
   "outWeightMT": 19.24,
   "lengthM": 4017,
@@ -682,12 +670,12 @@
   "itemId": "4213090024/10",
   "soId": "4213090024",
   "threadId": "TH-007",
-  "receivedAt": "2026-08-26T09:40:26",
+  "receivedAt": "2026-08-25T10:32:49",
   "actuals": {
    "exitThkMm": 0.5,
    "passes": 5,
    "reductionPct": 75.0,
-   "rollForceKN": 10687
+   "rollForceKN": 10589
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -709,25 +697,19 @@
   "itemId": "4213090024/10",
   "soId": "4213090024",
   "threadId": "TH-007",
-  "receivedAt": "2026-08-27T12:39:06",
+  "receivedAt": "2026-08-25T17:43:32",
   "actuals": {
-   "coatingTopGsm": 59.9,
-   "coatingBottomGsm": 57.4,
-   "lineSpeedMpm": 98,
-   "furnaceSoakC": 718,
-   "zincBathAlPct": 0.2,
-   "bathTempC": 460,
-   "skinPassElongPct": 0.93,
-   "coatingTotalGsm": 117.3
+   "coatingTopGsm": 64.9,
+   "coatingBottomGsm": 62.5,
+   "lineSpeedMpm": 101,
+   "furnaceSoakC": 726,
+   "zincBathAlPct": 0.21,
+   "bathTempC": 461,
+   "skinPassElongPct": 1.06,
+   "coatingTotalGsm": 127.4
   },
-  "deviations": [
-   {
-    "field": "coatingTotalGsm",
-    "note": "outside band 120–138 g/m²",
-    "severity": "DEVIATION"
-   }
-  ],
-  "status": "ACCEPTED_WITH_DEVIATION",
+  "deviations": [],
+  "status": "ACCEPTED",
   "inWeightMT": 18.47,
   "outWeightMT": 18.01,
   "lengthM": 3761,
@@ -746,14 +728,14 @@
   "itemId": "4213090024/10",
   "soId": "4213090024",
   "threadId": "TH-007",
-  "receivedAt": "2026-08-28T02:03:47",
+  "receivedAt": "2026-08-25T22:31:11",
   "actuals": {
-   "dftTopUm": 16.3,
-   "dftBackUm": 7.6,
-   "pmtC": 233,
-   "lineSpeedMpm": 58,
-   "gloss60": 30,
-   "dE": 0.6
+   "dftTopUm": 15.2,
+   "dftBackUm": 6.0,
+   "pmtC": 232,
+   "lineSpeedMpm": 56,
+   "gloss60": 38,
+   "dE": 0.57
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -775,12 +757,12 @@
   "itemId": "4213090006/10",
   "soId": "4213090006",
   "threadId": "TH-008",
-  "receivedAt": "2026-08-26T16:15:57",
+  "receivedAt": "2026-08-26T01:41:13",
   "actuals": {
-   "acidConcPct": 13.0,
-   "stripSpeedMpm": 90,
-   "bathTempC": 80,
-   "oilingGsm": 1.28
+   "acidConcPct": 12.8,
+   "stripSpeedMpm": 84,
+   "bathTempC": 81,
+   "oilingGsm": 1.14
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -802,12 +784,12 @@
   "itemId": "4213090006/10",
   "soId": "4213090006",
   "threadId": "TH-008",
-  "receivedAt": "2026-08-27T10:43:57",
+  "receivedAt": "2026-08-26T06:45:20",
   "actuals": {
    "exitThkMm": 0.81,
    "passes": 4,
    "reductionPct": 77.1,
-   "rollForceKN": 9941
+   "rollForceKN": 10209
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -829,16 +811,16 @@
   "itemId": "4213090006/10",
   "soId": "4213090006",
   "threadId": "TH-008",
-  "receivedAt": "2026-08-27T20:48:56",
+  "receivedAt": "2026-08-26T10:16:11",
   "actuals": {
-   "coatingTopGsm": 63.2,
-   "coatingBottomGsm": 61.4,
-   "lineSpeedMpm": 79,
-   "furnaceSoakC": 725,
+   "coatingTopGsm": 61.2,
+   "coatingBottomGsm": 60.1,
+   "lineSpeedMpm": 82,
+   "furnaceSoakC": 719,
    "zincBathAlPct": 0.2,
-   "bathTempC": 463,
-   "skinPassElongPct": 1.09,
-   "coatingTotalGsm": 124.6
+   "bathTempC": 462,
+   "skinPassElongPct": 0.96,
+   "coatingTotalGsm": 121.3
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -860,14 +842,14 @@
   "itemId": "4213090006/10",
   "soId": "4213090006",
   "threadId": "TH-008",
-  "receivedAt": "2026-08-28T08:19:14",
+  "receivedAt": "2026-08-26T14:44:21",
   "actuals": {
-   "dftTopUm": 20.4,
-   "dftBackUm": 7.5,
-   "pmtC": 235,
-   "lineSpeedMpm": 58,
-   "gloss60": 30,
-   "dE": 0.76
+   "dftTopUm": 18.8,
+   "dftBackUm": 6.2,
+   "pmtC": 231,
+   "lineSpeedMpm": 59,
+   "gloss60": 32,
+   "dE": 0.24
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -889,15 +871,21 @@
   "itemId": "4213090002/20",
   "soId": "4213090002",
   "threadId": "TH-009",
-  "receivedAt": "2026-08-27T17:47:52",
+  "receivedAt": "2026-08-27T01:03:11",
   "actuals": {
-   "acidConcPct": 12.8,
-   "stripSpeedMpm": 84,
-   "bathTempC": 81,
-   "oilingGsm": 1.07
+   "acidConcPct": 11.2,
+   "stripSpeedMpm": 86,
+   "bathTempC": 83,
+   "oilingGsm": 1.36
   },
-  "deviations": [],
-  "status": "ACCEPTED",
+  "deviations": [
+   {
+    "field": "acidConcPct",
+    "note": "below 12 % band",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
   "inWeightMT": 21.0,
   "outWeightMT": 20.69,
   "lengthM": 3294,
@@ -916,12 +904,12 @@
   "itemId": "4213090002/20",
   "soId": "4213090002",
   "threadId": "TH-009",
-  "receivedAt": "2026-08-28T10:30:45",
+  "receivedAt": "2026-08-27T05:47:01",
   "actuals": {
-   "exitThkMm": 0.81,
+   "exitThkMm": 0.8,
    "passes": 4,
    "reductionPct": 79.5,
-   "rollForceKN": 10271
+   "rollForceKN": 10084
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -943,16 +931,16 @@
   "itemId": "4213090002/20",
   "soId": "4213090002",
   "threadId": "TH-009",
-  "receivedAt": "2026-08-29T05:38:20",
+  "receivedAt": "2026-08-27T11:18:50",
   "actuals": {
-   "coatingTopGsm": 65.1,
-   "coatingBottomGsm": 63.0,
-   "lineSpeedMpm": 87,
-   "furnaceSoakC": 714,
-   "zincBathAlPct": 0.21,
-   "bathTempC": 460,
-   "skinPassElongPct": 0.9,
-   "coatingTotalGsm": 128.1
+   "coatingTopGsm": 60.7,
+   "coatingBottomGsm": 60.1,
+   "lineSpeedMpm": 78,
+   "furnaceSoakC": 716,
+   "zincBathAlPct": 0.19,
+   "bathTempC": 461,
+   "skinPassElongPct": 1.09,
+   "coatingTotalGsm": 120.8
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -974,14 +962,14 @@
   "itemId": "4213090002/20",
   "soId": "4213090002",
   "threadId": "TH-009",
-  "receivedAt": "2026-08-30T05:37:42",
+  "receivedAt": "2026-08-27T18:30:44",
   "actuals": {
-   "dftTopUm": 26.4,
-   "dftBackUm": 6.0,
+   "dftTopUm": 23.5,
+   "dftBackUm": 6.5,
    "pmtC": 244,
-   "lineSpeedMpm": 58,
-   "gloss60": 25,
-   "dE": 0.28
+   "lineSpeedMpm": 57,
+   "gloss60": 29,
+   "dE": 0.73
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1003,12 +991,12 @@
   "itemId": "4213090034/20",
   "soId": "4213090034",
   "threadId": "TH-010",
-  "receivedAt": "2026-08-27T23:19:04",
+  "receivedAt": "2026-08-27T17:50:34",
   "actuals": {
-   "acidConcPct": 14.8,
-   "stripSpeedMpm": 85,
-   "bathTempC": 82,
-   "oilingGsm": 1.06
+   "acidConcPct": 14.0,
+   "stripSpeedMpm": 87,
+   "bathTempC": 78,
+   "oilingGsm": 1.32
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1030,12 +1018,12 @@
   "itemId": "4213090034/20",
   "soId": "4213090034",
   "threadId": "TH-010",
-  "receivedAt": "2026-08-28T14:49:53",
+  "receivedAt": "2026-08-27T22:23:35",
   "actuals": {
-   "exitThkMm": 1.0,
+   "exitThkMm": 1.01,
    "passes": 4,
    "reductionPct": 75.0,
-   "rollForceKN": 10999
+   "rollForceKN": 9708
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1057,19 +1045,25 @@
   "itemId": "4213090034/20",
   "soId": "4213090034",
   "threadId": "TH-010",
-  "receivedAt": "2026-08-29T15:48:12",
+  "receivedAt": "2026-08-28T05:02:58",
   "actuals": {
-   "coatingTopGsm": 66.5,
-   "coatingBottomGsm": 63.8,
-   "lineSpeedMpm": 81,
-   "furnaceSoakC": 716,
-   "zincBathAlPct": 0.2,
+   "coatingTopGsm": 68.5,
+   "coatingBottomGsm": 70.4,
+   "lineSpeedMpm": 86,
+   "furnaceSoakC": 725,
+   "zincBathAlPct": 0.23,
    "bathTempC": 461,
-   "skinPassElongPct": 1.09,
-   "coatingTotalGsm": 130.3
+   "skinPassElongPct": 1.02,
+   "coatingTotalGsm": 138.9
   },
-  "deviations": [],
-  "status": "ACCEPTED",
+  "deviations": [
+   {
+    "field": "coatingTotalGsm",
+    "note": "outside band 120–138 g/m²",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
   "inWeightMT": 19.04,
   "outWeightMT": 18.56,
   "lengthM": 1891,
@@ -1088,12 +1082,12 @@
   "itemId": "4213090038/10",
   "soId": "4213090038",
   "threadId": "TH-011",
-  "receivedAt": "2026-08-29T00:33:52",
+  "receivedAt": "2026-08-28T13:23:21",
   "actuals": {
-   "acidConcPct": 14.1,
-   "stripSpeedMpm": 89,
-   "bathTempC": 81,
-   "oilingGsm": 1.12
+   "acidConcPct": 14.7,
+   "stripSpeedMpm": 90,
+   "bathTempC": 80,
+   "oilingGsm": 1.14
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1115,12 +1109,12 @@
   "itemId": "4213090038/10",
   "soId": "4213090038",
   "threadId": "TH-011",
-  "receivedAt": "2026-08-30T00:52:32",
+  "receivedAt": "2026-08-28T19:54:21",
   "actuals": {
    "exitThkMm": 0.8,
    "passes": 4,
    "reductionPct": 80.0,
-   "rollForceKN": 11385
+   "rollForceKN": 10771
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1142,16 +1136,16 @@
   "itemId": "4213090038/10",
   "soId": "4213090038",
   "threadId": "TH-011",
-  "receivedAt": "2026-08-30T15:26:03",
+  "receivedAt": "2026-08-29T00:27:58",
   "actuals": {
-   "coatingTopGsm": 62.6,
-   "coatingBottomGsm": 59.7,
-   "lineSpeedMpm": 88,
-   "furnaceSoakC": 718,
-   "zincBathAlPct": 0.2,
+   "coatingTopGsm": 64.6,
+   "coatingBottomGsm": 62.9,
+   "lineSpeedMpm": 85,
+   "furnaceSoakC": 716,
+   "zincBathAlPct": 0.21,
    "bathTempC": 460,
-   "skinPassElongPct": 0.99,
-   "coatingTotalGsm": 122.3
+   "skinPassElongPct": 1.04,
+   "coatingTotalGsm": 127.5
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1173,14 +1167,14 @@
   "itemId": "4213090038/10",
   "soId": "4213090038",
   "threadId": "TH-011",
-  "receivedAt": "2026-08-31T15:02:48",
+  "receivedAt": "2026-08-29T07:37:00",
   "actuals": {
-   "dftTopUm": 24.5,
-   "dftBackUm": 9.9,
-   "pmtC": 250,
-   "lineSpeedMpm": 55,
-   "gloss60": 30,
-   "dE": 0.35
+   "dftTopUm": 23.6,
+   "dftBackUm": 10.0,
+   "pmtC": 246,
+   "lineSpeedMpm": 56,
+   "gloss60": 29,
+   "dE": 0.53
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1202,12 +1196,12 @@
   "itemId": "4213090009/10",
   "soId": "4213090009",
   "threadId": "TH-012",
-  "receivedAt": "2026-08-29T12:00:36",
+  "receivedAt": "2026-08-29T08:27:54",
   "actuals": {
-   "acidConcPct": 15.5,
-   "stripSpeedMpm": 116,
-   "bathTempC": 81,
-   "oilingGsm": 1.34
+   "acidConcPct": 12.8,
+   "stripSpeedMpm": 112,
+   "bathTempC": 80,
+   "oilingGsm": 1.3
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1229,12 +1223,12 @@
   "itemId": "4213090009/10",
   "soId": "4213090009",
   "threadId": "TH-012",
-  "receivedAt": "2026-08-30T04:24:57",
+  "receivedAt": "2026-08-29T13:08:13",
   "actuals": {
-   "exitThkMm": 0.5,
+   "exitThkMm": 0.51,
    "passes": 5,
    "reductionPct": 75.0,
-   "rollForceKN": 10360
+   "rollForceKN": 10679
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1256,16 +1250,16 @@
   "itemId": "4213090009/10",
   "soId": "4213090009",
   "threadId": "TH-012",
-  "receivedAt": "2026-08-30T21:06:19",
+  "receivedAt": "2026-08-29T18:08:26",
   "actuals": {
-   "coatingTopGsm": 66.6,
-   "coatingBottomGsm": 66.8,
-   "lineSpeedMpm": 100,
-   "furnaceSoakC": 721,
-   "zincBathAlPct": 0.2,
-   "bathTempC": 459,
-   "skinPassElongPct": 1.12,
-   "coatingTotalGsm": 133.4
+   "coatingTopGsm": 65.1,
+   "coatingBottomGsm": 63.2,
+   "lineSpeedMpm": 98,
+   "furnaceSoakC": 714,
+   "zincBathAlPct": 0.22,
+   "bathTempC": 462,
+   "skinPassElongPct": 1.03,
+   "coatingTotalGsm": 128.3
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1287,12 +1281,12 @@
   "itemId": "4213090008/10",
   "soId": "4213090008",
   "threadId": "TH-013",
-  "receivedAt": "2026-08-29T23:50:15",
+  "receivedAt": "2026-08-29T12:28:14",
   "actuals": {
-   "acidConcPct": 14.9,
-   "stripSpeedMpm": 87,
-   "bathTempC": 82,
-   "oilingGsm": 1.18
+   "acidConcPct": 14.7,
+   "stripSpeedMpm": 86,
+   "bathTempC": 79,
+   "oilingGsm": 1.37
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1314,12 +1308,12 @@
   "itemId": "4213090008/10",
   "soId": "4213090008",
   "threadId": "TH-013",
-  "receivedAt": "2026-08-30T18:35:52",
+  "receivedAt": "2026-08-29T17:35:00",
   "actuals": {
-   "exitThkMm": 0.8,
+   "exitThkMm": 0.81,
    "passes": 4,
    "reductionPct": 80.0,
-   "rollForceKN": 10854
+   "rollForceKN": 9848
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1341,16 +1335,16 @@
   "itemId": "4213090008/10",
   "soId": "4213090008",
   "threadId": "TH-013",
-  "receivedAt": "2026-08-31T21:43:10",
+  "receivedAt": "2026-08-30T00:48:53",
   "actuals": {
-   "coatingTopGsm": 67.5,
-   "coatingBottomGsm": 69.6,
-   "lineSpeedMpm": 85,
-   "furnaceSoakC": 714,
-   "zincBathAlPct": 0.19,
-   "bathTempC": 461,
-   "skinPassElongPct": 0.98,
-   "coatingTotalGsm": 137.1
+   "coatingTopGsm": 66.9,
+   "coatingBottomGsm": 68.6,
+   "lineSpeedMpm": 88,
+   "furnaceSoakC": 720,
+   "zincBathAlPct": 0.21,
+   "bathTempC": 458,
+   "skinPassElongPct": 1.1,
+   "coatingTotalGsm": 135.5
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1372,12 +1366,12 @@
   "itemId": "4213090006/20",
   "soId": "4213090006",
   "threadId": "TH-014",
-  "receivedAt": "2026-08-30T08:46:58",
+  "receivedAt": "2026-08-30T04:17:04",
   "actuals": {
-   "acidConcPct": 12.6,
-   "stripSpeedMpm": 119,
-   "bathTempC": 81,
-   "oilingGsm": 1.17
+   "acidConcPct": 15.1,
+   "stripSpeedMpm": 120,
+   "bathTempC": 78,
+   "oilingGsm": 1.02
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1399,12 +1393,12 @@
   "itemId": "4213090006/20",
   "soId": "4213090006",
   "threadId": "TH-014",
-  "receivedAt": "2026-08-30T20:45:22",
+  "receivedAt": "2026-08-30T08:08:25",
   "actuals": {
-   "exitThkMm": 0.51,
+   "exitThkMm": 0.49,
    "passes": 5,
    "reductionPct": 76.2,
-   "rollForceKN": 9677
+   "rollForceKN": 10067
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1426,16 +1420,16 @@
   "itemId": "4213090006/20",
   "soId": "4213090006",
   "threadId": "TH-014",
-  "receivedAt": "2026-08-31T13:43:19",
+  "receivedAt": "2026-08-30T13:11:57",
   "actuals": {
-   "coatingTopGsm": 67.5,
-   "coatingBottomGsm": 69.8,
-   "lineSpeedMpm": 110,
-   "furnaceSoakC": 717,
+   "coatingTopGsm": 63.5,
+   "coatingBottomGsm": 64.4,
+   "lineSpeedMpm": 103,
+   "furnaceSoakC": 718,
    "zincBathAlPct": 0.2,
    "bathTempC": 459,
-   "skinPassElongPct": 0.85,
-   "coatingTotalGsm": 137.3
+   "skinPassElongPct": 1.09,
+   "coatingTotalGsm": 127.9
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1457,14 +1451,14 @@
   "itemId": "4213090006/20",
   "soId": "4213090006",
   "threadId": "TH-014",
-  "receivedAt": "2026-09-01T00:23:06",
+  "receivedAt": "2026-08-30T17:34:57",
   "actuals": {
-   "dftTopUm": 20.9,
-   "dftBackUm": 6.5,
-   "pmtC": 230,
-   "lineSpeedMpm": 54,
-   "gloss60": 38,
-   "dE": 0.66
+   "dftTopUm": 18.9,
+   "dftBackUm": 7.5,
+   "pmtC": 231,
+   "lineSpeedMpm": 56,
+   "gloss60": 35,
+   "dE": 0.52
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1486,12 +1480,12 @@
   "itemId": "4213090012/10",
   "soId": "4213090012",
   "threadId": "TH-015",
-  "receivedAt": "2026-08-31T09:45:40",
+  "receivedAt": "2026-08-30T16:03:57",
   "actuals": {
-   "acidConcPct": 14.3,
-   "stripSpeedMpm": 85,
-   "bathTempC": 81,
-   "oilingGsm": 1.28
+   "acidConcPct": 12.8,
+   "stripSpeedMpm": 84,
+   "bathTempC": 83,
+   "oilingGsm": 1.17
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1513,12 +1507,12 @@
   "itemId": "4213090012/10",
   "soId": "4213090012",
   "threadId": "TH-015",
-  "receivedAt": "2026-08-31T18:18:03",
+  "receivedAt": "2026-08-30T19:03:45",
   "actuals": {
    "exitThkMm": 0.8,
    "passes": 4,
    "reductionPct": 80.0,
-   "rollForceKN": 9832
+   "rollForceKN": 10445
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1540,16 +1534,16 @@
   "itemId": "4213090012/10",
   "soId": "4213090012",
   "threadId": "TH-015",
-  "receivedAt": "2026-09-01T17:18:26",
+  "receivedAt": "2026-08-31T01:16:14",
   "actuals": {
-   "coatingTopGsm": 64.4,
-   "coatingBottomGsm": 62.9,
-   "lineSpeedMpm": 80,
-   "furnaceSoakC": 721,
+   "coatingTopGsm": 62.3,
+   "coatingBottomGsm": 60.3,
+   "lineSpeedMpm": 90,
+   "furnaceSoakC": 719,
    "zincBathAlPct": 0.22,
-   "bathTempC": 459,
-   "skinPassElongPct": 0.92,
-   "coatingTotalGsm": 127.3
+   "bathTempC": 460,
+   "skinPassElongPct": 0.97,
+   "coatingTotalGsm": 122.6
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1571,12 +1565,12 @@
   "itemId": "4213090027/20",
   "soId": "4213090027",
   "threadId": "TH-016",
-  "receivedAt": "2026-08-31T00:18:04",
+  "receivedAt": "2026-08-30T22:02:48",
   "actuals": {
    "acidConcPct": 13.0,
-   "stripSpeedMpm": 90,
-   "bathTempC": 80,
-   "oilingGsm": 1.25
+   "stripSpeedMpm": 86,
+   "bathTempC": 79,
+   "oilingGsm": 1.14
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1598,12 +1592,12 @@
   "itemId": "4213090027/20",
   "soId": "4213090027",
   "threadId": "TH-016",
-  "receivedAt": "2026-08-31T22:55:09",
+  "receivedAt": "2026-08-31T04:03:17",
   "actuals": {
    "exitThkMm": 0.8,
    "passes": 4,
    "reductionPct": 76.5,
-   "rollForceKN": 10622
+   "rollForceKN": 9863
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1625,25 +1619,19 @@
   "itemId": "4213090027/20",
   "soId": "4213090027",
   "threadId": "TH-016",
-  "receivedAt": "2026-09-01T07:11:59",
+  "receivedAt": "2026-08-31T07:10:14",
   "actuals": {
-   "coatingTopGsm": 66.8,
-   "coatingBottomGsm": 68.4,
-   "lineSpeedMpm": 85,
-   "furnaceSoakC": 716,
-   "zincBathAlPct": 0.21,
-   "bathTempC": 461,
-   "skinPassElongPct": 0.89,
-   "coatingTotalGsm": 112.6
+   "coatingTopGsm": 61.2,
+   "coatingBottomGsm": 63.8,
+   "lineSpeedMpm": 86,
+   "furnaceSoakC": 726,
+   "zincBathAlPct": 0.22,
+   "bathTempC": 463,
+   "skinPassElongPct": 1.08,
+   "coatingTotalGsm": 125.0
   },
-  "deviations": [
-   {
-    "field": "coatingTotalGsm",
-    "note": "below band min 120 g/m²",
-    "severity": "DEVIATION"
-   }
-  ],
-  "status": "ACCEPTED_WITH_DEVIATION",
+  "deviations": [],
+  "status": "ACCEPTED",
   "inWeightMT": 20.06,
   "outWeightMT": 19.56,
   "lengthM": 3114,
@@ -1662,14 +1650,14 @@
   "itemId": "4213090027/20",
   "soId": "4213090027",
   "threadId": "TH-016",
-  "receivedAt": "2026-09-02T02:54:32",
+  "receivedAt": "2026-08-31T13:21:47",
   "actuals": {
-   "dftTopUm": 23.7,
-   "dftBackUm": 10.7,
-   "pmtC": 249,
-   "lineSpeedMpm": 59,
-   "gloss60": 28,
-   "dE": 0.38
+   "dftTopUm": 24.5,
+   "dftBackUm": 9.8,
+   "pmtC": 248,
+   "lineSpeedMpm": 58,
+   "gloss60": 31,
+   "dE": 0.79
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1691,12 +1679,12 @@
   "itemId": "4213090028/10",
   "soId": "4213090028",
   "threadId": "TH-017",
-  "receivedAt": "2026-09-01T13:20:25",
+  "receivedAt": "2026-09-01T01:29:56",
   "actuals": {
-   "acidConcPct": 13.3,
-   "stripSpeedMpm": 85,
-   "bathTempC": 82,
-   "oilingGsm": 1.16
+   "acidConcPct": 12.8,
+   "stripSpeedMpm": 90,
+   "bathTempC": 81,
+   "oilingGsm": 1.39
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1718,21 +1706,15 @@
   "itemId": "4213090028/10",
   "soId": "4213090028",
   "threadId": "TH-017",
-  "receivedAt": "2026-09-01T17:36:01",
+  "receivedAt": "2026-09-01T03:38:17",
   "actuals": {
-   "exitThkMm": 0.85,
+   "exitThkMm": 0.79,
    "passes": 4,
    "reductionPct": 80.0,
-   "rollForceKN": 10981
+   "rollForceKN": 10647
   },
-  "deviations": [
-   {
-    "field": "exitThkMm",
-    "note": "outside ±0.03 mm",
-    "severity": "DEVIATION"
-   }
-  ],
-  "status": "ACCEPTED_WITH_DEVIATION",
+  "deviations": [],
+  "status": "ACCEPTED",
   "inWeightMT": 21.28,
   "outWeightMT": 20.43,
   "lengthM": 2602,
@@ -1751,16 +1733,16 @@
   "itemId": "4213090028/10",
   "soId": "4213090028",
   "threadId": "TH-017",
-  "receivedAt": "2026-09-02T04:28:11",
+  "receivedAt": "2026-09-01T07:20:16",
   "actuals": {
-   "coatingTopGsm": 138.2,
-   "coatingBottomGsm": 140.3,
-   "lineSpeedMpm": 87,
+   "coatingTopGsm": 143.4,
+   "coatingBottomGsm": 145.0,
+   "lineSpeedMpm": 81,
    "furnaceSoakC": 720,
-   "zincBathAlPct": 0.23,
-   "bathTempC": 462,
-   "skinPassElongPct": 0.85,
-   "coatingTotalGsm": 278.5
+   "zincBathAlPct": 0.21,
+   "bathTempC": 463,
+   "skinPassElongPct": 0.91,
+   "coatingTotalGsm": 288.4
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1782,12 +1764,12 @@
   "itemId": "4213090017/10",
   "soId": "4213090017",
   "threadId": "TH-018",
-  "receivedAt": "2026-09-02T07:27:00",
+  "receivedAt": "2026-09-02T07:26:00",
   "actuals": {
-   "acidConcPct": 13.0,
-   "stripSpeedMpm": 115,
-   "bathTempC": 80,
-   "oilingGsm": 1.28
+   "acidConcPct": 15.4,
+   "stripSpeedMpm": 118,
+   "bathTempC": 83,
+   "oilingGsm": 1.1
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1809,12 +1791,12 @@
   "itemId": "4213090017/10",
   "soId": "4213090017",
   "threadId": "TH-018",
-  "receivedAt": "2026-09-03T15:06:00",
+  "receivedAt": "2026-09-03T15:08:00",
   "actuals": {
-   "exitThkMm": 0.49,
+   "exitThkMm": 0.51,
    "passes": 5,
    "reductionPct": 80.0,
-   "rollForceKN": 9646
+   "rollForceKN": 10901
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1843,8 +1825,8 @@
    "lineSpeedMpm": 96,
    "furnaceSoakC": 719,
    "zincBathAlPct": 0.21,
-   "bathTempC": 461,
-   "skinPassElongPct": 1.04,
+   "bathTempC": 462,
+   "skinPassElongPct": 1.07,
    "coatingTotalGsm": 126.8
   },
   "deviations": [
@@ -1908,12 +1890,12 @@
   "itemId": "4213090001/10",
   "soId": "4213090001",
   "threadId": "TH-019",
-  "receivedAt": "2026-09-02T09:30:30",
+  "receivedAt": "2026-09-01T21:12:30",
   "actuals": {
-   "acidConcPct": 14.7,
-   "stripSpeedMpm": 115,
-   "bathTempC": 80,
-   "oilingGsm": 1.09
+   "acidConcPct": 14.1,
+   "stripSpeedMpm": 120,
+   "bathTempC": 81,
+   "oilingGsm": 1.38
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1935,12 +1917,12 @@
   "itemId": "4213090001/10",
   "soId": "4213090001",
   "threadId": "TH-019",
-  "receivedAt": "2026-09-03T07:40:17",
+  "receivedAt": "2026-09-02T03:13:55",
   "actuals": {
    "exitThkMm": 0.35,
    "passes": 5,
    "reductionPct": 81.6,
-   "rollForceKN": 10599
+   "rollForceKN": 10189
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1962,16 +1944,16 @@
   "itemId": "4213090001/10",
   "soId": "4213090001",
   "threadId": "TH-019",
-  "receivedAt": "2026-09-03T23:43:05",
+  "receivedAt": "2026-09-02T08:05:10",
   "actuals": {
-   "coatingTopGsm": 40.6,
-   "coatingBottomGsm": 43.3,
-   "lineSpeedMpm": 108,
-   "furnaceSoakC": 721,
+   "coatingTopGsm": 40.9,
+   "coatingBottomGsm": 39.3,
+   "lineSpeedMpm": 104,
+   "furnaceSoakC": 714,
    "zincBathAlPct": 0.21,
-   "bathTempC": 458,
-   "skinPassElongPct": 1.1,
-   "coatingTotalGsm": 83.9
+   "bathTempC": 461,
+   "skinPassElongPct": 0.99,
+   "coatingTotalGsm": 80.2
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -1993,12 +1975,12 @@
   "itemId": "4213090019/10",
   "soId": "4213090019",
   "threadId": "TH-020",
-  "receivedAt": "2026-09-02T22:13:23",
+  "receivedAt": "2026-09-02T15:50:26",
   "actuals": {
-   "acidConcPct": 15.3,
-   "stripSpeedMpm": 87,
+   "acidConcPct": 13.2,
+   "stripSpeedMpm": 85,
    "bathTempC": 81,
-   "oilingGsm": 1.29
+   "oilingGsm": 1.38
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2020,12 +2002,12 @@
   "itemId": "4213090019/10",
   "soId": "4213090019",
   "threadId": "TH-020",
-  "receivedAt": "2026-09-03T23:21:27",
+  "receivedAt": "2026-09-02T22:28:40",
   "actuals": {
    "exitThkMm": 1.0,
    "passes": 4,
    "reductionPct": 75.0,
-   "rollForceKN": 10613
+   "rollForceKN": 10323
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2047,19 +2029,25 @@
   "itemId": "4213090019/10",
   "soId": "4213090019",
   "threadId": "TH-020",
-  "receivedAt": "2026-09-04T21:20:05",
+  "receivedAt": "2026-09-03T04:29:56",
   "actuals": {
-   "coatingTopGsm": 64.8,
-   "coatingBottomGsm": 64.6,
-   "lineSpeedMpm": 78,
-   "furnaceSoakC": 721,
-   "zincBathAlPct": 0.21,
-   "bathTempC": 459,
-   "skinPassElongPct": 0.86,
-   "coatingTotalGsm": 129.4
+   "coatingTopGsm": 67.5,
+   "coatingBottomGsm": 66.3,
+   "lineSpeedMpm": 81,
+   "furnaceSoakC": 726,
+   "zincBathAlPct": 0.22,
+   "bathTempC": 463,
+   "skinPassElongPct": 1.14,
+   "coatingTotalGsm": 114.2
   },
-  "deviations": [],
-  "status": "ACCEPTED",
+  "deviations": [
+   {
+    "field": "coatingTotalGsm",
+    "note": "below band min 120 g/m²",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
   "inWeightMT": 18.08,
   "outWeightMT": 17.63,
   "lengthM": 1796,
@@ -2078,12 +2066,12 @@
   "itemId": "4213090020/10",
   "soId": "4213090020",
   "threadId": "TH-021",
-  "receivedAt": "2026-09-03T12:24:20",
+  "receivedAt": "2026-09-03T09:05:20",
   "actuals": {
-   "acidConcPct": 14.9,
-   "stripSpeedMpm": 113,
-   "bathTempC": 78,
-   "oilingGsm": 1.27
+   "acidConcPct": 13.6,
+   "stripSpeedMpm": 117,
+   "bathTempC": 83,
+   "oilingGsm": 1.37
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2105,12 +2093,12 @@
   "itemId": "4213090020/10",
   "soId": "4213090020",
   "threadId": "TH-021",
-  "receivedAt": "2026-09-04T00:35:05",
+  "receivedAt": "2026-09-03T12:43:18",
   "actuals": {
    "exitThkMm": 0.5,
    "passes": 5,
    "reductionPct": 80.8,
-   "rollForceKN": 11103
+   "rollForceKN": 11361
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2132,16 +2120,16 @@
   "itemId": "4213090020/10",
   "soId": "4213090020",
   "threadId": "TH-021",
-  "receivedAt": "2026-09-04T12:15:56",
+  "receivedAt": "2026-09-03T16:31:38",
   "actuals": {
-   "coatingTopGsm": 68.6,
-   "coatingBottomGsm": 66.5,
-   "lineSpeedMpm": 101,
-   "furnaceSoakC": 717,
+   "coatingTopGsm": 64.4,
+   "coatingBottomGsm": 66.8,
+   "lineSpeedMpm": 103,
+   "furnaceSoakC": 716,
    "zincBathAlPct": 0.22,
    "bathTempC": 462,
-   "skinPassElongPct": 0.95,
-   "coatingTotalGsm": 135.1
+   "skinPassElongPct": 0.86,
+   "coatingTotalGsm": 131.2
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2163,14 +2151,14 @@
   "itemId": "4213090020/10",
   "soId": "4213090020",
   "threadId": "TH-021",
-  "receivedAt": "2026-09-04T22:34:47",
+  "receivedAt": "2026-09-03T20:31:12",
   "actuals": {
-   "dftTopUm": 21.2,
-   "dftBackUm": 7.5,
-   "pmtC": 232,
+   "dftTopUm": 21.3,
+   "dftBackUm": 6.6,
+   "pmtC": 233,
    "lineSpeedMpm": 55,
-   "gloss60": 39,
-   "dE": 0.8
+   "gloss60": 31,
+   "dE": 0.67
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2192,12 +2180,12 @@
   "itemId": "4213090040/20",
   "soId": "4213090040",
   "threadId": "TH-022",
-  "receivedAt": "2026-09-04T09:10:33",
+  "receivedAt": "2026-09-04T03:49:29",
   "actuals": {
-   "acidConcPct": 12.9,
-   "stripSpeedMpm": 120,
-   "bathTempC": 81,
-   "oilingGsm": 1.36
+   "acidConcPct": 14.7,
+   "stripSpeedMpm": 115,
+   "bathTempC": 80,
+   "oilingGsm": 1.14
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2219,15 +2207,21 @@
   "itemId": "4213090040/20",
   "soId": "4213090040",
   "threadId": "TH-022",
-  "receivedAt": "2026-09-05T10:18:00",
+  "receivedAt": "2026-09-04T10:28:36",
   "actuals": {
-   "exitThkMm": 0.51,
+   "exitThkMm": 0.55,
    "passes": 5,
    "reductionPct": 77.3,
-   "rollForceKN": 10194
+   "rollForceKN": 10506
   },
-  "deviations": [],
-  "status": "ACCEPTED",
+  "deviations": [
+   {
+    "field": "exitThkMm",
+    "note": "outside ±0.03 mm",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
   "inWeightMT": 21.5,
   "outWeightMT": 20.64,
   "lengthM": 5258,
@@ -2246,19 +2240,25 @@
   "itemId": "4213090040/20",
   "soId": "4213090040",
   "threadId": "TH-022",
-  "receivedAt": "2026-09-06T04:51:08",
+  "receivedAt": "2026-09-04T15:53:37",
   "actuals": {
-   "coatingTopGsm": 61.6,
-   "coatingBottomGsm": 60.6,
-   "lineSpeedMpm": 103,
-   "furnaceSoakC": 714,
-   "zincBathAlPct": 0.22,
-   "bathTempC": 460,
-   "skinPassElongPct": 1.11,
-   "coatingTotalGsm": 122.2
+   "coatingTopGsm": 64.8,
+   "coatingBottomGsm": 63.1,
+   "lineSpeedMpm": 105,
+   "furnaceSoakC": 722,
+   "zincBathAlPct": 0.2,
+   "bathTempC": 462,
+   "skinPassElongPct": 1.14,
+   "coatingTotalGsm": 114.3
   },
-  "deviations": [],
-  "status": "ACCEPTED",
+  "deviations": [
+   {
+    "field": "coatingTotalGsm",
+    "note": "below band min 120 g/m²",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
   "inWeightMT": 20.64,
   "outWeightMT": 20.12,
   "lengthM": 5126,
@@ -2277,23 +2277,17 @@
   "itemId": "4213090040/20",
   "soId": "4213090040",
   "threadId": "TH-022",
-  "receivedAt": "2026-09-06T16:05:18",
+  "receivedAt": "2026-09-04T20:15:27",
   "actuals": {
-   "dftTopUm": 19.3,
-   "dftBackUm": 6.9,
-   "pmtC": 235,
-   "lineSpeedMpm": 57,
-   "gloss60": 36,
-   "dE": 1.8
+   "dftTopUm": 20.0,
+   "dftBackUm": 7.4,
+   "pmtC": 230,
+   "lineSpeedMpm": 54,
+   "gloss60": 39,
+   "dE": 0.32
   },
-  "deviations": [
-   {
-    "field": "dE",
-    "note": "colour difference > 1.2",
-    "severity": "DEVIATION"
-   }
-  ],
-  "status": "ACCEPTED_WITH_DEVIATION",
+  "deviations": [],
+  "status": "ACCEPTED",
   "inWeightMT": 20.12,
   "outWeightMT": 19.72,
   "lengthM": 5024,
@@ -2312,12 +2306,12 @@
   "itemId": "4213090004/10",
   "soId": "4213090004",
   "threadId": "TH-023",
-  "receivedAt": "2026-09-05T22:37:05",
+  "receivedAt": "2026-09-05T03:17:59",
   "actuals": {
-   "acidConcPct": 14.6,
+   "acidConcPct": 13.8,
    "stripSpeedMpm": 89,
-   "bathTempC": 79,
-   "oilingGsm": 1.28
+   "bathTempC": 81,
+   "oilingGsm": 1.19
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2339,15 +2333,21 @@
   "itemId": "4213090004/10",
   "soId": "4213090004",
   "threadId": "TH-023",
-  "receivedAt": "2026-09-06T05:07:01",
+  "receivedAt": "2026-09-05T05:54:01",
   "actuals": {
-   "exitThkMm": 1.2,
+   "exitThkMm": 1.27,
    "passes": 4,
    "reductionPct": 70.0,
-   "rollForceKN": 11002
+   "rollForceKN": 10090
   },
-  "deviations": [],
-  "status": "ACCEPTED",
+  "deviations": [
+   {
+    "field": "exitThkMm",
+    "note": "outside ±0.05 mm",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
   "inWeightMT": 21.18,
   "outWeightMT": 20.33,
   "lengthM": 1438,
@@ -2366,16 +2366,16 @@
   "itemId": "4213090004/10",
   "soId": "4213090004",
   "threadId": "TH-023",
-  "receivedAt": "2026-09-06T14:06:45",
+  "receivedAt": "2026-09-05T09:15:25",
   "actuals": {
-   "coatingTopGsm": 61.4,
-   "coatingBottomGsm": 61.3,
-   "lineSpeedMpm": 89,
-   "furnaceSoakC": 717,
-   "zincBathAlPct": 0.21,
-   "bathTempC": 463,
-   "skinPassElongPct": 0.88,
-   "coatingTotalGsm": 122.7
+   "coatingTopGsm": 60.1,
+   "coatingBottomGsm": 61.2,
+   "lineSpeedMpm": 79,
+   "furnaceSoakC": 715,
+   "zincBathAlPct": 0.2,
+   "bathTempC": 459,
+   "skinPassElongPct": 0.9,
+   "coatingTotalGsm": 121.3
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2397,12 +2397,12 @@
   "itemId": "4213090024/20",
   "soId": "4213090024",
   "threadId": "TH-024",
-  "receivedAt": "2026-09-07T02:33:33",
+  "receivedAt": "2026-09-06T05:02:32",
   "actuals": {
-   "acidConcPct": 15.3,
-   "stripSpeedMpm": 117,
+   "acidConcPct": 15.1,
+   "stripSpeedMpm": 120,
    "bathTempC": 80,
-   "oilingGsm": 1.31
+   "oilingGsm": 1.09
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2424,12 +2424,12 @@
   "itemId": "4213090031/10",
   "soId": "4213090031",
   "threadId": "TH-025",
-  "receivedAt": "2026-09-07T08:02:17",
+  "receivedAt": "2026-09-06T18:58:15",
   "actuals": {
-   "acidConcPct": 13.2,
-   "stripSpeedMpm": 85,
+   "acidConcPct": 12.9,
+   "stripSpeedMpm": 84,
    "bathTempC": 79,
-   "oilingGsm": 1.36
+   "oilingGsm": 1.18
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2451,12 +2451,12 @@
   "itemId": "4213090031/10",
   "soId": "4213090031",
   "threadId": "TH-025",
-  "receivedAt": "2026-09-08T09:56:28",
+  "receivedAt": "2026-09-07T01:47:29",
   "actuals": {
-   "exitThkMm": 0.79,
+   "exitThkMm": 0.8,
    "passes": 4,
    "reductionPct": 78.9,
-   "rollForceKN": 9927
+   "rollForceKN": 9671
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2478,12 +2478,12 @@
   "itemId": "4213090023/20",
   "soId": "4213090023",
   "threadId": "TH-026",
-  "receivedAt": "2026-09-07T00:21:24",
+  "receivedAt": "2026-09-06T19:47:35",
   "actuals": {
-   "acidConcPct": 15.4,
-   "stripSpeedMpm": 88,
-   "bathTempC": 81,
-   "oilingGsm": 1.35
+   "acidConcPct": 14.3,
+   "stripSpeedMpm": 82,
+   "bathTempC": 80,
+   "oilingGsm": 1.21
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2505,12 +2505,12 @@
   "itemId": "4213090023/20",
   "soId": "4213090023",
   "threadId": "TH-026",
-  "receivedAt": "2026-09-07T18:02:54",
+  "receivedAt": "2026-09-07T02:48:02",
   "actuals": {
    "exitThkMm": 0.8,
    "passes": 4,
    "reductionPct": 80.0,
-   "rollForceKN": 10804
+   "rollForceKN": 10564
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2532,16 +2532,16 @@
   "itemId": "4213090023/20",
   "soId": "4213090023",
   "threadId": "TH-026",
-  "receivedAt": "2026-09-08T03:04:26",
+  "receivedAt": "2026-09-07T06:00:47",
   "actuals": {
-   "coatingTopGsm": 149.9,
-   "coatingBottomGsm": 148.6,
-   "lineSpeedMpm": 79,
-   "furnaceSoakC": 718,
-   "zincBathAlPct": 0.2,
+   "coatingTopGsm": 154.1,
+   "coatingBottomGsm": 155.8,
+   "lineSpeedMpm": 90,
+   "furnaceSoakC": 725,
+   "zincBathAlPct": 0.23,
    "bathTempC": 460,
-   "skinPassElongPct": 0.92,
-   "coatingTotalGsm": 298.5
+   "skinPassElongPct": 0.95,
+   "coatingTotalGsm": 309.9
   },
   "deviations": [],
   "status": "ACCEPTED",
@@ -2563,18 +2563,196 @@
   "itemId": "4213090026/10",
   "soId": "4213090026",
   "threadId": "TH-027",
-  "receivedAt": "2026-09-08T09:27:59",
+  "receivedAt": "2026-09-07T18:30:57",
   "actuals": {
-   "acidConcPct": 13.1,
-   "stripSpeedMpm": 112,
-   "bathTempC": 81,
-   "oilingGsm": 1.32
+   "acidConcPct": 15.0,
+   "stripSpeedMpm": 116,
+   "bathTempC": 83,
+   "oilingGsm": 1.05
   },
   "deviations": [],
   "status": "ACCEPTED",
   "inWeightMT": 19.94,
   "outWeightMT": 19.64,
   "lengthM": 800,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0028",
+  "pdiId": "PDI-PKL-0028",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0135",
+  "unitIn": "HRC-VJ-2609-0030",
+  "unitsOut": [
+   "HPO-KHP-2609-0028"
+  ],
+  "itemId": "4213090008/30",
+  "soId": "4213090008",
+  "threadId": "TH-028",
+  "receivedAt": "2026-09-08T07:24:04",
+  "actuals": {
+   "acidConcPct": 12.8,
+   "stripSpeedMpm": 117,
+   "bathTempC": 79,
+   "oilingGsm": 1.22
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 23.04,
+  "outWeightMT": 22.69,
+  "lengthM": 4738,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0029",
+  "pdiId": "PDI-PKL-0030",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0147",
+  "unitIn": "HRC-VJ-2609-0032",
+  "unitsOut": [
+   "HPO-KHP-2609-0030"
+  ],
+  "itemId": "4213090037/10",
+  "soId": "4213090037",
+  "threadId": "TH-030",
+  "receivedAt": "2026-09-08T03:27:06",
+  "actuals": {
+   "acidConcPct": 11.2,
+   "stripSpeedMpm": 83,
+   "bathTempC": 82,
+   "oilingGsm": 1.14
+  },
+  "deviations": [
+   {
+    "field": "acidConcPct",
+    "note": "below 12 % band",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
+  "inWeightMT": 23.85,
+  "outWeightMT": 23.49,
+  "lengthM": 1994,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0026",
+  "pdiId": "PDI-CRM-0028",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0148",
+  "unitIn": "HPO-KHP-2609-0030",
+  "unitsOut": [
+   "CRF-KHP-2609-0028"
+  ],
+  "itemId": "4213090037/10",
+  "soId": "4213090037",
+  "threadId": "TH-030",
+  "receivedAt": "2026-09-08T07:15:30",
+  "actuals": {
+   "exitThkMm": 1.27,
+   "passes": 4,
+   "reductionPct": 70.0,
+   "rollForceKN": 9916
+  },
+  "deviations": [
+   {
+    "field": "exitThkMm",
+    "note": "outside ±0.05 mm",
+    "severity": "DEVIATION"
+   }
+  ],
+  "status": "ACCEPTED_WITH_DEVIATION",
+  "inWeightMT": 23.49,
+  "outWeightMT": 22.55,
+  "lengthM": 1915,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-PKL-0030",
+  "pdiId": "PDI-PKL-0031",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0165",
+  "unitIn": "HRC-DL-2609-0036",
+  "unitsOut": [
+   "HPO-KHP-2609-0034"
+  ],
+  "itemId": "4213090023/10",
+  "soId": "4213090023",
+  "threadId": "TH-034",
+  "receivedAt": "2026-09-08T01:18:41",
+  "actuals": {
+   "acidConcPct": 14.3,
+   "stripSpeedMpm": 86,
+   "bathTempC": 83,
+   "oilingGsm": 1.25
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.59,
+  "outWeightMT": 19.3,
+  "lengthM": 4097,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CRM-0027",
+  "pdiId": "PDI-CRM-0029",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0166",
+  "unitIn": "HPO-KHP-2609-0034",
+  "unitsOut": [
+   "CRF-KHP-2609-0032"
+  ],
+  "itemId": "4213090023/10",
+  "soId": "4213090023",
+  "threadId": "TH-034",
+  "receivedAt": "2026-09-08T03:45:29",
+  "actuals": {
+   "exitThkMm": 0.59,
+   "passes": 4,
+   "reductionPct": 82.4,
+   "rollForceKN": 10791
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 19.3,
+  "outWeightMT": 18.53,
+  "lengthM": 3934,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDO-CGL-0025",
+  "pdiId": "PDI-CGL-0029",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0167",
+  "unitIn": "CRF-KHP-2609-0032",
+  "unitsOut": [
+   "GIC-KHP-2609-0030"
+  ],
+  "itemId": "4213090023/10",
+  "soId": "4213090023",
+  "threadId": "TH-034",
+  "receivedAt": "2026-09-08T07:47:27",
+  "actuals": {
+   "coatingTopGsm": 62.9,
+   "coatingBottomGsm": 64.8,
+   "lineSpeedMpm": 87,
+   "furnaceSoakC": 719,
+   "zincBathAlPct": 0.2,
+   "bathTempC": 463,
+   "skinPassElongPct": 1.05,
+   "coatingTotalGsm": 127.7
+  },
+  "deviations": [],
+  "status": "ACCEPTED",
+  "inWeightMT": 18.53,
+  "outWeightMT": 18.07,
+  "lengthM": 3836,
   "hero": false,
   "via": "Middleware (L2 gateway)"
  }

@@ -52,7 +52,7 @@ def build_quality(materials, stages, items, edges, hero_thread):
         rec = defect(d["code"], u, at, pick(["SIS", "SIS", "Manual (line inspector)", "Lab"]))
         rec["status"] = pick(["CLOSED", "CLOSED", "OPEN", "CLOSED"]); rec["disposition"] = pick(["Accepted — within customer limit", "Downgraded", "Rework — re-pass", "Accepted after re-inspection", None])
     # lab results still pending on the newest colour-coated coils (hand-held DFT after cooling) -> Scenario 1 can be run on them as well as the hero coil
-    pkg_done = {st["threadId"] for st in stages if st["line"] == "PKG" and st["status"] == "DONE"}
+    pkg_done = {st["threadId"] for st in stages if st["line"] == "PKG" and st["status"] in ("DONE", "IN_PROGRESS")}
     recent = sorted([u for u in materials if u["product"] in ("PPGI", "PPGL") and u.get("producedAt") and u["id"] != hero_pp["id"] and u.get("threadId") not in pkg_done], key=lambda u: u["producedAt"], reverse=True)
     for u in recent[:3]:
         u["labPending"] = True; u["qualityStatus"] = "QUALITY_PENDING"

@@ -3,44 +3,44 @@
  "tickets": 31,
  "resolved": 30,
  "open": 1,
- "agentResolvedPct": 80,
- "humanResolvedPct": 20,
+ "agentResolvedPct": 63,
+ "humanResolvedPct": 37,
  "mttrMinBySeverity": {
   "S1": 12,
-  "S2": 68,
-  "S3": 297,
-  "S4": 251
+  "S2": 47,
+  "S3": 296,
+  "S4": 505
  },
  "deflectionPct": 38,
- "falseActionRatePct": 4.2,
- "automationCoveragePct": 80,
+ "falseActionRatePct": 0.0,
+ "automationCoveragePct": 83,
  "slaCompliancePct": 96.4,
- "csatAvg": 4.7,
+ "csatAvg": 4.3,
  "weekly": [
   {
    "week": "W32",
-   "tickets": 4,
-   "agentResolvedPct": 50
+   "tickets": 6,
+   "agentResolvedPct": 33
   },
   {
    "week": "W33",
-   "tickets": 10,
-   "agentResolvedPct": 90
+   "tickets": 6,
+   "agentResolvedPct": 67
   },
   {
    "week": "W34",
    "tickets": 8,
-   "agentResolvedPct": 100
+   "agentResolvedPct": 88
   },
   {
    "week": "W35",
-   "tickets": 5,
-   "agentResolvedPct": 40
+   "tickets": 7,
+   "agentResolvedPct": 57
   },
   {
    "week": "W36",
    "tickets": 3,
-   "agentResolvedPct": 100
+   "agentResolvedPct": 67
   }
  ],
  "targets": {

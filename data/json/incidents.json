@@ -1,96 +1,61 @@
 [
  {
-  "id": "INC-26-0406",
-  "title": "PDI not acknowledged on CGL",
-  "category": "Interface / L2",
-  "severity": "S2",
-  "channel": "Teams chat",
-  "openedAt": "2026-08-10T20:12:53",
-  "openedBy": "PPC",
+  "id": "INC-26-0407",
+  "title": "New shift in-charge cannot open Delay entry page",
+  "category": "Access",
+  "severity": "S4",
+  "channel": "ITSM portal",
+  "openedAt": "2026-08-09T21:02:03",
+  "openedBy": "Packing supervisor",
   "classification": {
    "by": "AI agent",
-   "confidence": 0.83,
-   "category": "Interface / L2"
+   "confidence": 0.97,
+   "category": "Access"
   },
   "enrichment": {
-   "batchIds": [
-    "GIC-KHP-2609-0041"
-   ],
-   "interfaceLogs": 3,
+   "batchIds": [],
+   "interfaceLogs": 1,
    "line": "CGL"
   },
-  "knowledgeSource": "RB-001",
-  "proposedAction": "Restart L2 gateway subscriber service (autonomous)",
+  "knowledgeSource": "RB-006",
+  "proposedAction": "Assign role per policy (autonomous within policy)",
   "approvalRequired": false,
   "approvedBy": null,
   "resolvedBy": "Human L2 engineer",
   "validation": "Manual verification",
-  "resolvedAt": "2026-08-10T21:20:53",
-  "mttrMin": 68,
+  "resolvedAt": "2026-08-10T07:30:03",
+  "mttrMin": 628,
   "status": "RESOLVED",
   "falseAction": false,
-  "csat": 5,
+  "csat": 3,
   "hero": false
  },
  {
-  "id": "INC-26-0395",
-  "title": "Query: batch swap between two SOs",
+  "id": "INC-26-0387",
+  "title": "How to record offline production entry",
   "category": "How-to",
   "severity": "S4",
-  "channel": "ITSM portal",
-  "openedAt": "2026-08-12T01:39:38",
+  "channel": "Teams chat",
+  "openedAt": "2026-08-11T00:35:31",
   "openedBy": "QC",
   "classification": {
    "by": "AI agent",
-   "confidence": 0.83,
+   "confidence": 0.96,
    "category": "How-to"
   },
   "enrichment": {
    "batchIds": [],
-   "interfaceLogs": 5,
+   "interfaceLogs": 3,
    "line": "PKG"
   },
   "knowledgeSource": null,
   "proposedAction": "Guided answer from SOP",
   "approvalRequired": false,
   "approvedBy": null,
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-12T05:53:38",
-  "mttrMin": 254,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0396",
-  "title": "PDI not acknowledged on CGL",
-  "category": "Interface / L2",
-  "severity": "S2",
-  "channel": "Email",
-  "openedAt": "2026-08-13T05:10:33",
-  "openedBy": "QC",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.93,
-   "category": "Interface / L2"
-  },
-  "enrichment": {
-   "batchIds": [
-    "GIC-KHP-2609-0027"
-   ],
-   "interfaceLogs": 4,
-   "line": "CCL"
-  },
-  "knowledgeSource": "RB-001",
-  "proposedAction": "Restart L2 gateway subscriber service (autonomous)",
-  "approvalRequired": false,
-  "approvedBy": null,
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-13T05:36:33",
-  "mttrMin": 26,
+  "resolvedBy": "Human L2 engineer",
+  "validation": "Manual verification",
+  "resolvedAt": "2026-08-11T04:22:31",
+  "mttrMin": 227,
   "status": "RESOLVED",
   "falseAction": false,
   "csat": 5,
@@ -101,18 +66,18 @@
   "title": "Label printer offline at packing line",
   "category": "Shop-floor IT",
   "severity": "S3",
-  "channel": "Monitoring alert",
-  "openedAt": "2026-08-14T06:28:47",
-  "openedBy": "Packing supervisor",
+  "channel": "Teams chat",
+  "openedAt": "2026-08-11T23:19:40",
+  "openedBy": "Monitoring",
   "classification": {
    "by": "AI agent",
-   "confidence": 0.83,
+   "confidence": 0.9,
    "category": "Shop-floor IT"
   },
   "enrichment": {
    "batchIds": [],
-   "interfaceLogs": 0,
-   "line": "SLT"
+   "interfaceLogs": 3,
+   "line": "CRM"
   },
   "knowledgeSource": "RB-007",
   "proposedAction": "Restart spooler (autonomous)",
@@ -120,276 +85,55 @@
   "approvedBy": null,
   "resolvedBy": "Human L2 engineer",
   "validation": "Manual verification",
-  "resolvedAt": "2026-08-14T19:49:47",
-  "mttrMin": 801,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0385",
-  "title": "New shift in-charge cannot open Delay entry page",
-  "category": "Access",
-  "severity": "S4",
-  "channel": "Email",
-  "openedAt": "2026-08-18T20:14:47",
-  "openedBy": "PPC",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.94,
-   "category": "Access"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 2,
-   "line": "CGL"
-  },
-  "knowledgeSource": "RB-006",
-  "proposedAction": "Assign role per policy (autonomous within policy)",
-  "approvalRequired": false,
-  "approvedBy": null,
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-18T23:39:47",
-  "mttrMin": 205,
+  "resolvedAt": "2026-08-12T06:13:40",
+  "mttrMin": 414,
   "status": "RESOLVED",
   "falseAction": false,
   "csat": 4,
-  "hero": false
- },
- {
-  "id": "INC-26-0407",
-  "title": "Batch attribute IDoc failed — NULL coating value",
-  "category": "Interface / SAP",
-  "severity": "S3",
-  "channel": "ITSM portal",
-  "openedAt": "2026-08-19T21:06:28",
-  "openedBy": "PPC",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.88,
-   "category": "Interface / SAP"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 4,
-   "line": "PKG"
-  },
-  "knowledgeSource": "RB-005",
-  "proposedAction": "Data correction under approval workflow",
-  "approvalRequired": true,
-  "approvedBy": "Shift IT lead",
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-19T23:41:28",
-  "mttrMin": 155,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
   "hero": false
  },
  {
   "id": "INC-26-0405",
-  "title": "New shift in-charge cannot open Delay entry page",
-  "category": "Access",
-  "severity": "S4",
-  "channel": "Teams chat",
-  "openedAt": "2026-08-20T11:41:08",
-  "openedBy": "Monitoring",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.95,
-   "category": "Access"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 6,
-   "line": "PKL"
-  },
-  "knowledgeSource": "RB-006",
-  "proposedAction": "Assign role per policy (autonomous within policy)",
-  "approvalRequired": false,
-  "approvedBy": null,
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-20T14:49:08",
-  "mttrMin": 188,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0389",
-  "title": "PDO missing for coil on CGL",
-  "category": "Interface / L2",
-  "severity": "S2",
-  "channel": "ITSM portal",
-  "openedAt": "2026-08-20T19:30:03",
-  "openedBy": "Monitoring",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.96,
-   "category": "Interface / L2"
-  },
-  "enrichment": {
-   "batchIds": [
-    "GIC-KHP-2609-0052"
-   ],
-   "interfaceLogs": 5,
-   "line": "PKL"
-  },
-  "knowledgeSource": "RB-003",
-  "proposedAction": "Activate compatible contract version (CAB approval)",
-  "approvalRequired": true,
-  "approvedBy": "Shift IT lead",
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-20T20:42:03",
-  "mttrMin": 72,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0390",
-  "title": "How to record offline production entry",
-  "category": "How-to",
-  "severity": "S4",
-  "channel": "Teams chat",
-  "openedAt": "2026-08-20T23:32:00",
-  "openedBy": "QC",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.96,
-   "category": "How-to"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 3,
-   "line": "CRM"
-  },
-  "knowledgeSource": null,
-  "proposedAction": "Guided answer from SOP",
-  "approvalRequired": false,
-  "approvedBy": null,
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-21T04:54:00",
-  "mttrMin": 322,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0392",
-  "title": "PDI not acknowledged on CCL",
-  "category": "Interface / L2",
-  "severity": "S2",
-  "channel": "Email",
-  "openedAt": "2026-08-21T06:58:57",
-  "openedBy": "PPC",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.87,
-   "category": "Interface / L2"
-  },
-  "enrichment": {
-   "batchIds": [
-    "GIC-KHP-2609-0020"
-   ],
-   "interfaceLogs": 2,
-   "line": "CCL"
-  },
-  "knowledgeSource": "RB-001",
-  "proposedAction": "Restart L2 gateway subscriber service (autonomous)",
-  "approvalRequired": false,
-  "approvedBy": null,
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-21T07:49:57",
-  "mttrMin": 51,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0399",
-  "title": "New shift in-charge cannot open Delay entry page",
-  "category": "Access",
-  "severity": "S4",
-  "channel": "ITSM portal",
-  "openedAt": "2026-08-21T09:13:06",
-  "openedBy": "Shift in-charge",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.93,
-   "category": "Access"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 3,
-   "line": "CCL"
-  },
-  "knowledgeSource": "RB-006",
-  "proposedAction": "Assign role per policy (autonomous within policy)",
-  "approvalRequired": false,
-  "approvedBy": null,
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-21T14:24:06",
-  "mttrMin": 311,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0403",
-  "title": "Batch attribute IDoc failed — NULL coating value",
-  "category": "Interface / SAP",
+  "title": "Mass balance flagged on CRM confirmation",
+  "category": "Data / process",
   "severity": "S3",
   "channel": "Email",
-  "openedAt": "2026-08-21T18:41:27",
-  "openedBy": "Packing supervisor",
+  "openedAt": "2026-08-12T01:23:15",
+  "openedBy": "Monitoring",
   "classification": {
    "by": "AI agent",
-   "confidence": 0.92,
-   "category": "Interface / SAP"
+   "confidence": 0.9,
+   "category": "Data / process"
   },
   "enrichment": {
    "batchIds": [],
-   "interfaceLogs": 5,
-   "line": "PKL"
+   "interfaceLogs": 1,
+   "line": "SLT"
   },
-  "knowledgeSource": "RB-005",
-  "proposedAction": "Data correction under approval workflow",
+  "knowledgeSource": "RB-008",
+  "proposedAction": "Reconcile with shift in-charge; data correction under approval",
   "approvalRequired": true,
   "approvedBy": "Shift IT lead",
   "resolvedBy": "Human L2 engineer",
   "validation": "Manual verification",
-  "resolvedAt": "2026-08-22T05:36:27",
-  "mttrMin": 655,
+  "resolvedAt": "2026-08-12T09:08:15",
+  "mttrMin": 465,
   "status": "RESOLVED",
   "falseAction": false,
-  "csat": 4,
+  "csat": 5,
   "hero": false
  },
  {
-  "id": "INC-26-0386",
+  "id": "INC-26-0398",
   "title": "Batch attribute IDoc failed — NULL coating value",
   "category": "Interface / SAP",
   "severity": "S3",
-  "channel": "ITSM portal",
-  "openedAt": "2026-08-22T23:43:58",
-  "openedBy": "Packing supervisor",
+  "channel": "Email",
+  "openedAt": "2026-08-13T19:03:50",
+  "openedBy": "QC",
   "classification": {
    "by": "AI agent",
-   "confidence": 0.92,
+   "confidence": 0.9,
    "category": "Interface / SAP"
   },
   "enrichment": {
@@ -403,31 +147,31 @@
   "approvedBy": "Shift IT lead",
   "resolvedBy": "AI agent",
   "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-23T02:13:58",
-  "mttrMin": 150,
+  "resolvedAt": "2026-08-13T19:59:50",
+  "mttrMin": 56,
   "status": "RESOLVED",
   "falseAction": false,
-  "csat": 5,
+  "csat": 4,
   "hero": false
  },
  {
-  "id": "INC-26-0384",
+  "id": "INC-26-0395",
   "title": "PDO missing for coil on CGL",
   "category": "Interface / L2",
   "severity": "S2",
-  "channel": "Email",
-  "openedAt": "2026-08-23T00:57:01",
-  "openedBy": "PPC",
+  "channel": "Teams chat",
+  "openedAt": "2026-08-15T03:41:19",
+  "openedBy": "Shift in-charge",
   "classification": {
    "by": "AI agent",
-   "confidence": 0.96,
+   "confidence": 0.98,
    "category": "Interface / L2"
   },
   "enrichment": {
    "batchIds": [
-    "GIC-KHP-2609-0046"
+    "GIC-KHP-2609-0058"
    ],
-   "interfaceLogs": 2,
+   "interfaceLogs": 4,
    "line": "SLT"
   },
   "knowledgeSource": "RB-003",
@@ -436,8 +180,39 @@
   "approvedBy": "Shift IT lead",
   "resolvedBy": "AI agent",
   "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-23T02:17:01",
-  "mttrMin": 80,
+  "resolvedAt": "2026-08-15T05:03:19",
+  "mttrMin": 82,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 4,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0406",
+  "title": "Production confirmation rejected by SAP (order locked)",
+  "category": "Interface / SAP",
+  "severity": "S3",
+  "channel": "Monitoring alert",
+  "openedAt": "2026-08-17T08:40:27",
+  "openedBy": "Monitoring",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.89,
+   "category": "Interface / SAP"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 1,
+   "line": "PKL"
+  },
+  "knowledgeSource": "RB-004",
+  "proposedAction": "Auto-retry after 5 min up to 3 times (autonomous)",
+  "approvalRequired": false,
+  "approvedBy": null,
+  "resolvedBy": "Human L2 engineer",
+  "validation": "Manual verification",
+  "resolvedAt": "2026-08-17T23:10:27",
+  "mttrMin": 870,
   "status": "RESOLVED",
   "falseAction": false,
   "csat": 5,
@@ -448,18 +223,18 @@
   "title": "Label printer offline at packing line",
   "category": "Shop-floor IT",
   "severity": "S3",
-  "channel": "Monitoring alert",
-  "openedAt": "2026-08-25T02:15:13",
-  "openedBy": "Monitoring",
+  "channel": "Teams chat",
+  "openedAt": "2026-08-18T23:02:41",
+  "openedBy": "PPC",
   "classification": {
    "by": "AI agent",
-   "confidence": 0.9,
+   "confidence": 0.82,
    "category": "Shop-floor IT"
   },
   "enrichment": {
    "batchIds": [],
-   "interfaceLogs": 1,
-   "line": "PKL"
+   "interfaceLogs": 0,
+   "line": "CGL"
   },
   "knowledgeSource": "RB-007",
   "proposedAction": "Restart spooler (autonomous)",
@@ -467,408 +242,189 @@
   "approvedBy": null,
   "resolvedBy": "AI agent",
   "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-25T03:30:13",
-  "mttrMin": 75,
+  "resolvedAt": "2026-08-19T00:33:41",
+  "mttrMin": 91,
   "status": "RESOLVED",
   "falseAction": false,
   "csat": 5,
   "hero": false
  },
  {
-  "id": "INC-26-0381",
-  "title": "GRN weight mismatch HRS",
-  "category": "Interface / SAP",
-  "severity": "S3",
-  "channel": "Teams chat",
-  "openedAt": "2026-08-26T09:17:26",
-  "openedBy": "Shift in-charge",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.87,
-   "category": "Interface / SAP"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 4,
-   "line": "PKG"
-  },
-  "knowledgeSource": "RB-005",
-  "proposedAction": "Data correction under approval workflow",
-  "approvalRequired": true,
-  "approvedBy": "Shift IT lead",
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-26T13:57:26",
-  "mttrMin": 280,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0383",
+  "id": "INC-26-0399",
   "title": "Production confirmation rejected by SAP (order locked)",
   "category": "Interface / SAP",
   "severity": "S3",
-  "channel": "Email",
-  "openedAt": "2026-08-27T12:24:03",
-  "openedBy": "Packing supervisor",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.96,
-   "category": "Interface / SAP"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 0,
-   "line": "CCL"
-  },
-  "knowledgeSource": "RB-004",
-  "proposedAction": "Auto-retry after 5 min up to 3 times (autonomous)",
-  "approvalRequired": false,
-  "approvedBy": null,
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-27T16:19:03",
-  "mttrMin": 235,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0387",
-  "title": "Production confirmation rejected by SAP (order locked)",
-  "category": "Interface / SAP",
-  "severity": "S3",
-  "channel": "Email",
-  "openedAt": "2026-08-27T15:00:19",
-  "openedBy": "QC",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.94,
-   "category": "Interface / SAP"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 2,
-   "line": "PKG"
-  },
-  "knowledgeSource": "RB-004",
-  "proposedAction": "Auto-retry after 5 min up to 3 times (autonomous)",
-  "approvalRequired": false,
-  "approvedBy": null,
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-27T18:21:19",
-  "mttrMin": 201,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 3,
-  "hero": false
- },
- {
-  "id": "INC-26-0398",
-  "title": "Query: batch swap between two SOs",
-  "category": "How-to",
-  "severity": "S4",
   "channel": "ITSM portal",
-  "openedAt": "2026-08-28T01:04:56",
-  "openedBy": "PPC",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.84,
-   "category": "How-to"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 4,
-   "line": "SLT"
-  },
-  "knowledgeSource": null,
-  "proposedAction": "Guided answer from SOP",
-  "approvalRequired": false,
-  "approvedBy": null,
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-28T01:49:56",
-  "mttrMin": 45,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0382",
-  "title": "GRN weight mismatch HRS",
-  "category": "Interface / SAP",
-  "severity": "S3",
-  "channel": "Monitoring alert",
-  "openedAt": "2026-08-28T03:42:03",
-  "openedBy": "Shift in-charge",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.88,
-   "category": "Interface / SAP"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 5,
-   "line": "SLT"
-  },
-  "knowledgeSource": "RB-005",
-  "proposedAction": "Data correction under approval workflow",
-  "approvalRequired": true,
-  "approvedBy": "Shift IT lead",
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-28T05:43:03",
-  "mttrMin": 121,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0402",
-  "title": "How to record offline production entry",
-  "category": "How-to",
-  "severity": "S4",
-  "channel": "ITSM portal",
-  "openedAt": "2026-08-29T22:58:54",
-  "openedBy": "PPC",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.9,
-   "category": "How-to"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 2,
-   "line": "CGL"
-  },
-  "knowledgeSource": null,
-  "proposedAction": "Guided answer from SOP",
-  "approvalRequired": false,
-  "approvedBy": null,
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-30T02:09:54",
-  "mttrMin": 191,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0401",
-  "title": "New shift in-charge cannot open Delay entry page",
-  "category": "Access",
-  "severity": "S4",
-  "channel": "Monitoring alert",
-  "openedAt": "2026-08-30T04:19:05",
+  "openedAt": "2026-08-19T09:04:18",
   "openedBy": "Monitoring",
   "classification": {
    "by": "AI agent",
    "confidence": 0.92,
-   "category": "Access"
+   "category": "Interface / SAP"
   },
   "enrichment": {
    "batchIds": [],
-   "interfaceLogs": 6,
+   "interfaceLogs": 5,
    "line": "CRM"
   },
-  "knowledgeSource": "RB-006",
-  "proposedAction": "Assign role per policy (autonomous within policy)",
+  "knowledgeSource": "RB-004",
+  "proposedAction": "Auto-retry after 5 min up to 3 times (autonomous)",
   "approvalRequired": false,
   "approvedBy": null,
   "resolvedBy": "AI agent",
   "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-30T10:32:05",
-  "mttrMin": 373,
+  "resolvedAt": "2026-08-19T11:39:18",
+  "mttrMin": 155,
   "status": "RESOLVED",
-  "falseAction": true,
-  "csat": 3,
+  "falseAction": false,
+  "csat": 5,
   "hero": false
  },
  {
-  "id": "INC-26-0394",
-  "title": "PDO missing for coil on CGL",
-  "category": "Interface / L2",
-  "severity": "S2",
-  "channel": "Teams chat",
-  "openedAt": "2026-08-30T13:26:47",
+  "id": "INC-26-0392",
+  "title": "GRN weight mismatch HRS",
+  "category": "Interface / SAP",
+  "severity": "S3",
+  "channel": "ITSM portal",
+  "openedAt": "2026-08-19T20:13:26",
   "openedBy": "Packing supervisor",
   "classification": {
    "by": "AI agent",
    "confidence": 0.93,
-   "category": "Interface / L2"
+   "category": "Interface / SAP"
   },
   "enrichment": {
-   "batchIds": [
-    "GIC-KHP-2609-0030"
-   ],
-   "interfaceLogs": 0,
-   "line": "SLT"
+   "batchIds": [],
+   "interfaceLogs": 6,
+   "line": "CGL"
   },
-  "knowledgeSource": "RB-003",
-  "proposedAction": "Activate compatible contract version (CAB approval)",
+  "knowledgeSource": "RB-005",
+  "proposedAction": "Data correction under approval workflow",
   "approvalRequired": true,
   "approvedBy": "Shift IT lead",
   "resolvedBy": "Human L2 engineer",
   "validation": "Manual verification",
-  "resolvedAt": "2026-08-30T14:51:47",
-  "mttrMin": 85,
+  "resolvedAt": "2026-08-19T22:40:26",
+  "mttrMin": 147,
   "status": "RESOLVED",
   "falseAction": false,
-  "csat": 5,
+  "csat": 3,
   "hero": false
  },
  {
   "id": "INC-26-0391",
-  "title": "Query: batch swap between two SOs",
-  "category": "How-to",
-  "severity": "S4",
-  "channel": "Teams chat",
-  "openedAt": "2026-08-31T15:51:28",
-  "openedBy": "Packing supervisor",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.94,
-   "category": "How-to"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 3,
-   "line": "CCL"
-  },
-  "knowledgeSource": null,
-  "proposedAction": "Guided answer from SOP",
-  "approvalRequired": false,
-  "approvedBy": null,
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-31T22:24:28",
-  "mttrMin": 393,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 4,
-  "hero": false
- },
- {
-  "id": "INC-26-0393",
-  "title": "New shift in-charge cannot open Delay entry page",
-  "category": "Access",
-  "severity": "S4",
-  "channel": "Email",
-  "openedAt": "2026-09-02T06:54:37",
-  "openedBy": "PPC",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.85,
-   "category": "Access"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 0,
-   "line": "CGL"
-  },
-  "knowledgeSource": "RB-006",
-  "proposedAction": "Assign role per policy (autonomous within policy)",
-  "approvalRequired": false,
-  "approvedBy": null,
-  "resolvedBy": "Human L2 engineer",
-  "validation": "Manual verification",
-  "resolvedAt": "2026-09-02T12:18:37",
-  "mttrMin": 324,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0404",
-  "title": "Query: batch swap between two SOs",
-  "category": "How-to",
-  "severity": "S4",
-  "channel": "Monitoring alert",
-  "openedAt": "2026-09-04T18:36:54",
-  "openedBy": "Shift in-charge",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.84,
-   "category": "How-to"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 3,
-   "line": "SLT"
-  },
-  "knowledgeSource": null,
-  "proposedAction": "Guided answer from SOP",
-  "approvalRequired": false,
-  "approvedBy": null,
-  "resolvedBy": "AI agent",
-  "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-09-04T21:09:54",
-  "mttrMin": 153,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0400",
   "title": "PDO missing for coil on CGL",
   "category": "Interface / L2",
   "severity": "S2",
   "channel": "Monitoring alert",
-  "openedAt": "2026-09-05T13:19:49",
-  "openedBy": "Packing supervisor",
+  "openedAt": "2026-08-21T12:27:41",
+  "openedBy": "Monitoring",
   "classification": {
    "by": "AI agent",
-   "confidence": 0.9,
+   "confidence": 0.92,
    "category": "Interface / L2"
   },
   "enrichment": {
    "batchIds": [
-    "GIC-KHP-2609-0056"
+    "GIC-KHP-2609-0024"
    ],
-   "interfaceLogs": 4,
-   "line": "CRM"
+   "interfaceLogs": 3,
+   "line": "SLT"
   },
   "knowledgeSource": "RB-003",
   "proposedAction": "Activate compatible contract version (CAB approval)",
   "approvalRequired": true,
   "approvedBy": "Shift IT lead",
-  "resolvedBy": "Human L2 engineer",
-  "validation": "Manual verification",
-  "resolvedAt": "2026-09-05T15:38:49",
-  "mttrMin": 139,
+  "resolvedBy": "AI agent",
+  "validation": "Automated post-fix check passed",
+  "resolvedAt": "2026-08-21T12:48:41",
+  "mttrMin": 21,
   "status": "RESOLVED",
   "falseAction": false,
-  "csat": 4,
+  "csat": 5,
   "hero": false
  },
  {
   "id": "INC-26-0388",
-  "title": "PDI not acknowledged on CRM",
-  "category": "Interface / L2",
-  "severity": "S2",
+  "title": "GRN weight mismatch HRS",
+  "category": "Interface / SAP",
+  "severity": "S3",
   "channel": "Teams chat",
-  "openedAt": "2026-09-06T15:23:34",
+  "openedAt": "2026-08-22T10:38:34",
+  "openedBy": "Monitoring",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.86,
+   "category": "Interface / SAP"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 2,
+   "line": "PKL"
+  },
+  "knowledgeSource": "RB-005",
+  "proposedAction": "Data correction under approval workflow",
+  "approvalRequired": true,
+  "approvedBy": "Shift IT lead",
+  "resolvedBy": "AI agent",
+  "validation": "Automated post-fix check passed",
+  "resolvedAt": "2026-08-22T11:38:34",
+  "mttrMin": 60,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 5,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0394",
+  "title": "Batch attribute IDoc failed — NULL coating value",
+  "category": "Interface / SAP",
+  "severity": "S3",
+  "channel": "Teams chat",
+  "openedAt": "2026-08-23T23:42:55",
   "openedBy": "PPC",
   "classification": {
    "by": "AI agent",
-   "confidence": 0.83,
+   "confidence": 0.94,
+   "category": "Interface / SAP"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 2,
+   "line": "SLT"
+  },
+  "knowledgeSource": "RB-005",
+  "proposedAction": "Data correction under approval workflow",
+  "approvalRequired": true,
+  "approvedBy": "Shift IT lead",
+  "resolvedBy": "AI agent",
+  "validation": "Automated post-fix check passed",
+  "resolvedAt": "2026-08-24T01:32:55",
+  "mttrMin": 110,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 3,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0383",
+  "title": "PDI not acknowledged on PKL",
+  "category": "Interface / L2",
+  "severity": "S2",
+  "channel": "Teams chat",
+  "openedAt": "2026-08-24T01:10:10",
+  "openedBy": "Monitoring",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.88,
    "category": "Interface / L2"
   },
   "enrichment": {
    "batchIds": [
-    "GIC-KHP-2609-0035"
+    "GIC-KHP-2609-0018"
    ],
-   "interfaceLogs": 5,
-   "line": "PKG"
+   "interfaceLogs": 3,
+   "line": "CRM"
   },
   "knowledgeSource": "RB-001",
   "proposedAction": "Restart L2 gateway subscriber service (autonomous)",
@@ -876,8 +432,446 @@
   "approvedBy": null,
   "resolvedBy": "AI agent",
   "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-09-06T16:28:34",
-  "mttrMin": 65,
+  "resolvedAt": "2026-08-24T02:26:10",
+  "mttrMin": 76,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 4,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0381",
+  "title": "Mass balance flagged on CRM confirmation",
+  "category": "Data / process",
+  "severity": "S3",
+  "channel": "Email",
+  "openedAt": "2026-08-25T07:48:02",
+  "openedBy": "PPC",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.86,
+   "category": "Data / process"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 6,
+   "line": "CRM"
+  },
+  "knowledgeSource": "RB-008",
+  "proposedAction": "Reconcile with shift in-charge; data correction under approval",
+  "approvalRequired": true,
+  "approvedBy": "Shift IT lead",
+  "resolvedBy": "AI agent",
+  "validation": "Automated post-fix check passed",
+  "resolvedAt": "2026-08-25T11:27:02",
+  "mttrMin": 219,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 3,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0403",
+  "title": "Batch attribute IDoc failed — NULL coating value",
+  "category": "Interface / SAP",
+  "severity": "S3",
+  "channel": "ITSM portal",
+  "openedAt": "2026-08-26T08:53:51",
+  "openedBy": "Monitoring",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.91,
+   "category": "Interface / SAP"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 5,
+   "line": "CRM"
+  },
+  "knowledgeSource": "RB-005",
+  "proposedAction": "Data correction under approval workflow",
+  "approvalRequired": true,
+  "approvedBy": "Shift IT lead",
+  "resolvedBy": "AI agent",
+  "validation": "Automated post-fix check passed",
+  "resolvedAt": "2026-08-26T13:47:51",
+  "mttrMin": 294,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 5,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0404",
+  "title": "How to record offline production entry",
+  "category": "How-to",
+  "severity": "S4",
+  "channel": "ITSM portal",
+  "openedAt": "2026-08-27T15:08:44",
+  "openedBy": "Packing supervisor",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.84,
+   "category": "How-to"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 0,
+   "line": "SLT"
+  },
+  "knowledgeSource": null,
+  "proposedAction": "Guided answer from SOP",
+  "approvalRequired": false,
+  "approvedBy": null,
+  "resolvedBy": "AI agent",
+  "validation": "Automated post-fix check passed",
+  "resolvedAt": "2026-08-27T22:46:44",
+  "mttrMin": 458,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 5,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0401",
+  "title": "How to record offline production entry",
+  "category": "How-to",
+  "severity": "S4",
+  "channel": "Monitoring alert",
+  "openedAt": "2026-08-28T00:22:02",
+  "openedBy": "Monitoring",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.94,
+   "category": "How-to"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 5,
+   "line": "CCL"
+  },
+  "knowledgeSource": null,
+  "proposedAction": "Guided answer from SOP",
+  "approvalRequired": false,
+  "approvedBy": null,
+  "resolvedBy": "AI agent",
+  "validation": "Automated post-fix check passed",
+  "resolvedAt": "2026-08-28T01:58:02",
+  "mttrMin": 96,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 3,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0384",
+  "title": "How to record offline production entry",
+  "category": "How-to",
+  "severity": "S4",
+  "channel": "ITSM portal",
+  "openedAt": "2026-08-29T06:03:34",
+  "openedBy": "Monitoring",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.82,
+   "category": "How-to"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 5,
+   "line": "CGL"
+  },
+  "knowledgeSource": null,
+  "proposedAction": "Guided answer from SOP",
+  "approvalRequired": false,
+  "approvedBy": null,
+  "resolvedBy": "Human L2 engineer",
+  "validation": "Manual verification",
+  "resolvedAt": "2026-08-29T15:22:34",
+  "mttrMin": 559,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 3,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0389",
+  "title": "Production confirmation rejected by SAP (order locked)",
+  "category": "Interface / SAP",
+  "severity": "S3",
+  "channel": "Email",
+  "openedAt": "2026-08-30T10:15:14",
+  "openedBy": "Monitoring",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.83,
+   "category": "Interface / SAP"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 1,
+   "line": "PKG"
+  },
+  "knowledgeSource": "RB-004",
+  "proposedAction": "Auto-retry after 5 min up to 3 times (autonomous)",
+  "approvalRequired": false,
+  "approvedBy": null,
+  "resolvedBy": "AI agent",
+  "validation": "Automated post-fix check passed",
+  "resolvedAt": "2026-08-30T12:50:14",
+  "mttrMin": 155,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 4,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0400",
+  "title": "Mass balance flagged on CRM confirmation",
+  "category": "Data / process",
+  "severity": "S3",
+  "channel": "Email",
+  "openedAt": "2026-08-31T06:41:31",
+  "openedBy": "Monitoring",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.88,
+   "category": "Data / process"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 2,
+   "line": "SLT"
+  },
+  "knowledgeSource": "RB-008",
+  "proposedAction": "Reconcile with shift in-charge; data correction under approval",
+  "approvalRequired": true,
+  "approvedBy": "Shift IT lead",
+  "resolvedBy": "AI agent",
+  "validation": "Automated post-fix check passed",
+  "resolvedAt": "2026-08-31T11:29:31",
+  "mttrMin": 288,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 5,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0382",
+  "title": "Query: batch swap between two SOs",
+  "category": "How-to",
+  "severity": "S4",
+  "channel": "Email",
+  "openedAt": "2026-09-01T09:58:15",
+  "openedBy": "Packing supervisor",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.95,
+   "category": "How-to"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 5,
+   "line": "PKL"
+  },
+  "knowledgeSource": null,
+  "proposedAction": "Guided answer from SOP",
+  "approvalRequired": false,
+  "approvedBy": null,
+  "resolvedBy": "Human L2 engineer",
+  "validation": "Manual verification",
+  "resolvedAt": "2026-09-02T03:38:15",
+  "mttrMin": 1060,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 5,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0402",
+  "title": "PDO missing for coil on CGL",
+  "category": "Interface / L2",
+  "severity": "S2",
+  "channel": "ITSM portal",
+  "openedAt": "2026-09-01T13:18:15",
+  "openedBy": "Monitoring",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.92,
+   "category": "Interface / L2"
+  },
+  "enrichment": {
+   "batchIds": [
+    "GIC-KHP-2609-0002"
+   ],
+   "interfaceLogs": 6,
+   "line": "PKG"
+  },
+  "knowledgeSource": "RB-003",
+  "proposedAction": "Activate compatible contract version (CAB approval)",
+  "approvalRequired": true,
+  "approvedBy": "Shift IT lead",
+  "resolvedBy": "AI agent",
+  "validation": "Automated post-fix check passed",
+  "resolvedAt": "2026-09-01T13:50:15",
+  "mttrMin": 32,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 5,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0393",
+  "title": "PDI not acknowledged on PKL",
+  "category": "Interface / L2",
+  "severity": "S2",
+  "channel": "Email",
+  "openedAt": "2026-09-01T15:06:34",
+  "openedBy": "PPC",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.94,
+   "category": "Interface / L2"
+  },
+  "enrichment": {
+   "batchIds": [
+    "GIC-KHP-2609-0038"
+   ],
+   "interfaceLogs": 2,
+   "line": "CGL"
+  },
+  "knowledgeSource": "RB-001",
+  "proposedAction": "Restart L2 gateway subscriber service (autonomous)",
+  "approvalRequired": false,
+  "approvedBy": null,
+  "resolvedBy": "AI agent",
+  "validation": "Automated post-fix check passed",
+  "resolvedAt": "2026-09-01T15:53:34",
+  "mttrMin": 47,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 5,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0386",
+  "title": "Mass balance flagged on CRM confirmation",
+  "category": "Data / process",
+  "severity": "S3",
+  "channel": "Teams chat",
+  "openedAt": "2026-09-02T06:24:40",
+  "openedBy": "Packing supervisor",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.93,
+   "category": "Data / process"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 4,
+   "line": "CGL"
+  },
+  "knowledgeSource": "RB-008",
+  "proposedAction": "Reconcile with shift in-charge; data correction under approval",
+  "approvalRequired": true,
+  "approvedBy": "Shift IT lead",
+  "resolvedBy": "Human L2 engineer",
+  "validation": "Manual verification",
+  "resolvedAt": "2026-09-02T17:17:40",
+  "mttrMin": 653,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 3,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0385",
+  "title": "New shift in-charge cannot open Delay entry page",
+  "category": "Access",
+  "severity": "S4",
+  "channel": "Teams chat",
+  "openedAt": "2026-09-02T13:41:00",
+  "openedBy": "Packing supervisor",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.93,
+   "category": "Access"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 3,
+   "line": "PKL"
+  },
+  "knowledgeSource": "RB-006",
+  "proposedAction": "Assign role per policy (autonomous within policy)",
+  "approvalRequired": false,
+  "approvedBy": null,
+  "resolvedBy": "Human L2 engineer",
+  "validation": "Manual verification",
+  "resolvedAt": "2026-09-03T05:39:00",
+  "mttrMin": 958,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 4,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0396",
+  "title": "New shift in-charge cannot open Delay entry page",
+  "category": "Access",
+  "severity": "S4",
+  "channel": "ITSM portal",
+  "openedAt": "2026-09-04T17:35:28",
+  "openedBy": "Monitoring",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.89,
+   "category": "Access"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 5,
+   "line": "CGL"
+  },
+  "knowledgeSource": "RB-006",
+  "proposedAction": "Assign role per policy (autonomous within policy)",
+  "approvalRequired": false,
+  "approvedBy": null,
+  "resolvedBy": "AI agent",
+  "validation": "Automated post-fix check passed",
+  "resolvedAt": "2026-09-04T18:32:28",
+  "mttrMin": 57,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 5,
+  "hero": false
+ },
+ {
+  "id": "INC-26-0390",
+  "title": "Label printer offline at packing line",
+  "category": "Shop-floor IT",
+  "severity": "S3",
+  "channel": "Email",
+  "openedAt": "2026-09-06T11:09:19",
+  "openedBy": "PPC",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.9,
+   "category": "Shop-floor IT"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 0,
+   "line": "PKG"
+  },
+  "knowledgeSource": "RB-007",
+  "proposedAction": "Restart spooler (autonomous)",
+  "approvalRequired": false,
+  "approvedBy": null,
+  "resolvedBy": "Human L2 engineer",
+  "validation": "Manual verification",
+  "resolvedAt": "2026-09-06T18:51:19",
+  "mttrMin": 462,
   "status": "RESOLVED",
   "falseAction": false,
   "csat": 5,
@@ -976,9 +970,9 @@
    "line": "CGL",
    "queue": "L2.CGL.PDI.OUT",
    "messageIds": [
-    "MSG-00033",
-    "MSG-00013",
-    "MSG-00034"
+    "MSG-00020",
+    "MSG-00007",
+    "MSG-00025"
    ],
    "relatedDelay": "CGL air-knife stoppage 09:52 (independent)"
   },

@@ -8,9 +8,9 @@
   "title": "PDI queue L2.CGL.PDI.OUT stuck",
   "detail": "Queue depth 3 > 0 for 120 s; oldest message age exceeds 30 s SLA; no consumer heartbeat since 09:41",
   "messageIds": [
-   "MSG-00033",
-   "MSG-00013",
-   "MSG-00034"
+   "MSG-00020",
+   "MSG-00007",
+   "MSG-00025"
   ],
   "incidentId": "INC-26-0412",
   "channel": "Monitoring → ITSM → Teams"
@@ -24,7 +24,7 @@
   "title": "Sales-order amendment IDoc failed after 2 retries",
   "detail": "IDoc 0000001187734 for SO 4213090022/10 in status 51 — order quantity change 180 → 210 t not applied in MES",
   "messageIds": [
-   "MSG-00165"
+   "MSG-00167"
   ],
   "incidentId": "INC-26-0413",
   "channel": "Monitoring → ITSM → Teams"
@@ -39,7 +39,7 @@
   "title": "PDO rejected — contract version mismatch",
   "detail": "CCL L2 upgraded to PDO payload v1.3 (adds dftBackMeasured) while MES contract CT-PDO was v1.2; v1.3 activated and message replayed",
   "messageIds": [
-   "MSG-00166"
+   "MSG-00168"
   ],
   "incidentId": "INC-26-0409",
   "channel": "Monitoring → ITSM"

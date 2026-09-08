@@ -93,10 +93,12 @@ try:
         # 7b'. full line load + selected-order gantt + schedule search
         check("planning: full line load shows campaign bars", pg.evaluate("document.querySelectorAll('#gantt .g-bar.cmp').length") >= 150)
         check("planning: selected-order gantt shows the hero coil steps", pg.evaluate("document.querySelectorAll('#ogantt .g-bar').length") >= 3)
-        pg.select_option("#gsel", "4213090020/10"); pg.wait_for_timeout(300)
-        check("planning: order selector syncs the route card and shows campaign coils", pg.evaluate("document.getElementById('itemsel').value") == "4213090020/10" and pg.evaluate("document.querySelectorAll('#ogantt .g-bar.cmp').length") >= 2)
-        pg.fill("#ssearch", "PPG-KHP-2609-0013"); pg.wait_for_timeout(200)
-        check("planning: schedule search filters to the coil", pg.evaluate("document.querySelectorAll('#sched tbody tr').length") == 1)
+        other = pg.evaluate("KHP.items.filter(function(i){return !i.hero&&i.horizonCoils>0;})[0].id")
+        pg.select_option("#gsel", other); pg.wait_for_timeout(300)
+        check("planning: order selector syncs the route card and shows campaign coils", pg.evaluate("document.getElementById('itemsel').value") == other and pg.evaluate("document.querySelectorAll('#ogantt .g-bar.cmp').length") >= 2, other)
+        slt_coil = pg.evaluate("(KHP.schedules.filter(function(s){return s.line==='SLT'&&s.status==='PLANNED'&&!s.hero;})[0]||KHP.campaigns.filter(function(s){return s.line==='SLT';})[0]).unitId")
+        pg.fill("#ssearch", slt_coil); pg.wait_for_timeout(200)
+        check("planning: schedule search filters to the coil", pg.evaluate("document.querySelectorAll('#sched tbody tr').length") == 1, slt_coil)
         pg.fill("#ssearch", ""); pg.wait_for_timeout(200)
         # 7c. Scenario 2 step 4: reroute a planned slitter coil to the recoiling line, then a rework PO on CGL
         pg.click("#sched tr:not(.hero) [data-rr]"); pg.wait_for_timeout(300); pg.select_option("#rropt", "REROUTE:RWL"); pg.click("#rrgo"); pg.wait_for_timeout(400)
@@ -105,6 +107,8 @@ try:
         pg.select_option("#linesel", "CGL"); pg.wait_for_timeout(300); pg.click("#sched tr:not(.hero) [data-rr]"); pg.wait_for_timeout(300); pg.select_option("#rropt", "REWORK:CGL"); pg.click("#rrgo"); pg.wait_for_timeout(400)
         check("planning: same-line rework production order generated", "-R002" in pg.evaluate("KHPState.get('reroutes')[1].newPo") and "REWORK" in txt())
         check("planning: rerouted bar on the gantt", pg.evaluate("document.querySelectorAll('#gantt .g-bar[title*=\"REROUTE\"], #gantt .g-bar[title*=\"REWORK\"]').length") >= 1)
+        check("planning: EST check stays at zero violations after reroute + rework", "0 precedence violations" in pg.evaluate("document.getElementById('gload').innerText"))
+        check("planning: bars coloured per order (several colours on the full load)", pg.evaluate("new Set(Array.from(document.querySelectorAll('#gantt .g-bar')).map(function(b){return b.style.background||b.style.backgroundColor;})).size") >= 5)
         go("orders.html"); pg.click("#feed"); pg.wait_for_timeout(300); check("orders: simulated SAP feed adds order", "4213090041/10" in txt())
         # 8. reset from host clears everything
         go("index.html"); pg.click("#reset"); pg.wait_for_timeout(300)

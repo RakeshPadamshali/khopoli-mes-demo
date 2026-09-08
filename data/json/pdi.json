@@ -7,7 +7,7 @@
   "itemId": "4213090027/10",
   "soId": "4213090027",
   "threadId": "TH-001",
-  "sentAt": "2026-08-21T03:38:57",
+  "sentAt": "2026-08-20T09:09:51",
   "targets": {
    "acidConcPct": [
     12,
@@ -19,7 +19,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-21T03:39:57",
+  "ackAt": "2026-08-20T09:11:51",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -31,7 +31,7 @@
   "itemId": "4213090027/10",
   "soId": "4213090027",
   "threadId": "TH-001",
-  "sentAt": "2026-08-21T14:24:05",
+  "sentAt": "2026-08-20T12:49:27",
   "targets": {
    "exitThkMm": 0.45,
    "thkTolMm": 0.03,
@@ -43,7 +43,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-21T14:26:05",
+  "ackAt": "2026-08-20T12:53:27",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -55,7 +55,7 @@
   "itemId": "4213090027/10",
   "soId": "4213090027",
   "threadId": "TH-001",
-  "sentAt": "2026-08-22T07:04:56",
+  "sentAt": "2026-08-20T17:30:00",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -78,7 +78,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-08-22T07:06:56",
+  "ackAt": "2026-08-20T17:33:00",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -90,7 +90,7 @@
   "itemId": "4213090027/10",
   "soId": "4213090027",
   "threadId": "TH-001",
-  "sentAt": "2026-08-23T07:38:14",
+  "sentAt": "2026-08-20T23:37:20",
   "targets": {
    "paintId": "RMP",
    "ral": "9002",
@@ -108,7 +108,7 @@
    "guardFilm": true
   },
   "status": "ACKED",
-  "ackAt": "2026-08-23T07:39:14",
+  "ackAt": "2026-08-20T23:40:20",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -120,7 +120,7 @@
   "itemId": "4213090010/10",
   "soId": "4213090010",
   "threadId": "TH-002",
-  "sentAt": "2026-08-21T02:55:10",
+  "sentAt": "2026-08-20T23:26:44",
   "targets": {
    "acidConcPct": [
     12,
@@ -132,7 +132,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-21T02:58:10",
+  "ackAt": "2026-08-20T23:28:44",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -144,7 +144,7 @@
   "itemId": "4213090010/10",
   "soId": "4213090010",
   "threadId": "TH-002",
-  "sentAt": "2026-08-21T08:27:51",
+  "sentAt": "2026-08-21T02:04:30",
   "targets": {
    "exitThkMm": 0.5,
    "thkTolMm": 0.03,
@@ -156,7 +156,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-21T08:29:51",
+  "ackAt": "2026-08-21T02:08:30",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -168,7 +168,7 @@
   "itemId": "4213090010/10",
   "soId": "4213090010",
   "threadId": "TH-002",
-  "sentAt": "2026-08-22T02:41:30",
+  "sentAt": "2026-08-21T07:18:39",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -191,7 +191,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-08-22T02:44:30",
+  "ackAt": "2026-08-21T07:21:39",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -203,7 +203,7 @@
   "itemId": "4213090010/10",
   "soId": "4213090010",
   "threadId": "TH-002",
-  "sentAt": "2026-08-22T16:01:42",
+  "sentAt": "2026-08-21T11:25:44",
   "targets": {
    "paintId": "RMP",
    "ral": "5012",
@@ -221,7 +221,7 @@
    "guardFilm": true
   },
   "status": "ACKED",
-  "ackAt": "2026-08-22T16:04:42",
+  "ackAt": "2026-08-21T11:26:44",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -233,7 +233,7 @@
   "itemId": "4213090035/30",
   "soId": "4213090035",
   "threadId": "TH-003",
-  "sentAt": "2026-08-22T15:07:35",
+  "sentAt": "2026-08-22T00:29:18",
   "targets": {
    "acidConcPct": [
     12,
@@ -245,7 +245,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-22T15:08:35",
+  "ackAt": "2026-08-22T00:32:18",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -257,7 +257,7 @@
   "itemId": "4213090035/30",
   "soId": "4213090035",
   "threadId": "TH-003",
-  "sentAt": "2026-08-23T07:43:33",
+  "sentAt": "2026-08-22T05:08:19",
   "targets": {
    "exitThkMm": 1.2,
    "thkTolMm": 0.05,
@@ -269,7 +269,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-23T07:44:33",
+  "ackAt": "2026-08-22T05:10:19",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -281,7 +281,7 @@
   "itemId": "4213090035/30",
   "soId": "4213090035",
   "threadId": "TH-003",
-  "sentAt": "2026-08-24T09:39:03",
+  "sentAt": "2026-08-22T11:30:03",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -304,7 +304,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-08-24T09:41:03",
+  "ackAt": "2026-08-22T11:34:03",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -316,7 +316,7 @@
   "itemId": "4213090035/10",
   "soId": "4213090035",
   "threadId": "TH-004",
-  "sentAt": "2026-08-23T02:07:43",
+  "sentAt": "2026-08-22T14:49:09",
   "targets": {
    "acidConcPct": [
     12,
@@ -328,7 +328,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-23T02:08:43",
+  "ackAt": "2026-08-22T14:51:09",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -340,7 +340,7 @@
   "itemId": "4213090035/10",
   "soId": "4213090035",
   "threadId": "TH-004",
-  "sentAt": "2026-08-23T13:48:05",
+  "sentAt": "2026-08-22T19:02:34",
   "targets": {
    "exitThkMm": 0.45,
    "thkTolMm": 0.03,
@@ -352,7 +352,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-23T13:51:05",
+  "ackAt": "2026-08-22T19:04:34",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -364,7 +364,7 @@
   "itemId": "4213090035/10",
   "soId": "4213090035",
   "threadId": "TH-004",
-  "sentAt": "2026-08-23T19:00:38",
+  "sentAt": "2026-08-22T21:00:24",
   "targets": {
    "coatingId": "AZ150",
    "coatingTargetGsm": 157,
@@ -387,7 +387,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-08-23T19:04:38",
+  "ackAt": "2026-08-22T21:04:24",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -399,7 +399,7 @@
   "itemId": "4213090033/10",
   "soId": "4213090033",
   "threadId": "TH-005",
-  "sentAt": "2026-08-23T18:22:04",
+  "sentAt": "2026-08-23T11:56:21",
   "targets": {
    "acidConcPct": [
     12,
@@ -411,7 +411,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-23T18:25:04",
+  "ackAt": "2026-08-23T11:57:21",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -423,7 +423,7 @@
   "itemId": "4213090033/10",
   "soId": "4213090033",
   "threadId": "TH-005",
-  "sentAt": "2026-08-23T23:42:55",
+  "sentAt": "2026-08-23T14:12:56",
   "targets": {
    "exitThkMm": 0.5,
    "thkTolMm": 0.03,
@@ -435,7 +435,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-23T23:43:55",
+  "ackAt": "2026-08-23T14:15:56",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -447,7 +447,7 @@
   "itemId": "4213090033/10",
   "soId": "4213090033",
   "threadId": "TH-005",
-  "sentAt": "2026-08-24T07:37:14",
+  "sentAt": "2026-08-23T17:14:38",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -470,7 +470,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-08-24T07:38:14",
+  "ackAt": "2026-08-23T17:18:38",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -482,7 +482,7 @@
   "itemId": "4213090033/10",
   "soId": "4213090033",
   "threadId": "TH-005",
-  "sentAt": "2026-08-24T19:05:46",
+  "sentAt": "2026-08-23T20:48:54",
   "targets": {
    "paintId": "RMP",
    "ral": "9010",
@@ -500,7 +500,7 @@
    "guardFilm": true
   },
   "status": "ACKED",
-  "ackAt": "2026-08-24T19:06:46",
+  "ackAt": "2026-08-23T20:52:54",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -512,7 +512,7 @@
   "itemId": "4213090018/20",
   "soId": "4213090018",
   "threadId": "TH-006",
-  "sentAt": "2026-08-24T16:24:16",
+  "sentAt": "2026-08-24T09:09:01",
   "targets": {
    "acidConcPct": [
     12,
@@ -524,7 +524,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-24T16:26:16",
+  "ackAt": "2026-08-24T09:11:01",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -536,7 +536,7 @@
   "itemId": "4213090018/20",
   "soId": "4213090018",
   "threadId": "TH-006",
-  "sentAt": "2026-08-25T18:01:10",
+  "sentAt": "2026-08-24T15:40:20",
   "targets": {
    "exitThkMm": 0.45,
    "thkTolMm": 0.03,
@@ -548,7 +548,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-25T18:03:10",
+  "ackAt": "2026-08-24T15:41:20",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -560,7 +560,7 @@
   "itemId": "4213090018/20",
   "soId": "4213090018",
   "threadId": "TH-006",
-  "sentAt": "2026-08-26T10:59:16",
+  "sentAt": "2026-08-24T19:43:29",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -583,7 +583,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-08-26T11:02:16",
+  "ackAt": "2026-08-24T19:46:29",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -595,7 +595,7 @@
   "itemId": "4213090018/20",
   "soId": "4213090018",
   "threadId": "TH-006",
-  "sentAt": "2026-08-27T09:47:04",
+  "sentAt": "2026-08-25T02:14:51",
   "targets": {
    "paintId": "SMP",
    "ral": "5012",
@@ -613,7 +613,7 @@
    "guardFilm": true
   },
   "status": "ACKED",
-  "ackAt": "2026-08-27T09:50:04",
+  "ackAt": "2026-08-25T02:16:51",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -625,7 +625,7 @@
   "itemId": "4213090024/10",
   "soId": "4213090024",
   "threadId": "TH-007",
-  "sentAt": "2026-08-25T10:57:48",
+  "sentAt": "2026-08-25T03:18:36",
   "targets": {
    "acidConcPct": [
     12,
@@ -637,7 +637,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-25T11:01:48",
+  "ackAt": "2026-08-25T03:21:36",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -649,7 +649,7 @@
   "itemId": "4213090024/10",
   "soId": "4213090024",
   "threadId": "TH-007",
-  "sentAt": "2026-08-26T07:50:23",
+  "sentAt": "2026-08-25T08:03:45",
   "targets": {
    "exitThkMm": 0.5,
    "thkTolMm": 0.03,
@@ -661,7 +661,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-26T07:53:23",
+  "ackAt": "2026-08-25T08:07:45",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -673,7 +673,7 @@
   "itemId": "4213090024/10",
   "soId": "4213090024",
   "threadId": "TH-007",
-  "sentAt": "2026-08-27T09:56:19",
+  "sentAt": "2026-08-25T15:32:45",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -696,7 +696,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-08-27T10:00:19",
+  "ackAt": "2026-08-25T15:35:45",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -708,7 +708,7 @@
   "itemId": "4213090024/10",
   "soId": "4213090024",
   "threadId": "TH-007",
-  "sentAt": "2026-08-27T22:44:25",
+  "sentAt": "2026-08-25T19:24:49",
   "targets": {
    "paintId": "RMP",
    "ral": "9002",
@@ -726,7 +726,7 @@
    "guardFilm": true
   },
   "status": "ACKED",
-  "ackAt": "2026-08-27T22:45:25",
+  "ackAt": "2026-08-25T19:27:49",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -738,7 +738,7 @@
   "itemId": "4213090006/10",
   "soId": "4213090006",
   "threadId": "TH-008",
-  "sentAt": "2026-08-26T14:05:55",
+  "sentAt": "2026-08-26T00:29:12",
   "targets": {
    "acidConcPct": [
     12,
@@ -750,7 +750,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-26T14:06:55",
+  "ackAt": "2026-08-26T00:32:12",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -762,7 +762,7 @@
   "itemId": "4213090006/10",
   "soId": "4213090006",
   "threadId": "TH-008",
-  "sentAt": "2026-08-27T08:38:16",
+  "sentAt": "2026-08-26T05:05:38",
   "targets": {
    "exitThkMm": 0.8,
    "thkTolMm": 0.03,
@@ -774,7 +774,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-27T08:42:16",
+  "ackAt": "2026-08-26T05:07:38",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -786,7 +786,7 @@
   "itemId": "4213090006/10",
   "soId": "4213090006",
   "threadId": "TH-008",
-  "sentAt": "2026-08-27T18:51:30",
+  "sentAt": "2026-08-26T08:15:45",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -809,7 +809,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-08-27T18:53:30",
+  "ackAt": "2026-08-26T08:17:45",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -821,7 +821,7 @@
   "itemId": "4213090006/10",
   "soId": "4213090006",
   "threadId": "TH-008",
-  "sentAt": "2026-08-28T05:06:26",
+  "sentAt": "2026-08-26T11:54:33",
   "targets": {
    "paintId": "RMP",
    "ral": "9002",
@@ -839,7 +839,7 @@
    "guardFilm": true
   },
   "status": "ACKED",
-  "ackAt": "2026-08-28T05:09:26",
+  "ackAt": "2026-08-26T11:57:33",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -851,7 +851,7 @@
   "itemId": "4213090002/20",
   "soId": "4213090002",
   "threadId": "TH-009",
-  "sentAt": "2026-08-27T16:10:26",
+  "sentAt": "2026-08-26T22:43:44",
   "targets": {
    "acidConcPct": [
     12,
@@ -863,7 +863,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-27T16:12:26",
+  "ackAt": "2026-08-26T22:45:44",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -875,7 +875,7 @@
   "itemId": "4213090002/20",
   "soId": "4213090002",
   "threadId": "TH-009",
-  "sentAt": "2026-08-28T08:21:46",
+  "sentAt": "2026-08-27T04:13:01",
   "targets": {
    "exitThkMm": 0.8,
    "thkTolMm": 0.03,
@@ -887,7 +887,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-28T08:25:46",
+  "ackAt": "2026-08-27T04:16:01",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -899,7 +899,7 @@
   "itemId": "4213090002/20",
   "soId": "4213090002",
   "threadId": "TH-009",
-  "sentAt": "2026-08-29T03:46:19",
+  "sentAt": "2026-08-27T08:39:50",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -922,7 +922,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-08-29T03:49:19",
+  "ackAt": "2026-08-27T08:43:50",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -934,7 +934,7 @@
   "itemId": "4213090002/20",
   "soId": "4213090002",
   "threadId": "TH-009",
-  "sentAt": "2026-08-30T02:23:37",
+  "sentAt": "2026-08-27T16:04:38",
   "targets": {
    "paintId": "SMP",
    "ral": "3009",
@@ -952,7 +952,7 @@
    "guardFilm": true
   },
   "status": "ACKED",
-  "ackAt": "2026-08-30T02:25:37",
+  "ackAt": "2026-08-27T16:05:38",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -964,7 +964,7 @@
   "itemId": "4213090034/20",
   "soId": "4213090034",
   "threadId": "TH-010",
-  "sentAt": "2026-08-27T21:23:50",
+  "sentAt": "2026-08-27T16:03:21",
   "targets": {
    "acidConcPct": [
     12,
@@ -976,7 +976,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-27T21:27:50",
+  "ackAt": "2026-08-27T16:05:21",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -988,7 +988,7 @@
   "itemId": "4213090034/20",
   "soId": "4213090034",
   "threadId": "TH-010",
-  "sentAt": "2026-08-28T12:54:32",
+  "sentAt": "2026-08-27T20:39:14",
   "targets": {
    "exitThkMm": 1.0,
    "thkTolMm": 0.05,
@@ -1000,7 +1000,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-28T12:56:32",
+  "ackAt": "2026-08-27T20:41:14",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1012,7 +1012,7 @@
   "itemId": "4213090034/20",
   "soId": "4213090034",
   "threadId": "TH-010",
-  "sentAt": "2026-08-29T14:12:02",
+  "sentAt": "2026-08-28T02:33:48",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -1035,7 +1035,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-08-29T14:13:02",
+  "ackAt": "2026-08-28T02:37:48",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1047,7 +1047,7 @@
   "itemId": "4213090038/10",
   "soId": "4213090038",
   "threadId": "TH-011",
-  "sentAt": "2026-08-28T23:14:08",
+  "sentAt": "2026-08-28T11:32:38",
   "targets": {
    "acidConcPct": [
     12,
@@ -1059,7 +1059,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-28T23:17:08",
+  "ackAt": "2026-08-28T11:35:38",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1071,7 +1071,7 @@
   "itemId": "4213090038/10",
   "soId": "4213090038",
   "threadId": "TH-011",
-  "sentAt": "2026-08-29T22:45:47",
+  "sentAt": "2026-08-28T18:12:36",
   "targets": {
    "exitThkMm": 0.8,
    "thkTolMm": 0.03,
@@ -1083,7 +1083,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-29T22:48:47",
+  "ackAt": "2026-08-28T18:15:36",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1095,7 +1095,7 @@
   "itemId": "4213090038/10",
   "soId": "4213090038",
   "threadId": "TH-011",
-  "sentAt": "2026-08-30T13:00:18",
+  "sentAt": "2026-08-28T22:32:13",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -1118,7 +1118,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-08-30T13:04:18",
+  "ackAt": "2026-08-28T22:35:13",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1130,7 +1130,7 @@
   "itemId": "4213090038/10",
   "soId": "4213090038",
   "threadId": "TH-011",
-  "sentAt": "2026-08-31T11:20:57",
+  "sentAt": "2026-08-29T04:50:09",
   "targets": {
    "paintId": "PVDF",
    "ral": "5012",
@@ -1148,7 +1148,7 @@
    "guardFilm": true
   },
   "status": "ACKED",
-  "ackAt": "2026-08-31T11:23:57",
+  "ackAt": "2026-08-29T04:52:09",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1160,7 +1160,7 @@
   "itemId": "4213090009/10",
   "soId": "4213090009",
   "threadId": "TH-012",
-  "sentAt": "2026-08-29T10:44:59",
+  "sentAt": "2026-08-29T06:40:18",
   "targets": {
    "acidConcPct": [
     12,
@@ -1172,7 +1172,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-29T10:48:59",
+  "ackAt": "2026-08-29T06:43:18",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1184,7 +1184,7 @@
   "itemId": "4213090009/10",
   "soId": "4213090009",
   "threadId": "TH-012",
-  "sentAt": "2026-08-30T01:57:19",
+  "sentAt": "2026-08-29T10:46:35",
   "targets": {
    "exitThkMm": 0.5,
    "thkTolMm": 0.03,
@@ -1196,7 +1196,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-30T02:00:19",
+  "ackAt": "2026-08-29T10:48:35",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1208,7 +1208,7 @@
   "itemId": "4213090009/10",
   "soId": "4213090009",
   "threadId": "TH-012",
-  "sentAt": "2026-08-30T18:19:48",
+  "sentAt": "2026-08-29T16:14:55",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -1231,7 +1231,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-08-30T18:22:48",
+  "ackAt": "2026-08-29T16:16:55",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1243,7 +1243,7 @@
   "itemId": "4213090008/10",
   "soId": "4213090008",
   "threadId": "TH-013",
-  "sentAt": "2026-08-29T22:32:24",
+  "sentAt": "2026-08-29T11:14:23",
   "targets": {
    "acidConcPct": [
     12,
@@ -1255,7 +1255,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-29T22:33:24",
+  "ackAt": "2026-08-29T11:16:23",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1267,7 +1267,7 @@
   "itemId": "4213090008/10",
   "soId": "4213090008",
   "threadId": "TH-013",
-  "sentAt": "2026-08-30T17:17:56",
+  "sentAt": "2026-08-29T15:33:05",
   "targets": {
    "exitThkMm": 0.8,
    "thkTolMm": 0.03,
@@ -1279,7 +1279,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-30T17:19:56",
+  "ackAt": "2026-08-29T15:35:05",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1291,7 +1291,7 @@
   "itemId": "4213090008/10",
   "soId": "4213090008",
   "threadId": "TH-013",
-  "sentAt": "2026-08-31T18:57:10",
+  "sentAt": "2026-08-29T22:20:53",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -1314,7 +1314,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-08-31T18:58:10",
+  "ackAt": "2026-08-29T22:23:53",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1326,7 +1326,7 @@
   "itemId": "4213090006/20",
   "soId": "4213090006",
   "threadId": "TH-014",
-  "sentAt": "2026-08-30T07:02:59",
+  "sentAt": "2026-08-30T02:20:05",
   "targets": {
    "acidConcPct": [
     12,
@@ -1338,7 +1338,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-30T07:06:59",
+  "ackAt": "2026-08-30T02:24:05",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1350,7 +1350,7 @@
   "itemId": "4213090006/20",
   "soId": "4213090006",
   "threadId": "TH-014",
-  "sentAt": "2026-08-30T18:38:31",
+  "sentAt": "2026-08-30T06:10:34",
   "targets": {
    "exitThkMm": 0.5,
    "thkTolMm": 0.03,
@@ -1362,7 +1362,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-30T18:42:31",
+  "ackAt": "2026-08-30T06:11:34",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1374,7 +1374,7 @@
   "itemId": "4213090006/20",
   "soId": "4213090006",
   "threadId": "TH-014",
-  "sentAt": "2026-08-31T11:57:27",
+  "sentAt": "2026-08-30T11:24:05",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -1397,7 +1397,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-08-31T12:01:27",
+  "ackAt": "2026-08-30T11:26:05",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1409,7 +1409,7 @@
   "itemId": "4213090006/20",
   "soId": "4213090006",
   "threadId": "TH-014",
-  "sentAt": "2026-08-31T20:45:35",
+  "sentAt": "2026-08-30T14:19:27",
   "targets": {
    "paintId": "RMP",
    "ral": "7016",
@@ -1427,7 +1427,7 @@
    "guardFilm": true
   },
   "status": "ACKED",
-  "ackAt": "2026-08-31T20:49:35",
+  "ackAt": "2026-08-30T14:23:27",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1439,7 +1439,7 @@
   "itemId": "4213090012/10",
   "soId": "4213090012",
   "threadId": "TH-015",
-  "sentAt": "2026-08-31T08:28:35",
+  "sentAt": "2026-08-30T14:57:52",
   "targets": {
    "acidConcPct": [
     12,
@@ -1451,7 +1451,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-31T08:32:35",
+  "ackAt": "2026-08-30T14:58:52",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1463,7 +1463,7 @@
   "itemId": "4213090012/10",
   "soId": "4213090012",
   "threadId": "TH-015",
-  "sentAt": "2026-08-31T16:19:45",
+  "sentAt": "2026-08-30T16:41:27",
   "targets": {
    "exitThkMm": 0.8,
    "thkTolMm": 0.03,
@@ -1475,7 +1475,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-31T16:20:45",
+  "ackAt": "2026-08-30T16:43:27",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1487,7 +1487,7 @@
   "itemId": "4213090012/10",
   "soId": "4213090012",
   "threadId": "TH-015",
-  "sentAt": "2026-09-01T14:59:09",
+  "sentAt": "2026-08-30T23:42:57",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -1510,7 +1510,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-09-01T15:01:09",
+  "ackAt": "2026-08-30T23:43:57",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1522,7 +1522,7 @@
   "itemId": "4213090027/20",
   "soId": "4213090027",
   "threadId": "TH-016",
-  "sentAt": "2026-08-30T22:58:31",
+  "sentAt": "2026-08-30T19:44:14",
   "targets": {
    "acidConcPct": [
     12,
@@ -1534,7 +1534,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-08-30T22:59:31",
+  "ackAt": "2026-08-30T19:46:14",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1546,7 +1546,7 @@
   "itemId": "4213090027/20",
   "soId": "4213090027",
   "threadId": "TH-016",
-  "sentAt": "2026-08-31T21:13:53",
+  "sentAt": "2026-08-31T02:09:01",
   "targets": {
    "exitThkMm": 0.8,
    "thkTolMm": 0.03,
@@ -1558,7 +1558,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-08-31T21:15:53",
+  "ackAt": "2026-08-31T02:12:01",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1570,7 +1570,7 @@
   "itemId": "4213090027/20",
   "soId": "4213090027",
   "threadId": "TH-016",
-  "sentAt": "2026-09-01T05:03:46",
+  "sentAt": "2026-08-31T04:57:01",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -1593,7 +1593,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-09-01T05:05:46",
+  "ackAt": "2026-08-31T04:59:01",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1605,7 +1605,7 @@
   "itemId": "4213090027/20",
   "soId": "4213090027",
   "threadId": "TH-016",
-  "sentAt": "2026-09-01T23:56:12",
+  "sentAt": "2026-08-31T10:48:27",
   "targets": {
    "paintId": "PVDF",
    "ral": "5012",
@@ -1623,7 +1623,7 @@
    "guardFilm": true
   },
   "status": "ACKED",
-  "ackAt": "2026-09-01T23:58:12",
+  "ackAt": "2026-08-31T10:51:27",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1635,7 +1635,7 @@
   "itemId": "4213090028/10",
   "soId": "4213090028",
   "threadId": "TH-017",
-  "sentAt": "2026-09-01T11:28:46",
+  "sentAt": "2026-08-31T23:22:18",
   "targets": {
    "acidConcPct": [
     12,
@@ -1647,7 +1647,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-09-01T11:30:46",
+  "ackAt": "2026-08-31T23:24:18",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1659,7 +1659,7 @@
   "itemId": "4213090028/10",
   "soId": "4213090028",
   "threadId": "TH-017",
-  "sentAt": "2026-09-01T15:15:40",
+  "sentAt": "2026-09-01T02:08:56",
   "targets": {
    "exitThkMm": 0.8,
    "thkTolMm": 0.03,
@@ -1671,7 +1671,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-09-01T15:19:40",
+  "ackAt": "2026-09-01T02:11:56",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1683,7 +1683,7 @@
   "itemId": "4213090028/10",
   "soId": "4213090028",
   "threadId": "TH-017",
-  "sentAt": "2026-09-02T01:50:05",
+  "sentAt": "2026-09-01T05:26:10",
   "targets": {
    "coatingId": "Z275",
    "coatingTargetGsm": 288,
@@ -1706,7 +1706,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-09-02T01:52:05",
+  "ackAt": "2026-09-01T05:28:10",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1718,7 +1718,7 @@
   "itemId": "4213090017/10",
   "soId": "4213090017",
   "threadId": "TH-018",
-  "sentAt": "2026-09-02T05:38:00",
+  "sentAt": "2026-09-02T05:12:00",
   "targets": {
    "acidConcPct": [
     12,
@@ -1730,7 +1730,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-09-02T05:39:00",
+  "ackAt": "2026-09-02T05:13:00",
   "hero": true,
   "via": "Middleware (L2 gateway)"
  },
@@ -1742,7 +1742,7 @@
   "itemId": "4213090017/10",
   "soId": "4213090017",
   "threadId": "TH-018",
-  "sentAt": "2026-09-03T13:26:00",
+  "sentAt": "2026-09-03T13:30:00",
   "targets": {
    "exitThkMm": 0.5,
    "thkTolMm": 0.03,
@@ -1754,7 +1754,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-09-03T13:30:00",
+  "ackAt": "2026-09-03T13:31:00",
   "hero": true,
   "via": "Middleware (L2 gateway)"
  },
@@ -1766,7 +1766,7 @@
   "itemId": "4213090017/10",
   "soId": "4213090017",
   "threadId": "TH-018",
-  "sentAt": "2026-09-05T08:27:00",
+  "sentAt": "2026-09-05T09:03:00",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -1789,7 +1789,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-09-05T08:31:00",
+  "ackAt": "2026-09-05T09:06:00",
   "hero": true,
   "via": "Middleware (L2 gateway)"
  },
@@ -1801,7 +1801,7 @@
   "itemId": "4213090017/10",
   "soId": "4213090017",
   "threadId": "TH-018",
-  "sentAt": "2026-09-07T20:42:00",
+  "sentAt": "2026-09-07T21:28:00",
   "targets": {
    "paintId": "RMP",
    "ral": "9002",
@@ -1819,7 +1819,7 @@
    "guardFilm": true
   },
   "status": "ACKED",
-  "ackAt": "2026-09-07T20:45:00",
+  "ackAt": "2026-09-07T21:32:00",
   "hero": true,
   "via": "Middleware (L2 gateway)"
  },
@@ -1831,7 +1831,7 @@
   "itemId": "4213090001/10",
   "soId": "4213090001",
   "threadId": "TH-019",
-  "sentAt": "2026-09-02T07:11:39",
+  "sentAt": "2026-09-01T18:47:39",
   "targets": {
    "acidConcPct": [
     12,
@@ -1843,7 +1843,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-09-02T07:15:39",
+  "ackAt": "2026-09-01T18:51:39",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1855,7 +1855,7 @@
   "itemId": "4213090001/10",
   "soId": "4213090001",
   "threadId": "TH-019",
-  "sentAt": "2026-09-03T05:50:32",
+  "sentAt": "2026-09-02T01:13:09",
   "targets": {
    "exitThkMm": 0.35,
    "thkTolMm": 0.03,
@@ -1867,7 +1867,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-09-03T05:54:32",
+  "ackAt": "2026-09-02T01:14:09",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1879,7 +1879,7 @@
   "itemId": "4213090001/10",
   "soId": "4213090001",
   "threadId": "TH-019",
-  "sentAt": "2026-09-03T21:53:19",
+  "sentAt": "2026-09-02T05:22:24",
   "targets": {
    "coatingId": "Z80",
    "coatingTargetGsm": 84,
@@ -1902,7 +1902,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-09-03T21:54:19",
+  "ackAt": "2026-09-02T05:24:24",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1914,7 +1914,7 @@
   "itemId": "4213090019/10",
   "soId": "4213090019",
   "threadId": "TH-020",
-  "sentAt": "2026-09-02T20:32:00",
+  "sentAt": "2026-09-02T13:57:02",
   "targets": {
    "acidConcPct": [
     12,
@@ -1926,7 +1926,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-09-02T20:36:00",
+  "ackAt": "2026-09-02T14:01:02",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1938,7 +1938,7 @@
   "itemId": "4213090019/10",
   "soId": "4213090019",
   "threadId": "TH-020",
-  "sentAt": "2026-09-03T21:00:09",
+  "sentAt": "2026-09-02T19:53:23",
   "targets": {
    "exitThkMm": 1.0,
    "thkTolMm": 0.05,
@@ -1950,7 +1950,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-09-03T21:01:09",
+  "ackAt": "2026-09-02T19:57:23",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1962,7 +1962,7 @@
   "itemId": "4213090019/10",
   "soId": "4213090019",
   "threadId": "TH-020",
-  "sentAt": "2026-09-04T19:42:25",
+  "sentAt": "2026-09-03T02:30:16",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -1985,7 +1985,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-09-04T19:43:25",
+  "ackAt": "2026-09-03T02:34:16",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -1997,7 +1997,7 @@
   "itemId": "4213090020/10",
   "soId": "4213090020",
   "threadId": "TH-021",
-  "sentAt": "2026-09-03T10:25:56",
+  "sentAt": "2026-09-03T06:51:56",
   "targets": {
    "acidConcPct": [
     12,
@@ -2009,7 +2009,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-09-03T10:26:56",
+  "ackAt": "2026-09-03T06:52:56",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2021,7 +2021,7 @@
   "itemId": "4213090020/10",
   "soId": "4213090020",
   "threadId": "TH-021",
-  "sentAt": "2026-09-03T22:32:27",
+  "sentAt": "2026-09-03T10:19:40",
   "targets": {
    "exitThkMm": 0.5,
    "thkTolMm": 0.03,
@@ -2033,7 +2033,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-09-03T22:35:27",
+  "ackAt": "2026-09-03T10:22:40",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2045,7 +2045,7 @@
   "itemId": "4213090020/10",
   "soId": "4213090020",
   "threadId": "TH-021",
-  "sentAt": "2026-09-04T09:45:59",
+  "sentAt": "2026-09-03T14:34:41",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -2068,7 +2068,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-09-04T09:49:59",
+  "ackAt": "2026-09-03T14:36:41",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2080,7 +2080,7 @@
   "itemId": "4213090020/10",
   "soId": "4213090020",
   "threadId": "TH-021",
-  "sentAt": "2026-09-04T19:40:48",
+  "sentAt": "2026-09-03T17:50:13",
   "targets": {
    "paintId": "RMP",
    "ral": "9002",
@@ -2098,7 +2098,7 @@
    "guardFilm": true
   },
   "status": "ACKED",
-  "ackAt": "2026-09-04T19:43:48",
+  "ackAt": "2026-09-03T17:52:13",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2110,7 +2110,7 @@
   "itemId": "4213090040/20",
   "soId": "4213090040",
   "threadId": "TH-022",
-  "sentAt": "2026-09-04T07:12:56",
+  "sentAt": "2026-09-04T01:45:51",
   "targets": {
    "acidConcPct": [
     12,
@@ -2122,7 +2122,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-09-04T07:16:56",
+  "ackAt": "2026-09-04T01:46:51",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2134,7 +2134,7 @@
   "itemId": "4213090040/20",
   "soId": "4213090040",
   "threadId": "TH-022",
-  "sentAt": "2026-09-05T08:20:42",
+  "sentAt": "2026-09-04T08:35:17",
   "targets": {
    "exitThkMm": 0.5,
    "thkTolMm": 0.03,
@@ -2146,7 +2146,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-09-05T08:22:42",
+  "ackAt": "2026-09-04T08:38:17",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2158,7 +2158,7 @@
   "itemId": "4213090040/20",
   "soId": "4213090040",
   "threadId": "TH-022",
-  "sentAt": "2026-09-06T02:59:41",
+  "sentAt": "2026-09-04T13:19:11",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -2181,7 +2181,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-09-06T03:00:41",
+  "ackAt": "2026-09-04T13:21:11",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2193,7 +2193,7 @@
   "itemId": "4213090040/20",
   "soId": "4213090040",
   "threadId": "TH-022",
-  "sentAt": "2026-09-06T13:14:24",
+  "sentAt": "2026-09-04T16:47:33",
   "targets": {
    "paintId": "RMP",
    "ral": "7016",
@@ -2211,7 +2211,7 @@
    "guardFilm": true
   },
   "status": "ACKED",
-  "ackAt": "2026-09-06T13:17:24",
+  "ackAt": "2026-09-04T16:48:33",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2223,7 +2223,7 @@
   "itemId": "4213090004/10",
   "soId": "4213090004",
   "threadId": "TH-023",
-  "sentAt": "2026-09-05T20:41:27",
+  "sentAt": "2026-09-05T01:11:21",
   "targets": {
    "acidConcPct": [
     12,
@@ -2235,7 +2235,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-09-05T20:44:27",
+  "ackAt": "2026-09-05T01:13:21",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2247,7 +2247,7 @@
   "itemId": "4213090004/10",
   "soId": "4213090004",
   "threadId": "TH-023",
-  "sentAt": "2026-09-06T02:35:55",
+  "sentAt": "2026-09-05T04:01:54",
   "targets": {
    "exitThkMm": 1.2,
    "thkTolMm": 0.05,
@@ -2259,7 +2259,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-09-06T02:36:55",
+  "ackAt": "2026-09-05T04:02:54",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2271,7 +2271,7 @@
   "itemId": "4213090004/10",
   "soId": "4213090004",
   "threadId": "TH-023",
-  "sentAt": "2026-09-06T12:05:16",
+  "sentAt": "2026-09-05T07:16:56",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -2294,7 +2294,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-09-06T12:09:16",
+  "ackAt": "2026-09-05T07:18:56",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2306,7 +2306,7 @@
   "itemId": "4213090024/20",
   "soId": "4213090024",
   "threadId": "TH-024",
-  "sentAt": "2026-09-07T00:23:29",
+  "sentAt": "2026-09-06T03:54:28",
   "targets": {
    "acidConcPct": [
     12,
@@ -2318,7 +2318,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-09-07T00:25:29",
+  "ackAt": "2026-09-06T03:55:28",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2330,7 +2330,7 @@
   "itemId": "4213090031/10",
   "soId": "4213090031",
   "threadId": "TH-025",
-  "sentAt": "2026-09-07T06:23:02",
+  "sentAt": "2026-09-06T16:52:00",
   "targets": {
    "acidConcPct": [
     12,
@@ -2342,7 +2342,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-09-07T06:25:02",
+  "ackAt": "2026-09-06T16:53:00",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2354,7 +2354,7 @@
   "itemId": "4213090031/10",
   "soId": "4213090031",
   "threadId": "TH-025",
-  "sentAt": "2026-09-08T07:37:24",
+  "sentAt": "2026-09-07T00:16:24",
   "targets": {
    "exitThkMm": 0.8,
    "thkTolMm": 0.03,
@@ -2366,7 +2366,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-09-08T07:39:24",
+  "ackAt": "2026-09-07T00:19:24",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2378,7 +2378,7 @@
   "itemId": "4213090031/10",
   "soId": "4213090031",
   "threadId": "TH-025",
-  "sentAt": "2026-09-08T09:48:00",
+  "sentAt": "2026-09-08T09:50:00",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -2415,7 +2415,7 @@
   "itemId": "4213090023/20",
   "soId": "4213090023",
   "threadId": "TH-026",
-  "sentAt": "2026-09-06T22:55:04",
+  "sentAt": "2026-09-06T18:15:15",
   "targets": {
    "acidConcPct": [
     12,
@@ -2427,7 +2427,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-09-06T22:59:04",
+  "ackAt": "2026-09-06T18:19:15",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2439,7 +2439,7 @@
   "itemId": "4213090023/20",
   "soId": "4213090023",
   "threadId": "TH-026",
-  "sentAt": "2026-09-07T16:33:21",
+  "sentAt": "2026-09-07T00:31:29",
   "targets": {
    "exitThkMm": 0.8,
    "thkTolMm": 0.03,
@@ -2451,7 +2451,7 @@
    ]
   },
   "status": "ACKED",
-  "ackAt": "2026-09-07T16:36:21",
+  "ackAt": "2026-09-07T00:33:29",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2463,7 +2463,7 @@
   "itemId": "4213090023/20",
   "soId": "4213090023",
   "threadId": "TH-026",
-  "sentAt": "2026-09-08T01:28:40",
+  "sentAt": "2026-09-07T04:06:02",
   "targets": {
    "coatingId": "Z275",
    "coatingTargetGsm": 288,
@@ -2486,7 +2486,7 @@
    "passivation": "Chromate"
   },
   "status": "ACKED",
-  "ackAt": "2026-09-08T01:31:40",
+  "ackAt": "2026-09-07T04:10:02",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2498,7 +2498,7 @@
   "itemId": "4213090026/10",
   "soId": "4213090026",
   "threadId": "TH-027",
-  "sentAt": "2026-09-08T07:38:42",
+  "sentAt": "2026-09-07T16:19:40",
   "targets": {
    "acidConcPct": [
     12,
@@ -2510,7 +2510,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-09-08T07:40:42",
+  "ackAt": "2026-09-07T16:22:40",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2522,7 +2522,7 @@
   "itemId": "4213090008/30",
   "soId": "4213090008",
   "threadId": "TH-028",
-  "sentAt": "2026-09-08T09:25:39",
+  "sentAt": "2026-09-08T05:28:26",
   "targets": {
    "acidConcPct": [
     12,
@@ -2534,7 +2534,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-09-08T09:29:39",
+  "ackAt": "2026-09-08T05:32:26",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
@@ -2546,7 +2546,7 @@
   "itemId": "4213090008/30",
   "soId": "4213090008",
   "threadId": "TH-028",
-  "sentAt": "2026-09-09T16:33:00",
+  "sentAt": "2026-09-08T08:53:31",
   "targets": {
    "exitThkMm": 0.5,
    "thkTolMm": 0.03,
@@ -2557,156 +2557,20 @@
     11500
    ]
   },
-  "status": "SENT",
-  "ackAt": null,
-  "hero": false,
-  "via": "Middleware (L2 gateway)"
- },
- {
-  "id": "PDI-PKL-0029",
-  "line": "PKL",
-  "po": "PO-KHP-2609-0141",
-  "unitId": "HRC-DL-2609-0031",
-  "itemId": "4213090006/30",
-  "soId": "4213090006",
-  "threadId": "TH-029",
-  "sentAt": "2026-09-09T23:00:43",
-  "targets": {
-   "acidConcPct": [
-    12,
-    16
-   ],
-   "stripSpeedMpm": 90,
-   "bathTempC": 80,
-   "oilingGsm": 1.2,
-   "sideTrimMm": 10
-  },
-  "status": "SENT",
-  "ackAt": null,
-  "hero": false,
-  "via": "Middleware (L2 gateway)"
- },
- {
-  "id": "PDI-CRM-0027",
-  "line": "CRM",
-  "po": "PO-KHP-2609-0142",
-  "unitId": "HPO-KHP-2609-0029",
-  "itemId": "4213090006/30",
-  "soId": "4213090006",
-  "threadId": "TH-029",
-  "sentAt": "2026-09-08T08:38:05",
-  "targets": {
-   "exitThkMm": 0.6,
-   "thkTolMm": 0.03,
-   "passes": 4,
-   "reductionPct": 83.3,
-   "rollForceKN": [
-    9500,
-    11500
-   ]
-  },
   "status": "ACKED",
-  "ackAt": "2026-09-08T08:40:05",
-  "hero": false,
-  "via": "Middleware (L2 gateway)"
- },
- {
-  "id": "PDI-PKL-0030",
-  "line": "PKL",
-  "po": "PO-KHP-2609-0147",
-  "unitId": "HRC-VJ-2609-0032",
-  "itemId": "4213090037/10",
-  "soId": "4213090037",
-  "threadId": "TH-030",
-  "sentAt": "2026-09-10T08:58:35",
-  "targets": {
-   "acidConcPct": [
-    12,
-    16
-   ],
-   "stripSpeedMpm": 90,
-   "bathTempC": 80,
-   "oilingGsm": 1.2,
-   "sideTrimMm": 10
-  },
-  "status": "SENT",
-  "ackAt": null,
+  "ackAt": "2026-09-08T08:55:31",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },
  {
   "id": "PDI-CGL-0026",
   "line": "CGL",
-  "po": "PO-KHP-2609-0149",
-  "unitId": "CRF-KHP-2609-0028",
-  "itemId": "4213090037/10",
-  "soId": "4213090037",
-  "threadId": "TH-030",
-  "sentAt": "2026-09-08T09:17:58",
-  "targets": {
-   "coatingId": "Z275",
-   "coatingTargetGsm": 288,
-   "coatingBandGsm": [
-    275,
-    310
-   ],
-   "spangle": "Regular",
-   "lineSpeedMpm": 90,
-   "furnaceSoakC": 720,
-   "zincBathAlPct": [
-    0.18,
-    0.24
-   ],
-   "bathTempC": 460,
-   "skinPassElongPct": [
-    0.8,
-    1.2
-   ],
-   "passivation": "Chromate"
-  },
-  "status": "ACKED",
-  "ackAt": "2026-09-08T09:20:58",
-  "hero": false,
-  "via": "Middleware (L2 gateway)"
- },
- {
-  "id": "PDI-CCL-0014",
-  "line": "CCL",
-  "po": "PO-KHP-2609-0168",
-  "unitId": "GIC-KHP-2609-0030",
-  "itemId": "4213090023/10",
-  "soId": "4213090023",
-  "threadId": "TH-034",
-  "sentAt": "2026-09-08T08:17:06",
-  "targets": {
-   "paintId": "RMP",
-   "ral": "6005",
-   "primerUm": 5,
-   "dftTopUm": 20,
-   "dftTopTolUm": 3,
-   "dftBackUm": 7,
-   "dftBackTolUm": 2,
-   "pmtC": 232,
-   "lineSpeedMpm": 60,
-   "glossRange": [
-    30,
-    40
-   ],
-   "guardFilm": true
-  },
-  "status": "ACKED",
-  "ackAt": "2026-09-08T08:18:06",
-  "hero": false,
-  "via": "Middleware (L2 gateway)"
- },
- {
-  "id": "PDI-CGL-0027",
-  "line": "CGL",
   "po": "PO-KHP-2609-0137",
   "unitId": "CRF-KHP-2609-0026",
   "itemId": "4213090008/30",
   "soId": "4213090008",
   "threadId": "TH-028",
+  "sentAt": "2026-09-08T09:47:00",
   "targets": {
    "coatingId": "AZ150",
    "coatingTargetGsm": 157,
@@ -2728,22 +2592,100 @@
    ],
    "passivation": "Chromate"
   },
+  "status": "IN_QUEUE",
   "ackAt": null,
   "hero": false,
   "via": "Middleware (L2 gateway)",
-  "status": "IN_QUEUE",
-  "sentAt": "2026-09-08T09:47:00",
   "stuck": true,
   "queue": "L2.CGL.PDI.OUT"
  },
  {
-  "id": "PDI-CGL-0028",
+  "id": "PDI-CCL-0014",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0138",
+  "unitId": "GLC-KHP-2609-0002",
+  "itemId": "4213090008/30",
+  "soId": "4213090008",
+  "threadId": "TH-028",
+  "sentAt": "2026-09-09T00:05:10",
+  "targets": {
+   "paintId": "RMP",
+   "ral": "3009",
+   "primerUm": 5,
+   "dftTopUm": 20,
+   "dftTopTolUm": 3,
+   "dftBackUm": 7,
+   "dftBackTolUm": 2,
+   "pmtC": 232,
+   "lineSpeedMpm": 60,
+   "glossRange": [
+    30,
+    40
+   ],
+   "guardFilm": true
+  },
+  "status": "SENT",
+  "ackAt": null,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDI-PKL-0029",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0141",
+  "unitId": "HRC-DL-2609-0031",
+  "itemId": "4213090006/30",
+  "soId": "4213090006",
+  "threadId": "TH-029",
+  "sentAt": "2026-09-08T09:19:36",
+  "targets": {
+   "acidConcPct": [
+    12,
+    16
+   ],
+   "stripSpeedMpm": 90,
+   "bathTempC": 80,
+   "oilingGsm": 1.2,
+   "sideTrimMm": 10
+  },
+  "status": "ACKED",
+  "ackAt": "2026-09-08T09:20:36",
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDI-CRM-0027",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0142",
+  "unitId": "HPO-KHP-2609-0029",
+  "itemId": "4213090006/30",
+  "soId": "4213090006",
+  "threadId": "TH-029",
+  "sentAt": "2026-09-09T10:40:31",
+  "targets": {
+   "exitThkMm": 0.6,
+   "thkTolMm": 0.03,
+   "passes": 4,
+   "reductionPct": 83.3,
+   "rollForceKN": [
+    9500,
+    11500
+   ]
+  },
+  "status": "SENT",
+  "ackAt": null,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDI-CGL-0027",
   "line": "CGL",
   "po": "PO-KHP-2609-0143",
   "unitId": "CRF-KHP-2609-0027",
   "itemId": "4213090006/30",
   "soId": "4213090006",
   "threadId": "TH-029",
+  "sentAt": "2026-09-08T09:53:00",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -2765,12 +2707,237 @@
    ],
    "passivation": "Chromate"
   },
+  "status": "IN_QUEUE",
   "ackAt": null,
   "hero": false,
   "via": "Middleware (L2 gateway)",
-  "status": "IN_QUEUE",
-  "sentAt": "2026-09-08T09:53:00",
   "stuck": true,
   "queue": "L2.CGL.PDI.OUT"
+ },
+ {
+  "id": "PDI-CCL-0015",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0144",
+  "unitId": "GIC-KHP-2609-0025",
+  "itemId": "4213090006/30",
+  "soId": "4213090006",
+  "threadId": "TH-029",
+  "sentAt": "2026-09-09T21:51:35",
+  "targets": {
+   "paintId": "RMP",
+   "ral": "1015",
+   "primerUm": 5,
+   "dftTopUm": 20,
+   "dftTopTolUm": 3,
+   "dftBackUm": 7,
+   "dftBackTolUm": 2,
+   "pmtC": 232,
+   "lineSpeedMpm": 60,
+   "glossRange": [
+    30,
+    40
+   ],
+   "guardFilm": true
+  },
+  "status": "SENT",
+  "ackAt": null,
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDI-PKL-0030",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0147",
+  "unitId": "HRC-VJ-2609-0032",
+  "itemId": "4213090037/10",
+  "soId": "4213090037",
+  "threadId": "TH-030",
+  "sentAt": "2026-09-08T01:00:03",
+  "targets": {
+   "acidConcPct": [
+    12,
+    16
+   ],
+   "stripSpeedMpm": 90,
+   "bathTempC": 80,
+   "oilingGsm": 1.2,
+   "sideTrimMm": 10
+  },
+  "status": "ACKED",
+  "ackAt": "2026-09-08T01:04:03",
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDI-CRM-0028",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0148",
+  "unitId": "HPO-KHP-2609-0030",
+  "itemId": "4213090037/10",
+  "soId": "4213090037",
+  "threadId": "TH-030",
+  "sentAt": "2026-09-08T05:35:46",
+  "targets": {
+   "exitThkMm": 1.2,
+   "thkTolMm": 0.05,
+   "passes": 4,
+   "reductionPct": 70.0,
+   "rollForceKN": [
+    9500,
+    11500
+   ]
+  },
+  "status": "ACKED",
+  "ackAt": "2026-09-08T05:37:46",
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDI-CGL-0028",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0149",
+  "unitId": "CRF-KHP-2609-0028",
+  "itemId": "4213090037/10",
+  "soId": "4213090037",
+  "threadId": "TH-030",
+  "sentAt": "2026-09-08T08:21:55",
+  "targets": {
+   "coatingId": "Z275",
+   "coatingTargetGsm": 288,
+   "coatingBandGsm": [
+    275,
+    310
+   ],
+   "spangle": "Regular",
+   "lineSpeedMpm": 90,
+   "furnaceSoakC": 720,
+   "zincBathAlPct": [
+    0.18,
+    0.24
+   ],
+   "bathTempC": 460,
+   "skinPassElongPct": [
+    0.8,
+    1.2
+   ],
+   "passivation": "Chromate"
+  },
+  "status": "ACKED",
+  "ackAt": "2026-09-08T08:22:55",
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDI-PKL-0031",
+  "line": "PKL",
+  "po": "PO-KHP-2609-0165",
+  "unitId": "HRC-DL-2609-0036",
+  "itemId": "4213090023/10",
+  "soId": "4213090023",
+  "threadId": "TH-034",
+  "sentAt": "2026-09-07T23:01:31",
+  "targets": {
+   "acidConcPct": [
+    12,
+    16
+   ],
+   "stripSpeedMpm": 90,
+   "bathTempC": 80,
+   "oilingGsm": 1.2,
+   "sideTrimMm": 10
+  },
+  "status": "ACKED",
+  "ackAt": "2026-09-07T23:04:31",
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDI-CRM-0029",
+  "line": "CRM",
+  "po": "PO-KHP-2609-0166",
+  "unitId": "HPO-KHP-2609-0034",
+  "itemId": "4213090023/10",
+  "soId": "4213090023",
+  "threadId": "TH-034",
+  "sentAt": "2026-09-08T01:40:16",
+  "targets": {
+   "exitThkMm": 0.6,
+   "thkTolMm": 0.03,
+   "passes": 4,
+   "reductionPct": 82.4,
+   "rollForceKN": [
+    9500,
+    11500
+   ]
+  },
+  "status": "ACKED",
+  "ackAt": "2026-09-08T01:41:16",
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDI-CGL-0029",
+  "line": "CGL",
+  "po": "PO-KHP-2609-0167",
+  "unitId": "CRF-KHP-2609-0032",
+  "itemId": "4213090023/10",
+  "soId": "4213090023",
+  "threadId": "TH-034",
+  "sentAt": "2026-09-08T06:02:31",
+  "targets": {
+   "coatingId": "Z120",
+   "coatingTargetGsm": 126,
+   "coatingBandGsm": [
+    120,
+    138
+   ],
+   "spangle": "Regular",
+   "lineSpeedMpm": 90,
+   "furnaceSoakC": 720,
+   "zincBathAlPct": [
+    0.18,
+    0.24
+   ],
+   "bathTempC": 460,
+   "skinPassElongPct": [
+    0.8,
+    1.2
+   ],
+   "passivation": "Chromate"
+  },
+  "status": "ACKED",
+  "ackAt": "2026-09-08T06:06:31",
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
+ },
+ {
+  "id": "PDI-CCL-0016",
+  "line": "CCL",
+  "po": "PO-KHP-2609-0168",
+  "unitId": "GIC-KHP-2609-0030",
+  "itemId": "4213090023/10",
+  "soId": "4213090023",
+  "threadId": "TH-034",
+  "sentAt": "2026-09-08T09:16:25",
+  "targets": {
+   "paintId": "RMP",
+   "ral": "6005",
+   "primerUm": 5,
+   "dftTopUm": 20,
+   "dftTopTolUm": 3,
+   "dftBackUm": 7,
+   "dftBackTolUm": 2,
+   "pmtC": 232,
+   "lineSpeedMpm": 60,
+   "glossRange": [
+    30,
+    40
+   ],
+   "guardFilm": true
+  },
+  "status": "ACKED",
+  "ackAt": "2026-09-08T09:18:25",
+  "hero": false,
+  "via": "Middleware (L2 gateway)"
  }
 ]
