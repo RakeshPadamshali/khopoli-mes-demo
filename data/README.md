@@ -120,7 +120,7 @@ Fields: `id`, `unitId`, `itemId`, `at`, `by`, `ppcApproval`, `qcApproval`, `stat
 Line schedules of the recorded coils (one row per coil per line) with status vs as-of, track and rush markers.
 Fields: `id`, `line`, `threadId`, `itemId`, `soId`, `customerName`, `unitId`, `po`, `product`, `gradeId`, `thk`, `width`, `ral`, `coatingId`, `plannedStart`, `plannedEnd`, `status`, `hero` …
 
-### `campaigns.json` — 803 records
+### `campaigns.json` — 868 records
 Forward line-load plan: the balance-to-produce of every open item as ~20 t campaign coils (PLC-…), sequenced per line over a 10-day horizon by campaign family (coating / thickness on CGL, light → dark colour on CCL, gauge on CRM, knife set on the slitter) with changeover minutes. Schedule-only: no material or production order exists until release.
 Fields: `id`, `line`, `unitId`, `coilSeq`, `coilsOf`, `itemId`, `soId`, `product`, `qtyMT`, `stage`, `stages`, `wip`, `plannedStart`, `plannedEnd`, `status`, `campaign`, `family`, `changeoverMin` …
 

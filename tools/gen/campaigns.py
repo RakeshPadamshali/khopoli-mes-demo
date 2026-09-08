@@ -122,8 +122,21 @@ def build_campaigns(items, routes, schedules):
             s, e, gap = insert(ln, t, c)
             if s >= end: busy[ln].pop(); break                                                # beyond the horizon: this coil stops here
             c["ends"][ln] = e; placed[ln].append((s, e, c, si, gap))
-    # 4. rows with campaign ids per line (consecutive same-family bars)
+    # 3b. WIP coils: the steps already done before the plan (pickled / cold-rolled stock waiting in the yard) are written as DONE rows
+    #     with times before now, so a coil's chart and its operation schedule read from pickling to packing without a gap
     rows = []; n = 0
+    for c in coils:
+        if not c["s0"] or not c["ends"]: continue                                    # only WIP coils that made it into the horizon
+        t_end = ASOF - h(RC.uniform(2, 16)); done = []
+        for si in range(c["s0"] - 1, -1, -1):
+            ln = c["path"][si]; dur = h(c["qtyMT"] / LINE[ln]["tph"] + SETUP[ln]); s = t_end - dur
+            done.append((s, t_end, ln, si)); lo, hi = TRANSFER[ln]; t_end = s - h(RC.uniform(lo, hi))
+        for s, e, ln, si in reversed(done):
+            n += 1
+            rows.append(dict(id=f"CSCH-{n:04d}", line=ln, unitId=c["id"], coilSeq=c["seq"], coilsOf=c["of"], itemId=c["itemId"], soId=c["soId"], product=c["product"], qtyMT=c["qtyMT"],
+                             stage=si + 1, stages=len(c["path"]), wip=True, plannedStart=iso(s), plannedEnd=iso(e), status="DONE", campaign="WIP", family=family(ln, c),
+                             changeoverMin=0, po=None, rush=False, hero=False, source="campaign", doneBeforePlan=True))
+    # 4. rows with campaign ids per line (consecutive same-family bars)
     for ln in placed:
         camp = 0; fam = None
         for s, e, c, si, gap in sorted(placed[ln], key=lambda p: p[0]):
