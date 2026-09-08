@@ -1,7 +1,7 @@
 """MATERIAL + PROCESS: simulate coil 'threads' HR coil -> ... -> pack through the line routes (the digital thread),
 line schedules, MES production orders, allocations (BTA/BTP), free HR stock and Material-Allocator suggestions."""
 from datetime import datetime, timedelta
-from .common import R, BASE, ASOF, iso, day, h, pick, between, r1, r2, status_vs_asof, SEQ
+from .common import R, BASE, ASOF, iso, day, h, pick, between, r1, r2, status_vs_asof, SEQ, at as AT, YM, YM_PREV
 from .assets_specs import LINES, COATINGS
 from .orders import HERO_ITEM, RUSH_ITEM, SWAP_A, SWAP_B, YIELDS
 
@@ -26,7 +26,7 @@ def _slot(line, ready, dur):
 
 def _unit_id(product, src=None):
     n = SEQ.next("unit-" + product)
-    return f"{PREFIX[product]}-{src or 'KHP'}-2609-{n:04d}"
+    return f"{PREFIX[product]}-{src or 'KHP'}-{YM}-{n:04d}"
 
 
 def _hr_coil(it, src=None, thk=None):
@@ -47,10 +47,10 @@ def build_threads(items, routes):
     route_of = {r["itemId"]: r for r in routes}
     threads = []
     # pick items that get physical threads (some items get 1-3 coils depending on qty)
-    scripted = {RUSH_ITEM: datetime(2026, 9, 13, 14, 0), SWAP_A: datetime(2026, 9, 5, 8, 0), SWAP_B: datetime(2026, 9, 6, 10, 0)}
+    scripted = {RUSH_ITEM: AT(-2, 14, 0), SWAP_A: AT(-10, 8, 0), SWAP_B: AT(-9, 10, 0)}
     cand = [it for it in items if it["id"] not in (HERO_ITEM,) and it["id"] not in scripted]
     R.shuffle(cand)
-    plan = [(HERO_ITEM, datetime(2026, 9, 8, 14, 0), True)] + [(k, v, False) for k, v in scripted.items()]
+    plan = [(HERO_ITEM, AT(-7, 14, 0), True)] + [(k, v, False) for k, v in scripted.items()]
     starts = [BASE - timedelta(days=5) + timedelta(hours=x * 20) for x in range(48)]   # ~5 Aug-27 .. ~21 Sep: done / in-progress / planned mix
     for k, it in enumerate(cand[:31]):
         plan.append((it["id"], starts[k] + timedelta(minutes=R.randint(0, 300)), False))
@@ -59,15 +59,15 @@ def build_threads(items, routes):
         it = next(x for x in items if x["id"] == item_id); rt = route_of[item_id]
         th = dict(id=f"TH-{tid_n:03d}", itemId=item_id, soId=it["soId"], product=it["product"], hero=hero, path=rt["path"], units=[])
         hr = _hr_coil(it, src="VJ" if hero else None, thk=(2.5 if hero else None))
-        if hero: hr.update(id="HRC-VJ-2608-0471", heatId="H26-VJ-7731", slabId="SLB-VJ-7731-02", weightMT=21.4, width=1250, location="HR Yard bay B-07", receivedAt=iso(datetime(2026, 8, 28, 16, 20)))
+        if hero: hr.update(id=f"HRC-VJ-{YM_PREV}-0471", heatId="H26-VJ-7731", slabId="SLB-VJ-7731-02", weightMT=21.4, width=1250, location="HR Yard bay B-07", receivedAt=iso(AT(-18, 16, 20)))
         hr["allocatedTo"] = item_id; hr["allocatedAt"] = iso(t0 - h(between(6, 30))); hr["status"] = "ALLOCATED"
         materials.append(hr); edges.append(("allocatedTo", hr["id"], item_id)); th["units"].append(hr["id"])
         allocations.append(dict(id=f"ALC-{SEQ.next('alc'):04d}", unitId=hr["id"], itemId=item_id, at=hr["allocatedAt"], by="Material Allocator" if R.random() < 0.7 else "PPC (manual)",
                                 ppcApproval="APPROVED", qcApproval="APPROVED", status="ACTIVE", reason="MA suggestion accepted" if hero else pick(["MA suggestion accepted", "Free-stock reallocation by priority", "Manual allocation"])))
         cur_unit, cur_w, ready = hr, hr["weightMT"], t0
-        hero_times = {"PKL": (datetime(2026, 9, 9, 6, 40), datetime(2026, 9, 9, 7, 25)), "CRM": (datetime(2026, 9, 10, 14, 10), datetime(2026, 9, 10, 15, 5)),
-                      "CGL": (datetime(2026, 9, 12, 9, 30), datetime(2026, 9, 12, 10, 40)), "CCL": (datetime(2026, 9, 14, 22, 10), datetime(2026, 9, 15, 1, 40)),
-                      "SLT": (datetime(2026, 9, 16, 8, 0), datetime(2026, 9, 16, 8, 50)), "PKG": (datetime(2026, 9, 16, 13, 0), datetime(2026, 9, 16, 13, 40))}
+        hero_times = {"PKL": (AT(-6, 6, 40), AT(-6, 7, 25)), "CRM": (AT(-5, 14, 10), AT(-5, 15, 5)),
+                      "CGL": (AT(-3, 9, 30), AT(-3, 10, 40)), "CCL": (AT(-1, 22, 10), AT(0, 1, 40)),
+                      "SLT": (AT(1, 8, 0), AT(1, 8, 50)), "PKG": (AT(1, 13, 0), AT(1, 13, 40))}
         for si, ln in enumerate(th["path"]):
             dur = h(cur_w / LINE[ln]["tph"] + between(0.25, 0.5))
             if hero:
@@ -77,7 +77,7 @@ def build_threads(items, routes):
             st = status_vs_asof(s, e)
             out_prod = {"PKL": "HRPO", "CRM": "CRFH", "CGL": it["product"] if it["product"] in ("GI", "GL") else ("GL" if it["product"] == "PPGL" else "GI"),
                         "CCL": it["product"], "SLT": "SLIT", "RWL": "TRIMMED", "PKG": "PACK", "HRS": "HRC"}[ln]
-            po = f"PO-KHP-2609-{SEQ.next('po'):04d}"
+            po = f"PO-KHP-{YM}-{SEQ.next('po'):04d}"
             yld = YIELDS[ln]; out_w = r2(cur_w * yld); scrap = r2(cur_w - out_w)
             stage = dict(id=f"STG-{th['id']}-{si + 1}", threadId=th["id"], itemId=item_id, soId=it["soId"], line=ln, seq=si + 1, po=po, inUnit=cur_unit["id"],
                          start=iso(s), end=iso(e), status=st, inWeight=cur_w, outWeight=out_w if st == "DONE" else None, scrap=scrap if st == "DONE" else None,

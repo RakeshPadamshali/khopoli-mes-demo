@@ -29,6 +29,7 @@ Live-demo actions (charge, receive PDO, confirm, record DFT, allocate, replay, d
 - `data/khp-data.js` — one object `window.KHP` used by the pages.
 - `data/json/<entity>.json` + `data/README.md` — the same data per entity with a data dictionary, for the AI-support chatbot team.
 - `tools/generate_data.py` — deterministic generator (seed 2609). Edit the generator, never the outputs. `python tools/generate_data.py` rewrites both.
+- **Dates follow the as-of day, which defaults to today.** Run the generator (and push) before a demo so the schedule, delays, alerts and incidents sit around the current date; ids and the story do not change within a month. Pin a date with `python tools/generate_data.py --asof 2026-09-15`. `data/khp-meta.js` carries the as-of stamp for the header.
 
 Golden-thread anchors: SO **4213090017/10** (PPGI, RAL 9002), HR coil **HRC-VJ-2608-0471** (Vijayanagar heat H26-VJ-7731), defects DEF-2609-0001/0002/0003, incidents INC-26-0412 (resolved by the agent) and INC-26-0413 (awaiting approval).
 

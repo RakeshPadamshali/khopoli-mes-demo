@@ -1,6 +1,6 @@
 """Scenario 7 data feed (AI-agent L1/L2 support): incidents, runbooks / known errors, action catalogue, agent audit log, MI metrics."""
 from datetime import datetime, timedelta
-from .common import R, ASOF, iso, h, m, pick, between, r1, SEQ
+from .common import R, ASOF, iso, h, m, pick, between, r1, SEQ, at as AT, dstr
 
 RUNBOOKS = [
     dict(id="RB-001", title="Stuck PDI queue on L2 gateway", symptoms=["Queue depth > 0 for > 120 s", "No consumer heartbeat", "PDI status IN_QUEUE, line cannot charge"], category="Interface / L2",
@@ -45,18 +45,18 @@ def build_support(alerts):
                               falseAction=(R.random() < 0.04 and agent), csat=pick([4, 5, 5, 5, 3]), hero=False))
     # hero incident 1: stuck PDI queue — resolved by agent with human approval for replay
     a1 = next(a for a in alerts if a["id"] == "ALR-0001")
-    incidents.append(dict(id="INC-26-0412", title="Stuck PDI queue L2.CGL.PDI.OUT — CGL cannot charge next coil", category="Interface / L2", severity="S1", channel="Monitoring alert → ITSM → Teams", openedAt="2026-09-15T09:43:00", openedBy="Monitoring (ALR-0001)",
+    incidents.append(dict(id="INC-26-0412", title="Stuck PDI queue L2.CGL.PDI.OUT — CGL cannot charge next coil", category="Interface / L2", severity="S1", channel="Monitoring alert → ITSM → Teams", openedAt=iso(AT(0, 9, 43)), openedBy="Monitoring (ALR-0001)",
                           classification=dict(by="AI agent", confidence=0.96, category="Interface / L2 — stuck queue"), enrichment=dict(batchIds=[], interfaceLogs=3, line="CGL", queue="L2.CGL.PDI.OUT", messageIds=a1["messageIds"], relatedDelay="CGL air-knife stoppage 09:52 (independent)"),
                           knowledgeSource="RB-001", knownError="KE-0031", proposedAction="Restart L2 gateway subscriber (autonomous A-05); replay 3 queued PDIs oldest-first (A-07, approval required)", approvalRequired=True, approvedBy="Shift IT lead — P. Nair (09:51)",
-                          resolvedBy="AI agent (human-approved replay)", validation="Queue depth 0; 3/3 PDI ACKs received within 30 s SLA; CGL charge screen live", resolvedAt="2026-09-15T09:55:00", mttrMin=12, status="RESOLVED", falseAction=False, csat=5, hero=True, alertId="ALR-0001"))
+                          resolvedBy="AI agent (human-approved replay)", validation="Queue depth 0; 3/3 PDI ACKs received within 30 s SLA; CGL charge screen live", resolvedAt=iso(AT(0, 9, 55)), mttrMin=12, status="RESOLVED", falseAction=False, csat=5, hero=True, alertId="ALR-0001"))
     # hero incident 2: malformed IDoc — agent diagnosed, waiting for SAP key-user approval (live for the chatbot demo)
-    incidents.append(dict(id="INC-26-0413", title="Sales-order amendment IDoc 0000001187734 failed (SO 4213090022/10 qty 180 → 210 t)", category="Interface / SAP", severity="S2", channel="Monitoring alert → ITSM", openedAt="2026-09-15T08:31:00", openedBy="Monitoring (ALR-0002)",
+    incidents.append(dict(id="INC-26-0413", title="Sales-order amendment IDoc 0000001187734 failed (SO 4213090022/10 qty 180 → 210 t)", category="Interface / SAP", severity="S2", channel="Monitoring alert → ITSM", openedAt=iso(AT(0, 8, 31)), openedBy="Monitoring (ALR-0002)",
                           classification=dict(by="AI agent", confidence=0.93, category="Interface / SAP — IDoc status 51"), enrichment=dict(batchIds=[], interfaceLogs=3, line=None, idoc="0000001187734", segment="E1EDP20", field="EDATU", value="2026-13-02", soItem="4213090022/10"),
                           knowledgeSource="RB-002", knownError="KE-0014", proposedAction="Source data error (invalid schedule-line date). Request SAP SD key user to correct EDATU and re-send IDoc; MES will process on replay. No manual patch in MES (prohibited A-13).",
                           approvalRequired=True, approvedBy=None, resolvedBy=None, validation=None, resolvedAt=None, mttrMin=None, status="AWAITING_APPROVAL", falseAction=False, csat=None, hero=True, alertId="ALR-0002"))
-    incidents.append(dict(id="INC-26-0409", title="PDO rejected on CCL — contract version mismatch", category="Interface / L2", severity="S2", channel="Monitoring alert → ITSM", openedAt="2026-09-14T23:06:00", openedBy="Monitoring (ALR-0003)",
+    incidents.append(dict(id="INC-26-0409", title="PDO rejected on CCL — contract version mismatch", category="Interface / L2", severity="S2", channel="Monitoring alert → ITSM", openedAt=iso(AT(-1, 23, 6)), openedBy="Monitoring (ALR-0003)",
                           classification=dict(by="AI agent", confidence=0.91, category="Interface / L2 — schema"), enrichment=dict(batchIds=[], interfaceLogs=2, line="CCL", contract="CT-PDO", payloadVersion="1.3", contractVersion="1.2"), knowledgeSource="RB-003", knownError="KE-0027",
-                          proposedAction="Activate CT-PDO v1.3 (approval: Integration CoE) then replay rejected PDO", approvalRequired=True, approvedBy="Integration CoE on-call — R. Menon (23:20)", resolvedBy="AI agent (human-approved)", validation="Replayed message accepted; PDO stored", resolvedAt="2026-09-14T23:32:00", mttrMin=26, status="RESOLVED", falseAction=False, csat=4, hero=False, alertId="ALR-0003"))
+                          proposedAction="Activate CT-PDO v1.3 (approval: Integration CoE) then replay rejected PDO", approvalRequired=True, approvedBy="Integration CoE on-call — R. Menon (23:20)", resolvedBy="AI agent (human-approved)", validation="Replayed message accepted; PDO stored", resolvedAt=iso(AT(-1, 23, 32)), mttrMin=26, status="RESOLVED", falseAction=False, csat=4, hero=False, alertId="ALR-0003"))
     incidents.sort(key=lambda x: x["openedAt"])
     steps = [("09:43:05", "AI agent", "Ticket created from alert ALR-0001; severity S1 classified (confidence 0.96)", "A-06", None, "OK"),
              ("09:43:20", "AI agent", "Read middleware + L2 gateway logs; correlated 3 IN_QUEUE PDIs by PO / coil id", "A-01, A-02", None, "OK"),
@@ -67,7 +67,7 @@ def build_support(alerts):
              ("09:52:00", "AI agent", "Replayed PDI messages oldest-first", "A-07", "APR-2609-118", "3/3 ACK within 28 s"),
              ("09:55:00", "AI agent", "Post-remediation validation: queue depth 0, CGL charge screen live; ticket resolved, user confirmation requested", "A-06", None, "RESOLVED")]
     for i, (t, actor, what, act, appr, res) in enumerate(steps, 1):
-        audit.append(dict(id=f"AUD-0412-{i:02d}", incidentId="INC-26-0412", at=f"2026-09-15T{t}", actor=actor, action=what, catalogueRef=act, approvalRef=appr, result=res, immutable=True))
+        audit.append(dict(id=f"AUD-0412-{i:02d}", incidentId="INC-26-0412", at=f"{dstr(0)}T{t}", actor=actor, action=what, catalogueRef=act, approvalRef=appr, result=res, immutable=True))
     res = [x for x in incidents if x["status"] == "RESOLVED"]
     agent = [x for x in res if x["resolvedBy"].startswith("AI")]
     def mttr(sev): v = [x["mttrMin"] for x in res if x["severity"] == sev]; return round(sum(v) / len(v)) if v else None

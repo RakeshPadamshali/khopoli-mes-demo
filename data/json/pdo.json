@@ -11,7 +11,7 @@
   "itemId": "4213090027/10",
   "soId": "4213090027",
   "threadId": "TH-001",
-  "receivedAt": "2026-08-28T05:14:30",
+  "receivedAt": "2026-08-21T05:14:30",
   "actuals": {
    "acidConcPct": 11.2,
    "stripSpeedMpm": 113,
@@ -44,7 +44,7 @@
   "itemId": "4213090027/10",
   "soId": "4213090027",
   "threadId": "TH-001",
-  "receivedAt": "2026-08-28T16:34:06",
+  "receivedAt": "2026-08-21T16:34:06",
   "actuals": {
    "exitThkMm": 0.45,
    "passes": 5,
@@ -71,7 +71,7 @@
   "itemId": "4213090027/10",
   "soId": "4213090027",
   "threadId": "TH-001",
-  "receivedAt": "2026-08-29T09:03:20",
+  "receivedAt": "2026-08-22T09:03:20",
   "actuals": {
    "coatingTopGsm": 67.3,
    "coatingBottomGsm": 66.5,
@@ -102,7 +102,7 @@
   "itemId": "4213090027/10",
   "soId": "4213090027",
   "threadId": "TH-001",
-  "receivedAt": "2026-08-30T10:33:19",
+  "receivedAt": "2026-08-23T10:33:19",
   "actuals": {
    "dftTopUm": 20.5,
    "dftBackUm": 7.4,
@@ -131,7 +131,7 @@
   "itemId": "4213090010/10",
   "soId": "4213090010",
   "threadId": "TH-002",
-  "receivedAt": "2026-08-28T04:25:18",
+  "receivedAt": "2026-08-21T04:25:18",
   "actuals": {
    "acidConcPct": 13.9,
    "stripSpeedMpm": 117,
@@ -158,7 +158,7 @@
   "itemId": "4213090010/10",
   "soId": "4213090010",
   "threadId": "TH-002",
-  "receivedAt": "2026-08-28T10:04:25",
+  "receivedAt": "2026-08-21T10:04:25",
   "actuals": {
    "exitThkMm": 0.5,
    "passes": 5,
@@ -185,7 +185,7 @@
   "itemId": "4213090010/10",
   "soId": "4213090010",
   "threadId": "TH-002",
-  "receivedAt": "2026-08-29T05:23:41",
+  "receivedAt": "2026-08-22T05:23:41",
   "actuals": {
    "coatingTopGsm": 66.3,
    "coatingBottomGsm": 67.3,
@@ -216,7 +216,7 @@
   "itemId": "4213090010/10",
   "soId": "4213090010",
   "threadId": "TH-002",
-  "receivedAt": "2026-08-29T19:22:25",
+  "receivedAt": "2026-08-22T19:22:25",
   "actuals": {
    "dftTopUm": 18.6,
    "dftBackUm": 7.3,
@@ -245,7 +245,7 @@
   "itemId": "4213090035/30",
   "soId": "4213090035",
   "threadId": "TH-003",
-  "receivedAt": "2026-08-29T17:15:58",
+  "receivedAt": "2026-08-22T17:15:58",
   "actuals": {
    "acidConcPct": 12.9,
    "stripSpeedMpm": 84,
@@ -272,7 +272,7 @@
   "itemId": "4213090035/30",
   "soId": "4213090035",
   "threadId": "TH-003",
-  "receivedAt": "2026-08-30T09:24:14",
+  "receivedAt": "2026-08-23T09:24:14",
   "actuals": {
    "exitThkMm": 1.27,
    "passes": 4,
@@ -305,7 +305,7 @@
   "itemId": "4213090035/30",
   "soId": "4213090035",
   "threadId": "TH-003",
-  "receivedAt": "2026-08-31T11:53:10",
+  "receivedAt": "2026-08-24T11:53:10",
   "actuals": {
    "coatingTopGsm": 66.3,
    "coatingBottomGsm": 63.4,
@@ -336,7 +336,7 @@
   "itemId": "4213090035/10",
   "soId": "4213090035",
   "threadId": "TH-004",
-  "receivedAt": "2026-08-30T03:50:32",
+  "receivedAt": "2026-08-23T03:50:32",
   "actuals": {
    "acidConcPct": 13.3,
    "stripSpeedMpm": 112,
@@ -363,7 +363,7 @@
   "itemId": "4213090035/10",
   "soId": "4213090035",
   "threadId": "TH-004",
-  "receivedAt": "2026-08-30T15:31:47",
+  "receivedAt": "2026-08-23T15:31:47",
   "actuals": {
    "exitThkMm": 0.46,
    "passes": 5,
@@ -390,7 +390,7 @@
   "itemId": "4213090035/10",
   "soId": "4213090035",
   "threadId": "TH-004",
-  "receivedAt": "2026-08-30T20:42:35",
+  "receivedAt": "2026-08-23T20:42:35",
   "actuals": {
    "coatingTopGsm": 76.9,
    "coatingBottomGsm": 79.3,
@@ -421,7 +421,7 @@
   "itemId": "4213090033/10",
   "soId": "4213090033",
   "threadId": "TH-005",
-  "receivedAt": "2026-08-30T20:09:00",
+  "receivedAt": "2026-08-23T20:09:00",
   "actuals": {
    "acidConcPct": 14.7,
    "stripSpeedMpm": 120,
@@ -448,7 +448,7 @@
   "itemId": "4213090033/10",
   "soId": "4213090033",
   "threadId": "TH-005",
-  "receivedAt": "2026-08-31T01:39:10",
+  "receivedAt": "2026-08-24T01:39:10",
   "actuals": {
    "exitThkMm": 0.49,
    "passes": 5,
@@ -475,7 +475,7 @@
   "itemId": "4213090033/10",
   "soId": "4213090033",
   "threadId": "TH-005",
-  "receivedAt": "2026-08-31T09:21:59",
+  "receivedAt": "2026-08-24T09:21:59",
   "actuals": {
    "coatingTopGsm": 61.8,
    "coatingBottomGsm": 61.3,
@@ -506,7 +506,7 @@
   "itemId": "4213090033/10",
   "soId": "4213090033",
   "threadId": "TH-005",
-  "receivedAt": "2026-08-31T21:23:01",
+  "receivedAt": "2026-08-24T21:23:01",
   "actuals": {
    "dftTopUm": 18.6,
    "dftBackUm": 7.0,
@@ -535,7 +535,7 @@
   "itemId": "4213090018/20",
   "soId": "4213090018",
   "threadId": "TH-006",
-  "receivedAt": "2026-08-31T18:33:20",
+  "receivedAt": "2026-08-24T18:33:20",
   "actuals": {
    "acidConcPct": 14.2,
    "stripSpeedMpm": 114,
@@ -562,7 +562,7 @@
   "itemId": "4213090018/20",
   "soId": "4213090018",
   "threadId": "TH-006",
-  "receivedAt": "2026-09-01T19:39:27",
+  "receivedAt": "2026-08-25T19:39:27",
   "actuals": {
    "exitThkMm": 0.46,
    "passes": 5,
@@ -589,7 +589,7 @@
   "itemId": "4213090018/20",
   "soId": "4213090018",
   "threadId": "TH-006",
-  "receivedAt": "2026-09-02T12:58:44",
+  "receivedAt": "2026-08-26T12:58:44",
   "actuals": {
    "coatingTopGsm": 62.0,
    "coatingBottomGsm": 60.4,
@@ -620,7 +620,7 @@
   "itemId": "4213090018/20",
   "soId": "4213090018",
   "threadId": "TH-006",
-  "receivedAt": "2026-09-03T12:59:44",
+  "receivedAt": "2026-08-27T12:59:44",
   "actuals": {
    "dftTopUm": 26.4,
    "dftBackUm": 6.0,
@@ -649,7 +649,7 @@
   "itemId": "4213090024/10",
   "soId": "4213090024",
   "threadId": "TH-007",
-  "receivedAt": "2026-09-01T13:14:47",
+  "receivedAt": "2026-08-25T13:14:47",
   "actuals": {
    "acidConcPct": 11.2,
    "stripSpeedMpm": 112,
@@ -682,7 +682,7 @@
   "itemId": "4213090024/10",
   "soId": "4213090024",
   "threadId": "TH-007",
-  "receivedAt": "2026-09-02T09:40:26",
+  "receivedAt": "2026-08-26T09:40:26",
   "actuals": {
    "exitThkMm": 0.5,
    "passes": 5,
@@ -709,7 +709,7 @@
   "itemId": "4213090024/10",
   "soId": "4213090024",
   "threadId": "TH-007",
-  "receivedAt": "2026-09-03T12:39:06",
+  "receivedAt": "2026-08-27T12:39:06",
   "actuals": {
    "coatingTopGsm": 59.9,
    "coatingBottomGsm": 57.4,
@@ -746,7 +746,7 @@
   "itemId": "4213090024/10",
   "soId": "4213090024",
   "threadId": "TH-007",
-  "receivedAt": "2026-09-04T02:03:47",
+  "receivedAt": "2026-08-28T02:03:47",
   "actuals": {
    "dftTopUm": 16.3,
    "dftBackUm": 7.6,
@@ -775,7 +775,7 @@
   "itemId": "4213090006/10",
   "soId": "4213090006",
   "threadId": "TH-008",
-  "receivedAt": "2026-09-02T16:15:57",
+  "receivedAt": "2026-08-26T16:15:57",
   "actuals": {
    "acidConcPct": 13.0,
    "stripSpeedMpm": 90,
@@ -802,7 +802,7 @@
   "itemId": "4213090006/10",
   "soId": "4213090006",
   "threadId": "TH-008",
-  "receivedAt": "2026-09-03T10:43:57",
+  "receivedAt": "2026-08-27T10:43:57",
   "actuals": {
    "exitThkMm": 0.81,
    "passes": 4,
@@ -829,7 +829,7 @@
   "itemId": "4213090006/10",
   "soId": "4213090006",
   "threadId": "TH-008",
-  "receivedAt": "2026-09-03T20:48:56",
+  "receivedAt": "2026-08-27T20:48:56",
   "actuals": {
    "coatingTopGsm": 63.2,
    "coatingBottomGsm": 61.4,
@@ -860,7 +860,7 @@
   "itemId": "4213090006/10",
   "soId": "4213090006",
   "threadId": "TH-008",
-  "receivedAt": "2026-09-04T08:19:14",
+  "receivedAt": "2026-08-28T08:19:14",
   "actuals": {
    "dftTopUm": 20.4,
    "dftBackUm": 7.5,
@@ -889,7 +889,7 @@
   "itemId": "4213090002/20",
   "soId": "4213090002",
   "threadId": "TH-009",
-  "receivedAt": "2026-09-03T17:47:52",
+  "receivedAt": "2026-08-27T17:47:52",
   "actuals": {
    "acidConcPct": 12.8,
    "stripSpeedMpm": 84,
@@ -916,7 +916,7 @@
   "itemId": "4213090002/20",
   "soId": "4213090002",
   "threadId": "TH-009",
-  "receivedAt": "2026-09-04T10:30:45",
+  "receivedAt": "2026-08-28T10:30:45",
   "actuals": {
    "exitThkMm": 0.81,
    "passes": 4,
@@ -943,7 +943,7 @@
   "itemId": "4213090002/20",
   "soId": "4213090002",
   "threadId": "TH-009",
-  "receivedAt": "2026-09-05T05:38:20",
+  "receivedAt": "2026-08-29T05:38:20",
   "actuals": {
    "coatingTopGsm": 65.1,
    "coatingBottomGsm": 63.0,
@@ -974,7 +974,7 @@
   "itemId": "4213090002/20",
   "soId": "4213090002",
   "threadId": "TH-009",
-  "receivedAt": "2026-09-06T05:37:42",
+  "receivedAt": "2026-08-30T05:37:42",
   "actuals": {
    "dftTopUm": 26.4,
    "dftBackUm": 6.0,
@@ -1003,7 +1003,7 @@
   "itemId": "4213090034/20",
   "soId": "4213090034",
   "threadId": "TH-010",
-  "receivedAt": "2026-09-03T23:19:04",
+  "receivedAt": "2026-08-27T23:19:04",
   "actuals": {
    "acidConcPct": 14.8,
    "stripSpeedMpm": 85,
@@ -1030,7 +1030,7 @@
   "itemId": "4213090034/20",
   "soId": "4213090034",
   "threadId": "TH-010",
-  "receivedAt": "2026-09-04T14:49:53",
+  "receivedAt": "2026-08-28T14:49:53",
   "actuals": {
    "exitThkMm": 1.0,
    "passes": 4,
@@ -1057,7 +1057,7 @@
   "itemId": "4213090034/20",
   "soId": "4213090034",
   "threadId": "TH-010",
-  "receivedAt": "2026-09-05T15:48:12",
+  "receivedAt": "2026-08-29T15:48:12",
   "actuals": {
    "coatingTopGsm": 66.5,
    "coatingBottomGsm": 63.8,
@@ -1088,7 +1088,7 @@
   "itemId": "4213090038/10",
   "soId": "4213090038",
   "threadId": "TH-011",
-  "receivedAt": "2026-09-05T00:33:52",
+  "receivedAt": "2026-08-29T00:33:52",
   "actuals": {
    "acidConcPct": 14.1,
    "stripSpeedMpm": 89,
@@ -1115,7 +1115,7 @@
   "itemId": "4213090038/10",
   "soId": "4213090038",
   "threadId": "TH-011",
-  "receivedAt": "2026-09-06T00:52:32",
+  "receivedAt": "2026-08-30T00:52:32",
   "actuals": {
    "exitThkMm": 0.8,
    "passes": 4,
@@ -1142,7 +1142,7 @@
   "itemId": "4213090038/10",
   "soId": "4213090038",
   "threadId": "TH-011",
-  "receivedAt": "2026-09-06T15:26:03",
+  "receivedAt": "2026-08-30T15:26:03",
   "actuals": {
    "coatingTopGsm": 62.6,
    "coatingBottomGsm": 59.7,
@@ -1173,7 +1173,7 @@
   "itemId": "4213090038/10",
   "soId": "4213090038",
   "threadId": "TH-011",
-  "receivedAt": "2026-09-07T15:02:48",
+  "receivedAt": "2026-08-31T15:02:48",
   "actuals": {
    "dftTopUm": 24.5,
    "dftBackUm": 9.9,
@@ -1202,7 +1202,7 @@
   "itemId": "4213090009/10",
   "soId": "4213090009",
   "threadId": "TH-012",
-  "receivedAt": "2026-09-05T12:00:36",
+  "receivedAt": "2026-08-29T12:00:36",
   "actuals": {
    "acidConcPct": 15.5,
    "stripSpeedMpm": 116,
@@ -1229,7 +1229,7 @@
   "itemId": "4213090009/10",
   "soId": "4213090009",
   "threadId": "TH-012",
-  "receivedAt": "2026-09-06T04:24:57",
+  "receivedAt": "2026-08-30T04:24:57",
   "actuals": {
    "exitThkMm": 0.5,
    "passes": 5,
@@ -1256,7 +1256,7 @@
   "itemId": "4213090009/10",
   "soId": "4213090009",
   "threadId": "TH-012",
-  "receivedAt": "2026-09-06T21:06:19",
+  "receivedAt": "2026-08-30T21:06:19",
   "actuals": {
    "coatingTopGsm": 66.6,
    "coatingBottomGsm": 66.8,
@@ -1287,7 +1287,7 @@
   "itemId": "4213090008/10",
   "soId": "4213090008",
   "threadId": "TH-013",
-  "receivedAt": "2026-09-05T23:50:15",
+  "receivedAt": "2026-08-29T23:50:15",
   "actuals": {
    "acidConcPct": 14.9,
    "stripSpeedMpm": 87,
@@ -1314,7 +1314,7 @@
   "itemId": "4213090008/10",
   "soId": "4213090008",
   "threadId": "TH-013",
-  "receivedAt": "2026-09-06T18:35:52",
+  "receivedAt": "2026-08-30T18:35:52",
   "actuals": {
    "exitThkMm": 0.8,
    "passes": 4,
@@ -1341,7 +1341,7 @@
   "itemId": "4213090008/10",
   "soId": "4213090008",
   "threadId": "TH-013",
-  "receivedAt": "2026-09-07T21:43:10",
+  "receivedAt": "2026-08-31T21:43:10",
   "actuals": {
    "coatingTopGsm": 67.5,
    "coatingBottomGsm": 69.6,
@@ -1372,7 +1372,7 @@
   "itemId": "4213090006/20",
   "soId": "4213090006",
   "threadId": "TH-014",
-  "receivedAt": "2026-09-06T08:46:58",
+  "receivedAt": "2026-08-30T08:46:58",
   "actuals": {
    "acidConcPct": 12.6,
    "stripSpeedMpm": 119,
@@ -1399,7 +1399,7 @@
   "itemId": "4213090006/20",
   "soId": "4213090006",
   "threadId": "TH-014",
-  "receivedAt": "2026-09-06T20:45:22",
+  "receivedAt": "2026-08-30T20:45:22",
   "actuals": {
    "exitThkMm": 0.51,
    "passes": 5,
@@ -1426,7 +1426,7 @@
   "itemId": "4213090006/20",
   "soId": "4213090006",
   "threadId": "TH-014",
-  "receivedAt": "2026-09-07T13:43:19",
+  "receivedAt": "2026-08-31T13:43:19",
   "actuals": {
    "coatingTopGsm": 67.5,
    "coatingBottomGsm": 69.8,
@@ -1457,7 +1457,7 @@
   "itemId": "4213090006/20",
   "soId": "4213090006",
   "threadId": "TH-014",
-  "receivedAt": "2026-09-08T00:23:06",
+  "receivedAt": "2026-09-01T00:23:06",
   "actuals": {
    "dftTopUm": 20.9,
    "dftBackUm": 6.5,
@@ -1486,7 +1486,7 @@
   "itemId": "4213090012/10",
   "soId": "4213090012",
   "threadId": "TH-015",
-  "receivedAt": "2026-09-07T09:45:40",
+  "receivedAt": "2026-08-31T09:45:40",
   "actuals": {
    "acidConcPct": 14.3,
    "stripSpeedMpm": 85,
@@ -1513,7 +1513,7 @@
   "itemId": "4213090012/10",
   "soId": "4213090012",
   "threadId": "TH-015",
-  "receivedAt": "2026-09-07T18:18:03",
+  "receivedAt": "2026-08-31T18:18:03",
   "actuals": {
    "exitThkMm": 0.8,
    "passes": 4,
@@ -1540,7 +1540,7 @@
   "itemId": "4213090012/10",
   "soId": "4213090012",
   "threadId": "TH-015",
-  "receivedAt": "2026-09-08T17:18:26",
+  "receivedAt": "2026-09-01T17:18:26",
   "actuals": {
    "coatingTopGsm": 64.4,
    "coatingBottomGsm": 62.9,
@@ -1571,7 +1571,7 @@
   "itemId": "4213090027/20",
   "soId": "4213090027",
   "threadId": "TH-016",
-  "receivedAt": "2026-09-07T00:18:04",
+  "receivedAt": "2026-08-31T00:18:04",
   "actuals": {
    "acidConcPct": 13.0,
    "stripSpeedMpm": 90,
@@ -1598,7 +1598,7 @@
   "itemId": "4213090027/20",
   "soId": "4213090027",
   "threadId": "TH-016",
-  "receivedAt": "2026-09-07T22:55:09",
+  "receivedAt": "2026-08-31T22:55:09",
   "actuals": {
    "exitThkMm": 0.8,
    "passes": 4,
@@ -1625,7 +1625,7 @@
   "itemId": "4213090027/20",
   "soId": "4213090027",
   "threadId": "TH-016",
-  "receivedAt": "2026-09-08T07:11:59",
+  "receivedAt": "2026-09-01T07:11:59",
   "actuals": {
    "coatingTopGsm": 66.8,
    "coatingBottomGsm": 68.4,
@@ -1662,7 +1662,7 @@
   "itemId": "4213090027/20",
   "soId": "4213090027",
   "threadId": "TH-016",
-  "receivedAt": "2026-09-09T02:54:32",
+  "receivedAt": "2026-09-02T02:54:32",
   "actuals": {
    "dftTopUm": 23.7,
    "dftBackUm": 10.7,
@@ -1691,7 +1691,7 @@
   "itemId": "4213090028/10",
   "soId": "4213090028",
   "threadId": "TH-017",
-  "receivedAt": "2026-09-08T13:20:25",
+  "receivedAt": "2026-09-01T13:20:25",
   "actuals": {
    "acidConcPct": 13.3,
    "stripSpeedMpm": 85,
@@ -1718,7 +1718,7 @@
   "itemId": "4213090028/10",
   "soId": "4213090028",
   "threadId": "TH-017",
-  "receivedAt": "2026-09-08T17:36:01",
+  "receivedAt": "2026-09-01T17:36:01",
   "actuals": {
    "exitThkMm": 0.85,
    "passes": 4,
@@ -1751,7 +1751,7 @@
   "itemId": "4213090028/10",
   "soId": "4213090028",
   "threadId": "TH-017",
-  "receivedAt": "2026-09-09T04:28:11",
+  "receivedAt": "2026-09-02T04:28:11",
   "actuals": {
    "coatingTopGsm": 138.2,
    "coatingBottomGsm": 140.3,
@@ -1782,7 +1782,7 @@
   "itemId": "4213090017/10",
   "soId": "4213090017",
   "threadId": "TH-018",
-  "receivedAt": "2026-09-09T07:27:00",
+  "receivedAt": "2026-09-02T07:27:00",
   "actuals": {
    "acidConcPct": 13.0,
    "stripSpeedMpm": 115,
@@ -1809,7 +1809,7 @@
   "itemId": "4213090017/10",
   "soId": "4213090017",
   "threadId": "TH-018",
-  "receivedAt": "2026-09-10T15:06:00",
+  "receivedAt": "2026-09-03T15:06:00",
   "actuals": {
    "exitThkMm": 0.49,
    "passes": 5,
@@ -1836,7 +1836,7 @@
   "itemId": "4213090017/10",
   "soId": "4213090017",
   "threadId": "TH-018",
-  "receivedAt": "2026-09-12T10:41:00",
+  "receivedAt": "2026-09-05T10:41:00",
   "actuals": {
    "coatingTopGsm": 63.6,
    "coatingBottomGsm": 63.2,
@@ -1873,7 +1873,7 @@
   "itemId": "4213090017/10",
   "soId": "4213090017",
   "threadId": "TH-018",
-  "receivedAt": "2026-09-15T01:42:00",
+  "receivedAt": "2026-09-08T01:42:00",
   "actuals": {
    "dftTopUm": 16.8,
    "dftBackUm": 7.1,
@@ -1908,7 +1908,7 @@
   "itemId": "4213090001/10",
   "soId": "4213090001",
   "threadId": "TH-019",
-  "receivedAt": "2026-09-09T09:30:30",
+  "receivedAt": "2026-09-02T09:30:30",
   "actuals": {
    "acidConcPct": 14.7,
    "stripSpeedMpm": 115,
@@ -1935,7 +1935,7 @@
   "itemId": "4213090001/10",
   "soId": "4213090001",
   "threadId": "TH-019",
-  "receivedAt": "2026-09-10T07:40:17",
+  "receivedAt": "2026-09-03T07:40:17",
   "actuals": {
    "exitThkMm": 0.35,
    "passes": 5,
@@ -1962,7 +1962,7 @@
   "itemId": "4213090001/10",
   "soId": "4213090001",
   "threadId": "TH-019",
-  "receivedAt": "2026-09-10T23:43:05",
+  "receivedAt": "2026-09-03T23:43:05",
   "actuals": {
    "coatingTopGsm": 40.6,
    "coatingBottomGsm": 43.3,
@@ -1993,7 +1993,7 @@
   "itemId": "4213090019/10",
   "soId": "4213090019",
   "threadId": "TH-020",
-  "receivedAt": "2026-09-09T22:13:23",
+  "receivedAt": "2026-09-02T22:13:23",
   "actuals": {
    "acidConcPct": 15.3,
    "stripSpeedMpm": 87,
@@ -2020,7 +2020,7 @@
   "itemId": "4213090019/10",
   "soId": "4213090019",
   "threadId": "TH-020",
-  "receivedAt": "2026-09-10T23:21:27",
+  "receivedAt": "2026-09-03T23:21:27",
   "actuals": {
    "exitThkMm": 1.0,
    "passes": 4,
@@ -2047,7 +2047,7 @@
   "itemId": "4213090019/10",
   "soId": "4213090019",
   "threadId": "TH-020",
-  "receivedAt": "2026-09-11T21:20:05",
+  "receivedAt": "2026-09-04T21:20:05",
   "actuals": {
    "coatingTopGsm": 64.8,
    "coatingBottomGsm": 64.6,
@@ -2078,7 +2078,7 @@
   "itemId": "4213090020/10",
   "soId": "4213090020",
   "threadId": "TH-021",
-  "receivedAt": "2026-09-10T12:24:20",
+  "receivedAt": "2026-09-03T12:24:20",
   "actuals": {
    "acidConcPct": 14.9,
    "stripSpeedMpm": 113,
@@ -2105,7 +2105,7 @@
   "itemId": "4213090020/10",
   "soId": "4213090020",
   "threadId": "TH-021",
-  "receivedAt": "2026-09-11T00:35:05",
+  "receivedAt": "2026-09-04T00:35:05",
   "actuals": {
    "exitThkMm": 0.5,
    "passes": 5,
@@ -2132,7 +2132,7 @@
   "itemId": "4213090020/10",
   "soId": "4213090020",
   "threadId": "TH-021",
-  "receivedAt": "2026-09-11T12:15:56",
+  "receivedAt": "2026-09-04T12:15:56",
   "actuals": {
    "coatingTopGsm": 68.6,
    "coatingBottomGsm": 66.5,
@@ -2163,7 +2163,7 @@
   "itemId": "4213090020/10",
   "soId": "4213090020",
   "threadId": "TH-021",
-  "receivedAt": "2026-09-11T22:34:47",
+  "receivedAt": "2026-09-04T22:34:47",
   "actuals": {
    "dftTopUm": 21.2,
    "dftBackUm": 7.5,
@@ -2192,7 +2192,7 @@
   "itemId": "4213090040/20",
   "soId": "4213090040",
   "threadId": "TH-022",
-  "receivedAt": "2026-09-11T09:11:33",
+  "receivedAt": "2026-09-04T09:11:33",
   "actuals": {
    "acidConcPct": 14.3,
    "stripSpeedMpm": 113,
@@ -2219,7 +2219,7 @@
   "itemId": "4213090040/20",
   "soId": "4213090040",
   "threadId": "TH-022",
-  "receivedAt": "2026-09-12T10:19:00",
+  "receivedAt": "2026-09-05T10:19:00",
   "actuals": {
    "exitThkMm": 0.5,
    "passes": 5,
@@ -2246,7 +2246,7 @@
   "itemId": "4213090040/20",
   "soId": "4213090040",
   "threadId": "TH-022",
-  "receivedAt": "2026-09-13T04:53:08",
+  "receivedAt": "2026-09-06T04:53:08",
   "actuals": {
    "coatingTopGsm": 60.1,
    "coatingBottomGsm": 58.5,
@@ -2283,7 +2283,7 @@
   "itemId": "4213090040/20",
   "soId": "4213090040",
   "threadId": "TH-022",
-  "receivedAt": "2026-09-13T16:06:18",
+  "receivedAt": "2026-09-06T16:06:18",
   "actuals": {
    "dftTopUm": 21.5,
    "dftBackUm": 6.9,
@@ -2312,7 +2312,7 @@
   "itemId": "4213090004/10",
   "soId": "4213090004",
   "threadId": "TH-023",
-  "receivedAt": "2026-09-12T22:37:05",
+  "receivedAt": "2026-09-05T22:37:05",
   "actuals": {
    "acidConcPct": 11.2,
    "stripSpeedMpm": 83,
@@ -2345,7 +2345,7 @@
   "itemId": "4213090004/10",
   "soId": "4213090004",
   "threadId": "TH-023",
-  "receivedAt": "2026-09-13T05:08:01",
+  "receivedAt": "2026-09-06T05:08:01",
   "actuals": {
    "exitThkMm": 1.19,
    "passes": 4,
@@ -2372,7 +2372,7 @@
   "itemId": "4213090004/10",
   "soId": "4213090004",
   "threadId": "TH-023",
-  "receivedAt": "2026-09-13T14:05:45",
+  "receivedAt": "2026-09-06T14:05:45",
   "actuals": {
    "coatingTopGsm": 68.6,
    "coatingBottomGsm": 68.7,
@@ -2403,7 +2403,7 @@
   "itemId": "4213090024/20",
   "soId": "4213090024",
   "threadId": "TH-024",
-  "receivedAt": "2026-09-14T02:34:33",
+  "receivedAt": "2026-09-07T02:34:33",
   "actuals": {
    "acidConcPct": 14.7,
    "stripSpeedMpm": 116,
@@ -2430,7 +2430,7 @@
   "itemId": "4213090031/10",
   "soId": "4213090031",
   "threadId": "TH-025",
-  "receivedAt": "2026-09-14T08:02:17",
+  "receivedAt": "2026-09-07T08:02:17",
   "actuals": {
    "acidConcPct": 14.3,
    "stripSpeedMpm": 84,
@@ -2457,7 +2457,7 @@
   "itemId": "4213090031/10",
   "soId": "4213090031",
   "threadId": "TH-025",
-  "receivedAt": "2026-09-15T09:55:28",
+  "receivedAt": "2026-09-08T09:55:28",
   "actuals": {
    "exitThkMm": 0.79,
    "passes": 4,
@@ -2484,7 +2484,7 @@
   "itemId": "4213090023/20",
   "soId": "4213090023",
   "threadId": "TH-026",
-  "receivedAt": "2026-09-14T00:19:24",
+  "receivedAt": "2026-09-07T00:19:24",
   "actuals": {
    "acidConcPct": 14.9,
    "stripSpeedMpm": 82,
@@ -2511,7 +2511,7 @@
   "itemId": "4213090023/20",
   "soId": "4213090023",
   "threadId": "TH-026",
-  "receivedAt": "2026-09-14T18:04:54",
+  "receivedAt": "2026-09-07T18:04:54",
   "actuals": {
    "exitThkMm": 0.8,
    "passes": 4,
@@ -2538,7 +2538,7 @@
   "itemId": "4213090023/20",
   "soId": "4213090023",
   "threadId": "TH-026",
-  "receivedAt": "2026-09-15T03:04:26",
+  "receivedAt": "2026-09-08T03:04:26",
   "actuals": {
    "coatingTopGsm": 137.3,
    "coatingBottomGsm": 136.0,
@@ -2575,7 +2575,7 @@
   "itemId": "4213090026/10",
   "soId": "4213090026",
   "threadId": "TH-027",
-  "receivedAt": "2026-09-15T09:27:59",
+  "receivedAt": "2026-09-08T09:27:59",
   "actuals": {
    "acidConcPct": 13.1,
    "stripSpeedMpm": 112,

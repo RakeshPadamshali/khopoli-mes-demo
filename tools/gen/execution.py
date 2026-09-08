@@ -1,7 +1,7 @@
 """Shop-floor execution transactions from the simulated stages: PDI/PDO (L2 via middleware), production confirmations
 with mass balance, slit plans, packing units + vendor bills, dispatches (+ SAP dispatch message)."""
 from datetime import datetime, timedelta
-from .common import R, ASOF, iso, day, h, m, pick, between, r1, r2, shift_of, SEQ
+from .common import R, ASOF, BASE, iso, day, h, m, pick, between, r1, r2, shift_of, SEQ, at as AT
 from .assets_specs import COATINGS, PAINTS, PACK_VENDORS
 from .threads import LINE
 
@@ -77,7 +77,7 @@ def build_execution(stages, materials, items, threads):
         if st["status"] == "DONE":
             inw, outw, scrap = st["inWeight"], st["outWeight"], st["scrap"]
             loss = 0.0
-            if ln == "CRM" and not st["hero"] and not imbalance_done and s > datetime(2026, 9, 3):
+            if ln == "CRM" and not st["hero"] and not imbalance_done and s > BASE + timedelta(days=2):
                 loss = 0.62; outw = r2(outw - loss); imbalance_done = True   # deliberate unaccounted loss -> flagged
             conf = dict(id=f"PC-{ln}-{SEQ.next('pc-' + ln):04d}", line=ln, po=st["po"], unitIn=st["inUnit"], unitsOut=st["outUnits"], itemId=it["id"], soId=it["soId"], threadId=st["threadId"],
                         start=st["start"], end=st["end"], shift=shift_of(s), operator=pick(OPERATORS), inWeightMT=inw, outWeightMT=outw, scrapMT=scrap,
@@ -127,7 +127,7 @@ def build_execution(stages, materials, items, threads):
     hero_pack = next((p for p in packs if p["hero"]), None)
     if hero_pack:
         disps.append(dict(id=f"DSP-{SEQ.next('dsp'):04d}", packId=hero_pack["id"], itemId=hero_pack["itemId"], soId=hero_pack["soId"], customerName=hero_pack["customerName"],
-                          weightMT=hero_pack["weightMT"], vehicle="MH-12-KT-4471", plannedAt="2026-09-17T10:00:00", dispatchedAt=None, status="PLANNED", invoice=None, hero=True))
+                          weightMT=hero_pack["weightMT"], vehicle="MH-12-KT-4471", plannedAt=iso(AT(2, 10, 0)), dispatchedAt=None, status="PLANNED", invoice=None, hero=True))
     # vendor-wise packing bill per ISO week
     agg = {}
     for p in packs:

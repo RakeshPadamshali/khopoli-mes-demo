@@ -100,7 +100,7 @@
    },
    {
     "version": "1.3",
-    "date": "2026-09-14",
+    "date": "2026-09-07",
     "status": "ACTIVE",
     "changes": "Add dftBackMeasured (CCL back-coat gauge) — activated 23:20 after L2 upgrade rejected messages",
     "approvedBy": "Integration CoE (emergency CAB)"

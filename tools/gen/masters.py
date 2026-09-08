@@ -1,7 +1,7 @@
 """Master data (RFP §3.5): work centres, product definitions, standards / plant technical specification, QC characteristics (MIC),
 grade-coating compatibility, production rate chart, UD codes, batch-number generation config, inventory tracking statuses,
 SAP–MES and MES–L2 mapping masters, consumables & zinc material, shift in-charge, roles with page/button rights, users. Fictional."""
-from .common import R, pick
+from .common import R, pick, YM, dstr
 from .assets_specs import LINES, GRADES, COATINGS, PAINTS, RALS
 
 ACTIVE = [l for l in LINES if l["status"] == "ACTIVE"]
@@ -47,7 +47,7 @@ def build_masters():
                     dict(id="DOWNGRADE-S2", description="Downgrade to commercial / secondary 2", segment="Secondary 2", autoAllowed=False, sapUdCode="R2", blocksDispatch=False, configuredBy="QC Head"), dict(id="HOLD", description="QA hold — decision pending", segment=None, autoAllowed=True, sapUdCode="H", blocksDispatch=True, configuredBy="QC Head"),
                     dict(id="REWORK", description="Rework / re-process on a new production order", segment=None, autoAllowed=False, sapUdCode="W", blocksDispatch=True, configuredBy="QC Head"), dict(id="REINSPECT", description="Re-inspection required", segment=None, autoAllowed=False, sapUdCode="I", blocksDispatch=True, configuredBy="QC Head"),
                     dict(id="DIVERT", description="Divert to another sales order (validated against its TDC)", segment="Prime", autoAllowed=False, sapUdCode="D", blocksDispatch=False, configuredBy="PPC + QC"), dict(id="SCRAP", description="Scrap", segment=None, autoAllowed=False, sapUdCode="X", blocksDispatch=True, configuredBy="QC Head + Plant Head")]
-    M["batchNumberConfig"] = [dict(id=f"BN-{l['id']}", lineId=l["id"], prefix=PREFIX[l["id"]], format="{PREFIX}-KHP-{YY}{MM}-{SEQ4}", example=f"{PREFIX[l['id']].split(' / ')[0]}-KHP-2609-0017", sequenceReset="monthly", perPiece=False, skipAllowed=True, sapAligned=True, l2Aligned=l["l2"], manualOverride="Shift in-charge with reason") for l in ACTIVE]
+    M["batchNumberConfig"] = [dict(id=f"BN-{l['id']}", lineId=l["id"], prefix=PREFIX[l["id"]], format="{PREFIX}-KHP-{YY}{MM}-{SEQ4}", example=f"{PREFIX[l['id']].split(' / ')[0]}-KHP-{YM}-0017", sequenceReset="monthly", perPiece=False, skipAllowed=True, sapAligned=True, l2Aligned=l["l2"], manualOverride="Shift in-charge with reason") for l in ACTIVE]
     M["inventoryStatuses"] = [dict(id=s, meaning=m, sapBatchStatus=b, allowedNext=n, countsAsStock=c) for s, m, b, n, c in [("PLANNED", "output unit planned, not yet produced", "—", "IN_PROCESS", False), ("AVAILABLE", "in stock, free or allocated, usable", "Unrestricted", "ALLOCATED, IN_PROCESS, ON_HOLD", True),
                               ("ALLOCATED", "reserved for a sales-order item (BatchOrderAllocation)", "Unrestricted", "IN_PROCESS, AVAILABLE", True), ("IN_PROCESS", "charged on a line", "Unrestricted", "CONSUMED", True), ("CONSUMED", "fully consumed by the next operation", "—", "—", False), ("ON_HOLD", "quality or weight hold, cannot move", "Blocked", "AVAILABLE, REWORK, SCRAPPED", True),
                               ("PACKED", "packing unit created", "Unrestricted", "DISPATCHED", True), ("DISPATCHED", "left the plant, SAP dispatch posted", "—", "—", False), ("IN_TRANSIT", "transit batch from an upstream plant, GRN pending", "Restricted", "AVAILABLE", False), ("SCRAPPED", "scrapped with usage decision", "—", "—", False)]]
@@ -76,6 +76,6 @@ def build_masters():
     M["roles"] = [dict(id=f"ROLE-{i:02d}", role=r, homePage=h, pages=", ".join(p), rights=rt, lineScope=", ".join(sc), singleActiveSession=True, users=0) for i, (r, (h, p, rt, sc)) in enumerate(rights.items(), 1)]
     ulist = [("rpatil", "R. Patil", "Operator", "CGL"), ("skadam", "S. Kadam", "Operator", "CCL"), ("ashinde", "A. Shinde", "Shift In-charge", "PKL, CRM, CGL, CCL"), ("nbhosale", "N. Bhosale", "PPC Planner", "*"), ("sdeshmukh", "S. Deshmukh", "QC Inspector", "*"), ("nrao", "N. Rao", "QC Inspector", "*"),
              ("miyer", "M. Iyer", "QC Head", "*"), ("pnair", "P. Nair", "Plant IT", "*"), ("rmenon", "R. Menon", "Plant IT", "*"), ("mesadmin", "MES Administrator", "MES Admin", "*"), ("vkulkarni", "V. Kulkarni", "Plant Head", "*"), ("apackers", "Shree Packers (vendor)", "Operator", "PKG")]
-    M["users"] = [dict(id=u, name=n, role=r, lineScope=s, auth="LDAP" if u != "apackers" else "Local", status="ACTIVE", singleSession=True, lastLogin=f"2026-09-{R.randint(12, 15):02d} {R.randint(6, 21):02d}:{R.randint(0, 59):02d}") for u, n, r, s in ulist]
+    M["users"] = [dict(id=u, name=n, role=r, lineScope=s, auth="LDAP" if u != "apackers" else "Local", status="ACTIVE", singleSession=True, lastLogin=f"{dstr(-R.randint(0, 3))} {R.randint(6, 21):02d}:{R.randint(0, 59):02d}") for u, n, r, s in ulist]
     for r in M["roles"]: r["users"] = sum(1 for u in M["users"] if u["role"] == r["role"])
     return M

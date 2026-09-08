@@ -1,6 +1,6 @@
 """Operations: delays (manual/auto stoppages with delay + equipment defect codes), daily OEE per line, live shop-floor snapshot, OTIF."""
 from datetime import datetime, timedelta
-from .common import R, BASE, ASOF, iso, day, h, m, pick, between, r1, r2, shift_of, SEQ
+from .common import R, BASE, ASOF, iso, day, h, m, pick, between, r1, r2, shift_of, SEQ, at as AT
 from .assets_specs import LINES, DELAY_CODES, EQUIP
 
 ACTIVE = [l for l in LINES if l["status"] == "ACTIVE"]
@@ -25,9 +25,9 @@ def build_delays():
                                equipmentId=f"{ln['id']}-{eq[0]}" if eq else None, equipmentDefect=eq[1] if eq else None, capture=pick(["AUTO (L2 downtime message)", "MANUAL"]) if ln["l2"] else "MANUAL",
                                shift=shift_of(t), remarks=eq[1] if eq else dc["name"], status="CLOSED", sapPmNotification=f"PM-{R.randint(100000, 199999)}" if dc["code"].startswith("BD") and R.random() < 0.6 else None))
     # active stoppages right now (demo hooks for S3 / dashboard)
-    delays.append(dict(id=f"DLY-{SEQ.next('dly'):04d}", line="CGL", start="2026-09-15T09:52:00", end=None, durationMin=None, delayCode="BD-MECH", delayName="Mechanical breakdown", category="Unplanned",
+    delays.append(dict(id=f"DLY-{SEQ.next('dly'):04d}", line="CGL", start=iso(AT(0, 9, 52)), end=None, durationMin=None, delayCode="BD-MECH", delayName="Mechanical breakdown", category="Unplanned",
                        equipmentId="CGL-AKN", equipmentDefect="Air knife nozzle choke — top side", capture="AUTO (L2 downtime message)", shift="A", remarks="Nozzle cleaning in progress; zinc pot on hold temp", status="ACTIVE", sapPmNotification=None))
-    delays.append(dict(id=f"DLY-{SEQ.next('dly'):04d}", line="SLT", start="2026-09-15T10:05:00", end=None, durationMin=None, delayCode="OP-CHG", delayName="Size / product changeover", category="Operational",
+    delays.append(dict(id=f"DLY-{SEQ.next('dly'):04d}", line="SLT", start=iso(AT(0, 10, 5)), end=None, durationMin=None, delayCode="OP-CHG", delayName="Size / product changeover", category="Operational",
                        equipmentId="SLT-SLH", equipmentDefect=None, capture="MANUAL", shift="A", remarks="Knife set change 3-cut → 2-cut for 610 mm", status="ACTIVE", sapPmNotification=None))
     delays.sort(key=lambda d: d["start"])
     return delays

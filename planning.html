@@ -30,7 +30,7 @@
       <div class="note"><i class="fa-solid fa-circle-info"></i><span>FP generates the <b>process path</b>, <b>yield string</b>, <b>route string</b> and <b>material tree</b> per MFG order; the manually entered SAP route order sits beside it. The planner picks either — the chosen route drives production-order generation (PO numbers on the Shop-floor page).</span></div></div>
     </div>
     <div class="card">
-      <div class="card-head"><i class="fa-solid fa-chart-gantt"></i> Line schedules — planned campaigns per line <span class="right"><span class="legend"><span><i style="background:#1baf7a"></i>done</span><span><i style="background:#2a78d6"></i>running</span><span><i style="background:#8a93a0;opacity:.6"></i>planned</span><span><i style="background:#fff;border:2px solid var(--accent)"></i>rush</span><span><i style="background:#fff;border:2px solid #c62828"></i>golden thread</span></span></span></div>
+      <div class="card-head"><i class="fa-solid fa-chart-gantt"></i> Line schedules — one bar per scheduled coil on each line, 2 days back to 3½ days ahead of now (red line) <span class="right"><span class="legend"><span><i style="background:#1baf7a"></i>done</span><span><i style="background:#2a78d6"></i>running</span><span><i style="background:#8a93a0;opacity:.6"></i>planned</span><span><i style="background:#fff;border:2px solid var(--accent)"></i>rush</span><span><i style="background:#fff;border:2px solid #c62828"></i>golden thread</span></span></span></div>
       <div class="card-body"><div class="gantt" id="gantt"></div></div>
     </div>
     <div class="card">
@@ -51,7 +51,7 @@
   document.getElementById('ctx').textContent = D.plant.name + ' · as of ' + X.fmt(D.meta.asOf);
   var planned=S.filter(function(s){return s.status==='PLANNED';}), running=S.filter(function(s){return s.status==='IN_PROGRESS';});
   var fp=D.routes.filter(function(r){return r.chosen==='FP';}).length;
-  [['Scheduled batches',planned.length,'planned on 8 lines','blue'],['Running now',running.length,'in progress at 10:30','blue'],['FP routes chosen',fp+' / '+D.routes.length,'rest on SAP route order','accent'],
+  [['Scheduled batches',planned.length,'planned on 8 lines','blue'],['Running now',running.length,'in progress at '+X.fmtT(X.ASOF),'blue'],['FP routes chosen',fp+' / '+D.routes.length,'rest on SAP route order','accent'],
    ['Rush orders',D.orders.filter(function(o){return o.rush;}).length,'APS flag applied','amber'],['Behind schedule',S.filter(function(s){return s.track==='BEHIND';}).length,'stopped line / overdue','red'],['Horizon',X.fmtD(planned.reduce(function(a,s){return s.plannedEnd>a?s.plannedEnd:a;},'')),'last planned batch','grey']
   ].forEach(function(k){ document.getElementById('kpis').insertAdjacentHTML('beforeend','<div class="kpi '+k[3]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="s">'+k[2]+'</div></div>'); });
   // ---- route card ----
@@ -73,7 +73,7 @@
   document.getElementById('routes').addEventListener('click',function(e){ var b=e.target.closest('[data-choose]'); if(!b) return; X.state.set('route-'+sel.value,b.getAttribute('data-choose')); renderRoute(); X.toast('Route source for '+sel.value+' set to '+b.getAttribute('data-choose')+' — production orders regenerated from the '+b.getAttribute('data-choose')+' path'); });
   // ---- gantt ----
   var lanes=D.lines.filter(function(l){return l.status==='ACTIVE';}).map(function(l){return {id:l.id,label:l.name,sub:l.tph+' tph'};});
-  var from=new Date('2026-09-13T00:00:00'), to=new Date('2026-09-18T12:00:00');
+  var a0=new Date(D.meta.asOf), d0=new Date(a0.getFullYear(),a0.getMonth(),a0.getDate()); var from=new Date(d0.getTime()-2*86400000), to=new Date(d0.getTime()+3.5*86400000);   // 2 days back, 3½ days ahead of now
   var bars=S.filter(function(s){return new Date(s.plannedEnd)>from&&new Date(s.plannedStart)<to;}).map(function(s){
     var col=s.status==='DONE'?'#1baf7a':s.status==='IN_PROGRESS'?'#2a78d6':'#8a93a0';
     return {lane:s.line,start:s.plannedStart,end:s.plannedEnd,label:s.unitId.replace(/-KHP-2609|-VJ-260[89]|-DL-260[89]/,''),color:col,cls:(s.status==='PLANNED'?'planned ':'')+(s.rush?'rush ':'')+(s.hero?'herobar':''),

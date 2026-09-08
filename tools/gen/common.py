@@ -1,11 +1,36 @@
-"""Shared helpers for the Khopoli demo data generator. Everything is deterministic (seeded)."""
-import random
+"""Shared helpers for the Khopoli demo data generator. Everything is deterministic (seeded).
+All dates are RELATIVE to the as-of date, which defaults to TODAY (override: --asof YYYY-MM-DD or env KHP_ASOF),
+so re-running the generator before a demo makes the whole dataset current without changing any id or story."""
+import os, sys, random
 from datetime import datetime, timedelta
 
+
+def _asof():
+    v = None
+    for i, a in enumerate(sys.argv):
+        if a == "--asof" and i + 1 < len(sys.argv): v = sys.argv[i + 1]
+        elif a.startswith("--asof="): v = a.split("=", 1)[1]
+    v = v or os.environ.get("KHP_ASOF")
+    d = datetime.strptime(v, "%Y-%m-%d") if v else datetime.now()
+    return d.replace(hour=10, minute=30, second=0, microsecond=0)      # "now" for the demo = as-of day, 10:30, shift A
+
+
 R = random.Random(2609)
-BASE = datetime(2026, 9, 1, 0, 0)          # plan window start (Tue 1 Sep 2026)
-ASOF = datetime(2026, 9, 15, 10, 30)       # "now" for the demo (Tue 15 Sep 2026, shift A)
-END = datetime(2026, 9, 30, 23, 59)
+ASOF = _asof()
+DAY0 = ASOF.replace(hour=0, minute=0, second=0, microsecond=0)
+BASE = DAY0 - timedelta(days=14)                                   # plan window start (2 weeks of history)
+END = DAY0 + timedelta(days=15, hours=23, minutes=59)
+YM = ASOF.strftime("%y%m")                                          # year/month batch token, e.g. 2609
+YM_PREV = (DAY0.replace(day=1) - timedelta(days=1)).strftime("%y%m")  # previous month (HR coils received earlier)
+
+
+def at(days, hour=0, minute=0, second=0):
+    """datetime at an offset in days from the as-of day (0 = as-of day) with a time of day"""
+    return DAY0 + timedelta(days=days, hours=hour, minutes=minute, seconds=second)
+
+
+def dstr(days):
+    return (DAY0 + timedelta(days=days)).strftime("%Y-%m-%d")
 
 
 def iso(d):

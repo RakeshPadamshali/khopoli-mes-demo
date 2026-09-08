@@ -1,7 +1,7 @@
 """QUALITY: defects (detectedOn material, attributedTo equipment), downstream propagation, quality decisions (UD codes),
 downgrade suggestions validated against sales-order parameters, test certificates with the DFT dispatch gate, holds."""
 from datetime import datetime, timedelta
-from .common import R, ASOF, iso, h, m, pick, between, r1, r2, SEQ
+from .common import R, ASOF, iso, h, m, pick, between, r1, r2, SEQ, at as AT, YM
 from .assets_specs import DEFECT_CODES, COATINGS, PAINTS, GRADES
 
 DC = {d["code"]: d for d in DEFECT_CODES}
@@ -30,7 +30,7 @@ def build_quality(materials, stages, items, edges, hero_thread):
     def defect(code, unit, at, source, equip=None, sev=None, pos=None, note=None, hero=False, extra=None):
         d = DC[code]; eq = equip or (f"{d['line']}-{d['attrib']}" if "-" not in d["attrib"] else d["attrib"])
         line = unit.get("producedOn") if code not in ("SCL", "RST") else "PKL"
-        rec = dict(id=f"DEF-2609-{SEQ.next('def'):04d}", code=code, name=d["name"], severity=sev or d["severity"], detectedOn=unit["id"], detectedProduct=unit["product"],
+        rec = dict(id=f"DEF-{YM}-{SEQ.next('def'):04d}", code=code, name=d["name"], severity=sev or d["severity"], detectedOn=unit["id"], detectedProduct=unit["product"],
                    detectedAtLine=line, detectedAt=iso(at), source=source, attributedTo=eq, attributedLine=eq.rsplit("-", 1)[0] if eq.count("-") >= 2 else eq.split("-")[0],
                    attributedPlant="VJNR" if eq.startswith("VJNR") else "DLV" if eq.startswith("DLV") else "KHP", positionM=pos or R.randint(40, 900), side=pick(["Top", "Bottom", "Both"]),
                    lengthM=R.randint(2, 60), imageRef=f"sis/{unit['id']}-{code}.jpg" if source == "SIS" else None, note=note, status="OPEN", hero=hero,
@@ -39,9 +39,9 @@ def build_quality(materials, stages, items, edges, hero_thread):
         edges.append(("detectedOn", rec["id"], unit["id"])); edges.append(("attributedTo", rec["id"], eq))
         defects.append(rec); return rec
     # hero defects (same coil family used across S1 / S4)
-    defect("SCL", hero_hr, datetime(2026, 9, 9, 6, 45), "SIS", equip="VJNR-HSM-DSB", sev="Major", pos=312, note="Rolled-in scale streaks on OD wraps, entry SIS at pickling; cross-plant root cause (Vijayanagar HSM descaling box)", hero=True, extra={"status": "CLOSED", "disposition": "Accepted — removed by pickling"})
-    defect("DRS", hero_gi, datetime(2026, 9, 14, 22, 15), "SIS", sev="Major", pos=188, note="Zinc-pot dross inclusions, 3 clusters 0.4–0.8 mm, entry inspection at CCL", hero=True, extra={"status": "OPEN", "disposition": "Under review — propagation to colour-coated coil"})
-    defect("DFT", hero_pp, datetime(2026, 9, 15, 1, 42), "PDO auto-comparison", sev="Major", pos=0, note="PDO DFT top 16.8 µm vs PDI target 20 ±3 (min 17.0) — lab confirmation pending", hero=True,
+    defect("SCL", hero_hr, AT(-6, 6, 45), "SIS", equip="VJNR-HSM-DSB", sev="Major", pos=312, note="Rolled-in scale streaks on OD wraps, entry SIS at pickling; cross-plant root cause (Vijayanagar HSM descaling box)", hero=True, extra={"status": "CLOSED", "disposition": "Accepted — removed by pickling"})
+    defect("DRS", hero_gi, AT(-1, 22, 15), "SIS", sev="Major", pos=188, note="Zinc-pot dross inclusions, 3 clusters 0.4–0.8 mm, entry inspection at CCL", hero=True, extra={"status": "OPEN", "disposition": "Under review — propagation to colour-coated coil"})
+    defect("DFT", hero_pp, AT(0, 1, 42), "PDO auto-comparison", sev="Major", pos=0, note="PDO DFT top 16.8 µm vs PDI target 20 ±3 (min 17.0) — lab confirmation pending", hero=True,
            extra={"status": "AUTO_FLAGGED", "labTest": "PENDING", "disposition": None})
     # random defects on produced units
     produced = [u for u in materials if u.get("producedAt") and u["product"] != "PACK" and not u.get("threadId") == hero_thread["id"]]
@@ -62,7 +62,7 @@ def build_quality(materials, stages, items, edges, hero_thread):
         dec = dict(id=f"UD-{SEQ.next('ud'):04d}", unitId=u["id"], product=u["product"], itemId=u.get("allocatedTo"), udCode=ud, description=ud_map[ud], decidedAt=iso(datetime.fromisoformat(u["producedAt"]) + m(R.randint(30, 240))),
                    decidedBy="Auto-clearance (surface + lab pass)" if ud == "PRIME" and R.random() < 0.7 else pick(["QC — S. Deshmukh", "QC — N. Rao", "QC — A. Kulkarni"]), mode="AUTO" if ud == "PRIME" else "MANUAL",
                    segment="Prime" if ud == "PRIME" else "Secondary" if ud == "DOWNGRADE" else None, hero=(u["id"] == hero_pp["id"]))
-        if u["id"] == hero_pp["id"]: dec.update(decidedAt="2026-09-15T02:05:00", decidedBy="Auto-hold (PDO deviation)", mode="AUTO", reason="DFT deviation — lab test pending")
+        if u["id"] == hero_pp["id"]: dec.update(decidedAt=iso(AT(0, 2, 5)), decidedBy="Auto-hold (PDO deviation)", mode="AUTO", reason="DFT deviation — lab test pending")
         u["udCode"] = ud; u["qualityStatus"] = {"PRIME": "CLEARED", "DOWNGRADE": "DOWNGRADED", "HOLD": "ON_HOLD", "REWORK": "REWORK", "SCRAP": "SCRAPPED"}[ud]
         if ud == "HOLD": u["status"] = "ON_HOLD"
         decisions.append(dec)
@@ -81,7 +81,7 @@ def build_quality(materials, stages, items, edges, hero_thread):
     cands = [it for it in items if it["product"] == "PPGI" and it["id"] != hero_pp["allocatedTo"]]
     cands.sort(key=lambda it: (it["id"] != "4213090024/10", it["reqDate"]))
     sug = dict(id=f"DGS-{SEQ.next('dgs'):04d}", unitId=hero_pp["id"], trigger="DEF: DFT deviation (PDO auto-comparison)", reason="DFT top 16.8 µm below 17.0 µm minimum of SO 4213090017/10 (20 ±3)",
-               suggestedAt="2026-09-15T01:45:00", suggestion="Re-allocate to an open order whose DFT spec accepts 16.8 µm; else downgrade to secondary (RAL 9002 stock)",
+               suggestedAt=iso(AT(0, 1, 45)), suggestion="Re-allocate to an open order whose DFT spec accepts 16.8 µm; else downgrade to secondary (RAL 9002 stock)",
                candidates=[dict(itemId=it["id"], customerName=it["customerName"], reqDate=it["reqDate"], validation=validate(hero_pp, it, 16.8), ok=all(v["ok"] for v in validate(hero_pp, it, 16.8))) for it in cands[:4]],
                fallback=dict(segment="Secondary — RAL 9002 stock", priceImpactPct=-6), status="SUGGESTED", override=None, hero=True)
     suggestions.append(sug)
@@ -117,7 +117,7 @@ def build_quality(materials, stages, items, edges, hero_thread):
                           status="PENDING" if pending else "FAIL" if fail else "PASS", dftGate=(not pending and not fail) if u["product"] in ("PPGI", "PPGL") else None,
                           issuedAt=None if pending else iso(datetime.fromisoformat(u["producedAt"]) + h(between(2, 8))), hero=(u["id"] == hero_pp["id"])))
     # holds
-    holds.append(dict(id=f"HLD-{SEQ.next('hld'):04d}", unitId=hero_pp["id"], level="BATCH", reason="QA — DFT deviation flagged by PDO auto-comparison; lab test pending", heldAt="2026-09-15T02:05:00", heldBy="System (parameter-based hold)",
+    holds.append(dict(id=f"HLD-{SEQ.next('hld'):04d}", unitId=hero_pp["id"], level="BATCH", reason="QA — DFT deviation flagged by PDO auto-comparison; lab test pending", heldAt=iso(AT(0, 2, 5)), heldBy="System (parameter-based hold)",
                       releasedAt=None, releasedBy=None, status="ACTIVE", hero=True))
     for dec in [d for d in decisions if d["udCode"] == "HOLD" and not d["hero"]][:4]:
         rel = R.random() < 0.5

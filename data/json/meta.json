@@ -1,8 +1,8 @@
 {
  "plant": "JSW Steel Coated Products — Khopoli",
  "title": "Khopoli NextGen MES — One MES Coated Products template (product demo)",
- "baseDate": "2026-09-01T00:00:00",
- "asOf": "2026-09-15T10:30:00",
+ "baseDate": "2026-08-25T00:00:00",
+ "asOf": "2026-09-08T10:30:00",
  "generated": "deterministic (seed 2609)",
  "fictional": true,
  "hero": {

@@ -31,9 +31,9 @@
       <div>
         <div class="card">
           <div class="card-head"><i class="fa-solid fa-play"></i> Charge &amp; run — scheduled batches on <span id="lname"></span> <span class="right">charge → PDI (MES→L2) → ACK → PDO (L2→MES) → confirm</span></div>
-          <div class="card-body"><div class="tbl-wrap"><table class="tbl" id="run"></table></div><div id="runpanel"></div></div>
+          <div class="card-body"><div class="tbl-wrap" style="max-height:none"><table class="tbl" id="run"></table></div><div id="runpanel"></div></div>
         </div>
-        <div class="card">
+        <div class="card" id="cmpcard">
           <div class="card-head"><i class="fa-solid fa-code-compare"></i> PDO actuals vs PDI targets — auto-comparison <select id="stgsel" style="font:12px 'Roboto';padding:3px 6px;border:1px solid var(--color-border);border-radius:5px"></select> <span class="right" id="cmpmeta"></span></div>
           <div class="card-body" id="cmp"></div>
         </div>
@@ -61,10 +61,13 @@
   var X=window.KHPX, D=X.D, esc=X.esc, badge=X.badge, LIVE=D.live;
   document.getElementById('ctx').textContent = D.plant.name + ' · shift A · as of ' + X.fmt(D.meta.asOf);
   var LINES=D.lines.filter(function(l){return l.status==='ACTIVE';}), L2={PKL:1,CRM:1,CGL:1,CCL:1};
-  var h=X.hashParam(), line='CGL'; if(h&&X.line(h)) line=h; else if(h&&X.unit(h)){ var u=X.unit(h); var st=D.stages.filter(function(s){return s.inUnit===h||s.outUnits.indexOf(h)>=0;})[0]; if(st) line=st.line; }
+  // tabs: lines that have open schedule entries or an L2 (manual lines with nothing to charge, e.g. HR Slitter, are hidden)
+  var TABS=LINES.filter(function(l){ return L2[l.id] || D.schedules.some(function(s){return s.line===l.id&&s.status!=='DONE';}); });
+  var h=X.hashParam(), line=TABS[0].id; if(h&&X.line(h)) line=h; else if(h&&X.unit(h)){ var u=X.unit(h); var st=D.stages.filter(function(s){return s.inUnit===h||s.outUnits.indexOf(h)>=0;})[0]; if(st) line=st.line; }
+  if(!TABS.some(function(l){return l.id===line;})) line=TABS[0].id;
   var run=X.state.get('run',{}), delaysLive=X.state.get('delays',[]);
   function liveLine(){ return LIVE.lines.filter(function(l){return l.line===line;})[0]; }
-  function tabs(){ document.getElementById('tabs').innerHTML=LINES.map(function(l){ var ll=LIVE.lines.filter(function(x){return x.line===l.id;})[0]; return '<button class="'+(l.id===line?'active':'')+'" data-line="'+l.id+'"><span class="dot '+(ll.state==='RUNNING'?'d-run':ll.state==='STOPPED'?'d-stop':'d-idle')+'"></span>'+esc(l.name)+(L2[l.id]?' <span class="chip" style="background:rgba(255,255,255,.25);color:inherit">L2</span>':'')+'</button>'; }).join(''); }
+  function tabs(){ document.getElementById('tabs').innerHTML=TABS.map(function(l){ var ll=LIVE.lines.filter(function(x){return x.line===l.id;})[0]; return '<button class="'+(l.id===line?'active':'')+'" data-line="'+l.id+'"><span class="dot '+(ll.state==='RUNNING'?'d-run':ll.state==='STOPPED'?'d-stop':'d-idle')+'"></span>'+esc(l.name)+(L2[l.id]?' <span class="chip" style="background:rgba(255,255,255,.25);color:inherit">L2</span>':'')+'</button>'; }).join(''); }
   document.getElementById('tabs').addEventListener('click',function(e){ var b=e.target.closest('[data-line]'); if(!b) return; line=b.getAttribute('data-line'); renderAll(); });
   function renderAll(){ tabs(); kpis(); queue(); runTable(); cmpSel(); pcs(); perf(); delays(); }
   function kpis(){
@@ -84,11 +87,11 @@
   function runTable(){
     document.getElementById('lname').textContent=X.line(line).name;
     var list=D.schedules.filter(function(s){return s.line===line&&s.status!=='DONE';}).sort(function(a,b){return a.plannedStart<b.plannedStart?-1:1;}).slice(0,6);
-    document.getElementById('run').innerHTML='<thead><tr><th>#</th><th>Coil in</th><th>PO</th><th>Sales order</th><th>Product · size</th><th>Planned</th><th>Status</th><th>Action</th></tr></thead><tbody>'+list.map(function(s,i){
+    document.getElementById('run').innerHTML='<thead><tr><th>#</th><th>Action</th><th>Coil in · PO</th><th>Sales order</th><th>Product · size</th><th>Planned</th><th>Status</th></tr></thead><tbody>'+list.map(function(s,i){
       var r=run[s.id]||{}, st=r.step||(s.status==='IN_PROGRESS'?'RUNNING':'READY'), stuck=D.pdi.filter(function(p){return p.po===s.po&&p.stuck;})[0]&&!X.state.get('replayed');
       var prevOk=list.slice(0,i).every(function(x){ return (run[x.id]||{}).step==='CONFIRMED'; });
       var act=st==='RUNNING'?'<button class="btn btn-primary btn-sm" data-act="pdo" data-id="'+s.id+'"><i class="fa-solid fa-download"></i> Receive PDO</button>':st==='READY'?'<button class="btn btn-primary btn-sm" data-act="charge" data-id="'+s.id+'"'+(prevOk?'':' disabled title="charge in sequence — previous batch not confirmed"')+'><i class="fa-solid fa-play"></i> Charge</button>':st==='CHARGED'?(stuck?'<span class="badge b-amber">PDI in queue</span>':'<button class="btn btn-outline btn-sm" data-act="pdo" data-id="'+s.id+'"><i class="fa-solid fa-download"></i> Receive PDO</button>'):st==='PDO'?'<button class="btn btn-success btn-sm" data-act="confirm" data-id="'+s.id+'"><i class="fa-solid fa-check"></i> Confirm production</button>':badge('CONFIRMED');
-      return '<tr'+(s.hero?' class="hero"':'')+'><td class="mono hint">'+(i+1)+'</td><td class="mono strong">'+esc(s.unitId)+(s.rush?' <span class="badge b-red">RUSH</span>':'')+'</td><td class="mono">'+esc(s.po)+'</td><td class="mono">'+esc(s.soId)+'<div class="hint">'+esc(s.customerName)+'</div></td><td><span class="chip">'+esc(s.product)+'</span> '+s.thk+'×'+s.width+(s.ral?' RAL '+s.ral:'')+'</td><td class="mono">'+X.fmtDT(s.plannedStart)+'</td><td>'+badge(st==='CHARGED'&&stuck?'IN_QUEUE':st,st==='CHARGED'?(stuck?'PDI IN QUEUE':'PDI ACKED · running'):st)+'</td><td>'+act+'</td></tr>'; }).join('')+'</tbody>';
+      return '<tr'+(s.hero?' class="hero"':'')+'><td class="mono hint">'+(i+1)+'</td><td>'+act+'</td><td class="mono strong">'+esc(s.unitId)+(s.rush?' <span class="badge b-red">RUSH</span>':'')+'<div class="hint">'+esc(s.po)+'</div></td><td class="mono">'+esc(s.soId)+'<div class="hint">'+esc(s.customerName)+'</div></td><td><span class="chip">'+esc(s.product)+'</span> '+s.thk+'×'+s.width+(s.ral?' RAL '+s.ral:'')+'</td><td class="mono">'+X.fmtDT(s.plannedStart)+'</td><td>'+badge(st==='CHARGED'&&stuck?'IN_QUEUE':st,st==='CHARGED'?(stuck?'PDI IN QUEUE':'PDI ACKED · running'):st)+'</td></tr>'; }).join('')+'</tbody>';
   }
   document.getElementById('run').addEventListener('click',function(e){
     var b=e.target.closest('[data-act]'); if(!b) return; var s=X.by.schedules[b.dataset.id], it=X.item(s.itemId), pdi=D.pdi.filter(function(p){return p.po===s.po;})[0], stuck=pdi&&pdi.stuck&&!X.state.get('replayed');
@@ -118,17 +121,19 @@
   });
   // ---- PDO vs PDI comparison ----
   function cmpSel(){
+    document.getElementById('cmpcard').style.display=L2[line]?'':'none';   // manual lines (slitter, rewinding, packing) have no PDI / PDO
     var done=stagesOf(line).filter(function(s){return s.pdoId;}).sort(function(a,b){return (b.hero?1:0)-(a.hero?1:0)||(a.end<b.end?1:-1);});
     var sel=document.getElementById('stgsel'); sel.innerHTML=done.map(function(s){return '<option value="'+s.id+'">'+esc(s.inUnit)+' → '+esc(s.outUnits[0])+' · '+X.fmtDT(s.end)+(s.hero?' ★':'')+'</option>';}).join('');
     sel.onchange=cmp; cmp();
   }
   var UNITS={acidConcPct:'%',stripSpeedMpm:'m/min',bathTempC:'°C',oilingGsm:'g/m²',exitThkMm:'mm',reductionPct:'%',rollForceKN:'kN',coatingTargetGsm:'g/m²',coatingTotalGsm:'g/m²',coatingTopGsm:'g/m²',coatingBottomGsm:'g/m²',lineSpeedMpm:'m/min',furnaceSoakC:'°C',zincBathAlPct:'%',skinPassElongPct:'%',dftTopUm:'µm',dftBackUm:'µm',pmtC:'°C',gloss60:'GU',dE:'ΔE',primerUm:'µm'};
+  var LBL={acidConcPct:'Acid concentration',stripSpeedMpm:'Strip speed',bathTempC:'Bath temperature',oilingGsm:'Oiling',exitThkMm:'Exit thickness',passes:'Passes',reductionPct:'Reduction',rollForceKN:'Roll force',coatingTotalGsm:'Zinc coating weight (total)',coatingTopGsm:'Zinc coating weight — top',coatingBottomGsm:'Zinc coating weight — bottom',lineSpeedMpm:'Line speed',furnaceSoakC:'Furnace soak temperature',zincBathAlPct:'Zinc bath aluminium',skinPassElongPct:'Skin-pass elongation',dftTopUm:'DFT top',dftBackUm:'DFT back',pmtC:'Peak metal temperature',gloss60:'Gloss 60°',dE:'Colour difference ΔE',primerUm:'Primer DFT'};
   function cmp(){
     var s=X.by.stages[document.getElementById('stgsel').value]; if(!s){ document.getElementById('cmp').innerHTML='<div class="hint">No completed PDO on this line yet.</div>'; return; }
     var pdi=X.by.pdi[s.pdiId], pdo=X.by.pdo[s.pdoId], T=pdi.targets, A=pdo.actuals, devs={}; pdo.deviations.forEach(function(d){devs[d.field]=d;});
     var pairs={coatingTotalGsm:'coatingTargetGsm',dftTopUm:'dftTopUm',dftBackUm:'dftBackUm',exitThkMm:'exitThkMm',acidConcPct:'acidConcPct',stripSpeedMpm:'stripSpeedMpm',lineSpeedMpm:'lineSpeedMpm',furnaceSoakC:'furnaceSoakC',zincBathAlPct:'zincBathAlPct',bathTempC:'bathTempC',pmtC:'pmtC',gloss60:'glossRange',skinPassElongPct:'skinPassElongPct',reductionPct:'reductionPct',oilingGsm:'oilingGsm'};
     var rows=Object.keys(A).map(function(k){ var tk=pairs[k], tv=tk?T[tk]:null, band=k==='coatingTotalGsm'?T.coatingBandGsm:k==='dftTopUm'?[T.dftTopUm-T.dftTopTolUm,T.dftTopUm+T.dftTopTolUm]:k==='dftBackUm'?[T.dftBackUm-T.dftBackTolUm,T.dftBackUm+T.dftBackTolUm]:Array.isArray(tv)?tv:null;
-      var d=devs[k]; return '<tr><td>'+esc(k)+' <span class="hint">'+(UNITS[k]||'')+'</span></td><td class="mono">'+(tv==null?'—':Array.isArray(tv)?tv.join(' – '):tv)+(band&&!Array.isArray(tv)?' <span class="hint">band '+band[0]+'–'+band[1]+'</span>':'')+'</td><td class="mono strong'+(d?(d.severity==='DEVIATION'?' deviation':''):'')+'">'+(A[k]==null?'—':A[k])+'</td><td class="'+(d?(d.severity==='DEVIATION'?'dev':'warn'):'')+'">'+(d?'<i class="fa-solid fa-triangle-exclamation"></i> '+esc(d.note):'<span class="ok-val">within target</span>')+'</td></tr>'; }).join('');
+      var d=devs[k]; return '<tr><td>'+esc(LBL[k]||k)+' <span class="hint">'+(UNITS[k]||'')+'</span></td><td class="mono">'+(tv==null?'—':Array.isArray(tv)?tv.join(' – '):tv)+(band&&!Array.isArray(tv)?' <span class="hint">band '+band[0]+'–'+band[1]+'</span>':'')+'</td><td class="mono strong'+(d?(d.severity==='DEVIATION'?' deviation':''):'')+'">'+(A[k]==null?'—':A[k])+'</td><td class="'+(d?(d.severity==='DEVIATION'?'dev':'warn'):'')+'">'+(d?'<i class="fa-solid fa-triangle-exclamation"></i> '+esc(d.note):'<span class="ok-val">within target</span>')+'</td></tr>'; }).join('');
     document.getElementById('cmpmeta').innerHTML='PDI '+esc(pdi.id)+' sent '+X.fmtDT(pdi.sentAt)+' → PDO '+esc(pdo.id)+' received '+X.fmtDT(pdo.receivedAt)+' · '+badge(pdo.status);
     document.getElementById('cmp').innerHTML='<table class="tbl cmp"><thead><tr><th>Parameter</th><th>PDI target</th><th>PDO actual</th><th>Auto-comparison</th></tr></thead><tbody>'+rows+'</tbody></table>'+
       (pdo.deviations.some(function(d){return d.severity==='DEVIATION';})?'<div class="note"><i class="fa-solid fa-flag" style="color:#c62828"></i><span>Deviation flagged → output batch '+esc(s.outUnits[0])+' put on <b>parameter-based hold</b>, defect auto-recorded, quality decision required on the <a href="quality.html#'+esc(s.outUnits[0])+'">Quality page</a>.</span></div>':'');

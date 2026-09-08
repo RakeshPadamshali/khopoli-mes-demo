@@ -11,7 +11,11 @@
   .host-col { flex:1; display:flex; flex-direction:column; min-width:0; }
   .ws-tabhost { height:35px; background:#e7ebee; border-bottom:1px solid var(--color-border); display:flex; align-items:stretch; flex-shrink:0; }
   .ws-tabstrip { flex:1; display:flex; align-items:stretch; overflow-x:auto; } .ws-tabstrip::-webkit-scrollbar { height:0; }
-  .ws-tab { display:flex; align-items:center; gap:7px; padding:0 10px 0 12px; font-size:12px; color:var(--color-text-secondary); background:#dfe4e7; border-right:1px solid var(--color-border); cursor:pointer; white-space:nowrap; max-width:240px; user-select:none; }
+  .ws-tabstrip::-webkit-scrollbar { height:4px; } .ws-tabstrip::-webkit-scrollbar-thumb { background:#b8c0c9; border-radius:2px; }
+  .ws-tab { display:flex; align-items:center; gap:7px; padding:0 10px 0 12px; font-size:12px; color:var(--color-text-secondary); background:#dfe4e7; border-right:1px solid var(--color-border); cursor:pointer; white-space:nowrap; flex:0 1 auto; min-width:0; max-width:210px; user-select:none; }
+  .ws-tab .lbl { overflow:hidden; text-overflow:ellipsis; min-width:0; }
+  .bm-header .gt { font-size:11px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:5px; padding:3px 8px; white-space:nowrap; min-width:0; overflow:hidden; text-overflow:ellipsis; max-width:330px; }
+  .bm-header .right { min-width:0; flex-shrink:1; } .bm-header .btn-reset { white-space:nowrap; } .bm-header .module-name { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0; flex-shrink:1; } .bm-header .plant-switch { flex-shrink:0; } .bm-header .gt i { color:var(--accent); margin-right:4px; } .bm-header .gt b { color:#fff; font-weight:600; }
   .ws-tab:hover { background:#eaeef0; } .ws-tab.active { background:#fff; color:var(--color-primary-dark); font-weight:600; box-shadow:inset 0 -2px 0 var(--color-primary); }
   .ws-tab .ws-ic { font-size:11px; opacity:.85; } .ws-tab .ws-close { width:16px; height:16px; border-radius:3px; display:flex; align-items:center; justify-content:center; font-size:10px; color:var(--color-text-hint); }
   .ws-tab .ws-close:hover { background:rgba(0,0,0,.12); color:var(--color-danger); }
@@ -27,10 +31,10 @@
 <body>
 <header class="bm-header">
   <div class="logo"><i class="fa-solid fa-layer-group"></i> JSW Steel Coated Products <span class="sub">Khopoli NextGen MES</span></div>
-  <div class="module-name"><i class="fa-solid fa-diagram-project" style="margin-right:4px;color:var(--accent);"></i>One MES — Coated Products template · product demo</div>
+  <div class="module-name"><i class="fa-solid fa-diagram-project" style="margin-right:4px;color:var(--accent);"></i>One MES — Coated Products template</div>
   <div class="spacer"></div>
   <div class="plant-switch"><button class="active"><i class="fa-solid fa-location-dot" style="margin-right:4px"></i>Khopoli</button><button>Vasind</button><button>Tarapur</button><button>Kalmeshwar</button></div>
-  <div class="right"><span class="asof"><i class="fa-regular fa-clock"></i> as of Tue 15 Sep 2026 10:30 · Shift A</span><button class="btn-reset" id="reset" title="Clear every live-demo action and reload"><i class="fa-solid fa-rotate-left"></i> Reset demo</button><div class="avatar">RP</div></div>
+  <div class="right"><span class="gt" id="gt"><i class="fa-solid fa-flag-checkered"></i>Golden thread</span><span class="asof" id="asof"><i class="fa-regular fa-clock"></i> as of …</span><button class="btn-reset" id="reset" title="Clear every live-demo action and reload"><i class="fa-solid fa-rotate-left"></i> Reset demo</button><div class="avatar">RP</div></div>
 </header>
 <div class="bm-layout">
   <aside class="bm-sidebar" id="sidebar">
@@ -56,13 +60,15 @@
   <div class="host-col">
     <div class="ws-tabhost">
       <div class="ws-tabstrip" id="tabstrip"></div>
-      <div class="scenario-bar"><i class="fa-solid fa-flag-checkered" style="color:var(--accent)"></i> Golden thread: <b>SO 4213090017/10</b> · HR coil <b>HRC-VJ-2608-0471</b></div>
       <button class="ws-menu-btn" id="ws-menu" title="Tab actions"><i class="fa-solid fa-ellipsis-vertical"></i></button>
     </div>
     <div class="framestack" id="stack"><div class="ws-empty" id="empty"><i class="fa-solid fa-window-restore"></i><div>Pick a module from the sidebar to open a tab</div></div></div>
   </div>
 </div>
+<script src="data/khp-meta.js"></script>
 <script>
+  (function () { var M = window.KHP_META || {}; if (M.asOfLabel) document.getElementById('asof').innerHTML = '<i class="fa-regular fa-clock"></i> as of ' + M.asOfLabel + ' · Shift ' + (M.shift || 'A');
+    if (M.hero) document.getElementById('gt').innerHTML = '<i class="fa-solid fa-flag-checkered"></i>Golden thread: <b>SO ' + M.hero.itemId + '</b> · <b>' + M.hero.hrCoilId + '</b>'; })();
   var PAGES = {
     home:        { label: 'Plant Dashboard',            icon: 'fa-gauge-high',      href: 'home.html' },
     orders:      { label: 'Sales Orders & TDC',         icon: 'fa-file-invoice',    href: 'orders.html' },
@@ -102,7 +108,8 @@
   function closeOthers(id) { order.slice().forEach(function (x) { if (x !== id) closeTab(x); }); }
   function closeAll() { order.slice().forEach(closeTab); }
   function render() {
-    strip.innerHTML = order.map(function (id) { var p = PAGES[id]; return '<div class="ws-tab' + (id === active ? ' active' : '') + '" data-id="' + id + '"><i class="fa-solid ' + p.icon + ' ws-ic"></i>' + p.label + '<span class="ws-close" data-close="' + id + '" title="Close"><i class="fa-solid fa-xmark"></i></span></div>'; }).join('');
+    strip.innerHTML = order.map(function (id) { var p = PAGES[id]; return '<div class="ws-tab' + (id === active ? ' active' : '') + '" data-id="' + id + '" title="' + p.label + '"><i class="fa-solid ' + p.icon + ' ws-ic"></i><span class="lbl">' + p.label + '</span><span class="ws-close" data-close="' + id + '" title="Close"><i class="fa-solid fa-xmark"></i></span></div>'; }).join('');
+    var act = strip.querySelector('.ws-tab.active'); if (act && act.scrollIntoView) act.scrollIntoView({ inline: 'nearest', block: 'nearest' });
     document.querySelectorAll('#sidebar a[data-page]').forEach(function (a) { a.classList.toggle('active', a.getAttribute('data-page') === active); });
   }
   document.getElementById('sidebar').addEventListener('click', function (e) { var a = e.target.closest('a[data-page]'); if (a) { e.preventDefault(); open(a.getAttribute('data-page')); } });

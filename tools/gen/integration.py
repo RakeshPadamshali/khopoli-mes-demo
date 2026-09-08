@@ -1,7 +1,7 @@
 """Integration layer: interface catalogue (SAP 30+, L2, APS, others), 48-hour middleware message log with the scripted
 failures (stuck PDI queue, malformed IDoc, contract-version mismatch), alerts, interface contracts with version history."""
 from datetime import datetime, timedelta
-from .common import R, ASOF, iso, h, m, pick, between, SEQ
+from .common import R, ASOF, iso, h, m, pick, between, SEQ, at as AT, dstr
 
 SAP = [("Sales order create", "SAP→MES", "IDoc ORDERS05", "Event", "CT-ORDERS05"), ("Sales order amendment", "SAP→MES", "IDoc ORDERS05", "Event", "CT-ORDERS05"), ("Sales order closure", "SAP→MES", "IDoc ORDERS05", "Event", "CT-ORDERS05"),
        ("HR coil requirement", "MES→SAP", "RFC", "Daily 06:00", None), ("RM requirement (zinc, paint, primer)", "MES→SAP", "RFC", "Daily 06:00", None), ("Batch attributes — WIP", "MES→SAP", "IDoc BATMAS", "Event", None),
@@ -52,8 +52,8 @@ def build_messages(pdis, pdos, confs, disps, items):
     for p in pdos:
         at = datetime.fromisoformat(p["receivedAt"])
         if at < t0: continue
-        if p["line"] == "CCL" and datetime(2026, 9, 14, 22, 30) < at < datetime(2026, 9, 15, 0, 30) and not p["hero"]:
-            hist = [dict(at=iso(at), status="FAILED", by="middleware schema validator"), dict(at="2026-09-14T23:20:00", status="CONTRACT_UPDATED", by="Integration CoE — CT-PDO v1.3 activated"), dict(at="2026-09-14T23:31:00", status="REPLAYED", by="AI agent (approved by shift IT lead)")]
+        if p["line"] == "CCL" and AT(-1, 22, 30) < at < AT(0, 0, 30) and not p["hero"]:
+            hist = [dict(at=iso(at), status="FAILED", by="middleware schema validator"), dict(at=iso(AT(-1, 23, 20)), status="CONTRACT_UPDATED", by="Integration CoE — CT-PDO v1.3 activated"), dict(at=iso(AT(-1, 23, 31)), status="REPLAYED", by="AI agent (approved by shift IT lead)")]
             add("IF-L2-PDO", "L2→MES", at, "REPLAYED", dict(po=p["po"], unit=p["unitIn"], so=p["soId"], line="CCL", pdo=p["id"]), {"pdoId": p["id"], "actuals": p["actuals"]},
                 err="Schema validation failed: unknown field 'dftBackMeasured' (payload v1.3 vs contract CT-PDO v1.2)", hist=hist, retries=1, contractIssue=True)
             continue
@@ -79,24 +79,24 @@ def build_messages(pdis, pdos, confs, disps, items):
         it = pick(items)
         add(iid, "SAP→MES" if iid in ("IF-SAP-01", "IF-SAP-16", "IF-SAP-33") else "MES→SAP" if iid.startswith("IF-SAP") else "→MES", at, "OK", dict(so=it["soId"]), {"ref": it["id"], "note": "routine"})
     # scripted: malformed sales-order amendment IDoc (S5 / S7)
-    add("IF-SAP-02", "SAP→MES", datetime(2026, 9, 15, 8, 12), "FAILED", dict(so="4213090022", item="10", idoc="0000001187734"), {"idoc": "ORDERS05", "E1EDK01": {"BELNR": "4213090022"}, "E1EDP01": {"POSEX": "000010", "MENGE": "210.000"}, "E1EDP20": {"EDATU": "2026-13-02", "WMENG": "210.000"}},
+    add("IF-SAP-02", "SAP→MES", AT(0, 8, 12), "FAILED", dict(so="4213090022", item="10", idoc="0000001187734"), {"idoc": "ORDERS05", "E1EDK01": {"BELNR": "4213090022"}, "E1EDP01": {"POSEX": "000010", "MENGE": "210.000"}, "E1EDP20": {"EDATU": "2026-13-02", "WMENG": "210.000"}},
         err="IDoc 0000001187734 segment E1EDP20 field EDATU '2026-13-02' is not a valid date (expected YYYY-MM-DD) — status 51 (application error)", lat=None, retries=2, hero=True, idoc="0000001187734",
-        hist=[dict(at="2026-09-15T08:12:04", status="FAILED", by="middleware mapping"), dict(at="2026-09-15T08:15:00", status="RETRY_FAILED", by="auto-retry"), dict(at="2026-09-15T08:30:00", status="RETRY_FAILED", by="auto-retry")])
+        hist=[dict(at=iso(AT(0, 8, 12, 4)), status="FAILED", by="middleware mapping"), dict(at=iso(AT(0, 8, 15)), status="RETRY_FAILED", by="auto-retry"), dict(at=iso(AT(0, 8, 30)), status="RETRY_FAILED", by="auto-retry")])
     if not any(x.get("contractIssue") for x in msgs):
         # guarantee the contract-version scenario even if no CCL PDO fell in that window
         ref = next((p for p in pdos if p["line"] == "CCL" and not p["hero"]), None) or dict(po="PO-KHP-2609-0000", unitIn="GIC-KHP-2609-0000", soId="4213090005", id="PDO-CCL-0000", actuals={})
-        hist = [dict(at="2026-09-14T23:05:00", status="FAILED", by="middleware schema validator"), dict(at="2026-09-14T23:20:00", status="CONTRACT_UPDATED", by="Integration CoE — CT-PDO v1.3 activated"), dict(at="2026-09-14T23:31:00", status="REPLAYED", by="AI agent (approved by Integration CoE on-call)")]
-        add("IF-L2-PDO", "L2→MES", datetime(2026, 9, 14, 23, 5), "REPLAYED", dict(po=ref["po"], unit=ref["unitIn"], so=ref["soId"], line="CCL", pdo=ref["id"]), {"pdoId": ref["id"], "actuals": ref.get("actuals", {}), "dftBackMeasured": 7.2},
+        hist = [dict(at=iso(AT(-1, 23, 5)), status="FAILED", by="middleware schema validator"), dict(at=iso(AT(-1, 23, 20)), status="CONTRACT_UPDATED", by="Integration CoE — CT-PDO v1.3 activated"), dict(at=iso(AT(-1, 23, 31)), status="REPLAYED", by="AI agent (approved by Integration CoE on-call)")]
+        add("IF-L2-PDO", "L2→MES", AT(-1, 23, 5), "REPLAYED", dict(po=ref["po"], unit=ref["unitIn"], so=ref["soId"], line="CCL", pdo=ref["id"]), {"pdoId": ref["id"], "actuals": ref.get("actuals", {}), "dftBackMeasured": 7.2},
             err="Schema validation failed: unknown field 'dftBackMeasured' (payload v1.3 vs contract CT-PDO v1.2)", hist=hist, retries=1, contractIssue=True)
     msgs.sort(key=lambda x: x["at"])
     stuck = [x for x in msgs if x.get("stuck")]
-    alerts.append(dict(id="ALR-0001", severity="S1", interfaceId="IF-L2-PDI", raisedAt="2026-09-15T09:43:00", status="OPEN", title="PDI queue L2.CGL.PDI.OUT stuck",
+    alerts.append(dict(id="ALR-0001", severity="S1", interfaceId="IF-L2-PDI", raisedAt=iso(AT(0, 9, 43)), status="OPEN", title="PDI queue L2.CGL.PDI.OUT stuck",
                        detail=f"Queue depth {len(stuck)} > 0 for 120 s; oldest message age exceeds 30 s SLA; no consumer heartbeat since 09:41", messageIds=[x["id"] for x in stuck], incidentId="INC-26-0412", channel="Monitoring → ITSM → Teams"))
     bad = next(x for x in msgs if x.get("idoc"))
-    alerts.append(dict(id="ALR-0002", severity="S2", interfaceId="IF-SAP-02", raisedAt="2026-09-15T08:31:00", status="OPEN", title="Sales-order amendment IDoc failed after 2 retries",
+    alerts.append(dict(id="ALR-0002", severity="S2", interfaceId="IF-SAP-02", raisedAt=iso(AT(0, 8, 31)), status="OPEN", title="Sales-order amendment IDoc failed after 2 retries",
                        detail="IDoc 0000001187734 for SO 4213090022/10 in status 51 — order quantity change 180 → 210 t not applied in MES", messageIds=[bad["id"]], incidentId="INC-26-0413", channel="Monitoring → ITSM → Teams"))
     rep = next((x for x in msgs if x.get("contractIssue")), None)
-    if rep: alerts.append(dict(id="ALR-0003", severity="S2", interfaceId="IF-L2-PDO", raisedAt="2026-09-14T23:06:00", status="RESOLVED", resolvedAt="2026-09-14T23:32:00", title="PDO rejected — contract version mismatch",
+    if rep: alerts.append(dict(id="ALR-0003", severity="S2", interfaceId="IF-L2-PDO", raisedAt=iso(AT(-1, 23, 6)), status="RESOLVED", resolvedAt=iso(AT(-1, 23, 32)), title="PDO rejected — contract version mismatch",
                               detail="CCL L2 upgraded to PDO payload v1.3 (adds dftBackMeasured) while MES contract CT-PDO was v1.2; v1.3 activated and message replayed", messageIds=[rep["id"]], incidentId="INC-26-0409", channel="Monitoring → ITSM"))
     return msgs, alerts
 
@@ -111,7 +111,7 @@ def build_contracts():
                      f("targets", "object", True, "Line-specific set-points (see per-line sub-schema)"), f("sentAt", "datetime", True, "ISO-8601"), f("version", "string", True, "Contract version")]),
         dict(id="CT-PDO", name="Production Data Output (L2 → MES)", interfaceIds=["IF-L2-PDO"], currentVersion="1.3", format="JSON over MQTT (L2 gateway)",
              versions=[dict(version="1.1", date="2026-05-18", status="RETIRED", changes="Add coatingTop/BottomGsm", approvedBy="Integration CoE"), dict(version="1.2", date="2026-08-04", status="RETIRED", changes="Add dE colour difference (CCL)", approvedBy="Integration CoE"),
-                       dict(version="1.3", date="2026-09-14", status="ACTIVE", changes="Add dftBackMeasured (CCL back-coat gauge) — activated 23:20 after L2 upgrade rejected messages", approvedBy="Integration CoE (emergency CAB)")],
+                       dict(version="1.3", date=dstr(-1), status="ACTIVE", changes="Add dftBackMeasured (CCL back-coat gauge) — activated 23:20 after L2 upgrade rejected messages", approvedBy="Integration CoE (emergency CAB)")],
              fields=[f("pdoId", "string", True, "L2 message id"), f("pdiId", "string", True, "Correlates to PDI"), f("actuals", "object", True, "Measured values per line"), f("outWeightMT", "number", True, "Weighed output"),
                      f("lengthM", "number", False, "Strip length"), f("dftBackMeasured", "number", False, "v1.3: back-coat DFT µm"), f("receivedAt", "datetime", True, "ISO-8601")]),
         dict(id="CT-ORDERS05", name="Sales order IDoc mapping (SAP → MES)", interfaceIds=["IF-SAP-01", "IF-SAP-02", "IF-SAP-03"], currentVersion="2.1", format="IDoc ORDERS05 → canonical SalesOrder (ISA-95 aligned)",

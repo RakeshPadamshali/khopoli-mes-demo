@@ -92,10 +92,11 @@
     tr.after(det); b.classList.add('open');
   }
   // simulate an SAP order feed (live-demo action, persisted per browser)
+  function dplus(days){ var d=new Date(D.meta.asOf); d.setDate(d.getDate()+days); return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2); }
   document.getElementById('feed').addEventListener('click',function(){
     if(X.state.get('sapOrderFed')){ X.toast('Order 4213090041/10 already received — reset the demo to replay','fa-circle-info'); return; }
     var it={id:'4213090041/10',soId:'4213090041',item:10,product:'GI',gradeId:'DX51D+Z',thk:0.5,width:1220,coatingId:'Z120',paintId:null,ral:null,qtyMT:60,packing:'DOM',slitWidths:null,status:'OPEN',customerId:'C001',customerName:'Apex Appliances Ltd',segment:'Appliance',
-      reqDate:'2026-10-08',fpCommit:'2026-10-06',scheduleLines:[{id:'4213090041/10/0001',qtyMT:60,date:'2026-10-08',status:'OPEN'}],tdcId:'TDC-4213090017-10',allocatedMT:0,producedMT:0,dispatchedMT:0,btaMT:60,btpMT:60,simulated:true,hero:false};
+      reqDate:dplus(23),fpCommit:dplus(21),scheduleLines:[{id:'4213090041/10/0001',qtyMT:60,date:dplus(23),status:'OPEN'}],tdcId:'TDC-4213090017-10',allocatedMT:0,producedMT:0,dispatchedMT:0,btaMT:60,btpMT:60,simulated:true,hero:false};
     X.state.set('sapOrderFed',{item:it,at:new Date().toISOString(),idoc:'0000001187801'}); items.unshift(it); apply();
     X.toast('IDoc ORDERS05 0000001187801 received via middleware → SO 4213090041/10 created at schedule-line level (TDC copied from VC)');
   });

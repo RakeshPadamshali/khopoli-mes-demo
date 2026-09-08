@@ -85,6 +85,8 @@
     reset: function () { try { localStorage.removeItem(KEY); } catch (e) {} }
   };
   window.KHPState = State;
+  // header "as of" always reflects the dataset's as-of moment (the generator re-bases it to the current date)
+  document.querySelectorAll('.bm-header .asof').forEach(function (el) { el.innerHTML = '<i class="fa-regular fa-clock"></i> as of ' + fmt(ASOF) + ' · Shift ' + ((D.live && D.live.shift) || 'A'); });
 
   window.KHPX = { D: D, ASOF: ASOF, BASE: BASE, by: by, unit: unit, item: function (id) { return by.items[id]; }, order: function (id) { return by.orders[id]; }, line: function (id) { return by.lines[id]; },
     equip: function (id) { return by.equipment[id]; }, route: function (id) { return by.routes[id]; }, tdc: function (id) { return by.tdcs[id]; }, thread: function (id) { return by.threads[id]; },

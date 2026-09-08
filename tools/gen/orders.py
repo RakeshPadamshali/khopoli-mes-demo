@@ -1,6 +1,6 @@
 """COMMERCIAL & PLANNING: sales orders (SAP schedule-line level), TDC (variant configuration), SAP vs FP routes."""
 from datetime import datetime, timedelta
-from .common import R, BASE, ASOF, iso, day, pick, between, r1
+from .common import R, BASE, ASOF, iso, day, pick, between, r1, at as AT, dstr
 from .assets_specs import CUSTOMERS, GRADES, COATINGS, PAINTS, RALS
 
 # product templates: (product, grade, thk options, width options, coating, paint) — weights = mix
@@ -79,15 +79,15 @@ def build_orders():
             it.pop("dftTop", None); it.pop("dftTol", None); it.pop("dftBack", None)
         if extra: it.update(extra)
         return it, o
-    fix(HERO_ITEM, "C001", "PPGI", "DX51D+Z", 0.50, 1220, "Z120", "RMP", "9002", 120, "2026-09-20", "2026-09-18", slits=[610, 610])
-    fix(DOWNGRADE_SO_ITEM, "C004", "PPGI", "DX51D+Z", 0.50, 1220, "Z120", "RMP", "9002", 90, "2026-09-28", "2026-09-26", slits=[610, 610],
+    fix(HERO_ITEM, "C001", "PPGI", "DX51D+Z", 0.50, 1220, "Z120", "RMP", "9002", 120, dstr(5), dstr(3), slits=[610, 610])
+    fix(DOWNGRADE_SO_ITEM, "C004", "PPGI", "DX51D+Z", 0.50, 1220, "Z120", "RMP", "9002", 90, dstr(13), dstr(11), slits=[610, 610],
         extra={"dftTop": 15, "dftTol": 3, "dftBack": 7})
-    it, o = fix(RUSH_ITEM, "C003", "GI", "DX53D+Z", 0.80, 1250, "Z120", None, None, 60, "2026-09-18", "2026-09-17")
-    o.update(rush=True, rushAt=iso(datetime(2026, 9, 14, 9, 0)), priority=1, rushReason="APS rush flag — customer line stoppage at Chakan")
-    fix(SWAP_A, "C007", "GI", "DX51D+Z", 0.80, 1250, "Z120", None, None, 100, "2026-09-22", "2026-09-20")
-    fix(SWAP_B, "C010", "GI", "DX51D+Z", 0.80, 1250, "Z120", None, None, 80, "2026-09-16", "2026-09-15")
-    it, o = fix(AMEND_ITEM, "C006", "GI", "S350GD+Z", 1.00, 1250, "Z275", None, None, 180, "2026-10-05", "2026-10-02")
-    o.update(amendment=dict(at=iso(datetime(2026, 9, 15, 8, 10)), field="qtyMT", old=180, new=210, source="SAP IDoc ORDERS05", status="FAILED_IDOC"))
+    it, o = fix(RUSH_ITEM, "C003", "GI", "DX53D+Z", 0.80, 1250, "Z120", None, None, 60, dstr(3), dstr(2))
+    o.update(rush=True, rushAt=iso(AT(-1, 9, 0)), priority=1, rushReason="APS rush flag — customer line stoppage at Chakan")
+    fix(SWAP_A, "C007", "GI", "DX51D+Z", 0.80, 1250, "Z120", None, None, 100, dstr(7), dstr(5))
+    fix(SWAP_B, "C010", "GI", "DX51D+Z", 0.80, 1250, "Z120", None, None, 80, dstr(1), dstr(0))
+    it, o = fix(AMEND_ITEM, "C006", "GI", "S350GD+Z", 1.00, 1250, "Z275", None, None, 180, dstr(20), dstr(17))
+    o.update(amendment=dict(at=iso(AT(0, 8, 10)), field="qtyMT", old=180, new=210, source="SAP IDoc ORDERS05", status="FAILED_IDOC"))
     # schedule lines (SAP): split qty into 1-2 schedule lines
     for it in items:
         q = it["qtyMT"]; lines = [q] if q <= 100 or R.random() < 0.5 else [round(q * 0.6), q - round(q * 0.6)]

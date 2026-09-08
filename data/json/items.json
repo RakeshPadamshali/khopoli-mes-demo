@@ -18,8 +18,8 @@
   ],
   "status": "DISPATCHED",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-23",
-  "fpCommit": "2026-09-22",
+  "reqDate": "2026-09-16",
+  "fpCommit": "2026-09-15",
   "customerId": "C001",
   "customerName": "Apex Appliances Ltd",
   "segment": "Appliance",
@@ -27,7 +27,7 @@
    {
     "id": "4213090001/10/0001",
     "qtyMT": 20,
-    "date": "2026-09-23",
+    "date": "2026-09-16",
     "status": "DELIVERED"
    }
   ],
@@ -58,8 +58,8 @@
   "dftTop": 25,
   "dftTol": 3,
   "dftBack": 10,
-  "reqDate": "2026-09-05",
-  "fpCommit": "2026-09-04",
+  "reqDate": "2026-08-29",
+  "fpCommit": "2026-08-28",
   "customerId": "C001",
   "customerName": "Apex Appliances Ltd",
   "segment": "Appliance",
@@ -67,7 +67,7 @@
    {
     "id": "4213090001/20/0001",
     "qtyMT": 120,
-    "date": "2026-09-05",
+    "date": "2026-08-29",
     "status": "OPEN"
    }
   ],
@@ -102,8 +102,8 @@
   "dftTop": 25,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-05",
-  "fpCommit": "2026-09-02",
+  "reqDate": "2026-08-29",
+  "fpCommit": "2026-08-26",
   "customerId": "C001",
   "customerName": "Apex Appliances Ltd",
   "segment": "Appliance",
@@ -111,7 +111,7 @@
    {
     "id": "4213090001/30/0001",
     "qtyMT": 40,
-    "date": "2026-09-05",
+    "date": "2026-08-29",
     "status": "OPEN"
    }
   ],
@@ -142,8 +142,8 @@
   "dftTop": 25,
   "dftTol": 3,
   "dftBack": 10,
-  "reqDate": "2026-09-11",
-  "fpCommit": "2026-09-10",
+  "reqDate": "2026-09-04",
+  "fpCommit": "2026-09-03",
   "customerId": "C001",
   "customerName": "Apex Appliances Ltd",
   "segment": "Appliance",
@@ -151,13 +151,13 @@
    {
     "id": "4213090002/10/0001",
     "qtyMT": 90,
-    "date": "2026-09-11",
+    "date": "2026-09-04",
     "status": "OPEN"
    },
    {
     "id": "4213090002/10/0002",
     "qtyMT": 60,
-    "date": "2026-09-18",
+    "date": "2026-09-11",
     "status": "OPEN"
    }
   ],
@@ -192,8 +192,8 @@
   "dftTop": 25,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-11",
-  "fpCommit": "2026-09-08",
+  "reqDate": "2026-09-04",
+  "fpCommit": "2026-09-01",
   "customerId": "C001",
   "customerName": "Apex Appliances Ltd",
   "segment": "Appliance",
@@ -201,13 +201,13 @@
    {
     "id": "4213090002/20/0001",
     "qtyMT": 180,
-    "date": "2026-09-11",
+    "date": "2026-09-04",
     "status": "OPEN"
    },
    {
     "id": "4213090002/20/0002",
     "qtyMT": 120,
-    "date": "2026-09-18",
+    "date": "2026-09-11",
     "status": "OPEN"
    }
   ],
@@ -239,8 +239,8 @@
   ],
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-16",
-  "fpCommit": "2026-09-12",
+  "reqDate": "2026-09-09",
+  "fpCommit": "2026-09-05",
   "customerId": "C006",
   "customerName": "NorthStar Pre-Engineered Buildings",
   "segment": "PEB",
@@ -248,7 +248,7 @@
    {
     "id": "4213090003/10/0001",
     "qtyMT": 250,
-    "date": "2026-09-16",
+    "date": "2026-09-09",
     "status": "OPEN"
    }
   ],
@@ -279,8 +279,8 @@
   ],
   "status": "IN_PROGRESS",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-14",
-  "fpCommit": "2026-10-13",
+  "reqDate": "2026-10-07",
+  "fpCommit": "2026-10-06",
   "customerId": "C006",
   "customerName": "NorthStar Pre-Engineered Buildings",
   "segment": "PEB",
@@ -288,7 +288,7 @@
    {
     "id": "4213090003/20/0001",
     "qtyMT": 40,
-    "date": "2026-10-14",
+    "date": "2026-10-07",
     "status": "OPEN"
    }
   ],
@@ -316,8 +316,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-12",
-  "fpCommit": "2026-10-10",
+  "reqDate": "2026-10-05",
+  "fpCommit": "2026-10-03",
   "customerId": "C006",
   "customerName": "NorthStar Pre-Engineered Buildings",
   "segment": "PEB",
@@ -325,13 +325,13 @@
    {
     "id": "4213090003/30/0001",
     "qtyMT": 120,
-    "date": "2026-10-12",
+    "date": "2026-10-05",
     "status": "OPEN"
    },
    {
     "id": "4213090003/30/0002",
     "qtyMT": 80,
-    "date": "2026-10-19",
+    "date": "2026-10-12",
     "status": "OPEN"
    }
   ],
@@ -359,8 +359,8 @@
   "slitWidths": null,
   "status": "DISPATCHED",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-13",
-  "fpCommit": "2026-10-13",
+  "reqDate": "2026-10-06",
+  "fpCommit": "2026-10-06",
   "customerId": "C006",
   "customerName": "NorthStar Pre-Engineered Buildings",
   "segment": "PEB",
@@ -368,7 +368,7 @@
    {
     "id": "4213090004/10/0001",
     "qtyMT": 20,
-    "date": "2026-10-13",
+    "date": "2026-10-06",
     "status": "DELIVERED"
    }
   ],
@@ -399,8 +399,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-07",
-  "fpCommit": "2026-09-03",
+  "reqDate": "2026-08-31",
+  "fpCommit": "2026-08-27",
   "customerId": "C001",
   "customerName": "Apex Appliances Ltd",
   "segment": "Appliance",
@@ -408,7 +408,7 @@
    {
     "id": "4213090005/10/0001",
     "qtyMT": 100,
-    "date": "2026-09-07",
+    "date": "2026-08-31",
     "status": "OPEN"
    }
   ],
@@ -439,8 +439,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-10-08",
-  "fpCommit": "2026-10-06",
+  "reqDate": "2026-10-01",
+  "fpCommit": "2026-09-29",
   "customerId": "C009",
   "customerName": "Orbit Metal Forming",
   "segment": "General Engineering",
@@ -448,7 +448,7 @@
    {
     "id": "4213090006/10/0001",
     "qtyMT": 150,
-    "date": "2026-10-08",
+    "date": "2026-10-01",
     "status": "OPEN"
    }
   ],
@@ -483,8 +483,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-27",
-  "fpCommit": "2026-09-26",
+  "reqDate": "2026-09-20",
+  "fpCommit": "2026-09-19",
   "customerId": "C009",
   "customerName": "Orbit Metal Forming",
   "segment": "General Engineering",
@@ -492,7 +492,7 @@
    {
     "id": "4213090006/20/0001",
     "qtyMT": 80,
-    "date": "2026-09-27",
+    "date": "2026-09-20",
     "status": "OPEN"
    }
   ],
@@ -527,8 +527,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-06",
-  "fpCommit": "2026-09-02",
+  "reqDate": "2026-08-30",
+  "fpCommit": "2026-08-26",
   "customerId": "C009",
   "customerName": "Orbit Metal Forming",
   "segment": "General Engineering",
@@ -536,7 +536,7 @@
    {
     "id": "4213090006/30/0001",
     "qtyMT": 60,
-    "date": "2026-09-06",
+    "date": "2026-08-30",
     "status": "OPEN"
    }
   ],
@@ -571,8 +571,8 @@
   "dftTop": 25,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-14",
-  "fpCommit": "2026-09-10",
+  "reqDate": "2026-09-07",
+  "fpCommit": "2026-09-03",
   "customerId": "C006",
   "customerName": "NorthStar Pre-Engineered Buildings",
   "segment": "PEB",
@@ -580,13 +580,13 @@
    {
     "id": "4213090007/10/0001",
     "qtyMT": 72,
-    "date": "2026-09-14",
+    "date": "2026-09-07",
     "status": "OPEN"
    },
    {
     "id": "4213090007/10/0002",
     "qtyMT": 48,
-    "date": "2026-09-21",
+    "date": "2026-09-14",
     "status": "OPEN"
    }
   ],
@@ -614,8 +614,8 @@
   "slitWidths": null,
   "status": "PARTIALLY_DISPATCHED",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-22",
-  "fpCommit": "2026-09-20",
+  "reqDate": "2026-09-15",
+  "fpCommit": "2026-09-13",
   "customerId": "C007",
   "customerName": "Vega Consumer Durables",
   "segment": "Appliance",
@@ -623,7 +623,7 @@
    {
     "id": "4213090008/10/0001",
     "qtyMT": 100,
-    "date": "2026-09-22",
+    "date": "2026-09-15",
     "status": "OPEN"
    }
   ],
@@ -651,8 +651,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-08-26",
-  "fpCommit": "2026-08-24",
+  "reqDate": "2026-08-19",
+  "fpCommit": "2026-08-17",
   "customerId": "C001",
   "customerName": "Apex Appliances Ltd",
   "segment": "Appliance",
@@ -660,13 +660,13 @@
    {
     "id": "4213090008/20/0001",
     "qtyMT": 150,
-    "date": "2026-08-26",
+    "date": "2026-08-19",
     "status": "OPEN"
    },
    {
     "id": "4213090008/20/0002",
     "qtyMT": 100,
-    "date": "2026-09-02",
+    "date": "2026-08-26",
     "status": "OPEN"
    }
   ],
@@ -701,8 +701,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-03",
-  "fpCommit": "2026-09-03",
+  "reqDate": "2026-08-27",
+  "fpCommit": "2026-08-27",
   "customerId": "C001",
   "customerName": "Apex Appliances Ltd",
   "segment": "Appliance",
@@ -710,7 +710,7 @@
    {
     "id": "4213090008/30/0001",
     "qtyMT": 250,
-    "date": "2026-09-03",
+    "date": "2026-08-27",
     "status": "OPEN"
    }
   ],
@@ -742,8 +742,8 @@
   ],
   "status": "PARTIALLY_DISPATCHED",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-17",
-  "fpCommit": "2026-10-15",
+  "reqDate": "2026-10-10",
+  "fpCommit": "2026-10-08",
   "customerId": "C004",
   "customerName": "Sunbeam Panels Pvt Ltd",
   "segment": "Prefab / Sandwich panels",
@@ -751,13 +751,13 @@
    {
     "id": "4213090009/10/0001",
     "qtyMT": 90,
-    "date": "2026-10-17",
+    "date": "2026-10-10",
     "status": "OPEN"
    },
    {
     "id": "4213090009/10/0002",
     "qtyMT": 60,
-    "date": "2026-10-24",
+    "date": "2026-10-17",
     "status": "OPEN"
    }
   ],
@@ -788,8 +788,8 @@
   ],
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-06",
-  "fpCommit": "2026-10-05",
+  "reqDate": "2026-09-29",
+  "fpCommit": "2026-09-28",
   "customerId": "C004",
   "customerName": "Sunbeam Panels Pvt Ltd",
   "segment": "Prefab / Sandwich panels",
@@ -797,7 +797,7 @@
    {
     "id": "4213090009/20/0001",
     "qtyMT": 60,
-    "date": "2026-10-06",
+    "date": "2026-09-29",
     "status": "OPEN"
    }
   ],
@@ -825,8 +825,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-25",
-  "fpCommit": "2026-09-24",
+  "reqDate": "2026-09-18",
+  "fpCommit": "2026-09-17",
   "customerId": "C004",
   "customerName": "Sunbeam Panels Pvt Ltd",
   "segment": "Prefab / Sandwich panels",
@@ -834,13 +834,13 @@
    {
     "id": "4213090009/30/0001",
     "qtyMT": 120,
-    "date": "2026-09-25",
+    "date": "2026-09-18",
     "status": "OPEN"
    },
    {
     "id": "4213090009/30/0002",
     "qtyMT": 80,
-    "date": "2026-10-02",
+    "date": "2026-09-25",
     "status": "OPEN"
    }
   ],
@@ -875,8 +875,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-19",
-  "fpCommit": "2026-09-15",
+  "reqDate": "2026-09-12",
+  "fpCommit": "2026-09-08",
   "customerId": "C007",
   "customerName": "Vega Consumer Durables",
   "segment": "Appliance",
@@ -884,7 +884,7 @@
    {
     "id": "4213090010/10/0001",
     "qtyMT": 19,
-    "date": "2026-09-19",
+    "date": "2026-09-12",
     "status": "DELIVERED"
    }
   ],
@@ -915,8 +915,8 @@
   ],
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-18",
-  "fpCommit": "2026-09-17",
+  "reqDate": "2026-09-11",
+  "fpCommit": "2026-09-10",
   "customerId": "C003",
   "customerName": "Kestrel Auto Components",
   "segment": "Automotive",
@@ -924,13 +924,13 @@
    {
     "id": "4213090011/10/0001",
     "qtyMT": 180,
-    "date": "2026-09-18",
+    "date": "2026-09-11",
     "status": "OPEN"
    },
    {
     "id": "4213090011/10/0002",
     "qtyMT": 120,
-    "date": "2026-09-25",
+    "date": "2026-09-18",
     "status": "OPEN"
    }
   ],
@@ -958,8 +958,8 @@
   "slitWidths": null,
   "status": "PARTIALLY_DISPATCHED",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-16",
-  "fpCommit": "2026-09-15",
+  "reqDate": "2026-09-09",
+  "fpCommit": "2026-09-08",
   "customerId": "C010",
   "customerName": "Pinnacle Sheet Metal",
   "segment": "Automotive",
@@ -967,7 +967,7 @@
    {
     "id": "4213090012/10/0001",
     "qtyMT": 80,
-    "date": "2026-09-16",
+    "date": "2026-09-09",
     "status": "OPEN"
    }
   ],
@@ -995,8 +995,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-08-28",
-  "fpCommit": "2026-08-27",
+  "reqDate": "2026-08-21",
+  "fpCommit": "2026-08-20",
   "customerId": "C008",
   "customerName": "Blue Ridge Infra",
   "segment": "Construction",
@@ -1004,7 +1004,7 @@
    {
     "id": "4213090012/20/0001",
     "qtyMT": 60,
-    "date": "2026-08-28",
+    "date": "2026-08-21",
     "status": "OPEN"
    }
   ],
@@ -1032,8 +1032,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-02",
-  "fpCommit": "2026-08-31",
+  "reqDate": "2026-08-26",
+  "fpCommit": "2026-08-24",
   "customerId": "C008",
   "customerName": "Blue Ridge Infra",
   "segment": "Construction",
@@ -1041,7 +1041,7 @@
    {
     "id": "4213090012/30/0001",
     "qtyMT": 60,
-    "date": "2026-09-02",
+    "date": "2026-08-26",
     "status": "OPEN"
    }
   ],
@@ -1069,8 +1069,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-19",
-  "fpCommit": "2026-09-18",
+  "reqDate": "2026-09-12",
+  "fpCommit": "2026-09-11",
   "customerId": "C010",
   "customerName": "Pinnacle Sheet Metal",
   "segment": "Automotive",
@@ -1078,7 +1078,7 @@
    {
     "id": "4213090013/10/0001",
     "qtyMT": 60,
-    "date": "2026-09-19",
+    "date": "2026-09-12",
     "status": "OPEN"
    }
   ],
@@ -1106,8 +1106,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-15",
-  "fpCommit": "2026-10-12",
+  "reqDate": "2026-10-08",
+  "fpCommit": "2026-10-05",
   "customerId": "C003",
   "customerName": "Kestrel Auto Components",
   "segment": "Automotive",
@@ -1115,13 +1115,13 @@
    {
     "id": "4213090014/10/0001",
     "qtyMT": 180,
-    "date": "2026-10-15",
+    "date": "2026-10-08",
     "status": "OPEN"
    },
    {
     "id": "4213090014/10/0002",
     "qtyMT": 120,
-    "date": "2026-10-22",
+    "date": "2026-10-15",
     "status": "OPEN"
    }
   ],
@@ -1152,8 +1152,8 @@
   ],
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-06",
-  "fpCommit": "2026-10-02",
+  "reqDate": "2026-09-29",
+  "fpCommit": "2026-09-25",
   "customerId": "C003",
   "customerName": "Kestrel Auto Components",
   "segment": "Automotive",
@@ -1161,7 +1161,7 @@
    {
     "id": "4213090014/20/0001",
     "qtyMT": 100,
-    "date": "2026-10-06",
+    "date": "2026-09-29",
     "status": "OPEN"
    }
   ],
@@ -1192,8 +1192,8 @@
   ],
   "status": "IN_PROGRESS",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-20",
-  "fpCommit": "2026-09-19",
+  "reqDate": "2026-09-13",
+  "fpCommit": "2026-09-12",
   "customerId": "C005",
   "customerName": "Horizon Ducting Works",
   "segment": "HVAC",
@@ -1201,7 +1201,7 @@
    {
     "id": "4213090015/10/0001",
     "qtyMT": 60,
-    "date": "2026-09-20",
+    "date": "2026-09-13",
     "status": "OPEN"
    }
   ],
@@ -1232,8 +1232,8 @@
   "dftTop": 25,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-21",
-  "fpCommit": "2026-09-17",
+  "reqDate": "2026-09-14",
+  "fpCommit": "2026-09-10",
   "customerId": "C005",
   "customerName": "Horizon Ducting Works",
   "segment": "HVAC",
@@ -1241,13 +1241,13 @@
    {
     "id": "4213090015/20/0001",
     "qtyMT": 120,
-    "date": "2026-09-21",
+    "date": "2026-09-14",
     "status": "OPEN"
    },
    {
     "id": "4213090015/20/0002",
     "qtyMT": 80,
-    "date": "2026-09-28",
+    "date": "2026-09-21",
     "status": "OPEN"
    }
   ],
@@ -1278,8 +1278,8 @@
   ],
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-15",
-  "fpCommit": "2026-09-14",
+  "reqDate": "2026-09-08",
+  "fpCommit": "2026-09-07",
   "customerId": "C005",
   "customerName": "Horizon Ducting Works",
   "segment": "HVAC",
@@ -1287,7 +1287,7 @@
    {
     "id": "4213090016/10/0001",
     "qtyMT": 250,
-    "date": "2026-09-15",
+    "date": "2026-09-08",
     "status": "OPEN"
    }
   ],
@@ -1315,8 +1315,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-08-30",
-  "fpCommit": "2026-08-27",
+  "reqDate": "2026-08-23",
+  "fpCommit": "2026-08-20",
   "customerId": "C005",
   "customerName": "Horizon Ducting Works",
   "segment": "HVAC",
@@ -1324,13 +1324,13 @@
    {
     "id": "4213090016/20/0001",
     "qtyMT": 90,
-    "date": "2026-08-30",
+    "date": "2026-08-23",
     "status": "OPEN"
    },
    {
     "id": "4213090016/20/0002",
     "qtyMT": 60,
-    "date": "2026-09-06",
+    "date": "2026-08-30",
     "status": "OPEN"
    }
   ],
@@ -1364,8 +1364,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-20",
-  "fpCommit": "2026-09-18",
+  "reqDate": "2026-09-13",
+  "fpCommit": "2026-09-11",
   "customerId": "C001",
   "customerName": "Apex Appliances Ltd",
   "segment": "Appliance",
@@ -1373,7 +1373,7 @@
    {
     "id": "4213090017/10/0001",
     "qtyMT": 120,
-    "date": "2026-09-20",
+    "date": "2026-09-13",
     "status": "OPEN"
    }
   ],
@@ -1401,8 +1401,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-08-21",
-  "fpCommit": "2026-08-19",
+  "reqDate": "2026-08-14",
+  "fpCommit": "2026-08-12",
   "customerId": "C009",
   "customerName": "Orbit Metal Forming",
   "segment": "General Engineering",
@@ -1410,7 +1410,7 @@
    {
     "id": "4213090018/10/0001",
     "qtyMT": 60,
-    "date": "2026-08-21",
+    "date": "2026-08-14",
     "status": "OPEN"
    }
   ],
@@ -1441,8 +1441,8 @@
   "dftTop": 25,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-11",
-  "fpCommit": "2026-09-10",
+  "reqDate": "2026-09-04",
+  "fpCommit": "2026-09-03",
   "customerId": "C009",
   "customerName": "Orbit Metal Forming",
   "segment": "General Engineering",
@@ -1450,7 +1450,7 @@
    {
     "id": "4213090018/20/0001",
     "qtyMT": 300,
-    "date": "2026-09-11",
+    "date": "2026-09-04",
     "status": "OPEN"
    }
   ],
@@ -1481,8 +1481,8 @@
   ],
   "status": "PARTIALLY_DISPATCHED",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-08-29",
-  "fpCommit": "2026-08-29",
+  "reqDate": "2026-08-22",
+  "fpCommit": "2026-08-22",
   "customerId": "C007",
   "customerName": "Vega Consumer Durables",
   "segment": "Appliance",
@@ -1490,7 +1490,7 @@
    {
     "id": "4213090019/10/0001",
     "qtyMT": 200,
-    "date": "2026-08-29",
+    "date": "2026-08-22",
     "status": "OPEN"
    }
   ],
@@ -1521,8 +1521,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-29",
-  "fpCommit": "2026-09-29",
+  "reqDate": "2026-09-22",
+  "fpCommit": "2026-09-22",
   "customerId": "C004",
   "customerName": "Sunbeam Panels Pvt Ltd",
   "segment": "Prefab / Sandwich panels",
@@ -1530,7 +1530,7 @@
    {
     "id": "4213090020/10/0001",
     "qtyMT": 17,
-    "date": "2026-09-29",
+    "date": "2026-09-22",
     "status": "DELIVERED"
    }
   ],
@@ -1561,8 +1561,8 @@
   ],
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-13",
-  "fpCommit": "2026-10-09",
+  "reqDate": "2026-10-06",
+  "fpCommit": "2026-10-02",
   "customerId": "C004",
   "customerName": "Sunbeam Panels Pvt Ltd",
   "segment": "Prefab / Sandwich panels",
@@ -1570,7 +1570,7 @@
    {
     "id": "4213090020/20/0001",
     "qtyMT": 200,
-    "date": "2026-10-13",
+    "date": "2026-10-06",
     "status": "OPEN"
    }
   ],
@@ -1601,8 +1601,8 @@
   ],
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-26",
-  "fpCommit": "2026-09-26",
+  "reqDate": "2026-09-19",
+  "fpCommit": "2026-09-19",
   "customerId": "C004",
   "customerName": "Sunbeam Panels Pvt Ltd",
   "segment": "Prefab / Sandwich panels",
@@ -1610,7 +1610,7 @@
    {
     "id": "4213090020/30/0001",
     "qtyMT": 250,
-    "date": "2026-09-26",
+    "date": "2026-09-19",
     "status": "OPEN"
    }
   ],
@@ -1641,8 +1641,8 @@
   ],
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-05",
-  "fpCommit": "2026-10-05",
+  "reqDate": "2026-09-28",
+  "fpCommit": "2026-09-28",
   "customerId": "C008",
   "customerName": "Blue Ridge Infra",
   "segment": "Construction",
@@ -1650,7 +1650,7 @@
    {
     "id": "4213090021/10/0001",
     "qtyMT": 120,
-    "date": "2026-10-05",
+    "date": "2026-09-28",
     "status": "OPEN"
    }
   ],
@@ -1678,8 +1678,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-05",
-  "fpCommit": "2026-10-02",
+  "reqDate": "2026-09-28",
+  "fpCommit": "2026-09-25",
   "customerId": "C006",
   "customerName": "NorthStar Pre-Engineered Buildings",
   "segment": "PEB",
@@ -1687,7 +1687,7 @@
    {
     "id": "4213090022/10/0001",
     "qtyMT": 180,
-    "date": "2026-10-05",
+    "date": "2026-09-28",
     "status": "OPEN"
    }
   ],
@@ -1715,8 +1715,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-04",
-  "fpCommit": "2026-10-01",
+  "reqDate": "2026-09-27",
+  "fpCommit": "2026-09-24",
   "customerId": "C004",
   "customerName": "Sunbeam Panels Pvt Ltd",
   "segment": "Prefab / Sandwich panels",
@@ -1724,7 +1724,7 @@
    {
     "id": "4213090022/20/0001",
     "qtyMT": 80,
-    "date": "2026-10-04",
+    "date": "2026-09-27",
     "status": "OPEN"
    }
   ],
@@ -1758,8 +1758,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-26",
-  "fpCommit": "2026-09-25",
+  "reqDate": "2026-09-19",
+  "fpCommit": "2026-09-18",
   "customerId": "C005",
   "customerName": "Horizon Ducting Works",
   "segment": "HVAC",
@@ -1767,7 +1767,7 @@
    {
     "id": "4213090023/10/0001",
     "qtyMT": 40,
-    "date": "2026-09-26",
+    "date": "2026-09-19",
     "status": "OPEN"
    }
   ],
@@ -1795,8 +1795,8 @@
   "slitWidths": null,
   "status": "IN_PROGRESS",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-29",
-  "fpCommit": "2026-09-26",
+  "reqDate": "2026-09-22",
+  "fpCommit": "2026-09-19",
   "customerId": "C005",
   "customerName": "Horizon Ducting Works",
   "segment": "HVAC",
@@ -1804,7 +1804,7 @@
    {
     "id": "4213090023/20/0001",
     "qtyMT": 100,
-    "date": "2026-09-29",
+    "date": "2026-09-22",
     "status": "OPEN"
    }
   ],
@@ -1835,8 +1835,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-10-15",
-  "fpCommit": "2026-10-12",
+  "reqDate": "2026-10-08",
+  "fpCommit": "2026-10-05",
   "customerId": "C005",
   "customerName": "Horizon Ducting Works",
   "segment": "HVAC",
@@ -1844,13 +1844,13 @@
    {
     "id": "4213090023/30/0001",
     "qtyMT": 180,
-    "date": "2026-10-15",
+    "date": "2026-10-08",
     "status": "OPEN"
    },
    {
     "id": "4213090023/30/0002",
     "qtyMT": 120,
-    "date": "2026-10-22",
+    "date": "2026-10-15",
     "status": "OPEN"
    }
   ],
@@ -1884,8 +1884,8 @@
   "dftTop": 15,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-28",
-  "fpCommit": "2026-09-26",
+  "reqDate": "2026-09-21",
+  "fpCommit": "2026-09-19",
   "customerId": "C004",
   "customerName": "Sunbeam Panels Pvt Ltd",
   "segment": "Prefab / Sandwich panels",
@@ -1893,7 +1893,7 @@
    {
     "id": "4213090024/10/0001",
     "qtyMT": 90,
-    "date": "2026-09-28",
+    "date": "2026-09-21",
     "status": "OPEN"
    }
   ],
@@ -1921,8 +1921,8 @@
   "slitWidths": null,
   "status": "PARTIALLY_DISPATCHED",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-05",
-  "fpCommit": "2026-09-03",
+  "reqDate": "2026-08-29",
+  "fpCommit": "2026-08-27",
   "customerId": "C004",
   "customerName": "Sunbeam Panels Pvt Ltd",
   "segment": "Prefab / Sandwich panels",
@@ -1930,7 +1930,7 @@
    {
     "id": "4213090024/20/0001",
     "qtyMT": 80,
-    "date": "2026-09-05",
+    "date": "2026-08-29",
     "status": "OPEN"
    }
   ],
@@ -1961,8 +1961,8 @@
   ],
   "status": "IN_PROGRESS",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-27",
-  "fpCommit": "2026-09-25",
+  "reqDate": "2026-09-20",
+  "fpCommit": "2026-09-18",
   "customerId": "C002",
   "customerName": "Meridian Roofing Solutions",
   "segment": "Construction",
@@ -1970,7 +1970,7 @@
    {
     "id": "4213090025/10/0001",
     "qtyMT": 120,
-    "date": "2026-09-27",
+    "date": "2026-09-20",
     "status": "OPEN"
    }
   ],
@@ -1998,8 +1998,8 @@
   "slitWidths": null,
   "status": "IN_PROGRESS",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-08",
-  "fpCommit": "2026-09-08",
+  "reqDate": "2026-09-01",
+  "fpCommit": "2026-09-01",
   "customerId": "C004",
   "customerName": "Sunbeam Panels Pvt Ltd",
   "segment": "Prefab / Sandwich panels",
@@ -2007,7 +2007,7 @@
    {
     "id": "4213090026/10/0001",
     "qtyMT": 100,
-    "date": "2026-09-08",
+    "date": "2026-09-01",
     "status": "OPEN"
    }
   ],
@@ -2042,8 +2042,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-30",
-  "fpCommit": "2026-09-29",
+  "reqDate": "2026-09-23",
+  "fpCommit": "2026-09-22",
   "customerId": "C001",
   "customerName": "Apex Appliances Ltd",
   "segment": "Appliance",
@@ -2051,7 +2051,7 @@
    {
     "id": "4213090027/10/0001",
     "qtyMT": 200,
-    "date": "2026-09-30",
+    "date": "2026-09-23",
     "status": "OPEN"
    }
   ],
@@ -2086,8 +2086,8 @@
   "dftTop": 25,
   "dftTol": 3,
   "dftBack": 10,
-  "reqDate": "2026-09-17",
-  "fpCommit": "2026-09-13",
+  "reqDate": "2026-09-10",
+  "fpCommit": "2026-09-06",
   "customerId": "C001",
   "customerName": "Apex Appliances Ltd",
   "segment": "Appliance",
@@ -2095,13 +2095,13 @@
    {
     "id": "4213090027/20/0001",
     "qtyMT": 120,
-    "date": "2026-09-17",
+    "date": "2026-09-10",
     "status": "OPEN"
    },
    {
     "id": "4213090027/20/0002",
     "qtyMT": 80,
-    "date": "2026-09-24",
+    "date": "2026-09-17",
     "status": "OPEN"
    }
   ],
@@ -2136,8 +2136,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-10-06",
-  "fpCommit": "2026-10-06",
+  "reqDate": "2026-09-29",
+  "fpCommit": "2026-09-29",
   "customerId": "C001",
   "customerName": "Apex Appliances Ltd",
   "segment": "Appliance",
@@ -2145,7 +2145,7 @@
    {
     "id": "4213090027/30/0001",
     "qtyMT": 120,
-    "date": "2026-10-06",
+    "date": "2026-09-29",
     "status": "OPEN"
    }
   ],
@@ -2177,8 +2177,8 @@
   ],
   "status": "PARTIALLY_DISPATCHED",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-08-22",
-  "fpCommit": "2026-08-22",
+  "reqDate": "2026-08-15",
+  "fpCommit": "2026-08-15",
   "customerId": "C006",
   "customerName": "NorthStar Pre-Engineered Buildings",
   "segment": "PEB",
@@ -2186,7 +2186,7 @@
    {
     "id": "4213090028/10/0001",
     "qtyMT": 80,
-    "date": "2026-08-22",
+    "date": "2026-08-15",
     "status": "OPEN"
    }
   ],
@@ -2217,8 +2217,8 @@
   ],
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-17",
-  "fpCommit": "2026-09-14",
+  "reqDate": "2026-09-10",
+  "fpCommit": "2026-09-07",
   "customerId": "C003",
   "customerName": "Kestrel Auto Components",
   "segment": "Automotive",
@@ -2226,7 +2226,7 @@
    {
     "id": "4213090029/10/0001",
     "qtyMT": 100,
-    "date": "2026-09-17",
+    "date": "2026-09-10",
     "status": "OPEN"
    }
   ],
@@ -2254,8 +2254,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-10",
-  "fpCommit": "2026-10-06",
+  "reqDate": "2026-10-03",
+  "fpCommit": "2026-09-29",
   "customerId": "C009",
   "customerName": "Orbit Metal Forming",
   "segment": "General Engineering",
@@ -2263,7 +2263,7 @@
    {
     "id": "4213090030/10/0001",
     "qtyMT": 60,
-    "date": "2026-10-10",
+    "date": "2026-10-03",
     "status": "OPEN"
    }
   ],
@@ -2298,8 +2298,8 @@
   "dftTop": 25,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-10-15",
-  "fpCommit": "2026-10-13",
+  "reqDate": "2026-10-08",
+  "fpCommit": "2026-10-06",
   "customerId": "C009",
   "customerName": "Orbit Metal Forming",
   "segment": "General Engineering",
@@ -2307,7 +2307,7 @@
    {
     "id": "4213090030/20/0001",
     "qtyMT": 80,
-    "date": "2026-10-15",
+    "date": "2026-10-08",
     "status": "OPEN"
    }
   ],
@@ -2335,8 +2335,8 @@
   "slitWidths": null,
   "status": "IN_PROGRESS",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-18",
-  "fpCommit": "2026-09-17",
+  "reqDate": "2026-09-11",
+  "fpCommit": "2026-09-10",
   "customerId": "C003",
   "customerName": "Kestrel Auto Components",
   "segment": "Automotive",
@@ -2344,7 +2344,7 @@
    {
     "id": "4213090031/10/0001",
     "qtyMT": 60,
-    "date": "2026-09-18",
+    "date": "2026-09-11",
     "status": "OPEN"
    }
   ],
@@ -2372,8 +2372,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-27",
-  "fpCommit": "2026-09-27",
+  "reqDate": "2026-09-20",
+  "fpCommit": "2026-09-20",
   "customerId": "C003",
   "customerName": "Kestrel Auto Components",
   "segment": "Automotive",
@@ -2381,7 +2381,7 @@
    {
     "id": "4213090031/20/0001",
     "qtyMT": 60,
-    "date": "2026-09-27",
+    "date": "2026-09-20",
     "status": "OPEN"
    }
   ],
@@ -2409,8 +2409,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-08-17",
-  "fpCommit": "2026-08-16",
+  "reqDate": "2026-08-10",
+  "fpCommit": "2026-08-09",
   "customerId": "C008",
   "customerName": "Blue Ridge Infra",
   "segment": "Construction",
@@ -2418,13 +2418,13 @@
    {
     "id": "4213090032/10/0001",
     "qtyMT": 150,
-    "date": "2026-08-17",
+    "date": "2026-08-10",
     "status": "OPEN"
    },
    {
     "id": "4213090032/10/0002",
     "qtyMT": 100,
-    "date": "2026-08-24",
+    "date": "2026-08-17",
     "status": "OPEN"
    }
   ],
@@ -2452,8 +2452,8 @@
   "slitWidths": null,
   "status": "IN_PROGRESS",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-08-30",
-  "fpCommit": "2026-08-27",
+  "reqDate": "2026-08-23",
+  "fpCommit": "2026-08-20",
   "customerId": "C008",
   "customerName": "Blue Ridge Infra",
   "segment": "Construction",
@@ -2461,7 +2461,7 @@
    {
     "id": "4213090032/20/0001",
     "qtyMT": 60,
-    "date": "2026-08-30",
+    "date": "2026-08-23",
     "status": "OPEN"
    }
   ],
@@ -2492,8 +2492,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-08-28",
-  "fpCommit": "2026-08-26",
+  "reqDate": "2026-08-21",
+  "fpCommit": "2026-08-19",
   "customerId": "C007",
   "customerName": "Vega Consumer Durables",
   "segment": "Appliance",
@@ -2501,13 +2501,13 @@
    {
     "id": "4213090033/10/0001",
     "qtyMT": 72,
-    "date": "2026-08-28",
+    "date": "2026-08-21",
     "status": "OPEN"
    },
    {
     "id": "4213090033/10/0002",
     "qtyMT": 48,
-    "date": "2026-09-04",
+    "date": "2026-08-28",
     "status": "OPEN"
    }
   ],
@@ -2535,8 +2535,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-15",
-  "fpCommit": "2026-10-13",
+  "reqDate": "2026-10-08",
+  "fpCommit": "2026-10-06",
   "customerId": "C010",
   "customerName": "Pinnacle Sheet Metal",
   "segment": "Automotive",
@@ -2544,7 +2544,7 @@
    {
     "id": "4213090034/10/0001",
     "qtyMT": 200,
-    "date": "2026-10-15",
+    "date": "2026-10-08",
     "status": "OPEN"
    }
   ],
@@ -2572,8 +2572,8 @@
   "slitWidths": null,
   "status": "PARTIALLY_DISPATCHED",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-08",
-  "fpCommit": "2026-10-08",
+  "reqDate": "2026-10-01",
+  "fpCommit": "2026-10-01",
   "customerId": "C010",
   "customerName": "Pinnacle Sheet Metal",
   "segment": "Automotive",
@@ -2581,7 +2581,7 @@
    {
     "id": "4213090034/20/0001",
     "qtyMT": 80,
-    "date": "2026-10-08",
+    "date": "2026-10-01",
     "status": "OPEN"
    }
   ],
@@ -2613,8 +2613,8 @@
   ],
   "status": "PARTIALLY_DISPATCHED",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-27",
-  "fpCommit": "2026-09-25",
+  "reqDate": "2026-09-20",
+  "fpCommit": "2026-09-18",
   "customerId": "C005",
   "customerName": "Horizon Ducting Works",
   "segment": "HVAC",
@@ -2622,13 +2622,13 @@
    {
     "id": "4213090035/10/0001",
     "qtyMT": 180,
-    "date": "2026-09-27",
+    "date": "2026-09-20",
     "status": "OPEN"
    },
    {
     "id": "4213090035/10/0002",
     "qtyMT": 120,
-    "date": "2026-10-04",
+    "date": "2026-09-27",
     "status": "OPEN"
    }
   ],
@@ -2660,8 +2660,8 @@
   ],
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-27",
-  "fpCommit": "2026-09-27",
+  "reqDate": "2026-09-20",
+  "fpCommit": "2026-09-20",
   "customerId": "C005",
   "customerName": "Horizon Ducting Works",
   "segment": "HVAC",
@@ -2669,7 +2669,7 @@
    {
     "id": "4213090035/20/0001",
     "qtyMT": 80,
-    "date": "2026-09-27",
+    "date": "2026-09-20",
     "status": "OPEN"
    }
   ],
@@ -2701,8 +2701,8 @@
   ],
   "status": "PARTIALLY_DISPATCHED",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-11",
-  "fpCommit": "2026-09-08",
+  "reqDate": "2026-09-04",
+  "fpCommit": "2026-09-01",
   "customerId": "C005",
   "customerName": "Horizon Ducting Works",
   "segment": "HVAC",
@@ -2710,13 +2710,13 @@
    {
     "id": "4213090035/30/0001",
     "qtyMT": 90,
-    "date": "2026-09-11",
+    "date": "2026-09-04",
     "status": "OPEN"
    },
    {
     "id": "4213090035/30/0002",
     "qtyMT": 60,
-    "date": "2026-09-18",
+    "date": "2026-09-11",
     "status": "OPEN"
    }
   ],
@@ -2747,8 +2747,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-09-04",
-  "fpCommit": "2026-09-01",
+  "reqDate": "2026-08-28",
+  "fpCommit": "2026-08-25",
   "customerId": "C002",
   "customerName": "Meridian Roofing Solutions",
   "segment": "Construction",
@@ -2756,7 +2756,7 @@
    {
     "id": "4213090036/10/0001",
     "qtyMT": 300,
-    "date": "2026-09-04",
+    "date": "2026-08-28",
     "status": "OPEN"
    }
   ],
@@ -2784,8 +2784,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-18",
-  "fpCommit": "2026-09-17",
+  "reqDate": "2026-09-11",
+  "fpCommit": "2026-09-10",
   "customerId": "C002",
   "customerName": "Meridian Roofing Solutions",
   "segment": "Construction",
@@ -2793,7 +2793,7 @@
    {
     "id": "4213090036/20/0001",
     "qtyMT": 40,
-    "date": "2026-09-18",
+    "date": "2026-09-11",
     "status": "OPEN"
    }
   ],
@@ -2821,8 +2821,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-08-24",
-  "fpCommit": "2026-08-21",
+  "reqDate": "2026-08-17",
+  "fpCommit": "2026-08-14",
   "customerId": "C002",
   "customerName": "Meridian Roofing Solutions",
   "segment": "Construction",
@@ -2830,7 +2830,7 @@
    {
     "id": "4213090036/30/0001",
     "qtyMT": 250,
-    "date": "2026-08-24",
+    "date": "2026-08-17",
     "status": "OPEN"
    }
   ],
@@ -2858,8 +2858,8 @@
   "slitWidths": null,
   "status": "IN_PROGRESS",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-18",
-  "fpCommit": "2026-09-15",
+  "reqDate": "2026-09-11",
+  "fpCommit": "2026-09-08",
   "customerId": "C006",
   "customerName": "NorthStar Pre-Engineered Buildings",
   "segment": "PEB",
@@ -2867,7 +2867,7 @@
    {
     "id": "4213090037/10/0001",
     "qtyMT": 60,
-    "date": "2026-09-18",
+    "date": "2026-09-11",
     "status": "OPEN"
    }
   ],
@@ -2895,8 +2895,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-10-20",
-  "fpCommit": "2026-10-19",
+  "reqDate": "2026-10-13",
+  "fpCommit": "2026-10-12",
   "customerId": "C006",
   "customerName": "NorthStar Pre-Engineered Buildings",
   "segment": "PEB",
@@ -2904,7 +2904,7 @@
    {
     "id": "4213090037/20/0001",
     "qtyMT": 80,
-    "date": "2026-10-20",
+    "date": "2026-10-13",
     "status": "OPEN"
    }
   ],
@@ -2938,8 +2938,8 @@
   "dftTop": 25,
   "dftTol": 3,
   "dftBack": 10,
-  "reqDate": "2026-09-27",
-  "fpCommit": "2026-09-27",
+  "reqDate": "2026-09-20",
+  "fpCommit": "2026-09-20",
   "customerId": "C010",
   "customerName": "Pinnacle Sheet Metal",
   "segment": "Automotive",
@@ -2947,7 +2947,7 @@
    {
     "id": "4213090038/10/0001",
     "qtyMT": 20,
-    "date": "2026-09-27",
+    "date": "2026-09-20",
     "status": "DELIVERED"
    }
   ],
@@ -2978,8 +2978,8 @@
   ],
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-22",
-  "fpCommit": "2026-09-21",
+  "reqDate": "2026-09-15",
+  "fpCommit": "2026-09-14",
   "customerId": "C010",
   "customerName": "Pinnacle Sheet Metal",
   "segment": "Automotive",
@@ -2987,7 +2987,7 @@
    {
     "id": "4213090039/10/0001",
     "qtyMT": 150,
-    "date": "2026-09-22",
+    "date": "2026-09-15",
     "status": "OPEN"
    }
   ],
@@ -3015,8 +3015,8 @@
   "slitWidths": null,
   "status": "OPEN",
   "ontologyDomain": "COMMERCIAL & PLANNING",
-  "reqDate": "2026-09-27",
-  "fpCommit": "2026-09-24",
+  "reqDate": "2026-09-20",
+  "fpCommit": "2026-09-17",
   "customerId": "C007",
   "customerName": "Vega Consumer Durables",
   "segment": "Appliance",
@@ -3024,7 +3024,7 @@
    {
     "id": "4213090040/10/0001",
     "qtyMT": 200,
-    "date": "2026-09-27",
+    "date": "2026-09-20",
     "status": "OPEN"
    }
   ],
@@ -3059,8 +3059,8 @@
   "dftTop": 20,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-10-11",
-  "fpCommit": "2026-10-09",
+  "reqDate": "2026-10-04",
+  "fpCommit": "2026-10-02",
   "customerId": "C007",
   "customerName": "Vega Consumer Durables",
   "segment": "Appliance",
@@ -3068,7 +3068,7 @@
    {
     "id": "4213090040/20/0001",
     "qtyMT": 100,
-    "date": "2026-10-11",
+    "date": "2026-10-04",
     "status": "OPEN"
    }
   ],
@@ -3099,8 +3099,8 @@
   "dftTop": 25,
   "dftTol": 3,
   "dftBack": 7,
-  "reqDate": "2026-10-05",
-  "fpCommit": "2026-10-01",
+  "reqDate": "2026-09-28",
+  "fpCommit": "2026-09-24",
   "customerId": "C007",
   "customerName": "Vega Consumer Durables",
   "segment": "Appliance",
@@ -3108,13 +3108,13 @@
    {
     "id": "4213090040/30/0001",
     "qtyMT": 120,
-    "date": "2026-10-05",
+    "date": "2026-09-28",
     "status": "OPEN"
    },
    {
     "id": "4213090040/30/0002",
     "qtyMT": 80,
-    "date": "2026-10-12",
+    "date": "2026-10-05",
     "status": "OPEN"
    }
   ],

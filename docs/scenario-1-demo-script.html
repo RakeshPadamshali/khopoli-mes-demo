@@ -32,7 +32,7 @@
 <div class="sub">Presenter script for the Khopoli NextGen MES product demo · Annexure A, mandatory scenario · 45–60 minutes</div>
 <div class="meta">
   <span>Demo: <b>https://rakeshpadamshali.github.io/khopoli-mes-demo/</b></span>
-  <span>As-of moment: <b>Tue 15 Sep 2026, 10:30, shift A</b></span>
+  <span>As-of moment: <b>the date in the demo header, 10:30, shift A</b> (the dataset is regenerated to the current date)</span>
   <span>Hero order: <b>4213090017/10</b> — Apex Appliances, DX51D+Z 0.50 × 1220, Z120, RMP RAL 9002, 120 t</span>
   <span>Hero HR coil: <b>HRC-VJ-2608-0471</b> — Vijayanagar heat H26-VJ-7731 / slab SLB-VJ-7731-02</span>
   <span>RFP references: <b>§3.1–3.2, 3.2.4, 4.1–4.3</b></span>
@@ -42,7 +42,8 @@
 <h2>Before you start (2 minutes)</h2>
 <ul>
   <li>Open the demo and click <span class="btn">Reset demo</span> in the header. Then open the tabs from the sidebar in this order: Sales Orders &amp; TDC, Routes &amp; Schedules, Material Allocator, Shop-floor Execution, Quality &amp; Defects, Slitting · Packing · Dispatch, Genealogy, Integration Monitor. Tabs keep their state, so you can jump back and forth.</li>
-  <li>Frame the moment: it is Tue 15 Sep 10:30. The hero coil has already been pickled, cold-rolled and galvanized (that history is on screen); it came off the colour-coating line at 01:40 today. The demo performs the remaining steps live.</li>
+  <li>Frame the moment: it is 10:30 on the as-of day shown in the header. The hero coil has already been pickled, cold-rolled and galvanized (that history is on screen); it came off the colour-coating line at 01:40 this morning. The demo performs the remaining steps live.</li>
+  <li>Before the demo day, run <code>python tools/generate_data.py</code> and push: every date in the dataset moves to the current date while ids and the story stay the same.</li>
   <li>One dataset runs through every step: the same order, coil and defects appear on every page, as Annexure A requires.</li>
 </ul>
 
@@ -58,12 +59,12 @@
       <td>Left card = SAP route order (manual). Right card = Factory Planner MFG order <code>FPM-4213090017-10</code> with process path PKL › CRM › CGL › CCL › SLT › PKG, yield string, route string, material tree and the schedule line. Click <span class="btn">Use SAP route</span> / <span class="btn">Use FP route</span> to show the planner's choice. The line gantt below outlines the hero bars in red; the schedule table has Operations <span class="btn">Confirm</span> buttons.</td></tr>
     <tr><td class="n">3</td><td class="step">Allocate a free-stock HR coil batch to the order via a Material Allocator suggestion</td>
       <td class="page"><span class="pg">Material Allocator</span> (hero item is first in the list).</td>
-      <td>The panel shows the coil already allocated on 8 Sep from an MA suggestion, plus three ranked free HR coils for the remaining 98.6 t with score and reasons (grade family, width with trim, reduction feasible, FIFO age). Two-step authorisation: click <span class="btn">PPC approve</span>, then <span class="btn">QC approve</span>, then <span class="btn">Allocate</span> on rank 1. The allocation log, yard status and BTA update; the reallocation message goes to SAP.</td></tr>
+      <td>The panel shows the coil already allocated a week ago from an MA suggestion, plus three ranked free HR coils for the remaining 98.6 t with score and reasons (grade family, width with trim, reduction feasible, FIFO age). Two-step authorisation: click <span class="btn">PPC approve</span>, then <span class="btn">QC approve</span>, then <span class="btn">Allocate</span> on rank 1. The allocation log, yard status and BTA update; the reallocation message goes to SAP.</td></tr>
     <tr><td class="n">4</td><td class="step">Charge the batch at Pickling, then CRM — PDI generation and PDO confirmation via middleware</td>
-      <td class="page"><span class="pg">Shop-floor Execution</span> → <b>Pickling Line</b> tab. Row 1 is running: click <span class="btn">Receive PDO</span>, then <span class="btn">Confirm production</span> → <span class="btn">Post to SAP</span>. Row 2 becomes chargeable: click <span class="btn">Charge</span>. Repeat on the <b>Cold Roll Mill</b> tab.</td>
+      <td class="page"><span class="pg">Shop-floor Execution</span> (opens on the <b>Pickling Line</b> tab; the Action column is first). Row 1 is running: click <span class="btn">Receive PDO</span>, then <span class="btn">Confirm production</span> → <span class="btn">Post to SAP</span>. Row 2 becomes chargeable: click <span class="btn">Charge</span>. Repeat on the <b>Cold Roll Mill</b> tab.</td>
       <td>Charging generates the PDI (targets JSON) and shows the L2 acknowledgement; the PDO brings the actuals back and the confirmation posts the mass balance to SAP. In the “PDO vs PDI” dropdown pick the ★ entries for the hero coil's own history: PKL <code>HRC-VJ-2608-0471 → HPO-KHP-2609-0018</code> (acid 13.0 %), CRM <code>HPO → CRF-KHP-2609-0018</code> (exit 0.49 mm). Say that every message travels MES → middleware → L2 gateway, never point to point.</td></tr>
     <tr><td class="n">5</td><td class="step">Move the CR full-hard coil to CGL — genealogy link from HR coil forward</td>
-      <td class="page">Still on Shop-floor: <b>CGL</b> tab, dropdown entry <code>CRF-KHP-2609-0018 → GIC-KHP-2609-0017</code> (12 Sep).</td>
+      <td class="page">Still on Shop-floor: <b>CGL</b> tab, dropdown entry <code>CRF-KHP-2609-0018 → GIC-KHP-2609-0017</code> (three days ago).</td>
       <td>The input and output coil ids are the consumesInput link. Optionally flash the <span class="pg">Genealogy</span> tab: HRC → HPO → CRF → GIC on one line.</td></tr>
     <tr><td class="n">6</td><td class="step">At CGL: zinc coating-weight target-band check and auto-comparison of PDO actuals vs PDI targets, deviation flagged</td>
       <td class="page">Same CGL comparison table. For a hard deviation pick <code>PDO-CGL-0016</code> in the dropdown.</td>
@@ -73,7 +74,7 @@
       <td>16.8 µm is below the 17.0 minimum (20 ±3): certificate FAIL, dispatch gate blocked, the auto-flagged defect <code>DEF-2609-0003</code> is confirmed, and the downgrade suggestion appears with four candidate orders validated parameter by parameter. Sunbeam Panels <code>4213090024/10</code> (same spec, DFT 15 ±3) accepts the coil. Click <span class="btn">Re-allocate coil to this order</span>, or show the override (QC Head) and rework options as the manual workflow.</td></tr>
     <tr><td class="n">8</td><td class="step">Slit and pack the coil — packing movement and vendor-wise packing bill</td>
       <td class="page"><span class="pg">Slitting · Packing · Dispatch</span> (hero card at the top). Click <span class="btn">Run slitting plan</span>, then <span class="btn">Pack &amp; print label</span>.</td>
-      <td>The plan cuts 1220 mm into 610 + 610 (children <code>SLC-KHP-2609-0032 / 0033</code>) with the genealogy link and scrap posting. Pack <code>PK-KHP-2609-0018</code> (18.37 t, Shree Packers, domestic VCI + stretch) gets a QR label; the packing movement posts the storage-location change and the vendor bill table gains the week-38 line.</td></tr>
+      <td>The plan cuts 1220 mm into 610 + 610 (children <code>SLC-KHP-2609-0032 / 0033</code>) with the genealogy link and scrap posting. Pack <code>PK-KHP-2609-0018</code> (18.37 t, Shree Packers, domestic VCI + stretch) gets a QR label; the packing movement posts the storage-location change and the vendor bill table gains the current week's line.</td></tr>
     <tr><td class="n">9</td><td class="step">Dispatch the batch — show the dispatch message structure that goes to SAP</td>
       <td class="page">Same page: click <span class="btn">Dispatch &amp; send message to SAP</span>.</td>
       <td>The JSON on the right is the DELVRY07 / SHPCON structure sent through the middleware: header (plant, dispatch <code>DSP-0024</code>, order and schedule line, vehicle MH-12-KT-4471), items (batch, material, quantity, coils, quality status CLEARED), totals and correlation id. Dispatched-batch information returns from SAP.</td></tr>

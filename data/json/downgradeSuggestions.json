@@ -4,13 +4,13 @@
   "unitId": "PPG-KHP-2609-0011",
   "trigger": "DEF: DFT deviation (PDO auto-comparison)",
   "reason": "DFT top 16.8 µm below 17.0 µm minimum of SO 4213090017/10 (20 ±3)",
-  "suggestedAt": "2026-09-15T01:45:00",
+  "suggestedAt": "2026-09-08T01:45:00",
   "suggestion": "Re-allocate to an open order whose DFT spec accepts 16.8 µm; else downgrade to secondary (RAL 9002 stock)",
   "candidates": [
    {
     "itemId": "4213090024/10",
     "customerName": "Sunbeam Panels Pvt Ltd",
-    "reqDate": "2026-09-28",
+    "reqDate": "2026-09-21",
     "validation": [
      {
       "param": "Grade",
@@ -60,7 +60,7 @@
    {
     "itemId": "4213090033/10",
     "customerName": "Vega Consumer Durables",
-    "reqDate": "2026-08-28",
+    "reqDate": "2026-08-21",
     "validation": [
      {
       "param": "Grade",
@@ -110,7 +110,7 @@
    {
     "itemId": "4213090036/10",
     "customerName": "Meridian Roofing Solutions",
-    "reqDate": "2026-09-04",
+    "reqDate": "2026-08-28",
     "validation": [
      {
       "param": "Grade",
@@ -160,7 +160,7 @@
    {
     "itemId": "4213090001/20",
     "customerName": "Apex Appliances Ltd",
-    "reqDate": "2026-09-05",
+    "reqDate": "2026-08-29",
     "validation": [
      {
       "param": "Grade",
@@ -221,7 +221,7 @@
   "unitId": "GIC-KHP-2609-0011",
   "trigger": "DEF: Coating weight deviation",
   "reason": "Coating weight deviation outside sales-order tolerance",
-  "suggestedAt": "2026-09-06T21:07:19",
+  "suggestedAt": "2026-08-30T21:07:19",
   "suggestion": "Downgrade to secondary grade",
   "candidates": [],
   "fallback": {
@@ -237,7 +237,7 @@
   "unitId": "GLC-KHP-2609-0001",
   "trigger": "DEF: Coating weight deviation",
   "reason": "Coating weight deviation outside sales-order tolerance",
-  "suggestedAt": "2026-08-30T21:11:35",
+  "suggestedAt": "2026-08-23T21:11:35",
   "suggestion": "Downgrade to secondary grade",
   "candidates": [],
   "fallback": {
