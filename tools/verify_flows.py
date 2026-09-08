@@ -100,6 +100,13 @@ try:
         pg.fill("#ssearch", slt_coil); pg.wait_for_timeout(200)
         check("planning: schedule search filters to the coil", pg.evaluate("document.querySelectorAll('#sched tbody tr').length") == 1, slt_coil)
         pg.fill("#ssearch", ""); pg.wait_for_timeout(200)
+        # 7b''. coil plan: one row per coil with route chips, hero expanded, another row expands to its operation schedule
+        check("planning: coil plan lists the coils of the load with route chips", pg.evaluate("document.querySelectorAll('#cplan tbody tr[data-exp]').length") >= 100 and pg.evaluate("document.querySelectorAll('#cplan .rchip').length") >= 400)
+        check("planning: hero coil pre-expanded with its operation schedule", pg.evaluate("document.querySelectorAll('#cplan tr.detail').length") == 1 and "operation schedule" in txt().lower())
+        pg.click("(//tr[@data-exp])[3]"); pg.wait_for_timeout(300)
+        check("planning: clicking a coil row expands its steps", pg.evaluate("document.querySelectorAll('#cplan tr.detail').length") == 2 and pg.evaluate("document.querySelectorAll('#cplan .ops tbody tr').length") >= 8)
+        pg.fill("#cpsearch", slt_coil); pg.wait_for_timeout(200)
+        check("planning: coil plan search", pg.evaluate("document.querySelectorAll('#cplan tbody tr[data-exp]').length") == 1); pg.fill("#cpsearch", ""); pg.wait_for_timeout(200)
         # 7c. Scenario 2 step 4: reroute a planned slitter coil to the recoiling line, then a rework PO on CGL
         pg.click("#sched tr:not(.hero) [data-rr]"); pg.wait_for_timeout(300); pg.select_option("#rropt", "REROUTE:RWL"); pg.click("#rrgo"); pg.wait_for_timeout(400)
         check("planning: coil rerouted SLT -> RWL", pg.evaluate("document.getElementById('linesel').value") == "RWL" and pg.evaluate("KHPState.get('reroutes')[0].kind") == "REROUTE" and "REROUTE from SLT" in txt())
