@@ -2,7 +2,7 @@
    Each page sets window.KHP_PAGE / KHP_TITLE / KHP_ICON before loading this. Hidden when embedded in index.html. */
 (function () {
   var NAV = [
-    ['Planning', [['home', 'Plant Dashboard', 'fa-gauge-high'], ['orders', 'Sales Orders & TDC', 'fa-file-invoice'], ['planning', 'Routes & Schedules', 'fa-route'], ['coilplan', 'Coil Plan', 'fa-list-ol'], ['allocation', 'Material Allocator', 'fa-boxes-packing']]],
+    ['Planning', [['home', 'Plant Dashboard', 'fa-gauge-high'], ['orders', 'Sales Orders & TDC', 'fa-file-invoice'], ['planning', 'Routes & Schedules', 'fa-route'], ['coilplan', 'Coil Plan', 'fa-list-ol'], ['clubbing', 'Order Clubbing', 'fa-object-group'], ['allocation', 'Material Allocator', 'fa-boxes-packing']]],
     ['Execution', [['execution', 'Shop-floor Execution', 'fa-industry'], ['packing', 'Slitting · Packing · Dispatch', 'fa-truck-ramp-box']]],
     ['Quality & Trace', [['quality', 'Quality & Defects', 'fa-microscope'], ['genealogy', 'Genealogy · Digital Thread', 'fa-diagram-project']]],
     ['Integration', [['integration', 'Integration Monitor', 'fa-tower-broadcast']]],

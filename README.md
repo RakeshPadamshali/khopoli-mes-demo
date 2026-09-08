@@ -5,7 +5,7 @@ Clickable, self-contained demo for the **JSW Steel Coated Products — Khopoli**
 | Scenario | Where in the demo |
 |---|---|
 | **S1 Golden Thread: order → dispatch (mandatory)** | Sales Orders & TDC → Routes & Schedules → Material Allocator → Shop-floor Execution (PDI/PDO) → Quality (zinc band, DFT) → Slitting · Packing · Dispatch → Genealogy |
-| **S2 Planning & batch allocation** | Routes & Schedules (leftover-order feed → clubbing proposals → multi-slit plan, APS rush re-sequencing, reroute to the alternate line → rework production order generated automatically) · Coil Plan (route + planned schedule per coil) · Material Allocator (batch swap, BTA/BTP) |
+| **S2 Planning & batch allocation** | Order Clubbing (candidate pool by spec family → leftover-order feed → slit-width / length / campaign proposals → internal SO + multi-slit plan) · Routes & Schedules (APS rush re-sequencing, reroute to the alternate line → rework production order generated automatically) · Coil Plan (route + planned schedule per coil) · Material Allocator (batch swap, BTA/BTP) |
 | S3 partial — delays, mass balance | Shop-floor Execution (stoppage with delay + equipment defect codes, OEE, imbalance flag) |
 | **S4 Quality, defect propagation, ontology** | Quality & Defects · Genealogy · Digital Thread (propagation, Defect → Equipment → Line → Plant, triples) |
 | **S5 Integration resilience** | Integration Monitor (stuck PDI queue, malformed IDoc, detect → alert → replay, contract versions) |

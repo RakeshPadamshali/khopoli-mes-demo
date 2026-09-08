@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Order Clubbing · Khopoli NextGen MES</title>
+<link rel="stylesheet" href="assets/vendor/roboto/roboto.css"><link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css"><link rel="stylesheet" href="assets/khp-shell.css">
+<style>
+  .tbl-wrap { max-height:none; }
+  .feed { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+  .fam td { background:#f3f6f9 !important; font-weight:600; color:#1f2733; } .fam .cnt { font-weight:400; color:var(--color-text-muted); margin-left:6px; }
+  .pgrid { display:grid; grid-template-columns:1fr 1fr; gap:12px; } @media (max-width:1100px){ .pgrid{grid-template-columns:1fr;} }
+  .prop { border:1px solid var(--color-border); border-radius:8px; background:#fff; padding:10px 12px; } .prop.acc { border-color:#2e9b45; box-shadow:0 0 0 2px #e8f5e9; }
+  .prop .t { display:flex; align-items:center; gap:8px; font-weight:600; margin-bottom:6px; } .prop .t .right { margin-left:auto; font-weight:400; color:var(--color-text-muted); font-size:11px; }
+  .prop table.tbl td, .prop table.tbl th { padding:4px 7px; }
+  .slitbar { display:flex; gap:3px; height:28px; margin:6px 0; } .slitbar span { display:flex; align-items:center; justify-content:center; font:600 10px 'Roboto'; color:#fff; background:#1478c8; border-radius:4px; } .slitbar .tr { background:#c2c8cf; color:#42556b; } .slitbar .len { background:#1baf7a; }
+  .why { font-size:11.5px; color:var(--color-text-muted); margin:4px 0 8px; } .why b { color:#1f2733; }
+  .gain { display:flex; gap:8px; flex-wrap:wrap; margin:6px 0; } .gain span { border:1px solid var(--color-border); border-radius:6px; padding:3px 8px; font-size:11.5px; background:#fafbfc; } .gain span b { font-variant-numeric:tabular-nums; }
+  .rules { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; } @media (max-width:1100px){ .rules{grid-template-columns:1fr;} }
+  .rule { border:1px solid var(--color-border); border-radius:8px; padding:10px 12px; background:#fff; } .rule .h { font-weight:700; margin-bottom:4px; display:flex; align-items:center; gap:6px; } .rule ul { margin:4px 0 0 16px; padding:0; font-size:12px; color:var(--color-text-muted); } .rule li { margin-bottom:2px; }
+  .badge.b-new { background:#e3f2fd; color:#0f5fa3; } .badge.b-len { background:#e8f5e9; color:#2e7d32; } .badge.b-slit { background:#ede7f6; color:#5e35b1; } .badge.b-camp { background:#fff3e0; color:#b25f00; }
+</style>
+<script src="assets/khp-embed.js"></script>
+</head>
+<body>
+<div class="bm-layout">
+  <main class="bm-content">
+    <div class="page-bar">
+      <div><h1>Order Clubbing — small &amp; leftover orders onto one mother coil or one campaign</h1><div class="crumb">Planning › Order Clubbing › <span id="ctx"></span></div></div>
+      <div class="actions"><button class="btn btn-outline" id="refresh" title="Re-read the live state"><i class="fa-solid fa-arrows-rotate"></i> Refresh</button><a class="btn btn-outline" href="planning.html"><i class="fa-solid fa-route"></i> Routes &amp; Schedules</a><a class="btn btn-outline" href="orders.html"><i class="fa-solid fa-file-invoice"></i> Sales Orders</a></div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-satellite-dish"></i> Step 1 · Leftover orders from SAP <span class="right" id="feedmeta"></span></div>
+      <div class="card-body"><div class="feed"><button class="btn btn-primary" id="leftbtn"><i class="fa-solid fa-satellite-dish"></i> Simulate 6 leftover orders (SAP feed)</button><span class="hint" id="feedhint"></span></div><div id="feedlist" style="margin-top:8px"></div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-layer-group"></i> Step 2 · Candidate pool — open sales-order items of 60 t or less, grouped by spec family <span class="right" id="poolmeta"></span></div>
+      <div class="card-body"><div class="tbl-wrap"><table class="tbl" id="pool"></table></div>
+      <div class="note"><i class="fa-solid fa-circle-info"></i><span>A spec family = same product, grade, thickness, coating, paint system and RAL. Only items of one family can share a mother coil or a campaign. Items marked <b>narrow</b> (760 mm or less) are slit-width candidates; full-width items are length or campaign candidates. An item with no partner in its family stays a single-order coil.</span></div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-object-group"></i> Step 3 · Clubbing proposals — generated from the pool, accept to create the plan <span class="right" id="propmeta"></span></div>
+      <div class="card-body"><div class="pgrid" id="props"></div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-clipboard-check"></i> Step 4 · Accepted plans — what the MES creates and sends <span class="right" id="accmeta"></span></div>
+      <div class="card-body" id="acc"></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><i class="fa-solid fa-scale-balanced"></i> Clubbing rules used by the proposals</div>
+      <div class="card-body"><div class="rules">
+        <div class="rule"><div class="h"><span class="badge b-slit">SLIT-WIDTH</span> narrow orders side by side</div><ul><li>Same spec family, each strip 760 mm or less</li><li>First-fit onto a standard mother coil: 1000 · 1220 · 1250 · 1500 mm, 20 mm edge trim</li><li>Smallest standard width that fits; the rest is a balance strip to stock</li><li>One mother coil per ≈ 20 t of clubbed tonnage; slit on the Slitter</li></ul></div>
+        <div class="rule"><div class="h"><span class="badge b-len">LENGTH</span> one coil cut into lengths</div><ul><li>Same spec family and the same full width</li><li>Each order below 20 t, together 24 t or less</li><li>One mother coil, cut by length or weight per order on the Rewinding + Trimming line</li><li>Each order line gets its share (t and metres) on the multi-slit plan</li></ul></div>
+        <div class="rule"><div class="h"><span class="badge b-camp">WEIGHT / CAMPAIGN</span> full-width orders in one run</div><ul><li>Same spec family, full width, too heavy for one coil</li><li>Sequenced back to back as one campaign on the coating line (CGL, CCL for colour, CRM for full-hard, PKL for pickled)</li><li>One mother coil per ≈ 20 t; the changeover between them is saved</li><li>Every order keeps its own coils and identity</li></ul></div>
+      </div></div>
+    </div>
+  </main>
+</div>
+<script>window.KHP_PAGE='clubbing'; window.KHP_TITLE='Order Clubbing'; window.KHP_ICON='fa-object-group';</script>
+<script src="assets/khp-chrome.js"></script><script src="data/khp-data.js"></script><script src="assets/khp-core.js"></script>
+<script>
+  var X=window.KHPX, D=X.D, esc=X.esc, badge=X.badge, YM=(D.meta.hero.units[1].match(/-(\d{4})-/)||[])[1]||'2609';
+  document.getElementById('ctx').textContent=D.plant.name+' · as of '+X.fmt(D.meta.asOf);
+  function dplus(days){ var d=new Date(D.meta.asOf); d.setDate(d.getDate()+days); return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2); }
+  // ---- the simulated leftover feed: six small items on three sales orders (ORDERS05 IDoc) ----
+  var LEFT=[{id:'4213090042/10',soId:'4213090042',customerName:'Orbit Metal Forming',product:'GI',gradeId:'DX51D+Z',thk:1.2,width:300,coatingId:'Z120',paintId:null,ral:null,qtyMT:12},
+            {id:'4213090042/20',soId:'4213090042',customerName:'Orbit Metal Forming',product:'GI',gradeId:'DX51D+Z',thk:1.2,width:450,coatingId:'Z120',paintId:null,ral:null,qtyMT:15},
+            {id:'4213090043/10',soId:'4213090043',customerName:'Sunbeam Panels Pvt Ltd',product:'PPGI',gradeId:'DX51D+Z',thk:0.45,width:1250,coatingId:'Z120',paintId:'RMP',ral:'9002',qtyMT:9},
+            {id:'4213090043/20',soId:'4213090043',customerName:'Sunbeam Panels Pvt Ltd',product:'PPGI',gradeId:'DX51D+Z',thk:0.45,width:1250,coatingId:'Z120',paintId:'RMP',ral:'9002',qtyMT:8},
+            {id:'4213090044/10',soId:'4213090044',customerName:'Blue Ridge Infra',product:'GI',gradeId:'DX51D+Z',thk:1.2,width:480,coatingId:'Z120',paintId:null,ral:null,qtyMT:18},
+            {id:'4213090044/20',soId:'4213090044',customerName:'Blue Ridge Infra',product:'GI',gradeId:'DX51D+Z',thk:1.2,width:250,coatingId:'Z120',paintId:null,ral:null,qtyMT:6}];
+  LEFT.forEach(function(i,k){ i.status='OPEN'; i.btaMT=i.qtyMT; i.reqDate=dplus(10+k); i.leftover=true; i.idoc='00000011878'+(20+k); i.segment='Leftover'; });
+  var leftovers=false, clubbed=[];
+  function loadState(){ leftovers=X.state.get('leftovers',false); clubbed=X.state.get('clubbed',[]); }
+  loadState();
+  function pool(){ var base=D.items.filter(function(i){return i.status==='OPEN'&&i.qtyMT<=60;}).map(function(i){ return Object.assign({},i,{leftover:false}); }); return leftovers?base.concat(LEFT):base; }
+  function famKey(i){ return [i.product,i.gradeId,i.thk,i.coatingId||'',i.paintId||'',i.ral||''].join('|'); }
+  function famLabel(k){ var p=k.split('|'); return p[0]+' '+p[1]+' '+p[2]+' mm'+(p[3]?' · '+p[3]:'')+(p[4]?' · '+p[4]+' RAL '+p[5]:''); }
+  function cid(seed,out){ var h=7; for(var i=0;i<seed.length;i++) h=(h*31+seed.charCodeAt(i))%1000; var id; do { id='CLB-'+('00'+h).slice(-3); h=(h+1)%1000; } while(out.some(function(x){return x.id===id;})); return id; }
+  var CAMP_LINE={GI:'CGL',GL:'CGL',PPGI:'CCL',PPGL:'CCL',CRFH:'CRM',HRPO:'PKL'}, CO_MIN={CGL:30,CCL:45,CRM:30,PKL:15};
+  // ---- proposals: slit-width (narrow strips side by side), length (one coil cut per order), weight / campaign (full-width run) ----
+  function proposals(){ var groups={}; pool().forEach(function(i){ var k=famKey(i); (groups[k]=groups[k]||[]).push(i); }); var out=[];
+    Object.keys(groups).sort().forEach(function(k){ var g=groups[k], narrow=g.filter(function(i){return i.width<=760;}).sort(function(a,b){return b.width-a.width;}), wide=g.filter(function(i){return i.width>760;});
+      var bins=[]; narrow.forEach(function(i){ var b=bins.filter(function(x){return x.used+i.width<=1480;})[0]; if(!b){ b={used:0,items:[]}; bins.push(b); } b.used+=i.width; b.items.push(i); });
+      bins.forEach(function(b){ if(b.items.length<2) return; var W=[1000,1220,1250,1500].filter(function(w){return w>=b.used+20;})[0]||1500, q=b.items.reduce(function(a,i){return a+i.qtyMT;},0);
+        out.push({id:cid(k+'|slit|'+b.items.map(function(i){return i.id;}).join(','),out),type:'SLIT',key:k,motherWidth:W,used:b.used,trim:W-b.used,items:b.items,qty:q,coils:Math.ceil(q/20),line:'SLT',separate:b.items.length}); });
+      var byW={}; wide.forEach(function(i){ (byW[i.width]=byW[i.width]||[]).push(i); }); var camp=[];
+      Object.keys(byW).forEach(function(w){ var s=byW[w], sum=s.reduce(function(a,i){return a+i.qtyMT;},0);
+        if(s.length>=2&&s.every(function(i){return i.qtyMT<20;})&&sum<=24) out.push({id:cid(k+'|len|'+s.map(function(i){return i.id;}).join(','),out),type:'LENGTH',key:k,motherWidth:+w,items:s,qty:sum,coils:1,line:'RWL',separate:s.length});
+        else camp=camp.concat(s); });
+      if(camp.length>=2){ var q2=camp.reduce(function(a,i){return a+i.qtyMT;},0), p=k.split('|')[0], ln=CAMP_LINE[p]||'CGL';
+        out.push({id:cid(k+'|campaign|'+camp.map(function(i){return i.id;}).join(','),out),type:'CAMPAIGN',key:k,motherWidth:Math.max.apply(null,camp.map(function(i){return i.width;})),items:camp,qty:q2,coils:Math.ceil(q2/20),line:ln,separate:camp.reduce(function(a,i){return a+Math.ceil(i.qtyMT/20);},0),changeover:CO_MIN[ln]||30}); } });
+    return out; }
+  function propOf(itemId){ return proposals().filter(function(p){return p.items.some(function(i){return i.id===itemId;});})[0]; }
+  var TB={SLIT:'b-slit',LENGTH:'b-len',CAMPAIGN:'b-camp'}, TL={SLIT:'SLIT-WIDTH',LENGTH:'LENGTH',CAMPAIGN:'WEIGHT / CAMPAIGN'};
+  // ---- rendering ----
+  function kpis(){ var P=pool(), ps=proposals(), acc={}; clubbed.forEach(function(c){acc[c.id]=c;});
+    var accepted=ps.filter(function(p){return acc[p.id];}), tAcc=accepted.reduce(function(a,p){return a+p.qty;},0), sep=ps.reduce(function(a,p){return a+p.separate;},0), moth=ps.reduce(function(a,p){return a+p.coils;},0);
+    document.getElementById('kpis').innerHTML=[['Candidate pool',P.length,X.n(P.reduce(function(a,i){return a+i.qtyMT;},0))+' t in open items ≤ 60 t','blue'],['Leftover feed',leftovers?'6':'0',leftovers?'items on 3 sales orders · IDoc ORDERS05':'click Simulate to receive them','amber'],
+      ['Proposals',ps.length,ps.filter(function(p){return p.type==='SLIT';}).length+' slit · '+ps.filter(function(p){return p.type==='LENGTH';}).length+' length · '+ps.filter(function(p){return p.type==='CAMPAIGN';}).length+' campaign','accent'],['Accepted',accepted.length,X.n(tAcc,1)+' t clubbed · multi-slit plans to SAP','green'],
+      ['Mother coils',moth+' vs '+sep,'clubbed vs single-order coils','grey'],['Items without partner',P.filter(function(i){return !propOf(i.id);}).length,'unique spec in the pool','grey']].map(function(k){return '<div class="kpi '+k[3]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="s">'+k[2]+'</div></div>';}).join(''); }
+  function renderFeed(){ document.getElementById('leftbtn').disabled=!!leftovers; document.getElementById('feedmeta').innerHTML=leftovers?'<span class="badge b-new">6 leftover items received</span> · 3 sales orders · IDoc ORDERS05':'not yet received';
+    document.getElementById('feedhint').textContent=leftovers?'Received at '+X.fmt(D.meta.asOf)+' via the middleware (IF-SAP-01 order feed). The items joined the candidate pool below and the proposals were recalculated.':'Leftover orders are small residual quantities a customer still needs after a bigger delivery — too small to run alone, ideal to club. The feed adds six of them on three new sales orders.';
+    document.getElementById('feedlist').innerHTML=leftovers?'<table class="tbl"><thead><tr><th>Item</th><th>Customer</th><th>Product · grade</th><th>Thk × width</th><th>Coating · paint</th><th>Qty</th><th>Req date</th><th>IDoc</th><th>Why it is a leftover</th></tr></thead><tbody>'+LEFT.map(function(i){ return '<tr><td class="mono strong">'+esc(i.id)+' <span class="badge b-new">NEW</span></td><td>'+esc(i.customerName)+'</td><td><span class="chip">'+esc(i.product)+'</span> '+esc(i.gradeId)+'</td><td class="mono">'+i.thk.toFixed(2)+' × '+i.width+' '+(i.width<=760?'<span class="badge b-slit">narrow</span>':'<span class="badge b-grey">full width</span>')+'</td><td>'+esc(i.coatingId||'—')+(i.paintId?' · '+esc(i.paintId)+' RAL '+esc(i.ral):'')+'</td><td class="mono right-al strong">'+i.qtyMT+' t</td><td class="mono">'+esc(i.reqDate)+'</td><td class="mono small">'+esc(i.idoc)+'</td><td class="small">'+(i.width<=760?'a '+i.width+' mm strip of '+i.qtyMT+' t cannot fill a mother coil alone':i.qtyMT+' t is below one 20 t coil')+'</td></tr>'; }).join('')+'</tbody></table>':''; }
+  function renderPool(){ var P=pool(), groups={}; P.forEach(function(i){ var k=famKey(i); (groups[k]=groups[k]||[]).push(i); }); var keys=Object.keys(groups).sort(function(a,b){return groups[b].length-groups[a].length||(a<b?-1:1);});
+    document.getElementById('poolmeta').textContent=P.length+' items · '+keys.length+' spec families · '+keys.filter(function(k){return groups[k].length>1;}).length+' with a partner';
+    document.getElementById('pool').innerHTML='<thead><tr><th>Item</th><th>Customer · source</th><th>Product · grade</th><th>Thk × width</th><th>Coating · paint</th><th>Qty</th><th>BTA</th><th>Req date</th><th>Clubbing</th></tr></thead><tbody>'+keys.map(function(k){ var g=groups[k];
+      return '<tr class="fam"><td colspan="9"><i class="fa-solid fa-layer-group" style="color:var(--color-primary)"></i> '+esc(famLabel(k))+'<span class="cnt">'+g.length+' item'+(g.length>1?'s':'')+' · '+X.n(g.reduce(function(a,i){return a+i.qtyMT;},0),1)+' t'+(g.length>1?'':' · no partner')+'</span></td></tr>'+g.sort(function(a,b){return b.width-a.width;}).map(function(i){ var p=propOf(i.id);
+        return '<tr'+(i.leftover?' style="background:#f4f9ff"':'')+'><td class="mono strong">'+esc(i.id)+(i.leftover?' <span class="badge b-new">NEW</span>':'')+'</td><td>'+esc(i.customerName)+'<div class="hint">'+(i.leftover?'leftover · IDoc '+esc(i.idoc):'order book · '+esc(i.segment||''))+'</div></td><td><span class="chip">'+esc(i.product)+'</span> '+esc(i.gradeId)+'</td><td class="mono">'+i.thk.toFixed(2)+' × '+i.width+' '+(i.width<=760?'<span class="badge b-slit">narrow</span>':'')+'</td><td>'+esc(i.coatingId||'—')+(i.paintId?' · '+esc(i.paintId)+' RAL '+esc(i.ral):'')+'</td><td class="mono right-al strong">'+X.n(i.qtyMT,1)+' t</td><td class="mono right-al">'+X.n(i.btaMT||i.qtyMT,1)+'</td><td class="mono">'+esc(i.reqDate)+'</td><td>'+(p?'<span class="badge '+TB[p.type]+'">'+TL[p.type]+'</span> <a href="#'+p.id+'" class="mono" data-go="'+p.id+'">'+p.id+'</a>':g.length>1?'<span class="hint">family partner does not fit (width / weight rule)</span>':'<span class="hint">no partner in the pool</span>')+'</td></tr>'; }).join(''); }).join('')+'</tbody>'; }
+  function renderProps(){ var ps=proposals(), acc={}; clubbed.forEach(function(c){acc[c.id]=c;}); document.getElementById('propmeta').textContent=ps.length+' proposals · '+Object.keys(acc).length+' accepted';
+    document.getElementById('props').innerHTML=ps.length?ps.map(function(p){ var a=acc[p.id], ws=p.items.map(function(i){return i.width;}), sumQ=p.qty;
+      var pattern=p.type==='SLIT'?'<div class="why"><b>Mother coil '+p.motherWidth+' mm</b> → '+ws.join(' + ')+' mm'+(p.trim>60?' + '+p.trim+' mm balance strip to stock':' + '+p.trim+' mm edge trim')+' · yield '+Math.round(p.used/p.motherWidth*1000)/10+' %</div><div class="slitbar">'+p.items.map(function(i){return '<span style="flex:'+i.width+'" title="'+esc(i.id)+' · '+i.qtyMT+' t">'+i.width+'</span>';}).join('')+'<span class="tr" style="flex:'+Math.max(p.trim,25)+'">'+p.trim+'</span></div>'
+        :p.type==='LENGTH'?'<div class="why"><b>One '+p.motherWidth+' mm mother coil of '+X.n(sumQ,1)+' t</b>, cut by length into one part per order</div><div class="slitbar">'+p.items.map(function(i){return '<span class="len" style="flex:'+i.qtyMT+'" title="'+esc(i.id)+'">'+i.qtyMT+' t · ≈ '+X.n(i.qtyMT*1000/(7.85*i.thk*i.width/1000))+' m</span>';}).join('')+'</div>'
+        :'<div class="why"><b>Sequential campaign on '+esc(X.line(p.line)?X.line(p.line).name:p.line)+'</b> · '+p.motherWidth+' mm full width · '+p.coils+' mother coils of ≈ 20 t run back to back</div>';
+      var gain=p.type==='SLIT'?'<div class="gain"><span><b>'+p.coils+'</b> mother coils instead of <b>'+p.separate+'</b> single-order coils</span><span>trim <b>'+p.trim+' mm</b> · '+Math.round(p.trim/p.motherWidth*1000)/10+' %</span><span>slit on the Slitter</span></div>'
+        :p.type==='LENGTH'?'<div class="gain"><span><b>1</b> mother coil instead of <b>'+p.separate+'</b></span><span>cut on the Rewinding + Trimming line</span><span>no width change, no trim</span></div>'
+        :'<div class="gain"><span><b>'+(p.coils-1)+'</b> changeovers saved ≈ <b>'+((p.coils-1)*p.changeover)+' min</b></span><span>one setup on '+esc(p.line)+'</span><span>orders keep their own coils</span></div>';
+      return '<div class="prop'+(a?' acc':'')+'" id="'+p.id+'"><div class="t"><span class="badge '+TB[p.type]+'">'+TL[p.type]+'</span><span class="mono">'+p.id+'</span> '+esc(famLabel(p.key))+'<span class="right">'+X.n(p.qty,1)+' t · '+p.items.length+' orders · '+p.coils+' mother coil'+(p.coils>1?'s':'')+'</span></div>'+pattern+
+        '<table class="tbl"><thead><tr><th>Order item</th><th>Customer</th><th>Width</th><th>Qty</th><th>Req</th><th>Share</th></tr></thead><tbody>'+p.items.map(function(i){ return '<tr><td class="mono">'+esc(i.id)+(i.leftover?' <span class="badge b-new">NEW</span>':'')+'</td><td>'+esc(i.customerName)+'</td><td class="mono">'+i.width+' mm</td><td class="mono right-al">'+X.n(i.qtyMT,1)+' t</td><td class="mono">'+esc(i.reqDate.slice(5))+'</td><td class="mono">'+(p.type==='SLIT'?'strip '+i.width+' of '+p.motherWidth+' mm':p.type==='LENGTH'?Math.round(i.qtyMT/sumQ*100)+' % of the coil':Math.ceil(i.qtyMT/20)+' coil'+(Math.ceil(i.qtyMT/20)>1?'s':'')+' in the run')+'</td></tr>'; }).join('')+'</tbody></table>'+gain+
+        '<div style="margin-top:6px;display:flex;align-items:center;gap:8px">'+(a?badge('ACCEPTED','ACCEPTED · '+a.msp)+'<span class="hint">internal SO '+esc(a.so)+' · '+X.fmt(a.at)+'</span>':'<button class="btn btn-primary btn-sm" data-club="'+p.id+'"><i class="fa-solid fa-check"></i> Accept proposal</button><span class="hint">creates the internal sales order for the mother coil and the multi-slit plan per order line</span>')+'</div></div>'; }).join('')
+      :'<div class="hint">No two small orders in the pool share a spec — simulate the leftover feed to see proposals.</div>'; }
+  function renderAcc(){ var ps=proposals(), byId={}; ps.forEach(function(p){byId[p.id]=p;}); var list=clubbed.slice().reverse(); document.getElementById('accmeta').textContent=list.length+' accepted';
+    document.getElementById('acc').innerHTML=list.length?list.map(function(c){ var p=byId[c.id]; return '<div class="prop acc" style="margin-bottom:10px"><div class="t"><span class="badge '+TB[c.type]+'">'+TL[c.type]+'</span><span class="mono">'+esc(c.msp)+'</span> multi-slit plan for '+esc(c.id)+'<span class="right">accepted '+X.fmt(c.at)+' · PPC</span></div>'+
+        '<div class="kv"><span class="k">Internal sales order</span><span class="v mono">'+esc(c.so)+' — mother coil'+(c.coils>1?'s':'')+' '+esc(c.line)+' · '+X.n(c.qty,1)+' t</span><span class="k">Order lines served</span><span class="v">'+(p?p.items.map(function(i){return '<span class="chip" title="'+esc(i.customerName)+'">'+esc(i.id)+' · '+(c.type==='SLIT'?i.width+' mm':X.n(i.qtyMT,1)+' t')+'</span>';}).join(' '):c.orders.map(esc).join(', '))+'</span><span class="k">Line plan</span><span class="v">'+(c.type==='CAMPAIGN'?'campaign of '+c.coils+' coils added to the '+esc(c.line)+' sequence':c.type==='SLIT'?c.coils+' mother coil'+(c.coils>1?'s':'')+' scheduled, multi-slit plan on the Slitter':'one mother coil scheduled, cut plan on the Rewinding + Trimming line')+' — released at the next planning run</span><span class="k">Sent to SAP</span><span class="v">multi-slit plan log · IF-SAP-21 · '+X.fmtT(c.at)+' · <span class="badge b-green">OK</span> · each order line carries its share of the mother coil</span></div></div>'; }).join('')
+      :'<div class="hint">Nothing accepted yet. Accept a proposal above to see the internal sales order, the multi-slit plan per order line and the SAP log entry.</div>'; }
+  function render(){ kpis(); renderFeed(); renderPool(); renderProps(); renderAcc(); }
+  document.getElementById('leftbtn').addEventListener('click',function(){ leftovers=true; X.state.set('leftovers',true); render(); X.toast('6 leftover orders received from SAP (IDoc ORDERS05) — small quantities on 3 sales orders joined the pool; proposals recalculated','fa-satellite-dish'); });
+  document.getElementById('props').addEventListener('click',function(e){ var b=e.target.closest('[data-club]'); if(!b) return; var p=proposals().filter(function(x){return x.id===b.dataset.club;})[0]; if(!p) return;
+    var c={id:p.id,msp:'MSP-'+YM+'-'+p.id.slice(-3),so:'SO-INT-'+YM+'-'+p.id.slice(-3),at:new Date().toISOString(),orders:p.items.map(function(i){return i.id;}),qty:p.qty,line:p.line,type:p.type,coils:p.coils}; clubbed.push(c); X.state.set('clubbed',clubbed); render();
+    X.toast('Proposal '+p.id+' accepted — internal sales order '+c.so+' for the mother coil, multi-slit plan '+c.msp+' attached to '+p.items.length+' order lines ('+X.n(p.qty,1)+' t), '+(p.type==='CAMPAIGN'?'campaign added to '+p.line:'coil'+(p.coils>1?'s':'')+' scheduled for '+p.line)+', plan log sent to SAP'); });
+  document.getElementById('pool').addEventListener('click',function(e){ var a=e.target.closest('[data-go]'); if(!a) return; e.preventDefault(); var el=document.getElementById(a.getAttribute('data-go')); if(el) el.scrollIntoView({behavior:'smooth',block:'center'}); });
+  document.getElementById('refresh').addEventListener('click',function(){ loadState(); render(); X.toast('Order clubbing refreshed from the live state','fa-arrows-rotate'); });
+  window.addEventListener('khp:activated',function(){ loadState(); render(); });
+  render();
+</script>
+</body>
+</html>

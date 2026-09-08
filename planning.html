@@ -13,7 +13,6 @@
   .cmp { display:grid; grid-template-columns:1fr 1fr; gap:12px; } @media (max-width:1000px){ .cmp{grid-template-columns:1fr;} }
   .cmp table.tbl td { padding:5px 8px; } .mv { color:#b25f00; font-weight:700; }
   .tbl-wrap { max-height:380px; }
-  .slitbar { display:flex; gap:3px; height:26px; margin-top:4px; } .slitbar span { display:flex; align-items:center; justify-content:center; font:600 10px 'Roboto'; color:#fff; background:#1478c8; border-radius:4px; } .slitbar .tr { background:#c2c8cf; color:#42556b; }
   .rr { background:#fff8e1; border:1px solid #f5d98a; border-radius:8px; padding:10px 12px; margin-top:10px; font-size:12px; } .rr select { font:12px 'Roboto'; padding:4px 6px; border:1px solid var(--color-border); border-radius:5px; }
   .impact { display:flex; gap:10px; flex-wrap:wrap; margin-top:8px; } .impact .box { border:1px solid var(--color-border); border-radius:6px; padding:6px 10px; background:#fff; font-size:12px; } .impact .box b { font-variant-numeric:tabular-nums; }
   .badge.b-rr { background:#ede7f6; color:#5e35b1; }
@@ -25,7 +24,7 @@
   <main class="bm-content">
     <div class="page-bar">
       <div><h1>Routes &amp; Schedules — Factory Planner output incorporated at schedule-line level</h1><div class="crumb">Planning › Routes &amp; Schedules › <span id="ctx"></span></div></div>
-      <div class="actions"><a class="btn btn-outline" href="orders.html"><i class="fa-solid fa-file-invoice"></i> Sales Orders</a><a class="btn btn-outline" href="allocation.html"><i class="fa-solid fa-boxes-packing"></i> Material Allocator</a><a class="btn btn-primary" href="coilplan.html"><i class="fa-solid fa-list-ol"></i> Coil plan report</a><a class="btn btn-outline" href="execution.html"><i class="fa-solid fa-industry"></i> Shop-floor</a></div>
+      <div class="actions"><a class="btn btn-outline" href="orders.html"><i class="fa-solid fa-file-invoice"></i> Sales Orders</a><a class="btn btn-outline" href="allocation.html"><i class="fa-solid fa-boxes-packing"></i> Material Allocator</a><a class="btn btn-outline" href="clubbing.html"><i class="fa-solid fa-object-group"></i> Order clubbing</a><a class="btn btn-primary" href="coilplan.html"><i class="fa-solid fa-list-ol"></i> Coil plan report</a><a class="btn btn-outline" href="execution.html"><i class="fa-solid fa-industry"></i> Shop-floor</a></div>
     </div>
     <div class="kpis" id="kpis"></div>
     <div class="card">
@@ -48,11 +47,6 @@
       <div class="card-body"><div class="cmp" id="rush"></div></div>
     </div>
     <div class="card">
-      <div class="card-head"><i class="fa-solid fa-object-group"></i> Order clubbing — small &amp; leftover orders onto one mother coil / campaign <span class="right" id="clubmeta"></span></div>
-      <div class="card-body"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px"><button class="btn btn-primary btn-sm" id="leftbtn"><i class="fa-solid fa-satellite-dish"></i> Simulate 6 leftover orders (SAP feed)</button><span class="hint">Rules: same product · grade · thickness · coating · paint / RAL → <b>slit-width</b> clubbing packs narrow orders side by side on a 1250 / 1500 mm mother coil (20 mm trim); <b>weight</b> clubbing groups full-width small orders into one campaign so the mother coil meets the 20 t minimum.</span></div>
-        <div class="tbl-wrap" style="max-height:340px"><table class="tbl" id="club"></table></div></div>
-    </div>
-    <div class="card">
       <div class="card-head"><i class="fa-solid fa-list-check"></i> Schedule lines <select id="linesel" style="font:12px 'Roboto';padding:3px 6px;border:1px solid var(--color-border);border-radius:5px"></select> <input id="ssearch" placeholder="find coil / SO / customer / campaign" style="font:12px 'Roboto';padding:3px 8px;border:1px solid var(--color-border);border-radius:5px;width:250px;margin-left:6px"> <span class="right" id="smeta"></span></div>
       <div class="card-body"><div class="tbl-wrap"><table class="tbl" id="sched"></table></div><div id="rrpanel"></div>
       <div class="note"><i class="fa-solid fa-circle-info"></i><span>Planning-released schedule lines are <b>confirmed by Operations</b> before charging. <b>Reroute</b> moves a planned coil to the alternate work centre (equipment loading: Slitter ↔ Rewinding + Trimming) or raises a <b>rework</b> production order on the same line; the load impact on both lines is shown. Sequencing rules per line: CGL by width / thickness family, CCL light → dark colour, CRM by gauge.</span></div></div>
@@ -70,10 +64,10 @@
   document.getElementById('ctx').textContent = D.plant.name + ' · as of ' + X.fmt(D.meta.asOf);
   var planned=ALL.filter(function(s){return s.status==='PLANNED';}), running=S.filter(function(s){return s.status==='IN_PROGRESS';});
   var fp=D.routes.filter(function(r){return r.chosen==='FP';}).length;
-  var leftovers=X.state.get('leftovers',false), clubbed=X.state.get('clubbed',[]), reroutes=X.state.get('reroutes',[]);
+  var clubbed=X.state.get('clubbed',[]), reroutes=X.state.get('reroutes',[]);
   function dplus(days){ var d=new Date(D.meta.asOf); d.setDate(d.getDate()+days); return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2); }
   function kpis(){ document.getElementById('kpis').innerHTML=[['Scheduled batches',planned.length,S.filter(function(s){return s.status==='PLANNED';}).length+' with allocated coil · '+CMP.length+' campaign coil steps','blue'],['Running now',running.length,'in progress at '+X.fmtT(X.ASOF),'blue'],['FP routes chosen',fp+' / '+D.routes.length,'rest on SAP route order','accent'],
-    ['Rush orders',D.orders.filter(function(o){return o.rush;}).length,'APS flag applied','amber'],['Behind schedule',S.filter(function(s){return s.track==='BEHIND';}).length,'stopped line / overdue','red'],['Clubbing · reroutes',clubbed.length+' · '+reroutes.length,proposals().length+' proposals open · '+reroutes.length+' rework PO','grey']].map(function(k){return '<div class="kpi '+k[3]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="s">'+k[2]+'</div></div>';}).join(''); }
+    ['Rush orders',D.orders.filter(function(o){return o.rush;}).length,'APS flag applied','amber'],['Behind schedule',S.filter(function(s){return s.track==='BEHIND';}).length,'stopped line / overdue','red'],['Clubbing · reroutes',clubbed.length+' · '+reroutes.length,(clubbed.length?clubbed.length+' plan'+(clubbed.length>1?'s':'')+' accepted on Order Clubbing':'proposals on the Order Clubbing page')+' · '+reroutes.length+' rework PO','grey']].map(function(k){return '<div class="kpi '+k[3]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="s">'+k[2]+'</div></div>';}).join(''); }
   // ---- route card ----
   var sel=document.getElementById('itemsel'), withRoutes=D.items.slice().sort(function(a,b){return (b.hero?1:0)-(a.hero?1:0)||(a.id<b.id?-1:1);});
   sel.innerHTML=withRoutes.map(function(i){return '<option value="'+esc(i.id)+'">'+esc(i.id)+' · '+esc(i.customerName)+' · '+esc(i.product)+(i.hero?' ★':'')+'</option>';}).join('');
@@ -140,40 +134,6 @@
     }
     renderRush();
   } else document.getElementById('rush').innerHTML='<div class="hint">No rush event in the dataset.</div>';
-  // ---- order clubbing (Scenario 2 step 1) ----
-  var LEFT=[{id:'4213090042/10',soId:'4213090042',customerName:'Orbit Metal Forming',product:'GI',gradeId:'DX51D+Z',thk:1.2,width:300,coatingId:'Z120',paintId:null,ral:null,qtyMT:12},{id:'4213090042/20',soId:'4213090042',customerName:'Orbit Metal Forming',product:'GI',gradeId:'DX51D+Z',thk:1.2,width:450,coatingId:'Z120',paintId:null,ral:null,qtyMT:15},
-             {id:'4213090043/10',soId:'4213090043',customerName:'Sunbeam Panels Pvt Ltd',product:'PPGI',gradeId:'DX51D+Z',thk:0.45,width:400,coatingId:'Z120',paintId:'RMP',ral:'9002',qtyMT:9},{id:'4213090043/20',soId:'4213090043',customerName:'Sunbeam Panels Pvt Ltd',product:'PPGI',gradeId:'DX51D+Z',thk:0.45,width:380,coatingId:'Z120',paintId:'RMP',ral:'9002',qtyMT:8},
-             {id:'4213090044/10',soId:'4213090044',customerName:'Blue Ridge Infra',product:'GI',gradeId:'DX51D+Z',thk:1.2,width:480,coatingId:'Z120',paintId:null,ral:null,qtyMT:18},{id:'4213090044/20',soId:'4213090044',customerName:'Blue Ridge Infra',product:'GI',gradeId:'DX51D+Z',thk:1.2,width:250,coatingId:'Z120',paintId:null,ral:null,qtyMT:6}];
-  LEFT.forEach(function(i,k){ i.status='OPEN'; i.btaMT=i.qtyMT; i.reqDate=dplus(10+k); i.leftover=true; });
-  function smallItems(){ var base=D.items.filter(function(i){return i.status==='OPEN'&&i.qtyMT<=60;}); return leftovers?base.concat(LEFT):base; }
-  function cid(seed,out){ var h=7; for(var i=0;i<seed.length;i++) h=(h*31+seed.charCodeAt(i))%1000; var id; do { id='CLB-'+('00'+h).slice(-3); h=(h+1)%1000; } while(out.some(function(x){return x.id===id;})); return id; }   // stable per spec + order set, so an accepted proposal keeps its id when more orders arrive
-  function proposals(){
-    var groups={}; smallItems().forEach(function(i){ var k=[i.product,i.gradeId,i.thk,i.coatingId||'',i.paintId||'',i.ral||''].join('|'); (groups[k]=groups[k]||[]).push(i); });
-    var out=[], n=0;
-    Object.keys(groups).sort().forEach(function(k){ var g=groups[k]; if(g.length<2) return;
-      var narrow=g.filter(function(i){return i.width<=760;}).sort(function(a,b){return b.width-a.width;}), wide=g.filter(function(i){return i.width>760;});
-      // first-fit the narrow widths into mother coils (max 1500 mm incl. 20 mm edge trim), then pick the smallest standard mother width that fits
-      var bins=[]; narrow.forEach(function(i){ var b=bins.filter(function(x){return x.used+i.width<=1480;})[0]; if(!b){ b={used:0,items:[]}; bins.push(b); } b.used+=i.width; b.items.push(i); });
-      bins.forEach(function(b){ if(b.items.length>=2){ var W=[1000,1220,1250,1500].filter(function(w){return w>=b.used+20;})[0]||1500, q=b.items.reduce(function(a,i){return a+i.qtyMT;},0); out.push({id:cid(k+'|slit|'+b.items.map(function(i){return i.id;}).join(','),out),type:'Slit-width',key:k,motherWidth:W,used:b.used,trim:W-b.used,items:b.items,qty:q,coils:Math.ceil(q/20),line:'SLT'}); } });
-      if(wide.length>=2){ var q2=wide.reduce(function(a,i){return a+i.qtyMT;},0); out.push({id:cid(k+'|campaign|'+wide.map(function(i){return i.id;}).join(','),out),type:'Weight / campaign',key:k,motherWidth:Math.max.apply(null,wide.map(function(i){return i.width;})),used:null,trim:null,items:wide,qty:q2,coils:Math.ceil(q2/20),line:'CGL'}); }
-    });
-    return out;
-  }
-  function renderClub(){
-    var ps=proposals(), acc={}; clubbed.forEach(function(c){acc[c.id]=c;});
-    document.getElementById('clubmeta').innerHTML=smallItems().length+' small / leftover items (≤ 60 t) · '+ps.length+' proposals · '+clubbed.length+' accepted'+(leftovers?' · <span class="badge b-blue">6 leftover orders received</span>':'');
-    document.getElementById('leftbtn').disabled=!!leftovers;
-    document.getElementById('club').innerHTML='<thead><tr><th>Proposal</th><th>Type</th><th>Spec</th><th>Mother coil · slit pattern</th><th>Orders clubbed</th><th>Total</th><th>Mother coils</th><th>Line</th><th></th></tr></thead><tbody>'+(ps.length?ps.map(function(p){ var k=p.key.split('|'), a=acc[p.id];
-      return '<tr><td class="mono strong">'+p.id+'</td><td>'+badge(p.type==='Slit-width'?'OPEN':'PLANNED',p.type)+'</td><td><span class="chip">'+esc(k[0])+'</span> '+esc(k[1])+' '+k[2]+' mm'+(k[3]?' · '+esc(k[3]):'')+(k[4]?' · '+esc(k[4])+' RAL '+esc(k[5]):'')+'</td>'+
-        '<td>'+(p.type==='Slit-width'?'<div class="mono">'+p.motherWidth+' mm → '+p.items.map(function(i){return i.width;}).join(' + ')+(p.trim>60?' + '+p.trim+' balance strip (to stock)':' + trim '+p.trim)+'</div><div class="slitbar">'+p.items.map(function(i){return '<span style="flex:'+i.width+'" title="'+esc(i.id)+'">'+i.width+'</span>';}).join('')+'<span class="tr" style="flex:'+p.trim+'">'+p.trim+'</span></div>':'<span class="mono">'+p.motherWidth+' mm</span> full width · sequential campaign, one mother coil per ≈ 20 t')+'</td>'+
-        '<td>'+p.items.map(function(i){return '<span class="chip" title="'+esc(i.customerName)+'">'+esc(i.id)+' · '+i.qtyMT+' t'+(i.leftover?' · new':'')+'</span>';}).join(' ')+'</td><td class="mono right-al strong">'+X.n(p.qty,1)+' t</td><td class="mono right-al">'+p.coils+'</td><td>'+esc(p.line)+'</td>'+
-        '<td>'+(a?badge('ACCEPTED','ACCEPTED · '+a.msp):'<button class="btn btn-primary btn-sm" data-club="'+p.id+'"><i class="fa-solid fa-check"></i> Accept</button>')+'</td></tr>'; }).join(''):'<tr><td colspan="9" class="hint">No two small orders share a spec — simulate the leftover feed to see proposals.</td></tr>')+'</tbody>';
-    kpis();
-  }
-  document.getElementById('leftbtn').addEventListener('click',function(){ leftovers=true; X.state.set('leftovers',true); renderClub(); X.toast('6 leftover orders received from SAP (IDoc ORDERS05) — small quantities on 3 sales orders; clubbing proposals recalculated','fa-satellite-dish'); });
-  document.getElementById('club').addEventListener('click',function(e){ var b=e.target.closest('[data-club]'); if(!b) return; var p=proposals().filter(function(x){return x.id===b.dataset.club;})[0]; if(!p) return;
-    var c={id:p.id,msp:'MSP-'+YM+'-'+p.id.slice(-3),at:new Date().toISOString(),orders:p.items.map(function(i){return i.id;}),qty:p.qty,line:p.line,type:p.type}; clubbed.push(c); X.state.set('clubbed',clubbed); renderClub();
-    X.toast('Proposal '+p.id+' accepted — internal sales order created for the mother coil, multi-slit plan '+c.msp+' attached to each order line ('+p.items.length+' orders, '+X.n(p.qty,1)+' t), campaign added to '+p.line+' and multi-slit plan log sent to SAP'); });
   // ---- schedule table with reroute / rework ----
   var lsel=document.getElementById('linesel'); lsel.innerHTML=lanes.map(function(l){return '<option value="'+l.id+'"'+(l.id==='SLT'?' selected':'')+'>'+esc(l.label)+'</option>';}).join('');
   var ALT={SLT:'RWL',RWL:'SLT'}; var rrSel=null;
@@ -213,7 +173,7 @@
   document.getElementById('ssearch').addEventListener('input',function(){ rrSel=null; renderSched(); });
   document.getElementById('sched').addEventListener('click',function(e){ var b=e.target.closest('[data-conf]'); if(b){ var conf=X.state.get('confirmed',{}); conf[b.getAttribute('data-conf')]=X.fmtT(new Date()); X.state.set('confirmed',conf); renderSched(); X.toast('Schedule line confirmed by Operations — schedule message sent to L2 via middleware (IF-L2-SCH)'); return; }
     var r=e.target.closest('[data-rr]'); if(r){ rrSel=r.getAttribute('data-rr'); renderRR(); document.getElementById('rrpanel').scrollIntoView({behavior:'smooth',block:'nearest'}); } });
-  renderClub(); renderSched(); kpis();
+  renderSched(); kpis();
   var h=X.hashParam(); if(h&&X.item(h)){ syncSel(h); } renderRoute();
 </script>
 </body>

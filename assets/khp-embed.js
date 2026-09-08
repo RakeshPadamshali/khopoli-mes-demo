@@ -9,7 +9,7 @@
                   '.embedded .bm-content{padding-top:12px}';
   (document.head || document.documentElement).appendChild(s);
   var MAP = {
-    'home.html': 'home', 'orders.html': 'orders', 'planning.html': 'planning', 'coilplan.html': 'coilplan', 'allocation.html': 'allocation',
+    'home.html': 'home', 'orders.html': 'orders', 'planning.html': 'planning', 'coilplan.html': 'coilplan', 'clubbing.html': 'clubbing', 'allocation.html': 'allocation',
     'execution.html': 'execution', 'packing.html': 'packing', 'quality.html': 'quality', 'genealogy.html': 'genealogy',
     'integration.html': 'integration', 'support.html': 'support', 'masters.html': 'masters'
   };

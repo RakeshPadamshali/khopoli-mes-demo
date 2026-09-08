@@ -85,11 +85,15 @@ try:
         check("genealogy: propagation highlights downstream", pg.evaluate("document.querySelectorAll('.node.bad').length") >= 1 and pg.evaluate("document.querySelectorAll('.node.src').length") == 1)
         # 7. planning rush toggle + orders feed
         go("planning.html"); pg.click("#rushbtn"); pg.wait_for_timeout(200); check("planning: rush toggle", "Apply rush flag" in txt())
-        # 7b. Scenario 2 step 1: leftover feed -> clubbing proposals -> accept one (multi-slit plan)
-        pg.click("#leftbtn"); pg.wait_for_timeout(300)
-        check("planning: leftover feed produces clubbing proposals", "6 leftover orders received" in txt() and pg.evaluate("document.querySelectorAll('[data-club]').length") >= 2)
-        pg.click("[data-club]"); pg.wait_for_timeout(300)
-        check("planning: proposal accepted -> multi-slit plan", "MSP-" in txt() and pg.evaluate("KHPState.get('clubbed').length") == 1)
+        # 7b. Scenario 2 step 1 on the Order Clubbing page: pool -> leftover feed -> slit / length / campaign proposals -> accept one
+        go("clubbing.html")
+        check("clubbing: pool of nine items and two campaign proposals before the feed", pg.evaluate("document.querySelectorAll('#pool tbody tr:not(.fam)').length") == 9 and pg.evaluate("document.querySelectorAll('[data-club]').length") == 2)
+        pg.click("#leftbtn"); pg.wait_for_timeout(400)
+        check("clubbing: feed adds six items and slit + length proposals", "6 leftover items received" in txt() and pg.evaluate("document.querySelectorAll('#pool tbody tr:not(.fam)').length") == 15 and "SLIT-WIDTH" in txt() and "LENGTH" in txt() and pg.evaluate("document.querySelectorAll('[data-club]').length") == 4)
+        pg.click("[data-club]"); pg.wait_for_timeout(400)
+        check("clubbing: accepted proposal -> internal SO, multi-slit plan, SAP log", "MSP-" in txt() and "SO-INT-" in txt() and "IF-SAP-21" in txt() and pg.evaluate("KHPState.get('clubbed').length") == 1)
+        go("planning.html")
+        check("planning: KPI counts the accepted clubbing plan", "1 plan accepted" in txt().lower())
         # 7b'. full line load + selected-order gantt + schedule search
         check("planning: full line load shows campaign bars", pg.evaluate("document.querySelectorAll('#gantt .g-bar.cmp').length") >= 150)
         check("planning: selected-order gantt shows the hero coil steps", pg.evaluate("document.querySelectorAll('#ogantt .g-bar').length") >= 3)
