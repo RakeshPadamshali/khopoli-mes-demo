@@ -100,6 +100,7 @@ table.sub-tbl td { padding:5px 9px; border-bottom:1px solid var(--color-border-l
 .g-row.head { min-height:32px; background:#fbfcfd; border-bottom:1px solid var(--color-border); }
 .g-lane { width:160px; flex-shrink:0; display:flex; align-items:center; gap:5px; padding:0 10px; font:600 10px 'Roboto'; letter-spacing:.2px; text-transform:uppercase; color:#4a5563; border-right:1px solid var(--color-border); background:#fbfcfd; white-space:nowrap; overflow:hidden; }
 .g-lane.head-lane { color:#8a93a0; font-weight:700; }
+.g-lane { position:sticky; left:0; z-index:4; }   /* lane names stay visible when a wide gantt is scrolled sideways */
 .g-track { position:relative; flex:1; }
 .g-grid { position:absolute; top:0; bottom:0; border-left:1px solid #eef0f2; } .g-grid.day { border-left:1px dashed #c2c8cf; }
 .g-day { position:absolute; top:8px; transform:translateX(-50%); font:600 10.5px 'Roboto'; color:#4a5563; white-space:nowrap; } .g-day .dm { color:#9aa2ad; font-weight:400; margin-left:4px; }
