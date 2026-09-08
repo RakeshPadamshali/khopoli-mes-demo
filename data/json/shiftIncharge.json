@@ -4,7 +4,7 @@
   "lineId": "HRS",
   "shift": "A",
   "incharge": "R. Patil",
-  "phone": "+91 98xx xx7134",
+  "phone": "+91 98xx xx8197",
   "relief": "K. Sawant",
   "status": "ACTIVE"
  },
@@ -13,7 +13,7 @@
   "lineId": "HRS",
   "shift": "B",
   "incharge": "S. Kadam",
-  "phone": "+91 98xx xx8056",
+  "phone": "+91 98xx xx7412",
   "relief": "N. Bhosale",
   "status": "ACTIVE"
  },
@@ -22,7 +22,7 @@
   "lineId": "HRS",
   "shift": "C",
   "incharge": "A. Shinde",
-  "phone": "+91 98xx xx8687",
+  "phone": "+91 98xx xx7016",
   "relief": "S. Chavan",
   "status": "ACTIVE"
  },
@@ -31,7 +31,7 @@
   "lineId": "PKL",
   "shift": "A",
   "incharge": "M. Jadhav",
-  "phone": "+91 98xx xx8388",
+  "phone": "+91 98xx xx7107",
   "relief": "A. Kulkarni",
   "status": "ACTIVE"
  },
@@ -40,7 +40,7 @@
   "lineId": "PKL",
   "shift": "B",
   "incharge": "P. More",
-  "phone": "+91 98xx xx1505",
+  "phone": "+91 98xx xx4975",
   "relief": "T. Deshpande",
   "status": "ACTIVE"
  },
@@ -49,7 +49,7 @@
   "lineId": "PKL",
   "shift": "C",
   "incharge": "V. Gaikwad",
-  "phone": "+91 98xx xx5337",
+  "phone": "+91 98xx xx5837",
   "relief": "R. Naik",
   "status": "ACTIVE"
  },
@@ -58,7 +58,7 @@
   "lineId": "CRM",
   "shift": "A",
   "incharge": "D. Pawar",
-  "phone": "+91 98xx xx9283",
+  "phone": "+91 98xx xx9825",
   "relief": "H. Mane",
   "status": "ACTIVE"
  },
@@ -67,7 +67,7 @@
   "lineId": "CRM",
   "shift": "B",
   "incharge": "K. Sawant",
-  "phone": "+91 98xx xx6800",
+  "phone": "+91 98xx xx3987",
   "relief": "G. Salvi",
   "status": "ACTIVE"
  },
@@ -76,7 +76,7 @@
   "lineId": "CRM",
   "shift": "C",
   "incharge": "N. Bhosale",
-  "phone": "+91 98xx xx8197",
+  "phone": "+91 98xx xx9044",
   "relief": "U. Joshi",
   "status": "ACTIVE"
  },
@@ -85,7 +85,7 @@
   "lineId": "CGL",
   "shift": "A",
   "incharge": "S. Chavan",
-  "phone": "+91 98xx xx7412",
+  "phone": "+91 98xx xx3791",
   "relief": "R. Patil",
   "status": "ACTIVE"
  },
@@ -94,7 +94,7 @@
   "lineId": "CGL",
   "shift": "B",
   "incharge": "A. Kulkarni",
-  "phone": "+91 98xx xx7016",
+  "phone": "+91 98xx xx6331",
   "relief": "S. Kadam",
   "status": "ACTIVE"
  },
@@ -103,7 +103,7 @@
   "lineId": "CGL",
   "shift": "C",
   "incharge": "T. Deshpande",
-  "phone": "+91 98xx xx7107",
+  "phone": "+91 98xx xx5428",
   "relief": "A. Shinde",
   "status": "ACTIVE"
  },
@@ -112,7 +112,7 @@
   "lineId": "CCL",
   "shift": "A",
   "incharge": "R. Naik",
-  "phone": "+91 98xx xx4975",
+  "phone": "+91 98xx xx6772",
   "relief": "M. Jadhav",
   "status": "ACTIVE"
  },
@@ -121,7 +121,7 @@
   "lineId": "CCL",
   "shift": "B",
   "incharge": "H. Mane",
-  "phone": "+91 98xx xx5837",
+  "phone": "+91 98xx xx2699",
   "relief": "P. More",
   "status": "ACTIVE"
  },
@@ -130,7 +130,7 @@
   "lineId": "CCL",
   "shift": "C",
   "incharge": "G. Salvi",
-  "phone": "+91 98xx xx9825",
+  "phone": "+91 98xx xx3088",
   "relief": "V. Gaikwad",
   "status": "ACTIVE"
  },
@@ -139,7 +139,7 @@
   "lineId": "SLT",
   "shift": "A",
   "incharge": "U. Joshi",
-  "phone": "+91 98xx xx3987",
+  "phone": "+91 98xx xx3932",
   "relief": "D. Pawar",
   "status": "ACTIVE"
  },
@@ -148,7 +148,7 @@
   "lineId": "SLT",
   "shift": "B",
   "incharge": "R. Patil",
-  "phone": "+91 98xx xx9044",
+  "phone": "+91 98xx xx8979",
   "relief": "K. Sawant",
   "status": "ACTIVE"
  },
@@ -157,7 +157,7 @@
   "lineId": "SLT",
   "shift": "C",
   "incharge": "S. Kadam",
-  "phone": "+91 98xx xx3791",
+  "phone": "+91 98xx xx1464",
   "relief": "N. Bhosale",
   "status": "ACTIVE"
  },
@@ -166,7 +166,7 @@
   "lineId": "RWL",
   "shift": "A",
   "incharge": "A. Shinde",
-  "phone": "+91 98xx xx6331",
+  "phone": "+91 98xx xx3461",
   "relief": "S. Chavan",
   "status": "ACTIVE"
  },
@@ -175,7 +175,7 @@
   "lineId": "RWL",
   "shift": "B",
   "incharge": "M. Jadhav",
-  "phone": "+91 98xx xx5428",
+  "phone": "+91 98xx xx5578",
   "relief": "A. Kulkarni",
   "status": "ACTIVE"
  },
@@ -184,7 +184,7 @@
   "lineId": "RWL",
   "shift": "C",
   "incharge": "P. More",
-  "phone": "+91 98xx xx6772",
+  "phone": "+91 98xx xx4987",
   "relief": "T. Deshpande",
   "status": "ACTIVE"
  },
@@ -193,7 +193,7 @@
   "lineId": "PKG",
   "shift": "A",
   "incharge": "V. Gaikwad",
-  "phone": "+91 98xx xx2699",
+  "phone": "+91 98xx xx9418",
   "relief": "R. Naik",
   "status": "ACTIVE"
  },
@@ -202,7 +202,7 @@
   "lineId": "PKG",
   "shift": "B",
   "incharge": "D. Pawar",
-  "phone": "+91 98xx xx3088",
+  "phone": "+91 98xx xx8946",
   "relief": "H. Mane",
   "status": "ACTIVE"
  },
@@ -211,7 +211,7 @@
   "lineId": "PKG",
   "shift": "C",
   "incharge": "K. Sawant",
-  "phone": "+91 98xx xx3932",
+  "phone": "+91 98xx xx9180",
   "relief": "G. Salvi",
   "status": "ACTIVE"
  }

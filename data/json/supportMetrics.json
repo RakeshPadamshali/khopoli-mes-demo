@@ -8,19 +8,19 @@
  "mttrMinBySeverity": {
   "S1": 12,
   "S2": 68,
-  "S3": 227,
-  "S4": 301
+  "S3": 297,
+  "S4": 251
  },
  "deflectionPct": 38,
  "falseActionRatePct": 4.2,
- "automationCoveragePct": 77,
+ "automationCoveragePct": 80,
  "slaCompliancePct": 96.4,
- "csatAvg": 4.6,
+ "csatAvg": 4.7,
  "weekly": [
   {
    "week": "W32",
-   "tickets": 3,
-   "agentResolvedPct": 67
+   "tickets": 4,
+   "agentResolvedPct": 50
   },
   {
    "week": "W33",
@@ -29,8 +29,8 @@
   },
   {
    "week": "W34",
-   "tickets": 9,
-   "agentResolvedPct": 89
+   "tickets": 8,
+   "agentResolvedPct": 100
   },
   {
    "week": "W35",

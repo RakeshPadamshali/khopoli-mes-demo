@@ -37,7 +37,10 @@
   "dispatchedMT": 20.31,
   "btaMT": 0,
   "btpMT": 0,
-  "hero": false
+  "hero": false,
+  "planCoils": 0,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090001/20",
@@ -77,7 +80,10 @@
   "dispatchedMT": 0,
   "btaMT": 120,
   "btpMT": 120,
-  "hero": false
+  "hero": false,
+  "planCoils": 6,
+  "horizonCoils": 6,
+  "horizonMT": 120.0
  },
  {
   "id": "4213090001/30",
@@ -121,7 +127,10 @@
   "dispatchedMT": 0,
   "btaMT": 40,
   "btpMT": 40,
-  "hero": false
+  "hero": false,
+  "planCoils": 2,
+  "horizonCoils": 2,
+  "horizonMT": 40.0
  },
  {
   "id": "4213090002/10",
@@ -167,7 +176,10 @@
   "dispatchedMT": 0,
   "btaMT": 150,
   "btpMT": 150,
-  "hero": false
+  "hero": false,
+  "planCoils": 8,
+  "horizonCoils": 8,
+  "horizonMT": 150.0
  },
  {
   "id": "4213090002/20",
@@ -217,7 +229,10 @@
   "dispatchedMT": 18.02,
   "btaMT": 279.0,
   "btpMT": 281.03,
-  "hero": false
+  "hero": false,
+  "planCoils": 14,
+  "horizonCoils": 14,
+  "horizonMT": 280.98
  },
  {
   "id": "4213090003/10",
@@ -258,7 +273,10 @@
   "dispatchedMT": 0,
   "btaMT": 250,
   "btpMT": 250,
-  "hero": false
+  "hero": false,
+  "planCoils": 12,
+  "horizonCoils": 12,
+  "horizonMT": 249.96
  },
  {
   "id": "4213090003/20",
@@ -298,7 +316,10 @@
   "dispatchedMT": 0,
   "btaMT": 17.31,
   "btpMT": 40,
-  "hero": false
+  "hero": false,
+  "planCoils": 2,
+  "horizonCoils": 1,
+  "horizonMT": 20.0
  },
  {
   "id": "4213090003/30",
@@ -341,7 +362,10 @@
   "dispatchedMT": 0,
   "btaMT": 200,
   "btpMT": 200,
-  "hero": false
+  "hero": false,
+  "planCoils": 10,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090004/10",
@@ -378,7 +402,10 @@
   "dispatchedMT": 0,
   "btaMT": 18.5,
   "btpMT": 20.18,
-  "hero": false
+  "hero": false,
+  "planCoils": 1,
+  "horizonCoils": 1,
+  "horizonMT": 20.18
  },
  {
   "id": "4213090005/10",
@@ -418,7 +445,10 @@
   "dispatchedMT": 0,
   "btaMT": 100,
   "btpMT": 100,
-  "hero": false
+  "hero": false,
+  "planCoils": 5,
+  "horizonCoils": 5,
+  "horizonMT": 100.0
  },
  {
   "id": "4213090006/10",
@@ -458,7 +488,10 @@
   "dispatchedMT": 18.86,
   "btaMT": 129.14,
   "btpMT": 131.14,
-  "hero": false
+  "hero": false,
+  "planCoils": 7,
+  "horizonCoils": 4,
+  "horizonMT": 74.92
  },
  {
   "id": "4213090006/20",
@@ -502,7 +535,10 @@
   "dispatchedMT": 19.57,
   "btaMT": 57.2,
   "btpMT": 59.4,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 3,
+  "horizonMT": 59.4
  },
  {
   "id": "4213090006/30",
@@ -546,7 +582,10 @@
   "dispatchedMT": 0,
   "btaMT": 40.25,
   "btpMT": 60,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 3,
+  "horizonMT": 60.0
  },
  {
   "id": "4213090007/10",
@@ -596,7 +635,10 @@
   "dispatchedMT": 0,
   "btaMT": 120,
   "btpMT": 120,
-  "hero": false
+  "hero": false,
+  "planCoils": 6,
+  "horizonCoils": 6,
+  "horizonMT": 120.0
  },
  {
   "id": "4213090008/10",
@@ -633,7 +675,10 @@
   "dispatchedMT": 17.12,
   "btaMT": 81.43,
   "btpMT": 83.09,
-  "hero": false
+  "hero": false,
+  "planCoils": 4,
+  "horizonCoils": 4,
+  "horizonMT": 83.08
  },
  {
   "id": "4213090008/20",
@@ -676,7 +721,10 @@
   "dispatchedMT": 0,
   "btaMT": 250,
   "btpMT": 250,
-  "hero": false
+  "hero": false,
+  "planCoils": 12,
+  "horizonCoils": 12,
+  "horizonMT": 249.96
  },
  {
   "id": "4213090008/30",
@@ -720,7 +768,10 @@
   "dispatchedMT": 0,
   "btaMT": 226.96,
   "btpMT": 250,
-  "hero": false
+  "hero": false,
+  "planCoils": 12,
+  "horizonCoils": 8,
+  "horizonMT": 166.64
  },
  {
   "id": "4213090009/10",
@@ -767,7 +818,10 @@
   "dispatchedMT": 20.24,
   "btaMT": 126.89,
   "btpMT": 128.7,
-  "hero": false
+  "hero": false,
+  "planCoils": 6,
+  "horizonCoils": 3,
+  "horizonMT": 64.35
  },
  {
   "id": "4213090009/20",
@@ -807,7 +861,10 @@
   "dispatchedMT": 0,
   "btaMT": 60,
   "btpMT": 60,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090009/30",
@@ -850,7 +907,10 @@
   "dispatchedMT": 0,
   "btaMT": 200,
   "btpMT": 200,
-  "hero": false
+  "hero": false,
+  "planCoils": 10,
+  "horizonCoils": 10,
+  "horizonMT": 200.0
  },
  {
   "id": "4213090010/10",
@@ -894,7 +954,10 @@
   "dispatchedMT": 19.33,
   "btaMT": 0,
   "btpMT": 0,
-  "hero": false
+  "hero": false,
+  "planCoils": 0,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090011/10",
@@ -940,7 +1003,10 @@
   "dispatchedMT": 0,
   "btaMT": 300,
   "btpMT": 300,
-  "hero": false
+  "hero": false,
+  "planCoils": 15,
+  "horizonCoils": 15,
+  "horizonMT": 300.0
  },
  {
   "id": "4213090012/10",
@@ -977,7 +1043,10 @@
   "dispatchedMT": 16.91,
   "btaMT": 61.66,
   "btpMT": 62.88,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 3,
+  "horizonMT": 62.88
  },
  {
   "id": "4213090012/20",
@@ -1014,7 +1083,10 @@
   "dispatchedMT": 0,
   "btaMT": 60,
   "btpMT": 60,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 3,
+  "horizonMT": 60.0
  },
  {
   "id": "4213090012/30",
@@ -1051,7 +1123,10 @@
   "dispatchedMT": 0,
   "btaMT": 60,
   "btpMT": 60,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 3,
+  "horizonMT": 60.0
  },
  {
   "id": "4213090013/10",
@@ -1088,7 +1163,10 @@
   "dispatchedMT": 0,
   "btaMT": 60,
   "btpMT": 60,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 3,
+  "horizonMT": 60.0
  },
  {
   "id": "4213090014/10",
@@ -1131,7 +1209,10 @@
   "dispatchedMT": 0,
   "btaMT": 300,
   "btpMT": 300,
-  "hero": false
+  "hero": false,
+  "planCoils": 15,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090014/20",
@@ -1171,7 +1252,10 @@
   "dispatchedMT": 0,
   "btaMT": 100,
   "btpMT": 100,
-  "hero": false
+  "hero": false,
+  "planCoils": 5,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090015/10",
@@ -1211,7 +1295,10 @@
   "dispatchedMT": 0,
   "btaMT": 37.66,
   "btpMT": 60,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 3,
+  "horizonMT": 60.0
  },
  {
   "id": "4213090015/20",
@@ -1257,7 +1344,10 @@
   "dispatchedMT": 0,
   "btaMT": 200,
   "btpMT": 200,
-  "hero": false
+  "hero": false,
+  "planCoils": 10,
+  "horizonCoils": 10,
+  "horizonMT": 200.0
  },
  {
   "id": "4213090016/10",
@@ -1297,7 +1387,10 @@
   "dispatchedMT": 0,
   "btaMT": 250,
   "btpMT": 250,
-  "hero": false
+  "hero": false,
+  "planCoils": 12,
+  "horizonCoils": 12,
+  "horizonMT": 249.96
  },
  {
   "id": "4213090016/20",
@@ -1340,7 +1433,10 @@
   "dispatchedMT": 0,
   "btaMT": 150,
   "btpMT": 150,
-  "hero": false
+  "hero": false,
+  "planCoils": 8,
+  "horizonCoils": 8,
+  "horizonMT": 150.0
  },
  {
   "id": "4213090017/10",
@@ -1383,7 +1479,10 @@
   "dispatchedMT": 0,
   "btaMT": 98.6,
   "btpMT": 100.66,
-  "hero": true
+  "hero": true,
+  "planCoils": 5,
+  "horizonCoils": 5,
+  "horizonMT": 100.65
  },
  {
   "id": "4213090018/10",
@@ -1420,7 +1519,10 @@
   "dispatchedMT": 0,
   "btaMT": 60,
   "btpMT": 60,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 3,
+  "horizonMT": 60.0
  },
  {
   "id": "4213090018/20",
@@ -1460,7 +1562,10 @@
   "dispatchedMT": 19.25,
   "btaMT": 278.7,
   "btpMT": 280.75,
-  "hero": false
+  "hero": false,
+  "planCoils": 14,
+  "horizonCoils": 14,
+  "horizonMT": 280.7
  },
  {
   "id": "4213090019/10",
@@ -1500,7 +1605,10 @@
   "dispatchedMT": 0,
   "btaMT": 180.88,
   "btpMT": 182.37,
-  "hero": false
+  "hero": false,
+  "planCoils": 9,
+  "horizonCoils": 9,
+  "horizonMT": 182.34
  },
  {
   "id": "4213090020/10",
@@ -1540,7 +1648,10 @@
   "dispatchedMT": 0,
   "btaMT": 21.44,
   "btpMT": 23.23,
-  "hero": false
+  "hero": false,
+  "planCoils": 1,
+  "horizonCoils": 1,
+  "horizonMT": 23.23
  },
  {
   "id": "4213090020/20",
@@ -1580,7 +1691,10 @@
   "dispatchedMT": 0,
   "btaMT": 200,
   "btpMT": 200,
-  "hero": false
+  "hero": false,
+  "planCoils": 10,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090020/30",
@@ -1620,7 +1734,10 @@
   "dispatchedMT": 0,
   "btaMT": 250,
   "btpMT": 250,
-  "hero": false
+  "hero": false,
+  "planCoils": 12,
+  "horizonCoils": 12,
+  "horizonMT": 249.96
  },
  {
   "id": "4213090021/10",
@@ -1660,7 +1777,10 @@
   "dispatchedMT": 0,
   "btaMT": 120,
   "btpMT": 120,
-  "hero": false
+  "hero": false,
+  "planCoils": 6,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090022/10",
@@ -1697,7 +1817,10 @@
   "dispatchedMT": 0,
   "btaMT": 180,
   "btpMT": 180,
-  "hero": false
+  "hero": false,
+  "planCoils": 9,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090022/20",
@@ -1734,7 +1857,10 @@
   "dispatchedMT": 0,
   "btaMT": 80,
   "btpMT": 80,
-  "hero": false
+  "hero": false,
+  "planCoils": 4,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090023/10",
@@ -1777,7 +1903,10 @@
   "dispatchedMT": 0,
   "btaMT": 20.41,
   "btpMT": 40,
-  "hero": false
+  "hero": false,
+  "planCoils": 2,
+  "horizonCoils": 2,
+  "horizonMT": 40.0
  },
  {
   "id": "4213090023/20",
@@ -1814,7 +1943,10 @@
   "dispatchedMT": 0,
   "btaMT": 81.12,
   "btpMT": 82.59,
-  "hero": false
+  "hero": false,
+  "planCoils": 4,
+  "horizonCoils": 2,
+  "horizonMT": 41.3
  },
  {
   "id": "4213090023/30",
@@ -1860,7 +1992,10 @@
   "dispatchedMT": 0,
   "btaMT": 300,
   "btpMT": 300,
-  "hero": false
+  "hero": false,
+  "planCoils": 15,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090024/10",
@@ -1903,7 +2038,10 @@
   "dispatchedMT": 16.77,
   "btaMT": 70.47,
   "btpMT": 72.35,
-  "hero": false
+  "hero": false,
+  "planCoils": 4,
+  "horizonCoils": 2,
+  "horizonMT": 36.18
  },
  {
   "id": "4213090024/20",
@@ -1940,7 +2078,10 @@
   "dispatchedMT": 19.37,
   "btaMT": 40.38,
   "btpMT": 60.63,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 3,
+  "horizonMT": 60.63
  },
  {
   "id": "4213090025/10",
@@ -1980,7 +2121,10 @@
   "dispatchedMT": 0,
   "btaMT": 97.71,
   "btpMT": 120,
-  "hero": false
+  "hero": false,
+  "planCoils": 6,
+  "horizonCoils": 6,
+  "horizonMT": 120.0
  },
  {
   "id": "4213090026/10",
@@ -2017,7 +2161,10 @@
   "dispatchedMT": 0,
   "btaMT": 59.82,
   "btpMT": 80.36,
-  "hero": false
+  "hero": false,
+  "planCoils": 4,
+  "horizonCoils": 4,
+  "horizonMT": 80.36
  },
  {
   "id": "4213090027/10",
@@ -2061,7 +2208,10 @@
   "dispatchedMT": 18.85,
   "btaMT": 178.05,
   "btpMT": 180.16,
-  "hero": false
+  "hero": false,
+  "planCoils": 9,
+  "horizonCoils": 5,
+  "horizonMT": 100.1
  },
  {
   "id": "4213090027/20",
@@ -2111,7 +2261,10 @@
   "dispatchedMT": 0,
   "btaMT": 178.78,
   "btpMT": 180.83,
-  "hero": false
+  "hero": false,
+  "planCoils": 9,
+  "horizonCoils": 9,
+  "horizonMT": 180.81
  },
  {
   "id": "4213090027/30",
@@ -2155,7 +2308,10 @@
   "dispatchedMT": 0,
   "btaMT": 120,
   "btpMT": 120,
-  "hero": false
+  "hero": false,
+  "planCoils": 6,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090028/10",
@@ -2196,7 +2352,10 @@
   "dispatchedMT": 18.92,
   "btaMT": 58.4,
   "btpMT": 60.08,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 3,
+  "horizonMT": 60.09
  },
  {
   "id": "4213090029/10",
@@ -2236,7 +2395,10 @@
   "dispatchedMT": 0,
   "btaMT": 100,
   "btpMT": 100,
-  "hero": false
+  "hero": false,
+  "planCoils": 5,
+  "horizonCoils": 5,
+  "horizonMT": 100.0
  },
  {
   "id": "4213090030/10",
@@ -2273,7 +2435,10 @@
   "dispatchedMT": 0,
   "btaMT": 60,
   "btpMT": 60,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090030/20",
@@ -2317,7 +2482,10 @@
   "dispatchedMT": 0,
   "btaMT": 80,
   "btpMT": 80,
-  "hero": false
+  "hero": false,
+  "planCoils": 4,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090031/10",
@@ -2354,7 +2522,10 @@
   "dispatchedMT": 0,
   "btaMT": 37.71,
   "btpMT": 60,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 3,
+  "horizonMT": 60.0
  },
  {
   "id": "4213090031/20",
@@ -2391,7 +2562,10 @@
   "dispatchedMT": 0,
   "btaMT": 60,
   "btpMT": 60,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090032/10",
@@ -2434,7 +2608,10 @@
   "dispatchedMT": 0,
   "btaMT": 250,
   "btpMT": 250,
-  "hero": false
+  "hero": false,
+  "planCoils": 12,
+  "horizonCoils": 12,
+  "horizonMT": 249.96
  },
  {
   "id": "4213090032/20",
@@ -2471,7 +2648,10 @@
   "dispatchedMT": 0,
   "btaMT": 40.24,
   "btpMT": 60,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 3,
+  "horizonMT": 60.0
  },
  {
   "id": "4213090033/10",
@@ -2517,7 +2697,10 @@
   "dispatchedMT": 17.5,
   "btaMT": 100.63,
   "btpMT": 102.5,
-  "hero": false
+  "hero": false,
+  "planCoils": 5,
+  "horizonCoils": 5,
+  "horizonMT": 102.5
  },
  {
   "id": "4213090034/10",
@@ -2554,7 +2737,10 @@
   "dispatchedMT": 0,
   "btaMT": 200,
   "btpMT": 200,
-  "hero": false
+  "hero": false,
+  "planCoils": 10,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090034/20",
@@ -2591,7 +2777,10 @@
   "dispatchedMT": 18.56,
   "btaMT": 59.87,
   "btpMT": 61.44,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 2,
+  "horizonMT": 40.96
  },
  {
   "id": "4213090035/10",
@@ -2638,7 +2827,10 @@
   "dispatchedMT": 19.96,
   "btaMT": 277.21,
   "btpMT": 278.99,
-  "hero": false
+  "hero": false,
+  "planCoils": 14,
+  "horizonCoils": 3,
+  "horizonMT": 59.79
  },
  {
   "id": "4213090035/20",
@@ -2679,7 +2871,10 @@
   "dispatchedMT": 0,
   "btaMT": 80,
   "btpMT": 80,
-  "hero": false
+  "hero": false,
+  "planCoils": 4,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090035/30",
@@ -2726,7 +2921,10 @@
   "dispatchedMT": 18.88,
   "btaMT": 128.45,
   "btpMT": 130.13,
-  "hero": false
+  "hero": false,
+  "planCoils": 7,
+  "horizonCoils": 7,
+  "horizonMT": 130.13
  },
  {
   "id": "4213090036/10",
@@ -2766,7 +2964,10 @@
   "dispatchedMT": 0,
   "btaMT": 300,
   "btpMT": 300,
-  "hero": false
+  "hero": false,
+  "planCoils": 15,
+  "horizonCoils": 15,
+  "horizonMT": 300.0
  },
  {
   "id": "4213090036/20",
@@ -2803,7 +3004,10 @@
   "dispatchedMT": 0,
   "btaMT": 40,
   "btpMT": 40,
-  "hero": false
+  "hero": false,
+  "planCoils": 2,
+  "horizonCoils": 2,
+  "horizonMT": 40.0
  },
  {
   "id": "4213090036/30",
@@ -2840,7 +3044,10 @@
   "dispatchedMT": 0,
   "btaMT": 250,
   "btpMT": 250,
-  "hero": false
+  "hero": false,
+  "planCoils": 12,
+  "horizonCoils": 12,
+  "horizonMT": 249.96
  },
  {
   "id": "4213090037/10",
@@ -2877,7 +3084,10 @@
   "dispatchedMT": 0,
   "btaMT": 36.15,
   "btpMT": 60,
-  "hero": false
+  "hero": false,
+  "planCoils": 3,
+  "horizonCoils": 1,
+  "horizonMT": 20.0
  },
  {
   "id": "4213090037/20",
@@ -2914,7 +3124,10 @@
   "dispatchedMT": 0,
   "btaMT": 80,
   "btpMT": 80,
-  "hero": false
+  "hero": false,
+  "planCoils": 4,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090038/10",
@@ -2957,7 +3170,10 @@
   "dispatchedMT": 20.0,
   "btaMT": 0,
   "btpMT": 0,
-  "hero": false
+  "hero": false,
+  "planCoils": 0,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090039/10",
@@ -2997,7 +3213,10 @@
   "dispatchedMT": 0,
   "btaMT": 150,
   "btpMT": 150,
-  "hero": false
+  "hero": false,
+  "planCoils": 8,
+  "horizonCoils": 8,
+  "horizonMT": 150.0
  },
  {
   "id": "4213090040/10",
@@ -3034,7 +3253,10 @@
   "dispatchedMT": 0,
   "btaMT": 200,
   "btpMT": 200,
-  "hero": false
+  "hero": false,
+  "planCoils": 10,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090040/20",
@@ -3078,7 +3300,10 @@
   "dispatchedMT": 0,
   "btaMT": 78.17,
   "btpMT": 80.28,
-  "hero": false
+  "hero": false,
+  "planCoils": 4,
+  "horizonCoils": 2,
+  "horizonMT": 40.14
  },
  {
   "id": "4213090040/30",
@@ -3124,6 +3349,9 @@
   "dispatchedMT": 0,
   "btaMT": 200,
   "btpMT": 200,
-  "hero": false
+  "hero": false,
+  "planCoils": 10,
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  }
 ]

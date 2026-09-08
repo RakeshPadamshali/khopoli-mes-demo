@@ -1,6 +1,6 @@
 [
  {
-  "id": "MSG-00122",
+  "id": "MSG-00123",
   "interfaceId": "IF-SAP-25",
   "direction": "MES→SAP",
   "at": "2026-09-06T10:39:50",
@@ -24,7 +24,7 @@
   ]
  },
  {
-  "id": "MSG-00159",
+  "id": "MSG-00160",
   "interfaceId": "IF-SIS-01",
   "direction": "→MES",
   "at": "2026-09-06T10:45:30",
@@ -48,7 +48,7 @@
   ]
  },
  {
-  "id": "MSG-00143",
+  "id": "MSG-00144",
   "interfaceId": "IF-SAP-01",
   "direction": "SAP→MES",
   "at": "2026-09-06T10:57:51",
@@ -72,7 +72,7 @@
   ]
  },
  {
-  "id": "MSG-00162",
+  "id": "MSG-00163",
   "interfaceId": "IF-SAP-25",
   "direction": "MES→SAP",
   "at": "2026-09-06T11:01:43",
@@ -101,7 +101,7 @@
   "direction": "MES→L2",
   "at": "2026-09-06T12:05:16",
   "status": "OK",
-  "latencyMs": 183,
+  "latencyMs": 1528,
   "correlation": {
    "po": "PO-KHP-2609-0119",
    "unit": "CRF-KHP-2609-0023",
@@ -150,7 +150,7 @@
   "direction": "L2→MES",
   "at": "2026-09-06T12:09:16",
   "status": "OK",
-  "latencyMs": 1058,
+  "latencyMs": 804,
   "correlation": {
    "po": "PO-KHP-2609-0119",
    "unit": "CRF-KHP-2609-0023",
@@ -172,7 +172,7 @@
   ]
  },
  {
-  "id": "MSG-00158",
+  "id": "MSG-00159",
   "interfaceId": "IF-L2-SCH",
   "direction": "→MES",
   "at": "2026-09-06T12:16:26",
@@ -196,7 +196,7 @@
   ]
  },
  {
-  "id": "MSG-00138",
+  "id": "MSG-00139",
   "interfaceId": "IF-L2-SCH",
   "direction": "→MES",
   "at": "2026-09-06T12:52:04",
@@ -225,7 +225,7 @@
   "direction": "MES→L2",
   "at": "2026-09-06T13:14:24",
   "status": "OK",
-  "latencyMs": 248,
+  "latencyMs": 467,
   "correlation": {
    "po": "PO-KHP-2609-0114",
    "unit": "GIC-KHP-2609-0021",
@@ -269,7 +269,7 @@
   "direction": "L2→MES",
   "at": "2026-09-06T13:17:24",
   "status": "OK",
-  "latencyMs": 1575,
+  "latencyMs": 418,
   "correlation": {
    "po": "PO-KHP-2609-0114",
    "unit": "GIC-KHP-2609-0021",
@@ -294,9 +294,9 @@
   "id": "MSG-00040",
   "interfaceId": "IF-L2-BIP",
   "direction": "L2→MES",
-  "at": "2026-09-06T13:23:45",
+  "at": "2026-09-06T13:37:45",
   "status": "OK",
-  "latencyMs": 125,
+  "latencyMs": 187,
   "correlation": {
    "po": "PO-KHP-2609-0119",
    "unit": "CRF-KHP-2609-0023",
@@ -305,20 +305,20 @@
   "payloadExcerpt": {
    "event": "BATCH_IN_PROGRESS",
    "unit": "CRF-KHP-2609-0023",
-   "pctDone": 54
+   "pctDone": 59
   },
   "error": null,
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-06T13:23:45",
+    "at": "2026-09-06T13:37:45",
     "status": "OK",
     "by": "middleware"
    }
   ]
  },
  {
-  "id": "MSG-00130",
+  "id": "MSG-00131",
   "interfaceId": "IF-SAP-19",
   "direction": "MES→SAP",
   "at": "2026-09-06T13:48:54",
@@ -347,7 +347,7 @@
   "direction": "L2→MES",
   "at": "2026-09-06T14:06:45",
   "status": "OK",
-  "latencyMs": 1914,
+  "latencyMs": 175,
   "correlation": {
    "po": "PO-KHP-2609-0119",
    "unit": "CRF-KHP-2609-0023",
@@ -384,9 +384,9 @@
   "id": "MSG-00071",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-06T14:13:45",
+  "at": "2026-09-06T14:11:45",
   "status": "OK",
-  "latencyMs": 1227,
+  "latencyMs": 928,
   "correlation": {
    "po": "PO-KHP-2609-0119",
    "unit": "CRF-KHP-2609-0023",
@@ -404,7 +404,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-06T14:13:45",
+    "at": "2026-09-06T14:11:45",
     "status": "OK",
     "by": "middleware"
    }
@@ -415,9 +415,9 @@
   "id": "MSG-00072",
   "interfaceId": "IF-SAP-07",
   "direction": "MES→SAP",
-  "at": "2026-09-06T14:14:45",
+  "at": "2026-09-06T14:12:45",
   "status": "OK",
-  "latencyMs": 676,
+  "latencyMs": 476,
   "correlation": {
    "po": "PO-KHP-2609-0119",
    "unit": "GIC-KHP-2609-0022",
@@ -431,14 +431,14 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-06T14:14:45",
+    "at": "2026-09-06T14:12:45",
     "status": "OK",
     "by": "middleware"
    }
   ]
  },
  {
-  "id": "MSG-00115",
+  "id": "MSG-00116",
   "interfaceId": "IF-SAP-08",
   "direction": "MES→SAP",
   "at": "2026-09-06T14:25:35",
@@ -462,7 +462,7 @@
   ]
  },
  {
-  "id": "MSG-00102",
+  "id": "MSG-00103",
   "interfaceId": "IF-UTL-01",
   "direction": "→MES",
   "at": "2026-09-06T14:33:32",
@@ -491,7 +491,7 @@
   "direction": "MES→SAP",
   "at": "2026-09-06T14:48:16",
   "status": "OK",
-  "latencyMs": 1588,
+  "latencyMs": 1162,
   "correlation": {
    "dispatch": "DSP-0017",
    "so": "4213090028",
@@ -516,9 +516,9 @@
   "id": "MSG-00038",
   "interfaceId": "IF-L2-BIP",
   "direction": "L2→MES",
-  "at": "2026-09-06T15:14:18",
+  "at": "2026-09-06T15:39:18",
   "status": "OK",
-  "latencyMs": 2360,
+  "latencyMs": 939,
   "correlation": {
    "po": "PO-KHP-2609-0114",
    "unit": "GIC-KHP-2609-0021",
@@ -527,13 +527,13 @@
   "payloadExcerpt": {
    "event": "BATCH_IN_PROGRESS",
    "unit": "GIC-KHP-2609-0021",
-   "pctDone": 33
+   "pctDone": 40
   },
   "error": null,
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-06T15:14:18",
+    "at": "2026-09-06T15:39:18",
     "status": "OK",
     "by": "middleware"
    }
@@ -545,7 +545,7 @@
   "direction": "L2→MES",
   "at": "2026-09-06T16:05:18",
   "status": "OK",
-  "latencyMs": 2796,
+  "latencyMs": 732,
   "correlation": {
    "po": "PO-KHP-2609-0114",
    "unit": "GIC-KHP-2609-0021",
@@ -586,9 +586,9 @@
   "id": "MSG-00069",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-06T16:08:18",
+  "at": "2026-09-06T16:05:18",
   "status": "OK",
-  "latencyMs": 799,
+  "latencyMs": 813,
   "correlation": {
    "po": "PO-KHP-2609-0114",
    "unit": "GIC-KHP-2609-0021",
@@ -606,7 +606,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-06T16:08:18",
+    "at": "2026-09-06T16:05:18",
     "status": "OK",
     "by": "middleware"
    }
@@ -617,9 +617,9 @@
   "id": "MSG-00070",
   "interfaceId": "IF-SAP-07",
   "direction": "MES→SAP",
-  "at": "2026-09-06T16:09:18",
+  "at": "2026-09-06T16:06:18",
   "status": "OK",
-  "latencyMs": 1732,
+  "latencyMs": 1655,
   "correlation": {
    "po": "PO-KHP-2609-0114",
    "unit": "PPG-KHP-2609-0013",
@@ -633,14 +633,14 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-06T16:09:18",
+    "at": "2026-09-06T16:06:18",
     "status": "OK",
     "by": "middleware"
    }
   ]
  },
  {
-  "id": "MSG-00160",
+  "id": "MSG-00161",
   "interfaceId": "IF-UTL-01",
   "direction": "→MES",
   "at": "2026-09-06T16:46:20",
@@ -664,7 +664,7 @@
   ]
  },
  {
-  "id": "MSG-00144",
+  "id": "MSG-00145",
   "interfaceId": "IF-L2-SCH",
   "direction": "→MES",
   "at": "2026-09-06T17:18:13",
@@ -688,7 +688,7 @@
   ]
  },
  {
-  "id": "MSG-00119",
+  "id": "MSG-00120",
   "interfaceId": "IF-SAP-19",
   "direction": "MES→SAP",
   "at": "2026-09-06T17:36:09",
@@ -712,7 +712,7 @@
   ]
  },
  {
-  "id": "MSG-00161",
+  "id": "MSG-00162",
   "interfaceId": "IF-SIS-01",
   "direction": "→MES",
   "at": "2026-09-06T17:46:01",
@@ -736,7 +736,7 @@
   ]
  },
  {
-  "id": "MSG-00154",
+  "id": "MSG-00155",
   "interfaceId": "IF-UTL-01",
   "direction": "→MES",
   "at": "2026-09-06T18:35:57",
@@ -760,7 +760,31 @@
   ]
  },
  {
-  "id": "MSG-00111",
+  "id": "MSG-00095",
+  "interfaceId": "IF-SAP-19",
+  "direction": "MES→SAP",
+  "at": "2026-09-06T19:34:30",
+  "status": "OK",
+  "latencyMs": 2572,
+  "correlation": {
+   "so": "4213090037"
+  },
+  "payloadExcerpt": {
+   "ref": "4213090037/20",
+   "note": "routine"
+  },
+  "error": null,
+  "retries": 0,
+  "history": [
+   {
+    "at": "2026-09-06T19:34:30",
+    "status": "OK",
+    "by": "middleware"
+   }
+  ]
+ },
+ {
+  "id": "MSG-00112",
   "interfaceId": "IF-SAP-08",
   "direction": "MES→SAP",
   "at": "2026-09-06T19:39:33",
@@ -784,7 +808,7 @@
   ]
  },
  {
-  "id": "MSG-00149",
+  "id": "MSG-00150",
   "interfaceId": "IF-SAP-24",
   "direction": "MES→SAP",
   "at": "2026-09-06T19:45:29",
@@ -808,7 +832,7 @@
   ]
  },
  {
-  "id": "MSG-00124",
+  "id": "MSG-00125",
   "interfaceId": "IF-SAP-01",
   "direction": "SAP→MES",
   "at": "2026-09-06T20:27:09",
@@ -832,7 +856,7 @@
   ]
  },
  {
-  "id": "MSG-00145",
+  "id": "MSG-00146",
   "interfaceId": "IF-SAP-08",
   "direction": "MES→SAP",
   "at": "2026-09-06T20:27:33",
@@ -856,7 +880,7 @@
   ]
  },
  {
-  "id": "MSG-00163",
+  "id": "MSG-00164",
   "interfaceId": "IF-APS-MAOUT",
   "direction": "→MES",
   "at": "2026-09-06T21:34:05",
@@ -880,7 +904,7 @@
   ]
  },
  {
-  "id": "MSG-00106",
+  "id": "MSG-00107",
   "interfaceId": "IF-SAP-19",
   "direction": "MES→SAP",
   "at": "2026-09-06T21:41:22",
@@ -907,9 +931,9 @@
   "id": "MSG-00055",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-06T21:47:29",
+  "at": "2026-09-06T21:48:29",
   "status": "OK",
-  "latencyMs": 1536,
+  "latencyMs": 1850,
   "correlation": {
    "po": "PO-KHP-2609-0083",
    "unit": "PPG-KHP-2609-0010",
@@ -927,7 +951,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-06T21:47:29",
+    "at": "2026-09-06T21:48:29",
     "status": "OK",
     "by": "middleware"
    }
@@ -938,9 +962,9 @@
   "id": "MSG-00056",
   "interfaceId": "IF-SAP-06",
   "direction": "MES→SAP",
-  "at": "2026-09-06T21:48:29",
+  "at": "2026-09-06T21:49:29",
   "status": "OK",
-  "latencyMs": 1889,
+  "latencyMs": 1403,
   "correlation": {
    "po": "PO-KHP-2609-0083",
    "unit": "SLC-KHP-2609-0026",
@@ -954,7 +978,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-06T21:48:29",
+    "at": "2026-09-06T21:49:29",
     "status": "OK",
     "by": "middleware"
    }
@@ -964,9 +988,9 @@
   "id": "MSG-00014",
   "interfaceId": "IF-L2-PDI",
   "direction": "MES→L2",
-  "at": "2026-09-06T22:29:04",
+  "at": "2026-09-06T22:55:04",
   "status": "OK",
-  "latencyMs": 192,
+  "latencyMs": 1058,
   "correlation": {
    "po": "PO-KHP-2609-0128",
    "unit": "HRC-DL-2609-0027",
@@ -992,7 +1016,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-06T22:29:04",
+    "at": "2026-09-06T22:55:04",
     "status": "OK",
     "by": "middleware"
    }
@@ -1002,9 +1026,9 @@
   "id": "MSG-00015",
   "interfaceId": "IF-L2-PDIACK",
   "direction": "L2→MES",
-  "at": "2026-09-06T22:31:04",
+  "at": "2026-09-06T22:59:04",
   "status": "OK",
-  "latencyMs": 1540,
+  "latencyMs": 1074,
   "correlation": {
    "po": "PO-KHP-2609-0128",
    "unit": "HRC-DL-2609-0027",
@@ -1019,14 +1043,14 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-06T22:31:04",
+    "at": "2026-09-06T22:59:04",
     "status": "OK",
     "by": "middleware"
    }
   ]
  },
  {
-  "id": "MSG-00123",
+  "id": "MSG-00124",
   "interfaceId": "IF-L2-SCH",
   "direction": "→MES",
   "at": "2026-09-06T23:03:33",
@@ -1050,7 +1074,7 @@
   ]
  },
  {
-  "id": "MSG-00150",
+  "id": "MSG-00151",
   "interfaceId": "IF-L2-SCH",
   "direction": "→MES",
   "at": "2026-09-06T23:11:52",
@@ -1074,7 +1098,7 @@
   ]
  },
  {
-  "id": "MSG-00136",
+  "id": "MSG-00137",
   "interfaceId": "IF-SIS-01",
   "direction": "→MES",
   "at": "2026-09-06T23:24:09",
@@ -1101,9 +1125,9 @@
   "id": "MSG-00048",
   "interfaceId": "IF-L2-BIP",
   "direction": "L2→MES",
-  "at": "2026-09-07T00:01:24",
+  "at": "2026-09-06T23:32:24",
   "status": "OK",
-  "latencyMs": 1401,
+  "latencyMs": 2239,
   "correlation": {
    "po": "PO-KHP-2609-0128",
    "unit": "HRC-DL-2609-0027",
@@ -1112,49 +1136,15 @@
   "payloadExcerpt": {
    "event": "BATCH_IN_PROGRESS",
    "unit": "HRC-DL-2609-0027",
-   "pctDone": 49
+   "pctDone": 34
   },
   "error": null,
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T00:01:24",
+    "at": "2026-09-06T23:32:24",
     "status": "OK",
     "by": "middleware"
-   }
-  ]
- },
- {
-  "id": "MSG-00083",
-  "interfaceId": "IF-SAP-10",
-  "direction": "MES→SAP",
-  "at": "2026-09-07T00:20:24",
-  "status": "REPLAYED",
-  "latencyMs": 1909,
-  "correlation": {
-   "po": "PO-KHP-2609-0128",
-   "unit": "HRC-DL-2609-0027",
-   "so": "4213090023",
-   "line": "PKL",
-   "pc": "PC-PKL-0026"
-  },
-  "payloadExcerpt": {
-   "pc": "PC-PKL-0026",
-   "yieldPct": 98.5,
-   "outMT": 18.6
-  },
-  "error": "SAP COR: order locked by user PPC_KHP01 (transaction CO02) — posting rejected",
-  "retries": 1,
-  "history": [
-   {
-    "at": "2026-09-07T00:20:24",
-    "status": "FAILED",
-    "by": "SAP"
-   },
-   {
-    "at": "2026-09-07T00:34:24",
-    "status": "OK",
-    "by": "AI agent auto-retry (autonomous action A-04)"
    }
   ]
  },
@@ -1164,7 +1154,7 @@
   "direction": "L2→MES",
   "at": "2026-09-07T00:21:24",
   "status": "OK",
-  "latencyMs": 2430,
+  "latencyMs": 1537,
   "correlation": {
    "po": "PO-KHP-2609-0128",
    "unit": "HRC-DL-2609-0027",
@@ -1175,7 +1165,7 @@
   "payloadExcerpt": {
    "pdoId": "PDO-PKL-0026",
    "actuals": {
-    "acidConcPct": 14.0,
+    "acidConcPct": 15.4,
     "stripSpeedMpm": 88,
     "bathTempC": 81,
     "oilingGsm": 1.35
@@ -1199,7 +1189,7 @@
   "direction": "MES→L2",
   "at": "2026-09-07T00:23:29",
   "status": "OK",
-  "latencyMs": 1074,
+  "latencyMs": 1394,
   "correlation": {
    "po": "PO-KHP-2609-0122",
    "unit": "HRC-KHP-2609-0025",
@@ -1232,12 +1222,69 @@
   ]
  },
  {
+  "id": "MSG-00083",
+  "interfaceId": "IF-SAP-10",
+  "direction": "MES→SAP",
+  "at": "2026-09-07T00:24:24",
+  "status": "OK",
+  "latencyMs": 2414,
+  "correlation": {
+   "po": "PO-KHP-2609-0128",
+   "unit": "HRC-DL-2609-0027",
+   "so": "4213090023",
+   "line": "PKL",
+   "pc": "PC-PKL-0026"
+  },
+  "payloadExcerpt": {
+   "pc": "PC-PKL-0026",
+   "yieldPct": 98.5,
+   "outMT": 18.6,
+   "sapDoc": "COR-4141951"
+  },
+  "error": null,
+  "retries": 0,
+  "history": [
+   {
+    "at": "2026-09-07T00:24:24",
+    "status": "OK",
+    "by": "middleware"
+   }
+  ],
+  "hero": false
+ },
+ {
+  "id": "MSG-00084",
+  "interfaceId": "IF-SAP-06",
+  "direction": "MES→SAP",
+  "at": "2026-09-07T00:25:24",
+  "status": "OK",
+  "latencyMs": 436,
+  "correlation": {
+   "po": "PO-KHP-2609-0128",
+   "unit": "HPO-KHP-2609-0026",
+   "so": "4213090023"
+  },
+  "payloadExcerpt": {
+   "batch": "HPO-KHP-2609-0026",
+   "attributes": "thk/width/weight/coating"
+  },
+  "error": null,
+  "retries": 0,
+  "history": [
+   {
+    "at": "2026-09-07T00:25:24",
+    "status": "OK",
+    "by": "middleware"
+   }
+  ]
+ },
+ {
   "id": "MSG-00008",
   "interfaceId": "IF-L2-PDIACK",
   "direction": "L2→MES",
   "at": "2026-09-07T00:25:29",
   "status": "OK",
-  "latencyMs": 1987,
+  "latencyMs": 625,
   "correlation": {
    "po": "PO-KHP-2609-0122",
    "unit": "HRC-KHP-2609-0025",
@@ -1259,7 +1306,7 @@
   ]
  },
  {
-  "id": "MSG-00095",
+  "id": "MSG-00096",
   "interfaceId": "IF-L2-SCH",
   "direction": "→MES",
   "at": "2026-09-07T01:36:28",
@@ -1286,9 +1333,9 @@
   "id": "MSG-00042",
   "interfaceId": "IF-L2-BIP",
   "direction": "L2→MES",
-  "at": "2026-09-07T01:59:33",
+  "at": "2026-09-07T01:42:33",
   "status": "OK",
-  "latencyMs": 1219,
+  "latencyMs": 2360,
   "correlation": {
    "po": "PO-KHP-2609-0122",
    "unit": "HRC-KHP-2609-0025",
@@ -1297,13 +1344,13 @@
   "payloadExcerpt": {
    "event": "BATCH_IN_PROGRESS",
    "unit": "HRC-KHP-2609-0025",
-   "pctDone": 70
+   "pctDone": 33
   },
   "error": null,
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T01:59:33",
+    "at": "2026-09-07T01:42:33",
     "status": "OK",
     "by": "middleware"
    }
@@ -1315,7 +1362,7 @@
   "direction": "L2→MES",
   "at": "2026-09-07T02:33:33",
   "status": "OK",
-  "latencyMs": 1047,
+  "latencyMs": 2796,
   "correlation": {
    "po": "PO-KHP-2609-0122",
    "unit": "HRC-KHP-2609-0025",
@@ -1348,9 +1395,9 @@
   "id": "MSG-00075",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-07T02:36:33",
+  "at": "2026-09-07T02:37:33",
   "status": "OK",
-  "latencyMs": 215,
+  "latencyMs": 956,
   "correlation": {
    "po": "PO-KHP-2609-0122",
    "unit": "HRC-KHP-2609-0025",
@@ -1368,7 +1415,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T02:36:33",
+    "at": "2026-09-07T02:37:33",
     "status": "OK",
     "by": "middleware"
    }
@@ -1379,9 +1426,9 @@
   "id": "MSG-00076",
   "interfaceId": "IF-SAP-06",
   "direction": "MES→SAP",
-  "at": "2026-09-07T02:37:33",
+  "at": "2026-09-07T02:38:33",
   "status": "OK",
-  "latencyMs": 2465,
+  "latencyMs": 1348,
   "correlation": {
    "po": "PO-KHP-2609-0122",
    "unit": "HPO-KHP-2609-0024",
@@ -1395,14 +1442,14 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T02:37:33",
+    "at": "2026-09-07T02:38:33",
     "status": "OK",
     "by": "middleware"
    }
   ]
  },
  {
-  "id": "MSG-00133",
+  "id": "MSG-00134",
   "interfaceId": "IF-L2-DT",
   "direction": "→MES",
   "at": "2026-09-07T02:45:38",
@@ -1426,7 +1473,7 @@
   ]
  },
  {
-  "id": "MSG-00121",
+  "id": "MSG-00122",
   "interfaceId": "IF-SAP-25",
   "direction": "MES→SAP",
   "at": "2026-09-07T03:29:02",
@@ -1450,7 +1497,7 @@
   ]
  },
  {
-  "id": "MSG-00127",
+  "id": "MSG-00128",
   "interfaceId": "IF-L2-DT",
   "direction": "→MES",
   "at": "2026-09-07T04:30:29",
@@ -1474,38 +1521,7 @@
   ]
  },
  {
-  "id": "MSG-00061",
-  "interfaceId": "IF-SAP-10",
-  "direction": "MES→SAP",
-  "at": "2026-09-07T04:59:31",
-  "status": "OK",
-  "latencyMs": 1935,
-  "correlation": {
-   "po": "PO-KHP-2609-0099",
-   "unit": "GIC-KHP-2609-0018",
-   "so": "4213090001",
-   "line": "SLT",
-   "pc": "PC-SLT-0012"
-  },
-  "payloadExcerpt": {
-   "pc": "PC-SLT-0012",
-   "yieldPct": 95.0,
-   "outMT": 20.31,
-   "sapDoc": "COR-4000635"
-  },
-  "error": null,
-  "retries": 0,
-  "history": [
-   {
-    "at": "2026-09-07T04:59:31",
-    "status": "OK",
-    "by": "middleware"
-   }
-  ],
-  "hero": false
- },
- {
-  "id": "MSG-00135",
+  "id": "MSG-00136",
   "interfaceId": "IF-SAP-19",
   "direction": "MES→SAP",
   "at": "2026-09-07T05:00:10",
@@ -1529,12 +1545,43 @@
   ]
  },
  {
+  "id": "MSG-00061",
+  "interfaceId": "IF-SAP-10",
+  "direction": "MES→SAP",
+  "at": "2026-09-07T05:04:31",
+  "status": "OK",
+  "latencyMs": 2084,
+  "correlation": {
+   "po": "PO-KHP-2609-0099",
+   "unit": "GIC-KHP-2609-0018",
+   "so": "4213090001",
+   "line": "SLT",
+   "pc": "PC-SLT-0012"
+  },
+  "payloadExcerpt": {
+   "pc": "PC-SLT-0012",
+   "yieldPct": 95.0,
+   "outMT": 20.31,
+   "sapDoc": "COR-4000635"
+  },
+  "error": null,
+  "retries": 0,
+  "history": [
+   {
+    "at": "2026-09-07T05:04:31",
+    "status": "OK",
+    "by": "middleware"
+   }
+  ],
+  "hero": false
+ },
+ {
   "id": "MSG-00062",
   "interfaceId": "IF-SAP-06",
   "direction": "MES→SAP",
-  "at": "2026-09-07T05:00:31",
+  "at": "2026-09-07T05:05:31",
   "status": "OK",
-  "latencyMs": 1536,
+  "latencyMs": 2142,
   "correlation": {
    "po": "PO-KHP-2609-0099",
    "unit": "SLC-KHP-2609-0034",
@@ -1548,14 +1595,14 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T05:00:31",
+    "at": "2026-09-07T05:05:31",
     "status": "OK",
     "by": "middleware"
    }
   ]
  },
  {
-  "id": "MSG-00155",
+  "id": "MSG-00156",
   "interfaceId": "IF-SAP-08",
   "direction": "MES→SAP",
   "at": "2026-09-07T05:54:52",
@@ -1579,7 +1626,7 @@
   ]
  },
  {
-  "id": "MSG-00100",
+  "id": "MSG-00101",
   "interfaceId": "IF-APS-FPOUT",
   "direction": "→MES",
   "at": "2026-09-07T05:55:05",
@@ -1603,7 +1650,7 @@
   ]
  },
  {
-  "id": "MSG-00097",
+  "id": "MSG-00098",
   "interfaceId": "IF-APS-MAOUT",
   "direction": "→MES",
   "at": "2026-09-07T05:56:27",
@@ -1632,7 +1679,7 @@
   "direction": "MES→L2",
   "at": "2026-09-07T06:23:02",
   "status": "OK",
-  "latencyMs": 165,
+  "latencyMs": 418,
   "correlation": {
    "po": "PO-KHP-2609-0124",
    "unit": "HRC-DL-2609-0026",
@@ -1670,7 +1717,7 @@
   "direction": "L2→MES",
   "at": "2026-09-07T06:25:02",
   "status": "OK",
-  "latencyMs": 248,
+  "latencyMs": 577,
   "correlation": {
    "po": "PO-KHP-2609-0124",
    "unit": "HRC-DL-2609-0026",
@@ -1692,7 +1739,7 @@
   ]
  },
  {
-  "id": "MSG-00126",
+  "id": "MSG-00127",
   "interfaceId": "IF-SAP-33",
   "direction": "SAP→MES",
   "at": "2026-09-07T06:41:35",
@@ -1719,9 +1766,9 @@
   "id": "MSG-00044",
   "interfaceId": "IF-L2-BIP",
   "direction": "L2→MES",
-  "at": "2026-09-07T07:13:17",
+  "at": "2026-09-07T07:19:17",
   "status": "OK",
-  "latencyMs": 2239,
+  "latencyMs": 125,
   "correlation": {
    "po": "PO-KHP-2609-0124",
    "unit": "HRC-DL-2609-0026",
@@ -1730,13 +1777,13 @@
   "payloadExcerpt": {
    "event": "BATCH_IN_PROGRESS",
    "unit": "HRC-DL-2609-0026",
-   "pctDone": 34
+   "pctDone": 54
   },
   "error": null,
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T07:13:17",
+    "at": "2026-09-07T07:19:17",
     "status": "OK",
     "by": "middleware"
    }
@@ -1748,7 +1795,7 @@
   "direction": "L2→MES",
   "at": "2026-09-07T08:02:17",
   "status": "OK",
-  "latencyMs": 1537,
+  "latencyMs": 1914,
   "correlation": {
    "po": "PO-KHP-2609-0124",
    "unit": "HRC-DL-2609-0026",
@@ -1781,9 +1828,9 @@
   "id": "MSG-00079",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-07T08:10:17",
+  "at": "2026-09-07T08:03:17",
   "status": "OK",
-  "latencyMs": 656,
+  "latencyMs": 547,
   "correlation": {
    "po": "PO-KHP-2609-0124",
    "unit": "HRC-DL-2609-0026",
@@ -1801,7 +1848,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T08:10:17",
+    "at": "2026-09-07T08:03:17",
     "status": "OK",
     "by": "middleware"
    }
@@ -1812,9 +1859,9 @@
   "id": "MSG-00080",
   "interfaceId": "IF-SAP-06",
   "direction": "MES→SAP",
-  "at": "2026-09-07T08:11:17",
+  "at": "2026-09-07T08:04:17",
   "status": "OK",
-  "latencyMs": 2275,
+  "latencyMs": 164,
   "correlation": {
    "po": "PO-KHP-2609-0124",
    "unit": "HPO-KHP-2609-0025",
@@ -1828,7 +1875,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T08:11:17",
+    "at": "2026-09-07T08:04:17",
     "status": "OK",
     "by": "middleware"
    }
@@ -1838,9 +1885,9 @@
   "id": "MSG-00063",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-07T09:11:24",
+  "at": "2026-09-07T09:14:24",
   "status": "OK",
-  "latencyMs": 2439,
+  "latencyMs": 1905,
   "correlation": {
    "po": "PO-KHP-2609-0100",
    "unit": "SLC-KHP-2609-0034",
@@ -1858,7 +1905,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T09:11:24",
+    "at": "2026-09-07T09:14:24",
     "status": "OK",
     "by": "middleware"
    }
@@ -1869,9 +1916,9 @@
   "id": "MSG-00064",
   "interfaceId": "IF-SAP-07",
   "direction": "MES→SAP",
-  "at": "2026-09-07T09:12:24",
+  "at": "2026-09-07T09:15:24",
   "status": "OK",
-  "latencyMs": 2433,
+  "latencyMs": 289,
   "correlation": {
    "po": "PO-KHP-2609-0100",
    "unit": "PK-KHP-2609-0019",
@@ -1885,14 +1932,14 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T09:12:24",
+    "at": "2026-09-07T09:15:24",
     "status": "OK",
     "by": "middleware"
    }
   ]
  },
  {
-  "id": "MSG-00113",
+  "id": "MSG-00114",
   "interfaceId": "IF-SAP-08",
   "direction": "MES→SAP",
   "at": "2026-09-07T10:59:24",
@@ -1919,9 +1966,9 @@
   "id": "MSG-00077",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-07T11:15:39",
+  "at": "2026-09-07T11:14:39",
   "status": "OK",
-  "latencyMs": 2385,
+  "latencyMs": 594,
   "correlation": {
    "po": "PO-KHP-2609-0123",
    "unit": "HPO-KHP-2609-0024",
@@ -1939,7 +1986,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T11:15:39",
+    "at": "2026-09-07T11:14:39",
     "status": "OK",
     "by": "middleware"
    }
@@ -1950,9 +1997,9 @@
   "id": "MSG-00078",
   "interfaceId": "IF-SAP-07",
   "direction": "MES→SAP",
-  "at": "2026-09-07T11:16:39",
+  "at": "2026-09-07T11:15:39",
   "status": "OK",
-  "latencyMs": 435,
+  "latencyMs": 975,
   "correlation": {
    "po": "PO-KHP-2609-0123",
    "unit": "PK-KHP-2609-0024",
@@ -1966,14 +2013,14 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T11:16:39",
+    "at": "2026-09-07T11:15:39",
     "status": "OK",
     "by": "middleware"
    }
   ]
  },
  {
-  "id": "MSG-00156",
+  "id": "MSG-00157",
   "interfaceId": "IF-SAP-33",
   "direction": "SAP→MES",
   "at": "2026-09-07T11:29:41",
@@ -1997,7 +2044,7 @@
   ]
  },
  {
-  "id": "MSG-00153",
+  "id": "MSG-00154",
   "interfaceId": "IF-UTL-01",
   "direction": "→MES",
   "at": "2026-09-07T11:30:19",
@@ -2021,7 +2068,7 @@
   ]
  },
  {
-  "id": "MSG-00096",
+  "id": "MSG-00097",
   "interfaceId": "IF-SAP-25",
   "direction": "MES→SAP",
   "at": "2026-09-07T11:42:03",
@@ -2045,7 +2092,7 @@
   ]
  },
  {
-  "id": "MSG-00125",
+  "id": "MSG-00126",
   "interfaceId": "IF-L2-SCH",
   "direction": "→MES",
   "at": "2026-09-07T12:25:37",
@@ -2069,31 +2116,7 @@
   ]
  },
  {
-  "id": "MSG-00164",
-  "interfaceId": "IF-SAP-25",
-  "direction": "MES→SAP",
-  "at": "2026-09-07T12:27:59",
-  "status": "OK",
-  "latencyMs": 1869,
-  "correlation": {
-   "so": "4213090011"
-  },
-  "payloadExcerpt": {
-   "ref": "4213090011/10",
-   "note": "routine"
-  },
-  "error": null,
-  "retries": 0,
-  "history": [
-   {
-    "at": "2026-09-07T12:27:59",
-    "status": "OK",
-    "by": "middleware"
-   }
-  ]
- },
- {
-  "id": "MSG-00105",
+  "id": "MSG-00106",
   "interfaceId": "IF-SAP-01",
   "direction": "SAP→MES",
   "at": "2026-09-07T13:47:26",
@@ -2120,9 +2143,9 @@
   "id": "MSG-00065",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-07T15:02:31",
+  "at": "2026-09-07T15:03:31",
   "status": "OK",
-  "latencyMs": 336,
+  "latencyMs": 2439,
   "correlation": {
    "po": "PO-KHP-2609-0104",
    "unit": "GIC-KHP-2609-0019",
@@ -2140,7 +2163,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T15:02:31",
+    "at": "2026-09-07T15:03:31",
     "status": "OK",
     "by": "middleware"
    }
@@ -2151,9 +2174,9 @@
   "id": "MSG-00066",
   "interfaceId": "IF-SAP-06",
   "direction": "MES→SAP",
-  "at": "2026-09-07T15:03:31",
+  "at": "2026-09-07T15:04:31",
   "status": "OK",
-  "latencyMs": 1870,
+  "latencyMs": 2433,
   "correlation": {
    "po": "PO-KHP-2609-0104",
    "unit": "SLC-KHP-2609-0036",
@@ -2167,14 +2190,14 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T15:03:31",
+    "at": "2026-09-07T15:04:31",
     "status": "OK",
     "by": "middleware"
    }
   ]
  },
  {
-  "id": "MSG-00099",
+  "id": "MSG-00100",
   "interfaceId": "IF-SAP-16",
   "direction": "SAP→MES",
   "at": "2026-09-07T15:31:38",
@@ -2203,7 +2226,7 @@
   "direction": "MES→SAP",
   "at": "2026-09-07T16:08:48",
   "status": "OK",
-  "latencyMs": 278,
+  "latencyMs": 2433,
   "correlation": {
    "po": "PO-KHP-2609-0120",
    "unit": "GIC-KHP-2609-0022",
@@ -2234,7 +2257,7 @@
   "direction": "MES→SAP",
   "at": "2026-09-07T16:09:48",
   "status": "OK",
-  "latencyMs": 2453,
+  "latencyMs": 887,
   "correlation": {
    "po": "PO-KHP-2609-0120",
    "unit": "PK-KHP-2609-0023",
@@ -2260,7 +2283,7 @@
   "direction": "MES→L2",
   "at": "2026-09-07T16:33:21",
   "status": "OK",
-  "latencyMs": 2741,
+  "latencyMs": 1987,
   "correlation": {
    "po": "PO-KHP-2609-0129",
    "unit": "HPO-KHP-2609-0026",
@@ -2298,7 +2321,7 @@
   "direction": "L2→MES",
   "at": "2026-09-07T16:36:21",
   "status": "OK",
-  "latencyMs": 1966,
+  "latencyMs": 165,
   "correlation": {
    "po": "PO-KHP-2609-0129",
    "unit": "HPO-KHP-2609-0026",
@@ -2320,7 +2343,7 @@
   ]
  },
  {
-  "id": "MSG-00098",
+  "id": "MSG-00099",
   "interfaceId": "IF-APS-MAOUT",
   "direction": "→MES",
   "at": "2026-09-07T16:48:28",
@@ -2344,7 +2367,7 @@
   ]
  },
  {
-  "id": "MSG-00148",
+  "id": "MSG-00149",
   "interfaceId": "IF-SIS-01",
   "direction": "→MES",
   "at": "2026-09-07T16:52:46",
@@ -2371,9 +2394,9 @@
   "id": "MSG-00057",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-07T17:14:47",
+  "at": "2026-09-07T17:13:47",
   "status": "OK",
-  "latencyMs": 1513,
+  "latencyMs": 1794,
   "correlation": {
    "po": "PO-KHP-2609-0084",
    "unit": "SLC-KHP-2609-0026",
@@ -2391,7 +2414,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T17:14:47",
+    "at": "2026-09-07T17:13:47",
     "status": "OK",
     "by": "middleware"
    }
@@ -2402,9 +2425,9 @@
   "id": "MSG-00058",
   "interfaceId": "IF-SAP-07",
   "direction": "MES→SAP",
-  "at": "2026-09-07T17:15:47",
+  "at": "2026-09-07T17:14:47",
   "status": "OK",
-  "latencyMs": 309,
+  "latencyMs": 806,
   "correlation": {
    "po": "PO-KHP-2609-0084",
    "unit": "PK-KHP-2609-0016",
@@ -2418,41 +2441,14 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-07T17:15:47",
+    "at": "2026-09-07T17:14:47",
     "status": "OK",
     "by": "middleware"
    }
   ]
  },
  {
-  "id": "MSG-00050",
-  "interfaceId": "IF-L2-BIP",
-  "direction": "L2→MES",
-  "at": "2026-09-07T17:24:54",
-  "status": "OK",
-  "latencyMs": 823,
-  "correlation": {
-   "po": "PO-KHP-2609-0129",
-   "unit": "HPO-KHP-2609-0026",
-   "line": "CRM"
-  },
-  "payloadExcerpt": {
-   "event": "BATCH_IN_PROGRESS",
-   "unit": "HPO-KHP-2609-0026",
-   "pctDone": 72
-  },
-  "error": null,
-  "retries": 0,
-  "history": [
-   {
-    "at": "2026-09-07T17:24:54",
-    "status": "OK",
-    "by": "middleware"
-   }
-  ]
- },
- {
-  "id": "MSG-00101",
+  "id": "MSG-00102",
   "interfaceId": "IF-SAP-08",
   "direction": "MES→SAP",
   "at": "2026-09-07T17:25:58",
@@ -2476,12 +2472,39 @@
   ]
  },
  {
+  "id": "MSG-00050",
+  "interfaceId": "IF-L2-BIP",
+  "direction": "L2→MES",
+  "at": "2026-09-07T17:30:54",
+  "status": "OK",
+  "latencyMs": 1024,
+  "correlation": {
+   "po": "PO-KHP-2609-0129",
+   "unit": "HPO-KHP-2609-0026",
+   "line": "CRM"
+  },
+  "payloadExcerpt": {
+   "event": "BATCH_IN_PROGRESS",
+   "unit": "HPO-KHP-2609-0026",
+   "pctDone": 72
+  },
+  "error": null,
+  "retries": 0,
+  "history": [
+   {
+    "at": "2026-09-07T17:30:54",
+    "status": "OK",
+    "by": "middleware"
+   }
+  ]
+ },
+ {
   "id": "MSG-00049",
   "interfaceId": "IF-L2-PDO",
   "direction": "L2→MES",
   "at": "2026-09-07T18:02:54",
   "status": "OK",
-  "latencyMs": 1131,
+  "latencyMs": 227,
   "correlation": {
    "po": "PO-KHP-2609-0129",
    "unit": "HPO-KHP-2609-0026",
@@ -2511,12 +2534,12 @@
   "hero": false
  },
  {
-  "id": "MSG-00084",
+  "id": "MSG-00085",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-07T18:08:54",
-  "status": "OK",
-  "latencyMs": 2715,
+  "at": "2026-09-07T18:03:54",
+  "status": "REPLAYED",
+  "latencyMs": 1909,
   "correlation": {
    "po": "PO-KHP-2609-0129",
    "unit": "HPO-KHP-2609-0026",
@@ -2527,48 +2550,25 @@
   "payloadExcerpt": {
    "pc": "PC-CRM-0025",
    "yieldPct": 96.0,
-   "outMT": 17.86,
-   "sapDoc": "COR-4637139"
+   "outMT": 17.86
   },
-  "error": null,
-  "retries": 0,
+  "error": "SAP COR: order locked by user PPC_KHP01 (transaction CO02) — posting rejected",
+  "retries": 1,
   "history": [
    {
-    "at": "2026-09-07T18:08:54",
-    "status": "OK",
-    "by": "middleware"
-   }
-  ],
-  "hero": false
- },
- {
-  "id": "MSG-00085",
-  "interfaceId": "IF-SAP-06",
-  "direction": "MES→SAP",
-  "at": "2026-09-07T18:09:54",
-  "status": "OK",
-  "latencyMs": 1005,
-  "correlation": {
-   "po": "PO-KHP-2609-0129",
-   "unit": "CRF-KHP-2609-0025",
-   "so": "4213090023"
-  },
-  "payloadExcerpt": {
-   "batch": "CRF-KHP-2609-0025",
-   "attributes": "thk/width/weight/coating"
-  },
-  "error": null,
-  "retries": 0,
-  "history": [
+    "at": "2026-09-07T18:03:54",
+    "status": "FAILED",
+    "by": "SAP"
+   },
    {
-    "at": "2026-09-07T18:09:54",
+    "at": "2026-09-07T18:17:54",
     "status": "OK",
-    "by": "middleware"
+    "by": "AI agent auto-retry (autonomous action A-04)"
    }
   ]
  },
  {
-  "id": "MSG-00104",
+  "id": "MSG-00105",
   "interfaceId": "IF-SIS-01",
   "direction": "→MES",
   "at": "2026-09-07T18:23:10",
@@ -2592,7 +2592,7 @@
   ]
  },
  {
-  "id": "MSG-00132",
+  "id": "MSG-00133",
   "interfaceId": "IF-SAP-08",
   "direction": "MES→SAP",
   "at": "2026-09-07T18:26:52",
@@ -2616,7 +2616,7 @@
   ]
  },
  {
-  "id": "MSG-00112",
+  "id": "MSG-00113",
   "interfaceId": "IF-L2-SCH",
   "direction": "→MES",
   "at": "2026-09-07T19:16:35",
@@ -2645,7 +2645,7 @@
   "direction": "MES→L2",
   "at": "2026-09-07T20:42:00",
   "status": "OK",
-  "latencyMs": 418,
+  "latencyMs": 2644,
   "correlation": {
    "po": "PO-KHP-2609-0093",
    "unit": "GIC-KHP-2609-0017",
@@ -2689,7 +2689,7 @@
   "direction": "L2→MES",
   "at": "2026-09-07T20:45:00",
   "status": "OK",
-  "latencyMs": 577,
+  "latencyMs": 1900,
   "correlation": {
    "po": "PO-KHP-2609-0093",
    "unit": "GIC-KHP-2609-0017",
@@ -2711,7 +2711,7 @@
   ]
  },
  {
-  "id": "MSG-00108",
+  "id": "MSG-00109",
   "interfaceId": "IF-SAP-33",
   "direction": "SAP→MES",
   "at": "2026-09-07T20:48:09",
@@ -2735,7 +2735,7 @@
   ]
  },
  {
-  "id": "MSG-00137",
+  "id": "MSG-00138",
   "interfaceId": "IF-SAP-08",
   "direction": "MES→SAP",
   "at": "2026-09-07T20:58:41",
@@ -2759,7 +2759,7 @@
   ]
  },
  {
-  "id": "MSG-00142",
+  "id": "MSG-00143",
   "interfaceId": "IF-SAP-01",
   "direction": "SAP→MES",
   "at": "2026-09-07T21:39:15",
@@ -2783,7 +2783,7 @@
   ]
  },
  {
-  "id": "MSG-00103",
+  "id": "MSG-00104",
   "interfaceId": "IF-SAP-25",
   "direction": "MES→SAP",
   "at": "2026-09-07T22:04:53",
@@ -2812,7 +2812,7 @@
   "direction": "L2→MES",
   "at": "2026-09-07T23:05:00",
   "status": "REPLAYED",
-  "latencyMs": 184,
+  "latencyMs": 862,
   "correlation": {
    "po": "PO-KHP-2609-0004",
    "unit": "GIC-KHP-2609-0001",
@@ -2859,7 +2859,7 @@
   "direction": "MES→SAP",
   "at": "2026-09-07T23:08:30",
   "status": "OK",
-  "latencyMs": 2572,
+  "latencyMs": 2022,
   "correlation": {
    "dispatch": "DSP-0021",
    "so": "4213090024",
@@ -2881,7 +2881,7 @@
   ]
  },
  {
-  "id": "MSG-00152",
+  "id": "MSG-00153",
   "interfaceId": "IF-SAP-16",
   "direction": "SAP→MES",
   "at": "2026-09-07T23:15:11",
@@ -2910,7 +2910,7 @@
   "direction": "MES→SAP",
   "at": "2026-09-07T23:43:38",
   "status": "OK",
-  "latencyMs": 2366,
+  "latencyMs": 853,
   "correlation": {
    "dispatch": "DSP-0018",
    "so": "4213090001",
@@ -2935,9 +2935,9 @@
   "id": "MSG-00067",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-08T00:03:53",
+  "at": "2026-09-08T00:08:53",
   "status": "OK",
-  "latencyMs": 141,
+  "latencyMs": 798,
   "correlation": {
    "po": "PO-KHP-2609-0105",
    "unit": "SLC-KHP-2609-0036",
@@ -2955,7 +2955,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T00:03:53",
+    "at": "2026-09-08T00:08:53",
     "status": "OK",
     "by": "middleware"
    }
@@ -2966,9 +2966,9 @@
   "id": "MSG-00068",
   "interfaceId": "IF-SAP-07",
   "direction": "MES→SAP",
-  "at": "2026-09-08T00:04:53",
+  "at": "2026-09-08T00:09:53",
   "status": "OK",
-  "latencyMs": 985,
+  "latencyMs": 152,
   "correlation": {
    "po": "PO-KHP-2609-0105",
    "unit": "PK-KHP-2609-0020",
@@ -2982,14 +2982,14 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T00:04:53",
+    "at": "2026-09-08T00:09:53",
     "status": "OK",
     "by": "middleware"
    }
   ]
  },
  {
-  "id": "MSG-00147",
+  "id": "MSG-00148",
   "interfaceId": "IF-SIS-01",
   "direction": "→MES",
   "at": "2026-09-08T00:30:09",
@@ -3013,7 +3013,7 @@
   ]
  },
  {
-  "id": "MSG-00118",
+  "id": "MSG-00119",
   "interfaceId": "IF-SAP-01",
   "direction": "SAP→MES",
   "at": "2026-09-08T00:53:59",
@@ -3037,7 +3037,7 @@
   ]
  },
  {
-  "id": "MSG-00128",
+  "id": "MSG-00129",
   "interfaceId": "IF-SAP-16",
   "direction": "SAP→MES",
   "at": "2026-09-08T00:55:08",
@@ -3064,9 +3064,9 @@
   "id": "MSG-00036",
   "interfaceId": "IF-L2-BIP",
   "direction": "L2→MES",
-  "at": "2026-09-08T01:13:00",
+  "at": "2026-09-08T01:18:00",
   "status": "OK",
-  "latencyMs": 187,
+  "latencyMs": 2646,
   "correlation": {
    "po": "PO-KHP-2609-0093",
    "unit": "GIC-KHP-2609-0017",
@@ -3075,13 +3075,13 @@
   "payloadExcerpt": {
    "event": "BATCH_IN_PROGRESS",
    "unit": "GIC-KHP-2609-0017",
-   "pctDone": 59
+   "pctDone": 63
   },
   "error": null,
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T01:13:00",
+    "at": "2026-09-08T01:18:00",
     "status": "OK",
     "by": "middleware"
    }
@@ -3093,7 +3093,7 @@
   "direction": "MES→L2",
   "at": "2026-09-08T01:28:40",
   "status": "OK",
-  "latencyMs": 635,
+  "latencyMs": 248,
   "correlation": {
    "po": "PO-KHP-2609-0130",
    "unit": "CRF-KHP-2609-0025",
@@ -3142,7 +3142,7 @@
   "direction": "L2→MES",
   "at": "2026-09-08T01:31:40",
   "status": "OK",
-  "latencyMs": 701,
+  "latencyMs": 1993,
   "correlation": {
    "po": "PO-KHP-2609-0130",
    "unit": "CRF-KHP-2609-0025",
@@ -3167,9 +3167,9 @@
   "id": "MSG-00088",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-08T01:31:44",
+  "at": "2026-09-08T01:32:44",
   "status": "OK",
-  "latencyMs": 2019,
+  "latencyMs": 2100,
   "correlation": {
    "po": "PO-KHP-2609-0132",
    "unit": "HRC-DL-2609-0028",
@@ -3187,7 +3187,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T01:31:44",
+    "at": "2026-09-08T01:32:44",
     "status": "OK",
     "by": "middleware"
    }
@@ -3198,9 +3198,9 @@
   "id": "MSG-00089",
   "interfaceId": "IF-SAP-06",
   "direction": "MES→SAP",
-  "at": "2026-09-08T01:32:44",
+  "at": "2026-09-08T01:33:44",
   "status": "OK",
-  "latencyMs": 311,
+  "latencyMs": 2700,
   "correlation": {
    "po": "PO-KHP-2609-0132",
    "unit": "HRC-KHP-2609-0029",
@@ -3214,7 +3214,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T01:32:44",
+    "at": "2026-09-08T01:33:44",
     "status": "OK",
     "by": "middleware"
    }
@@ -3226,7 +3226,7 @@
   "direction": "L2→MES",
   "at": "2026-09-08T01:42:00",
   "status": "OK",
-  "latencyMs": 175,
+  "latencyMs": 1626,
   "correlation": {
    "po": "PO-KHP-2609-0093",
    "unit": "GIC-KHP-2609-0017",
@@ -3267,9 +3267,9 @@
   "id": "MSG-00059",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-08T01:47:00",
+  "at": "2026-09-08T01:48:00",
   "status": "OK",
-  "latencyMs": 2084,
+  "latencyMs": 2214,
   "correlation": {
    "po": "PO-KHP-2609-0093",
    "unit": "GIC-KHP-2609-0017",
@@ -3287,7 +3287,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T01:47:00",
+    "at": "2026-09-08T01:48:00",
     "status": "OK",
     "by": "middleware"
    }
@@ -3298,9 +3298,9 @@
   "id": "MSG-00060",
   "interfaceId": "IF-SAP-07",
   "direction": "MES→SAP",
-  "at": "2026-09-08T01:48:00",
+  "at": "2026-09-08T01:49:00",
   "status": "OK",
-  "latencyMs": 2142,
+  "latencyMs": 1654,
   "correlation": {
    "po": "PO-KHP-2609-0093",
    "unit": "PPG-KHP-2609-0011",
@@ -3314,7 +3314,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T01:48:00",
+    "at": "2026-09-08T01:49:00",
     "status": "OK",
     "by": "middleware"
    }
@@ -3324,9 +3324,9 @@
   "id": "MSG-00052",
   "interfaceId": "IF-L2-BIP",
   "direction": "L2→MES",
-  "at": "2026-09-08T02:18:26",
+  "at": "2026-09-08T02:44:26",
   "status": "OK",
-  "latencyMs": 2022,
+  "latencyMs": 1401,
   "correlation": {
    "po": "PO-KHP-2609-0130",
    "unit": "CRF-KHP-2609-0025",
@@ -3335,20 +3335,20 @@
   "payloadExcerpt": {
    "event": "BATCH_IN_PROGRESS",
    "unit": "CRF-KHP-2609-0025",
-   "pctDone": 31
+   "pctDone": 49
   },
   "error": null,
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T02:18:26",
+    "at": "2026-09-08T02:44:26",
     "status": "OK",
     "by": "middleware"
    }
   ]
  },
  {
-  "id": "MSG-00141",
+  "id": "MSG-00142",
   "interfaceId": "IF-APS-FPOUT",
   "direction": "→MES",
   "at": "2026-09-08T02:44:52",
@@ -3377,7 +3377,7 @@
   "direction": "L2→MES",
   "at": "2026-09-08T03:04:26",
   "status": "OK",
-  "latencyMs": 1001,
+  "latencyMs": 2430,
   "correlation": {
    "po": "PO-KHP-2609-0130",
    "unit": "CRF-KHP-2609-0025",
@@ -3411,7 +3411,7 @@
   "hero": false
  },
  {
-  "id": "MSG-00109",
+  "id": "MSG-00110",
   "interfaceId": "IF-APS-MAOUT",
   "direction": "→MES",
   "at": "2026-09-08T03:05:11",
@@ -3438,9 +3438,9 @@
   "id": "MSG-00086",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-08T03:10:26",
+  "at": "2026-09-08T03:08:26",
   "status": "OK",
-  "latencyMs": 2100,
+  "latencyMs": 2715,
   "correlation": {
    "po": "PO-KHP-2609-0130",
    "unit": "CRF-KHP-2609-0025",
@@ -3458,7 +3458,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T03:10:26",
+    "at": "2026-09-08T03:08:26",
     "status": "OK",
     "by": "middleware"
    }
@@ -3466,7 +3466,33 @@
   "hero": false
  },
  {
-  "id": "MSG-00116",
+  "id": "MSG-00087",
+  "interfaceId": "IF-SAP-07",
+  "direction": "MES→SAP",
+  "at": "2026-09-08T03:09:26",
+  "status": "OK",
+  "latencyMs": 1005,
+  "correlation": {
+   "po": "PO-KHP-2609-0130",
+   "unit": "GIC-KHP-2609-0024",
+   "so": "4213090023"
+  },
+  "payloadExcerpt": {
+   "batch": "GIC-KHP-2609-0024",
+   "attributes": "thk/width/weight/coating"
+  },
+  "error": null,
+  "retries": 0,
+  "history": [
+   {
+    "at": "2026-09-08T03:09:26",
+    "status": "OK",
+    "by": "middleware"
+   }
+  ]
+ },
+ {
+  "id": "MSG-00117",
   "interfaceId": "IF-SAP-16",
   "direction": "SAP→MES",
   "at": "2026-09-08T03:11:20",
@@ -3490,33 +3516,7 @@
   ]
  },
  {
-  "id": "MSG-00087",
-  "interfaceId": "IF-SAP-07",
-  "direction": "MES→SAP",
-  "at": "2026-09-08T03:11:26",
-  "status": "OK",
-  "latencyMs": 2700,
-  "correlation": {
-   "po": "PO-KHP-2609-0130",
-   "unit": "GIC-KHP-2609-0024",
-   "so": "4213090023"
-  },
-  "payloadExcerpt": {
-   "batch": "GIC-KHP-2609-0024",
-   "attributes": "thk/width/weight/coating"
-  },
-  "error": null,
-  "retries": 0,
-  "history": [
-   {
-    "at": "2026-09-08T03:11:26",
-    "status": "OK",
-    "by": "middleware"
-   }
-  ]
- },
- {
-  "id": "MSG-00151",
+  "id": "MSG-00152",
   "interfaceId": "IF-L2-SCH",
   "direction": "→MES",
   "at": "2026-09-08T03:44:13",
@@ -3540,7 +3540,7 @@
   ]
  },
  {
-  "id": "MSG-00146",
+  "id": "MSG-00147",
   "interfaceId": "IF-SAP-33",
   "direction": "SAP→MES",
   "at": "2026-09-08T04:12:35",
@@ -3564,7 +3564,7 @@
   ]
  },
  {
-  "id": "MSG-00131",
+  "id": "MSG-00132",
   "interfaceId": "IF-SAP-01",
   "direction": "SAP→MES",
   "at": "2026-09-08T04:29:56",
@@ -3588,7 +3588,7 @@
   ]
  },
  {
-  "id": "MSG-00129",
+  "id": "MSG-00130",
   "interfaceId": "IF-L2-SCH",
   "direction": "→MES",
   "at": "2026-09-08T04:45:44",
@@ -3612,7 +3612,7 @@
   ]
  },
  {
-  "id": "MSG-00120",
+  "id": "MSG-00121",
   "interfaceId": "IF-SAP-01",
   "direction": "SAP→MES",
   "at": "2026-09-08T05:41:37",
@@ -3636,7 +3636,7 @@
   ]
  },
  {
-  "id": "MSG-00134",
+  "id": "MSG-00135",
   "interfaceId": "IF-APS-MAOUT",
   "direction": "→MES",
   "at": "2026-09-08T05:46:23",
@@ -3660,7 +3660,7 @@
   ]
  },
  {
-  "id": "MSG-00140",
+  "id": "MSG-00141",
   "interfaceId": "IF-UTL-01",
   "direction": "→MES",
   "at": "2026-09-08T06:04:18",
@@ -3684,7 +3684,7 @@
   ]
  },
  {
-  "id": "MSG-00107",
+  "id": "MSG-00108",
   "interfaceId": "IF-SAP-33",
   "direction": "SAP→MES",
   "at": "2026-09-08T06:21:09",
@@ -3708,7 +3708,7 @@
   ]
  },
  {
-  "id": "MSG-00117",
+  "id": "MSG-00118",
   "interfaceId": "IF-SAP-08",
   "direction": "MES→SAP",
   "at": "2026-09-08T07:07:54",
@@ -3732,7 +3732,7 @@
   ]
  },
  {
-  "id": "MSG-00139",
+  "id": "MSG-00140",
   "interfaceId": "IF-APS-FPOUT",
   "direction": "→MES",
   "at": "2026-09-08T07:09:29",
@@ -3761,7 +3761,7 @@
   "direction": "MES→L2",
   "at": "2026-09-08T07:37:24",
   "status": "OK",
-  "latencyMs": 1993,
+  "latencyMs": 248,
   "correlation": {
    "po": "PO-KHP-2609-0125",
    "unit": "HPO-KHP-2609-0025",
@@ -3799,7 +3799,7 @@
   "direction": "MES→L2",
   "at": "2026-09-08T07:38:42",
   "status": "OK",
-  "latencyMs": 2284,
+  "latencyMs": 2655,
   "correlation": {
    "po": "PO-KHP-2609-0133",
    "unit": "HRC-KHP-2609-0029",
@@ -3837,7 +3837,7 @@
   "direction": "L2→MES",
   "at": "2026-09-08T07:39:24",
   "status": "OK",
-  "latencyMs": 2655,
+  "latencyMs": 1575,
   "correlation": {
    "po": "PO-KHP-2609-0125",
    "unit": "HPO-KHP-2609-0025",
@@ -3864,7 +3864,7 @@
   "direction": "L2→MES",
   "at": "2026-09-08T07:40:42",
   "status": "OK",
-  "latencyMs": 1642,
+  "latencyMs": 678,
   "correlation": {
    "po": "PO-KHP-2609-0133",
    "unit": "HRC-KHP-2609-0029",
@@ -3886,7 +3886,7 @@
   ]
  },
  {
-  "id": "MSG-00114",
+  "id": "MSG-00115",
   "interfaceId": "IF-UTL-01",
   "direction": "→MES",
   "at": "2026-09-08T08:05:34",
@@ -3915,7 +3915,7 @@
   "direction": "SAP→MES",
   "at": "2026-09-08T08:12:00",
   "status": "FAILED",
-  "latencyMs": 1751,
+  "latencyMs": 2359,
   "correlation": {
    "so": "4213090022",
    "item": "10",
@@ -3963,7 +3963,7 @@
   "direction": "MES→L2",
   "at": "2026-09-08T08:17:06",
   "status": "OK",
-  "latencyMs": 732,
+  "latencyMs": 959,
   "correlation": {
    "po": "PO-KHP-2609-0168",
    "unit": "GIC-KHP-2609-0030",
@@ -4007,7 +4007,7 @@
   "direction": "L2→MES",
   "at": "2026-09-08T08:18:06",
   "status": "OK",
-  "latencyMs": 1193,
+  "latencyMs": 2566,
   "correlation": {
    "po": "PO-KHP-2609-0168",
    "unit": "GIC-KHP-2609-0030",
@@ -4029,7 +4029,7 @@
   ]
  },
  {
-  "id": "MSG-00157",
+  "id": "MSG-00158",
   "interfaceId": "IF-APS-FPOUT",
   "direction": "→MES",
   "at": "2026-09-08T08:24:09",
@@ -4058,7 +4058,7 @@
   "direction": "MES→L2",
   "at": "2026-09-08T08:38:05",
   "status": "OK",
-  "latencyMs": 2072,
+  "latencyMs": 635,
   "correlation": {
    "po": "PO-KHP-2609-0142",
    "unit": "HPO-KHP-2609-0029",
@@ -4091,39 +4091,12 @@
   ]
  },
  {
-  "id": "MSG-00054",
-  "interfaceId": "IF-L2-BIP",
-  "direction": "L2→MES",
-  "at": "2026-09-08T08:39:59",
-  "status": "OK",
-  "latencyMs": 2016,
-  "correlation": {
-   "po": "PO-KHP-2609-0133",
-   "unit": "HRC-KHP-2609-0029",
-   "line": "PKL"
-  },
-  "payloadExcerpt": {
-   "event": "BATCH_IN_PROGRESS",
-   "unit": "HRC-KHP-2609-0029",
-   "pctDone": 36
-  },
-  "error": null,
-  "retries": 0,
-  "history": [
-   {
-    "at": "2026-09-08T08:39:59",
-    "status": "OK",
-    "by": "middleware"
-   }
-  ]
- },
- {
   "id": "MSG-00027",
   "interfaceId": "IF-L2-PDIACK",
   "direction": "L2→MES",
   "at": "2026-09-08T08:40:05",
   "status": "OK",
-  "latencyMs": 1626,
+  "latencyMs": 701,
   "correlation": {
    "po": "PO-KHP-2609-0142",
    "unit": "HPO-KHP-2609-0029",
@@ -4145,12 +4118,39 @@
   ]
  },
  {
+  "id": "MSG-00054",
+  "interfaceId": "IF-L2-BIP",
+  "direction": "L2→MES",
+  "at": "2026-09-08T08:49:59",
+  "status": "OK",
+  "latencyMs": 823,
+  "correlation": {
+   "po": "PO-KHP-2609-0133",
+   "unit": "HRC-KHP-2609-0029",
+   "line": "PKL"
+  },
+  "payloadExcerpt": {
+   "event": "BATCH_IN_PROGRESS",
+   "unit": "HRC-KHP-2609-0029",
+   "pctDone": 72
+  },
+  "error": null,
+  "retries": 0,
+  "history": [
+   {
+    "at": "2026-09-08T08:49:59",
+    "status": "OK",
+    "by": "middleware"
+   }
+  ]
+ },
+ {
   "id": "MSG-00029",
   "interfaceId": "IF-L2-PDI",
   "direction": "MES→L2",
   "at": "2026-09-08T09:17:58",
   "status": "OK",
-  "latencyMs": 2253,
+  "latencyMs": 1642,
   "correlation": {
    "po": "PO-KHP-2609-0149",
    "unit": "CRF-KHP-2609-0028",
@@ -4199,7 +4199,7 @@
   "direction": "L2→MES",
   "at": "2026-09-08T09:20:58",
   "status": "OK",
-  "latencyMs": 2646,
+  "latencyMs": 2754,
   "correlation": {
    "po": "PO-KHP-2609-0149",
    "unit": "CRF-KHP-2609-0028",
@@ -4224,9 +4224,9 @@
   "id": "MSG-00046",
   "interfaceId": "IF-L2-BIP",
   "direction": "L2→MES",
-  "at": "2026-09-08T09:24:28",
+  "at": "2026-09-08T09:22:28",
   "status": "OK",
-  "latencyMs": 1024,
+  "latencyMs": 1219,
   "correlation": {
    "po": "PO-KHP-2609-0125",
    "unit": "HPO-KHP-2609-0025",
@@ -4235,13 +4235,13 @@
   "payloadExcerpt": {
    "event": "BATCH_IN_PROGRESS",
    "unit": "HPO-KHP-2609-0025",
-   "pctDone": 72
+   "pctDone": 70
   },
   "error": null,
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T09:24:28",
+    "at": "2026-09-08T09:22:28",
     "status": "OK",
     "by": "middleware"
    }
@@ -4253,7 +4253,7 @@
   "direction": "MES→L2",
   "at": "2026-09-08T09:25:39",
   "status": "OK",
-  "latencyMs": 2754,
+  "latencyMs": 192,
   "correlation": {
    "po": "PO-KHP-2609-0135",
    "unit": "HRC-VJ-2609-0030",
@@ -4291,7 +4291,7 @@
   "direction": "L2→MES",
   "at": "2026-09-08T09:27:59",
   "status": "OK",
-  "latencyMs": 126,
+  "latencyMs": 1131,
   "correlation": {
    "po": "PO-KHP-2609-0133",
    "unit": "HRC-KHP-2609-0029",
@@ -4326,7 +4326,7 @@
   "direction": "L2→MES",
   "at": "2026-09-08T09:29:39",
   "status": "OK",
-  "latencyMs": 959,
+  "latencyMs": 1540,
   "correlation": {
    "po": "PO-KHP-2609-0135",
    "unit": "HRC-VJ-2609-0030",
@@ -4351,9 +4351,9 @@
   "id": "MSG-00090",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-08T09:32:59",
+  "at": "2026-09-08T09:34:59",
   "status": "OK",
-  "latencyMs": 902,
+  "latencyMs": 2019,
   "correlation": {
    "po": "PO-KHP-2609-0133",
    "unit": "HRC-KHP-2609-0029",
@@ -4371,7 +4371,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T09:32:59",
+    "at": "2026-09-08T09:34:59",
     "status": "OK",
     "by": "middleware"
    }
@@ -4382,9 +4382,9 @@
   "id": "MSG-00091",
   "interfaceId": "IF-SAP-06",
   "direction": "MES→SAP",
-  "at": "2026-09-08T09:33:59",
+  "at": "2026-09-08T09:35:59",
   "status": "OK",
-  "latencyMs": 2727,
+  "latencyMs": 311,
   "correlation": {
    "po": "PO-KHP-2609-0133",
    "unit": "HPO-KHP-2609-0027",
@@ -4398,14 +4398,14 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T09:33:59",
+    "at": "2026-09-08T09:35:59",
     "status": "OK",
     "by": "middleware"
    }
   ]
  },
  {
-  "id": "MSG-00110",
+  "id": "MSG-00111",
   "interfaceId": "IF-SIS-01",
   "direction": "→MES",
   "at": "2026-09-08T09:40:24",
@@ -4429,65 +4429,12 @@
   ]
  },
  {
-  "id": "MSG-00013",
-  "interfaceId": "IF-L2-PDI",
-  "direction": "MES→L2",
-  "at": "2026-09-08T09:41:00",
-  "status": "IN_QUEUE",
-  "latencyMs": 678,
-  "correlation": {
-   "po": "PO-KHP-2609-0126",
-   "unit": "CRF-KHP-2609-0024",
-   "so": "4213090031",
-   "line": "CGL",
-   "pdi": "PDI-CGL-0024"
-  },
-  "payloadExcerpt": {
-   "pdiId": "PDI-CGL-0024",
-   "line": "CGL",
-   "targets": {
-    "coatingId": "Z120",
-    "coatingTargetGsm": 126,
-    "coatingBandGsm": [
-     120,
-     138
-    ],
-    "spangle": "Regular",
-    "lineSpeedMpm": 90,
-    "furnaceSoakC": 720,
-    "zincBathAlPct": [
-     0.18,
-     0.24
-    ],
-    "bathTempC": 460,
-    "skinPassElongPct": [
-     0.8,
-     1.2
-    ],
-    "passivation": "Chromate"
-   }
-  },
-  "error": "No consumer on queue L2.CGL.PDI.OUT since 09:41 — L2 gateway subscriber disconnected",
-  "retries": 0,
-  "history": [
-   {
-    "at": "2026-09-08T09:41:00",
-    "status": "IN_QUEUE",
-    "by": "middleware"
-   }
-  ],
-  "queue": "L2.CGL.PDI.OUT",
-  "ageMin": 49,
-  "stuck": true,
-  "hero": true
- },
- {
   "id": "MSG-00033",
   "interfaceId": "IF-L2-PDI",
   "direction": "MES→L2",
   "at": "2026-09-08T09:47:00",
   "status": "IN_QUEUE",
-  "latencyMs": 817,
+  "latencyMs": 2513,
   "correlation": {
    "po": "PO-KHP-2609-0137",
    "unit": "CRF-KHP-2609-0026",
@@ -4535,12 +4482,65 @@
   "hero": true
  },
  {
+  "id": "MSG-00013",
+  "interfaceId": "IF-L2-PDI",
+  "direction": "MES→L2",
+  "at": "2026-09-08T09:48:00",
+  "status": "IN_QUEUE",
+  "latencyMs": 183,
+  "correlation": {
+   "po": "PO-KHP-2609-0126",
+   "unit": "CRF-KHP-2609-0024",
+   "so": "4213090031",
+   "line": "CGL",
+   "pdi": "PDI-CGL-0024"
+  },
+  "payloadExcerpt": {
+   "pdiId": "PDI-CGL-0024",
+   "line": "CGL",
+   "targets": {
+    "coatingId": "Z120",
+    "coatingTargetGsm": 126,
+    "coatingBandGsm": [
+     120,
+     138
+    ],
+    "spangle": "Regular",
+    "lineSpeedMpm": 90,
+    "furnaceSoakC": 720,
+    "zincBathAlPct": [
+     0.18,
+     0.24
+    ],
+    "bathTempC": 460,
+    "skinPassElongPct": [
+     0.8,
+     1.2
+    ],
+    "passivation": "Chromate"
+   }
+  },
+  "error": "No consumer on queue L2.CGL.PDI.OUT since 09:41 — L2 gateway subscriber disconnected",
+  "retries": 0,
+  "history": [
+   {
+    "at": "2026-09-08T09:48:00",
+    "status": "IN_QUEUE",
+    "by": "middleware"
+   }
+  ],
+  "queue": "L2.CGL.PDI.OUT",
+  "ageMin": 42,
+  "stuck": true,
+  "hero": true
+ },
+ {
   "id": "MSG-00034",
   "interfaceId": "IF-L2-PDI",
   "direction": "MES→L2",
   "at": "2026-09-08T09:53:00",
   "status": "IN_QUEUE",
-  "latencyMs": 939,
+  "latencyMs": 2072,
   "correlation": {
    "po": "PO-KHP-2609-0143",
    "unit": "CRF-KHP-2609-0027",
@@ -4593,7 +4593,7 @@
   "direction": "L2→MES",
   "at": "2026-09-08T09:56:28",
   "status": "OK",
-  "latencyMs": 227,
+  "latencyMs": 1047,
   "correlation": {
    "po": "PO-KHP-2609-0125",
    "unit": "HPO-KHP-2609-0025",
@@ -4626,9 +4626,9 @@
   "id": "MSG-00081",
   "interfaceId": "IF-SAP-10",
   "direction": "MES→SAP",
-  "at": "2026-09-08T09:59:28",
+  "at": "2026-09-08T09:56:28",
   "status": "OK",
-  "latencyMs": 2414,
+  "latencyMs": 1439,
   "correlation": {
    "po": "PO-KHP-2609-0125",
    "unit": "HPO-KHP-2609-0025",
@@ -4646,7 +4646,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T09:59:28",
+    "at": "2026-09-08T09:56:28",
     "status": "OK",
     "by": "middleware"
    }
@@ -4657,9 +4657,9 @@
   "id": "MSG-00082",
   "interfaceId": "IF-SAP-06",
   "direction": "MES→SAP",
-  "at": "2026-09-08T10:00:28",
+  "at": "2026-09-08T09:57:28",
   "status": "OK",
-  "latencyMs": 436,
+  "latencyMs": 656,
   "correlation": {
    "po": "PO-KHP-2609-0125",
    "unit": "CRF-KHP-2609-0024",
@@ -4673,7 +4673,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T10:00:28",
+    "at": "2026-09-08T09:57:28",
     "status": "OK",
     "by": "middleware"
    }
@@ -4685,7 +4685,7 @@
   "direction": "MES→L2",
   "at": "2026-09-09T16:33:00",
   "status": "OK",
-  "latencyMs": 2566,
+  "latencyMs": 2741,
   "correlation": {
    "po": "PO-KHP-2609-0136",
    "unit": "HPO-KHP-2609-0028",
@@ -4723,7 +4723,7 @@
   "direction": "MES→L2",
   "at": "2026-09-09T23:00:43",
   "status": "OK",
-  "latencyMs": 2513,
+  "latencyMs": 1966,
   "correlation": {
    "po": "PO-KHP-2609-0141",
    "unit": "HRC-DL-2609-0031",
@@ -4761,7 +4761,7 @@
   "direction": "MES→L2",
   "at": "2026-09-10T08:58:35",
   "status": "OK",
-  "latencyMs": 1018,
+  "latencyMs": 2284,
   "correlation": {
    "po": "PO-KHP-2609-0147",
    "unit": "HRC-VJ-2609-0032",

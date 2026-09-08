@@ -97,6 +97,37 @@
   "hero": false
  },
  {
+  "id": "INC-26-0380",
+  "title": "Label printer offline at packing line",
+  "category": "Shop-floor IT",
+  "severity": "S3",
+  "channel": "Monitoring alert",
+  "openedAt": "2026-08-14T06:28:47",
+  "openedBy": "Packing supervisor",
+  "classification": {
+   "by": "AI agent",
+   "confidence": 0.83,
+   "category": "Shop-floor IT"
+  },
+  "enrichment": {
+   "batchIds": [],
+   "interfaceLogs": 0,
+   "line": "SLT"
+  },
+  "knowledgeSource": "RB-007",
+  "proposedAction": "Restart spooler (autonomous)",
+  "approvalRequired": false,
+  "approvedBy": null,
+  "resolvedBy": "Human L2 engineer",
+  "validation": "Manual verification",
+  "resolvedAt": "2026-08-14T19:49:47",
+  "mttrMin": 801,
+  "status": "RESOLVED",
+  "falseAction": false,
+  "csat": 5,
+  "hero": false
+ },
+ {
   "id": "INC-26-0385",
   "title": "New shift in-charge cannot open Delay entry page",
   "category": "Access",
@@ -445,30 +476,30 @@
  },
  {
   "id": "INC-26-0381",
-  "title": "New shift in-charge cannot open Delay entry page",
-  "category": "Access",
-  "severity": "S4",
+  "title": "GRN weight mismatch HRS",
+  "category": "Interface / SAP",
+  "severity": "S3",
   "channel": "Teams chat",
-  "openedAt": "2026-08-27T07:13:23",
+  "openedAt": "2026-08-26T09:17:26",
   "openedBy": "Shift in-charge",
   "classification": {
    "by": "AI agent",
    "confidence": 0.87,
-   "category": "Access"
+   "category": "Interface / SAP"
   },
   "enrichment": {
    "batchIds": [],
    "interfaceLogs": 4,
    "line": "PKG"
   },
-  "knowledgeSource": "RB-006",
-  "proposedAction": "Assign role per policy (autonomous within policy)",
-  "approvalRequired": false,
-  "approvedBy": null,
+  "knowledgeSource": "RB-005",
+  "proposedAction": "Data correction under approval workflow",
+  "approvalRequired": true,
+  "approvedBy": "Shift IT lead",
   "resolvedBy": "AI agent",
   "validation": "Automated post-fix check passed",
-  "resolvedAt": "2026-08-27T11:35:23",
-  "mttrMin": 262,
+  "resolvedAt": "2026-08-26T13:57:26",
+  "mttrMin": 280,
   "status": "RESOLVED",
   "falseAction": false,
   "csat": 5,
@@ -596,37 +627,6 @@
   "status": "RESOLVED",
   "falseAction": false,
   "csat": 5,
-  "hero": false
- },
- {
-  "id": "INC-26-0380",
-  "title": "How to record offline production entry",
-  "category": "How-to",
-  "severity": "S4",
-  "channel": "Email",
-  "openedAt": "2026-08-28T18:30:21",
-  "openedBy": "Monitoring",
-  "classification": {
-   "by": "AI agent",
-   "confidence": 0.84,
-   "category": "How-to"
-  },
-  "enrichment": {
-   "batchIds": [],
-   "interfaceLogs": 6,
-   "line": "CRM"
-  },
-  "knowledgeSource": null,
-  "proposedAction": "Guided answer from SOP",
-  "approvalRequired": false,
-  "approvedBy": null,
-  "resolvedBy": "Human L2 engineer",
-  "validation": "Manual verification",
-  "resolvedAt": "2026-08-29T09:27:21",
-  "mttrMin": 897,
-  "status": "RESOLVED",
-  "falseAction": false,
-  "csat": 3,
   "hero": false
  },
  {
@@ -976,8 +976,8 @@
    "line": "CGL",
    "queue": "L2.CGL.PDI.OUT",
    "messageIds": [
-    "MSG-00013",
     "MSG-00033",
+    "MSG-00013",
     "MSG-00034"
    ],
    "relatedDelay": "CGL air-knife stoppage 09:52 (independent)"

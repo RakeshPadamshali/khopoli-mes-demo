@@ -8,8 +8,8 @@
   "title": "PDI queue L2.CGL.PDI.OUT stuck",
   "detail": "Queue depth 3 > 0 for 120 s; oldest message age exceeds 30 s SLA; no consumer heartbeat since 09:41",
   "messageIds": [
-   "MSG-00013",
    "MSG-00033",
+   "MSG-00013",
    "MSG-00034"
   ],
   "incidentId": "INC-26-0412",

@@ -33,6 +33,8 @@ Live-demo actions (charge, receive PDO, confirm, record DFT, allocate, replay, d
 
 Golden-thread anchors: SO **4213090017/10** (PPGI, RAL 9002), HR coil **HRC-VJ-2608-0471** (Vijayanagar heat H26-VJ-7731), defects DEF-2609-0001/0002/0003, incidents INC-26-0412 (resolved by the agent) and INC-26-0413 (awaiting approval).
 
+The line schedules carry a **forward line-load plan** (`campaigns`): the balance-to-produce of every open order as ~20 t campaign coils sequenced per line over a 10-day horizon (campaign family, changeover minutes, transfer times, WIP), around the recorded coils. Routes & Schedules shows the full line load and the selected order's own schedule as two gantts; the dashboard's on-track / behind counts include the campaign coils.
+
 More than one order runs through the live flows: every running line carries a different sales order, and four finished coils wait in the FG yard (two colour-coated coils with a pending lab result, one galvanized coil, plus the hero coil), so the Quality → Packing → Dispatch steps of Scenario 1 can be repeated on a second order. The certificate selector on Quality and the coil selector on Packing pick the coil.
 
 ## Presenter scripts

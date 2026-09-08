@@ -117,8 +117,12 @@ Batch → sales-order allocations incl. the scripted swap (BatchOrderAllocation)
 Fields: `id`, `unitId`, `itemId`, `at`, `by`, `ppcApproval`, `qcApproval`, `status`, `reason`
 
 ### `schedules.json` — 175 records
-Line schedules (campaign sequence per line) with status vs as-of and rush markers.
+Line schedules of the recorded coils (one row per coil per line) with status vs as-of, track and rush markers.
 Fields: `id`, `line`, `threadId`, `itemId`, `soId`, `customerName`, `unitId`, `po`, `product`, `gradeId`, `thk`, `width`, `ral`, `coatingId`, `plannedStart`, `plannedEnd`, `status`, `hero` …
+
+### `campaigns.json` — 947 records
+Forward line-load plan: the balance-to-produce of every open item as ~20 t campaign coils (PLC-…), sequenced per line over a 10-day horizon by campaign family (coating / thickness on CGL, light → dark colour on CCL, gauge on CRM, knife set on the slitter) with changeover minutes. Schedule-only: no material or production order exists until release.
+Fields: `id`, `line`, `unitId`, `coilSeq`, `coilsOf`, `itemId`, `soId`, `product`, `qtyMT`, `stage`, `stages`, `wip`, `plannedStart`, `plannedEnd`, `status`, `campaign`, `family`, `changeoverMin` …
 
 ### `freeStock.json` — 31 records
 Free HR coils in the yard (+ on hold, in transit) available to the Material Allocator.

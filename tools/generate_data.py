@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic demo dataset for the JSW Khopoli NextGen MES product demo (RFP Annexure A scenarios 1, 2-light, 4, 5, 6 + data feed for 7).
+"""Deterministic demo dataset for the JSW Khopoli NextGen MES product demo (RFP Annexure A scenarios 1, 2, 4, 5, 6 + data feed for 7).
 Writes  data/khp-data.js  (window.KHP, used by the pages)  and  data/json/<entity>.json + data/README.md  (for the AI-support team).
 Everything is fictional: customers, orders, coils, people, incidents. Only line names, products, rules and the ontology come from the RFP.
 Run:  python tools/generate_data.py
@@ -14,6 +14,7 @@ from gen.threads import build_threads, build_free_stock
 from gen.execution import build_execution, sap_dispatch_message
 from gen.quality import build_quality
 from gen.ops import build_delays, build_kpis, live_snapshot
+from gen.campaigns import build_campaigns
 from gen.integration import build_interfaces, build_messages, build_contracts
 from gen.support import build_support
 from gen.masters import build_masters
@@ -29,8 +30,7 @@ E = build_execution(T["stages"], T["materials"], items, T["threads"])
 Q = build_quality(T["materials"], T["stages"], items, T["edges"], hero)
 delays = build_delays()
 kpis = build_kpis(delays, E["confirmations"])
-live = live_snapshot(T["schedules"], delays, sum(1 for x in Q["holds"] if x["status"] == "ACTIVE"), kpis)
-interfaces = build_interfaces()
+interfaces = build_interfaces()   # (the live snapshot is built after the item roll-ups and the campaign plan, below)
 messages, alerts = build_messages(E["pdi"], E["pdo"], E["confirmations"], E["dispatches"], items)
 contracts = build_contracts()
 S = build_support(alerts)
@@ -82,6 +82,9 @@ for it in items:
 for o in orders:
     its = [it for it in items if it["soId"] == o["id"]]; o["items"] = [it["id"] for it in its]; o["qtyMT"] = sum(it["qtyMT"] for it in its)
     o["status"] = "DISPATCHED" if all(it["status"] == "DISPATCHED" for it in its) else "IN_PROGRESS" if any(it["status"] != "OPEN" for it in its) else "OPEN"; o["hero"] = o["id"] == HERO_SO
+# ---- forward line-load plan: the balance-to-produce as campaign coils sequenced per line (schedule-only), then the live snapshot over both ----
+C = build_campaigns(items, routes, T["schedules"])
+live = live_snapshot(T["schedules"] + C, delays, sum(1 for x in Q["holds"] if x["status"] == "ACTIVE"), kpis)
 hero_disp = next(d for d in E["dispatches"] if d["hero"]); hero_pack = next(p for p in E["packs"] if p["id"] == hero_disp["packId"])
 dispatch_message = sap_dispatch_message(hero_disp, hero_pack, by_item[HERO_ITEM])
 
@@ -108,7 +111,7 @@ KHP = dict(meta=dict(plant="JSW Steel Coated Products — Khopoli", title="Khopo
                                             detectedOn="defect → material", attributedTo="defect → causing equipment", allocatedTo="material → sales-order item", fulfils="dispatch → sales-order schedule line")),
            plant=A.PLANT, lines=A.LINES, equipment=A.equipment_rows(), grades=A.GRADES, coatings=A.COATINGS, paints=A.PAINTS, rals=[dict(code=c, name=n) for c, n in A.RALS], defectCodes=A.DEFECT_CODES, delayCodes=A.DELAY_CODES,
            customers=A.CUSTOMERS, packVendors=A.PACK_VENDORS, shifts=A.SHIFTS, orders=orders, items=items, tdcs=tdcs, routes=routes, threads=T["threads"], materials=T["materials"],
-           edges=[dict(rel=r, **{"from": a, "to": b}) for r, a, b in T["edges"]], stages=T["stages"], productionOrders=T["productionOrders"], allocations=T["allocations"], schedules=T["schedules"], freeStock=free, maSuggestions=sugg,
+           edges=[dict(rel=r, **{"from": a, "to": b}) for r, a, b in T["edges"]], stages=T["stages"], productionOrders=T["productionOrders"], allocations=T["allocations"], schedules=T["schedules"], campaigns=C, freeStock=free, maSuggestions=sugg,
            pdi=E["pdi"], pdo=E["pdo"], confirmations=E["confirmations"], slitPlans=E["slitPlans"], packs=E["packs"], packingBills=E["packingBills"], dispatches=E["dispatches"], dispatchMessage=dispatch_message,
            defects=Q["defects"], decisions=Q["decisions"], downgradeSuggestions=Q["downgradeSuggestions"], certificates=Q["certificates"], holds=Q["holds"], delays=delays, kpis=kpis, live=live,
            interfaces=interfaces, messages=messages, alerts=alerts, contracts=contracts, incidents=S["incidents"], runbooks=S["runbooks"], actionCatalogue=S["actionCatalogue"], agentAudit=S["agentAudit"], supportMetrics=S["supportMetrics"], events=events)
@@ -121,7 +124,8 @@ DESC = {"plant": "The Khopoli plant and its upstream HSM plants (ASSETS).", "lin
         "routes": "SAP route vs Factory-Planner route per item: process path, yield string, route string, material tree, chosen source.", "threads": "One coil 'thread' = the digital thread of one HR coil through its route (MATERIAL spine).",
         "materials": "Every material unit: HR coils, HRPO, CRFH, GI/GL, PPGI/PPGL, slit children, packs — with attributes, status, genealogy keys (parentId, hrCoilId, heatId, slabId).", "edges": "Ontology relationships as triples (rel, from, to).",
         "stages": "Simulated line stages per thread (planned/actual times, in/out weights, PDI/PDO refs).", "productionOrders": "MES production order numbers per stage (PROCESS).", "allocations": "Batch → sales-order allocations incl. the scripted swap (BatchOrderAllocation).",
-        "schedules": "Line schedules (campaign sequence per line) with status vs as-of and rush markers.", "freeStock": "Free HR coils in the yard (+ on hold, in transit) available to the Material Allocator.", "maSuggestions": "Material-Allocator suggestions per open item with score, reasons and the two-step PPC / QC approvals.",
+        "schedules": "Line schedules of the recorded coils (one row per coil per line) with status vs as-of, track and rush markers.",
+        "campaigns": "Forward line-load plan: the balance-to-produce of every open item as ~20 t campaign coils (PLC-…), sequenced per line over a 10-day horizon by campaign family (coating / thickness on CGL, light → dark colour on CCL, gauge on CRM, knife set on the slitter) with changeover minutes. Schedule-only: no material or production order exists until release.", "freeStock": "Free HR coils in the yard (+ on hold, in transit) available to the Material Allocator.", "maSuggestions": "Material-Allocator suggestions per open item with score, reasons and the two-step PPC / QC approvals.",
         "pdi": "Production Data Input messages MES → L2 (targets); includes the stuck queue messages.", "pdo": "Production Data Output messages L2 → MES (actuals) with auto-comparison deviations.", "confirmations": "Production confirmations with mass balance (one deliberate IMBALANCE).",
         "slitPlans": "Slitting plans parent → children.", "packs": "Packing units with vendor, materials and QR label.", "packingBills": "Vendor-wise packing bills per ISO week.", "dispatches": "Dispatches (done / planned) with vehicle and invoice.", "dispatchMessage": "Structure of the dispatch confirmation sent to SAP for the hero order.",
         "defects": "Defects: detectedOn material, attributedTo equipment, downstreamAffected (propagation via consumesInput).", "decisions": "Usage decisions (UD codes) per finished unit.", "downgradeSuggestions": "Auto downgrade suggestions with param-by-param validation against candidate sales orders and manual override.",

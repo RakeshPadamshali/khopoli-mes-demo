@@ -9,9 +9,31 @@
    "currentBatch": null,
    "currentPo": null,
    "currentSo": null,
-   "rateTph": 40.6,
+   "rateTph": 38.5,
    "targetTph": 45,
-   "next": [],
+   "next": [
+    {
+     "unitId": "PLC-2609-0061",
+     "po": null,
+     "plannedStart": "2026-09-10T11:23:01",
+     "soId": "4213090016",
+     "rush": false
+    },
+    {
+     "unitId": "PLC-2609-0062",
+     "po": null,
+     "plannedStart": "2026-09-10T13:07:17",
+     "soId": "4213090016",
+     "rush": false
+    },
+    {
+     "unitId": "PLC-2609-0060",
+     "po": null,
+     "plannedStart": "2026-09-10T13:51:25",
+     "soId": "4213090016",
+     "rush": false
+    }
+   ],
    "activeDelay": null,
    "todayMT": 337.7,
    "todayTargetMT": 350.0,
@@ -24,28 +46,28 @@
    "currentBatch": "HRC-VJ-2609-0030",
    "currentPo": "PO-KHP-2609-0135",
    "currentSo": "4213090008",
-   "rateTph": 35.9,
+   "rateTph": 39.0,
    "targetTph": 45,
    "next": [
     {
-     "unitId": "HRC-DL-2609-0031",
-     "po": "PO-KHP-2609-0141",
-     "plannedStart": "2026-09-09T23:50:43",
-     "soId": "4213090006",
+     "unitId": "PLC-2609-0005",
+     "po": null,
+     "plannedStart": "2026-09-08T11:15:18",
+     "soId": "4213090032",
      "rush": false
     },
     {
-     "unitId": "HRC-VJ-2609-0032",
-     "po": "PO-KHP-2609-0147",
-     "plannedStart": "2026-09-10T10:07:35",
-     "soId": "4213090037",
+     "unitId": "PLC-2609-0002",
+     "po": null,
+     "plannedStart": "2026-09-08T12:01:30",
+     "soId": "4213090032",
      "rush": false
     },
     {
-     "unitId": "HRC-VJ-2609-0033",
-     "po": "PO-KHP-2609-0151",
-     "plannedStart": "2026-09-11T16:35:06",
-     "soId": "4213090025",
+     "unitId": "PLC-2609-0001",
+     "po": null,
+     "plannedStart": "2026-09-08T12:40:22",
+     "soId": "4213090032",
      "rush": false
     }
    ],
@@ -61,28 +83,28 @@
    "currentBatch": "HPO-KHP-2609-0029",
    "currentPo": "PO-KHP-2609-0142",
    "currentSo": "4213090006",
-   "rateTph": 25.4,
+   "rateTph": 28.0,
    "targetTph": 32,
    "next": [
     {
-     "unitId": "HPO-KHP-2609-0028",
-     "po": "PO-KHP-2609-0136",
-     "plannedStart": "2026-09-09T17:10:00",
-     "soId": "4213090008",
+     "unitId": "PLC-2609-0002",
+     "po": null,
+     "plannedStart": "2026-09-08T15:06:33",
+     "soId": "4213090032",
      "rush": false
     },
     {
-     "unitId": "HPO-KHP-2609-0030",
-     "po": "PO-KHP-2609-0148",
-     "plannedStart": "2026-09-11T06:21:21",
-     "soId": "4213090037",
+     "unitId": "PLC-2609-0004",
+     "po": null,
+     "plannedStart": "2026-09-08T17:38:16",
+     "soId": "4213090032",
      "rush": false
     },
     {
-     "unitId": "HPO-KHP-2609-0031",
-     "po": "PO-KHP-2609-0152",
-     "plannedStart": "2026-09-12T14:17:56",
-     "soId": "4213090025",
+     "unitId": "PLC-2609-0005",
+     "po": null,
+     "plannedStart": "2026-09-08T18:40:31",
+     "soId": "4213090032",
      "rush": false
     }
    ],
@@ -104,22 +126,22 @@
     {
      "unitId": "CRF-KHP-2609-0024",
      "po": "PO-KHP-2609-0126",
-     "plannedStart": "2026-09-10T00:43:49",
+     "plannedStart": "2026-09-08T12:17:50",
      "soId": "4213090031",
      "rush": true
     },
     {
-     "unitId": "CRF-KHP-2609-0026",
-     "po": "PO-KHP-2609-0137",
-     "plannedStart": "2026-09-10T13:05:40",
-     "soId": "4213090008",
+     "unitId": "PLC-2609-0017",
+     "po": null,
+     "plannedStart": "2026-09-08T15:19:39",
+     "soId": "4213090028",
      "rush": false
     },
     {
-     "unitId": "CRF-KHP-2609-0027",
-     "po": "PO-KHP-2609-0143",
-     "plannedStart": "2026-09-11T08:43:29",
-     "soId": "4213090006",
+     "unitId": "PLC-2609-0016",
+     "po": null,
+     "plannedStart": "2026-09-08T21:00:18",
+     "soId": "4213090028",
      "rush": false
     }
    ],
@@ -151,21 +173,28 @@
    "currentBatch": "GIC-KHP-2609-0030",
    "currentPo": "PO-KHP-2609-0168",
    "currentSo": "4213090023",
-   "rateTph": 11.3,
+   "rateTph": 10.8,
    "targetTph": 12,
    "next": [
     {
-     "unitId": "GLC-KHP-2609-0002",
-     "po": "PO-KHP-2609-0138",
-     "plannedStart": "2026-09-10T21:52:29",
-     "soId": "4213090008",
+     "unitId": "PLC-2609-0113",
+     "po": null,
+     "plannedStart": "2026-09-08T11:21:12",
+     "soId": "4213090006",
      "rush": false
     },
     {
-     "unitId": "GIC-KHP-2609-0025",
-     "po": "PO-KHP-2609-0144",
-     "plannedStart": "2026-09-12T05:23:55",
+     "unitId": "PLC-2609-0294",
+     "po": null,
+     "plannedStart": "2026-09-08T14:07:18",
      "soId": "4213090006",
+     "rush": false
+    },
+    {
+     "unitId": "PLC-2609-0046",
+     "po": null,
+     "plannedStart": "2026-09-08T18:51:33",
+     "soId": "4213090033",
      "rush": false
     }
    ],
@@ -185,24 +214,24 @@
    "targetTph": 35,
    "next": [
     {
-     "unitId": "PPG-KHP-2609-0011",
-     "po": "PO-KHP-2609-0094",
-     "plannedStart": "2026-09-09T08:00:00",
-     "soId": "4213090017",
+     "unitId": "PLC-2609-0054",
+     "po": null,
+     "plannedStart": "2026-09-08T15:19:29",
+     "soId": "4213090019",
      "rush": false
     },
     {
-     "unitId": "PPG-KHP-2609-0013",
-     "po": "PO-KHP-2609-0115",
-     "plannedStart": "2026-09-11T13:50:25",
-     "soId": "4213090040",
+     "unitId": "PLC-2609-0052",
+     "po": null,
+     "plannedStart": "2026-09-08T16:18:20",
+     "soId": "4213090019",
      "rush": false
     },
     {
-     "unitId": "PPL-KHP-2609-0001",
-     "po": "PO-KHP-2609-0139",
-     "plannedStart": "2026-09-14T15:46:01",
-     "soId": "4213090008",
+     "unitId": "PLC-2609-0055",
+     "po": null,
+     "plannedStart": "2026-09-08T19:26:07",
+     "soId": "4213090019",
      "rush": false
     }
    ],
@@ -234,9 +263,31 @@
    "currentBatch": null,
    "currentPo": null,
    "currentSo": null,
-   "rateTph": 24.4,
+   "rateTph": 23.6,
    "targetTph": 30,
-   "next": [],
+   "next": [
+    {
+     "unitId": "PLC-2609-0006",
+     "po": null,
+     "plannedStart": "2026-09-08T23:39:43",
+     "soId": "4213090032",
+     "rush": false
+    },
+    {
+     "unitId": "PLC-2609-0002",
+     "po": null,
+     "plannedStart": "2026-09-09T00:41:20",
+     "soId": "4213090032",
+     "rush": false
+    },
+    {
+     "unitId": "PLC-2609-0001",
+     "po": null,
+     "plannedStart": "2026-09-09T01:42:03",
+     "soId": "4213090032",
+     "rush": false
+    }
+   ],
    "activeDelay": null,
    "todayMT": 142.5,
    "todayTargetMT": 175.0,
@@ -249,28 +300,28 @@
    "currentBatch": "HPO-KHP-2609-0027",
    "currentPo": "PO-KHP-2609-0134",
    "currentSo": "4213090026",
-   "rateTph": 25.3,
+   "rateTph": 26.4,
    "targetTph": 30,
    "next": [
     {
-     "unitId": "SLC-KHP-2609-0032",
-     "po": "PO-KHP-2609-0095",
-     "plannedStart": "2026-09-09T13:00:00",
-     "soId": "4213090017",
+     "unitId": "PLC-2609-0054",
+     "po": null,
+     "plannedStart": "2026-09-08T19:52:16",
+     "soId": "4213090019",
      "rush": false
     },
     {
-     "unitId": "PPG-KHP-2609-0012",
-     "po": "PO-KHP-2609-0110",
-     "plannedStart": "2026-09-10T00:47:43",
-     "soId": "4213090020",
+     "unitId": "PLC-2609-0052",
+     "po": null,
+     "plannedStart": "2026-09-08T22:22:58",
+     "soId": "4213090019",
      "rush": false
     },
     {
-     "unitId": "GIC-KHP-2609-0024",
-     "po": "PO-KHP-2609-0131",
-     "plannedStart": "2026-09-10T05:12:40",
-     "soId": "4213090023",
+     "unitId": "PLC-2609-0055",
+     "po": null,
+     "plannedStart": "2026-09-08T23:20:00",
+     "soId": "4213090019",
      "rush": false
     }
    ],
@@ -280,8 +331,8 @@
    "oeeToday": 0.88
   }
  ],
- "batchesOnTrack": 49,
- "batchesBehind": 1,
+ "batchesOnTrack": 995,
+ "batchesBehind": 2,
  "activeDelays": 2,
  "qualityHolds": 2,
  "otifWeekly": [

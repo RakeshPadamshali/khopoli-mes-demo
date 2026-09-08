@@ -49,11 +49,12 @@
   // ---- gantt: lanes = [{id,label,sub}], bars = [{lane,start,end,label,color,cls,tip}] ISO strings; opts {from,to,laneW,minPx,laneTitle,showNow} ----
   function gantt(el, lanes, bars, opts) {
     opts = opts || {}; var from = dt(opts.from) || new Date(Math.min.apply(null, bars.map(function (b) { return +dt(b.start); }))), to = dt(opts.to) || new Date(Math.max.apply(null, bars.map(function (b) { return +dt(b.end); })));
-    from = new Date(from.getFullYear(), from.getMonth(), from.getDate()); to = new Date(to.getTime() + 3600000 * 2);
+    if (!opts.exactFrom) from = new Date(from.getFullYear(), from.getMonth(), from.getDate()); to = new Date(to.getTime() + 3600000 * 2);
     var laneW = opts.laneW || 160, hours = (to - from) / 3600000, avail = Math.max(300, el.clientWidth - laneW - 2), px = Math.max(opts.minPx || 7, avail / hours), W = Math.round(hours * px);
     function x(d) { return Math.round((dt(d) - from) / 3600000 * px); }
     var grid = '', head = '';
-    for (var t = new Date(from); t <= to; t = new Date(t.getTime() + 6 * 3600000)) {
+    var g0 = new Date(from.getFullYear(), from.getMonth(), from.getDate(), Math.ceil(from.getHours() / 6) * 6);   // gridlines stay on 00 / 06 / 12 / 18 h even when the window starts mid-day
+    for (var t = g0; t <= to; t = new Date(t.getTime() + 6 * 3600000)) {
       var isDay = t.getHours() === 0; grid += '<div class="g-grid' + (isDay ? ' day' : '') + '" style="left:' + x(t) + 'px"></div>';
       if (isDay) head += '<div class="g-day" style="left:' + (x(t) + Math.min(px * 12, 60)) + 'px">' + WD[t.getDay()] + '<span class="dm">' + t.getDate() + ' ' + MO[t.getMonth()] + '</span></div>';
     }

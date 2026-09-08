@@ -13,8 +13,8 @@
     "unitId": "CRF-KHP-2609-0026",
     "soId": "4213090008",
     "customerName": "Apex Appliances Ltd",
-    "plannedStart": "2026-09-10T00:43:49",
-    "plannedEnd": "2026-09-10T02:05:20",
+    "plannedStart": "2026-09-08T12:17:50",
+    "plannedEnd": "2026-09-08T13:39:22",
     "rush": false
    },
    {
@@ -95,8 +95,8 @@
     "unitId": "CRF-KHP-2609-0024",
     "soId": "4213090031",
     "customerName": "Kestrel Auto Components",
-    "plannedStart": "2026-09-10T00:43:49",
-    "plannedEnd": "2026-09-10T02:05:20",
+    "plannedStart": "2026-09-08T12:17:50",
+    "plannedEnd": "2026-09-08T13:39:22",
     "rush": true
    },
    {

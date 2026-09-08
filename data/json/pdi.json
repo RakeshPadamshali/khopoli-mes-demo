@@ -2378,7 +2378,7 @@
   "itemId": "4213090031/10",
   "soId": "4213090031",
   "threadId": "TH-025",
-  "sentAt": "2026-09-08T09:41:00",
+  "sentAt": "2026-09-08T09:48:00",
   "targets": {
    "coatingId": "Z120",
    "coatingTargetGsm": 126,
@@ -2415,7 +2415,7 @@
   "itemId": "4213090023/20",
   "soId": "4213090023",
   "threadId": "TH-026",
-  "sentAt": "2026-09-06T22:29:04",
+  "sentAt": "2026-09-06T22:55:04",
   "targets": {
    "acidConcPct": [
     12,
@@ -2427,7 +2427,7 @@
    "sideTrimMm": 10
   },
   "status": "ACKED",
-  "ackAt": "2026-09-06T22:31:04",
+  "ackAt": "2026-09-06T22:59:04",
   "hero": false,
   "via": "Middleware (L2 gateway)"
  },

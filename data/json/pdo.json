@@ -2480,7 +2480,7 @@
   "threadId": "TH-026",
   "receivedAt": "2026-09-07T00:21:24",
   "actuals": {
-   "acidConcPct": 14.0,
+   "acidConcPct": 15.4,
    "stripSpeedMpm": 88,
    "bathTempC": 81,
    "oilingGsm": 1.35

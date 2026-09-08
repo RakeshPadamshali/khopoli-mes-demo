@@ -34,8 +34,14 @@
       <div class="note"><i class="fa-solid fa-circle-info"></i><span>FP generates the <b>process path</b>, <b>yield string</b>, <b>route string</b> and <b>material tree</b> per MFG order; the manually entered SAP route order sits beside it. The planner picks either — the chosen route drives production-order generation (PO numbers on the Shop-floor page).</span></div></div>
     </div>
     <div class="card">
-      <div class="card-head"><i class="fa-solid fa-chart-gantt"></i> Line schedules — one bar per scheduled coil on each line, 2 days back to 3½ days ahead of now (red line) <span class="right"><span class="legend"><span><i style="background:#1baf7a"></i>done</span><span><i style="background:#2a78d6"></i>running</span><span><i style="background:#8a93a0;opacity:.6"></i>planned</span><span><i style="background:#fff;border:2px solid var(--accent)"></i>rush</span><span><i style="background:#fff;border:2px solid #c62828"></i>golden thread</span><span><i style="background:#5e35b1"></i>rerouted / rework</span></span></span></div>
-      <div class="card-body"><div class="gantt" id="gantt"></div></div>
+      <div class="card-head"><i class="fa-solid fa-chart-gantt"></i> Line schedules — full line load and the selected order <span class="right"><span class="legend"><span><i style="background:#1baf7a"></i>done</span><span><i style="background:#2a78d6"></i>running</span><span><i style="background:#8a93a0;opacity:.6"></i>planned coil</span><span><i style="background:#9fb3c8"></i>campaign coil (HR coil at release)</span><span><i style="background:#fff;border:2px solid var(--accent)"></i>rush</span><span><i style="background:#fff;border:2px solid #c62828"></i>golden thread</span><span><i style="background:#5e35b1"></i>rerouted / rework</span><span><i style="background:#fff;border:2px solid #00acc1"></i>selected order</span></span></span></div>
+      <div class="card-body">
+        <div class="sub-title"><i class="fa-solid fa-layer-group"></i> Full line load — every recorded coil plus the campaign plan for the balance-to-produce · 3 h back to 5½ days ahead of now (red line)</div>
+        <div class="gantt" id="gantt"></div><div class="hint" id="gload" style="margin:6px 0 12px"></div>
+        <div class="sub-title"><i class="fa-solid fa-filter"></i> Selected order only — <select id="gsel" style="font:12px 'Roboto';padding:3px 6px;border:1px solid var(--color-border);border-radius:5px"></select> <span class="hint" id="gometa"></span></div>
+        <div class="gantt" id="ogantt"></div>
+        <div class="hint" style="margin-top:6px">Campaign coils are the balance-to-produce of open orders sequenced by the planner over a 10-day horizon (coating and thickness family on CGL, light → dark colour on CCL, gauge on CRM, knife set on the slitter, changeover minutes between families); they get a production order and an HR coil at release. Recorded coils keep their windows.</div>
+      </div>
     </div>
     <div class="card">
       <div class="card-head"><i class="fa-solid fa-bolt"></i> Rush order from APS — CGL sequence re-prioritised <span class="right" id="rushmeta"></span></div>
@@ -47,7 +53,7 @@
         <div class="tbl-wrap" style="max-height:340px"><table class="tbl" id="club"></table></div></div>
     </div>
     <div class="card">
-      <div class="card-head"><i class="fa-solid fa-list-check"></i> Schedule lines <select id="linesel" style="font:12px 'Roboto';padding:3px 6px;border:1px solid var(--color-border);border-radius:5px"></select> <span class="right" id="smeta"></span></div>
+      <div class="card-head"><i class="fa-solid fa-list-check"></i> Schedule lines <select id="linesel" style="font:12px 'Roboto';padding:3px 6px;border:1px solid var(--color-border);border-radius:5px"></select> <input id="ssearch" placeholder="find coil / SO / customer / campaign" style="font:12px 'Roboto';padding:3px 8px;border:1px solid var(--color-border);border-radius:5px;width:250px;margin-left:6px"> <span class="right" id="smeta"></span></div>
       <div class="card-body"><div class="tbl-wrap"><table class="tbl" id="sched"></table></div><div id="rrpanel"></div>
       <div class="note"><i class="fa-solid fa-circle-info"></i><span>Planning-released schedule lines are <b>confirmed by Operations</b> before charging. <b>Reroute</b> moves a planned coil to the alternate work centre (equipment loading: Slitter ↔ Rewinding + Trimming) or raises a <b>rework</b> production order on the same line; the load impact on both lines is shown. Sequencing rules per line: CGL by width / thickness family, CCL light → dark colour, CRM by gauge.</span></div></div>
     </div>
@@ -57,12 +63,16 @@
 <script src="assets/khp-chrome.js"></script><script src="data/khp-data.js"></script><script src="assets/khp-core.js"></script>
 <script>
   var X=window.KHPX, D=X.D, esc=X.esc, badge=X.badge, S=D.schedules, YM=(D.meta.hero.units[1].match(/-(\d{4})-/)||[])[1]||'2609';
+  // campaign coils (schedule-only plan for the balance-to-produce) carry their item's attributes; ALL = recorded coils + campaign coils
+  var CMP=(D.campaigns||[]).map(function(c){ var it=X.item(c.itemId)||{}; return Object.assign({},c,{customerName:it.customerName||'',gradeId:it.gradeId||'',thk:it.thk,width:it.width,ral:it.ral,coatingId:it.coatingId,po:'— at release',campaignRow:true}); });
+  var ALL=S.concat(CMP), ALLBY={}; ALL.forEach(function(s){ ALLBY[s.id]=s; });
+  var CMPCOILS={}; CMP.forEach(function(s){ CMPCOILS[s.unitId]=s.qtyMT; }); var CMPN=Object.keys(CMPCOILS).length, CMPT=Object.keys(CMPCOILS).reduce(function(a,k){return a+CMPCOILS[k];},0);
   document.getElementById('ctx').textContent = D.plant.name + ' · as of ' + X.fmt(D.meta.asOf);
-  var planned=S.filter(function(s){return s.status==='PLANNED';}), running=S.filter(function(s){return s.status==='IN_PROGRESS';});
+  var planned=ALL.filter(function(s){return s.status==='PLANNED';}), running=S.filter(function(s){return s.status==='IN_PROGRESS';});
   var fp=D.routes.filter(function(r){return r.chosen==='FP';}).length;
   var leftovers=X.state.get('leftovers',false), clubbed=X.state.get('clubbed',[]), reroutes=X.state.get('reroutes',[]);
   function dplus(days){ var d=new Date(D.meta.asOf); d.setDate(d.getDate()+days); return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2); }
-  function kpis(){ document.getElementById('kpis').innerHTML=[['Scheduled batches',planned.length,'planned on '+D.lines.filter(function(l){return l.status==='ACTIVE';}).length+' lines','blue'],['Running now',running.length,'in progress at '+X.fmtT(X.ASOF),'blue'],['FP routes chosen',fp+' / '+D.routes.length,'rest on SAP route order','accent'],
+  function kpis(){ document.getElementById('kpis').innerHTML=[['Scheduled batches',planned.length,S.filter(function(s){return s.status==='PLANNED';}).length+' with allocated coil · '+CMP.length+' campaign coil steps','blue'],['Running now',running.length,'in progress at '+X.fmtT(X.ASOF),'blue'],['FP routes chosen',fp+' / '+D.routes.length,'rest on SAP route order','accent'],
     ['Rush orders',D.orders.filter(function(o){return o.rush;}).length,'APS flag applied','amber'],['Behind schedule',S.filter(function(s){return s.track==='BEHIND';}).length,'stopped line / overdue','red'],['Clubbing · reroutes',clubbed.length+' · '+reroutes.length,proposals().length+' proposals open · '+reroutes.length+' rework PO','grey']].map(function(k){return '<div class="kpi '+k[3]+'"><div class="k">'+k[0]+'</div><div class="v">'+k[1]+'</div><div class="s">'+k[2]+'</div></div>';}).join(''); }
   // ---- route card ----
   var sel=document.getElementById('itemsel'), withRoutes=D.items.slice().sort(function(a,b){return (b.hero?1:0)-(a.hero?1:0)||(a.id<b.id?-1:1);});
@@ -79,19 +89,38 @@
       '<div class="rt'+(chosen==='FP'?' chosen':'')+'"><div class="t"><i class="fa-solid fa-brain"></i> Factory Planner route · '+esc(r.fpRoute.fpMfgOrder)+' '+(chosen==='FP'?badge('ACTIVE','CHOSEN'):'<button class="btn btn-outline btn-sm" data-choose="FP">Use FP route</button>')+'</div>'+seqHtml(r.fpRoute.processPath,r.fpRoute.yieldString)+
         '<div class="kv" style="margin-top:8px"><span class="k">Route string</span><span class="v mono">'+esc(r.fpRoute.routeString)+'</span><span class="k">Material tree</span><span class="v mono">'+r.materialTree.map(esc).join(' → ')+'</span><span class="k">Schedule lines</span><span class="v">'+it.scheduleLines.map(function(s){return esc(s.id)+' · '+s.qtyMT+' MT · '+esc(s.date);}).join('<br>')+'</span>'+(r.fpRoute.altWorkCentre?'<span class="k">Alt work centre</span><span class="v">'+esc(r.fpRoute.altWorkCentre)+' (bypass / alternate)</span>':'')+'</div></div>';
   }
-  sel.addEventListener('change',renderRoute);
+  sel.addEventListener('change',function(){ renderRoute(); syncSel(sel.value); });
   document.getElementById('routes').addEventListener('click',function(e){ var b=e.target.closest('[data-choose]'); if(!b) return; X.state.set('route-'+sel.value,b.getAttribute('data-choose')); renderRoute(); X.toast('Route source for '+sel.value+' set to '+b.getAttribute('data-choose')+' — production orders regenerated from the '+b.getAttribute('data-choose')+' path'); });
-  // ---- gantt (with rerouted coils shown on their new line) ----
+  // ---- gantts: full line load (recorded coils + campaign plan) and the selected order's own schedule ----
   var lanes=D.lines.filter(function(l){return l.status==='ACTIVE';}).map(function(l){return {id:l.id,label:l.name,sub:l.tph+' tph'};});
-  var a0=new Date(D.meta.asOf), d0=new Date(a0.getFullYear(),a0.getMonth(),a0.getDate()); var from=new Date(d0.getTime()-2*86400000), to=new Date(d0.getTime()+3.5*86400000);
+  var a0=new Date(D.meta.asOf), d0=new Date(a0.getFullYear(),a0.getMonth(),a0.getDate());
+  var from=new Date(a0.getTime()-3*3600000), to=new Date(a0.getTime()+5.5*86400000);            // full load: 3 h back, 5½ days ahead
+  var ofrom=new Date(d0.getTime()-2*86400000), oto=new Date(a0.getTime()+10*86400000);          // selected order: 2 days back to the end of the 10-day horizon
   function rrOf(id){ return reroutes.filter(function(r){return r.schId===id;})[0]; }
-  function buildBars(){ return S.filter(function(s){return new Date(s.plannedEnd)>from&&new Date(s.plannedStart)<to;}).map(function(s){
-    var rr=rrOf(s.id), col=rr?'#5e35b1':s.status==='DONE'?'#1baf7a':s.status==='IN_PROGRESS'?'#2a78d6':'#8a93a0';
-    return {lane:rr?rr.toLine:s.line,start:rr?rr.start:s.plannedStart,end:rr?rr.end:s.plannedEnd,label:s.unitId.replace(/-(KHP|VJ|DL)-\d{4}/,''),color:col,cls:(s.status==='PLANNED'&&!rr?'planned ':'')+(s.rush?'rush ':'')+(s.hero?'herobar':''),
-      tip:s.unitId+' · SO '+s.soId+' · '+s.customerName+' · '+s.product+' '+s.thk+'×'+s.width+' · '+X.fmt(rr?rr.start:s.plannedStart)+' → '+X.fmt(rr?rr.end:s.plannedEnd)+' · '+(rr?rr.kind+' → '+rr.toLine+' · '+rr.newPo:s.status)+(s.rush?' · RUSH':'')}; }); }
-  var st=document.createElement('style'); st.textContent='.g-bar.herobar{outline:2px solid #c62828;opacity:1}'; document.head.appendChild(st);
-  function drawGantt(){ X.gantt(document.getElementById('gantt'),lanes,buildBars(),{from:from,to:to,laneW:150,minPx:11}); }
-  drawGantt(); window.addEventListener('resize',drawGantt); window.addEventListener('khp:activated',drawGantt);
+  function bar(s,selId){ var rr=rrOf(s.id), col=rr?'#5e35b1':s.campaignRow?'#9fb3c8':s.status==='DONE'?'#1baf7a':s.status==='IN_PROGRESS'?'#2a78d6':'#8a93a0';
+    return {lane:rr?rr.toLine:s.line,start:rr?rr.start:s.plannedStart,end:rr?rr.end:s.plannedEnd,label:s.campaignRow?s.soId.slice(-4)+'/'+s.itemId.split('/')[1]+' #'+s.coilSeq:s.unitId.replace(/-(KHP|VJ|DL)-\d{4}/,''),color:col,
+      cls:(s.status==='PLANNED'&&!rr?'planned ':'')+(s.campaignRow?'cmp ':'')+(s.rush?'rush ':'')+(s.hero?'herobar ':'')+(selId&&s.itemId===selId?'selbar':''),
+      tip:s.unitId+' · SO '+s.itemId+' · '+s.customerName+' · '+s.product+' '+s.thk+'×'+s.width+(s.campaignRow?' · campaign coil '+s.coilSeq+'/'+s.coilsOf+' ('+X.n(s.qtyMT,1)+' t) · '+s.family+(s.wip?' · WIP, earlier steps done':'')+' · HR coil at release':'')+' · '+X.fmt(rr?rr.start:s.plannedStart)+' → '+X.fmt(rr?rr.end:s.plannedEnd)+' · '+(rr?rr.kind+' → '+rr.toLine+' · '+rr.newPo:s.status)+(s.rush?' · RUSH':'')}; }
+  function inWin(s,f,t){ var rr=rrOf(s.id); return new Date(rr?rr.end:s.plannedEnd)>f&&new Date(rr?rr.start:s.plannedStart)<t; }
+  function buildBars(){ return ALL.filter(function(s){return inWin(s,from,to);}).map(function(s){return bar(s,sel.value);}); }
+  var st=document.createElement('style'); st.textContent='.g-bar.herobar{outline:2px solid #c62828;opacity:1} .g-bar.cmp{color:#1f2733;border-style:solid;opacity:.9} .g-bar.selbar{outline:2px solid #00acc1;opacity:1;z-index:2}'; document.head.appendChild(st);
+  function loadLine(){ var hrs=(to-from)/3600000, out=[]; lanes.forEach(function(l){ var b=0; ALL.forEach(function(s){ var rr=rrOf(s.id); if((rr?rr.toLine:s.line)!==l.id||!inWin(s,from,to)) return; var a=Math.max(+new Date(rr?rr.start:s.plannedStart),+from), e=Math.min(+new Date(rr?rr.end:s.plannedEnd),+to); b+=(e-a)/3600000; }); out.push('<b>'+l.id+'</b> '+Math.round(b/hrs*100)+'%'); });
+    document.getElementById('gload').innerHTML='<i class="fa-solid fa-gauge-high"></i> Line loading in this window: '+out.join(' · ')+' &nbsp;·&nbsp; campaign plan: '+CMPN+' coils, '+X.n(CMPT)+' t over 10 days'+(sel.value?' &nbsp;·&nbsp; cyan outline = '+esc(sel.value):''); }
+  function drawGantt(){ X.gantt(document.getElementById('gantt'),lanes,buildBars(),{from:from,to:to,laneW:150,minPx:11,exactFrom:true}); loadLine(); }
+  var gsel=document.getElementById('gsel'); gsel.innerHTML=sel.innerHTML; gsel.value=sel.value;
+  function drawOrder(){ var id=gsel.value, it=X.item(id)||{}, r=X.route(id), path=r?r.path:[], rows=ALL.filter(function(s){return s.itemId===id;});
+    // window = the order's whole history (first recorded step) through the end of the horizon, then scrolled so 'now' sits at 40 % of the visible width
+    var rs=rows.map(function(s){var rr=rrOf(s.id);return +new Date(rr?rr.start:s.plannedStart);}), re=rows.map(function(s){var rr=rrOf(s.id);return +new Date(rr?rr.end:s.plannedEnd);});
+    var f=new Date(Math.min(ofrom.getTime(),rs.length?Math.min.apply(null,rs)-6*3600000:ofrom.getTime())), t=new Date(Math.max(oto.getTime(),re.length?Math.max.apply(null,re)+6*3600000:oto.getTime())), inside=rows.filter(function(s){return inWin(s,f,t);});
+    var lanesO=path.map(function(p){ var l=X.line(p); return {id:p,label:l?l.name:p,sub:l?l.tph+' tph':''}; }); if(!lanesO.length) lanesO=lanes;
+    var coils={}; rows.forEach(function(s){ coils[s.unitId]=1; }); var plan=it.planCoils||0, hz=it.horizonCoils||0;
+    document.getElementById('gometa').innerHTML=esc(it.customerName||'')+' · '+X.n(it.qtyMT||0)+' t · produced '+X.n(it.producedMT||0,1)+' t · BTP '+X.n(it.btpMT||0,1)+' t → '+plan+' campaign coil'+(plan===1?'':'s')+(plan?', '+hz+' in the 10-day horizon'+(plan>hz?' ('+(plan-hz)+' beyond)':''):'')+' · '+Object.keys(coils).length+' coil'+(Object.keys(coils).length===1?'':'s')+' on the chart';
+    var el=document.getElementById('ogantt'); if(!inside.length){ el.innerHTML='<div class="hint" style="padding:14px">No scheduled coil for this order inside the window'+(it.status==='DISPATCHED'?' — the order is fully dispatched':'')+'.</div>'; return; }
+    X.gantt(el,lanesO,inside.map(function(s){return bar(s,null);}),{from:f,to:t,laneW:150,minPx:6,laneTitle:'Route step'});
+    var now=el.querySelector('.g-now'); if(now) el.scrollLeft=Math.max(0,parseInt(now.style.left,10)+150-el.clientWidth*0.4); }
+  function syncSel(v){ if(sel.value!==v) sel.value=v; if(gsel.value!==v) gsel.value=v; drawOrder(); drawGantt(); }
+  gsel.addEventListener('change',function(){ syncSel(gsel.value); renderRoute(); });
+  drawGantt(); drawOrder(); window.addEventListener('resize',function(){ drawGantt(); drawOrder(); }); window.addEventListener('khp:activated',function(){ drawGantt(); drawOrder(); });
   // ---- rush ----
   var R=D.events.rush;
   if(R){
@@ -142,35 +171,41 @@
   // ---- schedule table with reroute / rework ----
   var lsel=document.getElementById('linesel'); lsel.innerHTML=lanes.map(function(l){return '<option value="'+l.id+'"'+(l.id==='SLT'?' selected':'')+'>'+esc(l.label)+'</option>';}).join('');
   var ALT={SLT:'RWL',RWL:'SLT'}; var rrSel=null;
-  function loadHours(ln){ var h=0; S.forEach(function(s){ if(s.status==='DONE') return; var rr=rrOf(s.id); var eff=rr?rr.toLine:s.line; if(eff===ln) h+=(new Date(rr?rr.end:s.plannedEnd)-new Date(rr?rr.start:s.plannedStart))/3600000; }); return Math.round(h); }
+  function loadHours(ln){ var h=0; ALL.forEach(function(s){ if(s.status==='DONE') return; var rr=rrOf(s.id); var eff=rr?rr.toLine:s.line; if(eff===ln) h+=(new Date(rr?rr.end:s.plannedEnd)-new Date(rr?rr.start:s.plannedStart))/3600000; }); return Math.round(h); }
   function renderSched(){
     var ln=lsel.value, conf=X.state.get('confirmed',{});
-    var list=S.filter(function(s){ var rr=rrOf(s.id); return s.status!=='DONE'&&((s.line===ln&&!rr)||(rr&&rr.toLine===ln)||(rr&&rr.fromLine===ln&&rr.kind==='REROUTE')); }).sort(function(a,b){ var sa=(rrOf(a.id)||{}).start||a.plannedStart, sb=(rrOf(b.id)||{}).start||b.plannedStart; return sa<sb?-1:1; });
-    document.getElementById('smeta').textContent=list.filter(function(s){var rr=rrOf(s.id);return !(rr&&rr.fromLine===ln&&rr.kind==='REROUTE');}).length+' open schedule lines on '+ln+' · '+loadHours(ln)+' h booked';
+    var q=(document.getElementById('ssearch').value||'').trim().toLowerCase();
+    var list=ALL.filter(function(s){ var rr=rrOf(s.id); if(q&&(s.unitId+' '+s.soId+' '+s.itemId+' '+s.customerName+' '+(s.campaign||'')+' '+(s.po||'')).toLowerCase().indexOf(q)<0) return false; return s.status!=='DONE'&&((s.line===ln&&!rr)||(rr&&rr.toLine===ln)||(rr&&rr.fromLine===ln&&rr.kind==='REROUTE')); }).sort(function(a,b){ var sa=(rrOf(a.id)||{}).start||a.plannedStart, sb=(rrOf(b.id)||{}).start||b.plannedStart; return sa<sb?-1:1; });
+    document.getElementById('smeta').textContent=list.filter(function(s){var rr=rrOf(s.id);return !(rr&&rr.fromLine===ln&&rr.kind==='REROUTE');}).length+' open schedule lines on '+ln+' · '+loadHours(ln)+' h booked over the 10-day horizon';
     document.getElementById('sched').innerHTML='<thead><tr><th>Action</th><th>Coil in</th><th>PO</th><th>Sales order</th><th>Product</th><th>Size</th><th>MT</th><th>Planned start → end</th><th>Track</th><th>Status</th></tr></thead><tbody>'+
       list.map(function(s,i){ var c=conf[s.id], rr=rrOf(s.id), movedAway=rr&&rr.fromLine===ln&&rr.kind==='REROUTE';
         var status=movedAway?badge('CONSUMED','REROUTED → '+rr.toLine):rr?badge('REWORK',rr.kind+(rr.kind==='REROUTE'?' from '+rr.fromLine:'')):badge(s.status);
-        return '<tr'+(s.hero?' class="hero"':'')+(movedAway?' style="opacity:.55"':'')+'><td style="white-space:nowrap">'+(movedAway?'—':s.status==='IN_PROGRESS'?badge('CONFIRMED','charged'):(c?badge('CONFIRMED','confirmed '+esc(c)):'<button class="btn btn-outline btn-sm" data-conf="'+esc(s.id)+'">Confirm</button>')+(s.status==='PLANNED'&&!rr?' <button class="btn btn-primary btn-sm" data-rr="'+esc(s.id)+'" title="reroute / rework"><i class="fa-solid fa-shuffle"></i> Reroute</button>':''))+'</td><td class="mono strong">'+esc(s.unitId)+(s.rush?' <span class="badge b-red">RUSH</span>':'')+'</td><td class="mono">'+(rr&&!movedAway?'<span class="badge b-rr">'+esc(rr.newPo)+'</span><div class="hint">was '+esc(s.po)+'</div>':esc(s.po))+'</td><td class="mono">'+esc(s.soId)+'<div class="hint">'+esc(s.customerName)+'</div></td><td><span class="chip">'+esc(s.product)+'</span> '+esc(s.gradeId)+(s.ral?' RAL '+esc(s.ral):'')+'</td><td class="mono">'+s.thk+'×'+s.width+'</td><td class="mono right-al">'+X.n(s.qtyMT,1)+'</td><td class="mono">'+X.fmt(rr&&!movedAway?rr.start:s.plannedStart)+' → '+X.fmtT(rr&&!movedAway?rr.end:s.plannedEnd)+'</td><td>'+(s.track?badge(s.track):'—')+'</td><td>'+status+'</td>'+
+        return '<tr'+(s.hero?' class="hero"':'')+(movedAway?' style="opacity:.55"':'')+'><td style="white-space:nowrap">'+(movedAway?'—':s.status==='IN_PROGRESS'?badge('CONFIRMED','charged'):(c?badge('CONFIRMED','confirmed '+esc(c)):'<button class="btn btn-outline btn-sm" data-conf="'+esc(s.id)+'">Confirm</button>')+(s.status==='PLANNED'&&!rr?' <button class="btn btn-primary btn-sm" data-rr="'+esc(s.id)+'" title="reroute / rework"><i class="fa-solid fa-shuffle"></i> Reroute</button>':''))+'</td><td class="mono strong">'+esc(s.unitId)+(s.rush?' <span class="badge b-red">RUSH</span>':'')+(s.campaignRow?'<div class="hint">campaign coil '+s.coilSeq+'/'+s.coilsOf+(s.wip?' · WIP':'')+' · '+esc(s.campaign)+'</div>':'')+'</td><td class="mono">'+(rr&&!movedAway?'<span class="badge b-rr">'+esc(rr.newPo)+'</span><div class="hint">was '+esc(s.po)+'</div>':esc(s.po))+'</td><td class="mono">'+esc(s.soId)+'<div class="hint">'+esc(s.customerName)+'</div></td><td><span class="chip">'+esc(s.product)+'</span> '+esc(s.gradeId)+(s.ral?' RAL '+esc(s.ral):'')+'</td><td class="mono">'+s.thk+'×'+s.width+'</td><td class="mono right-al">'+X.n(s.qtyMT,1)+'</td><td class="mono">'+X.fmt(rr&&!movedAway?rr.start:s.plannedStart)+' → '+X.fmtT(rr&&!movedAway?rr.end:s.plannedEnd)+'</td><td>'+(s.track?badge(s.track):'—')+'</td><td>'+status+'</td>'+
           '</tr>'; }).join('')+'</tbody>';
     renderRR();
   }
+  function freeGap(toLine,earliest,hrs,skipId){ var iv=ALL.filter(function(x){ var rr=rrOf(x.id); return x.id!==skipId&&x.status!=='DONE'&&(rr?rr.toLine:x.line)===toLine; }).map(function(x){ var rr=rrOf(x.id); return [+new Date(rr?rr.start:x.plannedStart),+new Date(rr?rr.end:x.plannedEnd)]; }).sort(function(a,b){return a[0]-b[0];});
+    var t=Math.max(+earliest,new Date(D.meta.asOf).getTime()+30*60000), need=hrs*3600000+20*60000;
+    for(var i=0;i<iv.length;i++){ if(iv[i][1]<=t) continue; if(iv[i][0]-t>=need) break; t=Math.max(t,iv[i][1]+10*60000); }
+    return new Date(t); }   // first gap on the target line that fits the coil (plus a 20-min changeover), never before now
   function renderRR(){
-    var el=document.getElementById('rrpanel'); if(!rrSel){ el.innerHTML=''; return; } var s=X.by.schedules[rrSel]; var alt=ALT[s.line]; var opts=[]; if(alt) opts.push({v:'REROUTE:'+alt,t:'Reroute to '+X.line(alt).name+' (alternate work centre, equipment loading)'}); if(['CGL','CCL','CRM','PKL'].indexOf(s.line)>=0) opts.push({v:'REWORK:'+s.line,t:'Rework — re-process on '+X.line(s.line).name+' (new production order)'}); if(s.line==='SLT'||s.line==='RWL') opts.push({v:'REWORK:'+s.line,t:'Rework — re-trim on '+X.line(s.line).name+' (new production order)'});
+    var el=document.getElementById('rrpanel'); if(!rrSel){ el.innerHTML=''; return; } var s=ALLBY[rrSel]; var alt=ALT[s.line]; var opts=[]; if(alt) opts.push({v:'REROUTE:'+alt,t:'Reroute to '+X.line(alt).name+' (alternate work centre, equipment loading)'}); if(['CGL','CCL','CRM','PKL'].indexOf(s.line)>=0) opts.push({v:'REWORK:'+s.line,t:'Rework — re-process on '+X.line(s.line).name+' (new production order)'}); if(s.line==='SLT'||s.line==='RWL') opts.push({v:'REWORK:'+s.line,t:'Rework — re-trim on '+X.line(s.line).name+' (new production order)'});
     el.innerHTML='<div class="rr"><b><i class="fa-solid fa-shuffle"></i> Reroute '+esc(s.unitId)+'</b> · SO '+esc(s.soId)+' · '+esc(s.customerName)+' · planned on '+esc(X.line(s.line).name)+' '+X.fmt(s.plannedStart)+'<div style="margin-top:8px;display:flex;gap:8px;align-items:center;flex-wrap:wrap"><select id="rropt">'+opts.map(function(o){return '<option value="'+o.v+'">'+esc(o.t)+'</option>';}).join('')+'</select><button class="btn btn-primary btn-sm" id="rrgo"><i class="fa-solid fa-check"></i> Apply</button><button class="btn btn-outline btn-sm" id="rrcancel">Cancel</button></div><div class="impact" id="rrimpact"></div></div>';
-    var showImpact=function(){ var v=document.getElementById('rropt').value.split(':'), toLine=v[1], hrs=(new Date(s.plannedEnd)-new Date(s.plannedStart))/3600000; var f=loadHours(s.line), t=loadHours(toLine); document.getElementById('rrimpact').innerHTML='<div class="box">'+esc(s.line)+' load: <b>'+f+' h → '+(v[0]==='REROUTE'?f-Math.round(hrs):f+Math.round(hrs))+' h</b></div>'+(v[0]==='REROUTE'?'<div class="box">'+esc(toLine)+' load: <b>'+t+' h → '+(t+Math.round(hrs))+' h</b></div>':'<div class="box">new rework production order · <b>'+Math.round(hrs*10)/10+' h</b> re-processing after the current sequence</div>')+'<div class="box">rework production order <b>PO-KHP-'+YM+'-R'+('00'+(reroutes.length+1)).slice(-3)+'</b> generated automatically · original '+esc(s.po)+' closed short</div>'; };
+    var showImpact=function(){ var v=document.getElementById('rropt').value.split(':'), toLine=v[1], hrs=(new Date(s.plannedEnd)-new Date(s.plannedStart))/3600000; var f=loadHours(s.line), t=loadHours(toLine); document.getElementById('rrimpact').innerHTML='<div class="box">'+esc(s.line)+' load: <b>'+f+' h → '+(v[0]==='REROUTE'?f-Math.round(hrs):f+Math.round(hrs))+' h</b></div>'+(v[0]==='REROUTE'?'<div class="box">'+esc(toLine)+' load: <b>'+t+' h → '+(t+Math.round(hrs))+' h</b></div>':'<div class="box">new rework production order · <b>'+Math.round(hrs*10)/10+' h</b> re-processing after the current sequence</div>')+'<div class="box">rework production order <b>PO-KHP-'+YM+'-R'+('00'+(reroutes.length+1)).slice(-3)+'</b> generated automatically · '+(s.campaignRow?'campaign coil — no production order yet':'original '+esc(s.po)+' closed short')+'</div>'; };
     document.getElementById('rropt').addEventListener('change',showImpact); showImpact();
     document.getElementById('rrcancel').addEventListener('click',function(){ rrSel=null; renderRR(); });
     document.getElementById('rrgo').addEventListener('click',function(){ var v=document.getElementById('rropt').value.split(':'), kind=v[0], toLine=v[1], hrs=(new Date(s.plannedEnd)-new Date(s.plannedStart))/3600000;
-      var start=new Date(Math.max(new Date(s.plannedStart).getTime(), Math.max.apply(null,S.filter(function(x){return x.line===toLine&&x.status!=='DONE';}).map(function(x){return new Date(x.plannedEnd).getTime();}).concat([0]))+30*60000)); var end=new Date(start.getTime()+hrs*3600000);
+      var start=freeGap(toLine,kind==='REWORK'?new Date(new Date(s.plannedEnd).getTime()+3600000):new Date(s.plannedStart),hrs,s.id), end=new Date(start.getTime()+hrs*3600000);
       var rr={schId:s.id,unitId:s.unitId,soId:s.soId,fromLine:s.line,toLine:toLine,po:s.po,newPo:'PO-KHP-'+YM+'-R'+('00'+(reroutes.length+1)).slice(-3),kind:kind,start:start.toISOString().slice(0,19),end:end.toISOString().slice(0,19),at:new Date().toISOString()};
-      reroutes.push(rr); X.state.set('reroutes',reroutes); rrSel=null; if(kind==='REROUTE') lsel.value=toLine; renderSched(); drawGantt(); kpis();
-      X.toast(kind==='REROUTE'?s.unitId+' rerouted '+s.line+' → '+toLine+' — rework production order '+rr.newPo+' generated automatically on '+toLine+' (original '+s.po+' closed short), equipment loading re-balanced on both lines, L2 schedule message re-sent':'Rework production order '+rr.newPo+' generated automatically for '+s.unitId+' on '+toLine+' — original PO closed short, re-processing sequenced after the current campaign, route/yield string updated'); });
+      reroutes.push(rr); X.state.set('reroutes',reroutes); rrSel=null; if(kind==='REROUTE') lsel.value=toLine; renderSched(); drawGantt(); drawOrder(); kpis();
+      X.toast(kind==='REROUTE'?s.unitId+' rerouted '+s.line+' → '+toLine+' — rework production order '+rr.newPo+' generated automatically on '+toLine+(s.campaignRow?'':' (original '+s.po+' closed short)')+', equipment loading re-balanced on both lines, L2 schedule message re-sent':'Rework production order '+rr.newPo+' generated automatically for '+s.unitId+' on '+toLine+' — original PO closed short, re-processing sequenced after the current campaign, route/yield string updated'); });
   }
   lsel.addEventListener('change',function(){ rrSel=null; renderSched(); });
+  document.getElementById('ssearch').addEventListener('input',function(){ rrSel=null; renderSched(); });
   document.getElementById('sched').addEventListener('click',function(e){ var b=e.target.closest('[data-conf]'); if(b){ var conf=X.state.get('confirmed',{}); conf[b.getAttribute('data-conf')]=X.fmtT(new Date()); X.state.set('confirmed',conf); renderSched(); X.toast('Schedule line confirmed by Operations — schedule message sent to L2 via middleware (IF-L2-SCH)'); return; }
     var r=e.target.closest('[data-rr]'); if(r){ rrSel=r.getAttribute('data-rr'); renderRR(); document.getElementById('rrpanel').scrollIntoView({behavior:'smooth',block:'nearest'}); } });
   renderClub(); renderSched(); kpis();
-  var h=X.hashParam(); if(h&&X.item(h)){ sel.value=h; } renderRoute();
+  var h=X.hashParam(); if(h&&X.item(h)){ syncSel(h); } renderRoute();
 </script>
 </body>
 </html>
