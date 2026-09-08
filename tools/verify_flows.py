@@ -111,7 +111,8 @@ try:
         check("planning: bars coloured per order (several colours on the full load)", pg.evaluate("new Set(Array.from(document.querySelectorAll('#gantt .g-bar')).map(function(b){return b.style.background||b.style.backgroundColor;})).size") >= 5)
         go("orders.html"); pg.click("#feed"); pg.wait_for_timeout(300); check("orders: simulated SAP feed adds order", "4213090041/10" in txt())
         check("orders: BTA follows the live allocation from the Material Allocator", "allocated live" in txt() and "after batch swap" in txt())
-        pg.evaluate("KHPState.set('swapped', false)"); go("orders.html"); check("orders: BTA follows the batch-swap toggle", "before batch swap" in txt()); pg.evaluate("KHPState.set('swapped', true)")
+        pg.evaluate("KHPState.set('swapped', false)"); pg.click("#refresh"); pg.wait_for_timeout(300); check("orders: refresh re-reads the batch-swap toggle without reload", "before batch swap" in txt()); pg.evaluate("KHPState.set('swapped', true)")
+        go("index.html"); check("host: sidebar lists the Coil Plan page", pg.evaluate("!!document.querySelector('[data-page=coilplan]')"))
         # 7d. Coil Plan report (same dataset as the full-load gantt): rows with route chips, hero expanded, expand another, search, order filter, reroute reflected
         go("coilplan.html")
         check("coil plan: lists the coils of the load with route chips", pg.evaluate("document.querySelectorAll('#cplan tbody tr[data-exp]').length") >= 100 and pg.evaluate("document.querySelectorAll('#cplan .rchip').length") >= 400)

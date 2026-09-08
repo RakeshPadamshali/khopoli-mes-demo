@@ -22,7 +22,7 @@
   <main class="bm-content">
     <div class="page-bar">
       <div><h1>Coil Plan — route with the planned schedule per coil, in sequence</h1><div class="crumb">Planning › Coil Plan › <span id="ctx"></span></div></div>
-      <div class="actions"><a class="btn btn-outline" href="planning.html"><i class="fa-solid fa-route"></i> Routes &amp; Schedules</a><a class="btn btn-outline" href="execution.html"><i class="fa-solid fa-industry"></i> Shop-floor</a><a class="btn btn-outline" href="orders.html"><i class="fa-solid fa-file-invoice"></i> Sales Orders</a></div>
+      <div class="actions"><button class="btn btn-outline" id="refresh" title="Re-read the live state: reroutes and shifts recorded on Routes & Schedules"><i class="fa-solid fa-arrows-rotate"></i> Refresh</button><a class="btn btn-outline" href="planning.html"><i class="fa-solid fa-route"></i> Routes &amp; Schedules</a><a class="btn btn-outline" href="execution.html"><i class="fa-solid fa-industry"></i> Shop-floor</a><a class="btn btn-outline" href="orders.html"><i class="fa-solid fa-file-invoice"></i> Sales Orders</a></div>
     </div>
     <div class="kpis" id="kpis"></div>
     <div class="card">
@@ -43,16 +43,22 @@
   // ---- same dataset as the full-load gantt: recorded schedule rows + campaign coils, with reroutes / cascaded shifts from the demo state ----
   var CMP=(D.campaigns||[]).map(function(c){ var it=X.item(c.itemId)||{}; return Object.assign({},c,{customerName:it.customerName||'',gradeId:it.gradeId||'',thk:it.thk,width:it.width,ral:it.ral,coatingId:it.coatingId,po:'— at release',campaignRow:true}); });
   var ALL=S.concat(CMP), ALLBY={}; ALL.forEach(function(s){ ALLBY[s.id]=s; });
-  var reroutes=X.state.get('reroutes',[]), EFF={}; reroutes.forEach(function(r){ EFF[r.schId]={line:r.toLine,start:r.start,end:r.end,rr:r}; (r.cascade||[]).forEach(function(c){ var x=ALLBY[c.id]; if(x) EFF[c.id]={line:x.line,start:c.start,end:c.end,shift:r}; }); });
+  var reroutes=[], EFF={};
+  function loadState(){ reroutes=X.state.get('reroutes',[]); EFF={}; reroutes.forEach(function(r){ EFF[r.schId]={line:r.toLine,start:r.start,end:r.end,rr:r}; (r.cascade||[]).forEach(function(c){ var x=ALLBY[c.id]; if(x) EFF[c.id]={line:x.line,start:c.start,end:c.end,shift:r}; }); }); }
+  loadState();
   function eff(s){ return EFF[s.id]||{line:s.line,start:s.plannedStart,end:s.plannedEnd}; }
   function coilKey(s){ return s.threadId||s.unitId; } function stepIdx(s){ return s.stage||(((X.route(s.itemId)||{}).path||[]).indexOf(s.line)+1); }
   var TYPE={SLT:'SPLIT',HRS:'SPLIT',RWL:'TRIM',PKG:'PACK'}, cpOpen={}; if(X.hero&&X.hero.threadId) cpOpen[X.hero.threadId]=true;
-  var PLAN=(function(){ var g={}; ALL.forEach(function(s){ var k=coilKey(s); (g[k]=g[k]||[]).push(s); }); var out=[];
+  function buildPlan(){ var g={}; ALL.forEach(function(s){ var k=coilKey(s); (g[k]=g[k]||[]).push(s); }); var out=[];
     Object.keys(g).forEach(function(k){ var rows=g[k].slice().sort(function(a,b){return stepIdx(a)-stepIdx(b);}), open=rows.filter(function(s){return s.status!=='DONE';}); if(!open.length) return;
       var f=rows[0], it=X.item(f.itemId)||{}, r=X.route(f.itemId), path=(r&&r.path)||rows.map(function(s){return s.line;});
       out.push({key:k,rows:rows,path:path,it:it,f:f,openStart:Math.min.apply(null,open.map(function(s){return +new Date(eff(s).start);})),start:Math.min.apply(null,rows.map(function(s){return +new Date(eff(s).start);})),end:Math.max.apply(null,rows.map(function(s){return +new Date(eff(s).end);})),
         campaign:!!f.campaignRow,coil:open[0].unitId,hr:f.unitId,running:rows.some(function(s){return s.status==='IN_PROGRESS';}),done:rows.length-open.length,qty:f.qtyMT||0,rerouted:rows.some(function(s){return !!eff(s).rr;}),shifted:rows.some(function(s){return !!eff(s).shift;})}); });
-    return out.sort(function(a,b){return a.openStart-b.openStart;}); })();
+    return out.sort(function(a,b){return a.openStart-b.openStart;}); }
+  var PLAN=buildPlan();
+  function refresh(manual){ loadState(); PLAN=buildPlan(); render(); if(manual) X.toast('Coil plan refreshed from the live state — '+reroutes.length+' reroute'+(reroutes.length===1?'':'s')+' applied','fa-arrows-rotate'); }
+  document.getElementById('refresh').addEventListener('click',function(){ refresh(true); });
+  window.addEventListener('khp:activated',function(){ refresh(false); });   // the tab host re-activates this page after work on another tab
   // ---- filters ----
   var items=D.items.slice().sort(function(a,b){return (b.hero?1:0)-(a.hero?1:0)||(a.id<b.id?-1:1);}), lines=D.lines.filter(function(l){return l.status==='ACTIVE';});
   document.getElementById('filters').innerHTML='<span class="fl">Order</span><select id="f-order"><option value="">All orders</option>'+items.map(function(i){return '<option value="'+esc(i.id)+'">'+esc(i.id)+' · '+esc(i.customerName)+(i.hero?' ★':'')+'</option>';}).join('')+'</select>'+

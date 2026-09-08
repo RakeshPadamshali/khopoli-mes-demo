@@ -18,7 +18,7 @@
   <main class="bm-content">
     <div class="page-bar">
       <div><h1>Sales Orders &amp; TDC — schedule-line level, from SAP</h1><div class="crumb">Planning › Sales Orders › <span id="ctx"></span></div></div>
-      <div class="actions"><button class="btn btn-primary" id="feed"><i class="fa-solid fa-satellite-dish"></i> Simulate SAP order feed (IDoc ORDERS05)</button><a class="btn btn-outline" href="planning.html"><i class="fa-solid fa-route"></i> Routes &amp; Schedules</a><a class="btn btn-outline" href="allocation.html"><i class="fa-solid fa-boxes-packing"></i> Material Allocator</a></div>
+      <div class="actions"><button class="btn btn-outline" id="refresh" title="Re-read the live state: allocations, batch swap, simulated feed"><i class="fa-solid fa-arrows-rotate"></i> Refresh</button><button class="btn btn-primary" id="feed"><i class="fa-solid fa-satellite-dish"></i> Simulate SAP order feed (IDoc ORDERS05)</button><a class="btn btn-outline" href="planning.html"><i class="fa-solid fa-route"></i> Routes &amp; Schedules</a><a class="btn btn-outline" href="allocation.html"><i class="fa-solid fa-boxes-packing"></i> Material Allocator</a></div>
     </div>
     <div class="kpis" id="kpis"></div>
     <div class="evt" id="amend"></div>
@@ -60,6 +60,9 @@
     if(SW&&!swapped){ var b=SW.btaBefore.filter(function(x){return x.itemId===o.id;})[0]; if(b){ a=b.allocatedMT+extra; bta=Math.max(0,b.btaMT-extra); note='before batch swap'; } }
     else if(SW&&SW.btaAfter.some(function(x){return x.itemId===o.id;})) note=note||'after batch swap';
     return {allocatedMT:a,btaMT:bta,note:note}; }
+  function refresh(manual){ alloc=X.state.get('alloc',{}); swapped=X.state.get('swapped',true); var fed=X.state.get('sapOrderFed'); if(fed&&fed.item&&!items.some(function(i){return i.id===fed.item.id;})) items.push(fed.item); apply(); if(manual) X.toast('Sales orders refreshed from the live state — allocations, batch swap and feed applied to BTA / BTP','fa-arrows-rotate'); }
+  document.getElementById('refresh').addEventListener('click',function(){ refresh(true); });
+  window.addEventListener('khp:activated',function(){ refresh(false); });   // the tab host re-activates this page after work on another tab
   var COLS=['','SO / item','Customer','Product · grade','Thk × width','Coating · paint','Qty MT','Fulfilment','BTA / BTP','Req · FP commit','Route','Status'];
   function row(o){
     var L=liveNums(o), pa=Math.min(100,L.allocatedMT/o.qtyMT*100), pp=Math.min(100,o.producedMT/o.qtyMT*100), pd=Math.min(100,o.dispatchedMT/o.qtyMT*100); var ord=X.order(o.soId)||{};
