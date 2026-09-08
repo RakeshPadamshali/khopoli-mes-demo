@@ -971,8 +971,8 @@
    "queue": "L2.CGL.PDI.OUT",
    "messageIds": [
     "MSG-00020",
-    "MSG-00007",
-    "MSG-00025"
+    "MSG-00025",
+    "MSG-00007"
    ],
    "relatedDelay": "CGL air-knife stoppage 09:52 (independent)"
   },

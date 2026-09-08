@@ -383,7 +383,7 @@
   "id": "MSG-00008",
   "interfaceId": "IF-L2-PDI",
   "direction": "MES→L2",
-  "at": "2026-09-06T18:15:15",
+  "at": "2026-09-06T18:04:15",
   "status": "OK",
   "latencyMs": 2313,
   "correlation": {
@@ -411,7 +411,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-06T18:15:15",
+    "at": "2026-09-06T18:04:15",
     "status": "OK",
     "by": "middleware"
    }
@@ -421,7 +421,7 @@
   "id": "MSG-00009",
   "interfaceId": "IF-L2-PDIACK",
   "direction": "L2→MES",
-  "at": "2026-09-06T18:19:15",
+  "at": "2026-09-06T18:06:15",
   "status": "OK",
   "latencyMs": 1095,
   "correlation": {
@@ -438,7 +438,7 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-06T18:19:15",
+    "at": "2026-09-06T18:06:15",
     "status": "OK",
     "by": "middleware"
    }
@@ -655,7 +655,7 @@
   "payloadExcerpt": {
    "pdoId": "PDO-PKL-0026",
    "actuals": {
-    "acidConcPct": 14.3,
+    "acidConcPct": 13.2,
     "stripSpeedMpm": 82,
     "bathTempC": 80,
     "oilingGsm": 1.21
@@ -4625,7 +4625,7 @@
   "id": "MSG-00020",
   "interfaceId": "IF-L2-PDI",
   "direction": "MES→L2",
-  "at": "2026-09-08T09:47:00",
+  "at": "2026-09-08T09:41:00",
   "status": "IN_QUEUE",
   "latencyMs": 824,
   "correlation": {
@@ -4664,32 +4664,32 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T09:47:00",
+    "at": "2026-09-08T09:41:00",
     "status": "IN_QUEUE",
     "by": "middleware"
    }
   ],
   "queue": "L2.CGL.PDI.OUT",
-  "ageMin": 43,
+  "ageMin": 49,
   "stuck": true,
   "hero": true
  },
  {
-  "id": "MSG-00007",
+  "id": "MSG-00025",
   "interfaceId": "IF-L2-PDI",
   "direction": "MES→L2",
-  "at": "2026-09-08T09:50:00",
+  "at": "2026-09-08T09:47:00",
   "status": "IN_QUEUE",
-  "latencyMs": 1144,
+  "latencyMs": 2100,
   "correlation": {
-   "po": "PO-KHP-2609-0126",
-   "unit": "CRF-KHP-2609-0024",
-   "so": "4213090031",
+   "po": "PO-KHP-2609-0143",
+   "unit": "CRF-KHP-2609-0027",
+   "so": "4213090006",
    "line": "CGL",
-   "pdi": "PDI-CGL-0024"
+   "pdi": "PDI-CGL-0027"
   },
   "payloadExcerpt": {
-   "pdiId": "PDI-CGL-0024",
+   "pdiId": "PDI-CGL-0027",
    "line": "CGL",
    "targets": {
     "coatingId": "Z120",
@@ -4717,32 +4717,32 @@
   "retries": 0,
   "history": [
    {
-    "at": "2026-09-08T09:50:00",
+    "at": "2026-09-08T09:47:00",
     "status": "IN_QUEUE",
     "by": "middleware"
    }
   ],
   "queue": "L2.CGL.PDI.OUT",
-  "ageMin": 40,
+  "ageMin": 43,
   "stuck": true,
   "hero": true
  },
  {
-  "id": "MSG-00025",
+  "id": "MSG-00007",
   "interfaceId": "IF-L2-PDI",
   "direction": "MES→L2",
   "at": "2026-09-08T09:53:00",
   "status": "IN_QUEUE",
-  "latencyMs": 2100,
+  "latencyMs": 1144,
   "correlation": {
-   "po": "PO-KHP-2609-0143",
-   "unit": "CRF-KHP-2609-0027",
-   "so": "4213090006",
+   "po": "PO-KHP-2609-0126",
+   "unit": "CRF-KHP-2609-0024",
+   "so": "4213090031",
    "line": "CGL",
-   "pdi": "PDI-CGL-0027"
+   "pdi": "PDI-CGL-0024"
   },
   "payloadExcerpt": {
-   "pdiId": "PDI-CGL-0027",
+   "pdiId": "PDI-CGL-0024",
    "line": "CGL",
    "targets": {
     "coatingId": "Z120",

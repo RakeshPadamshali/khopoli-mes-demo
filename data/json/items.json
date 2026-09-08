@@ -490,8 +490,8 @@
   "btpMT": 131.14,
   "hero": false,
   "planCoils": 7,
-  "horizonCoils": 0,
-  "horizonMT": 0.0
+  "horizonCoils": 1,
+  "horizonMT": 18.73
  },
  {
   "id": "4213090006/20",
@@ -537,8 +537,8 @@
   "btpMT": 59.4,
   "hero": false,
   "planCoils": 3,
-  "horizonCoils": 0,
-  "horizonMT": 0.0
+  "horizonCoils": 1,
+  "horizonMT": 19.8
  },
  {
   "id": "4213090006/30",
@@ -677,8 +677,8 @@
   "btpMT": 83.09,
   "hero": false,
   "planCoils": 4,
-  "horizonCoils": 0,
-  "horizonMT": 0.0
+  "horizonCoils": 1,
+  "horizonMT": 20.77
  },
  {
   "id": "4213090008/20",
@@ -820,8 +820,8 @@
   "btpMT": 128.7,
   "hero": false,
   "planCoils": 6,
-  "horizonCoils": 0,
-  "horizonMT": 0.0
+  "horizonCoils": 1,
+  "horizonMT": 21.45
  },
  {
   "id": "4213090009/20",
@@ -1045,8 +1045,8 @@
   "btpMT": 62.88,
   "hero": false,
   "planCoils": 3,
-  "horizonCoils": 0,
-  "horizonMT": 0.0
+  "horizonCoils": 1,
+  "horizonMT": 20.96
  },
  {
   "id": "4213090012/20",
@@ -1297,8 +1297,8 @@
   "btpMT": 60,
   "hero": false,
   "planCoils": 3,
-  "horizonCoils": 0,
-  "horizonMT": 0.0
+  "horizonCoils": 1,
+  "horizonMT": 20.0
  },
  {
   "id": "4213090015/20",
@@ -1389,8 +1389,8 @@
   "btpMT": 250,
   "hero": false,
   "planCoils": 12,
-  "horizonCoils": 8,
-  "horizonMT": 166.64
+  "horizonCoils": 0,
+  "horizonMT": 0.0
  },
  {
   "id": "4213090016/20",
@@ -2040,8 +2040,8 @@
   "btpMT": 72.35,
   "hero": false,
   "planCoils": 4,
-  "horizonCoils": 0,
-  "horizonMT": 0.0
+  "horizonCoils": 1,
+  "horizonMT": 18.09
  },
  {
   "id": "4213090024/20",
@@ -2123,8 +2123,8 @@
   "btpMT": 120,
   "hero": false,
   "planCoils": 6,
-  "horizonCoils": 0,
-  "horizonMT": 0.0
+  "horizonCoils": 2,
+  "horizonMT": 40.0
  },
  {
   "id": "4213090026/10",
@@ -2210,8 +2210,8 @@
   "btpMT": 180.16,
   "hero": false,
   "planCoils": 9,
-  "horizonCoils": 0,
-  "horizonMT": 0.0
+  "horizonCoils": 1,
+  "horizonMT": 20.02
  },
  {
   "id": "4213090027/20",
@@ -2263,8 +2263,8 @@
   "btpMT": 180.83,
   "hero": false,
   "planCoils": 9,
-  "horizonCoils": 9,
-  "horizonMT": 180.81
+  "horizonCoils": 4,
+  "horizonMT": 80.36
  },
  {
   "id": "4213090027/30",
@@ -2524,8 +2524,8 @@
   "btpMT": 60,
   "hero": false,
   "planCoils": 3,
-  "horizonCoils": 0,
-  "horizonMT": 0.0
+  "horizonCoils": 1,
+  "horizonMT": 20.0
  },
  {
   "id": "4213090031/20",
@@ -2779,8 +2779,8 @@
   "btpMT": 61.44,
   "hero": false,
   "planCoils": 3,
-  "horizonCoils": 0,
-  "horizonMT": 0.0
+  "horizonCoils": 1,
+  "horizonMT": 20.48
  },
  {
   "id": "4213090035/10",
@@ -3302,8 +3302,8 @@
   "btpMT": 80.28,
   "hero": false,
   "planCoils": 4,
-  "horizonCoils": 0,
-  "horizonMT": 0.0
+  "horizonCoils": 1,
+  "horizonMT": 20.07
  },
  {
   "id": "4213090040/30",

@@ -73,11 +73,11 @@ def build_threads(items, routes):
         for si, ln in enumerate(th["path"]):
             dur = h(cur_w / LINE[ln]["tph"] + between(0.25, 0.5))
             if item_id == RUSH_ITEM and ln == "CGL":
-                ready = max(ready, ASOF + h(1.2))  # the rush coil is still ahead of galvanizing at the as-of moment: it takes the next CGL window after the running coil
+                ready = max(ready, ASOF + h(30))   # the rush coil still waits for galvanizing behind other released coils; applying the APS flag on the page moves it to the head of the queue
             if hero:
                 s, e = hero_times[ln]; busy[ln].append((s, e))
             else:
-                s, e = _slot(ln, ready + h(between(0.2, 0.8) if (item_id == RUSH_ITEM and ln == "CGL") else between(1, 6)), dur)    # continuous flow: next line within hours; the rush coil goes straight onto CGL
+                s, e = _slot(ln, ready + h(between(1, 6)), dur)    # continuous flow: the next line within hours
             st = status_vs_asof(s, e)
             out_prod = {"PKL": "HRPO", "CRM": "CRFH", "CGL": it["product"] if it["product"] in ("GI", "GL") else ("GL" if it["product"] == "PPGL" else "GI"),
                         "CCL": it["product"], "SLT": "SLIT", "RWL": "TRIMMED", "PKG": "PACK", "HRS": "HRC"}[ln]

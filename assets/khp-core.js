@@ -86,12 +86,21 @@
     reset: function () { try { localStorage.removeItem(KEY); } catch (e) {} }
   };
   window.KHPState = State;
+  // ---- schedule overlay from the live-demo state: reroutes (+ the shifts they cascade onto later steps) and the APS rush re-sequencing.
+  //      effMap() re-reads the state and caches it; eff(row) gives the effective line / start / end of a schedule or campaign row. ----
+  var EFFC = {};
+  function effMap() { var m = {}, st = State.all();
+    (st.reroutes || []).forEach(function (r) { m[r.schId] = { line: r.toLine, start: r.start, end: r.end, rr: r }; (r.cascade || []).forEach(function (c) { m[c.id] = { start: c.start, end: c.end, shift: r }; }); });
+    var rp = st.rushPlan; if (rp && rp.applied) { (rp.moves || []).forEach(function (x) { m[x.id] = Object.assign(m[x.id] || {}, { start: x.start, end: x.end, rush: rp }); }); (rp.cascade || []).forEach(function (c) { m[c.id] = Object.assign(m[c.id] || {}, { start: c.start, end: c.end, shift: rp }); }); }
+    EFFC = m; return m; }
+  function eff(s) { var m = EFFC[s.id]; return m ? { line: m.line || s.line, start: m.start, end: m.end, rr: m.rr, shift: m.shift, rush: m.rush } : { line: s.line, start: s.plannedStart, end: s.plannedEnd }; }
+  effMap();
   // header "as of" always reflects the dataset's as-of moment (the generator re-bases it to the current date)
   document.querySelectorAll('.bm-header .asof').forEach(function (el) { el.innerHTML = '<i class="fa-regular fa-clock"></i> as of ' + fmt(ASOF) + ' · Shift ' + ((D.live && D.live.shift) || 'A'); });
 
   window.KHPX = { D: D, ASOF: ASOF, BASE: BASE, by: by, unit: unit, item: function (id) { return by.items[id]; }, order: function (id) { return by.orders[id]; }, line: function (id) { return by.lines[id]; },
     equip: function (id) { return by.equipment[id]; }, route: function (id) { return by.routes[id]; }, tdc: function (id) { return by.tdcs[id]; }, thread: function (id) { return by.threads[id]; },
     parents: parents, children: children, threadOf: threadOf, kids: kids, fmt: fmt, fmtDT: fmtDT, fmtD: fmtD, fmtT: fmtT, ago: ago, dur: dur, n: n, esc: esc, badge: badge, color: color, colorFor: colorFor, LINE_COLOR: LINE_COLOR,
-    gantt: gantt, json: json, toast: toast, state: State, hashParam: function () { return decodeURIComponent((location.hash || '').slice(1)); },
+    gantt: gantt, json: json, toast: toast, state: State, effMap: effMap, eff: eff, hashParam: function () { return decodeURIComponent((location.hash || '').slice(1)); },
     hero: D.meta.hero, isHero: function (id) { return D.meta.hero.units.indexOf(id) >= 0 || id === D.meta.hero.itemId || id === D.meta.hero.soId; } };
 })();

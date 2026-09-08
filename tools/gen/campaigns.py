@@ -76,7 +76,8 @@ def build_campaigns(items, routes, schedules):
         if nq: merged.append(nq.pop(0))
         if pq: merged.append(pq.pop(0))
     rank = {o: i for i, o in enumerate(merged)}
-    coils.sort(key=lambda c: (0 if c["hero"] else 1, rank[c["itemId"]], c["seq"]))
+    # coils already past cold rolling (waiting in the CGL yard) take the first windows, then the golden-thread order, then the merged sequence
+    coils.sort(key=lambda c: (0 if c["s0"] >= 2 else 1, 0 if c["hero"] else 1, rank[c["itemId"]], c["seq"]))
     for i, c in enumerate(coils): c["id"] = f"PLC-{YM}-{i + 1:04d}"
     # takt-based release: coil k owns the bottleneck slot ASOF + 1 h + k × takt; it enters the plant one upstream lead time earlier,
     # so pickling and cold rolling run from now on and every coil reaches CGL about when its slot opens (continuous flow, small queues)

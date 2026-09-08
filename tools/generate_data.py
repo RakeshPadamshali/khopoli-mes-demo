@@ -6,7 +6,7 @@ Run:  python tools/generate_data.py
 """
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from datetime import datetime
+from datetime import datetime, timedelta
 from gen.common import ASOF, BASE, iso, at as AT, YM, YM_PREV
 from gen import assets_specs as A
 from gen.orders import build_orders, HERO_ITEM, HERO_SO, RUSH_ITEM, SWAP_A, SWAP_B, AMEND_ITEM, DOWNGRADE_SO_ITEM
@@ -41,14 +41,22 @@ cgl = sorted([s for s in T["schedules"] if s["line"] == "CGL" and s["status"] ==
 ri = next((i for i, s in enumerate(cgl) if s["itemId"] == RUSH_ITEM), None)
 rush_event = None
 if ri is not None:
-    slots = [(s["plannedStart"], s["plannedEnd"]) for s in cgl]
-    before_order = cgl[:ri] + cgl[ri + 1:]; before_order.insert(min(ri + 2, len(before_order)), cgl[ri])   # where it sat before the flag
+    # the dataset is the sequence as planning released it; 'after' projects the APS flag: the rush coil takes the next CGL window
+    # after the running coil and every released coil that was ahead of it moves back by one coil (the pages compute the same move live)
+    running = next((s for s in T["schedules"] if s["line"] == "CGL" and s["status"] == "IN_PROGRESS"), None)
+    head = (datetime.fromisoformat(running["plannedEnd"]) if running else ASOF) + timedelta(minutes=10 if running else 30)
+    rush = cgl[ri]; dur = datetime.fromisoformat(rush["plannedEnd"]) - datetime.fromisoformat(rush["plannedStart"]); delta = dur + timedelta(minutes=10)
+    def row(i, s, start, end): return dict(seq=i + 1, id=s["id"], unitId=s["unitId"], soId=s["soId"], customerName=s["customerName"], plannedStart=iso(start), plannedEnd=iso(end), rush=s["itemId"] == RUSH_ITEM)
+    before = [row(i, s, datetime.fromisoformat(s["plannedStart"]), datetime.fromisoformat(s["plannedEnd"])) for i, s in enumerate(cgl)]
+    after_order = [rush] + cgl[:ri] + cgl[ri + 1:]; after = []
+    for i, s in enumerate(after_order):
+        st, en = datetime.fromisoformat(s["plannedStart"]), datetime.fromisoformat(s["plannedEnd"])
+        if s is rush: st, en = head, head + dur
+        elif i <= ri: st, en = st + delta, en + delta
+        after.append(row(i, s, st, en))
     rush_event = dict(at=iso(AT(-1, 9, 0)), source="IF-APS-RUSH", itemId=RUSH_ITEM, soId=RUSH_ITEM.split("/")[0], line="CGL", reason="APS rush flag — customer line stoppage at Chakan",
-                      before=[dict(seq=i + 1, id=s["id"], unitId=s["unitId"], soId=s["soId"], customerName=s["customerName"], plannedStart=slots[i][0], plannedEnd=slots[i][1], rush=s["itemId"] == RUSH_ITEM) for i, s in enumerate(before_order)],
-                      after=[dict(seq=i + 1, id=s["id"], unitId=s["unitId"], soId=s["soId"], customerName=s["customerName"], plannedStart=slots[i][0], plannedEnd=slots[i][1], rush=s["itemId"] == RUSH_ITEM) for i, s in enumerate(cgl)],
-                      movedUpBy=2)
-    for s in cgl:
-        if s["itemId"] == RUSH_ITEM: s["rushAppliedAt"] = iso(AT(-1, 9, 0)); s["originalStart"] = slots[min(ri + 2, len(cgl) - 1)][0]
+                      applied=False, headWindow=iso(head), before=before, after=after, movedUpBy=ri)
+    rush["rushFlagAt"] = iso(AT(-1, 9, 0))
 ua = next((u for u in T["materials"] if u.get("allocatedTo") == SWAP_A and u["product"] == "GI"), None)
 ub = next((u for u in T["materials"] if u.get("allocatedTo") == SWAP_B and u["product"] == "GI"), None)
 swap_event = None

@@ -9,8 +9,8 @@
   "detail": "Queue depth 3 > 0 for 120 s; oldest message age exceeds 30 s SLA; no consumer heartbeat since 09:41",
   "messageIds": [
    "MSG-00020",
-   "MSG-00007",
-   "MSG-00025"
+   "MSG-00025",
+   "MSG-00007"
   ],
   "incidentId": "INC-26-0412",
   "channel": "Monitoring → ITSM → Teams"

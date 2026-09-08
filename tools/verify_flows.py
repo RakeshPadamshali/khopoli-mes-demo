@@ -84,7 +84,16 @@ try:
         go("genealogy.html"); pg.click("[data-prop]"); pg.wait_for_timeout(300)
         check("genealogy: propagation highlights downstream", pg.evaluate("document.querySelectorAll('.node.bad').length") >= 1 and pg.evaluate("document.querySelectorAll('.node.src').length") == 1)
         # 7. planning rush toggle + orders feed
-        go("planning.html"); pg.click("#rushbtn"); pg.wait_for_timeout(200); check("planning: rush toggle", "Apply rush flag" in txt())
+        go("planning.html")
+        check("planning: rush card opens on the released sequence, flag not applied", "Apply rush flag" in txt() and not pg.evaluate("KHPState.get('rushApplied',false)"))
+        pg.click("#rushbtn"); pg.wait_for_timeout(800)
+        rp = pg.evaluate("KHPState.get('rushPlan')")
+        first_planned_is_rush = pg.evaluate("(function(){var rows=Array.from(document.querySelectorAll('#sched tbody tr')).filter(function(r){return r.innerText.indexOf('PLANNED')>=0;});return rows.length>0&&rows[0].innerText.indexOf('RUSH')>=0;})()")
+        check("planning: rush flag applied -> rush coil first on CGL, coils behind pushed", bool(rp and rp["applied"] and rp["movedUpBy"] >= 1 and len(rp["moves"]) >= 2) and pg.evaluate("document.getElementById('linesel').value") == "CGL" and first_planned_is_rush and "MOVED UP" in txt(), f"moves={rp and len(rp['moves'])} up={rp and rp['movedUpBy']} first={first_planned_is_rush}")
+        check("planning: EST check stays at zero after the rush move", "0 precedence violations" in pg.evaluate("document.getElementById('gload').innerText"))
+        go("home.html")
+        check("dashboard: CGL next coil is the rush coil once the flag is applied", pg.evaluate("(function(){var rush=KHP.schedules.filter(function(s){return s.line==='CGL'&&s.rush&&s.status==='PLANNED';})[0];var r=Array.from(document.querySelectorAll('#board tbody tr')).filter(function(t){return t.innerText.indexOf('Galvanizing')>=0;})[0];return !!rush&&!!r&&r.innerText.indexOf(rush.unitId)>=0;})()"))
+        go("planning.html")
         # 7b. Scenario 2 step 1 on the Order Clubbing page: pool -> leftover feed -> slit / length / campaign proposals -> accept one
         go("clubbing.html")
         check("clubbing: pool of nine items and two campaign proposals before the feed", pg.evaluate("document.querySelectorAll('#pool tbody tr:not(.fam)').length") == 9 and pg.evaluate("document.querySelectorAll('[data-club]').length") == 2)
