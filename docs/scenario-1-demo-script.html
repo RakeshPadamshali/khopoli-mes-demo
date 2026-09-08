@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scenario 1 — Golden Thread: Order to Dispatch · Demo script</title>
+<style>
+  @page { size: A4 landscape; margin: 14mm 12mm 16mm 12mm; }
+  body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; font-size: 10.5pt; color: #1f2733; margin: 0; }
+  h1 { font-size: 19pt; margin: 0 0 2px; color: #0d2240; }
+  .sub { color: #4a5563; font-size: 10.5pt; margin-bottom: 10px; }
+  .meta { display: flex; gap: 22px; flex-wrap: wrap; font-size: 9.5pt; color: #4a5563; border: 1px solid #dfe4e9; border-radius: 6px; padding: 7px 10px; margin-bottom: 12px; background: #f7f9fb; }
+  .meta b { color: #1f2733; }
+  h2 { font-size: 13pt; color: #0d2240; margin: 14px 0 6px; border-bottom: 2px solid #f28c1e; padding-bottom: 3px; }
+  ul { margin: 4px 0 6px 18px; padding: 0; } li { margin-bottom: 3px; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.3pt; page-break-inside: auto; }
+  th { background: #0d2240; color: #fff; text-align: left; padding: 6px 7px; font-size: 8.8pt; text-transform: uppercase; letter-spacing: .3px; }
+  td { border-bottom: 1px solid #e0e3e7; padding: 6px 7px; vertical-align: top; }
+  tr { page-break-inside: avoid; } tr:nth-child(even) td { background: #fafbfc; }
+  td.n { width: 22px; font-weight: 700; color: #f28c1e; text-align: center; }
+  td.step { width: 160px; font-weight: 600; }
+  td.page { width: 250px; }
+  .pg { font-weight: 700; color: #0f5fa3; } .btn { display: inline-block; border: 1px solid #1478c8; color: #0f5fa3; border-radius: 4px; padding: 0 5px; font-size: 8.6pt; font-weight: 600; white-space: nowrap; }
+  code { font-family: Consolas, 'Roboto Mono', monospace; font-size: 8.8pt; background: #eef2f5; padding: 0 3px; border-radius: 3px; }
+  .box { border: 1px solid #dfe4e9; border-radius: 6px; padding: 8px 10px; margin: 6px 0; background: #fff; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .warn { border-left: 3px solid #f28c1e; }
+  .foot { margin-top: 10px; font-size: 8.8pt; color: #8a93a0; }
+</style>
+</head>
+<body>
+<h1>Scenario 1 — Golden Thread: Order to Dispatch (CRM → Coated)</h1>
+<div class="sub">Presenter script for the Khopoli NextGen MES product demo · Annexure A, mandatory scenario · 45–60 minutes</div>
+<div class="meta">
+  <span>Demo: <b>https://rakeshpadamshali.github.io/khopoli-mes-demo/</b></span>
+  <span>As-of moment: <b>Tue 15 Sep 2026, 10:30, shift A</b></span>
+  <span>Hero order: <b>4213090017/10</b> — Apex Appliances, DX51D+Z 0.50 × 1220, Z120, RMP RAL 9002, 120 t</span>
+  <span>Hero HR coil: <b>HRC-VJ-2608-0471</b> — Vijayanagar heat H26-VJ-7731 / slab SLB-VJ-7731-02</span>
+  <span>RFP references: <b>§3.1–3.2, 3.2.4, 4.1–4.3</b></span>
+  <span>Data: <b>fictional</b> (customers, orders, coils); lines, products and rules from the RFP</span>
+</div>
+
+<h2>Before you start (2 minutes)</h2>
+<ul>
+  <li>Open the demo and click <span class="btn">Reset demo</span> in the header. Then open the tabs from the sidebar in this order: Sales Orders &amp; TDC, Routes &amp; Schedules, Material Allocator, Shop-floor Execution, Quality &amp; Defects, Slitting · Packing · Dispatch, Genealogy, Integration Monitor. Tabs keep their state, so you can jump back and forth.</li>
+  <li>Frame the moment: it is Tue 15 Sep 10:30. The hero coil has already been pickled, cold-rolled and galvanized (that history is on screen); it came off the colour-coating line at 01:40 today. The demo performs the remaining steps live.</li>
+  <li>One dataset runs through every step: the same order, coil and defects appear on every page, as Annexure A requires.</li>
+</ul>
+
+<h2>The ten Annexure steps</h2>
+<table>
+  <thead><tr><th>#</th><th>Annexure step</th><th>Page and action</th><th>What to say / show</th></tr></thead>
+  <tbody>
+    <tr><td class="n">1</td><td class="step">Load a sales order (or simulate SAP order feed) for a GI coil order with a TDC</td>
+      <td class="page"><span class="pg">Sales Orders &amp; TDC</span> → click <span class="btn">Simulate SAP order feed</span> (new order 4213090041/10 arrives with a NEW · IDoc badge). Expand the flagged hero row <code>4213090017/10</code>.</td>
+      <td>The TDC comes from SAP variant configuration: grade DX51D+Z, thickness 0.50 ±0.03, width +5/−0, coating Z120 with band 120–138 g/m², paint RMP RAL 9002, DFT 20 ±3 / 7 ±2 µm, slitting 610 + 610, packing, EN 10204 3.1 certificate, marking. Point at the schedule lines and the fulfilment bar (21.4 t allocated, 19.3 t produced, BTA 98.6 t).</td></tr>
+    <tr><td class="n">2</td><td class="step">Factory Planner output at schedule-line level, alongside the manually entered SAP route order</td>
+      <td class="page"><span class="pg">Routes &amp; Schedules</span> (hero item is preselected).</td>
+      <td>Left card = SAP route order (manual). Right card = Factory Planner MFG order <code>FPM-4213090017-10</code> with process path PKL › CRM › CGL › CCL › SLT › PKG, yield string, route string, material tree and the schedule line. Click <span class="btn">Use SAP route</span> / <span class="btn">Use FP route</span> to show the planner's choice. The line gantt below outlines the hero bars in red; the schedule table has Operations <span class="btn">Confirm</span> buttons.</td></tr>
+    <tr><td class="n">3</td><td class="step">Allocate a free-stock HR coil batch to the order via a Material Allocator suggestion</td>
+      <td class="page"><span class="pg">Material Allocator</span> (hero item is first in the list).</td>
+      <td>The panel shows the coil already allocated on 8 Sep from an MA suggestion, plus three ranked free HR coils for the remaining 98.6 t with score and reasons (grade family, width with trim, reduction feasible, FIFO age). Two-step authorisation: click <span class="btn">PPC approve</span>, then <span class="btn">QC approve</span>, then <span class="btn">Allocate</span> on rank 1. The allocation log, yard status and BTA update; the reallocation message goes to SAP.</td></tr>
+    <tr><td class="n">4</td><td class="step">Charge the batch at Pickling, then CRM — PDI generation and PDO confirmation via middleware</td>
+      <td class="page"><span class="pg">Shop-floor Execution</span> → <b>Pickling Line</b> tab. Row 1 is running: click <span class="btn">Receive PDO</span>, then <span class="btn">Confirm production</span> → <span class="btn">Post to SAP</span>. Row 2 becomes chargeable: click <span class="btn">Charge</span>. Repeat on the <b>Cold Roll Mill</b> tab.</td>
+      <td>Charging generates the PDI (targets JSON) and shows the L2 acknowledgement; the PDO brings the actuals back and the confirmation posts the mass balance to SAP. In the “PDO vs PDI” dropdown pick the ★ entries for the hero coil's own history: PKL <code>HRC-VJ-2608-0471 → HPO-KHP-2609-0018</code> (acid 13.0 %), CRM <code>HPO → CRF-KHP-2609-0018</code> (exit 0.49 mm). Say that every message travels MES → middleware → L2 gateway, never point to point.</td></tr>
+    <tr><td class="n">5</td><td class="step">Move the CR full-hard coil to CGL — genealogy link from HR coil forward</td>
+      <td class="page">Still on Shop-floor: <b>CGL</b> tab, dropdown entry <code>CRF-KHP-2609-0018 → GIC-KHP-2609-0017</code> (12 Sep).</td>
+      <td>The input and output coil ids are the consumesInput link. Optionally flash the <span class="pg">Genealogy</span> tab: HRC → HPO → CRF → GIC on one line.</td></tr>
+    <tr><td class="n">6</td><td class="step">At CGL: zinc coating-weight target-band check and auto-comparison of PDO actuals vs PDI targets, deviation flagged</td>
+      <td class="page">Same CGL comparison table. For a hard deviation pick <code>PDO-CGL-0016</code> in the dropdown.</td>
+      <td>Hero coil: target 126 g/m² in band 120–138, measured 126.8 total (63.6 / 63.2), zinc bath Al 0.21 within 0.18–0.24; line speed flagged as a throughput warning only. PDO-CGL-0016: coating weight below the 120 band minimum, flagged as a deviation, and the note says the output coil goes on parameter-based hold pending a quality decision.</td></tr>
+    <tr><td class="n">7</td><td class="step">Move to CCL — apply the paint / DFT spec, simulate a DFT test result outside spec</td>
+      <td class="page"><span class="pg">Quality &amp; Defects</span>. The hero certificate shows DFT top and back PENDING and the dispatch gate closed. Enter <code>16.8</code> and <code>7.1</code>, click <span class="btn">Record result &amp; evaluate</span>.</td>
+      <td>16.8 µm is below the 17.0 minimum (20 ±3): certificate FAIL, dispatch gate blocked, the auto-flagged defect <code>DEF-2609-0003</code> is confirmed, and the downgrade suggestion appears with four candidate orders validated parameter by parameter. Sunbeam Panels <code>4213090024/10</code> (same spec, DFT 15 ±3) accepts the coil. Click <span class="btn">Re-allocate coil to this order</span>, or show the override (QC Head) and rework options as the manual workflow.</td></tr>
+    <tr><td class="n">8</td><td class="step">Slit and pack the coil — packing movement and vendor-wise packing bill</td>
+      <td class="page"><span class="pg">Slitting · Packing · Dispatch</span> (hero card at the top). Click <span class="btn">Run slitting plan</span>, then <span class="btn">Pack &amp; print label</span>.</td>
+      <td>The plan cuts 1220 mm into 610 + 610 (children <code>SLC-KHP-2609-0032 / 0033</code>) with the genealogy link and scrap posting. Pack <code>PK-KHP-2609-0018</code> (18.37 t, Shree Packers, domestic VCI + stretch) gets a QR label; the packing movement posts the storage-location change and the vendor bill table gains the week-38 line.</td></tr>
+    <tr><td class="n">9</td><td class="step">Dispatch the batch — show the dispatch message structure that goes to SAP</td>
+      <td class="page">Same page: click <span class="btn">Dispatch &amp; send message to SAP</span>.</td>
+      <td>The JSON on the right is the DELVRY07 / SHPCON structure sent through the middleware: header (plant, dispatch <code>DSP-0024</code>, order and schedule line, vehicle MH-12-KT-4471), items (batch, material, quantity, coils, quality status CLEARED), totals and correlation id. Dispatched-batch information returns from SAP.</td></tr>
+    <tr><td class="n">10</td><td class="step">Full genealogy of the finished coil back to HR coil / slab / heat</td>
+      <td class="page"><span class="pg">Genealogy · Digital Thread</span> (link from the packing page or the sidebar; hero coil is preselected).</td>
+      <td>The thread reads heat H26-VJ-7731 → slab SLB-VJ-7731-02 → HRC-VJ-2608-0471 → HPO → CRF → GIC → PPG → two slit coils → pack → dispatch, plus the allocatedTo order node. Click any node for its attributes and the ontology triples (consumesInput, producedOn, conformsTo, allocatedTo, detectedOn, attributedTo). Click <span class="btn">show propagation</span> on a defect to close with the Scenario 4 hook.</td></tr>
+  </tbody>
+</table>
+
+<div class="grid">
+  <div>
+    <h2>Tips</h2>
+    <div class="box"><b>Middleware proof.</b> In the Integration Monitor, search <code>4213090017</code>: five messages for this order (PDI, PDO, production confirmation, batch attributes, paint posting) with latency and history.</div>
+    <div class="box"><b>Dispatch is gated.</b> The slit, pack and dispatch buttons stay disabled until a quality decision is recorded in step 7. Say this out loud — it is the graph-based dispatch gate the RFP asks for.</div>
+    <div class="box"><b>Timing.</b> Steps 1–3 about 15 min · steps 4–6 about 15 min · steps 7–10 about 20 min.</div>
+  </div>
+  <div>
+    <h2>Honesty notes</h2>
+    <div class="box warn">The hero coil's pickling to galvanizing is shown as history plus the PDI/PDO comparison; the live charge and PDO clicks happen on the coil currently on each line.</div>
+    <div class="box warn">Live-demo actions are kept in the browser and stay consistent across pages; click <b>Reset demo</b> between runs, otherwise the previous run's DFT result and dispatch are still there.</div>
+    <div class="box warn">All customers, orders, coils, people and incidents are fictional; line names, products, rules and the ontology come from the RFP.</div>
+  </div>
+</div>
+<div class="foot">Khopoli NextGen MES — One MES Coated Products template · product demo script · generated 8 Sep 2026</div>
+</body>
+</html>
