@@ -17,11 +17,13 @@ try:
         errs = []
         pg = ctx.new_page(); pg.on("pageerror", lambda e: errs.append(str(e)))
         def go(page, hash=""):
+            target = f"http://localhost:{PORT}/{page}"; same = pg.url.split("#")[0] == target
             for i in range(20):
                 try:
-                    pg.goto(f"http://localhost:{PORT}/{page}" + (("#" + hash) if hash else ""), wait_until="load"); break
+                    pg.goto(target + (("#" + hash) if hash else ""), wait_until="load"); break
                 except Exception:
                     time.sleep(0.4)
+            if same: pg.reload(wait_until="load")   # a hash-only change does not reload the page
             pg.wait_for_timeout(600)
         def txt(): return pg.evaluate("document.body.innerText")
         go("index.html"); pg.evaluate("localStorage.removeItem('khp-demo-state')")
@@ -36,7 +38,16 @@ try:
         check("execution: PDO received panel", "pdo received from l2" in txt().lower())
         pg.click("[data-act=confirm]"); pg.wait_for_timeout(200); pg.click("#f-post"); pg.wait_for_timeout(300)
         check("execution: balanced confirmation posted", "Balanced" in txt())
-        check("execution: next coil now chargeable", pg.evaluate("!!document.querySelector('[data-act=charge]:not([disabled])')"))
+        check("execution: next CGL coil waits for its previous operation (routing)", pg.evaluate("(function(){var b=document.querySelector('[data-act=charge]');return !!b&&b.disabled&&/previous operation/.test(b.title);})()"))
+        # 2b. follow the route: confirm on Pickling -> the coil is READY on the Cold Roll Mill; confirm the running CRM coil -> the arrived coil is chargeable; CGL next coil chargeable
+        go("execution.html", "PKL"); pg.click("[data-act=pdo]"); pg.wait_for_timeout(200); pg.click("[data-act=confirm]"); pg.wait_for_timeout(200); pg.click("#f-post"); pg.wait_for_timeout(300)
+        check("execution: confirmation names the next operation per route", "next operation per route" in txt().lower() and "Cold Roll Mill" in txt())
+        pg.click("[data-goto]"); pg.wait_for_timeout(300)
+        check("execution: confirmed coil shows ARRIVED on the Cold Roll Mill", pg.evaluate("document.getElementById('lname').innerText") == "Cold Roll Mill" and "ARRIVED" in txt())
+        pg.click("[data-act=pdo]"); pg.wait_for_timeout(200); pg.click("[data-act=confirm]"); pg.wait_for_timeout(200); pg.click("#f-post"); pg.wait_for_timeout(300)
+        check("execution: arrived coil chargeable once the running CRM coil is confirmed", pg.evaluate("!!document.querySelector('[data-act=charge]:not([disabled])')"))
+        go("execution.html", "CGL")
+        check("execution: next coil now chargeable on CGL", pg.evaluate("!!document.querySelector('[data-act=charge]:not([disabled])')"))
         go("execution.html", "SLT"); pg.click("[data-act=charge]:not([disabled])"); pg.wait_for_timeout(200)
         check("execution: PDI generated on SLT charge", "pdi generated" in txt().lower())
         # 3. quality: record failing DFT -> suggestion -> re-allocate
