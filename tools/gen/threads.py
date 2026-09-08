@@ -1,5 +1,6 @@
 """MATERIAL + PROCESS: simulate coil 'threads' HR coil -> ... -> pack through the line routes (the digital thread),
 line schedules, MES production orders, allocations (BTA/BTP), free HR stock and Material-Allocator suggestions."""
+import random
 from datetime import datetime, timedelta
 from .common import R, BASE, ASOF, iso, day, h, pick, between, r1, r2, status_vs_asof, SEQ, at as AT, YM, YM_PREV
 from .assets_specs import LINES, COATINGS
@@ -10,6 +11,7 @@ PREFIX = {"HRC": "HRC", "HRPO": "HPO", "CRFH": "CRF", "GI": "GIC", "GL": "GLC", 
 HR_GRADE = {"DX51D+Z": "JSW-HR-DD", "DX53D+Z": "JSW-HR-DD", "SGCC": "JSW-HR-CQ", "CQ-IS277": "JSW-HR-CQ", "SGLCC": "JSW-HR-CQ", "S350GD+Z": "JSW-HR-HS",
             "CR4-CRFH": "JSW-HR-CQ", "HRPO-E250": "JSW-HR-E250"}
 busy = {l["id"]: [] for l in LINES}   # per-line busy intervals
+R_DWELL = random.Random(2610)          # own stream: the FG-yard dwell must not perturb the slotting randomness of the rest of the plant
 
 
 def _slot(line, ready, dur):
@@ -70,6 +72,8 @@ def build_threads(items, routes):
                       "SLT": (AT(1, 8, 0), AT(1, 8, 50)), "PKG": (AT(1, 13, 0), AT(1, 13, 40))}
         for si, ln in enumerate(th["path"]):
             dur = h(cur_w / LINE[ln]["tph"] + between(0.25, 0.5))
+            if item_id == RUSH_ITEM and ln == "CGL":
+                ready = max(ready, ASOF + h(20))   # the rush coil is still ahead of galvanizing at the as-of moment, so the APS flag has a CGL queue to re-sequence
             if hero:
                 s, e = hero_times[ln]; busy[ln].append((s, e))
             else:
@@ -124,6 +128,9 @@ def build_threads(items, routes):
             else:
                 cur_unit = outs[0]; cur_w = out_w
             ready = e
+            if not hero and ln in ("CGL", "CCL") and out_prod == it["product"]:
+                # FG-yard dwell after the last coating pass: cooling, lab clearance (DFT/gloss on colour-coated), packing backlog
+                ready = e + h(R_DWELL.uniform(36, 120) if out_prod in ("PPGI", "PPGL") else R_DWELL.uniform(12, 72))
             if st != "DONE" and si < len(th["path"]) - 1:
                 # remaining stages stay planned; keep simulating for schedule visibility
                 pass
@@ -137,11 +144,12 @@ def build_threads(items, routes):
 def _make_in_progress(stages, schedules, pos, materials):
     """The as-of instant should catch a coil running on the L2 lines and packing: pull each line's next planned stage
     back so it straddles ASOF (CGL is mid-coil when its air-knife stoppage hits; SLT is between coils)."""
-    by_id = {u["id"]: u for u in materials}; sch = {s["po"]: s for s in schedules}; po = {p["id"]: p for p in pos}
+    by_id = {u["id"]: u for u in materials}; sch = {s["po"]: s for s in schedules}; po = {p["id"]: p for p in pos}; used_so = set()
     for ln in ("PKL", "CRM", "CGL", "CCL", "PKG"):
         cand = sorted([s for s in stages if s["line"] == ln and s["status"] == "PLANNED" and not s["hero"] and s["itemId"] != RUSH_ITEM], key=lambda s: s["start"])
         if not cand: continue
-        st = cand[0]; s0, e0 = datetime.fromisoformat(st["start"]), datetime.fromisoformat(st["end"]); dur = e0 - s0
+        st = next((s for s in cand if s["soId"] not in used_so), cand[0]); used_so.add(st["soId"])   # a different sales order on every running line
+        s0, e0 = datetime.fromisoformat(st["start"]), datetime.fromisoformat(st["end"]); dur = e0 - s0
         last_done = max([datetime.fromisoformat(x["end"]) for x in stages if x["line"] == ln and x["status"] == "DONE"] or [ASOF - h(3)])
         s = max(ASOF - dur * between(0.35, 0.7), last_done + h(0.1)); e = s + dur
         delta = e - e0

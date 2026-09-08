@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scenario 2 — Planning &amp; Batch Allocation Stress Test · Demo script</title>
+<style>
+  @page { size: A4 landscape; margin: 14mm 12mm 16mm 12mm; }
+  body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; font-size: 10.5pt; color: #1f2733; margin: 0; }
+  h1 { font-size: 19pt; margin: 0 0 2px; color: #0d2240; }
+  .sub { color: #4a5563; font-size: 10.5pt; margin-bottom: 10px; }
+  .meta { display: flex; gap: 22px; flex-wrap: wrap; font-size: 9.5pt; color: #4a5563; border: 1px solid #dfe4e9; border-radius: 6px; padding: 7px 10px; margin-bottom: 12px; background: #f7f9fb; }
+  .meta b { color: #1f2733; }
+  h2 { font-size: 13pt; color: #0d2240; margin: 14px 0 6px; border-bottom: 2px solid #f28c1e; padding-bottom: 3px; }
+  ul { margin: 4px 0 6px 18px; padding: 0; } li { margin-bottom: 3px; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.3pt; page-break-inside: auto; }
+  th { background: #0d2240; color: #fff; text-align: left; padding: 6px 7px; font-size: 8.8pt; text-transform: uppercase; letter-spacing: .3px; }
+  td { border-bottom: 1px solid #e0e3e7; padding: 6px 7px; vertical-align: top; }
+  tr { page-break-inside: avoid; } tr:nth-child(even) td { background: #fafbfc; }
+  td.n { width: 22px; font-weight: 700; color: #f28c1e; text-align: center; }
+  td.step { width: 160px; font-weight: 600; }
+  td.page { width: 250px; }
+  .pg { font-weight: 700; color: #0f5fa3; } .btn { display: inline-block; border: 1px solid #1478c8; color: #0f5fa3; border-radius: 4px; padding: 0 5px; font-size: 8.6pt; font-weight: 600; white-space: nowrap; }
+  code { font-family: Consolas, 'Roboto Mono', monospace; font-size: 8.8pt; background: #eef2f5; padding: 0 3px; border-radius: 3px; }
+  .box { border: 1px solid #dfe4e9; border-radius: 6px; padding: 8px 10px; margin: 6px 0; background: #fff; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .warn { border-left: 3px solid #f28c1e; }
+  .foot { margin-top: 10px; font-size: 8.8pt; color: #8a93a0; }
+  table.mini { width: auto; font-size: 8.8pt; margin: 4px 0; } table.mini th { padding: 3px 6px; } table.mini td { padding: 3px 6px; }
+</style>
+</head>
+<body>
+<h1>Scenario 2 — Planning &amp; Batch Allocation Stress Test</h1>
+<div class="sub">Presenter script for the Khopoli NextGen MES product demo · Annexure A scenario 2 · 30 minutes · RFP sections 3.1.2–3.1.5</div>
+<div class="meta">
+  <span>Demo: <b>https://rakeshpadamshali.github.io/khopoli-mes-demo/</b></span>
+  <span>As-of moment: <b>the date in the demo header, 10:30, shift A</b> (the dataset is regenerated to the current date)</span>
+  <span>Rush order: <b>4213090031/10</b> — Kestrel Auto Components, coil <b>CRF-KHP-2609-0024</b> waiting for CGL</span>
+  <span>Swap pair: <b>GIC-KHP-2609-0012 ↔ GIC-KHP-2609-0014</b> (Vega Consumer Durables ↔ Pinnacle Sheet Metal)</span>
+  <span>Reroute coil: <b>PPG-KHP-2609-0013</b> — Vega Consumer Durables, on the Slitter</span>
+  <span>Data: <b>fictional</b>; lines, products and rules from the RFP</span>
+</div>
+
+<h2>Before you start (2 minutes)</h2>
+<ul>
+  <li>Open the demo and click <span class="btn">Reset demo</span> in the header. Open two tabs from the sidebar: <b>Routes &amp; Schedules</b> (steps 1, 2 and 4) and <b>Material Allocator</b> (step 3); keep <b>Sales Orders &amp; TDC</b> handy for the consequences.</li>
+  <li>Frame the moment: it is 10:30 on the as-of day and the PPC desk is working the CGL, colour-coating and slitter queues for the next few days. SAP feeds orders, APS sends priority flags, the MES owns the line sequence, the batch allocation and the production orders.</li>
+  <li>Every action is live and stays consistent across pages (kept in the browser). Before the demo day, run <code>python tools/generate_data.py</code> and push, so the dates move to the current date. It is the same dataset as Scenario 1: the orders, coils and lines here are the ones the golden thread runs through.</li>
+</ul>
+
+<h2>The four Annexure steps</h2>
+<table>
+  <thead><tr><th>#</th><th>Annexure step</th><th>Page and action</th><th>What to say / show</th></tr></thead>
+  <tbody>
+    <tr><td class="n">1</td><td class="step">Simulate 5–6 small / leftover sales orders eligible for clubbing (length / slit / weight based) — live demo</td>
+      <td class="page"><span class="pg">Routes &amp; Schedules</span> → card <b>Order clubbing — small / leftover orders</b>. Click <span class="btn">Simulate 6 leftover orders (SAP feed)</span>. Then click <span class="btn">Accept</span> on the GI 1.2 mm slit-width proposal, and optionally on the PPGI RAL 9002 one.</td>
+      <td>The book already holds 9 open items of 60 t or less, giving two <b>weight / campaign</b> proposals (CRFH 0.6 mm 60 + 40 t; GI 1.2 mm 60 + 60 t, full width, one CGL campaign). The feed adds six small items on three new orders: Orbit Metal Forming (GI 1.2 mm, 300 and 450 mm), Sunbeam Panels (PPGI 0.45 mm RAL 9002, 400 and 380 mm), Blue Ridge Infra (GI 1.2 mm, 480 and 250 mm). Grouping by product, grade, thickness, coating, paint and RAL adds two <b>slit-width</b> proposals: a 1500 mm mother coil cut 480 + 450 + 300 + 250 with 20 mm trim for all four GI items (51 t, three mother coils, Slitter) and a 1000 mm coil cut 400 + 380 for the Sunbeam items (17 t, balance strip to stock). Accept creates the internal sales order for the mother coil, attaches multi-slit plan <code>MSP-2609-nnn</code> to each order line, adds the campaign to the line and logs the plan to SAP; the KPI <b>Clubbing · reroutes</b> counts it.</td></tr>
+    <tr><td class="n">2</td><td class="step">Trigger a rush order flag from APS and show it re-prioritizing the schedule</td>
+      <td class="page">Same page, card <b>APS rush flag</b>. Click <span class="btn">Show sequence before flag</span>, then <span class="btn">Apply rush flag</span>. Optionally open <span class="pg">Sales Orders &amp; TDC</span> and point at the RUSH badge on order 4213090031.</td>
+      <td>The flag arrived yesterday at 09:00 through the APS interface (IF-APS-RUSH) with the reason "customer line stoppage at Chakan"; the order priority became 1. <b>Before</b>: the planning-released CGL sequence has Kestrel's coil <code>CRF-KHP-2609-0024</code> in slot 3, behind Vega Consumer Durables and Orbit Metal Forming. <b>After</b>: the rush coil moves up two slots to slot 1 and takes the first free CGL window; the two other coils shift later by one slot each. Say that the re-sequenced schedule is confirmed back to L2 through the schedule interface and that the line gantt below shows the rush bar in red on the CGL lane. The KPI <b>Rush orders</b> reads 1 · APS flag applied.</td></tr>
+    <tr><td class="n">3</td><td class="step">Force a batch swap between two sales orders mid-process and show the BTA / BTP update</td>
+      <td class="page"><span class="pg">Material Allocator</span> → card <b>Batch swap between sales orders — BTA / BTP update</b>. Click <span class="btn">Show before swap</span>, then <span class="btn">Apply swap</span>.</td>
+      <td>Two galvanized coils of the identical TDC (DX51D+Z 0.80 × 1250, Z120): <code>GIC-KHP-2609-0012</code> (20.85 t) was allocated to Vega Consumer Durables 4213090008/10 (100 t, required 15 Sep) and <code>GIC-KHP-2609-0014</code> (17.51 t) to Pinnacle Sheet Metal 4213090012/10 (80 t, required 9 Sep). PPC swaps them because Pinnacle has the earlier delivery date and needs the heavier coil. The balance-to-allocate moves with the coils: Pinnacle 62.49 → 59.15 t, Vega 79.15 → 82.49 t; balance-to-produce does not change, because nothing new was produced. Both allocation records keep the previous item (<code>ALC-SW-0012</code>, <code>ALC-SW-0014</code>), the coils keep their genealogy, and the batch re-allocation message IF-SAP-15 posted to SAP with status OK. The fulfilment bars on the Sales Orders page follow the same numbers.</td></tr>
+    <tr><td class="n">4</td><td class="step">Alter / reroute a batch to a different line (equipment loading change) and show the rework production order generated automatically</td>
+      <td class="page">Back on <span class="pg">Routes &amp; Schedules</span>, card <b>Line schedule</b> (line selector on <b>Slitter</b>). On row 2, coil <code>PPG-KHP-2609-0013</code> (Vega Consumer Durables), click <span class="btn">Reroute</span>. Keep the option <b>Reroute to Rewinding + Trimming Line</b> and read the impact boxes, then click <span class="btn">Apply</span>.</td>
+      <td>The route master lists the Rewinding + Trimming Line as the alternate work centre for slitting and trimming (ten routes carry it), so the planner may move a coil when the slitter is loaded. The impact panel shows the equipment loading change before it is applied: Slitter 7 h → 6 h, Rewinding + Trimming 0 h → 1 h, and the rework production order <code>PO-KHP-2609-R001</code> that will be generated automatically while the original <code>PO-KHP-2609-0115</code> is closed short. After Apply the line selector jumps to the Rewinding + Trimming Line: the coil sits there with the new production order (the old one shown as "was …") and the status REROUTE from SLT, the slitter row is greyed as REROUTED → RWL, the gantt shows a purple bar on the new lane, and the toast confirms the L2 schedule message was re-sent. The KPI now reads 1 · 1 rework PO. Say that the rework order carries the updated route and yield string of the new work centre.</td></tr>
+  </tbody>
+</table>
+
+<h2>Optional extras (if time allows)</h2>
+<ul>
+  <li><b>Same-line rework.</b> Switch the line selector to <b>Continuous Galvanizing Line</b>, click <span class="btn">Reroute</span> on the Apex Appliances coil <code>CRF-KHP-2609-0026</code> and choose <b>Rework — re-process on Continuous Galvanizing Line</b>: rework order <code>PO-KHP-2609-R002</code> is sequenced after the current campaign and the CGL load rises from 11 h to 12 h.</li>
+  <li><b>Operations confirmation.</b> Click <span class="btn">Confirm</span> on any open schedule line: the confirmation timestamp appears and the schedule message goes to L2 through the middleware.</li>
+  <li><b>Where it lands.</b> The Plant Dashboard shows the running batches and the behind-schedule count; the Integration Monitor lists the SAP and L2 interfaces used in this scenario (order feed, batch re-allocation IF-SAP-15, schedule to L2).</li>
+</ul>
+
+<div class="grid">
+  <div>
+    <h2>Tips</h2>
+    <div class="box"><b>Order of steps.</b> Steps 1, 2 and 4 are on the same page, top to bottom: clubbing card, rush card, line schedule with gantt. Step 3 is on the Material Allocator. The order of the steps does not matter to the demo state.</div>
+    <div class="box"><b>Proposal ids are stable.</b> A proposal keeps its id when more orders arrive, so an accepted proposal never changes its label mid-demo.</div>
+    <div class="box"><b>Timing.</b> Step 1 about 8 min · step 2 about 5 min · step 3 about 7 min · step 4 about 10 min.</div>
+    <div class="box"><b>Reset between runs.</b> Live actions stay in the browser; click <span class="btn">Reset demo</span> before the next audience, otherwise the accepted proposals, the reroutes and the swap state from the last run are still there.</div>
+  </div>
+  <div>
+    <h2>Honesty notes</h2>
+    <div class="box warn">The clubbing engine is a demo heuristic: first-fit of slit widths into standard mother-coil widths (1000 / 1220 / 1250 / 1500 mm) with 20 mm edge trim, and campaign clubbing of full-width items with an identical spec. The real product would use the planning engine's rules and the customer's mother-coil catalogue.</div>
+    <div class="box warn">The APS rush flag and the batch swap are pre-computed in the dataset (before and after sequences, BTA before and after); the buttons replay them. The six leftover orders are simulated in the page and are not part of the JSON data feed for the chatbot.</div>
+    <div class="box warn">Rework production orders and reroute times are generated in the browser: the coil is placed after the last open job on the alternate line (plus 30 minutes) or at its original time if that is later. No SAP or L2 round trip happens in the static demo.</div>
+    <div class="box warn">All customers, orders, coils and people are fictional; line names, products, rules and the interfaces come from the RFP.</div>
+  </div>
+</div>
+<div class="foot">Khopoli NextGen MES — One MES Coated Products template · product demo script · generated 8 Sep 2026</div>
+</body>
+</html>

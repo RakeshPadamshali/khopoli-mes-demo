@@ -5,7 +5,7 @@ Clickable, self-contained demo for the **JSW Steel Coated Products — Khopoli**
 | Scenario | Where in the demo |
 |---|---|
 | **S1 Golden Thread: order → dispatch (mandatory)** | Sales Orders & TDC → Routes & Schedules → Material Allocator → Shop-floor Execution (PDI/PDO) → Quality (zinc band, DFT) → Slitting · Packing · Dispatch → Genealogy |
-| S2 light — rush flag, batch swap | Routes & Schedules (APS rush re-sequencing) · Material Allocator (swap, BTA/BTP) |
+| **S2 Planning & batch allocation** | Routes & Schedules (leftover-order feed → clubbing proposals → multi-slit plan, APS rush re-sequencing, reroute to the alternate line → rework production order generated automatically) · Material Allocator (batch swap, BTA/BTP) |
 | S3 partial — delays, mass balance | Shop-floor Execution (stoppage with delay + equipment defect codes, OEE, imbalance flag) |
 | **S4 Quality, defect propagation, ontology** | Quality & Defects · Genealogy · Digital Thread (propagation, Defect → Equipment → Line → Plant, triples) |
 | **S5 Integration resilience** | Integration Monitor (stuck PDI queue, malformed IDoc, detect → alert → replay, contract versions) |
@@ -32,6 +32,12 @@ Live-demo actions (charge, receive PDO, confirm, record DFT, allocate, replay, d
 - **Dates follow the as-of day, which defaults to today.** Run the generator (and push) before a demo so the schedule, delays, alerts and incidents sit around the current date; ids and the story do not change within a month. Pin a date with `python tools/generate_data.py --asof 2026-09-15`. `data/khp-meta.js` carries the as-of stamp for the header.
 
 Golden-thread anchors: SO **4213090017/10** (PPGI, RAL 9002), HR coil **HRC-VJ-2608-0471** (Vijayanagar heat H26-VJ-7731), defects DEF-2609-0001/0002/0003, incidents INC-26-0412 (resolved by the agent) and INC-26-0413 (awaiting approval).
+
+More than one order runs through the live flows: every running line carries a different sales order, and four finished coils wait in the FG yard (two colour-coated coils with a pending lab result, one galvanized coil, plus the hero coil), so the Quality → Packing → Dispatch steps of Scenario 1 can be repeated on a second order. The certificate selector on Quality and the coil selector on Packing pick the coil.
+
+## Presenter scripts
+
+`docs/scenario-1-demo-script.html` and `docs/scenario-2-demo-script.html` are the step-by-step presenter scripts (Annexure A steps → page, click, what to say). They are rendered to PDF in the hand-off folder.
 
 ## Verify
 

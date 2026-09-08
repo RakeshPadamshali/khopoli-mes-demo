@@ -70,7 +70,7 @@
   "customerName": "NorthStar Pre-Engineered Buildings",
   "segment": "PEB",
   "createdAt": "2026-08-19T05:00:00",
-  "status": "DISPATCHED",
+  "status": "IN_PROGRESS",
   "routeSource": "FP",
   "rush": false,
   "rushAt": null,
@@ -81,7 +81,7 @@
   "items": [
    "4213090004/10"
   ],
-  "qtyMT": 20,
+  "qtyMT": 40,
   "hero": false
  },
  {
@@ -415,7 +415,7 @@
    "4213090020/20",
    "4213090020/30"
   ],
-  "qtyMT": 467,
+  "qtyMT": 490,
   "hero": false
  },
  {

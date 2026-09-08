@@ -51,10 +51,16 @@ def build_quality(materials, stages, items, edges, hero_thread):
         d = pick(codes); at = datetime.fromisoformat(u["producedAt"]) + m(R.randint(2, 40))
         rec = defect(d["code"], u, at, pick(["SIS", "SIS", "Manual (line inspector)", "Lab"]))
         rec["status"] = pick(["CLOSED", "CLOSED", "OPEN", "CLOSED"]); rec["disposition"] = pick(["Accepted — within customer limit", "Downgraded", "Rework — re-pass", "Accepted after re-inspection", None])
+    # lab results still pending on the newest colour-coated coils (hand-held DFT after cooling) -> Scenario 1 can be run on them as well as the hero coil
+    pkg_done = {st["threadId"] for st in stages if st["line"] == "PKG" and st["status"] == "DONE"}
+    recent = sorted([u for u in materials if u["product"] in ("PPGI", "PPGL") and u.get("producedAt") and u["id"] != hero_pp["id"] and u.get("threadId") not in pkg_done], key=lambda u: u["producedAt"], reverse=True)
+    for u in recent[:3]:
+        u["labPending"] = True; u["qualityStatus"] = "QUALITY_PENDING"
     # quality decisions (UD) on finished units
     ud_map = {"PRIME": "Prime — cleared for dispatch", "DOWNGRADE": "Downgrade — secondary grade", "HOLD": "Hold — QA review", "REWORK": "Rework — replan", "SCRAP": "Scrap"}
     for u in materials:
         if u["product"] not in FG or not u.get("producedAt"): continue
+        if u.get("labPending"): continue                      # usage decision follows the lab result
         if u["id"] == hero_pp["id"]:
             ud = "HOLD"
         else:
@@ -105,7 +111,7 @@ def build_quality(materials, stages, items, edges, hero_thread):
                   dict(test="Bend test (180°)", value="No crack", spec="No crack", result="PASS")]
         if u["product"] in ("PPGI", "PPGL"):
             p = next(x for x in PAINTS if x["id"] == u["paintId"]); it = by_item.get(u["allocatedTo"], {})
-            if u["id"] == hero_pp["id"]:
+            if u["id"] == hero_pp["id"] or u.get("labPending"):
                 tests += [dict(test="DFT top (µm)", value=None, spec=f"{it.get('dftTop')} ±{it.get('dftTol')}", result="PENDING"), dict(test="DFT back (µm)", value=None, spec=f"{it.get('dftBack')} ±2", result="PENDING"),
                           dict(test="T-bend adhesion", value="2T", spec="≤ 3T", result="PASS"), dict(test="Gloss 60°", value=34, spec=f"{p['glossMin']}–{p['glossMax']}", result="PASS")]
             else:

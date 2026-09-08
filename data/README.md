@@ -128,7 +128,7 @@ Fields: `id`, `product`, `gradeId`, `thk`, `width`, `weightMT`, `heatId`, `slabI
 Material-Allocator suggestions per open item with score, reasons and the two-step PPC / QC approvals.
 Fields: `id`, `itemId`, `soId`, `customerName`, `unitId`, `rank`, `score`, `ppcApproval`, `qcApproval`, `status`, `reasons`
 
-### `pdi.json` — 98 records
+### `pdi.json` — 99 records
 Production Data Input messages MES → L2 (targets); includes the stuck queue messages.
 Fields: `id`, `line`, `po`, `unitId`, `itemId`, `soId`, `threadId`, `sentAt`, `targets`, `status`, `ackAt`, `hero`, `via`
 
@@ -136,7 +136,7 @@ Fields: `id`, `line`, `po`, `unitId`, `itemId`, `soId`, `threadId`, `sentAt`, `t
 Production Data Output messages L2 → MES (actuals) with auto-comparison deviations.
 Fields: `id`, `pdiId`, `line`, `po`, `unitIn`, `unitsOut`, `itemId`, `soId`, `threadId`, `receivedAt`, `actuals`, `deviations`, `status`, `inWeightMT`, `outWeightMT`, `lengthM`, `hero`, `via`
 
-### `confirmations.json` — 128 records
+### `confirmations.json` — 125 records
 Production confirmations with mass balance (one deliberate IMBALANCE).
 Fields: `id`, `line`, `po`, `unitIn`, `unitsOut`, `itemId`, `soId`, `threadId`, `start`, `end`, `shift`, `operator`, `inWeightMT`, `outWeightMT`, `scrapMT`, `scrapBreakup`, `unaccountedMT`, `massBalance` …
 
@@ -152,7 +152,7 @@ Fields: `id`, `po`, `itemId`, `soId`, `customerName`, `units`, `weightMT`, `pack
 Vendor-wise packing bills per ISO week.
 Fields: `vendorId`, `vendorName`, `week`, `packs`, `weightMT`, `amountINR`, `export`, `domestic`, `id`, `status`
 
-### `dispatches.json` — 24 records
+### `dispatches.json` — 22 records
 Dispatches (done / planned) with vehicle and invoice.
 Fields: `id`, `packId`, `itemId`, `soId`, `customerName`, `weightMT`, `vehicle`, `plannedAt`, `dispatchedAt`, `status`, `invoice`, `hero`
 
@@ -164,7 +164,7 @@ Fields: `messageType`, `interface`, `version`, `header`, `items`, `totals`, `mid
 Defects: detectedOn material, attributedTo equipment, downstreamAffected (propagation via consumesInput).
 Fields: `id`, `code`, `name`, `severity`, `detectedOn`, `detectedProduct`, `detectedAtLine`, `detectedAt`, `source`, `attributedTo`, `attributedLine`, `attributedPlant`, `positionM`, `side`, `lengthM`, `imageRef`, `note`, `status` …
 
-### `decisions.json` — 89 records
+### `decisions.json` — 87 records
 Usage decisions (UD codes) per finished unit.
 Fields: `id`, `unitId`, `product`, `itemId`, `udCode`, `description`, `decidedAt`, `decidedBy`, `mode`, `segment`, `hero`
 
@@ -196,7 +196,7 @@ Fields: `asOf`, `shift`, `lines`, `batchesOnTrack`, `batchesBehind`, `activeDela
 Interface catalogue: 34 SAP + 6 L2 + APS/Anaplan/utilities/SIS with protocol, trigger, contract, version, SLA.
 Fields: `id`, `name`, `system`, `direction`, `protocol`, `trigger`, `contractId`, `version`, `slaSec`, `owner`, `status`, `channel`
 
-### `messages.json` — 157 records
+### `messages.json` — 166 records
 48-hour middleware message log with statuses OK / FAILED / IN_QUEUE / REPLAYED, errors and history (scripted: stuck PDI queue, malformed ORDERS05 IDoc, PDO contract mismatch).
 Fields: `id`, `interfaceId`, `direction`, `at`, `status`, `latencyMs`, `correlation`, `payloadExcerpt`, `error`, `retries`, `history`
 

@@ -354,10 +354,10 @@
   "coatingId": "Z120",
   "paintId": null,
   "ral": null,
-  "qtyMT": 20,
+  "qtyMT": 40,
   "packing": "DOM",
   "slitWidths": null,
-  "status": "DISPATCHED",
+  "status": "IN_PROGRESS",
   "ontologyDomain": "COMMERCIAL & PLANNING",
   "reqDate": "2026-10-06",
   "fpCommit": "2026-10-06",
@@ -367,17 +367,17 @@
   "scheduleLines": [
    {
     "id": "4213090004/10/0001",
-    "qtyMT": 20,
+    "qtyMT": 40,
     "date": "2026-10-06",
-    "status": "DELIVERED"
+    "status": "OPEN"
    }
   ],
   "tdcId": "TDC-4213090004-10",
   "allocatedMT": 21.5,
   "producedMT": 19.82,
-  "dispatchedMT": 19.82,
-  "btaMT": 0,
-  "btpMT": 0.18,
+  "dispatchedMT": 0,
+  "btaMT": 18.5,
+  "btpMT": 20.18,
   "hero": false
  },
  {
@@ -1479,7 +1479,7 @@
    615,
    615
   ],
-  "status": "PARTIALLY_DISPATCHED",
+  "status": "IN_PROGRESS",
   "ontologyDomain": "COMMERCIAL & PLANNING",
   "reqDate": "2026-08-22",
   "fpCommit": "2026-08-22",
@@ -1497,7 +1497,7 @@
   "tdcId": "TDC-4213090019-10",
   "allocatedMT": 19.12,
   "producedMT": 17.63,
-  "dispatchedMT": 16.75,
+  "dispatchedMT": 0,
   "btaMT": 180.88,
   "btpMT": 182.37,
   "hero": false
@@ -1513,10 +1513,10 @@
   "coatingId": "Z120",
   "paintId": "RMP",
   "ral": "9002",
-  "qtyMT": 17,
+  "qtyMT": 40,
   "packing": "EXP",
   "slitWidths": null,
-  "status": "DISPATCHED",
+  "status": "IN_PROGRESS",
   "ontologyDomain": "COMMERCIAL & PLANNING",
   "dftTop": 20,
   "dftTol": 3,
@@ -1529,17 +1529,17 @@
   "scheduleLines": [
    {
     "id": "4213090020/10/0001",
-    "qtyMT": 17,
+    "qtyMT": 40,
     "date": "2026-09-22",
-    "status": "DELIVERED"
+    "status": "OPEN"
    }
   ],
   "tdcId": "TDC-4213090020-10",
   "allocatedMT": 18.56,
   "producedMT": 16.77,
-  "dispatchedMT": 16.77,
-  "btaMT": 0,
-  "btpMT": 0.23,
+  "dispatchedMT": 0,
+  "btaMT": 21.44,
+  "btpMT": 23.23,
   "hero": false
  },
  {
@@ -2081,7 +2081,7 @@
    326,
    326
   ],
-  "status": "PARTIALLY_DISPATCHED",
+  "status": "IN_PROGRESS",
   "ontologyDomain": "COMMERCIAL & PLANNING",
   "dftTop": 25,
   "dftTol": 3,
@@ -2108,7 +2108,7 @@
   "tdcId": "TDC-4213090027-20",
   "allocatedMT": 21.22,
   "producedMT": 19.17,
-  "dispatchedMT": 18.21,
+  "dispatchedMT": 0,
   "btaMT": 178.78,
   "btpMT": 180.83,
   "hero": false
@@ -3054,7 +3054,7 @@
    326,
    326
   ],
-  "status": "PARTIALLY_DISPATCHED",
+  "status": "IN_PROGRESS",
   "ontologyDomain": "COMMERCIAL & PLANNING",
   "dftTop": 20,
   "dftTol": 3,
@@ -3075,7 +3075,7 @@
   "tdcId": "TDC-4213090040-20",
   "allocatedMT": 21.83,
   "producedMT": 19.72,
-  "dispatchedMT": 18.73,
+  "dispatchedMT": 0,
   "btaMT": 78.17,
   "btpMT": 80.28,
   "hero": false

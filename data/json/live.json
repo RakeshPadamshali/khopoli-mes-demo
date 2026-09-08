@@ -9,13 +9,13 @@
    "currentBatch": null,
    "currentPo": null,
    "currentSo": null,
-   "rateTph": 42.8,
+   "rateTph": 40.6,
    "targetTph": 45,
    "next": [],
    "activeDelay": null,
-   "todayMT": 322.2,
+   "todayMT": 337.7,
    "todayTargetMT": 350.0,
-   "oeeToday": 0.92
+   "oeeToday": 0.89
   },
   {
    "line": "PKL",
@@ -24,7 +24,7 @@
    "currentBatch": "HRC-VJ-2609-0030",
    "currentPo": "PO-KHP-2609-0135",
    "currentSo": "4213090008",
-   "rateTph": 42.0,
+   "rateTph": 35.9,
    "targetTph": 45,
    "next": [
     {
@@ -50,25 +50,25 @@
     }
    ],
    "activeDelay": null,
-   "todayMT": 349.2,
+   "todayMT": 354.5,
    "todayTargetMT": 393.8,
-   "oeeToday": 0.86
+   "oeeToday": 0.83
   },
   {
    "line": "CRM",
    "name": "Cold Roll Mill",
    "state": "RUNNING",
-   "currentBatch": "HPO-KHP-2609-0028",
-   "currentPo": "PO-KHP-2609-0136",
-   "currentSo": "4213090008",
-   "rateTph": 28.3,
+   "currentBatch": "HPO-KHP-2609-0029",
+   "currentPo": "PO-KHP-2609-0142",
+   "currentSo": "4213090006",
+   "rateTph": 25.4,
    "targetTph": 32,
    "next": [
     {
-     "unitId": "HPO-KHP-2609-0029",
-     "po": "PO-KHP-2609-0142",
-     "plannedStart": "2026-09-10T10:49:08",
-     "soId": "4213090006",
+     "unitId": "HPO-KHP-2609-0028",
+     "po": "PO-KHP-2609-0136",
+     "plannedStart": "2026-09-09T17:10:00",
+     "soId": "4213090008",
      "rush": false
     },
     {
@@ -87,39 +87,39 @@
     }
    ],
    "activeDelay": null,
-   "todayMT": 259.6,
+   "todayMT": 264.8,
    "todayTargetMT": 284.4,
-   "oeeToday": 0.85
+   "oeeToday": 0.94
   },
   {
    "line": "CGL",
    "name": "Continuous Galvanizing Line",
    "state": "STOPPED",
-   "currentBatch": "CRF-KHP-2609-0026",
-   "currentPo": "PO-KHP-2609-0137",
-   "currentSo": "4213090008",
+   "currentBatch": "CRF-KHP-2609-0028",
+   "currentPo": "PO-KHP-2609-0149",
+   "currentSo": "4213090037",
    "rateTph": 0,
    "targetTph": 22,
    "next": [
     {
      "unitId": "CRF-KHP-2609-0024",
      "po": "PO-KHP-2609-0126",
-     "plannedStart": "2026-09-09T04:07:17",
+     "plannedStart": "2026-09-10T00:43:49",
      "soId": "4213090031",
      "rush": true
+    },
+    {
+     "unitId": "CRF-KHP-2609-0026",
+     "po": "PO-KHP-2609-0137",
+     "plannedStart": "2026-09-10T13:05:40",
+     "soId": "4213090008",
+     "rush": false
     },
     {
      "unitId": "CRF-KHP-2609-0027",
      "po": "PO-KHP-2609-0143",
      "plannedStart": "2026-09-11T08:43:29",
      "soId": "4213090006",
-     "rush": false
-    },
-    {
-     "unitId": "CRF-KHP-2609-0028",
-     "po": "PO-KHP-2609-0149",
-     "plannedStart": "2026-09-11T10:37:17",
-     "soId": "4213090037",
      "rush": false
     }
    ],
@@ -140,39 +140,39 @@
     "status": "ACTIVE",
     "sapPmNotification": null
    },
-   "todayMT": 171.9,
+   "todayMT": 187.0,
    "todayTargetMT": 196.9,
-   "oeeToday": 0.76
+   "oeeToday": 0.74
   },
   {
    "line": "CCL",
    "name": "Colour Coating Line",
    "state": "RUNNING",
-   "currentBatch": "GLC-KHP-2609-0002",
-   "currentPo": "PO-KHP-2609-0138",
-   "currentSo": "4213090008",
-   "rateTph": 10.9,
+   "currentBatch": "GIC-KHP-2609-0030",
+   "currentPo": "PO-KHP-2609-0168",
+   "currentSo": "4213090023",
+   "rateTph": 11.3,
    "targetTph": 12,
    "next": [
+    {
+     "unitId": "GLC-KHP-2609-0002",
+     "po": "PO-KHP-2609-0138",
+     "plannedStart": "2026-09-10T21:52:29",
+     "soId": "4213090008",
+     "rush": false
+    },
     {
      "unitId": "GIC-KHP-2609-0025",
      "po": "PO-KHP-2609-0144",
      "plannedStart": "2026-09-12T05:23:55",
      "soId": "4213090006",
      "rush": false
-    },
-    {
-     "unitId": "GIC-KHP-2609-0030",
-     "po": "PO-KHP-2609-0168",
-     "plannedStart": "2026-09-15T16:12:47",
-     "soId": "4213090023",
-     "rush": false
     }
    ],
    "activeDelay": null,
-   "todayMT": 99.0,
+   "todayMT": 92.1,
    "todayTargetMT": 105.0,
-   "oeeToday": 0.88
+   "oeeToday": 0.94
   },
   {
    "line": "SLT",
@@ -192,17 +192,17 @@
      "rush": false
     },
     {
-     "unitId": "PPL-KHP-2609-0001",
-     "po": "PO-KHP-2609-0139",
-     "plannedStart": "2026-09-11T17:05:37",
-     "soId": "4213090008",
+     "unitId": "PPG-KHP-2609-0013",
+     "po": "PO-KHP-2609-0115",
+     "plannedStart": "2026-09-11T13:50:25",
+     "soId": "4213090040",
      "rush": false
     },
     {
-     "unitId": "PPG-KHP-2609-0014",
-     "po": "PO-KHP-2609-0145",
-     "plannedStart": "2026-09-12T16:51:30",
-     "soId": "4213090006",
+     "unitId": "PPL-KHP-2609-0001",
+     "po": "PO-KHP-2609-0139",
+     "plannedStart": "2026-09-14T15:46:01",
+     "soId": "4213090008",
      "rush": false
     }
    ],
@@ -223,9 +223,9 @@
     "status": "ACTIVE",
     "sapPmNotification": null
    },
-   "todayMT": 217.9,
+   "todayMT": 227.7,
    "todayTargetMT": 262.5,
-   "oeeToday": 0.92
+   "oeeToday": 0.77
   },
   {
    "line": "RWL",
@@ -234,31 +234,24 @@
    "currentBatch": null,
    "currentPo": null,
    "currentSo": null,
-   "rateTph": 27.0,
+   "rateTph": 24.4,
    "targetTph": 30,
    "next": [],
    "activeDelay": null,
-   "todayMT": 147.1,
+   "todayMT": 142.5,
    "todayTargetMT": 175.0,
-   "oeeToday": 0.9
+   "oeeToday": 0.8
   },
   {
    "line": "PKG",
    "name": "Packing Line",
    "state": "RUNNING",
-   "currentBatch": "GIC-KHP-2609-0024",
-   "currentPo": "PO-KHP-2609-0131",
-   "currentSo": "4213090023",
-   "rateTph": 26.3,
+   "currentBatch": "HPO-KHP-2609-0027",
+   "currentPo": "PO-KHP-2609-0134",
+   "currentSo": "4213090026",
+   "rateTph": 25.3,
    "targetTph": 30,
    "next": [
-    {
-     "unitId": "HPO-KHP-2609-0027",
-     "po": "PO-KHP-2609-0134",
-     "plannedStart": "2026-09-09T02:10:47",
-     "soId": "4213090026",
-     "rush": false
-    },
     {
      "unitId": "SLC-KHP-2609-0032",
      "po": "PO-KHP-2609-0095",
@@ -267,23 +260,30 @@
      "rush": false
     },
     {
-     "unitId": "GIC-KHP-2609-0023",
-     "po": "PO-KHP-2609-0127",
-     "plannedStart": "2026-09-10T05:42:04",
-     "soId": "4213090031",
-     "rush": true
+     "unitId": "PPG-KHP-2609-0012",
+     "po": "PO-KHP-2609-0110",
+     "plannedStart": "2026-09-10T00:47:43",
+     "soId": "4213090020",
+     "rush": false
+    },
+    {
+     "unitId": "GIC-KHP-2609-0024",
+     "po": "PO-KHP-2609-0131",
+     "plannedStart": "2026-09-10T05:12:40",
+     "soId": "4213090023",
+     "rush": false
     }
    ],
    "activeDelay": null,
-   "todayMT": 205.8,
+   "todayMT": 248.5,
    "todayTargetMT": 262.5,
-   "oeeToday": 0.91
+   "oeeToday": 0.88
   }
  ],
- "batchesOnTrack": 46,
+ "batchesOnTrack": 49,
  "batchesBehind": 1,
  "activeDelays": 2,
- "qualityHolds": 4,
+ "qualityHolds": 2,
  "otifWeekly": [
   {
    "week": "2026-W33",

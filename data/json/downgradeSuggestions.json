@@ -218,10 +218,10 @@
  },
  {
   "id": "DGS-0002",
-  "unitId": "GIC-KHP-2609-0011",
+  "unitId": "GIC-KHP-2609-0006",
   "trigger": "DEF: Coating weight deviation",
   "reason": "Coating weight deviation outside sales-order tolerance",
-  "suggestedAt": "2026-08-30T21:07:19",
+  "suggestedAt": "2026-08-27T12:46:06",
   "suggestion": "Downgrade to secondary grade",
   "candidates": [],
   "fallback": {
@@ -229,23 +229,31 @@
    "priceImpactPct": -8
   },
   "status": "OVERRIDDEN",
-  "override": null,
+  "override": {
+   "by": "QC — N. Rao",
+   "decision": "Accepted as prime after re-inspection",
+   "at": "2026-08-27T12:46:06"
+  },
   "hero": false
  },
  {
   "id": "DGS-0003",
-  "unitId": "GLC-KHP-2609-0001",
+  "unitId": "GIC-KHP-2609-0021",
   "trigger": "DEF: Coating weight deviation",
   "reason": "Coating weight deviation outside sales-order tolerance",
-  "suggestedAt": "2026-08-23T21:11:35",
+  "suggestedAt": "2026-09-06T05:27:08",
   "suggestion": "Downgrade to secondary grade",
   "candidates": [],
   "fallback": {
    "segment": "Secondary",
    "priceImpactPct": -8
   },
-  "status": "OVERRIDDEN",
-  "override": null,
+  "status": "ACCEPTED",
+  "override": {
+   "by": "QC — N. Rao",
+   "decision": "Accepted as prime after re-inspection",
+   "at": "2026-09-06T05:27:08"
+  },
   "hero": false
  }
 ]

@@ -4,7 +4,7 @@
  "version": "1.2",
  "header": {
   "plant": "KHP",
-  "dispatchId": "DSP-0024",
+  "dispatchId": "DSP-0022",
   "salesOrder": "4213090017",
   "soItem": 10,
   "scheduleLine": "4213090017/10/0001",
@@ -36,6 +36,6 @@
  "middleware": {
   "channel": "MES->ESB->SAP",
   "idoc": "DELVRY07 / SHPCON",
-  "correlationId": "CORR-DSP-0024"
+  "correlationId": "CORR-DSP-0022"
  }
 }
